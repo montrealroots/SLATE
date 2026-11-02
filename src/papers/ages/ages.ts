@@ -4,12 +4,14 @@ import type { Age } from '../licence/licence.ts';
 import data from './ages.json' with { type: 'json' };
 
 /**
- * What a person may do at what age, and what their sex changes, in each country (src/papers/ages/ages.json, compiled by
- * tools/papers/ages from the research, register facts papers.ages.<CC>; from 2026-10-31, at the owner's ruling that
- * sex and age matter wherever a real rule reads them): the age of majority (a region's own where its law sets one),
- * the youngest age a person may be employed and what the law says of a younger performer, and military service by
- * sex and age. Each is undefined where the game doesn't know it, and the player is told.
+ * What a person may do at what age in each country (src/papers/ages/ages.json, compiled by tools/papers/ages from the
+ * research, register facts papers.ages.<CC> and person.ages.<CC>; from 2026-10-31, at the owner's ruling that age
+ * matters wherever a real rule reads it): the age of majority (a region's own where its law sets one), and the youngest
+ * age a person may be employed and what the law says of a younger performer. Each is undefined where the game doesn't
+ * know it, and the player is told.
  */
+
+/** A person's sex, as the person's identity holds it (src/person/identity reads it from here). */
 export type Sex = 'male' | 'female';
 
 export interface WorkAge {
@@ -19,21 +21,10 @@ export interface WorkAge {
   readonly permitFrom?: Age;
 }
 
-export interface Term {
-  readonly sexes: readonly Sex[];
-  readonly from: Age;
-  readonly until: Age;
-  readonly months: number | null;
-}
-
-/** None, or a term for each sex the law calls (one term may call both). */
-export type Service = 'none' | readonly Term[];
-
 interface Ages {
   readonly majority: Age | null;
   readonly regions?: Readonly<Record<string, Age | null>>;
   readonly work: WorkAge | null;
-  readonly service: Service | null;
 }
 
 const DATA = data as unknown as Readonly<Record<string, Ages>>;
@@ -48,20 +39,9 @@ export function majorityAt({ country, region }: Pick<Place, 'country' | 'region'
 /** The youngest age a person may be employed in a country, and what the law says of a younger performer; undefined where unknown. */
 export const workAge = (country: CountryCode): WorkAge | undefined => DATA[country]?.work ?? undefined;
 
-/** A country's military service; undefined where unknown. */
-export const serviceIn = (country: CountryCode): Service | undefined => DATA[country]?.service ?? undefined;
-
-/** The term a country calls a person of this sex to: none where it calls them to none; undefined where its service isn't known. */
-export function termFor(country: CountryCode, sex: Sex): Term | 'none' | undefined {
-  const s = serviceIn(country);
-  return s === undefined ? undefined : s === 'none' ? 'none' : (s.find((t) => t.sexes.includes(sex)) ?? 'none');
-}
-
 export const UNKEPT_LINE = 'ages.unkept';
 
-/** What the player is told about a place where any of the three isn't known (its majority where it is). Nothing otherwise. */
+/** What the player is told about a place where its majority or its country's working age isn't known. Nothing otherwise. */
 export function aboutAges(place: Pick<Place, 'country' | 'region'>): string | undefined {
-  const a = DATA[place.country];
-  // Stryker disable next-line ConditionalExpression: a country the game doesn't keep has no majority either, so majorityAt already says no; the guard is for the type.
-  return a !== undefined && majorityAt(place) !== undefined && a.work !== null && a.service !== null ? undefined : t(UNKEPT_LINE, { country: countryName(place.country as CountryCode) });
+  return majorityAt(place) !== undefined && workAge(place.country as CountryCode) !== undefined ? undefined : t(UNKEPT_LINE, { country: countryName(place.country as CountryCode) });
 }

@@ -1,0 +1,263 @@
+{
+ "topic": "tax.SG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Singapore: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A tax resident pays progressive income tax on chargeable income from 0% on the first $20,000 to 24% above $1,000,000 (rates from YA 2024 onwards, so for 2026 income assessed in YA 2027); there is no regional layer.",
+   "value": {
+    "currency": "SGD",
+    "from": "YA 2024",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 20000,
+      "rate": 0
+     },
+     {
+      "from": 20000,
+      "to": 30000,
+      "rate": 0.02
+     },
+     {
+      "from": 30000,
+      "to": 40000,
+      "rate": 0.035
+     },
+     {
+      "from": 40000,
+      "to": 80000,
+      "rate": 0.07
+     },
+     {
+      "from": 80000,
+      "to": 120000,
+      "rate": 0.115
+     },
+     {
+      "from": 120000,
+      "to": 160000,
+      "rate": 0.15
+     },
+     {
+      "from": 160000,
+      "to": 200000,
+      "rate": 0.18
+     },
+     {
+      "from": 200000,
+      "to": 240000,
+      "rate": 0.19
+     },
+     {
+      "from": 240000,
+      "to": 280000,
+      "rate": 0.195
+     },
+     {
+      "from": 280000,
+      "to": 320000,
+      "rate": 0.2
+     },
+     {
+      "from": 320000,
+      "to": 500000,
+      "rate": 0.22
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.23
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.24
+     }
+    ],
+    "allowance": 20000,
+    "regional": null
+   },
+   "applies": "Tax resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Resident tax rates From YA 2024 onwards Chargeable Income Income Tax Rate (%) Gross Tax Payable ($) First $20,000 Next $10,000 0 2 0 200 First $30,000 Next $10,000 - 3.50 200 350 First $40,000 Next $40,000 - 7 550 2,800 First $80,000 Next $40,000 - 11.5 3,350 4,600 First $120,000 Next $40,000 - 15 7,950 6,000 First $160,000 Next $40,000 - 18 13,950 7,200 First $200,000 Next $40,000 - 19 21,150 7,600 First $240,000 Next $40,000 - 19.5 28,750 7,800 First $280,000 Next $40,000 - 20 36,550 8,000 First $320,000 Next $180,000 - 22 44,550 39,600 First $500,000 Next $500,000 - 23 84,150 115,000 First $1,000,000 In excess of $1,000,000 - 24 199,150"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A Singapore citizen or permanent resident employee contributes 20% and the employer 17% of monthly ordinary wages to the CPF, up to an ordinary-wage ceiling of $8,000 (maximum $1,600 and $1,360 a month); foreigners do not contribute.",
+   "value": {
+    "currency": "SGD",
+    "employee": 0.2,
+    "employer": 0.17,
+    "ceilingMonthly": 8000,
+    "appliesTo": "citizens and permanent residents",
+    "additionalWageCeiling2026": "102,000 less annual ordinary wages"
+   },
+   "applies": "CPF members (citizens and PRs); age bands lower the rates for older workers (not read)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Contributions are payable by Singapore citizens and Singapore Permanent Residents (i.e. SPR obtained via immigration rules) only. Employers and employees contribute 17% and 20%, respectively, of monthly ordinary wages (OW), up to an OW ceiling of SGD 8,000. Their respective maximum contributions are therefore SGD 1,360 and SGD 1,600 per m"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Singapore has no payroll withholding of income tax: a resident is assessed in the year after the income and pays within one month of the assessment (or by monthly GIRO instalments).",
+   "value": {
+    "payroll": null,
+    "paymentDue": "within one month of assessment",
+    "instalments": "monthly by GIRO"
+   },
+   "applies": "Resident employees and self-employed",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Singapore does not have payroll withholding. … The tax assessed is payable within one month of the date of the assessment"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident public entertainer has 15% withheld from taxable income for services performed in Singapore (the 10% concession lapsed after 31 March 2022), paid by the 15th of the second month; it is a final tax unless the entertainer qualifies as a resident. Other non-resident employment income is taxed at 15% or resident rates, whichever is higher.",
+   "value": {
+    "rate": 0.15,
+    "final": true,
+    "base": "taxable income from services performed in Singapore",
+    "remitBy": "15th of the second month after payment",
+    "nonResidentEmployment": "higher of 15% flat or resident rates"
+   },
+   "applies": "Non-resident public entertainers (artistes, musicians and similar)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "A non-resident public entertainer is subject to a withholding tax of 15% on taxable income from services performed in Singapore. … The concessionary tax rate of 10% will lapse after 31 Mar 2022. From 1 Apr 2022, a withholding tax rate of 15% will apply on taxable income from services performed in Singapore. … pay the withholding tax to IRAS by the 15th of the second month from the date of payment"
+    },
+    {
+     "src": 0,
+     "said": "Employment income of a non-resident individual is taxed at the flat rate of 15% or the progressive resident tax rates (see table above), whichever is the higher tax amount."
+    },
+    {
+     "src": 4,
+     "said": "For public entertainers, this is a final tax unless they qualify to be taxed as Singapore tax residents."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 10% withholding as a final tax where the recipient has no business or PE in Singapore; no separate regime for a resident author was read.",
+   "value": {
+    "nonResidentRoyalties": 0.1,
+    "final": true
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalty payments are subject to WHT at the rate of 10%. The tax withheld represents a final tax and applies only to non-residents that are not carrying on any business in Singapore and have no PE in Singapore."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears GST at 9% once taxable supplies exceed $1 million in 12 months.",
+   "value": {
+    "currency": "SGD",
+    "rate": 0.09,
+    "threshold": 1000000,
+    "period": "12 months"
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 5,
+     "said": "GST is charged at 9% on the supply of goods and services made in Singapore by a taxable person … GST registration is required if a business makes taxable supplies in excess of SGD 1 million for a 12-month period."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; income of one year is assessed in the next (the year of assessment) and the return is due by 18 April.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-18",
+    "assessedIn": "following year"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year in Singapore is the calendar year. An individual’s income from a preceding calendar year is assessed to tax in the following calendar year (i.e. year of assessment). … The tax return must be filed on a calendar-year basis and must be submitted by 18 April."
+    }
+   ]
+  }
+ ],
+ "country": "SG",
+ "sources": [
+  {
+   "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates",
+   "title": "Individual income tax rates (IRAS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Resident tax rates From YA 2024 onwards Chargeable Income Income Tax Rate (%) Gross Tax Payable ($) First $20,000 Next $10,000 0 2 0 200 First $30,000 Next $10,000 - 3.50 200 350 First $40,000 Next $40,000 - 7 550 2,800 First $80,000 Next $40,000 - 11.5 3,350 4,600 First $120,000 Next $40,000 - 15 7,950 6,000 First $160,000 Next $40,000 - 18 13,950 7,200 First $200,000 Next $40,000 - 19 21,150 7,600 First $240,000 Next $40,000 - 19.5 28,750 7,800 First $280,000 Next $40,000 - 20 36,550 8,000 First $320,000 Next $180,000 - 22 44,550 39,600 First $500,000 Next $500,000 - 23 84,150 115,000 First $1,000,000 In excess of $1,000,000 - 24 199,150 … Employment income of a non-resident individual is taxed at the flat rate of 15% or the progressive resident tax rates (see table above), whichever is the higher tax amount."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/singapore/individual/other-taxes",
+   "title": "Singapore - Individual - Other taxes (PwC, reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sso.agc.gov.sg/Act/ITA1947",
+   "said": "Contributions are payable by Singapore citizens and Singapore Permanent Residents (i.e. SPR obtained via immigration rules) only. Employers and employees contribute 17% and 20%, respectively, of monthly ordinary wages (OW), up to an OW ceiling of SGD 8,000. Their respective maximum contributions are therefore SGD 1,360 and SGD 1,600 per m"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/singapore/individual/tax-administration",
+   "title": "Singapore - Individual - Tax administration (PwC, reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sso.agc.gov.sg/Act/ITA1947",
+   "said": "Singapore does not have payroll withholding. … The tax assessed is payable within one month of the date of the assessment … The tax year in Singapore is the calendar year. An individual’s income from a preceding calendar year is assessed to tax in the following calendar year (i.e. year of assessment). … The tax return must be filed on a calendar-year basis and must be submitted by 18 April."
+  },
+  {
+   "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/tax-obligations-of-non-resident-public-entertainer",
+   "title": "Tax obligations of non-resident public entertainer (IRAS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A non-resident public entertainer is subject to a withholding tax of 15% on taxable income from services performed in Singapore. … The concessionary tax rate of 10% will lapse after 31 Mar 2022. From 1 Apr 2022, a withholding tax rate of 15% will apply on taxable income from services performed in Singapore. … pay the withholding tax to IRAS by the 15th of the second month from the date of payment"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/singapore/corporate/withholding-taxes",
+   "title": "Singapore - Corporate - Withholding taxes (PwC, reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sso.agc.gov.sg/Act/ITA1947",
+   "said": "For public entertainers, this is a final tax unless they qualify to be taxed as Singapore tax residents. … Royalty payments are subject to WHT at the rate of 10%. The tax withheld represents a final tax and applies only to non-residents that are not carrying on any business in Singapore and have no PE in Singapore."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/singapore/corporate/other-taxes",
+   "title": "Singapore - Corporate - Other taxes (PwC, reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sso.agc.gov.sg/Act/ITA1947",
+   "said": "GST is charged at 9% on the supply of goods and services made in Singapore by a taxable person … GST registration is required if a business makes taxable supplies in excess of SGD 1 million for a 12-month period."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The MediSave contribution a self-employed screen worker must make (rate and income threshold) for 2026",
+   "tried": {
+    "institution": "2026-11-01: cpf.gov.sg self-employed page and the FAQ \"what-are-the-medisave-contribution-rates-for-self-employed\" return HTTP 403 to this environment; not read another way || 2026-11-01 retry: cpf.gov.sg (home and the MediSave-for-self-employed page) still returns HTTP 403; not read another way. IRAS (iras.gov.sg answers) self-employed-and-partnerships section read: its index links no MediSave page; guessed IRAS MediSave URLs return 404.",
+    "official-register": "2026-11-01: CPF Act schedule not read (sso.agc.gov.sg not tried for the schedule) || 2026-11-01 retry: sso.agc.gov.sg returns HTTP 403 to curl (2026-11-01); CPF Act First Schedule not read another way.",
+    "web-search": "2026-11-01: \"self-employed person MediSave contribution rate 2026 net trade income above $6,000 CPF\": CPF snippets give the $6,000 net-trade-income trigger and age-based rates; the rate table is on cpf.gov.sg (403); third-party sites give 8% to 10.5% (not primary) || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "2026-11-01: PwC Singapore summary (cited) gives no MediSave rate for the self-employed || 2026-11-01 retry: Deloitte Singapore Highlights 2026 read (saved SG-deloitte-2026.pdf): employer CPF and the SGD 102,000 annual wage ceiling only; nothing on self-employed MediSave.",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org/wayback/available has no snapshot of the CPF MediSave page; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), and the brief bars reading a refused page another way."
+   }
+  }
+ ]
+}

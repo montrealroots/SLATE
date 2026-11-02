@@ -1,0 +1,168 @@
+{
+ "topic": "tax.CU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cuba: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A permanent resident's personal income, less a CUP 39,120 annual exempt minimum and allowed expenses, is taxed on a progressive annual scale from 15% to CUP 10,000 up to 50% above CUP 50,000.",
+   "value": {
+    "currency": "CUP",
+    "period": "year",
+    "exemptMinimum": 39120,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 10000,
+      "rate": 0.15
+     },
+     {
+      "from": 10000,
+      "to": 20000,
+      "rate": 0.2
+     },
+     {
+      "from": 20000,
+      "to": 30000,
+      "rate": 0.3
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.4
+     },
+     {
+      "from": 50000,
+      "to": null,
+      "rate": 0.5
+     }
+    ],
+    "expenses": "100% of expenses deductible where 80% are justified (art. 21)"
+   },
+   "applies": "Cuba, Ley 113 as concorded in the Gaceta of 4 February 2021 (amendments to Decreto-Ley 21 of 2020); the annual budget laws (Ley 174 for 2025, Ley 181 for 2026) may update it and were not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ARTÍCULO 22.- (Modificado) Se establece como mínimo exento anual sobre los ingresos gravados que conforman la base imponible de este Impuesto, la cuantía de treinta y nueve mil ciento veinte pesos cubanos (39 120.00 CUP). … Hasta 10 000.00 15 % El exceso de 10 000.00 hasta 20 000.00 20 % El exceso de 20 000.00 hasta 30 000.00 30 % El exceso de 30 000.00 hasta 50 000.00 40 % El exceso de 50 000.00 50 %"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A person without permanent residence in Cuba pays 15% of the total income earned in Cuba, with no deduction, withheld at source as a final tax, and files no return.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross income earned in Cuba, no deduction",
+    "final": true,
+    "return": false
+   },
+   "applies": "Cuba, Ley 113 as concorded in the Gaceta of 4 February 2021 (amendments to Decreto-Ley 21 of 2020); the annual budget laws (Ley 174 for 2025, Ley 181 for 2026) may update it and were not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ARTÍCULO 25.- La base imponible para las personas naturales cubanas y extranjeras no residentes permanentes en la República de Cuba se determina por el total de los ingresos obtenidos en el territorio nacional, sin deducción alguna. … Para los casos referidos en el Artículo 27 de esta Ley la retención tiene carácter definitivo y se practica a razón de un quince por ciento (15 %)"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Whoever pays or represents a taxpayer for their activity (a representative, contractor, agency or publisher) withholds 5% of the amount paid as an advance on the income tax, paid in within the first 20 days of the next month.",
+   "value": {
+    "rate": 0.05,
+    "by": "representatives, contractors, agencies, publishers",
+    "remitBy": "20th day of the following month",
+    "nonResident": 0.15
+   },
+   "applies": "Cuba, Ley 113 as concorded in the Gaceta of 4 February 2021 (amendments to Decreto-Ley 21 of 2020); the annual budget laws (Ley 174 for 2025, Ley 181 for 2026) may update it and were not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "las personas jurídicas y naturales, que actúen como representantes, contratistas, agencias, editores o realicen funciones similares, que paguen o representen al sujeto del Impuesto por la actividad que realizan, quedan obligados a retener … ARTÍCULO 33.- Las retenciones referidas en el artículo anterior de esta Ley se practican a razón de un cinco por ciento (5 %) sobre el monto pagado al contribuyente. … dentro de los veinte (20) primeros días naturales del mes siguiente al período que se liquida"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; the sworn return (Declaración Jurada) is filed and the tax settled before 30 April of the next year, with a 5% discount for filing and paying before 28 February.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnBy": "04-30",
+    "earlyDiscount": {
+     "rate": 0.05,
+     "by": "02-28"
+    }
+   },
+   "applies": "Cuba, Ley 113 as concorded in the Gaceta of 4 February 2021 (amendments to Decreto-Ley 21 of 2020); the annual budget laws (Ley 174 for 2025, Ley 181 for 2026) may update it and were not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Año Fiscal: el período de doce (12) meses, que coincide con el año natural (de enero a diciembre) … La Declaración Jurada y liquidación del Impuesto se realizará antes del 30 de abril del año siguiente al que se liquida. … Se concede una bonificación del cinco por ciento (5 %) de la cuantía que resulte a pagar según Declaración Jurada, a los contribuyentes que declaren y paguen antes del 28 de febrero."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Cuba has no VAT; a natural person providing services pays the services tax (Impuesto sobre los Servicios) at 10% of the total income from them, monthly, with no threshold in the law.",
+   "value": {
+    "tax": "Impuesto sobre los Servicios",
+    "rate": 0.1,
+    "base": "total income from services",
+    "threshold": null,
+    "payBy": "20 days after month end"
+   },
+   "applies": "Cuba, Ley 113 as concorded in the Gaceta of 4 February 2021 (amendments to Decreto-Ley 21 of 2020); the annual budget laws (Ley 174 for 2025, Ley 181 for 2026) may update it and were not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "ARTÍCULO 149.- (Modificado) Las personas naturales pagan el Impuesto aplicando un tipo impositivo del diez por ciento (10 %) sobre el valor total de los ingresos que obtengan de los servicios prestados. … las personas naturales efectúan el pago de los impuestos a que están obligadas, dentro de los veinte (20) días naturales siguientes al cierre del mes"
+    }
+   ]
+  }
+ ],
+ "country": "CU",
+ "sources": [
+  {
+   "url": "https://gtai.de/resource/blob/1848188/3d735316552c944edaeceae5bce7ecf1/ley-113-2012.pdf",
+   "title": "Gaceta Oficial de la República de Cuba, Edición Especial No. 1 de 4 de febrero de 2021: Ley No. 113/2012 «Del Sistema Tributario» (Concordada) (GOC-2021-152-ES1); the Gaceta's own PDF, as hosted by Germany Trade & Invest (gacetaoficial.gob.cu does not answer this environment)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "ARTÍCULO 22.- (Modificado) Se establece como mínimo exento anual sobre los ingresos gravados que conforman la base imponible de este Impuesto, la cuantía de treinta y nueve mil ciento veinte pesos cubanos (39 120.00 CUP). … Hasta 10 000.00 15 % El exceso de 10 000.00 hasta 20 000.00 20 % El exceso de 20 000.00 hasta 30 000.00 30 % El exceso de 30 000.00 hasta 50 000.00 40 % El exceso de 50 000.00 50 % … ARTÍCULO 25.- La base imponible para las personas naturales cubanas y extranjeras no residentes permanentes en la República de Cuba se determina por el total de los ingresos obtenidos en el territorio nacional, sin deducción alguna. … Para los casos referidos en el Artículo 27 de esta Ley la retención tiene carácter definitivo y se practica a razón de un quince por ciento (15 %) … las personas jurídicas y naturales, que actúen como representantes, contratistas, agencias, editores o realicen funciones similares, que paguen o representen al sujeto del Impuesto por la actividad que realizan, quedan obligados a retener … ARTÍCULO 33.- Las retenciones referidas en el artículo anterior de esta Ley se practican a razón de un cinco por ciento (5 %) sobre el monto pagado al contribuyente. … dentro de los veinte (20) primeros días naturales del mes siguiente al período que se liquida … Año Fiscal: el período de doce (12) meses, que coincide con el año natural (de enero a diciembre) … La Declaración Jurada y liquidación del Impuesto se realizará antes del 30 de abril del año siguiente al que se liquida. … Se concede una bonificación del cinco por ciento (5 %) de la cuantía que resulte a pagar según Declaración Jurada, a los contribuyentes que declaren y paguen antes del 28 de febrero. … ARTÍCULO 149.- (Modificado) Las personas naturales pagan el Impuesto aplicando un tipo impositivo del diez por ciento (10 %) sobre el valor total de los ingresos que obtengan de los servicios prestados. … las personas naturales efectúan el pago de los impuestos a que están obligadas, dentro de los veinte (20) días naturales siguientes al cierre del mes"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The progressive scale of the impuesto sobre los ingresos personales for 2026 (Ley 113 and the annual Budget Law) and the exempt minimum.",
+   "tried": {
+    "institution": "onat.gob.cu (ONAT) did not answer this environment || retry 2026-11-01 (world round): onat.gob.cu and www.onat.gob.cu do not answer (curl 000) on retry; mfp.gob.cu does not answer",
+    "official-register": "gacetaoficial.gob.cu (Gaceta Oficial: Ley 113, Resolución 202/2026 MFP) did not answer || retry 2026-11-01 (world round): gacetaoficial.gob.cu and gacetaoficial.gob.cu/es do not answer (curl 000)",
+    "web-search": "one search: only press (Directorio Cubano, Diario de Cuba, OnCuba) on the 2026 declaration campaign and Resolución 202/2026; the 200-search budget for this run was then exhausted || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted) || depth round 2026-11-02: WebSearch \"Cuba impuesto sobre los ingresos personales escala progresiva Ley 113 ONAT trabajadores por cuenta propia 2026 mínimo exento\": press (Directorio Cubano, Diario de Cuba, OnCuba, Cubanet; Resolución 201/2026 MFP raises the exempt minimum 50% for some taxpayers, unread); \"Cuba Gaceta Oficial Ley del Presupuesto del Estado 2026 impuesto ingresos personales contribución seguridad social tasas\": press on Ley 181 (2026 budget, Gaceta No. 99 of 29 December 2025), not the text; \"\\\"Ley No. 113\\\" \\\"Del Sistema Tributario\\\" Gaceta Oficial pdf impuesto sobre ingresos personales escala\": the Gaceta of 4 February 2021 (Ley 113 concorded) on gtai.de, read and saved: art. 22 minimum CUP 39,120 and art. 26 scale 15%-50% now a finding. Still blocked: whether Ley 174 (2025) or Ley 181 (2026) updated the scale (press says Ley 174 did, for the sworn return); the GOC 2020 Ex70 copy at latablilla.uo.edu.cu reset the connection.",
+    "trade-press": "PwC Worldwide Tax Summaries Cuba pages return 404 || retry 2026-11-01 (world round): cubadebate.cu does not answer; PwC has no Cuba summary (404, as before)",
+    "archive": "web.archive.org unreachable from this environment (connection reset) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Contribución a la seguridad social for employees and the self-employed.",
+   "tried": {
+    "institution": "onat.gob.cu (ONAT) did not answer this environment || retry 2026-11-01 (world round): onat.gob.cu and www.onat.gob.cu do not answer (curl 000) on retry; mfp.gob.cu does not answer",
+    "official-register": "gacetaoficial.gob.cu (Gaceta Oficial: Ley 113, Resolución 202/2026 MFP) did not answer || retry 2026-11-01 (world round): gacetaoficial.gob.cu and gacetaoficial.gob.cu/es do not answer (curl 000)",
+    "web-search": "one search: only press (Directorio Cubano, Diario de Cuba, OnCuba) on the 2026 declaration campaign and Resolución 202/2026; the 200-search budget for this run was then exhausted || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted) || depth round 2026-11-02: WebSearch (the residents queries, the second naming the 2026 budget s seguridad social rates): press (Periódico Cubano: 14% contribution, 12.5% to the budget and 1.5% short-term, no Gaceta text). The Gaceta of 4 February 2021 with Ley 113 concorded (gtai.de, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CU-ley-113-2012-concordada-gtai.pdf) read: art. 291 and art. 301 say the employer s Contribución and the worker s Contribución Especial rates are set yearly in the Ley del Presupuesto; art. 304: the self-employed pay quarterly. Ley 181 (2026) itself not reached (gacetaoficial.gob.cu resets).",
+    "trade-press": "PwC Worldwide Tax Summaries Cuba pages return 404 || retry 2026-11-01 (world round): cubadebate.cu does not answer; PwC has no Cuba summary (404, as before)",
+    "archive": "web.archive.org unreachable from this environment (connection reset) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "The authors figure for 2026 from the tax authority or the law.",
+   "tried": {
+    "institution": "onat.gob.cu (ONAT) did not answer this environment || retry 2026-11-01 (world round): onat.gob.cu and www.onat.gob.cu do not answer (curl 000) on retry; mfp.gob.cu does not answer",
+    "official-register": "gacetaoficial.gob.cu (Gaceta Oficial: Ley 113, Resolución 202/2026 MFP) did not answer || retry 2026-11-01 (world round): gacetaoficial.gob.cu and gacetaoficial.gob.cu/es do not answer (curl 000)",
+    "web-search": "one search: only press (Directorio Cubano, Diario de Cuba, OnCuba) on the 2026 declaration campaign and Resolución 202/2026; the 200-search budget for this run was then exhausted || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted) || depth round 2026-11-02: WebSearch (the residents queries): nothing on authors. Ley 113 concorded (Gaceta 4 February 2021, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CU-ley-113-2012-concordada-gtai.pdf) read: art. 17 b) taxes intellectual and artistic activity as personal income under the general scale and art. 32 has publishers withhold 5%; no separate rule for royalties found in Title I; the MFP resolutions on creators not reached.",
+    "trade-press": "PwC Worldwide Tax Summaries Cuba pages return 404 || retry 2026-11-01 (world round): cubadebate.cu does not answer; PwC has no Cuba summary (404, as before)",
+    "archive": "web.archive.org unreachable from this environment (connection reset) || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "topic": "tax.WF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Wallis and Futuna: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Wallis and Futuna, a French overseas collectivity, has its own tax regime and does not take France's income tax: there is no tax on income, the territory living on customs and other indirect taxes.",
+   "value": {
+    "sovereign": "FR",
+    "takesSovereignTax": false,
+    "incomeTax": null,
+    "basis": "délibération de l'Assemblée territoriale du 4 août 1977"
+   },
+   "applies": "Residents of Wallis and Futuna.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’archipel de Wallis-et-Futuna bénéficie d’un régime fiscal spécifique, qui se caractérise par l’absence d’impôt sur le revenu, d’impôt sur les bénéfices des sociétés et d’impôt sur le revenu des valeurs mobilières. Le régime fiscal est essentiellement basé sur une fiscalité indirecte."
+    },
+    {
+     "src": 0,
+     "said": "Ce régime repose sur une délibération de l’Assemblée territoriale du 4 août 1977."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "No income tax is levied; the public finance office (DFIP, Mata-Utu) issues only a notice of non-liability to income tax.",
+   "value": {
+    "currency": "XPF",
+    "brackets": [],
+    "incomeTax": null
+   },
+   "applies": "2026 (regime unchanged since 1977 except in rates of other taxes, per IEOM 2021).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "La DFIP informe pour sa part les usagers qu'en raison de l'absence de fiscalité sur les revenus à Wallis et Futuna, il ne pourra être délivré de certificat de non imposition, tout au plus un"
+    },
+    {
+     "src": 1,
+     "said": "la délivrance des avis fiscaux de non assujettissement à l'impôt sur le revenu à Wallis et Futuna est transférée à la Direction des Finances Publiques de Mata-Utu."
+    }
+   ]
+  }
+ ],
+ "country": "WF",
+ "sources": [
+  {
+   "url": "https://www.ieom.fr/IMG/rapport_annuel_ieom_wallis-et-futuna_2021/index-57.html",
+   "title": "IEOM, Rapport annuel Wallis-et-Futuna 2021, « Le régime fiscal »",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.wallis-et-futuna.gouv.fr/index.php/contenu/telechargement/7462/48953/file/Lettre%20dEtat%20et%20du%20Territoire%20WF%20N%C2%B021-JANVIER-FEVRIER-2020.pdf",
+   "said": "L’archipel de Wallis-et-Futuna bénéficie d’un régime fiscal spécifique, qui se caractérise par l’absence d’impôt sur le revenu, d’impôt sur les bénéfices des sociétés et d’impôt sur le revenu des valeurs mobilières. Le régime fiscal est essentiellement basé sur une fiscalité indirecte. … Ce régime repose sur une délibération de l’Assemblée territoriale du 4 août 1977."
+  },
+  {
+   "url": "https://www.wallis-et-futuna.gouv.fr/index.php/contenu/telechargement/7462/48953/file/Lettre%20dEtat%20et%20du%20Territoire%20WF%20N%C2%B021-JANVIER-FEVRIER-2020.pdf",
+   "title": "La Lettre d'information des services de l'État et du Territoire des îles Wallis et Futuna, n° 21, janvier-février 2020",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La DFIP informe pour sa part les usagers qu'en raison de l'absence de fiscalité sur les revenus à Wallis et Futuna, il ne pourra être délivré de certificat de non imposition, tout au plus un … la délivrance des avis fiscaux de non assujettissement à l'impôt sur le revenu à Wallis et Futuna est transférée à la Direction des Finances Publiques de Mata-Utu."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Contributions on a worker's pay in Wallis and Futuna (the territorial social insurance and pension scheme: rates, shares, ceilings) for 2026, and whether a freelance fee bears any turnover tax",
+   "tried": {
+    "institution": "wallis-et-futuna.gouv.fr: only the 2020 State letter read; no contribution schedule found in this pass (2026-11-01) || 2026-11-01 retry: cps.wf serves only a hosting placeholder page; wallis-et-futuna.gouv.fr home reachable, no contribution schedule found; CLEISS has no Wallis-et-Futuna table",
+    "official-register": "Journal officiel du Territoire not reached in this pass || 2026-11-01 retry: Journal officiel du Territoire not reached",
+    "web-search": "2026-11-01 'Wallis-et-Futuna \"pas d'impôt sur le revenu\" fiscalité territoire service des contributions': results on income tax only || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "IEOM 2021 annual report read (tax regime section): no contribution rates || 2026-11-01 retry: IEOM 2021 (already read): no rates",
+    "archive": "not tried || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

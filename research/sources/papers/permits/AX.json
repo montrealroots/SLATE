@@ -1,0 +1,124 @@
+{
+ "country": "AX",
+ "read": "2026-11-01",
+ "route": "Uppehållstillstånd för arbetstagare",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The Finnish Immigration Service (Migrationsverket) decides the employed person's residence permit, without a partial decision from the employment authorities, from the start of 2025.",
+  "first": "A case-by-case assessment of the availability of labour on Åland, on the Government of Åland's regional guidelines for foreign labour.",
+  "fees": [
+   {
+    "what": "First residence permit for work (with labour-availability assessment), electronic application",
+    "amount": "750.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "First residence permit for work (with labour-availability assessment), paper application",
+    "amount": "950.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": {
+   "days": 90,
+   "within": null
+  }
+ },
+ "sources": [
+  {
+   "url": "https://regeringen.ax/sites/default/files/attachments/protocol/nr1-2025-enskild-n1.pdf",
+   "title": "Ålands landskapsregering, protokoll nr 1 (7.1.2025): Riktlinjer för anlitandet av utländsk arbetskraft på Åland",
+   "read": "2026-11-01",
+   "said": "Från och med ingången av 2025 fattar Migrationsverket beslut om beviljande av uppehållstillstånd för arbetstagare, utan delbeslut från arbetskraftsmyndigheter. … Prövning som gäller arbetstagares uppehållstillstånd är en helhetsprövning från fall till fall, som innehåller förhandsövervakning och bedömning av tillgången på arbetskraft.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first"
+   ]
+  },
+  {
+   "url": "https://www.gov.uk/guidance/travel-to-finland-for-work",
+   "title": "GOV.UK, Travel to Finland for work",
+   "read": "2026-11-01",
+   "said": "The following may not require a visa or permit in Finland if they’re for up to 90 days and require special expertise: specialists interpreters teachers sport judges or referees professional artists, coaches or athletes film workers whose employers do not have an office in Finland",
+   "kind": "secondary",
+   "quotes": "https://migri.fi/en/work-without-residence-permit",
+   "fields": [
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://api.hankeikkuna.fi/asiakirjat/1e0d6c83-f156-4a39-81ed-8c8cf1d2e70d/28be4aef-f61c-4e9b-9618-e076773e354a/KIRJE_20251229062929.PDF",
+   "title": "Sisäministeriön asetus Maahanmuuttoviraston suoritteiden maksullisuudesta vuonna 2026 (signed Helsinki 22.12.2025, Minister of the Interior Mari Rantanen; published on the Government's project register Hankeikkuna)",
+   "read": "2026-11-01",
+   "said": "– ensimmäistä oleskelulupaa työntekoa varten ...........................................................950 € – ensimmäistä oleskelulupaa työntekoa varten, sähköinen hakemus .........................750 €",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "Migri's stated processing time",
+   "tried": {
+    "institution": "migri.fi (fees, work-without-residence-permit, the employed person's permit) answers 403 to this client. Retry (2026-11-01): migri.fi/en/-/changes-to-finnish-immigration-service-processing-fees-as-of-1-january-2026 and finlandabroad.fi/web/npl/residence-permits-to-finland answer 403 (Cloudflare); valtioneuvosto.fi releases 403.",
+    "official-register": "Finlex's Aliens Act translations (finlex.fi/en/legislation/translations/2004/eng/301 loads by script; finlex.fi/api/media/... PDFs return an image, not the text; the old kaannokset PDF is 404). Retry (2026-11-01): Finlex open-data API (opendata.finlex.fi .../statute-consolidated/2004/301/fin@ and /swe@) answers 404; finlex.fi/api/media/statute/301 returns an image. The Ministry of the Interior's 2026 fee decree and memo (Hankeikkuna) read for fees only; they say nothing of time or term.",
+    "web-search": "Same search. Retry (2026-11-01): 'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 työntekijän oleskelulupa', 'finlandabroad.fi residence permit employed person processing fee 2026 embassy', 'Migri residence permit employed person fee euros 2026 processing time': only Migri pages (403) and consultancies (corpenza.com, workvisa.guide) giving unsourced estimates.",
+    "trade-press": "None readable. Retry (2026-11-01): Vialto Partners and EIG Law alerts give the fee only; nothing on time or term naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). Retry (2026-11-01): web.archive.org/web/2025/https://migri.fi/en/processing-fees resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "How long the permit is granted",
+   "tried": {
+    "institution": "migri.fi (fees, work-without-residence-permit, the employed person's permit) answers 403 to this client. Retry (2026-11-01): migri.fi/en/-/changes-to-finnish-immigration-service-processing-fees-as-of-1-january-2026 and finlandabroad.fi/web/npl/residence-permits-to-finland answer 403 (Cloudflare); valtioneuvosto.fi releases 403.",
+    "official-register": "Finlex's Aliens Act translations (finlex.fi/en/legislation/translations/2004/eng/301 loads by script; finlex.fi/api/media/... PDFs return an image, not the text; the old kaannokset PDF is 404). Retry (2026-11-01): Finlex open-data API (opendata.finlex.fi .../statute-consolidated/2004/301/fin@ and /swe@) answers 404; finlex.fi/api/media/statute/301 returns an image. The Ministry of the Interior's 2026 fee decree and memo (Hankeikkuna) read for fees only; they say nothing of time or term.",
+    "web-search": "Same search. Retry (2026-11-01): 'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 työntekijän oleskelulupa', 'finlandabroad.fi residence permit employed person processing fee 2026 embassy', 'Migri residence permit employed person fee euros 2026 processing time': only Migri pages (403) and consultancies (corpenza.com, workvisa.guide) giving unsourced estimates.",
+    "trade-press": "None readable. Retry (2026-11-01): Vialto Partners and EIG Law alerts give the fee only; nothing on time or term naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). Retry (2026-11-01): web.archive.org/web/2025/https://migri.fi/en/processing-fees resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "migri.fi (fees, work-without-residence-permit, the employed person's permit) answers 403 to this client. Retry (2026-11-01): migri.fi/en/-/changes-to-finnish-immigration-service-processing-fees-as-of-1-january-2026 and finlandabroad.fi/web/npl/residence-permits-to-finland answer 403 (Cloudflare); valtioneuvosto.fi releases 403.",
+    "official-register": "Finlex's Aliens Act translations (finlex.fi/en/legislation/translations/2004/eng/301 loads by script; finlex.fi/api/media/... PDFs return an image, not the text; the old kaannokset PDF is 404). Retry (2026-11-01): Finlex open-data API (opendata.finlex.fi .../statute-consolidated/2004/301/fin@ and /swe@) answers 404; finlex.fi/api/media/statute/301 returns an image. The Ministry of the Interior's 2026 fee decree and memo (Hankeikkuna) read for fees only; they say nothing of time or term.",
+    "web-search": "Same search. Retry (2026-11-01): 'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 työntekijän oleskelulupa', 'finlandabroad.fi residence permit employed person processing fee 2026 embassy', 'Migri residence permit employed person fee euros 2026 processing time': only Migri pages (403) and consultancies (corpenza.com, workvisa.guide) giving unsourced estimates.",
+    "trade-press": "None found. Retry (2026-11-01): Vialto Partners and EIG Law alerts give the fee only; nothing on time or term naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). Retry (2026-11-01): web.archive.org/web/2025/https://migri.fi/en/processing-fees resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "The performer's criteria",
+   "tried": {
+    "institution": "migri.fi (fees, work-without-residence-permit, the employed person's permit) answers 403 to this client. GOV.UK says the 90-day work must 'require special expertise'. Retry (2026-11-01): migri.fi/en/-/changes-to-finnish-immigration-service-processing-fees-as-of-1-january-2026 and finlandabroad.fi/web/npl/residence-permits-to-finland answer 403 (Cloudflare); valtioneuvosto.fi releases 403.",
+    "official-register": "Finlex's Aliens Act translations (finlex.fi/en/legislation/translations/2004/eng/301 loads by script; finlex.fi/api/media/... PDFs return an image, not the text; the old kaannokset PDF is 404). Retry (2026-11-01): Finlex open-data API (opendata.finlex.fi .../statute-consolidated/2004/301/fin@ and /swe@) answers 404; finlex.fi/api/media/statute/301 returns an image. The Ministry of the Interior's 2026 fee decree and memo (Hankeikkuna) read for fees only; they say nothing of time or term.",
+    "web-search": "Same search. Retry (2026-11-01): 'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 työntekijän oleskelulupa', 'finlandabroad.fi residence permit employed person processing fee 2026 embassy', 'Migri residence permit employed person fee euros 2026 processing time': only Migri pages (403) and consultancies (corpenza.com, workvisa.guide) giving unsourced estimates.",
+    "trade-press": "None found. Retry (2026-11-01): Vialto Partners and EIG Law alerts give the fee only; nothing on time or term naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). Retry (2026-11-01): web.archive.org/web/2025/https://migri.fi/en/processing-fees resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule",
+   "tried": {
+    "institution": "migri.fi (fees, work-without-residence-permit, the employed person's permit) answers 403 to this client. GOV.UK says those working without a permit must meet minimum income requirements, without the amount. Retry (2026-11-01): migri.fi/en/-/changes-to-finnish-immigration-service-processing-fees-as-of-1-january-2026 and finlandabroad.fi/web/npl/residence-permits-to-finland answer 403 (Cloudflare); valtioneuvosto.fi releases 403.",
+    "official-register": "Finlex's Aliens Act translations (finlex.fi/en/legislation/translations/2004/eng/301 loads by script; finlex.fi/api/media/... PDFs return an image, not the text; the old kaannokset PDF is 404). Retry (2026-11-01): Finlex open-data API (opendata.finlex.fi .../statute-consolidated/2004/301/fin@ and /swe@) answers 404; finlex.fi/api/media/statute/301 returns an image. The Ministry of the Interior's 2026 fee decree and memo (Hankeikkuna) read for fees only; they say nothing of time or term.",
+    "web-search": "Same search. Retry (2026-11-01): 'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 työntekijän oleskelulupa', 'finlandabroad.fi residence permit employed person processing fee 2026 embassy', 'Migri residence permit employed person fee euros 2026 processing time': only Migri pages (403) and consultancies (corpenza.com, workvisa.guide) giving unsourced estimates.",
+    "trade-press": "None found. Retry (2026-11-01): Vialto Partners and EIG Law alerts give the fee only; nothing on time or term naming a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). Retry (2026-11-01): web.archive.org/web/2025/https://migri.fi/en/processing-fees resets the connection (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Correction to layer 3's note: Finland's rule (which applies on Åland) lets professional artists who are invited or under contract work without a residence permit for up to 90 days, read through GOV.UK's guidance since Migri and Finlex refuse this client; the Finnish section number wasn't read."
+}

@@ -1,0 +1,127 @@
+{
+ "country": "MT",
+ "read": "2026-11-01",
+ "route": "Employment Licence (Jobsplus) and residence permit for employment under six months; Single Permit for six months or more",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer applies to Jobsplus for the employment licence; the third-country national then applies to Identità for the residence permit through the Expatriates Portal.",
+  "first": "An employment licence from Jobsplus for the engagement's period; for culture and entertainment no search for EEA, Swiss or Maltese candidates is needed, but the covering letter must give the reasons for choosing the third-country nationals.",
+  "fees": [
+   {
+    "what": "Jobsplus employment licence processing fee (temporary, under six months)",
+    "amount": "250.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Identità application for employment less than six months",
+    "amount": "50.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Bulk licence, film and entertainment group: first person",
+    "amount": "150.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Bulk licence: each additional person (total at most EUR 500)",
+    "amount": "15.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Bulk licence issued",
+    "amount": "80.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 6,
+    "unit": "weeks"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 6,
+   "unit": "months",
+   "renewable": false
+  },
+  "union": null,
+  "eligibility": "Entertainers, musicians and crew members on film productions, for which the employer will need to elaborate in the covering letter on the reasons for the choice of the third country nationals concerned.",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://identita.gov.mt/expatriates-unit-main-page/noneu-nationals/employment-related-permits/employment-under-six-months/",
+   "title": "Identità, Expatriates Unit: Non-EU Nationals – Employment Under Six Months",
+   "read": "2026-11-01",
+   "said": "A third-country national employed for less than six months may apply for a residence permit upon the presentation of a valid employment license issued for that period from Jobsplus. … Such permit is NOT renewable. In case the third-country national wishes to reside and work in Malta for six months or more, a Single Work Permit is required. An application with Identità for Employment Less than 6 Months can be submitted through the Expatriates Portal against a fee of €50.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "fees",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://jobsplus.gov.mt/media/qxfdg2z5/elu-cl-005-employment-licence-application-checklist-for-a-third-country-national-temporary-el.doc",
+   "title": "Jobsplus, Employment Licence Application Checklist for a Third Country National to be engaged for Temporary Employment (less than 6 months), ELU-CL-005 (saved 11 August 2025)",
+   "read": "2026-11-01",
+   "said": "Evidence of Payment of Processing Fee (€250 to be paid on application)",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://jobsplus.gov.mt/media/mqplwvb1/guide.pdf",
+   "title": "Jobsplus Employment Licences Unit, Guidelines for Clients (version in force from 19 January 2021)",
+   "read": "2026-11-01",
+   "said": "Entertainers, musicians and crew members on film productions, for which the employer will need to elaborate in the covering letter on the reasons for the choice of the third country nationals concerned. … In respect of culture and entertainment, the employer does not need to provide evidence of a search for EEA/Swiss/Maltese candidates. … Generally, feedback from stakeholders may take four (4) to six (6) weeks to reach Jobsplus. … In cases of the short-term employment of a group of foreign nationals in the film and entertainment industry, a bulk licence fee is payable as follows,",
+   "kind": "primary",
+   "fields": [
+    "first",
+    "eligibility",
+    "processing",
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "Any union or guild consultation for a foreign performer",
+   "tried": {
+    "institution": "Jobsplus's guidelines refer applications to 'other stakeholders for views' without naming a union; Identità's pages name none.",
+    "official-register": "Subsidiary Legislation 217.17 wasn't read (legislation.mt not tried within this pass).",
+    "web-search": "'Jobsplus employment licence third country national fee less than six months application': no union step.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule",
+   "tried": {
+    "institution": "Jobsplus and Identità name none for this route.",
+    "official-register": "Not found.",
+    "web-search": "Not found.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org unreachable from this environment."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "An engagement short enough to need no permit",
+   "tried": {
+    "institution": "Identità: 'Non-EU Nationals require a residence permit to be employed in Malta'; no short-engagement exemption named.",
+    "official-register": "Not found.",
+    "web-search": "Not found.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org unreachable from this environment."
+   }
+  }
+ ],
+ "note": "Layer 3's route is the Single Permit; its note already holds the under-six-months residence permit on a Jobsplus employment licence, which is the route most performers' engagements take. The fields below are for that route."
+}

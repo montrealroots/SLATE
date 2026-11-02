@@ -1,0 +1,231 @@
+{
+ "topic": "tax.EE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Estonia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 22% income tax on all income in 2026 after a basic exemption of €700 a month (€8,400 a year; €776 a month at pensionable age) that no longer depends on income; there is no local income tax.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.22
+     }
+    ],
+    "allowance": 8400,
+    "allowanceMonthly": 700,
+    "allowancePensionAge": 9312,
+    "regional": null
+   },
+   "applies": "Residents, 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2026 The rate of withheld income tax is 22%. The basic exemption is 700 euros per month, i.e. 8,400 euros per year, or 776 euros per month, i.e. 9,312 euros per year at pensionable age ."
+    },
+    {
+     "src": 1,
+     "said": "From 2026, the basic exemption is 700 euros per month, i.e. up to 8,400 euros per year. The difference compared with previous years is that the basic exemption no longer depends on a person's income"
+    },
+    {
+     "src": 2,
+     "said": "Local income taxes There are no local taxes on income."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays social tax of 33% on pay and service fees (uncapped; minimum base €886 a month in 2026) and unemployment insurance of 0.8%; the employee pays 1.6% unemployment insurance and 2%, 4% or 6% to the funded pension (default 2%); a sole proprietor pays 33% social tax on net business income, capped, with quarterly advances.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "employer": {
+     "socialTax": 0.33,
+     "minimumBaseMonthly": 886,
+     "minimumMonthly": 292.38,
+     "unemployment": 0.008
+    },
+    "employee": {
+     "unemployment": 0.016,
+     "fundedPension": [
+      0.02,
+      0.04,
+      0.06
+     ],
+     "fundedPensionDefault": 0.02
+    },
+    "soleProprietor": {
+     "socialTax": 0.33,
+     "base": "net business income",
+     "capped": true
+    }
+   },
+   "applies": "Employees, service providers and sole proprietors (FIE)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rate of social tax is 33 per cent. The monthly rate of the minimum social tax obligation is 886 euros , i.e. the minimum obligation of social tax is 292.38 euros per month. The unemployment insurance premium rates are 1.6% for the employee and 0.8% for the employer (the same as in 2025). … The funded pension contribution rate is 2%, 4% or 6%, depending on a person's application to the registrar. If a person has not made an application to use a higher rate, the default contribution rate is 2%."
+    },
+    {
+     "src": 3,
+     "said": "Social tax paid by employers is not capped and mainly applies to salaries, directors’ fees, and service fees paid and fringe benefits granted to individuals. The period of taxation is a calendar month. The net business income derived by individuals registered as sole proprietorships is also subject to 33% social tax (capped). Sole proprietorships are required to make quarterly advance payments of social tax in fixed amounts"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer or payer withholds 22% income tax from pay (and from service fees to a resident individual) after the basic exemption, if the employee has applied for it with that one employer; without the application tax is withheld from the first euro.",
+   "value": {
+    "rate": 0.22,
+    "exemptionWith": "one employer on written application"
+   },
+   "applies": "Employees and resident individuals paid for services",
+   "sources": [
+    {
+     "src": 1,
+     "said": "If employees do not submit an application for using basic exemption, employers must withhold income tax from the first euro (basis: subsection 2 of § 42 of the Income Tax Act )."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments for a non-resident artist's or sportsman's activities in Estonia bear 10% withholding, generally a final tax with no return to file.",
+   "value": {
+    "rate": 0.1,
+    "final": true,
+    "base": "payments for the activities carried out in Estonia"
+   },
+   "applies": "Non-resident artists",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Payments for the activities of non-resident artists or sportsmen carried out in Estonia are subject to a 10% WHT rate."
+    },
+    {
+     "src": 5,
+     "said": "For non-residents, the tax withheld at source at domestic or treaty rates generally constitutes final tax as regards their Estonian-source income, and the non-resident is generally not obligated to submit a tax return"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No special author regime: royalties are ordinary income taxed gross (22% withheld for a resident), and royalties paid to a non-resident bear 10% unless a treaty lowers it.",
+   "value": {
+    "residentRoyalties": 0.22,
+    "nonResidentRoyalties": 0.1
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalties (including payments for the use of industrial, commercial, or scientific equipment) paid to non-residents are generally subject to a 10% WHT rate under domestic law … Royalties and rental payments to resident individuals are subject to a 22% WHT rate."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 24% once taxable supplies exceed €40,000 in a calendar year (registration then required; voluntary below).",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.24,
+    "reduced": [
+     0.13,
+     0.09
+    ],
+    "threshold": 40000,
+    "period": "calendar year"
+   },
+   "applies": "Estonian resident businesses",
+   "sources": [
+    {
+     "src": 0,
+     "said": "VAT rates are 24% (standard rate) , 13%, 9%, and 0%."
+    },
+    {
+     "src": 6,
+     "said": "If the taxable supplies of Estonian resident businesses or a fixed establishment of a non-resident business in Estonia exceed EUR 40,000 in a calendar year, VAT registration is required."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a resident files by 30 April and pays the balance by 1 October of the following year.",
+   "value": {
+    "currency": "EUR",
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "paymentDue": "10-01"
+   },
+   "applies": "Resident individuals",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The period of taxation is a calendar year. Tax returns In general, resident individuals must file an individual tax return by 30 April following the year in which the income arises. … must pay the final amount of income tax due by 1 October of the year following the period of taxation."
+    }
+   ]
+  }
+ ],
+ "country": "EE",
+ "sources": [
+  {
+   "url": "https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates",
+   "title": "Tax rates (Estonian Tax and Customs Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2026 The rate of withheld income tax is 22%. The basic exemption is 700 euros per month, i.e. 8,400 euros per year, or 776 euros per month, i.e. 9,312 euros per year at pensionable age . … The rate of social tax is 33 per cent. The monthly rate of the minimum social tax obligation is 886 euros , i.e. the minimum obligation of social tax is 292.38 euros per month. The unemployment insurance premium rates are 1.6% for the employee and 0.8% for the employer (the same as in 2025). … The funded pension contribution rate is 2%, 4% or 6%, depending on a person's application to the registrar. If a person has not made an application to use a higher rate, the default contribution rate is 2%. … VAT rates are 24% (standard rate) , 13%, 9%, and 0%."
+  },
+  {
+   "url": "https://www.emta.ee/en/private-client/taxes-and-payment/tax-incentives/calculation-basic-exemption",
+   "title": "Calculation of basic exemption (Estonian Tax and Customs Board)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "From 2026, the basic exemption is 700 euros per month, i.e. up to 8,400 euros per year. The difference compared with previous years is that the basic exemption no longer depends on a person's income … If employees do not submit an application for using basic exemption, employers must withhold income tax from the first euro (basis: subsection 2 of § 42 of the Income Tax Act )."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/estonia/individual/taxes-on-personal-income",
+   "title": "Estonia - Individual - Taxes on personal income (PwC, reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.emta.ee/",
+   "said": "Local income taxes There are no local taxes on income."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/estonia/individual/other-taxes",
+   "title": "Estonia - Individual - Other taxes (PwC, reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.emta.ee/",
+   "said": "Social tax paid by employers is not capped and mainly applies to salaries, directors’ fees, and service fees paid and fringe benefits granted to individuals. The period of taxation is a calendar month. The net business income derived by individuals registered as sole proprietorships is also subject to 33% social tax (capped). Sole proprietorships are required to make quarterly advance payments of social tax in fixed amounts"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/estonia/corporate/withholding-taxes",
+   "title": "Estonia - Corporate - Withholding taxes (PwC, reviewed 29 May 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.emta.ee/",
+   "said": "Payments for the activities of non-resident artists or sportsmen carried out in Estonia are subject to a 10% WHT rate. … Royalties (including payments for the use of industrial, commercial, or scientific equipment) paid to non-residents are generally subject to a 10% WHT rate under domestic law … Royalties and rental payments to resident individuals are subject to a 22% WHT rate."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/estonia/individual/tax-administration",
+   "title": "Estonia - Individual - Tax administration (PwC)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.emta.ee/",
+   "said": "For non-residents, the tax withheld at source at domestic or treaty rates generally constitutes final tax as regards their Estonian-source income, and the non-resident is generally not obligated to submit a tax return … The period of taxation is a calendar year. Tax returns In general, resident individuals must file an individual tax return by 30 April following the year in which the income arises. … must pay the final amount of income tax due by 1 October of the year following the period of taxation."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/estonia/corporate/other-taxes",
+   "title": "Estonia - Corporate - Other taxes (PwC)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.emta.ee/",
+   "said": "If the taxable supplies of Estonian resident businesses or a fixed establishment of a non-resident business in Estonia exceed EUR 40,000 in a calendar year, VAT registration is required."
+  }
+ ],
+ "blockers": []
+}

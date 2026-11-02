@@ -1,0 +1,330 @@
+{
+ "topic": "markets.producer.KR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in South Korea. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "A Korean producer deducts from income or corporate tax 10% of a film's or drama's production cost (15% for a small or medium enterprise), plus a further 10% (15% for an SME) when at least 80% of shooting costs are spent in Korea and three of four further tests are met (80% of writer and key-staff pay and of cast fees to Koreans, 80% of post-production in Korea, the producer holding at least three of six copyrights), so up to 20% or 30%; the credit runs to the end of 2028.",
+   "value": {
+    "baseRate": {
+     "nonSME": 0.1,
+     "SME": 0.15
+    },
+    "additionalRate": {
+     "nonSME": 0.1,
+     "SME": 0.15
+    },
+    "maxRate": {
+     "nonSME": 0.2,
+     "SME": 0.3
+    },
+    "additionalTest": {
+     "domesticShootingSpendMin": 0.8,
+     "threeOf": [
+      "writer and key-staff pay to Koreans >= 80%",
+      "cast fees to Koreans >= 80%",
+      "post-production spend in Korea >= 80%",
+      "producer holds >= 3 of 6 rights (reproduction, performance, broadcast, transmission, distribution, derivative works)"
+     ]
+    },
+    "excluded": [
+     "state, local-government and public-body grants used for production",
+     "advertising and publicity"
+    ],
+    "claimedIn": "tax year of first cinema screening (film) or first broadcast or streaming",
+    "sunset": "2028-12-31",
+    "eligible": [
+     "TV drama, animation, documentary and entertainment on terrestrial TV",
+     "films screened in cinemas",
+     "rated video works shown on streaming services"
+    ]
+   },
+   "applies": "Korea, domestic producers (영상제작자 under the Copyright Act) of films, broadcast programmes and streamed works; law as in force from 18 September 2026 (rates as amended 23 December 2025).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "대통령령 으로 정하는 내국인이 2028년 12월 31일까지 … 가. 기본공제 금액: 해당 영상콘텐츠 제작비용의 100분의 10(중소기업의 경우에는 100분의 15)에 상당하는 금액 나. 추가공제 금액: 국내에서 발생한 제작비용이 총 제작비에서 차지하는 비율 등을 고려하여 대통령령 으로 정하는 요건을 충족하는 영상콘텐츠의 경우 그 제작비용의 100분의 10(중소기업의 경우에는 100분의 15)에 상당하는 금액"
+    },
+    {
+     "src": 1,
+     "said": "재정경제부령 으로 정하는 촬영제작에 든 비용 중 국내에서 지출한 비용이 차지하는 비율이 100분의 80 이상일 것 2. 다음 각 목의 요건 중 3개 이상의 요건을 충족할 것 가. 재정경제부령 으로 정하는 작가 및 주요 스태프에게 지급한 인건비 중 내국인에게 지급한 인건비가 차지하는 비율이 100분의 80 이상일 것 나. 재정경제부령 으로 정하는 배우 출연료 중 내국인에게 지급한 출연료가 차지하는 비율이 100분의 80 이상일 것 다. 재정경제부령 으로 정하는 후반제작에 든 비용 중 국내에서 지출한 비용이 차지하는 비율이 100분의 80 이상일 것 라. 「저작권법」 에 따른 복제권, 공연권, 방송권, 전송권, 배포권 및 2차적저작물작성권 중 영상콘텐츠 제작자가 보유한 권리의 수가 3개 이상일 것."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The film council's mid-budget production support (from 2025: ₩10 billion in 2025, ₩19.86 billion in the 2026 budget) funded 16 more films from a ₩25.77 billion supplementary budget in September 2026, in four tiers by net production cost (₩2bn to 3bn: 5 films; 3bn to 6bn: 6; 6bn to 10bn: 3; and a temporary ₩10bn to 15bn tier: 2, at ₩3bn each), with at least 30% of picks reserved for first-time directors (8 of 16 chosen).",
+   "value": {
+    "fund": "중예산 한국영화 제작지원 (KOFIC)",
+    "budgetKRW": {
+     "2025": 10000000000,
+     "2026main": 19860000000,
+     "2026supplementary": 25770000000
+    },
+    "supplementary2026Selected": 16,
+    "tiersByNetCostKRW": {
+     "ga_2bn_3bn": 5,
+     "na_3bn_6bn": 6,
+     "da_6bn_10bn": 3,
+     "ra_10bn_15bn_temporary": 2
+    },
+    "raTierAwardEachKRW": 3000000000,
+    "firstTimeDirectorMinShare": 0.3,
+    "firstTimeDirectorsSelected": 8
+   },
+   "applies": "Korea, Korean feature films with net production cost of ₩2bn to ₩15bn, KOFIC selection announced 11 September 2026; applications received were not published.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "2026년 추경 중예산 한국영화 제작지원작 16편을 최종 선정하고 총 257억 7천만 원을 지원 한다. … 2025년 100억 원 규모로 시작해 2026년 본예산에서 198억 6천만 원으로 확대된 데 이어 … 이는 영진위가 신인감독 발굴을 위해 마련한 사업 요강상의 신인감독 최소 선정 비율인 30%를 크게 웃도는 결과다. … ▲가군(순제작비 20억 원 이상 30억 원 미만) 5편 ▲나군(순제작비 30억 원 이상 60억 원 미만) 6편 ▲다군(순제작비 60억 원 이상 100억 원 미만) 3편 ▲라군(순제작비 100억 원 이상 150억 원 미만) 2편이다. … 두 작품에는 각각 30억 원의 제작지원금이 지원된다."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Of the 30 Korean commercial films (net cost ₩3bn or more) released in 2025 whose returns KOFIC estimated, 6 (20%) passed break-even and the average return was -33.1% (median -59.4%); by net cost, 2 of 9 under ₩5bn broke even, 1 of 11 at ₩5bn to 8bn, 1 of 3 at ₩8bn to 10bn, 2 of 4 at ₩10bn to 15bn and none of 3 above ₩15bn.",
+   "value": {
+    "year": 2025,
+    "analysed": 30,
+    "breakEven": 6,
+    "breakEvenShare": 0.2,
+    "averageReturn": -0.3313,
+    "medianReturn": -0.5942,
+    "averageReturnByYear": {
+     "2021": -0.2285,
+     "2022": -0.1255,
+     "2023": -0.3098,
+     "2024": -0.1927,
+     "2025": -0.3313
+    },
+    "breakEven2024": {
+     "films": 37,
+     "breakEven": 8
+    },
+    "byNetCostKRW": {
+     "3bn_5bn": {
+      "films": 9,
+      "breakEven": 2,
+      "avgReturn": -0.2294
+     },
+     "5bn_8bn": {
+      "films": 11,
+      "breakEven": 1,
+      "avgReturn": -0.5971
+     },
+     "8bn_10bn": {
+      "films": 3,
+      "breakEven": 1,
+      "avgReturn": -0.4126
+     },
+     "10bn_15bn": {
+      "films": 4,
+      "breakEven": 2,
+      "avgReturn": 0.3369
+     },
+     "15bnPlus": {
+      "films": 3,
+      "breakEven": 0,
+      "avgReturn": -0.5273
+     }
+    },
+    "averageGrossKRWm": 7792,
+    "averageTotalCostKRWm": 9847,
+    "returnBasis": "total revenue less total cost and fees, over total cost; 2025 an estimate from a rapid survey"
+   },
+   "applies": "Korea, Korean commercial films (net production cost of ₩3bn or more) released in 2025, KOFIC annual report (March 2026).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "평균 수익률(F/B) -19.27% -33.13% 손익분기점 상회 편수 8 6 손익분기점 상회 비율 21.6% 20% … 150억 이상 5 1 21,913 -33.44% 3 0 19,921 -52.73% 100억 이상~150억 미만 6 2 12,740 47.51% 4 2 10,539 33.69% 80억 이상~100억 미만 7 2 8,815 -45.58% 3 1 8,757 -41.26% 50억 이상~80억 미만 10 1 6,850 -38.03% 11 1 6,633 -59.71% 30억 이상~50억 미만 9 2 4,024 -32.42% 9 2 3,670 -22.94% … 중앙값 4,727 8,795 732 -4,334 -59.42% … 평균 수익률(D/B) -22.85% -12.55% -30.98% -19.27% -33.13%"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Korea released 262 Korean films in cinemas in 2025 (by KOFIC's 'real release' test); the 213 surveyed for cost averaged ₩2.05 billion all in (₩1.63bn net plus ₩0.41bn prints and advertising), the 31 commercial films ₩10.46 billion (₩8.36bn net) and the 139 independent and art films ₩0.53 billion.",
+   "value": {
+    "year": 2025,
+    "koreanRealReleases": 262,
+    "costSurveyed": 213,
+    "avgTotalCostKRWbn": 2.05,
+    "avgNetCostKRWbn": 1.63,
+    "avgPandAKRWbn": 0.41,
+    "commercial": {
+     "films": 31,
+     "avgTotalKRWbn": 10.46,
+     "avgNetKRWbn": 8.36,
+     "avgPandAKRWbn": 2.1
+    },
+    "independentArt": {
+     "films": 139,
+     "avgTotalKRWbn": 0.53,
+     "avgNetKRWbn": 0.44
+    },
+    "commercialFilmsByYear": {
+     "2023": 35,
+     "2024": 37,
+     "2025": 31
+    }
+   },
+   "applies": "Korea, Korean films released in 2025 (real release: at least 40 screenings a year), KOFIC annual report.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "한국영화 실질개봉편수는 전년 대비 39편 늘어난 262편이었고 … 2025년 제작비 전수조사 대상이 된 한국영화 실질개봉작 213편의 총제작비 총합은 4360억 원으로 편당 평균 총제작비는 20.5억 원이었다. 이중 평균 순제작비가 16.3억 원으로 총제작비의 79.8%, 평균 P&A 비용이 4.1억 원으로 총제작비의 20.2%를 차지했다. 순제작비 30억 이상으로 제작･개봉한 상업영화 31편의 총제작비 총합은 … 3243억 원으로 편당 평균 총제작비는 104.6억 원으로 집계되었다. 편당 평균 순제작비는 83.6억 원, 평균 P&A비용은 21.0억 원으로 나타났다. 독립･예술영화 139편의 총제작비 총합은 740억 원으로 평균 총제작비 5.3억 원, 편당 평균 순제작비는 4.4억 원"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "KOFIC finds the usual Korean deal leaves the production company nothing until the film turns a net profit, so with 24 of 30 commercial films in 2025 short of break-even, most producers had no money to develop their next film.",
+   "value": {
+    "producerShareTiming": "after net profit",
+    "filmsBelowBreakEven2025": 24,
+    "of": 30
+   },
+   "applies": "Korea, investor-producer profit split practice described by KOFIC for 2025 commercial films.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "순수익이 발생하기 전까진 제작사가 수익을 취하지 못하는 투자사와 제작사간의 관행적인 수익배분 방식도 지금처럼 영화시장이 어려울 때는 새로운 작품 개발에 허들이 된다. 2025년 개봉한 상업영화 기준 전체 30편 중 손익분기점(BEP)을 넘는 작품이 6편 수준임을 감안하면, 24편을 제작한 제작사는 차기작을 기획･개발할 비용 마련도 어려울 수 있는 것이다."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Korean film producers are represented by the Korea Film Producers Association (한국영화제작가협회, KFPA), Mapo-gu, Seoul, which also manages producers' copyrights in trust.",
+   "value": {
+    "name": "한국영화제작가협회 (KFPA)",
+    "address": "서울특별시 마포구 동교로 114 태복빌딩 202호",
+    "functions": [
+     "copyright trust management",
+     "KFPA awards"
+    ]
+   },
+   "applies": "Korea, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "한국영화 제작가협회 | KFPA --> 서울특별시 마포구 동교로 114 태복빌딩 202호 … 저작권 신탁관리 신탁관리 안내 저작물 관리목록 한국영화제작가협회상"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "KOFIC's 2026 mid-budget production support (live-action features with net costs of ₩2-10 billion, about ₩20 billion in all) drew 334 applications, reviewed 328 and funded 16 (about 5%), against 9 of 120 the year before; each award is capped at the lower of 40% of net production cost or ₩2.5 billion, and awards ran ₩0.8-1.1 billion (group A), ₩0.8-1.8 billion (B) and ₩1.2-2.3 billion (C).",
+   "value": {
+    "year": 2026,
+    "applications": 334,
+    "reviewed": 328,
+    "selected": 16,
+    "rate": 0.049,
+    "prior": {
+     "applications": 120,
+     "selected": 9
+    },
+    "eligibleNetCostKRW": [
+     2000000000,
+     10000000000
+    ],
+    "capRule": "lower of 40% of net production cost or KRW 2.5bn",
+    "awardRangeKRW": {
+     "A": [
+      800000000,
+      1100000000
+     ],
+     "B": [
+      800000000,
+      1800000000
+     ],
+     "C": [
+      1200000000,
+      2300000000
+     ]
+    },
+    "quotas": {
+     "firstFeatureDirectorsMin": 0.3,
+     "coProductionsMax": 0.2
+    }
+   },
+   "applies": "Korea, KOFIC mid-budget Korean film production support, 2026 round (guidelines 12 Dec 2025, results 9 Apr 2026).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "This year's selection of 16 films represents an increase of seven over the nine selected in the prior year. … live-action narrative features with net production costs between KRW 2 billion and KRW 10 billion … By the deadline of December 29, a total of 334 projects had been submitted — nearly three times the 120 applications received the prior year … After excluding six ineligible or withdrawn entries, 328 projects advanced to review. … Group A (KRW 800 million to KRW 1.1 billion per title … Group B (KRW 800 million to KRW 1.8 billion per title … Group C (KRW 1.2 billion to KRW 2.3 billion per title"
+    },
+    {
+     "src": 6,
+     "said": "with per-project support capped at the lower of 40% of net production costs or ₩2.5 billion. … at least 30% of selected projects be directed by first-time feature directors … up to 20% of selected projects may be international co-productions"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "KR",
+ "sources": [
+  {
+   "url": "https://www.law.go.kr/법령/조세특례제한법/제25조의6",
+   "title": "국가법령정보센터: 조세특례제한법 제25조의6 (영상콘텐츠 제작비용에 대한 세액공제) [시행 2026. 9. 18.] [법률 제21467호]",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "대통령령 으로 정하는 내국인이 2028년 12월 31일까지 … 가. 기본공제 금액: 해당 영상콘텐츠 제작비용의 100분의 10(중소기업의 경우에는 100분의 15)에 상당하는 금액 나. 추가공제 금액: 국내에서 발생한 제작비용이 총 제작비에서 차지하는 비율 등을 고려하여 대통령령 으로 정하는 요건을 충족하는 영상콘텐츠의 경우 그 제작비용의 100분의 10(중소기업의 경우에는 100분의 15)에 상당하는 금액"
+  },
+  {
+   "url": "https://www.law.go.kr/법령/조세특례제한법시행령/제22조의10",
+   "title": "국가법령정보센터: 조세특례제한법 시행령 제22조의10 (영상콘텐츠 제작비용에 대한 세액공제) [시행 2026. 9. 18.] [대통령령 제36587호]",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "재정경제부령 으로 정하는 촬영제작에 든 비용 중 국내에서 지출한 비용이 차지하는 비율이 100분의 80 이상일 것 2. 다음 각 목의 요건 중 3개 이상의 요건을 충족할 것 가. 재정경제부령 으로 정하는 작가 및 주요 스태프에게 지급한 인건비 중 내국인에게 지급한 인건비가 차지하는 비율이 100분의 80 이상일 것 나. 재정경제부령 으로 정하는 배우 출연료 중 내국인에게 지급한 출연료가 차지하는 비율이 100분의 80 이상일 것 다. 재정경제부령 으로 정하는 후반제작에 든 비용 중 국내에서 지출한 비용이 차지하는 비율이 100분의 80 이상일 것 라. 「저작권법」 에 따른 복제권, 공연권, 방송권, 전송권, 배포권 및 2차적저작물작성권 중 영상콘텐츠 제작자가 보유한 권리의 수가 3개 이상일 것."
+  },
+  {
+   "url": "https://www.kofic.or.kr/kofic/business/board/selectBoardDetail.do?boardNumber=181&boardSeqNumber=75403",
+   "title": "영화진흥위원회 보도자료 (2026.09.11): 역대 최대 257억 7천만 원 지원, 2026년 추경 중예산 한국영화 제작지원작 16편 선정",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2026년 추경 중예산 한국영화 제작지원작 16편을 최종 선정하고 총 257억 7천만 원을 지원 한다. … 2025년 100억 원 규모로 시작해 2026년 본예산에서 198억 6천만 원으로 확대된 데 이어 … 이는 영진위가 신인감독 발굴을 위해 마련한 사업 요강상의 신인감독 최소 선정 비율인 30%를 크게 웃도는 결과다. … ▲가군(순제작비 20억 원 이상 30억 원 미만) 5편 ▲나군(순제작비 30억 원 이상 60억 원 미만) 6편 ▲다군(순제작비 60억 원 이상 100억 원 미만) 3편 ▲라군(순제작비 100억 원 이상 150억 원 미만) 2편이다. … 두 작품에는 각각 30억 원의 제작지원금이 지원된다."
+  },
+  {
+   "url": "https://www.kofic.or.kr/kofic/business/board/selectBoardDetail.do?boardNumber=2&boardSeqNumber=71603",
+   "title": "영화진흥위원회: [KOFIC 연구 2026-01] 2025년 한국 영화산업 결산 (수정), 산업통계 게시판 첨부 PDF",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "평균 수익률(F/B) -19.27% -33.13% 손익분기점 상회 편수 8 6 손익분기점 상회 비율 21.6% 20% … 150억 이상 5 1 21,913 -33.44% 3 0 19,921 -52.73% 100억 이상~150억 미만 6 2 12,740 47.51% 4 2 10,539 33.69% 80억 이상~100억 미만 7 2 8,815 -45.58% 3 1 8,757 -41.26% 50억 이상~80억 미만 10 1 6,850 -38.03% 11 1 6,633 -59.71% 30억 이상~50억 미만 9 2 4,024 -32.42% 9 2 3,670 -22.94% … 중앙값 4,727 8,795 732 -4,334 -59.42% … 평균 수익률(D/B) -22.85% -12.55% -30.98% -19.27% -33.13% … 한국영화 실질개봉편수는 전년 대비 39편 늘어난 262편이었고 … 2025년 제작비 전수조사 대상이 된 한국영화 실질개봉작 213편의 총제작비 총합은 4360억 원으로 편당 평균 총제작비는 20.5억 원이었다. 이중 평균 순제작비가 16.3억 원으로 총제작비의 79.8%, 평균 P&A 비용이 4.1억 원으로 총제작비의 20.2%를 차지했다. 순제작비 30억 이상으로 제작･개봉한 상업영화 31편의 총제작비 총합은 … 3243억 원으로 편당 평균 총제작비는 104.6억 원으로 집계되었다. 편당 평균 순제작비는 83.6억 원, 평균 P&A비용은 21.0억 원으로 나타났다. 독립･예술영화 139편의 총제작비 총합은 740억 원으로 평균 총제작비 5.3억 원, 편당 평균 순제작비는 4.4억 원 … 순수익이 발생하기 전까진 제작사가 수익을 취하지 못하는 투자사와 제작사간의 관행적인 수익배분 방식도 지금처럼 영화시장이 어려울 때는 새로운 작품 개발에 허들이 된다. 2025년 개봉한 상업영화 기준 전체 30편 중 손익분기점(BEP)을 넘는 작품이 6편 수준임을 감안하면, 24편을 제작한 제작사는 차기작을 기획･개발할 비용 마련도 어려울 수 있는 것이다."
+  },
+  {
+   "url": "http://www.kfpa.net/",
+   "title": "한국영화제작가협회 (KFPA) 홈페이지",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "한국영화 제작가협회 | KFPA --> 서울특별시 마포구 동교로 114 태복빌딩 202호 … 저작권 신탁관리 신탁관리 안내 저작물 관리목록 한국영화제작가협회상"
+  },
+  {
+   "url": "https://www.koreanfilm.or.kr/eng/news/kofic_news.jsp?mode=VIEW&blbdComCd=601007&pageRowSize=10&seq=1847",
+   "title": "KOFIC (KoBiz): KOFIC Selects 16 Films for 2026 Mid-Budget Korean Film Production Support Program, 9 Apr 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This year's selection of 16 films represents an increase of seven over the nine selected in the prior year. … live-action narrative features with net production costs between KRW 2 billion and KRW 10 billion … By the deadline of December 29, a total of 334 projects had been submitted — nearly three times the 120 applications received the prior year … After excluding six ineligible or withdrawn entries, 328 projects advanced to review. … Group A (KRW 800 million to KRW 1.1 billion per title … Group B (KRW 800 million to KRW 1.8 billion per title … Group C (KRW 1.2 billion to KRW 2.3 billion per title"
+  },
+  {
+   "url": "https://www.koreanfilm.or.kr/eng/news/kofic_news.jsp?blbdComCd=601007&seq=1839&mode=VIEW",
+   "title": "KOFIC (KoBiz): KOFIC Unveils 2026 Support Programs",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "with per-project support capped at the lower of 40% of net production costs or ₩2.5 billion. … at least 30% of selected projects be directed by first-time feature directors … up to 20% of selected projects may be international co-productions"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "feecap",
+   "sought": "A cap a funder sets on the producer's fee and company overheads in a Korean film budget.",
+   "tried": {
+    "institution": "KOFIC mid-budget press release and 2025 annual report: no producer-fee or overhead cap; the July 2026 pact caps lead and supporting actors' fees under 10% of net cost (already in markets/KR.json). | Retry 2026-11-01 (producer retry): KOFIC's English programme pages for 2026 (saved producer-KR-kobiz-programs-2026.html, producer-KR-kobiz-midbudget-2026.html): no producer-fee or overhead cap.",
+    "official-register": "Restriction of Special Taxation Act art. 25-6 and decree art. 22-10 define eligible cost by Ministry ordinance; no fee cap in the article text read. | Retry 2026-11-01 (producer retry): law.go.kr reachable; no fee cap in the incentive article already read.",
+    "web-search": "2026-11-01: '중예산 한국영화 제작지원 사업요강 제작사 일반관리비 프로듀서 인건비 상한 순제작비 비율' found nothing on a producer-fee cap. | Retry 2026-11-01 (producer retry): \"koreanfilm.or.kr mid-budget Korean film production support KOFIC applications selected films per film\" (KOFIC domains): no fee cap.",
+    "trade-press": "fnnews and isplus (July 2026) report only the actors' fee pact. | Retry 2026-11-01 (producer retry): heraldk.com (25 Feb 2026, via search) on the mid-budget budget gives no fee cap.",
+    "archive": "Not tried: no candidate document. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

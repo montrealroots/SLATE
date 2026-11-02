@@ -1,0 +1,643 @@
+{
+ "topic": "markets.IT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"add more markets\"; then \"Retry the blocked rates once all markets land\"): the terms a professional actor is engaged on in Italy for film, television and the stage (the agreements and their minimums, the union, the language parts are cast in, where the work is). Research and retry subagents (workbench/briefs/BRIEF-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "agreements",
+   "finding": "Film and television actors in Italy are engaged under the first national collective agreement for actors, the CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo, signed on 20 December 2023 by the producers' associations ANICA, APA and APE and the unions SLC-CGIL, FISTEL-CISL and UILCOM-UIL, in force from 1 March 2024 to 28 February 2027.",
+   "value": {
+    "name": "CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo",
+    "cnelCode": "G140",
+    "signed": "2023-12-20",
+    "from": "2024-03-01",
+    "to": "2027-02-28",
+    "employers": [
+     "ANICA",
+     "APA",
+     "APE"
+    ],
+    "unions": [
+     "SLC-CGIL",
+     "FISTEL-CISL",
+     "UILCOM-UIL"
+    ],
+    "covers": [
+     "cinema",
+     "television (public, private)",
+     "streamers"
+    ],
+    "twinAgreement": {
+     "cnelCode": "G139",
+     "employers": [
+      "CONFARTIGIANATO Cinema e Audiovisivo",
+      "CNA Cinema e Audiovisivo",
+      "CASARTIGIANI",
+      "CLAAI"
+     ],
+     "from": "2024-10-28",
+     "to": "2027-03-31",
+     "inForce": "2024-11-01"
+    }
+   },
+   "applies": "Italy, actors with at least one line or interaction (not extras, who fall under the Generici agreement, nor stunt performers) in creative audiovisual works for cinema, television or streaming, contracts signed from 1 March 2024 (from 1 April 2024 for work under contracts signed before).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "G140 | CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo | ANICA; APA; APE | SLC CGIL; FISTEL CISL; UILCOM UIL | 2023-12-20 | 2027-02-28"
+    },
+    {
+     "src": 0,
+     "said": "G139 | CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo | CONFARTIGIANATO Cinema e Audiovisivo; CONFARTIGIANATO; CNA Cinema e Audiovisivo; CNA; CASARTIGIANI; CLAAI | SLC CGIL; FISTEL CISL; UILCOM UIL | 2024-10-28 | 2027-03-31"
+    },
+    {
+     "src": 1,
+     "said": "CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo."
+    },
+    {
+     "src": 1,
+     "said": "ambito di applicazione del presente, quindi, attiene al comparto della produzione e realizzazione di opere cineaudiovisive, aventi contenuto creativo, siano esse destinate alla distribuzione e proiezione in sala, ovvero anche su canali televisivi, siano essi privati, pubblici, streamer ecc."
+    },
+    {
+     "src": 1,
+     "said": "Il presente Contratto Collettivo Nazionale di Lavoro decorre dal 01 marzo 2024 e verrà applicato per i contratti sottoscritti dagli interpreti/attrici/attori da tale data."
+    },
+    {
+     "src": 1,
+     "said": "Il presente contratto avrà durata triennale con scadenza al 28 febbraio 2027"
+    },
+    {
+     "src": 1,
+     "said": "Interprete, Attrice e Attore, è colei/colui che sia in scena con almeno una battuta realizzi anche una sola interazione/battuta con altro personaggio e che non risulti nell’ambito di applicazione dei CCNL dei Generici e/o degli Stuntman."
+    },
+    {
+     "src": 2,
+     "said": "Il presente Contratto Collettivo Nazionale di Lavoro decorre dal 1° novembre 2024 e si applicherà a tutte le prestazioni che verranno svolte a partire da tale data, ed scadrà il 31 marzo 2027."
+    },
+    {
+     "src": 3,
+     "said": "hanno sottoscritto il primo Contratto Nazionale di lavoro per le attrici ed attori del comparto della produzione cineaudiovisiva"
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "The actors' agreement sets all-inclusive gross minimums per shooting day by group: €1,100 for leads (group 1), €850 for supporting and series regulars (group 2) and €650 for all other speaking parts (group 3), with lower tiers for long series, very long series and low-budget works, and a floor of €325 a day for any industrial production.",
+   "value": {
+    "unit": "EUR gross per shooting day (giornata di posa), all-inclusive",
+    "from": "2024-03-01",
+    "groups": {
+     "1": "protagonisti and episode leads",
+     "2": "comprimari, series regulars, cameos",
+     "3": "all other actors"
+    },
+    "standard": {
+     "1": 1100,
+     "2": 850,
+     "3": 650,
+     "fromEighthDay": {
+      "2": 650,
+      "3": 450
+     }
+    },
+    "longSeries": {
+     "definition": "at least 8 episodes of 50 minutes, from the 8th shooting day",
+     "1": 900,
+     "2": 650,
+     "3": 450
+    },
+    "veryLongSeries": {
+     "definition": "more than 40 episodes of 25 minutes per season",
+     "1": 550,
+     "2": 500,
+     "3": 450
+    },
+    "lowBudget": {
+     "definition": "first and second films and films under EUR 2,000,000, shorts under EUR 750,000, documentaries and docufiction under EUR 500,000 per hour, research and training works (D.L. 70/2021)",
+     "1": 550,
+     "2": 425,
+     "3": 325
+    },
+    "floor": 325,
+    "split": {
+     "payAndContributions": 0.6,
+     "rightsAssignment": 0.4
+    }
+   },
+   "applies": "Italy, CCNL G140 (and its artisan twin G139), shooting days from 1 March 2024 to 28 February 2027; the rates carry no annual step.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "I Gruppo: 1.100,00 € lordi omnicomprensivi per giornata di posa; 2 Gruppo: 850,00 € lordi omnicomprensivi per giornata di posa; 3 Gruppo: 650,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 1,
+     "said": "Per i compensi di cui ai gruppi 2 e 3, il medesimo verrà ridotto rispettivamente a 650,00 E e 450,00 € a partire dalla 8 posa."
+    },
+    {
+     "src": 1,
+     "said": "Per la “Lunga serialità” a partire da 8 episodi da 50 minuti cad., a partire dalla 8 posa, i compensi di"
+    },
+    {
+     "src": 1,
+     "said": "I Gruppo: 900,00 € lordi omnicomprensivi per giornata di posa; 2 Gruppo: 650,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 1,
+     "said": "Per la cd. lunghissima serialità, con numero di episodi per stagione superiore a 40 da 25 minuti, i compensi di cui sopra, saranno rispettivamente pari a: I Gruppo: 550,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 1,
+     "said": "1. Opere cinematografiche di registi debuttanti (opere prime e seconde), nonché con budget inferiore a € 2 milioni. 2. Cortometraggi con budget inferiore a € 750.000,00. 3. Documentari e docufiction con budget inferiore a € 500.000/h (per ciascuna ora di prodotto)."
+    },
+    {
+     "src": 1,
+     "said": "1 Gruppo: 550,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 1,
+     "said": "3 Gruppo: 325,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 1,
+     "said": "Le parti convengono che, comunque, anche per qualsiasi tipologia di prodotto cineaudiovisivo non rientrante nelle specifiche di cui sopra, purché industriale, il compenso minimo di ciascun attore non potrà essere inferiore ad € 325,00."
+    },
+    {
+     "src": 1,
+     "said": "I compensi di cui al presente articolo debbono essere considerati comprensivi sia della quota, pari al 60% di compenso assoggettato a contribuzione e fiscalità, sia del compenso per eventuale cessione dei diritti, pari al 40% esente da contribuzione come da normativa allo stato vigente."
+    },
+    {
+     "src": 1,
+     "said": "gruppo: i protagonisti (uno o più) e protagonisti di puntata; 2. gruppo: comprimari, personaggi fissi delle serie, non protagonisti secondo quanto fissato dal, punto precedente, camei; gruppo: tutti gli altri non previsti ai precedenti punti 1 e 2."
+    },
+    {
+     "src": 2,
+     "said": "1 Gruppo: 1.100,00 € lordi omnicomprensivi per giornata di posa;"
+    },
+    {
+     "src": 2,
+     "said": "potrà essere inferiore ad € 325,00."
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "The same agreement pays rehearsals alone at 50% of the day minimum, a hold between shooting days at 20% of a day's minimum for each whole week without shooting, travel days at 30% of the day minimum, and a child's companion at least €94 a day; it sets no daily hours of its own, but counts make-up and wardrobe as working time and requires 11 hours' rest between calls.",
+   "value": {
+    "unit": "share of the group's day minimum",
+    "rehearsalOnly": 0.5,
+    "availabilityPerWeekWithoutShooting": 0.2,
+    "travelDay": 0.3,
+    "noPostSyncFlat": 0.3,
+    "optionPriceMinShareOfFee": 0.1,
+    "minorCompanionEUR": 94,
+    "restHoursBetweenCalls": 11,
+    "hours": "no daily cap set by the agreement; it refers to Law 66/2003; make-up and wardrobe count as working time"
+   },
+   "applies": "Italy, CCNL G140, from 1 March 2024 to 28 February 2027.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Le sole prove dell’Interprete/Attrice/Attore, quando richieste dalla produzione, verranno retribuite al 50% dei minimi tabellari per la categoria di contrattualizzazione."
+    },
+    {
+     "src": 1,
+     "said": "la disponibilità sarà retribuita con un compenso forfettario per ogni settimana continuativa"
+    },
+    {
+     "src": 1,
+     "said": "in cui non sia effettuata alcuna posa, pari al 20% del minimo contrattuale di una posa riferito al gruppo"
+    },
+    {
+     "src": 1,
+     "said": "Le giornate di viaggio (non in periodo di disponibilità) per raggiungere la località delle riprese saranno retribuite con un compenso pari al 30% dei minimi della giornata di posa in relazione alla propria categoria di appartenenza"
+    },
+    {
+     "src": 1,
+     "said": "un compenso forfettario pari al 30% del compenso contrattuale."
+    },
+    {
+     "src": 1,
+     "said": "All’accompagnatore di minore verrà erogata una indennità pari al minimo 94,00 euro, come previsto dal CCNL dei lavoratori Generici."
+    },
+    {
+     "src": 1,
+     "said": "La normativa riguardante l’orario dovrà tener presente quanto previsto dalla L.66/03. Le parti ribadiscono la necessità di prevedere il riconoscimento di un riposo tra una prestazione e la successiva di almeno 11 ore continuative."
+    },
+    {
+     "src": 1,
+     "said": "I tempi di trucco e vestizione fanno parte dell’orario giornaliero di lavoro."
+    },
+    {
+     "src": 1,
+     "said": "sottoscrizione del contratto individuale, sarà pari almeno al 10% del compenso lordo pattuito"
+    }
+   ]
+  },
+  {
+   "item": "agreements",
+   "finding": "Stage actors are engaged under the CCNL for artistic, technical and administrative staff engaged by the National Theatres, theatres of significant cultural interest, production centres and professional theatre companies, signed on 19 April 2018 by Platea and the theatre associations with AGIS and SLC-CGIL, FISTEL-CISL and UILCOM-UIL; it ran from 1 April 2018 to 31 March 2021 and still applies (renewed tacitly year to year), and on 12 October 2026 the unions, rejecting the employers' offer of a 2027-2029 renewal, called a strike in the sector.",
+   "value": {
+    "name": "CCNL per il personale artistico, tecnico e amministrativo scritturato dai Teatri Nazionali, dai teatri di Rilevante interesse Culturale, dai Centri di produzione e dalle Compagnie teatrali professionali",
+    "cnelCode": "G321",
+    "from": "2018-04-01",
+    "to": "2021-03-31",
+    "tacitRenewal": "year to year unless cancelled three months before expiry",
+    "employers": [
+     "PLATEA",
+     "AIDAP",
+     "ANCRIT",
+     "ANTAC",
+     "ASTRA",
+     "ISP",
+     "AGIS"
+    ],
+    "unions": [
+     "SLC-CGIL",
+     "FISTEL-CISL",
+     "UILCOM-UIL"
+    ],
+    "renewal": {
+     "status": "no renewal as of 2026-11-01; unions proclaimed a strike on 2026-10-12",
+     "employerOffer2026-05-25": "scritturati: +20% diaria, +15% daily pay over three years from October",
+     "unionsReply": "rejected",
+     "employerProposedTerm": "2027-2029"
+    }
+   },
+   "applies": "Italy, actors (scritturati) engaged by theatres and professional companies of prose, dance, musical comedy, revue and operetta.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "G321 | CCNL per il personale artistico, tecnico e amministrativo scritturato dai Teatri Nazionali, dai teatri di Rilevante interesse Culturale, dai Centri di produzione e dalle Compagnie teatrali professionali | PLATEA; AIDAP; ANCRIT; ANTAC; ASTRA; ISP; AGIS | SLC CGIL; FISTEL CISL; UILCOM UIL | 1964-07-31 | 2021-03-31"
+    },
+    {
+     "src": 4,
+     "said": "Salvo quanto diversamente previsto dalle singole disposizioni, il presente contratto decorre dal 1° aprile 2018 e resterà in vigore sino al 31 marzo 2021. Si intenderà tacitamente rinnovato di anno in anno qualora non venga disdetto da una delle parti con lettera raccomandata almeno tre mesi prima della scadenza."
+    },
+    {
+     "src": 4,
+     "said": "Il presente contratto si applica agli scritturati dai teatri nonché dalle compagnie professionali teatrali di prosa, danza, commedia musicale, rivista ed operetta."
+    },
+    {
+     "src": 5,
+     "said": "la Federazione dello Spettacolo dal vivo (FEDERVIVO), insieme a PLATEA, AIDAP, ANCRIT, ANTAC, ASTRA, ISP, ossia le associazioni di categoria della prosa e della danza, hanno firmato con le segreterie generali e nazionali di SLC-CGIL, FISTEL-CISL e UILCOM-UIL il rinnovo del Contratto Collettivo Nazionale dei dipendenti dei Teatri e del Contratto Collettivo Nazionale degli artisti, tecnici e amministrativi scritturati."
+    },
+    {
+     "src": 6,
+     "said": "ha analizzato e valutato lo stato di avanzamento della trattativa del rinnovo del CCNL dopo circa 5 anni dalla scadenza e più di un anno dall’apertura del confronto al tavolo."
+    },
+    {
+     "src": 7,
+     "said": "per gli scritturati un aumento del 20% sulla diaria e del 15% sulla paga giornaliera, sempre nell'arco di un triennio a partire da ottobre."
+    },
+    {
+     "src": 8,
+     "said": "È necessario ricordare che il CCNL è scaduto nell'aprile 2021 e che, considerando la vigenza contrattuale proposta dalla controparte per il triennio 2027-2029, si arriverebbe a coprire un arco temporale di quasi nove anni"
+    },
+    {
+     "src": 8,
+     "said": "SLC CGIL, FISTel CISL e UILFPC-UIL stante lo stato di agitazione già in atto, proclamano lo sciopero del settore."
+    }
+   ]
+  },
+  {
+   "item": "rates",
+   "finding": "The stage agreement's daily minimum for an actor (category b) is €58.69 from 1 January 2020, paid with a 24% indemnity of €14.09 in place of severance, holidays and extra months, €72.78 a day in all; a student actor's is €59.32 in all; an actor's ordinary hours average 39 a week and 169 a month, up to 8 performances a week, with at least 21 rehearsal days for a new production.",
+   "value": {
+    "unit": "EUR per day",
+    "categories": {
+     "a": "stage manager, assistant director",
+     "b": "actor, dancer, chorister, mime, orchestra player, heads of department, light designer",
+     "c": "assistant director, administration, props, wardrobe, wigs and make-up, prompter, technicians",
+     "d": "student actor",
+     "e": "student technician"
+    },
+    "2018-04-01": {
+     "b": {
+      "minimum": 55.02,
+      "indemnity24": 13.2,
+      "total": 68.22
+     },
+     "d": {
+      "minimum": 44.85,
+      "indemnity24": 10.76,
+      "total": 55.61
+     }
+    },
+    "2019-01-01": {
+     "b": {
+      "minimum": 56.59,
+      "indemnity24": 13.58,
+      "total": 70.17
+     },
+     "d": {
+      "minimum": 46.13,
+      "indemnity24": 11.07,
+      "total": 57.2
+     }
+    },
+    "2020-01-01": {
+     "a": {
+      "total": 74.3
+     },
+     "b": {
+      "minimum": 58.69,
+      "indemnity24": 14.09,
+      "total": 72.78
+     },
+     "c": {
+      "total": 71.1
+     },
+     "d": {
+      "minimum": 47.84,
+      "indemnity24": 11.48,
+      "total": 59.32
+     },
+     "e": {
+      "total": 53.05
+     }
+    },
+    "rehearsalPay": "at least the day minimum plus 65% of the difference between it and the agreed daily fee",
+    "hours": {
+     "weeklyAverage": 39,
+     "monthlyAverage": 169,
+     "rehearsalOnlyWeekMax": 48,
+     "dayMax": 8,
+     "maxPerformancesPerWeek": 8
+    },
+    "minRehearsalDaysNewProduction": 21,
+    "touringAllowanceItalyEUR": 107
+   },
+   "applies": "Italy, CCNL G321 scritturati, rates in force from 1 January 2020 and still paid as of 12 October 2026 (the unions put a mid-level scritturato's daily minimum at just over 71 euros gross), until the agreement is renewed.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Minimi giornalieri dal 1° Gennaio 2020"
+    },
+    {
+     "src": 4,
+     "said": "d'orchestra; Capo Macchinista; Capo Elettricista; Capo 58,69 14,09 72,78"
+    },
+    {
+     "src": 4,
+     "said": "d) Allievo Attore 47,84 11,48 59,32"
+    },
+    {
+     "src": 4,
+     "said": "d'orchestra; Capo Macchinista; Capo Elettricista; Capo 55,02 13,20 68,22"
+    },
+    {
+     "src": 4,
+     "said": "d'orchestra; Capo Macchinista; Capo Elettricista; Capo 56,59 13,58 70,17"
+    },
+    {
+     "src": 4,
+     "said": "a) Direttore di scena; Aiuto Regista 59,92 14,38 74,30"
+    },
+    {
+     "src": 4,
+     "said": "e) Allievo Tecnico 42,78 10,26 53,05"
+    },
+    {
+     "src": 4,
+     "said": "dell’attore è mediamente di 169 ore mensili e di 39 ore medie settimanali con un massimo, in regime ordinario di lavoro:"
+    },
+    {
+     "src": 4,
+     "said": "di 48 ore settimanali e 8 ore giornaliere nell'ipotesi di due prestazioni"
+    },
+    {
+     "src": 4,
+     "said": "per prove, spettacoli per un massimo di 8 recite settimanali"
+    },
+    {
+     "src": 4,
+     "said": "individuano in un minimo di 21 giornate di prove per gli spettacoli di nuova produzione il pacchetto necessario al conseguimento dell’obbiettivo."
+    },
+    {
+     "src": 4,
+     "said": "Per il periodo delle prove gli scritturati dei teatri e delle imprese di produzione percepiranno un compenso giornaliero non inferiore al minimo giornaliero previsto dal presente CCNL più il 65% della eventuale differenza tra il minimo di cui sopra e il compenso giornaliero pattuito nel contratto individuale."
+    },
+    {
+     "src": 4,
+     "said": "b) una indennità di trasferta in cifra fissa di €. 107,00 (€. 57,00 pernottamento, €. 25,00 per un pasto, €. 25,00 per un altro pasto);"
+    },
+    {
+     "src": 7,
+     "said": "per gli scritturati, categoria B, si attesterebbe ad un mero importo di 11 euro complessivi di aumento nel triennio."
+    },
+    {
+     "src": 8,
+     "said": "la paga minima giornaliera degli Scritturati, prendendo a riferimento un livello medio, supera di poco i 71 euro lordi, comprensivi del salario accessorio."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Actors are represented by the confederal unions that sign the agreements, chiefly SLC-CGIL (whose statute names actors among its members and which keeps an actors' section) with FISTEL-CISL and UILCOM-UIL; membership is free under the Constitution and the agreements apply by role, not by card, and CGIL membership is joined by signing a payroll deduction form at work or at any Camera del Lavoro, costing as a rule under 1% of pay.",
+   "value": {
+    "unions": [
+     "SLC-CGIL (Sezione Attori Italiani)",
+     "FISTEL-CISL",
+     "UILCOM-UIL"
+    ],
+    "membershipRequired": false,
+    "join": "sign the membership delegation with a CGIL workplace representative or at a Camera del Lavoro, INCA, CAAF or other CGIL office",
+    "fee": "payroll deduction, as a rule less than 1% of pay"
+   },
+   "applies": "Italy, all actors engaged under CCNL G140, G139 and G321.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "L'organizzazione sindacale è libera"
+    },
+    {
+     "src": 1,
+     "said": "Per tutte le suddette figure è previsto il contratto subordinato a tempo determinato."
+    },
+    {
+     "src": 10,
+     "said": "gli Attori,"
+    },
+    {
+     "src": 11,
+     "said": "Sezione Attori Italiani"
+    },
+    {
+     "src": 12,
+     "said": "Per iscriversi è sufficiente rivolgersi sul luogo di lavoro ai rappresentanti sindacali CGIL, chiedendo di firmare la delega d’adesione. Oppure vai in una Camera del Lavoro, Patronato INCA, nei Centri di assistenza fiscale (CAAF), Uffici Vertenze o presso le Leghe del Sindacato Pensionati Italiani."
+    },
+    {
+     "src": 12,
+     "said": "La tessera della CGIL si paga con trattenuta sindacale in busta paga calcolata con diversi fattori. In linea di massima è meno dell’1% della tua busta paga."
+    },
+    {
+     "src": 13,
+     "said": "La formulazione della piattaforma rivendicativa è stata il prodotto di un complesso lavoro collettivo che ha coinvolto attrici ed attori iscritti e ,nella fase iniziale, anche non iscritti al sindacato."
+    }
+   ]
+  },
+  {
+   "item": "language",
+   "finding": "Italian film and television is cast and shot in Italian: the state's test for an Italian work awards points for direct sound recorded wholly or mainly in Italian or Italian dialects (recognised minority languages count as Italian where the story needs them).",
+   "value": {
+    "language": "Italian",
+    "alsoCounted": [
+     "Italian dialects",
+     "minority languages of Law 482/1999 where narratively needed"
+    ],
+    "points": 5,
+    "of": "Tabella A, minimum 70 points for Italian nationality"
+   },
+   "applies": "Italy, Italian-nationality films and audiovisual works under DPCM 11 July 2017 (as amended 2021), the gateway to state support.",
+   "sources": [
+    {
+     "src": 14,
+     "said": "c) ripresa sonora diretta integralmente o principalmente in lingua italiana o in dialetti italiani."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Most Italian film and audiovisual companies are in Lazio, Rome's region (23.6% of core firms in 2022, about 1,903), ahead of Lombardy (19.1%).",
+   "value": {
+    "city": "Rome",
+    "region": "Lazio",
+    "shareOfCoreFirms2022": 0.236,
+    "coreFirms": 1903,
+    "second": {
+     "region": "Lombardia",
+     "share": 0.191
+    }
+   },
+   "applies": "Italy, film and audiovisual 'core' firms, 2022 (Valutazione di impatto della Legge Cinema e Audiovisivo, anno 2022).",
+   "sources": [
+    {
+     "src": 15,
+     "said": "resta, invece, invariata la distribuzione sul territorio regionale che vede una prevalenza di imprese Core nel Lazio (23,6%) e in Lombardia (19,1%)."
+    },
+    {
+     "src": 15,
+     "said": "il Lazio pur rappresentando il territorio con il maggior numero di imprese Core (1.903)"
+    }
+   ]
+  }
+ ],
+ "country": "IT",
+ "sources": [
+  {
+   "url": "https://www.cnel.it/media/docs/default-source/archivio-contratti---cartelle-excel/ccnl-di-settore-vigenti-e-ultrattivi.xlsx?sfvrsn=eb19a03c_13",
+   "title": "CNEL, Archivio nazionale dei contratti collettivi: CCNL di settore vigenti e ultrattivi (spreadsheet saved as IT-cnel-ccnl-vigenti.xlsx, quoted from its text copy IT-cnel-ccnl-vigenti.txt: one row per line, cells joined with ' | ', dates as YYYY-MM-DD)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "G140 | CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo | ANICA; APA; APE | SLC CGIL; FISTEL CISL; UILCOM UIL | 2023-12-20 | 2027-02-28 … G139 | CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo | CONFARTIGIANATO Cinema e Audiovisivo; CONFARTIGIANATO; CNA Cinema e Audiovisivo; CNA; CASARTIGIANI; CLAAI | SLC CGIL; FISTEL CISL; UILCOM UIL | 2024-10-28 | 2027-03-31 … G321 | CCNL per il personale artistico, tecnico e amministrativo scritturato dai Teatri Nazionali, dai teatri di Rilevante interesse Culturale, dai Centri di produzione e dalle Compagnie teatrali professionali | PLATEA; AIDAP; ANCRIT; ANTAC; ASTRA; ISP; AGIS | SLC CGIL; FISTEL CISL; UILCOM UIL | 1964-07-31 | 2021-03-31"
+  },
+  {
+   "url": "https://www.fistelcisl.it/wp-content/uploads/2023/12/CCNL-ATTORI-20-dicembre-2023.pdf",
+   "title": "FISTEL-CISL (signatory): CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo, signed text of 20 December 2023 (scan, OCR checked against the page image), heading",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo. … ambito di applicazione del presente, quindi, attiene al comparto della produzione e realizzazione di opere cineaudiovisive, aventi contenuto creativo, siano esse destinate alla distribuzione e proiezione in sala, ovvero anche su canali televisivi, siano essi privati, pubblici, streamer ecc. … Il presente Contratto Collettivo Nazionale di Lavoro decorre dal 01 marzo 2024 e verrà applicato per i contratti sottoscritti dagli interpreti/attrici/attori da tale data. … Il presente contratto avrà durata triennale con scadenza al 28 febbraio 2027 … Interprete, Attrice e Attore, è colei/colui che sia in scena con almeno una battuta realizzi anche una sola interazione/battuta con altro personaggio e che non risulti nell’ambito di applicazione dei CCNL dei Generici e/o degli Stuntman. … I Gruppo: 1.100,00 € lordi omnicomprensivi per giornata di posa; 2 Gruppo: 850,00 € lordi omnicomprensivi per giornata di posa; 3 Gruppo: 650,00 € lordi omnicomprensivi per giornata di posa; … Per i compensi di cui ai gruppi 2 e 3, il medesimo verrà ridotto rispettivamente a 650,00 E e 450,00 € a partire dalla 8 posa. … Per la “Lunga serialità” a partire da 8 episodi da 50 minuti cad., a partire dalla 8 posa, i compensi di … I Gruppo: 900,00 € lordi omnicomprensivi per giornata di posa; 2 Gruppo: 650,00 € lordi omnicomprensivi per giornata di posa; … Per la cd. lunghissima serialità, con numero di episodi per stagione superiore a 40 da 25 minuti, i compensi di cui sopra, saranno rispettivamente pari a: I Gruppo: 550,00 € lordi omnicomprensivi per giornata di posa; … 1. Opere cinematografiche di registi debuttanti (opere prime e seconde), nonché con budget inferiore a € 2 milioni. 2. Cortometraggi con budget inferiore a € 750.000,00. 3. Documentari e docufiction con budget inferiore a € 500.000/h (per ciascuna ora di prodotto). … 1 Gruppo: 550,00 € lordi omnicomprensivi per giornata di posa; … 3 Gruppo: 325,00 € lordi omnicomprensivi per giornata di posa; … Le parti convengono che, comunque, anche per qualsiasi tipologia di prodotto cineaudiovisivo non rientrante nelle specifiche di cui sopra, purché industriale, il compenso minimo di ciascun attore non potrà essere inferiore ad € 325,00. … I compensi di cui al presente articolo debbono essere considerati comprensivi sia della quota, pari al 60% di compenso assoggettato a contribuzione e fiscalità, sia del compenso per eventuale cessione dei diritti, pari al 40% esente da contribuzione come da normativa allo stato vigente. … gruppo: i protagonisti (uno o più) e protagonisti di puntata; 2. gruppo: comprimari, personaggi fissi delle serie, non protagonisti secondo quanto fissato dal, punto precedente, camei; gruppo: tutti gli altri non previsti ai precedenti punti 1 e 2. … Le sole prove dell’Interprete/Attrice/Attore, quando richieste dalla produzione, verranno retribuite al 50% dei minimi tabellari per la categoria di contrattualizzazione. … la disponibilità sarà retribuita con un compenso forfettario per ogni settimana continuativa … in cui non sia effettuata alcuna posa, pari al 20% del minimo contrattuale di una posa riferito al gruppo … Le giornate di viaggio (non in periodo di disponibilità) per raggiungere la località delle riprese saranno retribuite con un compenso pari al 30% dei minimi della giornata di posa in relazione alla propria categoria di appartenenza … un compenso forfettario pari al 30% del compenso contrattuale. … All’accompagnatore di minore verrà erogata una indennità pari al minimo 94,00 euro, come previsto dal CCNL dei lavoratori Generici. … La normativa riguardante l’orario dovrà tener presente quanto previsto dalla L.66/03. Le parti ribadiscono la necessità di prevedere il riconoscimento di un riposo tra una prestazione e la successiva di almeno 11 ore continuative. … I tempi di trucco e vestizione fanno parte dell’orario giornaliero di lavoro. … sottoscrizione del contratto individuale, sarà pari almeno al 10% del compenso lordo pattuito … Per tutte le suddette figure è previsto il contratto subordinato a tempo determinato."
+  },
+  {
+   "url": "https://www.fistelcisl.it/wp-content/uploads/2024/11/CCNL-ATTORI-28-OTTOBRE-2024.pdf",
+   "title": "FISTEL-CISL (signatory): CCNL per Interpreti, Attrici ed Attori del comparto di produzione del cineaudiovisivo with Confartigianato, CNA, Casartigiani and CLAAI, signed text of 28 October 2024 (scan, OCR checked against the page image), Art. 19",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Il presente Contratto Collettivo Nazionale di Lavoro decorre dal 1° novembre 2024 e si applicherà a tutte le prestazioni che verranno svolte a partire da tale data, ed scadrà il 31 marzo 2027. … 1 Gruppo: 1.100,00 € lordi omnicomprensivi per giornata di posa; … potrà essere inferiore ad € 325,00."
+  },
+  {
+   "url": "https://www.uilcom.it/wp-content/uploads/2023/08/NOTA-INTERNA-SIGLATO-CCNL-ATTRICI-E-ATTORI.pdf",
+   "title": "UILCOM-UIL: Nota interna, Dopo il contratto doppiaggio, firmato il contratto delle attrici e degli attori (2 August 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "hanno sottoscritto il primo Contratto Nazionale di lavoro per le attrici ed attori del comparto della produzione cineaudiovisiva"
+  },
+  {
+   "url": "https://www.fistelcisl.it/wp-content/uploads/2020/09/Teatri-Ccnl-Artisti-Impiegati-Tecnici-Teatri-Stabili-e-Compagnie-di-Giro-S.19.04.2018.pdf",
+   "title": "FISTEL-CISL (signatory): CCNL per il personale artistico, tecnico e amministrativo scritturato dai Teatri Nazionali, dai Teatri di Rilevante Interesse Culturale, dai Centri di produzione e dalle Compagnie teatrali professionali, signed text of 19 April 2018 (scan, OCR checked against the page image), Art. 30",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Salvo quanto diversamente previsto dalle singole disposizioni, il presente contratto decorre dal 1° aprile 2018 e resterà in vigore sino al 31 marzo 2021. Si intenderà tacitamente rinnovato di anno in anno qualora non venga disdetto da una delle parti con lettera raccomandata almeno tre mesi prima della scadenza. … Il presente contratto si applica agli scritturati dai teatri nonché dalle compagnie professionali teatrali di prosa, danza, commedia musicale, rivista ed operetta. … Minimi giornalieri dal 1° Gennaio 2020 … d'orchestra; Capo Macchinista; Capo Elettricista; Capo 58,69 14,09 72,78 … d) Allievo Attore 47,84 11,48 59,32 … d'orchestra; Capo Macchinista; Capo Elettricista; Capo 55,02 13,20 68,22 … d'orchestra; Capo Macchinista; Capo Elettricista; Capo 56,59 13,58 70,17 … a) Direttore di scena; Aiuto Regista 59,92 14,38 74,30 … e) Allievo Tecnico 42,78 10,26 53,05 … dell’attore è mediamente di 169 ore mensili e di 39 ore medie settimanali con un massimo, in regime ordinario di lavoro: … di 48 ore settimanali e 8 ore giornaliere nell'ipotesi di due prestazioni … per prove, spettacoli per un massimo di 8 recite settimanali … individuano in un minimo di 21 giornate di prove per gli spettacoli di nuova produzione il pacchetto necessario al conseguimento dell’obbiettivo. … Per il periodo delle prove gli scritturati dei teatri e delle imprese di produzione percepiranno un compenso giornaliero non inferiore al minimo giornaliero previsto dal presente CCNL più il 65% della eventuale differenza tra il minimo di cui sopra e il compenso giornaliero pattuito nel contratto individuale. … b) una indennità di trasferta in cifra fissa di €. 107,00 (€. 57,00 pernottamento, €. 25,00 per un pasto, €. 25,00 per un altro pasto);"
+  },
+  {
+   "url": "https://www.fiscoetasse.com/rassegna-stampa/25056-ccnl-teatri-firmati-i-rinnovi-.html",
+   "title": "FiscoeTasse: CCNL Teatri, firmati i rinnovi (2018) (quoting: the signatories' joint statement)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.fistelcisl.it/wp-content/uploads/2020/09/Teatri-Ccnl-Artisti-Impiegati-Tecnici-Teatri-Stabili-e-Compagnie-di-Giro-S.19.04.2018.pdf",
+   "said": "la Federazione dello Spettacolo dal vivo (FEDERVIVO), insieme a PLATEA, AIDAP, ANCRIT, ANTAC, ASTRA, ISP, ossia le associazioni di categoria della prosa e della danza, hanno firmato con le segreterie generali e nazionali di SLC-CGIL, FISTEL-CISL e UILCOM-UIL il rinnovo del Contratto Collettivo Nazionale dei dipendenti dei Teatri e del Contratto Collettivo Nazionale degli artisti, tecnici e amministrativi scritturati."
+  },
+  {
+   "url": "https://www.fistelcisl.it/wp-content/uploads/2026/03/Comunicato-incontro-Federvivo-2-marzo-2026.pdf",
+   "title": "SLC-CGIL, FISTEL-CISL, UILCOM-UIL: Comunicato unitario, Incontro Federvivo 2 marzo, CCNL Teatro (Rome, 5 March 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ha analizzato e valutato lo stato di avanzamento della trattativa del rinnovo del CCNL dopo circa 5 anni dalla scadenza e più di un anno dall’apertura del confronto al tavolo."
+  },
+  {
+   "url": "https://www.uilcom.it/wp-content/uploads/2026/05/20260527-Comunicato-unitario-incontro-rinnovo-CCNL-Teatri-di-Prosa.pdf",
+   "title": "SLC, FISTEL, UILFPC: Comunicato unitario, Rinnovo CCNL Teatri di Prosa (Rome, 27 May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "per gli scritturati un aumento del 20% sulla diaria e del 15% sulla paga giornaliera, sempre nell'arco di un triennio a partire da ottobre. … per gli scritturati, categoria B, si attesterebbe ad un mero importo di 11 euro complessivi di aumento nel triennio."
+  },
+  {
+   "url": "https://www.uilcom.it/wp-content/uploads/2026/10/Comunicato-Teatri-12-ottobre-2026.pdf",
+   "title": "SLC-CGIL, FISTEL-CISL, UILFPC-UIL (signatories): Comunicato unitario, Rinnovo CCNL Teatri e Scritturati (Rome, 12 October 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "È necessario ricordare che il CCNL è scaduto nell'aprile 2021 e che, considerando la vigenza contrattuale proposta dalla controparte per il triennio 2027-2029, si arriverebbe a coprire un arco temporale di quasi nove anni … SLC CGIL, FISTel CISL e UILFPC-UIL stante lo stato di agitazione già in atto, proclamano lo sciopero del settore. … la paga minima giornaliera degli Scritturati, prendendo a riferimento un livello medio, supera di poco i 71 euro lordi, comprensivi del salario accessorio."
+  },
+  {
+   "url": "https://www.senato.it/istituzione/la-costituzione/parte-i/titolo-iii/articolo-39",
+   "title": "Senato della Repubblica: Costituzione, Articolo 39",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L'organizzazione sindacale è libera"
+  },
+  {
+   "url": "https://slc-cgil.it/images/new_x_sito-statuto_SLC_bozza_revisioni_adeguamento_2023.pdf",
+   "title": "SLC-CGIL: Statuto (bozza revisioni adeguamento 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "gli Attori,"
+  },
+  {
+   "url": "https://www.slc-cgil.it/wp-content/uploads/2014/12/Comunicato-stampa-SAI_09-12-2014.pdf",
+   "title": "SLC-CGIL Sezione Attori Italiani: Comunicato stampa (9 December 2014)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sezione Attori Italiani"
+  },
+  {
+   "url": "https://lazio.cgil.it/aderisci/",
+   "title": "CGIL Roma e Lazio: Aderisci (Perché aderire alla Cgil)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Per iscriversi è sufficiente rivolgersi sul luogo di lavoro ai rappresentanti sindacali CGIL, chiedendo di firmare la delega d’adesione. Oppure vai in una Camera del Lavoro, Patronato INCA, nei Centri di assistenza fiscale (CAAF), Uffici Vertenze o presso le Leghe del Sindacato Pensionati Italiani. … La tessera della CGIL si paga con trattenuta sindacale in busta paga calcolata con diversi fattori. In linea di massima è meno dell’1% della tua busta paga."
+  },
+  {
+   "url": "https://www.slc-cgil.it/images/20240105-CS_CCNL_Attori_nota_unitaria.pdf",
+   "title": "SLC-CGIL, FISTEL-CISL, UILCOM-UIL: Comunicato stampa, Contratto attori (dated 'Roma, 5 gennaio 2023' on the page; file 20240105)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La formulazione della piattaforma rivendicativa è stata il prodotto di un complesso lavoro collettivo che ha coinvolto attrici ed attori iscritti e ,nella fase iniziale, anche non iscritti al sindacato."
+  },
+  {
+   "url": "https://cinema.cultura.gov.it/wp-content/uploads/2022/03/CONSOLIDATO_DPCM_11-luglio2017.pdf",
+   "title": "MiC DG Cinema e Audiovisivo: DPCM 11 luglio 2017, consolidated text with the 2021 amendments (the ministry notes the consolidation has no legal value; the decree is in the Gazzetta Ufficiale)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "c) ripresa sonora diretta integralmente o principalmente in lingua italiana o in dialetti italiani."
+  },
+  {
+   "url": "https://cinema.cultura.gov.it/download/33341",
+   "title": "MiC DG Cinema e Audiovisivo / Università Cattolica: Valutazione di impatto della Legge Cinema e Audiovisivo, Anno 2022",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "resta, invece, invariata la distribuzione sul territorio regionale che vede una prevalenza di imprese Core nel Lazio (23,6%) e in Lombardia (19,1%). … il Lazio pur rappresentando il territorio con il maggior numero di imprese Core (1.903)"
+  }
+ ],
+ "blockers": []
+}

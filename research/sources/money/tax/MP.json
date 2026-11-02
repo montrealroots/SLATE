@@ -1,0 +1,199 @@
+{
+ "topic": "tax.MP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Northern Mariana Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "The CNMI's income tax (the NMTIT) is built on the same tax laws and rates as the United States, filed with the CNMI Division of Revenue and Taxation, plus local taxes; a bona fide resident files one return, with the CNMI, on worldwide income.",
+   "value": {
+    "follows": "US",
+    "administeredBy": "CNMI Division of Revenue and Taxation",
+    "localTaxes": [
+     "wage and salary tax",
+     "earnings tax",
+     "business gross revenue tax"
+    ]
+   },
+   "applies": "Bona fide residents of the CNMI",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The CNMI has its own tax system based partly on the same tax laws and tax rates that apply to the United States and partly on local taxes imposed by the CNMI government. … If you are a U.S. citizen, resident alien, or nonresident alien and a bona fide resident of the CNMI during the tax year, file your income tax return with the CNMI. Include income from worldwide sources on your CNMI return."
+    }
+   ]
+  },
+  {
+   "item": "regional",
+   "finding": "On top, the CNMI charges a wage and salary tax (and an earnings tax on self-employment) on annual amounts: nothing to $1,000, then 2% to $5,000, 3%, 4%, 5%, 6%, 7%, 8% and 9% above $50,000, each rate applied to the whole amount; it is credited against the NMTIT on CNMI-source income.",
+   "value": {
+    "currency": "USD",
+    "appliedTo": "whole amount at the rate of its band",
+    "table": [
+     {
+      "from": 0,
+      "to": 1000,
+      "rate": 0
+     },
+     {
+      "from": 1000,
+      "to": 5000,
+      "rate": 0.02
+     },
+     {
+      "from": 5000,
+      "to": 7000,
+      "rate": 0.03
+     },
+     {
+      "from": 7000,
+      "to": 15000,
+      "rate": 0.04
+     },
+     {
+      "from": 15000,
+      "to": 22000,
+      "rate": 0.05
+     },
+     {
+      "from": 22000,
+      "to": 30000,
+      "rate": 0.06
+     },
+     {
+      "from": 30000,
+      "to": 40000,
+      "rate": 0.07
+     },
+     {
+      "from": 40000,
+      "to": 50000,
+      "rate": 0.08
+     },
+     {
+      "from": 50000,
+      "to": null,
+      "rate": 0.09
+     }
+    ],
+    "creditAgainstNMTIT": true
+   },
+   "applies": "Wages and self-employment earnings, 2025",
+   "sources": [
+    {
+     "src": 1,
+     "said": "From To Rate (a) 0 1,000.00 0 (b) 1,000.01 5,000.00 2.0% (c) 5,000.01 7,000.00 3.0% (d) 7,000.01 15,000.00 4.0% (e) 15,000.01 22,000.00 5.0% (f) 22,000.01 30,000.00 6.0% (g) 30,000.01 40,000.00 7.0% (h) 40,000.01 50,000.00 8.0% (i) 50,000.01 And over 9.0% 2025 1. Annual Wage and Salary Tax - Part A, Line 6. Multiply the amount on line 5 by the applicable tax rate. 2. Annual Earnings Tax - Part B, Line 8. Multiply the amount on line 7 by the applicable tax rate."
+    },
+    {
+     "src": 1,
+     "said": "1 Wage and salary tax and earnings tax. Enter the amount from line 4, Part C of Form NMI-A . . . 1"
+    }
+   ]
+  },
+  {
+   "item": "credits",
+   "finding": "NMTIT on CNMI-source income, after those local taxes are credited, is rebated: 90% of a rebate base up to $20,000, $18,000 plus 70% of the excess to $100,000, and $74,000 plus 50% above.",
+   "value": {
+    "currency": "USD",
+    "rebate": [
+     {
+      "from": 0,
+      "to": 20000,
+      "rate": 0.9
+     },
+     {
+      "from": 20000,
+      "to": 100000,
+      "rate": 0.7,
+      "plus": 18000
+     },
+     {
+      "from": 100000,
+      "to": null,
+      "rate": 0.5,
+      "plus": 74000
+     }
+    ]
+   },
+   "applies": "Tax year 2025",
+   "sources": [
+    {
+     "src": 1,
+     "said": "REBATE TABLE If rebate base (line 10) is The rebate offset amount is Example Not over $20,000 90% of the rebate base Rebate base x 90% $20,001 - $100,000 $18,000 plus 70% of the rebate base over $20,000 Rebate base - $20,000 x 70% + $18,000 Over $100,000 $74,000 plus 50% of the rebate base over $100,000 Rebate base - $100,000 x 50% + $74,000"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Self-employment income connected with a CNMI business is reported to the United States on Form 1040-SS for self-employment tax, so US social security applies.",
+   "value": {
+    "follows": "US",
+    "form": "1040-SS"
+   },
+   "applies": "Self-employed with CNMI business income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Self-employment tax. If you have no U.S. filing requirement, but have income that is effectively connected with a trade or business in the CNMI, you must file Form 1040-SS with the United States to report your self-employment income and, if necessary, pay self-employment tax."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year and the 2025 return is due by 15 April 2026.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-15"
+   },
+   "applies": "Tax year 2025",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Deadline: APRIL 15, 2026 Page 4"
+    }
+   ]
+  }
+ ],
+ "country": "MP",
+ "sources": [
+  {
+   "url": "https://www.irs.gov/publications/p570",
+   "title": "IRS Publication 570 (2025), Tax Guide for Individuals With Income From U.S. Territories",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The CNMI has its own tax system based partly on the same tax laws and tax rates that apply to the United States and partly on local taxes imposed by the CNMI government. … If you are a U.S. citizen, resident alien, or nonresident alien and a bona fide resident of the CNMI during the tax year, file your income tax return with the CNMI. Include income from worldwide sources on your CNMI return. … Self-employment tax. If you have no U.S. filing requirement, but have income that is effectively connected with a trade or business in the CNMI, you must file Form 1040-SS with the United States to report your self-employment income and, if necessary, pay self-employment tax."
+  },
+  {
+   "url": "https://www.finance.gov.mp/division-forms/revenue-taxation/2025/f1040cm--2025.pdf",
+   "title": "CNMI Form 1040CM package 2025 (Form NMI-A, Schedule OS-3405A), Division of Revenue and Taxation",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "From To Rate (a) 0 1,000.00 0 (b) 1,000.01 5,000.00 2.0% (c) 5,000.01 7,000.00 3.0% (d) 7,000.01 15,000.00 4.0% (e) 15,000.01 22,000.00 5.0% (f) 22,000.01 30,000.00 6.0% (g) 30,000.01 40,000.00 7.0% (h) 40,000.01 50,000.00 8.0% (i) 50,000.01 And over 9.0% 2025 1. Annual Wage and Salary Tax - Part A, Line 6. Multiply the amount on line 5 by the applicable tax rate. 2. Annual Earnings Tax - Part B, Line 8. Multiply the amount on line 7 by the applicable tax rate. … 1 Wage and salary tax and earnings tax. Enter the amount from line 4, Part C of Form NMI-A . . . 1 … REBATE TABLE If rebate base (line 10) is The rebate offset amount is Example Not over $20,000 90% of the rebate base Rebate base x 90% $20,001 - $100,000 $18,000 plus 70% of the rebate base over $20,000 Rebate base - $20,000 x 70% + $18,000 Over $100,000 $74,000 plus 50% of the rebate base over $100,000 Rebate base - $100,000 x 50% + $74,000 … Deadline: APRIL 15, 2026 Page 4"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "How a non-resident performer's CNMI-source fee is taxed (NMTIT non-resident withholding and wage and salary tax).",
+   "tried": {
+    "institution": "finance.gov.mp forms read; Form 1040NRCM listed but not read || 2026-11-01 retry: finance.gov.mp answers (HTTP 200); cnmidof.net returns a 114-byte page; the BGRT rate table and the 1040NRCM instructions were not located on finance.gov.mp this turn",
+    "official-register": "CNMI Code 4 CMC not fetched || 2026-11-01 retry: cnmilaw.org (CNMI Law Revision Commission) answers; 4 CMC titles not searched for want of a search engine",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "not found || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Business gross revenue tax rates that fall on a freelancer's CNMI receipts (in place of VAT).",
+   "tried": {
+    "institution": "finance.gov.mp: BGRT named on Schedule OS-3405A, rate table not found || 2026-11-01 retry: finance.gov.mp answers (HTTP 200); cnmidof.net returns a 114-byte page; the BGRT rate table and the 1040NRCM instructions were not located on finance.gov.mp this turn",
+    "official-register": "4 CMC § 1301 not fetched || 2026-11-01 retry: cnmilaw.org (CNMI Law Revision Commission) answers; 4 CMC titles not searched for want of a search engine",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "not found || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

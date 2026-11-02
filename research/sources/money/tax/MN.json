@@ -1,0 +1,278 @@
+{
+ "topic": "tax.MN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mongolia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's annual employment income is taxed at 10% to MNT 120 million, then MNT 12 million plus 15% to 180 million, then MNT 21 million plus 20% above; there is no regional layer.",
+   "value": {
+    "currency": "MNT",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 120000000,
+      "rate": 0.1
+     },
+     {
+      "from": 120000000,
+      "to": 180000000,
+      "rate": 0.15
+     },
+     {
+      "from": 180000000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "allowance": null,
+    "regional": null
+   },
+   "applies": "Salaries, wages and similar employment income of residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual taxable income (MNT) Applicable tax rate (%) Residents Non-residents 0 to 120 million 10 20 120 million to 180 million MNT 12 million plus 15% on income exceeding MNT 120 million 20 More than 180 million MNT 21 million plus 20% on income exceeding MNT 180 million 20"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; an individual's tax form, and the employer's year-to-date report, are due by 15 February of the next year; withheld tax is paid by the 10th of the next month.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "02-15"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Income should be reported on an individual tax form and submitted to the tax authority by 15 February of the following year."
+    },
+    {
+     "src": 1,
+     "said": "The tax agent (i.e. employer) should transfer the tax withheld from a taxpayer’s income to the budget by the tenth day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employees, foreign ones included, pay social insurance of 11.5% (8.5% pension, 0.8% benefits, 2% health, 0.2% unemployment) on pay up to MNT 910,800 a month; the employer pays 12.5% to 14.5% depending on industry and position.",
+   "value": {
+    "currency": "MNT",
+    "employee": {
+     "total": 0.115,
+     "pension": 0.085,
+     "benefit": 0.008,
+     "health": 0.02,
+     "unemployment": 0.002,
+     "ceilingMonthly": 910800
+    },
+    "employer": {
+     "min": 0.125,
+     "max": 0.145,
+     "pension": 0.085,
+     "benefit": 0.01,
+     "health": 0.02,
+     "unemployment": 0.005,
+     "accident": [
+      0.005,
+      0.015,
+      0.025
+     ]
+    }
+   },
+   "applies": "Employees under contract in Mongolia",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Currently, the employer’s contribution varies from 12.5% to 14.5%, depending on the industry and job position of the employees, while the employee’s contributions are taxed at a rate of 11.5%, capped at MNT 910,800 per month (exceptions apply)."
+    },
+    {
+     "src": 2,
+     "said": "Social insurance tax Employer rate (%) Employee rate (%) Pension insurance 8.5 8.5 Benefit insurance 1.0 0.8 Health insurance 2.0 2.0 Unemployment insurance 0.5 0.2 Industrial accident and occupational disease insurance 0.5, 1.5, 2.5 0"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A Mongolian employer reports, withholds and pays the employee's income tax; where there is no Mongolian employer the individual does so.",
+   "value": {
+    "employee": "employer withholds progressive rates",
+    "noLocalEmployer": "self-reporting"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "if an employee (local or expatriate) receives employment income from a Mongolian employer, the responsibility for reporting, withholding, and payment lies with that employer."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays a flat 20% on income earned in or from Mongolia, including fees for art performances and for literary and artistic work, withheld at 20% on payments for services to non-residents.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross Mongolian-source income",
+    "final": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A non-resident taxpayer of Mongolia is subject to a flat tax rate of 20% on income earned in or sourced from Mongolia."
+    },
+    {
+     "src": 3,
+     "said": "dividends, interest, and royalties paid, and payments made for goods sold and work/services provided (directly or electronically), to non-residents are subject to WHT at a 20% rate."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident's income from scientific, literary and artistic works, and from art performances, is taxed at 5% of the gross; royalties count as property income at 10%; non-residents pay 20%.",
+   "value": {
+    "literaryArtisticWorksAndPerformances": {
+     "resident": 0.05,
+     "nonResident": 0.2,
+     "base": "gross"
+    },
+    "royalties": {
+     "resident": 0.1,
+     "nonResident": 0.2
+    }
+   },
+   "applies": "Authors and performers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income from scientific, literary, and artistic works, inventions, product designs, and useful designs (gross); income from sports competitions, art performances, and similar income (gross) 5 20"
+    },
+    {
+     "src": 0,
+     "said": "Income from property (i.e. dividends, royalties, interest, capital gain from sale of securities/stocks) 10 20"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 10%; any person, individuals included, whose sales reach MNT 50 million in 12 consecutive months must register (voluntary from MNT 10 million); services from non-residents bear reverse-charge VAT.",
+   "value": {
+    "currency": "MNT",
+    "standard": 0.1,
+    "threshold": 50000000,
+    "voluntaryFrom": 10000000,
+    "period": "12 consecutive months"
+   },
+   "applies": "Supplies in Mongolia",
+   "sources": [
+    {
+     "src": 4,
+     "said": "any person (including legal entities, individuals, and PEs) whose sales income reaches MNT 50 million or more within 12 consecutive months must register as a VAT withholder. The threshold for voluntary registration is MNT 10 million in sales income."
+    },
+    {
+     "src": 4,
+     "said": "A VAT rate of 10% is imposed on the supply of goods, services, and works that are imported, exported, or sold in Mongolia."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A self-employed individual (one earning income from activity) computes advance tax at 10% on each receipt and pays it by the 15th of the following month; one whose previous year's taxable income, as confirmed by return, did not exceed MNT 50 million may, on request registered by the tax office, use the simplified regime and pay 1% of total activity income.",
+   "value": {
+    "currency": "MNT",
+    "selfEmployedAdvance": 0.1,
+    "due": "15th of next month",
+    "simplifiedRegime": {
+     "rate": 0.01,
+     "base": "total activity income",
+     "priorYearIncomeMax": 50000000,
+     "onRequest": true
+    }
+   },
+   "applies": "2026 (Mongolian Tax Administration calculators read 2026-11-01); the PIT Law's own text was not reached.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Үйл ажиллагааны орлого олж буй иргэн урьдчилгаа татварыг 10 хувиар тооцон тухай бүр албан татвар ногдуулан, дараа сарын 15-ны өдрийн дотор урьдчилгаа төлбөрийн нэхэмжлэхээр төсөвт төлнө."
+    },
+    {
+     "src": 6,
+     "said": "Тайлангаар баталгаажсан өмнөх жилийн албан татвар ногдох орлогын хэмжээ 50.0 сая төгрөгөөс хэтрээгүй нөхцөлд тухайн хувь хүн өөрөө хүсэлт гаргаж, уг хүсэлтийг харьяа татварын алба бүртгэж авсан бол түүний үйл ажиллагааны орлогын нийт дүнгээр албан татвар ногдуулах орлогыг тодорхойлно.Тухайн шаардлагыг хангасан хувь хүн хялбаршуулсан тайлагналын горим ашиглан 1 хувийн татвар төлөх боломжтой."
+    }
+   ]
+  }
+ ],
+ "country": "MN",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/mongolia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Mongolia, Individual - Taxes on personal income (last reviewed 08 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mta.gov.mn/",
+   "said": "Annual taxable income (MNT) Applicable tax rate (%) Residents Non-residents 0 to 120 million 10 20 120 million to 180 million MNT 12 million plus 15% on income exceeding MNT 120 million 20 More than 180 million MNT 21 million plus 20% on income exceeding MNT 180 million 20 … A non-resident taxpayer of Mongolia is subject to a flat tax rate of 20% on income earned in or sourced from Mongolia. … Income from scientific, literary, and artistic works, inventions, product designs, and useful designs (gross); income from sports competitions, art performances, and similar income (gross) 5 20 … Income from property (i.e. dividends, royalties, interest, capital gain from sale of securities/stocks) 10 20"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mongolia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Mongolia, Individual - Tax administration (last reviewed 08 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mta.gov.mn/",
+   "said": "Income should be reported on an individual tax form and submitted to the tax authority by 15 February of the following year. … The tax agent (i.e. employer) should transfer the tax withheld from a taxpayer’s income to the budget by the tenth day of the following month. … if an employee (local or expatriate) receives employment income from a Mongolian employer, the responsibility for reporting, withholding, and payment lies with that employer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mongolia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Mongolia, Individual - Other taxes (last reviewed 08 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ndaatgal.mn/",
+   "said": "Currently, the employer’s contribution varies from 12.5% to 14.5%, depending on the industry and job position of the employees, while the employee’s contributions are taxed at a rate of 11.5%, capped at MNT 910,800 per month (exceptions apply). … Social insurance tax Employer rate (%) Employee rate (%) Pension insurance 8.5 8.5 Benefit insurance 1.0 0.8 Health insurance 2.0 2.0 Unemployment insurance 0.5 0.2 Industrial accident and occupational disease insurance 0.5, 1.5, 2.5 0"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mongolia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Mongolia, Corporate - Withholding taxes (last reviewed 08 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mta.gov.mn/",
+   "said": "dividends, interest, and royalties paid, and payments made for goods sold and work/services provided (directly or electronically), to non-residents are subject to WHT at a 20% rate."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mongolia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Mongolia, Corporate - Other taxes (last reviewed 08 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mta.gov.mn/",
+   "said": "any person (including legal entities, individuals, and PEs) whose sales income reaches MNT 50 million or more within 12 consecutive months must register as a VAT withholder. The threshold for voluntary registration is MNT 10 million in sales income. … A VAT rate of 10% is imposed on the supply of goods, services, and works that are imported, exported, or sold in Mongolia."
+  },
+  {
+   "url": "https://mta.gov.mn/tax-calculate/salarytax",
+   "title": "Цалингийн тооцоолуур (salary tax calculator), Mongolian Tax Administration",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Үйл ажиллагааны орлого олж буй иргэн урьдчилгаа татварыг 10 хувиар тооцон тухай бүр албан татвар ногдуулан, дараа сарын 15-ны өдрийн дотор урьдчилгаа төлбөрийн нэхэмжлэхээр төсөвт төлнө."
+  },
+  {
+   "url": "https://mta.gov.mn/tax-calculate/incometax",
+   "title": "Хувь хүний орлогын албан татварын хялбаршуулсан горим (PIT simplified regime), Mongolian Tax Administration",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Тайлангаар баталгаажсан өмнөх жилийн албан татвар ногдох орлогын хэмжээ 50.0 сая төгрөгөөс хэтрээгүй нөхцөлд тухайн хувь хүн өөрөө хүсэлт гаргаж, уг хүсэлтийг харьяа татварын алба бүртгэж авсан бол түүний үйл ажиллагааны орлогын нийт дүнгээр албан татвар ногдуулах орлогыг тодорхойлно.Тухайн шаардлагыг хангасан хувь хүн хялбаршуулсан тайлагналын горим ашиглан 1 хувийн татвар төлөх боломжтой."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The PIT Law's own text and the monthly tax credit on employment income (the self-employed advance and simplified regime are now recorded from the MTA's own pages).",
+   "tried": {
+    "institution": "mta.gov.mn home page reached (2026-11-01); the Personal Income Tax Law and rate pages not located on it this pass || 2026-11-01 retry: mta.gov.mn salary and simplified-regime calculators read (self-employed rules recorded); /legal/tax ('Татварын хуулиуд') is a JavaScript app with no law text in its HTML; the salary calculator's tax-credit table is filled by script.",
+    "official-register": "legalinfo.mn (the PIT Law of 2019) not read || 2026-11-01 retry: legalinfo.mn again refused (curl 000).",
+    "web-search": "not separately searched; PwC (reviewed 08 June 2026) gives the 2026 figures || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Хувь хүний орлогын албан татварын тухай хууль хөнгөлөлт сарын 2026').",
+    "trade-press": "PwC Worldwide Tax Summaries used || 2026-11-01 retry: PwC Mongolia (already saved) remains the source of the credit figures.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

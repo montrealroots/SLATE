@@ -1,0 +1,358 @@
+{
+ "topic": "tax.DK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Denmark: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 8% labour-market contribution first, then state bottom tax of 12.01% above the personal allowance, a 7.5% middle tax above DKK 641,200, a 7.5% top tax above DKK 777,900 and a 5% top-top tax above DKK 2,592,700 (all on personal income after the contribution), plus municipal tax at the rate the municipality sets (2026: 23.39% in Copenhagen to 26.3%) and church tax for members.",
+   "value": {
+    "currency": "DKK",
+    "state": [
+     {
+      "from": 0,
+      "to": 641200,
+      "rate": 0.1201
+     },
+     {
+      "from": 641200,
+      "to": 777900,
+      "rate": 0.1951
+     },
+     {
+      "from": 777900,
+      "to": 2592700,
+      "rate": 0.2701
+     },
+     {
+      "from": 2592700,
+      "to": null,
+      "rate": 0.3201
+     }
+    ],
+    "stateBase": "personal income after am-bidrag; bottom tax only on the part above the personal allowance",
+    "municipal": {
+     "setBy": "each municipality",
+     "min": 0.2339,
+     "max": 0.263,
+     "example": {
+      "København": 0.2339
+     }
+    },
+    "taxCeilingPersonalIncome": 0.4457
+   },
+   "applies": "Income year 2026; the cumulative state rates in 'state' add the layers; the tax ceiling (skatteloft) of 44.57% caps state plus municipal tax on personal income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Bundskat: 12,01 % Alle, der har en indkomst, betaler bundskat. Du skal dog kun betale bundskat af den del af din personlige indkomst, der overstiger dit personfradrag."
+    },
+    {
+     "src": 0,
+     "said": "For 2026 gælder det, at hvis du har en personlig indkomst over 641.200 kr. efter am-bidrag, skal du betale 7,5 % i mellemskat af indkomsten, der overstiger dette beløb"
+    },
+    {
+     "src": 0,
+     "said": "Topskat: 7,5 % Hvis du har en personlig indkomst over 777.900 kr. efter am-bidrag, skal du betale 7,5 % i topskat af indkomsten, der overstiger dette beløb. Toptopskat: 5 % Hvis du har en personlig indkomst over 2.592.700 kr. efter am-bidrag, skal du betale 5 % i toptopskat af indkomsten, der overstiger dette beløb. Derudover betaler man kommuneskat, og medlemmer af folkekirken betaler kirkeskat."
+    },
+    {
+     "src": 1,
+     "said": "Skatteloft (personlig indkomst): 44,57%"
+    },
+    {
+     "src": 2,
+     "said": "København,Hovedstaden,101,1084,50,23.39,0.8,0,,5.1"
+    },
+    {
+     "src": 2,
+     "said": "Lolland,Sjælland,360,1085,55,26.3,1.23,1.2399999999999984,,17.4"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The personal allowance is DKK 54,100; employees also get an employment deduction of 12.75% of earnings up to DKK 63,300 and a job deduction of 4.5% up to DKK 3,100.",
+   "value": {
+    "currency": "DKK",
+    "personfradrag": 54100,
+    "beskaeftigelsesfradrag": {
+     "rate": 0.1275,
+     "max": 63300
+    },
+    "jobfradrag": {
+     "rate": 0.045,
+     "max": 3100
+    }
+   },
+   "applies": "Income year 2026; the employment and job deductions reduce the municipal tax base (not read here) and the job deduction has an income floor not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Personfradrag (fyldt 18 år): 54.100 kr."
+    },
+    {
+     "src": 1,
+     "said": "Beskæftigelsesfradrag (procent): 12,75%"
+    },
+    {
+     "src": 1,
+     "said": "Beskæftigelsesfradrag (maksimalt): 63.300 kr."
+    },
+    {
+     "src": 1,
+     "said": "Jobfradrag (maksimalt): 3.100 kr."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; the annual statement for 2025 opened in spring 2026, the correction deadline is normally 1 May (20 May in 2026), and self-employed people must file the information return by 1 July.",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "correctionDeadline": "1 May (2026: 20 May)",
+    "selfEmployedReturn": "1 July",
+    "restskatWithoutSurcharge": "1 July"
+   },
+   "applies": "Dates shown for the 2025 statement, read as the pattern for 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "20. maj 2026 Frist for at rette i årsopgørelsen. Fristen er normalt 1. maj, men er i år forlænget for at give dig bedre tid til at rette dine oplysninger. 1. juli 2026 Frist for at udfylde oplysningsskemaet"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Every earner pays an 8% labour-market contribution (am-bidrag) on pay, fees and self-employed profit, taken before income tax and deductible from it; no employee or employer social security percentage beyond this was found.",
+   "value": {
+    "amBidrag": 0.08,
+    "base": [
+     "A-income",
+     "fees",
+     "self-employed profit"
+    ],
+    "from": "age 18 (from 2026)"
+   },
+   "applies": "Income year 2026; employer ATP in the next figure.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Arbejdsmarkedsbidrag (am-bidrag) er en skat på 8 %, som du betaler af alt løn."
+    },
+    {
+     "src": 4,
+     "said": "Honorarer (fx hvis du har holdt foredrag) Bestyrelseshonorarer"
+    },
+    {
+     "src": 4,
+     "said": "Overskud af selvstændig virksomhed"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds am-bidrag and then A-tax from pay; a freelancer with B-income pays B-tax instalments set in the preliminary assessment, with am-bidrag included, or pays it himself on one-off fees.",
+   "value": {
+    "employee": "am-bidrag 8% then A-skat per tax card",
+    "freelancer": "B-skat instalments from forskudsopgørelse"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Din arbejdsgiver trækker am-bidraget af din løn, efter at ATP og eget pensionsbidrag er fratrukket, men før den øvrige skat trækkes."
+    },
+    {
+     "src": 4,
+     "said": "Hvis du har en fast B-indkomst, som du har registreret i din forskudsopgørelse, bliver dit am-bidrag automatisk regnet ind i dine B-skatterater."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Denmark has no artistes' withholding tax: a non-resident performer is taxable only if employed by a Danish employer (or a foreign one with a permanent establishment) or has a permanent establishment himself, so a freelance foreign performer is generally not taxed on Danish fees. An employed non-resident (limited tax liability) pays the ordinary state taxes including the 8% labour-market contribution, municipal tax at the average municipal rate rounded down to a whole percent, and no church tax, and gets the personal allowance.",
+   "value": {
+    "artistWithholding": null,
+    "taxableIf": [
+     "employment with a Danish employer",
+     "employment with a foreign employer having a Danish PE",
+     "own PE in Denmark"
+    ],
+    "employedNonResident": {
+     "stateTaxes": "ordinary rates (PSL § 5), incl. labour-market contribution",
+     "municipalTax": "average municipal rate rounded down to whole percent (PSL § 8 c)",
+     "churchTax": false,
+     "personalAllowance": true
+    }
+   },
+   "applies": "Den juridiske vejledning 2026-2, C.F.8.2.2.17.2 and C.F.3.2.4; the 2026 average municipal rate itself is not computed here.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Bemærk Danmark kan som kildeland ikke altid udnytte beskatningsretten efter artikel 17. Der er kun begrænset skattepligt til Danmark, hvis der foreligger et tjenesteforhold til en dansk arbejdsgiver eller en udenlandsk arbejdsgiver med fast driftssted her i landet, eller personen selv har fast driftssted her i landet."
+    },
+    {
+     "src": 6,
+     "said": "For begrænset skattepligtige beregnes indkomstskatterne til staten efter de normale regler. Begrænset skattepligtige betaler de almindelige statsskatter herunder arbejdsmarkedsbidrag. Se PSL § 5. Derudover betales kommuneskat med den gennemsnitlige kommunale udskrivningsprocent nedrundet til nærmeste hele procent. Se PSL § 8 c. Begrænset skattepligtige betaler ikke kirkeskat. … For personer, der er begrænset skattepligtig hele året efter KSL § 2, stk. 1, nr. 1 og 9-13, eller stk. 2, 1.-3. pkt., nedsættes de beregnede skatter med skatteværdien af et personfradrag efter PSL § 10, stk. 5, jf. stk. 1-2."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Services supplied by authors and artists, performers included, in their authorship and artistic activity are exempt from VAT, but the transfer of copyrights is not.",
+   "value": {
+    "vat": "exempt (ML § 13, stk. 1, nr. 7, as amended by lov nr. 1695 of 30 December 2024)",
+    "copyrightTransfer": "not exempt"
+   },
+   "applies": "VAT; no special income-tax treatment of authors' fees was found.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "7) Ydelser leveret af forfattere og kunstnere, herunder udøvende kunstnere, i forbindelse med forfattervirksomhed og kunstnerisk aktivitet. Fritagelsen omfatter dog ikke overdragelse af ophavsrettigheder"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 25%; a business must charge it once taxable sales pass DKK 50,000 in a calendar year.",
+   "value": {
+    "currency": "DKK",
+    "standard": 0.25,
+    "registrationThreshold": 50000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "I Danmark er momsen som udgangspunkt 25 % af varens eller ydelsens værdi."
+    },
+    {
+     "src": 8,
+     "said": "Du skal betale moms, hvis du sælger momspligtige varer eller ydelser for mere end 50.000 kr. inden for et kalenderår."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employee and employer pay a fixed ATP pension contribution: for a monthly-paid private-sector worker of at least 117 hours, DKK 99 from the employee and DKK 198 from the employer each month (less at fewer hours).",
+   "value": {
+    "currency": "DKK",
+    "monthly": [
+     {
+      "hoursFrom": 117,
+      "employee": 99,
+      "employer": 198
+     },
+     {
+      "hoursFrom": 78,
+      "employee": 66,
+      "employer": 132
+     },
+     {
+      "hoursFrom": 39,
+      "employee": 33,
+      "employer": 66
+     },
+     {
+      "hoursFrom": 0,
+      "employee": 0,
+      "employer": 0
+     }
+    ],
+    "hourlyRateForFees2026": {
+     "men": 258.69,
+     "women": 233.62
+    }
+   },
+   "applies": "2026, private employers; fees convert to hours at the page's hourly rate.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Mindst 117 timer 99,00 198,00 297,00 Under 117 timer - med mindst 78 timer 66,00 132,00 198,00"
+    },
+    {
+     "src": 9,
+     "said": "Timelønssats for 2026 Mænd: 258,69 kr. Kvinder: 233,62 kr."
+    }
+   ]
+  }
+ ],
+ "country": "DK",
+ "sources": [
+  {
+   "url": "https://skat.dk/hjaelp/bundskat-mellemskat-topskat-og-toptopskat",
+   "title": "Bundskat, mellemskat, topskat og toptopskat (Skattestyrelsen, skat.dk)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Bundskat: 12,01 % Alle, der har en indkomst, betaler bundskat. Du skal dog kun betale bundskat af den del af din personlige indkomst, der overstiger dit personfradrag. … For 2026 gælder det, at hvis du har en personlig indkomst over 641.200 kr. efter am-bidrag, skal du betale 7,5 % i mellemskat af indkomsten, der overstiger dette beløb … Topskat: 7,5 % Hvis du har en personlig indkomst over 777.900 kr. efter am-bidrag, skal du betale 7,5 % i topskat af indkomsten, der overstiger dette beløb. Toptopskat: 5 % Hvis du har en personlig indkomst over 2.592.700 kr. efter am-bidrag, skal du betale 5 % i toptopskat af indkomsten, der overstiger dette beløb. Derudover betaler man kommuneskat, og medlemmer af folkekirken betaler kirkeskat."
+  },
+  {
+   "url": "https://skat.dk/hjaelp/satser",
+   "title": "Satser (skat.dk), 2026 column, read from the page's embedded data in DK-skat-satser.html and extracted label by label",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skatteloft (personlig indkomst): 44,57% … Personfradrag (fyldt 18 år): 54.100 kr. … Beskæftigelsesfradrag (procent): 12,75% … Beskæftigelsesfradrag (maksimalt): 63.300 kr. … Jobfradrag (maksimalt): 3.100 kr."
+  },
+  {
+   "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+   "title": "Kommuneskattesatser 2026 (Skatte- og Vækstministeriet, xlsx; dumped to CSV beside it)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "København,Hovedstaden,101,1084,50,23.39,0.8,0,,5.1 … Lolland,Sjælland,360,1085,55,26.3,1.23,1.2399999999999984,,17.4"
+  },
+  {
+   "url": "https://skat.dk/borger/aarsopgoerelse/aarsopgoerelsen-hvornaar-sker-hvad",
+   "title": "Årsopgørelsen – hvornår sker hvad (skat.dk)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "20. maj 2026 Frist for at rette i årsopgørelsen. Fristen er normalt 1. maj, men er i år forlænget for at give dig bedre tid til at rette dine oplysninger. 1. juli 2026 Frist for at udfylde oplysningsskemaet"
+  },
+  {
+   "url": "https://skat.dk/borger/am-bidrag",
+   "title": "Am-bidrag (arbejdsmarkedsbidrag) (skat.dk)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Arbejdsmarkedsbidrag (am-bidrag) er en skat på 8 %, som du betaler af alt løn. … Honorarer (fx hvis du har holdt foredrag) Bestyrelseshonorarer … Overskud af selvstændig virksomhed … Din arbejdsgiver trækker am-bidraget af din løn, efter at ATP og eget pensionsbidrag er fratrukket, men før den øvrige skat trækkes. … Hvis du har en fast B-indkomst, som du har registreret i din forskudsopgørelse, bliver dit am-bidrag automatisk regnet ind i dine B-skatterater."
+  },
+  {
+   "url": "https://tax.dk/jv/cf/C_F_8_2_2_17_2.htm",
+   "title": "Den Juridiske Vejledning 2026-2, C.F.8.2.2.17.2 (mirror at tax.dk; converted to UTF-8 beside the saved page)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.skat.dk/jura",
+   "said": "Bemærk Danmark kan som kildeland ikke altid udnytte beskatningsretten efter artikel 17. Der er kun begrænset skattepligt til Danmark, hvis der foreligger et tjenesteforhold til en dansk arbejdsgiver eller en udenlandsk arbejdsgiver med fast driftssted her i landet, eller personen selv har fast driftssted her i landet."
+  },
+  {
+   "url": "https://tax.dk/jv/cf/C_F_3_2_4.htm",
+   "title": "Den Juridiske Vejledning 2026-2, C.F.3.2.4 Skatteberegning (mirror at tax.dk; converted to UTF-8 beside the saved page)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.skat.dk/jura",
+   "said": "For begrænset skattepligtige beregnes indkomstskatterne til staten efter de normale regler. Begrænset skattepligtige betaler de almindelige statsskatter herunder arbejdsmarkedsbidrag. Se PSL § 5. Derudover betales kommuneskat med den gennemsnitlige kommunale udskrivningsprocent nedrundet til nærmeste hele procent. Se PSL § 8 c. Begrænset skattepligtige betaler ikke kirkeskat. … For personer, der er begrænset skattepligtig hele året efter KSL § 2, stk. 1, nr. 1 og 9-13, eller stk. 2, 1.-3. pkt., nedsættes de beregnede skatter med skatteværdien af et personfradrag efter PSL § 10, stk. 5, jf. stk. 1-2."
+  },
+  {
+   "url": "https://tax.dk/jv/da/D_A_5_7_1.htm",
+   "title": "Den Juridiske Vejledning 2026-2, D.A.5.7.1 Lovgrundlag (mirror at tax.dk; converted to UTF-8)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.skat.dk/jura",
+   "said": "7) Ydelser leveret af forfattere og kunstnere, herunder udøvende kunstnere, i forbindelse med forfattervirksomhed og kunstnerisk aktivitet. Fritagelsen omfatter dog ikke overdragelse af ophavsrettigheder"
+  },
+  {
+   "url": "https://skat.dk/erhverv/moms/i-gang-med-moms",
+   "title": "I gang med moms (skat.dk)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "I Danmark er momsen som udgangspunkt 25 % af varens eller ydelsens værdi. … Du skal betale moms, hvis du sælger momspligtige varer eller ydelser for mere end 50.000 kr. inden for et kalenderår."
+  },
+  {
+   "url": "https://www.borger.dk/pension-og-efterloen/atp-livslang-pension-oversigt/atp-bidraget/atp-satser-for-privat-virksomhed",
+   "title": "ATP-satser for 2026 i privat virksomhed (borger.dk, written by ATP Livslang Pension)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Mindst 117 timer 99,00 198,00 297,00 Under 117 timer - med mindst 78 timer 66,00 132,00 198,00 … Timelønssats for 2026 Mænd: 258,69 kr. Kvinder: 233,62 kr."
+  }
+ ],
+ "blockers": []
+}

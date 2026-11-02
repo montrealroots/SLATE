@@ -1,0 +1,161 @@
+{
+ "engine": "person.directing",
+ "axis": "director-operation",
+ "universe": {
+  "keys": [
+   "parts",
+   "dga-terms",
+   "prep",
+   "shoot",
+   "cut",
+   "quality-by-level",
+   "festivals",
+   "second-feature",
+   "declarations"
+  ]
+ },
+ "rows": [
+  {
+   "key": "parts",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a film's parts > come from the broad attributes the owner names: the story from Vision and Script Sense, performances, images, the cut",
+    "tests/person/directing/directing.test.ts::a film's parts > are moved by every broad attribute of the part, and by none of the others but through a facet a source ties",
+    "tests/person/directing/directing.test.ts::a film's parts > spread less as the director gets better"
+   ]
+  },
+  {
+   "key": "dga-terms",
+   "status": "researched",
+   "register": [
+    "R-4613"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the DGA terms > are the 2026-27 rate card's, the Basic Agreement's and the Low Budget Sideletter's",
+    "tests/person/directing/directing.test.ts::the DGA terms > set a feature by its budget: pay, prep and the Director's Cut at every level's edge",
+    "tests/person/directing/directing.test.ts::the DGA terms > set an episode by the show: the network program rate, the guaranteed prep and shoot, the episode's cut"
+   ]
+  },
+  {
+   "key": "prep",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::prep > plans each part at what the director can do in it, within the spread",
+    "tests/person/directing/directing.test.ts::prep > holds a plan to 0 and 100",
+    "tests/person/directing/directing.test.ts::prep > records the film and teaches what prep used, over its days",
+    "tests/person/directing/directing.test.ts::prep > is refused in a form there is not, for a budget or a schedule not whole, an episode given either, or before the attributes are chosen",
+    "tests/person/directing/directing.test.ts::prep > takes a second feature only once the debut has led to one, and any after that",
+    "tests/person/directing/directing.test.ts::prep > directing.prep: a director with more Vision plans a better story"
+   ]
+  },
+  {
+   "key": "shoot",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the shoot > needs the trade's schedule from a director at 50 in holding it, a quarter less at 100, a quarter more at 0",
+    "tests/person/directing/directing.test.ts::the shoot > is carried by the set: 0.8 of the plan from a director at 0 in leading and talking to it, all of it at 100",
+    "tests/person/directing/directing.test.ts::the shoot > loses what a short schedule leaves undone, Adaptability carrying more of it",
+    "tests/person/directing/directing.test.ts::the shoot > brings each planned part to the screen exactly as far as the schedule and the set carry it",
+    "tests/person/directing/directing.test.ts::the shoot > teaches Working With Actors, Visual Craft, Leadership and Communication over its days",
+    "tests/person/directing/directing.test.ts::the shoot > is refused for a film shot already",
+    "tests/person/directing/directing.test.ts::the shoot > directing.shoot: more days on the schedule bring more to the screen"
+   ]
+  },
+  {
+   "key": "cut",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the cut > needs a day for each shooting day from a director at 0 in Editing, a day for every two at 100",
+    "tests/person/directing/directing.test.ts::the cut > is made in the Director's Cut the DGA guarantees, exactly, and the film is its four parts' mean",
+    "tests/person/directing/directing.test.ts::the cut > holds the cut to 0 and 100",
+    "tests/person/directing/directing.test.ts::the cut > is shorter than the footage needs for an hour's four days from a director below the top, enough at 100",
+    "tests/person/directing/directing.test.ts::the cut > teaches Editing over the days of the cut",
+    "tests/person/directing/directing.test.ts::the cut > is refused before the shoot and once cut",
+    "tests/person/directing/directing.test.ts::the cut > directing.cut: a better editor cuts better"
+   ]
+  },
+  {
+   "key": "quality-by-level",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the cut > comes out at the top from a director at 100 throughout, around half from one at 50, poorly from one at 10"
+   ]
+  },
+  {
+   "key": "festivals",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::festivals > choose at each festival's own rate for a film at the pool's middle, more for better, never past certain",
+    "tests/person/directing/directing.test.ts::festivals > take a finished feature by the draw on its chance, once each",
+    "tests/person/directing/directing.test.ts::festivals > are refused for a festival there is not, an episode, a film not cut, or a second time",
+    "tests/person/directing/directing.test.ts::festivals > directing.submit: a better film is chosen more often"
+   ]
+  },
+  {
+   "key": "second-feature",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::a second feature > comes a quarter of the time within five years, nearly half where the debut found an audience, as the pitch carries it",
+    "tests/person/directing/directing.test.ts::a second feature > is decided by the draw on the debut, a festival choosing it read as an audience found, and teaches Communication",
+    "tests/person/directing/directing.test.ts::a second feature > reads the debut, the first feature, even after episodes",
+    "tests/person/directing/directing.test.ts::a second feature > is refused with no debut, a debut not cut, or once taken",
+    "tests/person/directing/directing.test.ts::a second feature > directing.pursue: a better pitcher gets the second feature more often"
+   ]
+  },
+  {
+   "key": "declarations",
+   "status": "game",
+   "register": [
+    "R-4602",
+    "R-4610",
+    "R-4613",
+    "R-4615"
+   ],
+   "tests": [
+    "tests/person/directing/directing.test.ts::the director > is run through the frame, each command declaring what it reads and writes"
+   ]
+  }
+ ]
+}

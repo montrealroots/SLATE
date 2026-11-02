@@ -1,0 +1,247 @@
+{
+ "topic": "tax.VE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Venezuela: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Venezuelan resident pays income tax on a scale in tax units (TU): 6% to 1,000 TU, rising to 34% above 6,000 TU (Tariff No. 1), after a standard deduction of 774 TU or itemized deductions, less a 10 TU credit plus 10 TU per family member under 25; one TU is VES 43 from 2 June 2025.",
+   "value": {
+    "currency": "VES",
+    "unit": "TU",
+    "TU": 43,
+    "bracketsTU": [
+     {
+      "from": 0,
+      "to": 1000,
+      "rate": 0.06
+     },
+     {
+      "from": 1000,
+      "to": 1500,
+      "rate": 0.09
+     },
+     {
+      "from": 1500,
+      "to": 2000,
+      "rate": 0.12
+     },
+     {
+      "from": 2000,
+      "to": 2500,
+      "rate": 0.16
+     },
+     {
+      "from": 2500,
+      "to": 3000,
+      "rate": 0.2
+     },
+     {
+      "from": 3000,
+      "to": 4000,
+      "rate": 0.24
+     },
+     {
+      "from": 4000,
+      "to": 6000,
+      "rate": 0.29
+     },
+     {
+      "from": 6000,
+      "to": null,
+      "rate": 0.34
+     }
+    ],
+    "standardDeductionTU": 774,
+    "creditTU": {
+     "personal": 10,
+     "perDependant": 10
+    }
+   },
+   "applies": "2026; TU value from 2 June 2025 (the 2026 value was not read).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 1,000 6 0 1,000 1,500 9 30 1,500 2,000 12 75 2,000 2,500 16 155 2,500 3,000 20 255 3,000 4,000 24 375 4,000 6,000 29 575 6,000 34 875"
+    },
+    {
+     "src": 1,
+     "said": "As from 2 June 2025, the value of 1 TU is VES 43."
+    },
+    {
+     "src": 1,
+     "said": "a standard deduction of 774 TUs may be taken. A taxpayer also may deduct 10 TUs for each family member younger than age 25, and an additional 10 TUs overall."
+    },
+    {
+     "src": 0,
+     "said": "There are no local taxes on personal income in Venezuela."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 4% social security on pay up to five minimum wages (employer 9–11%), 0.5% employment benefit (employer 2%) up to ten minimum wages, 1% housing (employer 2%) uncapped, and 0.5% INCES on profit-sharing (employer 2%).",
+   "value": {
+    "socialSecurity": {
+     "employee": 0.04,
+     "employer": [
+      0.09,
+      0.1,
+      0.11
+     ],
+     "ceilingMinimumWages": 5
+    },
+    "employmentBenefit": {
+     "employee": 0.005,
+     "employer": 0.02,
+     "ceilingMinimumWages": 10
+    },
+    "housing": {
+     "employee": 0.01,
+     "employer": 0.02,
+     "ceiling": null
+    },
+    "INCES": {
+     "employee": 0.005,
+     "employer": 0.02
+    },
+    "LOPCYMAT": {
+     "employerMin": 0.0075,
+     "employerMax": 0.1
+    }
+   },
+   "applies": "2026; Deloitte gives the employer's share as 10–12%.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Up to five minimum salaries for urban workers 9, 10, or 11 4"
+    },
+    {
+     "src": 2,
+     "said": "Up to ten minimum salaries for urban workers 2 0.5"
+    },
+    {
+     "src": 2,
+     "said": "Total monthly (or integral) salary No cap 2 1"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is withheld from salaries, professional fees, royalties paid to non-residents and certain other payments to non-residents.",
+   "value": {
+    "method": "withholding at source"
+   },
+   "applies": "Rates for residents' salaries not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Income tax is withheld from salaries, professional fees, royalties paid to non-residents, and certain other payments received by non-residents."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays a flat 34% withheld at source on salary and other income for services performed in Venezuela, and 34% on 90% of gross fees for non-business professional activities.",
+   "value": {
+    "services": {
+     "rate": 0.34,
+     "withheld": true
+    },
+    "professionalFees": {
+     "rate": 0.34,
+     "base": 0.9
+    },
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Salary and other income received by non-residents for services performed in Venezuela are subject to a flat 34% tax, withheld at source."
+    },
+    {
+     "src": 0,
+     "said": "Income for non-resident individuals arising from non-business professional activities is subject to tax at 34% on 90% of the gross payments."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT (IVA) is 16% generally on goods and services rendered in Venezuela; every taxpayer must hold a tax number, and no threshold was found.",
+   "value": {
+    "rate": 0.16,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The current general rate is 16%."
+    },
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 16%."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Wage earners file on a calendar-year basis by 31 March of the next year.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Individual taxpayers earning wages and salaries must file their tax returns on a calendar-year basis"
+    },
+    {
+     "src": 3,
+     "said": "The Venezuelan income tax return should be filed by 31 March"
+    }
+   ]
+  }
+ ],
+ "country": "VE",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/venezuela/individual/taxes-on-personal-income",
+   "title": "Venezuela: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 30 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.seniat.gob.ve/",
+   "said": "0 1,000 6 0 1,000 1,500 9 30 1,500 2,000 12 75 2,000 2,500 16 155 2,500 3,000 20 255 3,000 4,000 24 375 4,000 6,000 29 575 6,000 34 875 … There are no local taxes on personal income in Venezuela. … Salary and other income received by non-residents for services performed in Venezuela are subject to a flat 34% tax, withheld at source. … Income for non-resident individuals arising from non-business professional activities is subject to tax at 34% on 90% of the gross payments."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-venezuelahighlights-2026.pdf",
+   "title": "Venezuela Highlights 2026 (Deloitte, updated January 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.seniat.gob.ve/",
+   "said": "As from 2 June 2025, the value of 1 TU is VES 43. … a standard deduction of 774 TUs may be taken. A taxpayer also may deduct 10 TUs for each family member younger than age 25, and an additional 10 TUs overall. … The standard VAT rate is 16%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/venezuela/individual/other-taxes",
+   "title": "Venezuela: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 30 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "http://www.ivss.gob.ve/",
+   "said": "Up to five minimum salaries for urban workers 9, 10, or 11 4 … Up to ten minimum salaries for urban workers 2 0.5 … Total monthly (or integral) salary No cap 2 1 … The current general rate is 16%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/venezuela/individual/tax-administration",
+   "title": "Venezuela: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 30 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.seniat.gob.ve/",
+   "said": "Income tax is withheld from salaries, professional fees, royalties paid to non-residents, and certain other payments received by non-residents. … Individual taxpayers earning wages and salaries must file their tax returns on a calendar-year basis … The Venezuelan income tax return should be filed by 31 March"
+  }
+ ],
+ "blockers": []
+}

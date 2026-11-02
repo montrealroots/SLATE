@@ -1,0 +1,233 @@
+{
+ "topic": "tax.LB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Lebanon: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Lebanon taxes salaries and wages by a progressive payroll tax: 2% to LBP 360 million a year, then 4%, 7%, 11%, 15%, 20%, and 25% above LBP 13.5 billion, after family deductions; business income (a self-employed person's) is taxed separately at 4% to 25%.",
+   "value": {
+    "currency": "LBP",
+    "salaries": [
+     {
+      "from": 0,
+      "to": 360000000,
+      "rate": 0.02
+     },
+     {
+      "from": 360000000,
+      "to": 900000000,
+      "rate": 0.04
+     },
+     {
+      "from": 900000000,
+      "to": 1800000000,
+      "rate": 0.07
+     },
+     {
+      "from": 1800000000,
+      "to": 3600000000,
+      "rate": 0.11
+     },
+     {
+      "from": 3600000000,
+      "to": 7200000000,
+      "rate": 0.15
+     },
+     {
+      "from": 7200000000,
+      "to": 13500000000,
+      "rate": 0.2
+     },
+     {
+      "from": 13500000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "businessRates": {
+     "min": 0.04,
+     "max": 0.25
+    }
+   },
+   "applies": "Territorial: salary for work in Lebanon, or paid from Lebanon, or to a resident. Family deduction amounts not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Up to 360,000,000 2% 360,000,001 – 900,000,000 4% 900,000,001 – 1,800,000,000 7% 1,800,000,001 – 3,600,000,000 11% 3,600,000,001 – 7,200,000,000 15% 7,200,000,001 – 13,500,000,000 20% Over 13,500,000,000 25%"
+    },
+    {
+     "src": 0,
+     "said": "Family deductions are granted in calculating taxable income."
+    },
+    {
+     "src": 1,
+     "said": "The annual progressive brackets for income tax profits became between 4% and 25%"
+    },
+    {
+     "src": 1,
+     "said": "The services that triggered the income are executed on Lebanese territory or have contributed to the welfare of a company located in Lebanon, even though the source of funding is outside Lebanon."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 3% to the NSSF medical scheme on pay up to LBP 120 million a month; the employer pays 8% (sickness and maternity, same ceiling), 6% family benefits (to LBP 18 million a month) and 5% end-of-service indemnity uncapped.",
+   "value": {
+    "currency": "LBP",
+    "employee": {
+     "medical": 0.03,
+     "ceilingMonthly": 120000000
+    },
+    "employer": {
+     "sicknessMaternity": 0.08,
+     "ceilingMonthly": 120000000,
+     "family": 0.06,
+     "familyCeilingMonthly": 18000000,
+     "endOfService": 0.05
+    }
+   },
+   "applies": "From August 2025 ceilings.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "3% for the medical scheme, calculated on a maximum monthly base of LL 120 million"
+    },
+    {
+     "src": 2,
+     "said": "8% for maternity and sickness benefit schemes, calculated on a maximum monthly base of LL 120 million"
+    },
+    {
+     "src": 2,
+     "said": "6% for family benefit schemes, calculated on a maximum monthly base of LL 18 million"
+    },
+    {
+     "src": 2,
+     "said": "5% of total annual earnings for the end-of-service indemnity, with no ceiling."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds payroll tax and declares it quarterly within 15 days of the quarter's end, with an annual declaration by 28 February.",
+   "value": {
+    "method": "payroll tax by employer",
+    "quarterly": true
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "It is the employer's responsibility to declare the payroll tax to the authorities on a quarterly basis during the first 15 days of the month following the end of the quarter. An annual declaration is also due by 28 February of the following year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident earning revenue from services in Lebanon bears an effective withholding of 7.5% of the revenue; royalties and technical or management fees paid to a non-resident bear 8.5%.",
+   "value": {
+    "services": 0.075,
+    "royalties": 0.085,
+    "technicalFees": 0.085,
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Revenues earned by non-residents in Lebanon are subject to an effective WHT of 2.25% on revenue from the sale of materials and equipment, and 7.5% on the revenue in the case of sale of services."
+    },
+    {
+     "src": 0,
+     "said": "Royalties paid to a nonresident are subject to an 8.5% withholding tax, unless the rate is reduced under an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 11%; registration is required where turnover exceeds LBP 5 billion over one to four consecutive quarters.",
+   "value": {
+    "currency": "LBP",
+    "rate": 0.11,
+    "threshold": 5000000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard VAT rate is 11%."
+    },
+    {
+     "src": 0,
+     "said": "Taxpayers whose turnover exceeds LBP 5 billion for a period between one quarter and four consecutive quarters must register for VAT purposes."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; a self-employed person taxed on real profits files and pays before 1 April of the next year (lump-sum before 1 February).",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    }
+   },
+   "applies": "Self-employed; employees are taxed through the employer.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The fiscal year is the calendar year."
+    },
+    {
+     "src": 3,
+     "said": "The deadline for filing tax returns for those taxed on real profits is before 1 April of the following year."
+    }
+   ]
+  }
+ ],
+ "country": "LB",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-lebanonhighlights-2026.pdf",
+   "title": "Lebanon Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finance.gov.lb/",
+   "said": "Up to 360,000,000 2% 360,000,001 – 900,000,000 4% 900,000,001 – 1,800,000,000 7% 1,800,000,001 – 3,600,000,000 11% 3,600,000,001 – 7,200,000,000 15% 7,200,000,001 – 13,500,000,000 20% Over 13,500,000,000 25% … Family deductions are granted in calculating taxable income. … Royalties paid to a nonresident are subject to an 8.5% withholding tax, unless the rate is reduced under an applicable tax treaty. … The standard VAT rate is 11%. … Taxpayers whose turnover exceeds LBP 5 billion for a period between one quarter and four consecutive quarters must register for VAT purposes."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income",
+   "title": "Lebanon: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finance.gov.lb/",
+   "said": "The annual progressive brackets for income tax profits became between 4% and 25% … The services that triggered the income are executed on Lebanese territory or have contributed to the welfare of a company located in Lebanon, even though the source of funding is outside Lebanon."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lebanon/individual/other-taxes",
+   "title": "Lebanon: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnss.gov.lb/",
+   "said": "3% for the medical scheme, calculated on a maximum monthly base of LL 120 million … 8% for maternity and sickness benefit schemes, calculated on a maximum monthly base of LL 120 million … 6% for family benefit schemes, calculated on a maximum monthly base of LL 18 million … 5% of total annual earnings for the end-of-service indemnity, with no ceiling."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lebanon/individual/tax-administration",
+   "title": "Lebanon: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finance.gov.lb/",
+   "said": "It is the employer's responsibility to declare the payroll tax to the authorities on a quarterly basis during the first 15 days of the month following the end of the quarter. An annual declaration is also due by 28 February of the following year. … The fiscal year is the calendar year. … The deadline for filing tax returns for those taxed on real profits is before 1 April of the following year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lebanon/corporate/withholding-taxes",
+   "title": "Lebanon: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 1 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finance.gov.lb/",
+   "said": "Revenues earned by non-residents in Lebanon are subject to an effective WHT of 2.25% on revenue from the sale of materials and equipment, and 7.5% on the revenue in the case of sale of services."
+  }
+ ],
+ "blockers": []
+}

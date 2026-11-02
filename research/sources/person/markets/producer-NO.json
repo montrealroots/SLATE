@@ -1,0 +1,252 @@
+{
+ "topic": "markets.producer.NO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Norway. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The Norwegian Film Institute funds features two ways: by artistic assessment, and by market assessment at up to NOK 14.2 million (audience estimate over 250,000 tickets) or NOK 9.8 million (over 150,000), the latter capped at 50% of the approved budget with 80% of finance confirmed; the Institute's total for one film may not pass NOK 35 million, all public money 75% (market) or 80% (artistic) of costs, and a post-release grant pays 75% of the film's Norwegian revenues for three years once it sells 10,000 tickets.",
+   "value": {
+    "marketAssessment": {
+     "highLevelMaxNOK": 14200000,
+     "highLevelAudienceEstimateMin": 250000,
+     "lowLevelMaxNOK": 9800000,
+     "lowLevelAudienceEstimateMin": 150000,
+     "maxShareOfApprovedBudget": 0.5,
+     "confirmedFinanceMin": 0.8,
+     "maxPublicShare": 0.75,
+     "postReleaseGrantMaxNOK": {
+      "high": 18000000,
+      "low": 12000000
+     },
+     "postReleaseGrantMaxShareOfBudget": 0.5
+    },
+    "artisticAssessment": {
+     "maxPublicShare": 0.8,
+     "postReleaseGrantMaxNOK": 8000000,
+     "postReleaseGrantMaxShareOfBudget": 0.2
+    },
+    "nfiTotalPerFilmMaxNOK": 35000000,
+    "postReleaseGrant": {
+     "shareOfDocumentedRevenue": 0.75,
+     "childrenOrYouth": 1.5,
+     "years": 3,
+     "minTicketsSold": 10000
+    },
+    "cultureTest": "at least 3 of 4 criteria (script originally in Norwegian or Sami; Norwegian theme; set in Norway/EEA; EEA-resident creators)"
+   },
+   "applies": "Norway; independent Norwegian (or EEA) production companies organised as AS; NFI feature production support pages read 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Høyt nivå innebærer tilskudd på inntil 14.200.000 kroner, og forutsetter et publikumsestimat på over 250.000 solgte billetter i ordinær kinodistribusjon. Lavt nivå innebærer tilskudd på inntil 9.800.000 kroner, og forutsetter et publikumsestimat på over 150.000 solgte billetter i ordinær kinodistribusjon. … Tilskuddet kan ikke overstige 50% av filmens godkjente budsjett."
+    },
+    {
+     "src": 1,
+     "said": "Samlet tilskudd fra Norsk filminstitutt til utvikling, produksjon og etterhåndstilskudd kan maksimalt være 35 000 000 kroner. Det maksimale samlede offentlige tilskuddet skal ikke overstige 80% av de godkjente regnskapsførte utviklings-, og produksjonskostnadene."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "Few feature applications to the Norwegian Film Institute succeed: in 2025 it granted 7 of 71 artistic-assessment feature applications and 6 of 61 market-assessment ones, and 73 production grants in all from 368 applications by Norwegian majority producers (NOK 253.5 million).",
+   "value": {
+    "year": 2025,
+    "featureArtistic": {
+     "applications": 71,
+     "grants": 7,
+     "amountNOK": 77350000
+    },
+    "featureMarket": {
+     "applications": 61,
+     "grants": 6,
+     "amountNOK": 66000000
+    },
+    "neoFeature": {
+     "applications": 24,
+     "grants": 5,
+     "amountNOK": 33908000
+    },
+    "allMajorityProduction": {
+     "applications": 368,
+     "grants": 73,
+     "rejections": 295,
+     "amountNOK": 253453124
+    },
+    "featureDevelopmentArtistic": {
+     "applications": 96,
+     "grants": 32
+    }
+   },
+   "applies": "Norway, NFI decisions in 2025 (annual report 2025). The report's prose says '73 av 295 søknader'; its table gives 368 applications, 73 grants, 295 rejections.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Spillefilm konsulentvurdert 77 350 000 71 7 64 Spillefilm markedsvurdert 66 000 000 61 6 55 … Totalt 253 453 124 368 73 295"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Norway's incentive scheme, run by the Norwegian Film Institute, refunds up to 25% of approved costs incurred in Norway for features with a total budget of at least NOK 25 million (NOK 10 million for documentaries) and at least NOK 4 million spent in Norway, with at least 30% international finance and an international distribution deal; producer overheads and indirect producer fees are not approved costs. In 2025 it took 9 applications and granted 8, NOK 66.8 million.",
+   "value": {
+    "rate": 0.25,
+    "minTotalBudgetNOK": {
+     "feature": 25000000,
+     "documentary": 10000000,
+     "dramaSeriesPerEpisode": 10000000,
+     "documentarySeriesPerEpisode": 5000000
+    },
+    "minNorwegianSpendNOK": 4000000,
+    "internationalFinanceMin": 0.3,
+    "producerRequirement": "lead producer made at least one film or series publicly shown in the last five years",
+    "commitmentValidMonths": 12,
+    "notApproved": [
+     "indirect producer fees",
+     "overheads/indirect costs including administration fees"
+    ],
+    "applications2025": 9,
+    "grants2025": 8,
+    "granted2025NOK": 66825000
+   },
+   "applies": "Norway; Norwegian and foreign production companies through a Norwegian AS set up for the production; applications before work starts.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Du kan søke om å få refundert inntil 25 % av godkjente produksjonskostnader for produksjonen i Norge. … 25.000.000 kroner for spillefilm 10.000.000 kroner for dokumentarfilm … minimumsforbruk av godkjente kostnader i Norge på 4.000.000 kroner. Produksjonen må dokumentere en finansieringsplan som består av minimum 30 % internasjonal finansiering på søknadstidspunktet."
+    },
+    {
+     "src": 4,
+     "said": "Kostnader som ikke godkjennes av Norsk filminstitutt … Indirekte produsentgodtgjørelser. Overheads/indirekte kostnader, herunder administrasjonsgodtgjørelse."
+    },
+    {
+     "src": 2,
+     "said": "Insentivordningen mottok i 2025 totalt ni søknader. Åtte prosjekter delte den totale rammen på 66,8 millioner kroner."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "35 Norwegian films opened in cinemas in 2025 (40 in 2024), with 2.62 million admissions and a 31% market share; the six most-seen took 65% of all admissions to Norwegian films.",
+   "value": {
+    "premieres": {
+     "2023": 35,
+     "2024": 40,
+     "2025": 35
+    },
+    "admissions": {
+     "2023": 2513233,
+     "2024": 2025224,
+     "2025": 2624344
+    },
+    "marketShare": {
+     "2023": 0.27,
+     "2024": 0.25,
+     "2025": 0.31
+    },
+    "topSixShareOfNorwegianAdmissions2025": 0.65
+   },
+   "applies": "Norway, Norwegian cinema films 2023 to 2025 (NFI annual report 2025).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Besøkstall norsk kinofilm 2 513 233 2 025 224 2 624 344 Markedsandeler norsk film 27 % 25 % 31 % Antall norske kinofilmer med premiere 35 40 35 … de seks mest sette norske filmene sto for hele 65 prosent av det totale kinobesøket for norsk film."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Norway's producers' association is Produsentforeningen in Virke, with nearly 170 independent production companies as members; it negotiates the collective agreements with the unions.",
+   "value": {
+    "name": "Produsentforeningen (Virke)",
+    "members": "nearly 170 independent production companies"
+   },
+   "applies": "Norway; film, TV and game producers; page read 2026-11-01 (membership price behind a separate Virke page, not read).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Produsentforeningen i Virke organiserer og jobber for norske film-, tv- og spillprodusenter. Virke har nærmere 170 uavhengige produksjonsselskaper som medlemmer."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Norway's incentive scheme refunds nothing on indirect producer fees or on overheads and indirect costs, administration fees included.",
+   "value": {
+    "scheme": "insentivordningen (NFI)",
+    "notEligible": [
+     "indirect producer fees",
+     "overheads/indirect costs incl. administration fees",
+     "mark-ups on re-invoiced costs",
+     "bank, currency and interest costs"
+    ]
+   },
+   "applies": "Norway, film and series productions applying to the NFI's incentive scheme, as published 2026-11-01; the cap on fees in NFI production support budgets is not given here.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Kostnader som ikke godkjennes av Norsk filminstitutt … Indirekte produsentgodtgjørelser. Overheads/indirekte kostnader, herunder administrasjonsgodtgjørelse. … Påslag på viderefakturerte kostnader."
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "NO",
+ "sources": [
+  {
+   "url": "https://www.nfi.no/tilskudd/produksjon/produksjon-av-spillefilm-etter-markedsvurdering",
+   "title": "NFI: Produksjon av spillefilm etter markedsvurdering",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Høyt nivå innebærer tilskudd på inntil 14.200.000 kroner, og forutsetter et publikumsestimat på over 250.000 solgte billetter i ordinær kinodistribusjon. Lavt nivå innebærer tilskudd på inntil 9.800.000 kroner, og forutsetter et publikumsestimat på over 150.000 solgte billetter i ordinær kinodistribusjon. … Tilskuddet kan ikke overstige 50% av filmens godkjente budsjett."
+  },
+  {
+   "url": "https://www.nfi.no/tilskudd/produksjon/produksjon-av-spillefilm-etter-konsulentvurdering",
+   "title": "NFI: Produksjon av spillefilm etter kunstnerisk vurdering",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Samlet tilskudd fra Norsk filminstitutt til utvikling, produksjon og etterhåndstilskudd kan maksimalt være 35 000 000 kroner. Det maksimale samlede offentlige tilskuddet skal ikke overstige 80% av de godkjente regnskapsførte utviklings-, og produksjonskostnadene."
+  },
+  {
+   "url": "https://cdn.craft.cloud/0df8a7fe-ef75-40cb-9e44-53aac4ffeac2/assets/uploads/documents/Rapporter/Arsrapporter/norsk-filminstitutt-arsrapport-2025.pdf",
+   "title": "Norsk filminstitutt: Årsrapport 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Spillefilm konsulentvurdert 77 350 000 71 7 64 Spillefilm markedsvurdert 66 000 000 61 6 55 … Totalt 253 453 124 368 73 295 … Insentivordningen mottok i 2025 totalt ni søknader. Åtte prosjekter delte den totale rammen på 66,8 millioner kroner. … Besøkstall norsk kinofilm 2 513 233 2 025 224 2 624 344 Markedsandeler norsk film 27 % 25 % 31 % Antall norske kinofilmer med premiere 35 40 35 … de seks mest sette norske filmene sto for hele 65 prosent av det totale kinobesøket for norsk film."
+  },
+  {
+   "url": "https://www.nfi.no/tilskudd/insentiv/insentivordningen-2023",
+   "title": "NFI: Insentivordningen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Du kan søke om å få refundert inntil 25 % av godkjente produksjonskostnader for produksjonen i Norge. … 25.000.000 kroner for spillefilm 10.000.000 kroner for dokumentarfilm … minimumsforbruk av godkjente kostnader i Norge på 4.000.000 kroner. Produksjonen må dokumentere en finansieringsplan som består av minimum 30 % internasjonal finansiering på søknadstidspunktet."
+  },
+  {
+   "url": "https://www.nfi.no/tilskudd/insentivordningen-informasjon-om-kostnader",
+   "title": "NFI: Insentivordningen – informasjon om kostnader",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Kostnader som ikke godkjennes av Norsk filminstitutt … Indirekte produsentgodtgjørelser. Overheads/indirekte kostnader, herunder administrasjonsgodtgjørelse. … Kostnader som ikke godkjennes av Norsk filminstitutt … Indirekte produsentgodtgjørelser. Overheads/indirekte kostnader, herunder administrasjonsgodtgjørelse. … Påslag på viderefakturerte kostnader."
+  },
+  {
+   "url": "https://www.virke.no/bransjeomrade/tjenester/produsentforeningen/",
+   "title": "Virke: Produsentforeningen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Produsentforeningen i Virke organiserer og jobber for norske film-, tv- og spillprodusenter. Virke har nærmere 170 uavhengige produksjonsselskaper som medlemmer."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "feecap",
+   "sought": "The cap the NFI sets on the producer's fee and overheads in a production-support budget (the incentive scheme's exclusion is now held).",
+   "tried": {
+    "institution": "NFI feature production pages and the chart of accounts (Kontoplan-film-og-serier-1.xlsx, saved producer-NO-nfi-kontoplan.xlsx) name producer lines but no percentage. | Retry 2026-11-01 (producer retry): nfi.no site search (sok?q=produsentsalær, indirekte kostnader, overhead): only the incentive cost page (used).",
+    "official-register": "lovdata.no/dokument/SF/forskrift/2016-10-31-1264 answered 405 to curl (2026-11-01); not read another way. | Retry 2026-11-01 (producer retry): lovdata.no forskrift 2016-10-31-1264: 405 again; regjeringen.no høringsnotat on the NFI regulation found by search, not a fee cap.",
+    "web-search": "2026-11-01: 'NFI produsenthonorar indirekte kostnader prosent av budsjett spillefilm forskrift audiovisuelle produksjoner'. | Retry 2026-11-01 (producer retry): \"nfi.no produksjonstilskudd spillefilm budsjett \\\"produsenthonorar\\\" OR \\\"produsentsalær\\\" \\\"indirekte kostnader\\\" prosent maksimalt\"; \"Norsk filminstitutt \\\"godkjente kostnader\\\" OR \\\"kostnadsgodkjenning\\\" produsent overhead \\\"prosent\\\" retningslinjer budsjett regnskap spillefilm\": no percentage.",
+    "trade-press": "None found quoting the rule. | Retry 2026-11-01 (producer retry): None found.",
+    "archive": "Not tried; web.archive.org reset this environment's connection on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

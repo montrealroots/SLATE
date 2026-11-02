@@ -1,0 +1,321 @@
+{
+ "topic": "tax.MT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Malta: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A single resident pays 0% to EUR 12,000, 15% to EUR 16,000, 25% to EUR 60,000 and 35% above (basis year 2026); married couples and parents have wider bands. There is no regional or municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "single": [
+     {
+      "from": 0,
+      "to": 12000,
+      "rate": 0
+     },
+     {
+      "from": 12000,
+      "to": 16000,
+      "rate": 0.15
+     },
+     {
+      "from": 16000,
+      "to": 60000,
+      "rate": 0.25
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "married": [
+     {
+      "from": 0,
+      "to": 22500,
+      "rate": 0
+     },
+     {
+      "from": 22500,
+      "to": 32000,
+      "rate": 0.15
+     },
+     {
+      "from": 32000,
+      "to": 60000,
+      "rate": 0.25
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "parent": [
+     {
+      "from": 0,
+      "to": 13000,
+      "rate": 0
+     },
+     {
+      "from": 13000,
+      "to": 17500,
+      "rate": 0.15
+     },
+     {
+      "from": 17500,
+      "to": 60000,
+      "rate": 0.25
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "partTimeFlat": {
+     "rate": 0.1,
+     "capEmployment": 10000,
+     "capSelfEmployment": 12000
+    }
+   },
+   "applies": "Basis year 2026 (assessed 2027).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual income tax rate Taxable income (EUR) Rate Deduction (single taxpayer, basis year 2026) Up to 12,000 0% 0 12,001–16,000 15% EUR 1,800 16,001–60,000 25% EUR 3,400 Over 60,000 35% EUR 9,400"
+    },
+    {
+     "src": 1,
+     "said": "(EUR) From To 0 22,500 0 0 22,501 32,000 15 3,375 32,501 60,000 25 6,575 60,001 and above 35 12,575 Parent rates Taxable income (EUR) Rate (%) Deduct (EUR) From To 0 13,000 0 0 13,001 17,500 15 1,950 17,501 60,000 25 3,700 60,001 and above 35 9,700"
+    },
+    {
+     "src": 1,
+     "said": "income derived from part-time work may qualify for a reduced tax rate of 10%, subject to a capping of EUR 10,000 per annum for part-time employment and EUR 12,000 per annum for part-time self-employment."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Income of a calendar year (the basis year) is assessed in the following year; the balance of tax is due by 30 June of the year of assessment, and the self-employed pay provisional tax in April, August and December of the basis year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "balanceDue": "06-30 following year",
+    "provisional": [
+     "April",
+     "August",
+     "December"
+    ]
+   },
+   "applies": "2026 basis year.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Individuals are subject to tax on income arising in a calendar ye"
+    },
+    {
+     "src": 0,
+     "said": "The balance of tax payable must be paid by 30 June of the year of assessment if"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Employer and employee each pay 10% of the employee's pay, at a fixed EUR 55.93 a week where annual pay exceeds EUR 29,084 (for those born from 1962); the self-employed pay 15% of the previous year's net income, up to EUR 83.89 a week.",
+   "value": {
+    "currency": "EUR",
+    "employee": 0.1,
+    "employer": 0.1,
+    "weeklyMax": 55.93,
+    "annualPayAboveWhichFixed": 29084,
+    "selfEmployed": {
+     "rate": 0.15,
+     "base": "previous year's net income",
+     "weeklyMax": 83.89
+    }
+   },
+   "applies": "Calendar year 2026, persons born on or after 1 January 1962.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "For calendar year 2026, both the employer and the employee are each required to pay social security contributions at the rate of 10% of the individual employee’s salary and at fixed rates of EUR 55.93 per week for annual salaries exceeding EUR 29,084, provided the employee was born on or after 1 January 1962. For self-occupied / self-employed individuals, social security contributions amount to 15% of the annual net income earned during the previous year. The maximum contribution for persons born on or after 1 January 1962 amounts to EUR 83.89."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Under the Final Settlement System the employer withholds income tax and social security from pay, which in most cases settles the year's tax; the self-employed pay three provisional instalments instead.",
+   "value": {
+    "employee": "FSS withholding tables",
+    "selfEmployed": "three provisional payments"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "In terms of the Final Settlement System (FSS) Rules, an employer is required to withhold income tax and social security contributions at source from the employees’ salaries (including taxable fringe benefits), which, in most cases, equals the individual's total tax liability."
+    },
+    {
+     "src": 3,
+     "said": "Where income is not subject to the FSS (e.g. self-employed persons), the taxpayer is required to make three payments in the basis tax year under the provisional tax (PT) system."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on income and gains arising in Malta.",
+   "value": {
+    "scope": "Malta-source income"
+   },
+   "applies": "The non-resident rate table and any artiste withholding were not found (see blocker).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A non-resident individual is taxed only on income and chargeable gains arising in Malta."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A self-employed artist may opt for a final 7.5% on the first EUR 50,000 of net income from artistic activities, the rest taxed at the normal rates; an author's royalties from qualifying literary works may be taxed at a final 7.5% on the gross.",
+   "value": {
+    "artistsOption": {
+     "rate": 0.075,
+     "cap": 50000,
+     "base": "net income",
+     "final": true
+    },
+    "literaryRoyaltiesOption": {
+     "rate": 0.075,
+     "base": "gross",
+     "final": true
+    }
+   },
+   "applies": "Both by election; 'artistic activities' as defined by the rules.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Artists deriving income from artistic activities (as defined) conducted on a self-employed basis may opt to be taxed at a flat rate of 7.5% on the first EUR 50,000 income earned, net of expenses incurred in the production of such income."
+    },
+    {
+     "src": 1,
+     "said": "Recipients of royalty income derived by an individual in one's capacity as an author from qualifying literary works may opt to tax the full gross amount of such royalty income at a reduced rate of 7.5% (decreased from 15%)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; a service provider whose annual turnover is not above EUR 35,000 may qualify as a small enterprise and not charge VAT (registering under Article 11).",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.18,
+    "reduced": [
+     0,
+     0.05,
+     0.07,
+     0.12
+    ],
+    "smallEnterpriseServices": 35000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Supplies of goods and services in Malta are subject to VAT at the standard rate of 18%"
+    },
+    {
+     "src": 2,
+     "said": "Taxable persons whose economic activity consists principally in supplies of services and whose annual turnover is not higher than EUR 35,000 may qualify as small enterprises. If so, such persons are not required to charge VAT on their supplies"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "An individual not resident in Malta in the preceding year is taxed at 0% on the first EUR 700, 20% on the next 2,400, 30% on the next 4,700 and 35% on the rest (EU/EEA nationals with 90% of income from Malta may use the resident rates). A non-resident's income from entertainment activities in Malta for no more than fifteen days in the year is taxed at 10% of the gross payment, final, with no set-off or refund; past fifteen days it is declared on a return at the non-resident rates, with the 10% credited.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 700,
+      "rate": 0
+     },
+     {
+      "from": 700,
+      "to": 3100,
+      "rate": 0.2
+     },
+     {
+      "from": 3100,
+      "to": 7800,
+      "rate": 0.3
+     },
+     {
+      "from": 7800,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "entertainers": {
+     "rate": 0.1,
+     "base": "gross payment",
+     "final": true,
+     "maxDays": 15,
+     "over15Days": "return at the non-resident rates, 10% credited and any excess refunded"
+    }
+   },
+   "applies": "Income Tax Act (Cap. 123), art. 56(1)(c) and (18A)",
+   "sources": [
+    {
+     "src": 4,
+     "said": "(c) in the case of any individual who is not resident in Malta during the year immediately preceding the year … of assessment - For every euro of the first €700......................................... 0c For every euro of the next €2,400.................................. 20c For every euro of the next €4,700................................... 30c For every euro of the remainder .................................... 35c: … (18A) Notwithstanding any other provisions of this article, where a non-resident derives income from entertainment activities exercised in Malta for a period not exceeding fifteen days in the year preceding a year of assessment, the tax shall be charged at the rate of ten cents (0.10) on every euro of the gross payment receivable in respect of the said activities, and no set-off or refund shall be granted to any person in respect of the tax so charged: Provided that where the said activities are exercised in Malta for a period exceeding fifteen days, the non-resident person shall declare his income from entertainment activities in a return made in accordance with the Income Tax Acts and he will be charged on such income at the rates laid down in sub-article (1)(c)"
+    }
+   ]
+  }
+ ],
+ "country": "MT",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-maltahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Malta Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://cfr.gov.mt/",
+   "said": "Individual income tax rate Taxable income (EUR) Rate Deduction (single taxpayer, basis year 2026) Up to 12,000 0% 0 12,001–16,000 15% EUR 1,800 16,001–60,000 25% EUR 3,400 Over 60,000 35% EUR 9,400 … The balance of tax payable must be paid by 30 June of the year of assessment if"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: malta Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://cfr.gov.mt/",
+   "said": "(EUR) From To 0 22,500 0 0 22,501 32,000 15 3,375 32,501 60,000 25 6,575 60,001 and above 35 12,575 Parent rates Taxable income (EUR) Rate (%) Deduct (EUR) From To 0 13,000 0 0 13,001 17,500 15 1,950 17,501 60,000 25 3,700 60,001 and above 35 9,700 … income derived from part-time work may qualify for a reduced tax rate of 10%, subject to a capping of EUR 10,000 per annum for part-time employment and EUR 12,000 per annum for part-time self-employment. … Individuals are subject to tax on income arising in a calendar ye … A non-resident individual is taxed only on income and chargeable gains arising in Malta. … Artists deriving income from artistic activities (as defined) conducted on a self-employed basis may opt to be taxed at a flat rate of 7.5% on the first EUR 50,000 income earned, net of expenses incurred in the production of such income. … Recipients of royalty income derived by an individual in one's capacity as an author from qualifying literary works may opt to tax the full gross amount of such royalty income at a reduced rate of 7.5% (decreased from 15%)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malta/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: malta Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://cfr.gov.mt/",
+   "said": "For calendar year 2026, both the employer and the employee are each required to pay social security contributions at the rate of 10% of the individual employee’s salary and at fixed rates of EUR 55.93 per week for annual salaries exceeding EUR 29,084, provided the employee was born on or after 1 January 1962. For self-occupied / self-employed individuals, social security contributions amount to 15% of the annual net income earned during the previous year. The maximum contribution for persons born on or after 1 January 1962 amounts to EUR 83.89. … Supplies of goods and services in Malta are subject to VAT at the standard rate of 18% … Taxable persons whose economic activity consists principally in supplies of services and whose annual turnover is not higher than EUR 35,000 may qualify as small enterprises. If so, such persons are not required to charge VAT on their supplies"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malta/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: malta Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://cfr.gov.mt/",
+   "said": "In terms of the Final Settlement System (FSS) Rules, an employer is required to withhold income tax and social security contributions at source from the employees’ salaries (including taxable fringe benefits), which, in most cases, equals the individual's total tax liability. … Where income is not subject to the FSS (e.g. self-employed persons), the taxpayer is required to make three payments in the basis tax year under the provisional tax (PT) system."
+  },
+  {
+   "url": "https://legislation.mt/eli/cap/123/eng/pdf",
+   "title": "Income Tax Act (Cap. 123), legislation.mt consolidated text, art. 56",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(c) in the case of any individual who is not resident in Malta during the year immediately preceding the year … of assessment - For every euro of the first €700......................................... 0c For every euro of the next €2,400.................................. 20c For every euro of the next €4,700................................... 30c For every euro of the remainder .................................... 35c: … (18A) Notwithstanding any other provisions of this article, where a non-resident derives income from entertainment activities exercised in Malta for a period not exceeding fifteen days in the year preceding a year of assessment, the tax shall be charged at the rate of ten cents (0.10) on every euro of the gross payment receivable in respect of the said activities, and no set-off or refund shall be granted to any person in respect of the tax so charged: Provided that where the said activities are exercised in Malta for a period exceeding fifteen days, the non-resident person shall declare his income from entertainment activities in a return made in accordance with the Income Tax Acts and he will be charged on such income at the rates laid down in sub-article (1)(c)"
+  }
+ ],
+ "blockers": []
+}

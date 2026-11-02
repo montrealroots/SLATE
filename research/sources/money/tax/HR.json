@@ -1,0 +1,2549 @@
+{
+ "topic": "tax.HR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Croatia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Croatian resident pays income tax at two rates set each year by the municipality or city of residence: a lower rate (15% up to 20–23% by size of place) on annual income up to €60,000 and a higher rate (25% up to 30–33%) above; 20% and 30% apply where the place sets none; each person has a personal allowance of €600 a month.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 60000,
+      "rate": {
+       "min": 0.15,
+       "max": 0.23
+      }
+     },
+     {
+      "from": 60000,
+      "to": null,
+      "rate": {
+       "min": 0.25,
+       "max": 0.33
+      }
+     }
+    ],
+    "defaultRates": [
+     0.2,
+     0.3
+    ],
+    "ranges": {
+     "municipality": {
+      "lower": [
+       0.15,
+       0.2
+      ],
+      "higher": [
+       0.25,
+       0.3
+      ]
+     },
+     "town": {
+      "lower": [
+       0.15,
+       0.21
+      ],
+      "higher": [
+       0.25,
+       0.31
+      ]
+     },
+     "cityOrCountySeat": {
+      "lower": [
+       0.15,
+       0.22
+      ],
+      "higher": [
+       0.25,
+       0.32
+      ]
+     },
+     "Zagreb": {
+      "lower": [
+       0.15,
+       0.23
+      ],
+      "higher": [
+       0.25,
+       0.33
+      ]
+     }
+    },
+    "allowanceMonthly": 600,
+    "municipalities": {
+     "ANDRIJAŠEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ANTUNOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BABINA GREDA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BAKAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BALE - VALLE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BARBAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BARILOVIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BAŠKA": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "BAŠKA VODA": {
+      "lower": 0.17,
+      "higher": 0.27
+     },
+     "BEBRINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BEDEKOVČINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BEDENICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BEDNJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BELI MANASTIR": {
+      "lower": 0.21,
+      "higher": 0.27
+     },
+     "BELICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BELIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BENKOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BEREK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BERETINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BIBINJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BILICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BILJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BIOGRAD NA MORU": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BISKUPIJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BISTRA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BIZOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BJELOVAR": {
+      "lower": 0.18,
+      "higher": 0.25
+     },
+     "BLATO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BOGDANOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BOL": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BOROVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BOSILJEVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BOŠNJACI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRCKOVLJANI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRDOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRELA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRESTOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BREZNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BREZNIČKI HUM": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRINJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BROD MORAVICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRODSKI STUPNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BRTONIGLA - VERTENEGLIO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BUDINŠČINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BUJE - BUIE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BUKOVLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "BUZET": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "CERNA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CERNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CEROVLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CESTICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CETINGRAD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CISTA PROVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CIVLJANE": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "CRES": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CRIKVENICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "CRNAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČABAR": {
+      "lower": 0.19,
+      "higher": 0.3
+     },
+     "ČAČINCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČAĐAVICA": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "ČAGLIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČAKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČAVLE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČAZMA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ČEMINAC": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "ČEPIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DARDA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DARUVAR": {
+      "lower": 0.21,
+      "higher": 0.3
+     },
+     "DAVOR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DEKANOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DELNICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DESINIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DEŽANOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DICMO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DOBRINJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DOMAŠINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJA DUBRAVA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJA MOTIČINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJA STUBICA": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "DONJA VOĆA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI ANDRIJEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI KRALJEVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI KUKURUZARI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI LAPAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI MIHOLJAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DONJI VIDOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRAGALIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRAGANIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRAŽ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRENOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRENJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DRNIŠ": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "DRNJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUBRAVA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUBRAVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUBROVAČKO PRIMORJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUBROVNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUGA RESA": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "DUGI RAT": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUGO SELO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DUGOPOLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "DVOR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐAKOVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐELEKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐULOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐURĐENOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐURĐEVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ĐURMANEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ERDUT": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ERNESTINOVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ERVENIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FARKAŠEVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FAŽANA - FASANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FERDINANDOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FERIČANCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FUNTANA - FONTANE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "FUŽINE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GALOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GARČIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GAREŠNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GENERALSKI STOL": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GLINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GOLA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORIČAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORJANI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJA RIJEKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJA STUBICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJA VRBA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJI BOGIĆEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJI KNEGINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GORNJI MIHALJEVEC": {
+      "lower": 0.17,
+      "higher": 0.27
+     },
+     "GOSPIĆ": {
+      "lower": 0.22,
+      "higher": 0.32
+     },
+     "GRAČAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRAČIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRADAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRADEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRADINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRADIŠTE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GROŽNJAN - GRISIGNANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GRUBIŠNO POLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GUNDINCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GUNJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "GVOZD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HERCEGOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HLEBINE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HRAŠĆINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HRVACE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HRVATSKA DUBICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HRVATSKA KOSTAJNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HUM NA SUTLI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "HVAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ILOK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "IMOTSKI": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "IVANEC": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "IVANIĆ-GRAD": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "IVANKOVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "IVANSKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JAGODNJAK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JAKOVLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JAKŠIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JALŽABET": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JANJINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JARMINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JASENICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JASENOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JASTREBARSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JELENJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JELSA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JESENJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "JOSIPDOL": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KALI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KALINOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KALNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KAMANJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KANFANAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KAPELA": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "KAPTOL": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KARLOBAG": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KARLOVAC": {
+      "lower": 0.19,
+      "higher": 0.29
+     },
+     "KAROJBA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KASTAV": {
+      "lower": 0.2,
+      "higher": 0.31
+     },
+     "KAŠTELA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KAŠTELIR-LABINCI - CASTELLIERE-S. DOMENICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KIJEVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KISTANJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLAKAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLANJEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLENOVNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLINČA SELA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLIS": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLOŠTAR IVANIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KLOŠTAR PODRAVSKI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KNEŽEVI VINOGRADI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KNIN": {
+      "lower": 0.21,
+      "higher": 0.3
+     },
+     "KOLAN": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "KOMIŽA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KONAVLE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KONČANICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KONJŠČINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOPRIVNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOPRIVNIČKI BREGI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOPRIVNIČKI IVANEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KORČULA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOSTRENA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOŠKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KOTORIBA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRALJEVEC NA SUTLI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRALJEVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRAPINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRAPINSKE TOPLICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRAŠIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRAVARSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRIŽ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRIŽEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRNJAK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KRŠAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KUKLJICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KULA NORINSKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KUMROVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KUTINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "KUTJEVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LABIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LANIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LASINJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LASTOVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LEĆEVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LEGRAD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LEKENIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LEPOGLAVA": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "LEVANJSKA VAROŠ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LIPIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LIPOVLJANI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LIŠANE OSTROVIČKE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LIŽNJAN - LISIGNANO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOBOR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOKVE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOKVIČIĆI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOPAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOVAS": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOVINAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOVRAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LOVREĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LUDBREG": {
+      "lower": 0.2,
+      "higher": 0.31
+     },
+     "LUKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LUKAČ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LUMBARDA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LUPOGLAV": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "LJUBEŠĆICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MAČE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MAGADENOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MAJUR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MAKARSKA": {
+      "lower": 0.18,
+      "higher": 0.31
+     },
+     "MALA SUBOTICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MALI BUKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MALI LOŠINJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MALINSKA-DUBAŠNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARČANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARIJA BISTRICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARIJA GORICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARIJANCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARKUŠICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARTIJANEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARTINSKA VES": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MARUŠEVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MATULJI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MEDULIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "METKOVIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MIHOVLJAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MIKLEUŠ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MILNA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MLJET": {
+      "lower": 0.2,
+      "higher": 0.27
+     },
+     "MOLVE": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "MOŠĆENIČKA DRAGA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MOTOVUN - MONTONA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MRKOPALJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MUĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MURSKO SREDIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "MURTER - KORNATI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NAŠICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NEDELIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NEGOSLAVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NEREŽIŠĆA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NETRETIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NIJEMCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVA BUKOVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVA GRADIŠKA": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "NOVA KAPELA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVA RAČA": {
+      "lower": 0.17,
+      "higher": 0.27
+     },
+     "NOVALJA": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "NOVI GOLUBOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVI MAROF": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVI VINODOLSKI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVIGRAD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVIGRAD - CITTANOVA": {
+      "lower": 0.2,
+      "higher": 0.31
+     },
+     "NOVIGRAD PODRAVSKI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVO VIRJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NOVSKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "NUŠTAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OBROVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OGULIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OKRUG": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OKUČANI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OMIŠ": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "OMIŠALJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OPATIJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OPRISAVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OPRTALJ - PORTOLE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OPUZEN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ORAHOVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OREBIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OREHOVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ORIOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ORLE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OROSLAVJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OSIJEK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OTOČAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OTOK (SINJ)": {
+      "lower": 0.17,
+      "higher": 0.27
+     },
+     "OTOK (VINKOVCI)": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "OZALJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PAG": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PAKOŠTANE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PAKRAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PAŠMAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PAZIN": {
+      "lower": 0.22,
+      "higher": 0.3
+     },
+     "PERUŠIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PETERANEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PETLOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PETRIJANEC": {
+      "lower": 0.2,
+      "higher": 0.27
+     },
+     "PETRIJEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PETRINJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PETROVSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PIĆAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PIROVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PISAROVINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PITOMAČA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PLAŠKI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PLETERNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PLITVIČKA JEZERA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PLOČE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODBABLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODCRKAVLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODGORA": {
+      "lower": 0.18,
+      "higher": 0.3
+     },
+     "PODGORAČ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODRAVSKA MOSLAVINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODRAVSKE SESVETE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODSTRANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PODTUREN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POJEZERJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POKUPSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POLAČA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POLIČNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POPOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POPOVAČA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POREČ - PARENZO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POSEDARJE": {
+      "lower": 0.18,
+      "higher": 0.3
+     },
+     "POSTIRA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POVLJANA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "POŽEGA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PREGRADA": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "PREKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRELOG": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRESEKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRGOMET": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRIBISLAVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRIMORSKI DOLAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRIMOŠTEN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRIVLAKA (Vukovar)": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PRIVLAKA (Zadar)": {
+      "lower": 0.17,
+      "higher": 0.3
+     },
+     "PROLOŽAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PROMINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PUČIŠĆA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PULA - POLA": {
+      "lower": 0.22,
+      "higher": 0.32
+     },
+     "PUNAT": {
+      "lower": 0.15,
+      "higher": 0.3
+     },
+     "PUNITOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "PUŠĆA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAB": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RADOBOJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAKOVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RASINJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAŠA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAVNA GORA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RAŽANAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "REŠETARI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RIBNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RIJEKA": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "ROGOZNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ROVINJ - ROVIGNO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ROVIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RUGVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RUNOVIĆI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "RUŽIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SABORSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SALI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SAMOBOR": {
+      "lower": 0.18,
+      "higher": 0.27
+     },
+     "SATNICA ĐAKOVAČKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SEGET": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SELCA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SELNICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SEMELJCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SENJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SEVERIN": {
+      "lower": 0.18,
+      "higher": 0.28
+     },
+     "SIBINJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SIKIREVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SINJ": {
+      "lower": 0.18,
+      "higher": 0.3
+     },
+     "SIRAČ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SISAK": {
+      "lower": 0.216,
+      "higher": 0.316
+     },
+     "SKRAD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SKRADIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SLATINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SLAVONSKI BROD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SLAVONSKI ŠAMAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SLIVNO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SLUNJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SMOKVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SOKOLOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SOLIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SOPJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SPLIT": {
+      "lower": 0.215,
+      "higher": 0.32
+     },
+     "SRAČINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STANKOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STARA GRADIŠKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STARI GRAD": {
+      "lower": 0.2,
+      "higher": 0.31
+     },
+     "STARI JANKOVCI": {
+      "lower": 0.15,
+      "higher": 0.25
+     },
+     "STARI MIKANOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STARIGRAD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STARO PETROVO SELO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STON": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STRAHONINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STRIZIVOJNA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STUBIČKE TOPLICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "STUPNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SUĆURAJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SUHOPOLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SUKOŠAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SUNJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SUPETAR": {
+      "lower": 0.205,
+      "higher": 0.31
+     },
+     "SUTIVAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETA MARIJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETA NEDELJA (LABIN)": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETA NEDELJA (SAMOBOR)": {
+      "lower": 0.18,
+      "higher": 0.28
+     },
+     "SVETI ĐURĐ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI FILIP I JAKOV": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI ILIJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI IVAN ZELINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI IVAN ŽABNO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI JURAJ NA BREGU": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI KRIŽ ZAČRETJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI LOVREČ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI MARTIN NA MURI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI PETAR OREHOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETI PETAR U ŠUMI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "SVETVINČENAT": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠANDROVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠENKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠESTANOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠIBENIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠKABRNJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠODOLOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠOLTA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠPIŠIĆ BUKOVICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠTEFANJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠTITAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŠTRIGOVA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TAR-VABRIGA - TORRE-ABREGA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TINJAN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TISNO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TKON": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TOMPOJEVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TOPUSKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TORDINCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TOUNJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TOVARNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TRIBUNJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TRILJ": {
+      "lower": 0.15,
+      "higher": 0.3
+     },
+     "TRNAVA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TRNOVEC BARTOLOVEČKI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TROGIR": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "TRPANJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TRPINJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "TUČEPI": {
+      "lower": 0.17,
+      "higher": 0.3
+     },
+     "TUHELJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "UDBINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "UMAG - UMAGO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "UNEŠIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VALPOVO": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "VARAŽDIN": {
+      "lower": 0.21,
+      "higher": 0.32
+     },
+     "VARAŽDINSKE TOPLICE": {
+      "lower": 0.21,
+      "higher": 0.3
+     },
+     "VELA LUKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA GORICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA KOPANICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA LUDINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA PISANICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKA TRNOVITICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKI BUKOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKI GRĐEVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKO TRGOVIŠĆE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VELIKO TROJSTVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIDOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VILJEVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VINICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VINKOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VINODOLSKA OPĆINA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIRJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIROVITICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIS": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VISOKO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIŠKOVCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIŠKOVO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIŠNJAN - VISIGNANO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VIŽINADA - VISINADA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VLADISLAVCI": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "VOĆIN": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VODICE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VODNJAN - DIGNANO": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VOĐINCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VOJNIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRATIŠINEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRBANJA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRBJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRBNIK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRBOVEC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRBOVSKO": {
+      "lower": 0.21,
+      "higher": 0.31
+     },
+     "VRGORAC": {
+      "lower": 0.21,
+      "higher": 0.25
+     },
+     "VRHOVINE": {
+      "lower": 0.18,
+      "higher": 0.3
+     },
+     "VRLIKA": {
+      "lower": 0.18,
+      "higher": 0.28
+     },
+     "VRPOLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRSAR - ORSERA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VRSI": {
+      "lower": 0.15,
+      "higher": 0.3
+     },
+     "VUKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "VUKOVAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZABOK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZADAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZADVARJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZAGORSKA SELA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZAGREB": {
+      "lower": 0.23,
+      "higher": 0.33
+     },
+     "ZAGVOZD": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZAPREŠIĆ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZAŽABLJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZDENCI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZEMUNIK DONJI": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZLATAR": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZLATAR BISTRICA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ZMIJAVCI": {
+      "lower": 0.2,
+      "higher": 0.25
+     },
+     "ZRINSKI TOPOLOVAC": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŽAKANJE": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŽMINJ": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŽUMBERAK": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŽUPA DUBROVAČKA": {
+      "lower": 0.2,
+      "higher": 0.3
+     },
+     "ŽUPANJA": {
+      "lower": 0.21,
+      "higher": 0.31
+     }
+    }
+   },
+   "applies": "2026. Each place decides its two rates by 30 November for the next year; the rate of each place was not gathered here. The rates of all 556 towns and municipalities, as in force on 1 November 2026, are taken from the Tax Administration's full table; each place's decision is published in Narodne novine by the end of November and applies from 1 January.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual tax brackets (EUR) Tax rate (%) Over Not over 0 60,000 15 to 23 60,000 25 to 33"
+    },
+    {
+     "src": 0,
+     "said": "A municipality can choose a lower rate in the range from 15% to 20% and a higher rate in the range from 25% to 30%. A town can choose a lower rate in the range from 15% to 21% and a higher rate in the range from 25% to 31%. A city and a county seat can choose a lower rate in the range from 15% to 22% and a higher rate in the range from 25% to 32%. The City of Zagreb can choose a lower rate in the range from 15% to 23% and a higher rate in the range from 25% to 33%."
+    },
+    {
+     "src": 0,
+     "said": "Those locations for which a local self-government unit does not make a choice by the set deadline are subject to progressive tax rates of 20% and 30%."
+    },
+    {
+     "src": 1,
+     "said": "Each individual is entitled to a personal allowance of EUR 600 per month."
+    },
+    {
+     "src": 2,
+     "said": "Grad/Općina … Niža stopa … Viša stopa … ZAGREB … 23.00% … 33.00% … SPLIT … 21.50% … 32.00% … ANDRIJAŠEVCI … 20.00% … 30.00%"
+    },
+    {
+     "src": 3,
+     "said": "Niža stopa​ do 60.000,00 eura godišnje - do 5 .000,00 eura mjesečno Viša stopa od 60.000,01 eura godišnje - od 5.000,01 eura mjesečno Visine poreznih stopa određuju predstavnička tijela jedinica lokalne samouprave svojom odlukom. Odluka predstavničkog tijela jedinice lokalne samouprave objavljuje se u \"Narodnim novinama\", donosi se najkasnije do kraja studenoga tekuće godine, sa stupanjem na snagu 1. siječnja iduće godine i primjenjuje se do donošenja nove odluke."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 20% pension contributions (15% first pillar, 5% second) on gross pay up to €11,958 a month (base reduced on pay up to €1,300), and the employer 16.5% health insurance on uncapped gross pay; other income (such as a fee) bears 10% from the income and 7.5% on top.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "pension": 0.2,
+     "ceilingMonthly": 11958,
+     "ceilingAnnualFirstPillar": 143496
+    },
+    "employer": {
+     "health": 0.165,
+     "ceiling": null
+    },
+    "otherIncome": {
+     "fromIncome": 0.1,
+     "onTop": 0.075
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Employee's social security contributions are pension contributions levied at the rate of 20% (15% first pillar payments, 5% second pillar payments)."
+    },
+    {
+     "src": 4,
+     "said": "EUR 11,958.00 monthly cap (applicable for both first and second pillar payments in case of salary)."
+    },
+    {
+     "src": 4,
+     "said": "Health insurance: 16.5% The basis for payment of employer’s social security contributions is gross salary, which is not capped."
+    },
+    {
+     "src": 5,
+     "said": "Normally, other income is subject to social security contributions from received income, levied at 10%, and on top of income, levied at 7.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax monthly at the place's lower rate on pay up to €5,000 a month and the higher rate above; tax on other income (fees, royalties) is withheld by the payer at the lower rate without personal allowances.",
+   "value": {
+    "currency": "EUR",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 5000,
+      "rate": "lower"
+     },
+     {
+      "from": 5000,
+      "to": null,
+      "rate": "higher"
+     }
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Monthly tax brackets (EUR) Tax rate (%) Over Not over 0 5,000 15 to 23 5,000 25 to 33"
+    },
+    {
+     "src": 5,
+     "said": "Tax levied on other income is withheld by a payer of income at the lower tax rate (ranging between 15% and 23%, depending on the individual's place of residence or habitual abode in Croatia) without provision for taxpayers to claim personal allowances."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A fee paid to a foreign entity for a non-resident artist's or entertainer's performance in Croatia bears 10% withholding, and then the performer owes no personal income tax or contributions; a non-resident paid directly is taxed on the fee as other income, with an extra 30% expense allowance.",
+   "value": {
+    "viaForeignEntity": {
+     "rate": 0.1,
+     "final": true
+    },
+    "paidDirectly": {
+     "otherIncome": true,
+     "extraExpenseAllowance": 0.3
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Fees paid to foreign enterprises by domestic or foreign payers for the performance of nonresident artists, entertainers, and sportspersons in Croatia are subject to a 10% withholding tax"
+    },
+    {
+     "src": 0,
+     "said": "Non-resident performers (artists, entertainers, athletes) are not required to pay PIT if the fee for their performance is paid to a foreign legal entity and subject to withholding tax (WHT) in line with corporate income tax (CIT) legislation."
+    },
+    {
+     "src": 5,
+     "said": "The income of non-residents arising from artistic, entertainment, sport, literary and visual art-related activities, and the activities connected with the press, radio, and television shows."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Copyright royalties are taxed as other income with an extra 30% of the income allowed as expenditure; for a delivered work of art a further 25% is non-taxable (55% in all).",
+   "value": {
+    "royaltyExpenseAllowance": 0.3,
+    "workOfArtExempt": 0.25
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Additional expenditures shall be recognised in the amount of 30% of the income acquired on the basis of: Royalties paid pursuant to a special act governing copyright and related rights"
+    },
+    {
+     "src": 5,
+     "said": "in case of royalties received for the delivered work of art, 25% of the amount is considered non-taxable, i.e. total income is decreased by 55% (30% + 25%)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 25%; a resident must register when the annual value of transactions exceeds €60,000.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.25,
+    "threshold": 60000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The general VAT rate is 25%."
+    },
+    {
+     "src": 1,
+     "said": "Registration for VAT purposes by a resident is mandatory where the annual value of transactions exceeds EUR 60,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the self-employed file by the end of February of the next year, while for employees the Tax Administration makes the annual assessment; tax assessed is due within 15 days of the assessment.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "02-28",
+     "after": 1
+    }
+   },
+   "applies": "Self-employed return date.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The tax year is the calendar year."
+    },
+    {
+     "src": 6,
+     "said": "The annual tax return filing deadline is the end of February of the current year for the previous year."
+    }
+   ]
+  }
+ ],
+ "country": "HR",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/croatia/individual/taxes-on-personal-income",
+   "title": "Croatia: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 27 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.porezna-uprava.gov.hr/hr/porez-na-dohodak/4386",
+   "said": "Annual tax brackets (EUR) Tax rate (%) Over Not over 0 60,000 15 to 23 60,000 25 to 33 … A municipality can choose a lower rate in the range from 15% to 20% and a higher rate in the range from 25% to 30%. A town can choose a lower rate in the range from 15% to 21% and a higher rate in the range from 25% to 31%. A city and a county seat can choose a lower rate in the range from 15% to 22% and a higher rate in the range from 25% to 32%. The City of Zagreb can choose a lower rate in the range from 15% to 23% and a higher rate in the range from 25% to 33%. … Those locations for which a local self-government unit does not make a choice by the set deadline are subject to progressive tax rates of 20% and 30%. … Non-resident performers (artists, entertainers, athletes) are not required to pay PIT if the fee for their performance is paid to a foreign legal entity and subject to withholding tax (WHT) in line with corporate income tax (CIT) legislation."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-croatiahighlights-2026.pdf",
+   "title": "Croatia Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.porezna-uprava.gov.hr/hr/porez-na-dohodak/4386",
+   "said": "Each individual is entitled to a personal allowance of EUR 600 per month. … Fees paid to foreign enterprises by domestic or foreign payers for the performance of nonresident artists, entertainers, and sportspersons in Croatia are subject to a 10% withholding tax … Registration for VAT purposes by a resident is mandatory where the annual value of transactions exceeds EUR 60,000."
+  },
+  {
+   "url": "https://porezna-uprava.gov.hr/Porezi/Excel/1",
+   "title": "Porez na dohodak: stopa po općini i gradu (Porezna uprava, full table of rates in force, downloaded as 'Porez na dohodak - stopa_opcina_grad.xlsx')",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Grad/Općina … Niža stopa … Viša stopa … ZAGREB … 23.00% … 33.00% … SPLIT … 21.50% … 32.00% … ANDRIJAŠEVCI … 20.00% … 30.00%"
+  },
+  {
+   "url": "https://porezna-uprava.gov.hr/hr/porez-na-dohodak-3939/3939",
+   "title": "Porez na dohodak (Porezna uprava)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Niža stopa​ do 60.000,00 eura godišnje - do 5 .000,00 eura mjesečno Viša stopa od 60.000,01 eura godišnje - od 5.000,01 eura mjesečno Visine poreznih stopa određuju predstavnička tijela jedinica lokalne samouprave svojom odlukom. Odluka predstavničkog tijela jedinice lokalne samouprave objavljuje se u \"Narodnim novinama\", donosi se najkasnije do kraja studenoga tekuće godine, sa stupanjem na snagu 1. siječnja iduće godine i primjenjuje se do donošenja nove odluke."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/croatia/individual/other-taxes",
+   "title": "Croatia: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 27 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hzzo.hr/",
+   "said": "Employee's social security contributions are pension contributions levied at the rate of 20% (15% first pillar payments, 5% second pillar payments). … EUR 11,958.00 monthly cap (applicable for both first and second pillar payments in case of salary). … Health insurance: 16.5% The basis for payment of employer’s social security contributions is gross salary, which is not capped. … The general VAT rate is 25%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/croatia/individual/income-determination",
+   "title": "Croatia: individual/income-determination (PwC Worldwide Tax Summaries, reviewed 27 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.porezna-uprava.gov.hr/hr/porez-na-dohodak/4386",
+   "said": "Normally, other income is subject to social security contributions from received income, levied at 10%, and on top of income, levied at 7.5%. … Monthly tax brackets (EUR) Tax rate (%) Over Not over 0 5,000 15 to 23 5,000 25 to 33 … Tax levied on other income is withheld by a payer of income at the lower tax rate (ranging between 15% and 23%, depending on the individual's place of residence or habitual abode in Croatia) without provision for taxpayers to claim personal allowances. … The income of non-residents arising from artistic, entertainment, sport, literary and visual art-related activities, and the activities connected with the press, radio, and television shows. … Additional expenditures shall be recognised in the amount of 30% of the income acquired on the basis of: Royalties paid pursuant to a special act governing copyright and related rights … in case of royalties received for the delivered work of art, 25% of the amount is considered non-taxable, i.e. total income is decreased by 55% (30% + 25%)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/croatia/individual/tax-administration",
+   "title": "Croatia: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 27 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.porezna-uprava.gov.hr/hr/porez-na-dohodak/4386",
+   "said": "The tax year is the calendar year. … The annual tax return filing deadline is the end of February of the current year for the previous year."
+  }
+ ],
+ "blockers": []
+}

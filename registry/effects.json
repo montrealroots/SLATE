@@ -49,5 +49,114 @@
   },
   "clock.counted": {
     "what": "Counts the real time played, carries the part of a second, and pauses the clock at a commitment."
+  },
+  "attributes.choose": {
+    "what": "Sets where each of a role's attributes starts, 0 to 100, when the life is made: every one at a level, or each its own."
+  },
+  "script.write": {
+    "what": "Writes a script's first draft: each part a reader grades scored from the attributes that write it, the days given and the writer's spread; the attributes used rise."
+  },
+  "script.revise": {
+    "what": "Revises a draft toward what the writer can do, on the parts the last read's notes name or the writer's own read thinks weakest; the attributes used rise."
+  },
+  "script.read": {
+    "what": "Has a reader grade a draft by its own criteria (the Black List, PAGE), with an overall score and notes naming its three weakest parts."
+  },
+  "script.summarise": {
+    "what": "Writes a script's logline, synopsis and treatment, scored from Synopsis and Writing and the days given against the days needed; the attributes used rise."
+  },
+  "network.meet": {
+    "what": "Spends days among the trade: each day may make a contact, as likely as Networking, Speaking and Social Perceptiveness make it; the attributes used rise."
+  },
+  "script.promote": {
+    "what": "Sends a script out to as many contacts as the days allow: each may ask to read it, by Promotion, the synopsis and the script's grade."
+  },
+  "script.pitch": {
+    "what": "A pitch meeting on a request to read: it may sell the script at the WGA's minimum for its form, taking it off the market and leaving the buyer a contact."
+  },
+  "directing.prep": {
+    "what": "Opens a film or an episode on the DGA's terms (budget level, prep, shooting and cut days, the minimum fee) and plans its story, performances and images from Vision, Script Sense, Working With Actors and Visual Craft; teaches them over the prep days."
+  },
+  "directing.shoot": {
+    "what": "Brings the plan to the screen as far as the schedule against the days this director needs (Leadership) and the set (Leadership, Communication) carry it; teaches Working With Actors, Visual Craft, Leadership and Communication over the shooting days."
+  },
+  "directing.cut": {
+    "what": "Cuts the film from Editing in the Director's Cut the DGA guarantees against the days the footage needs, and sets the finished film's quality as its four parts' mean; teaches Editing."
+  },
+  "directing.submit": {
+    "what": "Sends a finished feature to Sundance, Cannes, the Berlinale or TIFF, once each, chosen at the festival's own selection rate as the film's quality scales it."
+  },
+  "directing.pursue": {
+    "what": "Takes the debut feature's chance of a second within five years (25.3%, 45% where a festival chose it), as Communication's pitch carries it; a second feature can be prepped only once it comes."
+  },
+  "acting.audition": {
+    "what": "Auditions for a posted breakdown the person fits (Billed As for a part written for men or women, they/them for a non-binary one, playing age, a named ethnicity, the language at C1, a headshot for every submission), self-taped or in the room, scored from the part's demands and the actor's audition craft, and booked or not; read by acting.perform, which plays only a booked part."
+  },
+  "acting.perform": {
+    "what": "Plays a booked part: its quality from every component the part asks, and its pay at the agreement's minimum on the day the work starts; the quality is read by every later audition's booking chance (the best work casting has seen)."
+  },
+  "producing.option": {
+    "what": "No new command: producing.option takes an optional market (a country code; the UK where none is given), which sets the project's currency, the zone its option's months run in, and every later stage's terms (plan, apply, release); a falsifier holds it (tests/person/producing/markets.test.ts::a market's project > producing.option: the market a project is optioned in sets what it can claim)."
+  },
+  "producing.renew": {
+    "what": "Renews a running option for another 18 months from when it would lapse, at another 10% of minimum."
+  },
+  "producing.plan": {
+    "what": "Budgets and schedules a project: its budget, the shooting days its script needs and the days the plan schedules, the producer's fee and the UK's tax credit."
+  },
+  "producing.apply": {
+    "what": "Applies a planned project to the BFI once: a yes at its rate as the package sells it adds an award of its share of the budget."
+  },
+  "producing.raise": {
+    "what": "Days raising the rest of a project's money from the market: broadcasters, pre-sales and equity closed one at a time until it is financed."
+  },
+  "producing.shoot": {
+    "what": "Shoots a financed project: the days it takes, what the days past the schedule cost, the producer's fee left after the overrun, and the film's quality."
+  },
+  "producing.release": {
+    "what": "Releases a film shot: whether it reaches cinemas and whether it earns back twice its budget."
+  },
+  "identity.make": {
+    "what": "Makes the one person the life is, whose fields every engine reads (the birth date the playing age, the pronouns Billed As, the languages, the citizenship)."
+  },
+  "identity.headshot": {
+    "what": "A headshot session: the person's headshot is new from now, and the session is held at the market's surveyed price where one is known (the US), none elsewhere."
+  },
+  "acting.breakdown": {
+    "what": "Posts the next breakdown for a part: written for men, women, either or a non-binary performer, naming an ethnicity or open or silent, for an age range, in the market's language; read by acting.audition, which auditions only for a posted breakdown the person fits."
+  },
+  "unions.join": {
+    "what": "Joins a union or guild (SAG-AFTRA, Equity UK, ACTRA, Canadian Actors' Equity, Actors' Equity Association, the WGA West, the DGA) by its own route read from the life's parts played, scripts sold and films directed: a card in the name the person goes by, at a standing (Full, the WGA's Associate, ACTRA's Apprentice), with its initiation fee and yearly dues recorded; refused where the life doesn't meet the route."
+  },
+  "genres.choose": {
+    "what": "Sets the genres the person loves (at least one, each once, any number), the only genres script.write writes in and producing.option options material in; the film's genre then moves its earnings (producing.release, by the BFI's gross per release of its group)."
+  },
+  "permits.apply": {
+    "what": "Applies for the work permit an engagement abroad needs, in any role: an actor's audition booked, a director's film prepped, a producer's project planned, in the engagement's own country and for its days; by the engager or the worker as the research says; refused where the engagement is done, no permit is needed, the route doesn't cover the role (the player told by permits.unkept), or who applies, the processing time or the term isn't known."
+  },
+  "permits.renew": {
+    "what": "Renews a permit in force in the role it was granted for, where the research says it renews."
+  },
+  "permits.decision": {
+    "what": "Decides an application at its processing time; read by permitted(), which acting.perform, directing.shoot, directing.cut and producing.shoot ask before the work abroad."
+  },
+  "script.offer": {
+    "what": "Offers a script in a market under one of its agreements (with the production's budget and running time where its minimums turn on them), in a language the writer writes at C1; a pitch then sells it at that agreement's minimum, less what waits for photography, or options it for a year at the agreement's option price."
+  },
+  "tax.reckon": {
+    "what": "Reckons a tax year where the person lives at its end: the year's income taxed at the resident's scale, less what that country withheld and what was withheld abroad (up to the tax), plus a self-employed worker's contributions and the VAT collected; the balance's due date scheduled."
+  },
+  "tax.settle": {
+    "what": "Pays a year's balance on the return's due date from the account the year's last pay went into, or refunds it there; owed, and the player told, where the account can't pay it."
+  },
+  "tax.owed": {
+    "what": "Leaves the player a notice of a year's tax owed that the account couldn't pay.",
+    "awaits": "layer 5: the money screen tells the player the tax owed"
+  },
+  "youth.authorise": {
+    "what": "Grants what the law of a country requires before a minor's engagement there in a kind of work, once: the child performer's permit or licence (layer 3's, or the seat region's own) below the age it is needed under, and the guardian's signature, a court's or an authority's approval of the contract below majority and the age the minor contracts alone; refused where the law bars the work at the person's age or nothing is required. Read by engagement(), which acting.perform, script.pitch, directing.prep and producing.shoot ask before the work."
+  },
+  "youth.release": {
+    "what": "Pays a minor's pay set aside (the Coogan trust's, the Caisse des dépôts' pécule) back from the world's youth:<CC> account into the person's account on the day they come of age in the work's country. Consumer: the account's balance, read by money.accounts' monthly standing (src/money/accounts/accounts.ts:157, where tax.settle is anchored) — the anchor belongs there, in a file this part doesn't own."
   }
 }

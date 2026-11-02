@@ -1,0 +1,208 @@
+{
+ "topic": "tax.XK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kosovo: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's salary is taxed at 0% up to EUR 3,000 a year, 8% from 3,000.01 to 5,400 and 10% above; no municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 3000,
+      "rate": 0
+     },
+     {
+      "from": 3000,
+      "to": 5400,
+      "rate": 0.08
+     },
+     {
+      "from": 5400,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "regional": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0% for salaries up to and including 3,000.00 euros (EUR)/year. 8% for salaries between EUR 3,000.01 and EUR 5,400.00/year. 10% for salaries of EUR 5,400.01/year and above."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; the annual return is due by 31 March of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax period for PIT purposes is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "PIT returns are filed annually, and the deadline to submit them is 31 March of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Pension contributions are 10% of gross pay: 5% withheld from the employee and 5% from the employer (voluntary top-ups to 15% each).",
+   "value": {
+    "employee": 0.05,
+    "employer": 0.05,
+    "voluntaryMaxEach": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The total compulsory contribution is 10%, where 5% represents the employee’s share (withheld from gross wages) and 5% the employer’s share."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax and pension contributions from salaries monthly, and also withholds on payments to non-business individuals including actors and musicians; payment is due by the 15th of the following month.",
+   "value": {
+    "remitBy": "15th of the following month",
+    "coversActorsMusicians": true
+   },
+   "applies": "Residents.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Each employer is responsible for withholding the tax and pension contribution from taxable salaries paid to employees, including payments to non-business individuals, for professional, technical, management, and financial services, payments for service contracts, payment for actors, musicians, athletes, and dependent agents."
+    },
+    {
+     "src": 1,
+     "said": "make the respective payment to the Tax Administration of Kosovo (TAK) by the 15th day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments for services by non-residents bear 5% withholding and royalties 10%, reduced under treaties.",
+   "value": {
+    "services": 0.05,
+    "royalties": 0.1
+   },
+   "applies": "Non-residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Interest and royalties: 10%. Rent: 9%. Services provided from non-residents: 5%."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% (8% reduced); registration is required above EUR 30,000 of turnover in a calendar year.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.18,
+    "reduced": 0.08,
+    "threshold": 30000
+   },
+   "applies": "Law No. 05/L-037 on VAT.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "taxable persons whose turnover is above EUR 30,000 within a calendar year are required to register for VAT."
+    },
+    {
+     "src": 4,
+     "said": "The standard VAT rate is 18%."
+    }
+   ]
+  }
+ ],
+ "country": "XK",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/kosovo/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Kosovo, Individual - Taxes on personal income (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.atk-ks.org/",
+   "said": "0% for salaries up to and including 3,000.00 euros (EUR)/year. 8% for salaries between EUR 3,000.01 and EUR 5,400.00/year. 10% for salaries of EUR 5,400.01/year and above."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kosovo/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Kosovo, Individual - Tax administration (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.atk-ks.org/",
+   "said": "The tax period for PIT purposes is the calendar year. … PIT returns are filed annually, and the deadline to submit them is 31 March of the following year. … Each employer is responsible for withholding the tax and pension contribution from taxable salaries paid to employees, including payments to non-business individuals, for professional, technical, management, and financial services, payments for service contracts, payment for actors, musicians, athletes, and dependent agents. … make the respective payment to the Tax Administration of Kosovo (TAK) by the 15th day of the following month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kosovo/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kosovo, Individual - Other taxes (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.atk-ks.org/",
+   "said": "The total compulsory contribution is 10%, where 5% represents the employee’s share (withheld from gross wages) and 5% the employer’s share."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kosovo/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kosovo, Corporate - Withholding taxes (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.atk-ks.org/",
+   "said": "Interest and royalties: 10%. Rent: 9%. Services provided from non-residents: 5%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kosovo/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Kosovo, Corporate - Other taxes (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.atk-ks.org/",
+   "said": "taxable persons whose turnover is above EUR 30,000 within a calendar year are required to register for VAT. … The standard VAT rate is 18%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The PIT law's own text and the tax administration's 2026 rate page",
+   "tried": {
+    "institution": "atk-ks.org fails TLS verification from this environment (curl: SSL certificate problem: unable to get local issuer certificate, 2026-11-01); not read another way || retry-8 2026-11-01: atk-ks.org and www.atk-ks.org rechecked 2026-11-01: TLS verification still fails (SSL certificate problem); not read another way",
+    "official-register": "gzk.rks-gov.net (Official Gazette: Law 08/L-257 on PIT, Law 05/L-037 on VAT) not read || retry-8 2026-11-01: gzk.rks-gov.net (Official Gazette) answers: home page and 'Laws in force' list read; the list shows 20 acts per page and pages by ASP.NET postback, and none of the acts on the first page or linked from the home page is the PIT law (08/L-257), the VAT law or the tax-administration law; the act's ActID is not known, so it was not opened",
+    "web-search": "not run separately || retry-8 2026-11-01: a search for 'Ligji 08/L-257 tatimi në të ardhurat personale artist jorezident tatim në burim' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "PwC Kosovo used for all figures || retry-8 2026-11-01: PwC Kosovo (used) re-read: services by non-residents 5%, royalties 10%; nothing on finality or authors",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether a non-resident performer's fee is withheld at the services rate or another, and whether final",
+   "tried": {
+    "institution": "atk-ks.org fails TLS verification from this environment (curl: SSL certificate problem: unable to get local issuer certificate, 2026-11-01); not read another way || retry-8 2026-11-01: atk-ks.org and www.atk-ks.org rechecked 2026-11-01: TLS verification still fails (SSL certificate problem); not read another way",
+    "official-register": "gzk.rks-gov.net (Official Gazette: Law 08/L-257 on PIT, Law 05/L-037 on VAT) not read || retry-8 2026-11-01: gzk.rks-gov.net (Official Gazette) answers: home page and 'Laws in force' list read; the list shows 20 acts per page and pages by ASP.NET postback, and none of the acts on the first page or linked from the home page is the PIT law (08/L-257), the VAT law or the tax-administration law; the act's ActID is not known, so it was not opened",
+    "web-search": "not run separately || retry-8 2026-11-01: a search for 'Ligji 08/L-257 tatimi në të ardhurat personale artist jorezident tatim në burim' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "PwC Kosovo used for all figures || retry-8 2026-11-01: PwC Kosovo (used) re-read: services by non-residents 5%, royalties 10%; nothing on finality or authors",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "atk-ks.org fails TLS verification from this environment (curl: SSL certificate problem: unable to get local issuer certificate, 2026-11-01); not read another way || retry-8 2026-11-01: atk-ks.org and www.atk-ks.org rechecked 2026-11-01: TLS verification still fails (SSL certificate problem); not read another way",
+    "official-register": "gzk.rks-gov.net (Official Gazette: Law 08/L-257 on PIT, Law 05/L-037 on VAT) not read || retry-8 2026-11-01: gzk.rks-gov.net (Official Gazette) answers: home page and 'Laws in force' list read; the list shows 20 acts per page and pages by ASP.NET postback, and none of the acts on the first page or linked from the home page is the PIT law (08/L-257), the VAT law or the tax-administration law; the act's ActID is not known, so it was not opened",
+    "web-search": "not run separately || retry-8 2026-11-01: a search for 'Ligji 08/L-257 tatimi në të ardhurat personale artist jorezident tatim në burim' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "PwC Kosovo used for all figures || retry-8 2026-11-01: PwC Kosovo (used) re-read: services by non-residents 5%, royalties 10%; nothing on finality or authors",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

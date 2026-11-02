@@ -1,0 +1,227 @@
+{
+ "topic": "tax.OM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Oman: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Oman levies no income tax on individuals in 2026; the Personal Income Tax Law of Royal Decree 56/2025 takes effect on 1 January 2028, at 5% of taxable income above an annual threshold of OMR 42,000.",
+   "value": {
+    "currency": "OMR",
+    "2026": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": null,
+       "rate": 0
+      }
+     ]
+    },
+    "2028": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": 42000,
+       "rate": 0
+      },
+      {
+       "from": 42000,
+       "to": null,
+       "rate": 0.05
+      }
+     ]
+    }
+   },
+   "applies": "From 1 January 2028 for residents (citizens and expatriates) on worldwide income; the 2028 brackets read the threshold as an exempt first band, per PwC and Deloitte.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "في الجريدة الرسمية، ويعمل به من الأول من يناير ٢٠٢٨ م"
+    },
+    {
+     "src": 0,
+     "said": "المادة (٨) تستحق الضريبة بمعدل (٥٪) خمسة في المائة من الدخل الخاضع للضريبة"
+    },
+    {
+     "src": 1,
+     "said": "Neither residents nor nonresidents are subject to income or capital gains taxes in Oman."
+    },
+    {
+     "src": 2,
+     "said": "An annual income threshold of 42,000 Omani rial (OMR) has been set, above which a 5% tax rate will apply."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An Omani employee pays 8% and the employer 14.5% to social security (retirement on pay up to OMR 3,000 a month); for a non-Omani employee only the employer pays, 3%.",
+   "value": {
+    "currency": "OMR",
+    "omani": {
+     "employee": 0.08,
+     "employer": 0.145,
+     "retirementCeilingMonthly": 3000
+    },
+    "nonOmani": {
+     "employee": 0,
+     "employer": 0.03
+    }
+   },
+   "applies": "2026. A self-employed or performers' scheme was not found.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Social security contributions for Omani employees are at a total of 22.5% (14.5% by the employer and 8% by the employee)."
+    },
+    {
+     "src": 3,
+     "said": "Total 8.0 14.5 3.0"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "No income tax is withheld from pay in 2026; from 2028 the employer must withhold the new tax from salaries.",
+   "value": {
+    "2026": {
+     "rate": 0
+    },
+    "2028": "employer withholds"
+   },
+   "applies": "2026; 2028 executive regulations pending.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "An employer must withhold and pay any tax due on their employees’ salaries, wages, member's remuneration, and pensions periodically."
+    },
+    {
+     "src": 1,
+     "said": "Neither residents nor nonresidents are subject to income or capital gains taxes in Oman."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual owes no income tax in Oman, but a 10% withholding tax is taken from royalties and technical or management service fees paid to non-residents, wherever the service is performed.",
+   "value": {
+    "royalties": 0.1,
+    "technicalServices": 0.1,
+    "managementFees": 0.1,
+    "final": null
+   },
+   "applies": "Deloitte's table applies the 10% to non-resident individuals; PwC writes it of foreign companies. Whether a performance fee counts as a service fee was not found.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Royalties 0% 0% 10% 10%"
+    },
+    {
+     "src": 1,
+     "said": "A 10% withholding tax is imposed on technical service fees paid to nonresidents, regardless of the place of performance of the services."
+    },
+    {
+     "src": 5,
+     "said": "Foreign companies that do not have a PE in Oman for tax purposes and that derive income from Oman in the nature of the following are subject to WHT at 10% of gross income from such sources"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 5% (Royal Decree 121/2020, from 16 April 2021); registration is mandatory above OMR 38,500 of annual supplies and voluntary above OMR 19,250.",
+   "value": {
+    "currency": "OMR",
+    "rate": 0.05,
+    "threshold": 38500,
+    "voluntary": 19250
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "There is a mandatory registration requirement if the total value of annual supplies exceeds or is expected to exceed OMR 38,500."
+    },
+    {
+     "src": 6,
+     "said": "The standard rate of VAT in Oman is 5%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "From 2028 the tax year is to be followed by an electronic return within six months of its end; no individual return exists for 2026.",
+   "value": {
+    "start": null,
+    "due": null,
+    "from2028": {
+     "returnWithinMonths": 6
+    }
+   },
+   "applies": "Calendar tax year assumed from the law's 1 January commencement; due date applies from 2028.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Tax returns have to be filed electronically, within six months from the end of the tax year."
+    }
+   ]
+  }
+ ],
+ "country": "OM",
+ "sources": [
+  {
+   "url": "https://qanoon.om/p/2025/rd2025056/",
+   "title": "Royal Decree 56/2025 promulgating the Personal Income Tax Law (Qanoon.om, text as published in the Official Gazette)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "في الجريدة الرسمية، ويعمل به من الأول من يناير ٢٠٢٨ م … المادة (٨) تستحق الضريبة بمعدل (٥٪) خمسة في المائة من الدخل الخاضع للضريبة"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-omanhighlights-2026.pdf",
+   "title": "Oman Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://qanoon.om/p/2025/rd2025056/",
+   "said": "Neither residents nor nonresidents are subject to income or capital gains taxes in Oman. … Royalties 0% 0% 10% 10% … A 10% withholding tax is imposed on technical service fees paid to nonresidents, regardless of the place of performance of the services."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/oman/individual/taxes-on-personal-income",
+   "title": "Oman: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 7 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://qanoon.om/p/2025/rd2025056/",
+   "said": "An annual income threshold of 42,000 Omani rial (OMR) has been set, above which a 5% tax rate will apply."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/oman/individual/other-taxes",
+   "title": "Oman: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 7 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.spf.gov.om/",
+   "said": "Social security contributions for Omani employees are at a total of 22.5% (14.5% by the employer and 8% by the employee). … Total 8.0 14.5 3.0"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/oman/individual/tax-administration",
+   "title": "Oman: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 7 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://qanoon.om/p/2025/rd2025056/",
+   "said": "An employer must withhold and pay any tax due on their employees’ salaries, wages, member's remuneration, and pensions periodically. … Tax returns have to be filed electronically, within six months from the end of the tax year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/oman/corporate/withholding-taxes",
+   "title": "Oman: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 7 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tms.taxoman.gov.om/",
+   "said": "Foreign companies that do not have a PE in Oman for tax purposes and that derive income from Oman in the nature of the following are subject to WHT at 10% of gross income from such sources"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/oman/corporate/other-taxes",
+   "title": "Oman: corporate/other-taxes (PwC Worldwide Tax Summaries, reviewed 7 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tms.taxoman.gov.om/",
+   "said": "There is a mandatory registration requirement if the total value of annual supplies exceeds or is expected to exceed OMR 38,500. … The standard rate of VAT in Oman is 5%"
+  }
+ ],
+ "blockers": []
+}

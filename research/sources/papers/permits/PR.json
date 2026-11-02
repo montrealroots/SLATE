@@ -1,0 +1,127 @@
+{
+ "country": "PR",
+ "read": "2026-11-01",
+ "route": "O-1 nonimmigrant (extraordinary ability in the arts, or extraordinary achievement in motion picture or television), on Form I-129",
+ "routeChanged": true,
+ "permit": {
+  "applies": "The US employer (or a US agent) petitions USCIS on Form I-129; the performer then applies for the visa at a consulate. Puerto Rico follows the United States' rules.",
+  "first": "An approved I-129 petition, filed with a written advisory opinion (consultation) from the appropriate union and management organization, the contract and the itinerary.",
+  "fees": [
+   {
+    "what": "Form I-129, O petition with 1 to 25 named beneficiaries",
+    "amount": "1055.00",
+    "currency": "USD"
+   },
+   {
+    "what": "Asylum Program Fee, each I-129 petition (USD 300 for a small employer; none for a nonprofit)",
+    "amount": "600.00",
+    "currency": "USD"
+   },
+   {
+    "what": "Premium processing, O petition",
+    "amount": "2965.00",
+    "currency": "USD"
+   }
+  ],
+  "processing": {
+   "standard": null,
+   "premium": {
+    "n": 15,
+    "unit": "business-days"
+   }
+  },
+  "validity": {
+   "n": 3,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": "For a performer of extraordinary achievement working on a motion picture or television production, consultation with the appropriate union representing the alien's occupational peers and a management organization (an advisory opinion, or a letter of no objection); in other arts, a peer group, which may include a labor organization.",
+  "eligibility": "Extraordinary achievement in motion picture and television means \"a very high level of accomplishment in the motion picture or television industry evidenced by a degree of skill and recognition significantly above that ordinarily encountered\" (in the arts, \"distinction\").",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.ecfr.gov/api/renderer/v1/content/enhanced/current/title-8?part=214&section=214.2",
+   "title": "eCFR, 8 CFR 214.2(o), Aliens of extraordinary ability or achievement (current)",
+   "read": "2026-11-01",
+   "said": "the alien may be classified under section 101(a)(15)(O)(i) of the Act as an alien who has extraordinary ability in the sciences, arts, education, business, or athletics, or who has a demonstrated record of extraordinary achievement in the motion picture or television industry … Extraordinary achievement with respect to motion picture and television productions, as commonly defined in the industry, means a very high level of accomplishment in the motion picture or television industry evidenced by a degree of skill and recognition significantly above that ordinarily encountered to the extent that the person is recognized as outstanding, notable, or leading in the motion picture or television field. … In the case of an alien of extraordinary achievement who will be working on a motion picture or television production, consultation shall be made with the appropriate union representing the alien's occupational peers and a management organization in the area of the alien's ability. … An approved petition for an alien classified under section 101(a)(15)(O)(i) of the Act shall be valid for a period of time determined by the Director to be necessary to accomplish the event or activity, not to exceed 3 years. … An extension of stay may be authorized in increments of up to 1 year for an O-1 or O-2 beneficiary to continue or complete the same event or activity",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "union",
+    "eligibility",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.ecfr.gov/api/renderer/v1/content/enhanced/current/title-8?part=106&section=106.2",
+   "title": "eCFR, 8 CFR 106.2, Fees (USCIS)",
+   "read": "2026-11-01",
+   "said": "( vii ) Petition for O Nonimmigrant Worker with 1 to 25 named beneficiaries: $1,055. … the Asylum Program Fee must be paid by any petitioner filing a Petition for a Nonimmigrant Worker, Form I-129 under 8 CFR 214.2 , Petition for a CNMI-Only Nonimmigrant Transitional Worker, Form I-129CW under 8 CFR 214.2(w) , or an Immigrant Petition for Alien Worker, Form I-140 under 8 CFR 204.1(a) . $600. For petitions: ( i ) Filed by a nonprofit as defined in § 106.1(f) : No fee. ( ii ) Filed by a small employer as defined in § 106.1(f) : $300.",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.ecfr.gov/api/renderer/v1/content/enhanced/current/title-8?part=106&section=106.4",
+   "title": "eCFR, 8 CFR 106.4, Premium processing service",
+   "read": "2026-11-01",
+   "said": "( 6 ) Petition for classification of a nonimmigrant described in section 101(a)(15)(O)(i) or (ii) of the INA—$2,965. … ( 6 ) Petition for classification of a nonimmigrant described in section 101(a)(15)(O)(i) or (ii) of the Act: 15 business days.",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "USCIS's stated standard processing time for an O-1 I-129 petition",
+   "tried": {
+    "institution": "uscis.gov O-1 page, G-1055 fee page and premium-processing page answer this client 403 (Access Denied), 2026-11-01",
+    "official-register": "8 CFR 214.2(o) (eCFR) read: it names a 15-day window for the consulting organization, no decision time",
+    "web-search": "WebSearch 'USCIS O-1 visa extraordinary ability motion picture television consultation union peer group': law firms only, no stated USCIS time",
+    "trade-press": "Not used: the time is USCIS's own (processing-times tool), which refuses this client",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "fees",
+   "sought": "The State Department's visa application (MRV) fee for an O visa",
+   "tried": {
+    "institution": "travel.state.gov fees page answers 403, 2026-11-01",
+    "official-register": "22 CFR 22.1 not read in this pass",
+    "web-search": "Same search; no primary",
+    "trade-press": "None quoting the primary read",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A wage rule for O-1 performers",
+   "tried": {
+    "institution": "uscis.gov 403",
+    "official-register": "8 CFR 214.2(o) read: no wage or market-rate requirement found in its text",
+    "web-search": "Same search: none named",
+    "trade-press": "None",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "Paid performing without a petition for a short engagement",
+   "tried": {
+    "institution": "uscis.gov 403; travel.state.gov 403",
+    "official-register": "8 CFR 214.2(o) read: none named",
+    "web-search": "Same search: none",
+    "trade-press": "None",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read."
+   }
+  }
+ ]
+}

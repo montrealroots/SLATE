@@ -1,0 +1,328 @@
+{
+ "topic": "tax.NZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in New Zealand: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays national income tax on each dollar of income at 10.5% to $15,600, 17.5% to $53,500, 30% to $78,100, 33% to $180,000 and 39% above, with no tax-free amount and no regional layer.",
+   "value": {
+    "currency": "NZD",
+    "from": "2025-04-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 15600,
+      "rate": 0.105
+     },
+     {
+      "from": 15600,
+      "to": 53500,
+      "rate": 0.175
+     },
+     {
+      "from": 53500,
+      "to": 78100,
+      "rate": 0.3
+     },
+     {
+      "from": 78100,
+      "to": 180000,
+      "rate": 0.33
+     },
+     {
+      "from": 180000,
+      "to": null,
+      "rate": 0.39
+     }
+    ],
+    "allowance": 0,
+    "regional": null
+   },
+   "applies": "Residents, tax years from 1 April 2025 (so the 2026-27 year, 1 April 2026 to 31 March 2027)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "From 1 April 2025 For each dollar of income Tax rate 0 - $15,600 10.5% $15,601 - $53,500 17.5% $53,501 - $78,100 30% $78,101 - $180,000 33% $180,001 and over 39%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs from 1 April to 31 March; an individual's IR3 return is due by 7 July (later with a tax agent or an extension), and a bill is generally due on 7 February of the year after.",
+   "value": {
+    "currency": "NZD",
+    "start": "04-01",
+    "end": "03-31",
+    "returnDue": "07-07",
+    "paymentDue": "02-07 of the following year (bill example: 2024-25 year due 7 February 2026)"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year is from 1 April to 31 March. … You need to send us your completed return by 7 July unless you have a tax agent or an extension of time."
+    },
+    {
+     "src": 2,
+     "said": "Most people need to pay their tax by 7 February the year after receiving a bill. For example, a tax bill for the 1 April 2024 to 31 March 2025 tax year is due on 7 February 2026."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Every earner pays the ACC earners' levy of 1.75% (GST included) on earnings up to $156,641 for 1 April 2026 to 31 March 2027 (1.83% up to $160,244 from 1 April 2027).",
+   "value": {
+    "currency": "NZD",
+    "earnersLevy": [
+     {
+      "from": "2026-04-01",
+      "to": "2027-03-31",
+      "rate": 0.0175,
+      "ceiling": 156641,
+      "maxLevy": 2741.22
+     },
+     {
+      "from": "2027-04-01",
+      "to": "2028-03-31",
+      "rate": 0.0183,
+      "ceiling": 160244,
+      "maxLevy": 2932.47
+     }
+    ],
+    "employer": null
+   },
+   "applies": "Employees (deducted through PAYE) and the self-employed (invoiced by ACC)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "These amounts include GST. Year Levy rate 1 April 2027 to 31 March 2028 $1.83 per $100 (1.83%) 1 April 2026 to 31 March 2027 $1.75 per $100 (1.75%) … Year Maximum earnings Maximum levy payable 1 April 2027 to 31 March 2028 $160,244 $2,932.47 1 April 2026 to 31 March 2027 $156,641 $2,741.22"
+    },
+    {
+     "src": 4,
+     "said": "If you receive schedular payments you will receive an invoice for your ACC levies directly from ACC."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "KiwiSaver: an employee member contributes 3.5% of pay by default (or 4, 6, 8 or 10%), and the employer must contribute at least 3.5% of gross salary or wages.",
+   "value": {
+    "employeeDefault": 0.035,
+    "employeeChoices": [
+     0.035,
+     0.04,
+     0.06,
+     0.08,
+     0.1
+    ],
+    "employerMinimum": 0.035,
+    "temporaryReducedRate": 0.03
+   },
+   "applies": "Employees who are KiwiSaver members (employer contribution for members aged 16 to under 65)",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Employees You can choose to contribute 3.5%, 4%, 6%, 8% or 10% of your pay. The default rate is 3.5% if you do not choose a higher rate."
+    },
+    {
+     "src": 6,
+     "said": "The lowest rate for your contribution is 3.5% of your employee’s gross salary or wages unless your employee is on a temporary rate reduction."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A resident contractor paid as an entertainer, or for on-set and off-set film, video or television production work, has 20% withheld as a schedular payment; freelance contributions for radio, television or stage bear 25%; 45% applies with no notification; a tailored rate may be set.",
+   "value": {
+    "schedular": [
+     {
+      "activity": "Entertainers (NZ resident only): radio, television, stage and film performers",
+      "rate": 0.2
+     },
+     {
+      "activity": "Television, video or film: on-set and off-set production processes (NZ residents only)",
+      "rate": 0.2
+     },
+     {
+      "activity": "Freelance contributions to newspapers, journals or for radio, television or stage productions",
+      "rate": 0.25
+     }
+    ],
+    "noNotification": 0.45,
+    "employeesPAYE": "PAYE at the income tax rates through the tax code"
+   },
+   "applies": "Resident contractors receiving schedular payments",
+   "sources": [
+    {
+     "src": 4,
+     "said": "10 Entertainers (New Zealand resident only) such as lecturers, presenters, participants in sporting events, and radio, television, stage and film performers 20 45 … 14 Freelance contributions to newspapers, journals (eg, articles, photographs, cartoons) or for radio, television or stage productions 25 45 … 24 Television, video or film: on-set and off-set production processes (New Zealand residents only) 20 45 … no-notification rate of 45%, except for non-resident contractor companies where it’s 20%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer (actors included) has 20% withheld, a full and final tax with no 92-day exemption; crew behind the scenes are non-resident contractors (15%) or employees instead.",
+   "value": {
+    "rate": 0.2,
+    "final": true,
+    "base": "payments for the performance, including those made to someone else on the entertainer's behalf",
+    "nonResidentContractor": 0.15,
+    "exemptions": [
+     "cultural programme sponsored by a government or overseas non-profit cultural organisation"
+    ]
+   },
+   "applies": "Non-resident performers in front of the public or a camera",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Common examples of non-resident entertainers are: actors, musicians, singers and dancers lecturers and speakers sportspeople. If you are a crew member who works behind the scenes, you are a non-resident contractor or employee rather than an entertainer. … The payments you receive are likely to have a withholding tax of 20% deducted by the payer. This is a full and final tax. … You are not entitled to the exemption for personal or professional services provided during a visit of 92 days or less."
+    },
+    {
+     "src": 4,
+     "said": "18 Non-resident entertainers and professional sportspeople visiting New Zealand 20 N/A … 26 Non-resident contractor (and not a company) 15 45"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "No separate author regime was found; royalties paid to a non-resident bear non-resident withholding tax of 15% where no double tax agreement applies, and a resident writer's freelance contributions for radio, television or stage are a 25% schedular payment.",
+   "value": {
+    "nonResidentRoyaltiesNoDTA": 0.15,
+    "residentFreelanceContribution": 0.25
+   },
+   "applies": "Writers' and directors' royalties and contributions",
+   "sources": [
+    {
+     "src": 8,
+     "said": "send passive income to an area that does not have a double tax agreement with New Zealand do not know the area you are sending passive income. The rates for these areas are: 15% for interest and royalties 30% for dividends"
+    },
+    {
+     "src": 9,
+     "said": "Non-resident withholding tax (NRWT) is a tax withheld from New Zealand payments of interest, dividends, and royalties to non-residents (foreign investors)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for GST, charged at 15%, once turnover is at least $60,000 in the last or next 12 months; below that registration is voluntary.",
+   "value": {
+    "currency": "NZD",
+    "rate": 0.15,
+    "threshold": 60000,
+    "period": "12 months, past or expected"
+   },
+   "applies": "Anyone carrying on a taxable activity, non-resident entertainers supplying services in New Zealand included",
+   "sources": [
+    {
+     "src": 10,
+     "said": "out a taxable activity and your turnover was at least $60,000 in the last 12 months, or you expect it will be at least $60,000 in the next 12 months"
+    },
+    {
+     "src": 11,
+     "said": "If you're registered for GST, you'll need to charge GST at 15% on most taxable supplies you make."
+    }
+   ]
+  }
+ ],
+ "country": "NZ",
+ "sources": [
+  {
+   "url": "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals",
+   "title": "Tax rates for individuals",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "From 1 April 2025 For each dollar of income Tax rate 0 - $15,600 10.5% $15,601 - $53,500 17.5% $53,501 - $78,100 30% $78,101 - $180,000 33% $180,001 and over 39%"
+  },
+  {
+   "url": "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/what-happens-at-the-end-of-the-tax-year/individual-income-tax-return---ir3",
+   "title": "Individual income tax return - IR3",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The tax year is from 1 April to 31 March. … You need to send us your completed return by 7 July unless you have a tax agent or an extension of time."
+  },
+  {
+   "url": "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/what-happens-at-the-end-of-the-tax-year/timelines-at-the-end-of-the-tax-year",
+   "title": "Timelines at the end of the tax year",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Most people need to pay their tax by 7 February the year after receiving a bill. For example, a tax bill for the 1 April 2024 to 31 March 2025 tax year is due on 7 February 2026."
+  },
+  {
+   "url": "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates",
+   "title": "ACC earners' levy rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "These amounts include GST. Year Levy rate 1 April 2027 to 31 March 2028 $1.83 per $100 (1.83%) 1 April 2026 to 31 March 2027 $1.75 per $100 (1.75%) … Year Maximum earnings Maximum levy payable 1 April 2027 to 31 March 2028 $160,244 $2,932.47 1 April 2026 to 31 March 2027 $156,641 $2,741.22"
+  },
+  {
+   "url": "https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir300---ir399/ir330c/ir330c-2024.pdf",
+   "title": "Tax rate notification for contractors - IR330C (January 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you receive schedular payments you will receive an invoice for your ACC levies directly from ACC. … 10 Entertainers (New Zealand resident only) such as lecturers, presenters, participants in sporting events, and radio, television, stage and film performers 20 45 … 14 Freelance contributions to newspapers, journals (eg, articles, photographs, cartoons) or for radio, television or stage productions 25 45 … 24 Television, video or film: on-set and off-set production processes (New Zealand residents only) 20 45 … no-notification rate of 45%, except for non-resident contractor companies where it’s 20%. … 18 Non-resident entertainers and professional sportspeople visiting New Zealand 20 N/A … 26 Non-resident contractor (and not a company) 15 45"
+  },
+  {
+   "url": "https://www.ird.govt.nz/kiwisaver/kiwisaver-individuals/employee-contributions",
+   "title": "Employee contributions",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employees You can choose to contribute 3.5%, 4%, 6%, 8% or 10% of your pay. The default rate is 3.5% if you do not choose a higher rate."
+  },
+  {
+   "url": "https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/contributions-and-deductions/employer-contributions-to-kiwisaver-and-complying-funds",
+   "title": "Employer contributions to KiwiSaver and complying funds",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The lowest rate for your contribution is 3.5% of your employee’s gross salary or wages unless your employee is on a temporary rate reduction."
+  },
+  {
+   "url": "https://www.ird.govt.nz/roles/non-residents/non-resident-entertainers-and-sportspeople",
+   "title": "Non-resident entertainers and sportspeople",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Common examples of non-resident entertainers are: actors, musicians, singers and dancers lecturers and speakers sportspeople. If you are a crew member who works behind the scenes, you are a non-resident contractor or employee rather than an entertainer. … The payments you receive are likely to have a withholding tax of 20% deducted by the payer. This is a full and final tax. … You are not entitled to the exemption for personal or professional services provided during a visit of 92 days or less."
+  },
+  {
+   "url": "https://www.ird.govt.nz/income-tax/withholding-taxes/non-resident-withholding-tax-nrwt/deduct-nrwt-at-the-right-rate",
+   "title": "Deduct NRWT at the right rate",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "send passive income to an area that does not have a double tax agreement with New Zealand do not know the area you are sending passive income. The rates for these areas are: 15% for interest and royalties 30% for dividends"
+  },
+  {
+   "url": "https://www.ird.govt.nz/income-tax/withholding-taxes/non-resident-withholding-tax-nrwt",
+   "title": "Non-resident withholding tax (NRWT)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Non-resident withholding tax (NRWT) is a tax withheld from New Zealand payments of interest, dividends, and royalties to non-residents (foreign investors)."
+  },
+  {
+   "url": "https://www.ird.govt.nz/gst/registering-for-gst",
+   "title": "Registering for GST",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "out a taxable activity and your turnover was at least $60,000 in the last 12 months, or you expect it will be at least $60,000 in the next 12 months"
+  },
+  {
+   "url": "https://www.ird.govt.nz/gst/charging-gst",
+   "title": "Charging GST",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you're registered for GST, you'll need to charge GST at 15% on most taxable supplies you make."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "ACC work levy rate for a self-employed screen worker (the classification unit for film and television production and performing arts) for 2026-27",
+   "tried": {
+    "institution": "acc.co.nz levy pages and ACC_Levy-proposal-vs-recommendation.pdf, 2026-11-01: Incapsula bot-check (HTTP 200, 212-byte challenge), not read another way || retry 2026-11-01: acc.co.nz/levy-results: Incapsula challenge (212 bytes), not read another way; shapeyouracc.co.nz/assets/Consult-docs/2024/ACC_Levy-rates-proposals_FINAL.pdf read and saved (NZ-acc-levyprop-2024.pdf): proposes an average Work levy of $0.66 per $100 for 2025/26 but no classification-unit table",
+    "official-register": "IRD pages read carry only the earners' levy; IR330C says ACC invoices schedular earners directly || retry 2026-11-01: legislation.govt.nz/secondary-legislation/pco-drafted/2025/17 (Accident Compensation (Work Account Levies) Regulations 2025) and demo.legislation.govt.nz copies: AWS WAF challenge (HTTP 202, empty), not read another way; gazette.govt.nz notice 2025-au1361: Incapsula; nzlii.org HTTP 403; mbie.govt.nz dmsdocument 29960: 852-byte script page",
+    "web-search": "2026-11-01 'ird.govt.nz ACC earners' levy rate 1 April 2026': results give the earners' levy only || retry 2026-11-01: 'Accident Compensation (Work Account Levies) Regulations 2025 levy rate classification unit motion picture and video production' and 'ACC levy rates 2025/26 2026/27 2027/28 classification units table pdf \"91110\"'",
+    "trade-press": "not found quoting the 2026-27 work levy for the film/performing-arts classification unit || retry 2026-11-01: nztax.tools/acc-levy-rate-cu91110 and calculate.co.nz/reference/nz-acc-levy-rates.php: Cloudflare HTTP 403; Bloomberg Tax result paywalled",
+    "archive": "archive.org availability API, 2026-11-01: no snapshots of acc.co.nz levy-rates pages || retry 2026-11-01: archive.org availability API: no snapshots of acc.co.nz/levy-results paths; web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  }
+ ]
+}

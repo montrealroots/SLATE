@@ -1,0 +1,387 @@
+{
+ "topic": "tax.IE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ireland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A single person pays 20% on the first €44,000 of income and 40% on the rest in 2026, less a €2,000 personal credit and a €2,000 PAYE (employee) or earned-income credit; on top, USC takes 0.5% of the first €12,012, 2% of the next €16,688, 3% of the next €41,344 and 8% of the balance.",
+   "value": {
+    "currency": "EUR",
+    "single": [
+     {
+      "from": 0,
+      "to": 44000,
+      "rate": 0.2
+     },
+     {
+      "from": 44000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "marriedOneIncomeBand20": 53000,
+    "marriedTwoIncomesBand20Increase": 35000,
+    "credits": {
+     "single": 2000,
+     "married": 4000,
+     "PAYE": 2000,
+     "earnedIncomeMax": 2000
+    },
+    "USC": [
+     {
+      "from": 0,
+      "to": 12012,
+      "rate": 0.005
+     },
+     {
+      "from": 12012,
+      "to": 28700,
+      "rate": 0.02
+     },
+     {
+      "from": 28700,
+      "to": 70044,
+      "rate": 0.03
+     },
+     {
+      "from": 70044,
+      "to": null,
+      "rate": 0.08
+     }
+    ],
+    "regionalLayer": null
+   },
+   "applies": "Tax year 2026 (calendar year); Budget 2027 changes (6 October 2026) for 2027 are not read; USC exemption and surcharge thresholds not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Single or widowed or surviving civil partner, without qualifying children €44,000 @ 20%, balance @ 40%"
+    },
+    {
+     "src": 0,
+     "said": "Married or in a civil partnership (one spouse or civil partner with income) €53,000 @ 20%, balance @ 40%"
+    },
+    {
+     "src": 0,
+     "said": "Single Person 2,000 2,000 1,875 1,775 1,700"
+    },
+    {
+     "src": 0,
+     "said": "PAYE Tax Credit 2,000 2,000 1,875 1,775 1,700 Earned Income Tax Credit (max.) 2,000"
+    },
+    {
+     "src": 1,
+     "said": "2026 Threshold for 2026 Rate First €12,012 0.5% Next €16,688 2% Next €41,344 3% Balance 8%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Class A PRSI is 4.2% for the employee and 11.25% for the employer (9.00% on lower pay) until 30 September 2026, rising to 4.35% and 11.40% (9.15%) from 1 October 2026; employees earning €352 a week or less pay none. Self-employed (Class S) rates for 2026 were not read.",
+   "value": {
+    "currency": "EUR",
+    "classA": {
+     "toSep2026": {
+      "employee": 0.042,
+      "employer": 0.1125,
+      "employerReduced": 0.09
+     },
+     "fromOct2026": {
+      "employee": 0.0435,
+      "employer": 0.114,
+      "employerReduced": 0.0915
+     },
+     "employeeExemptWeeklyAtOrBelow": 352,
+     "employerReducedRateWeeklyThreshold": 552
+    },
+    "classS": "not read (see blockers)"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employee PRSI (Class A): the rate will rise from 4.20% to 4.35% of reckonable earnings. Employees earning €352 or less a week will continue to be exempt from employee PRSI."
+    },
+    {
+     "src": 2,
+     "said": "Employer PRSI (Class A): the standard rate will rise from 11.25% to 11.40%. The reduced rate will rise from 9.00% to 9.15% for employees within the applicable weekly earnings threshold."
+    },
+    {
+     "src": 2,
+     "said": "Since 1 January 2026, the weekly earnings threshold used to determine whether the standard or reduced employer PRSI rate applies has increased from €527 to €552 per week."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer deducts income tax, USC and PRSI through PAYE using the Revenue Payroll Notification for the employee, or at emergency rates where it has none; a self-employed freelancer pays through self-assessment.",
+   "value": {
+    "wages": "PAYE by Revenue Payroll Notification (RPN); emergency tax where no RPN",
+    "freelanceFee": "self-assessment (Form 11); professional services withholding by public bodies not read"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Income Tax and Universal Social Charge (USC) are deducted from your gross pay at the Emergency Tax rates by your employer. This happens in certain circumstances where your employer is unable to get a Revenue Payroll Notification (RPN) for you."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A production claiming the film tax credit withholds Film Withholding Tax at the 20% standard rate from every payment, image rights included, for the artistic services of a performer resident outside the EU and EEA (UK performers included since 2021); it does not reach directors, producers or crew, nor PAYE wages, and where it is the performer's only Irish income it settles the liability in full.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.2,
+    "appliesTo": "actors and voice artists resident outside the EU/EEA (UK included) engaged on film-tax-credit productions",
+    "notTo": [
+     "directors",
+     "producers",
+     "camera and support staff",
+     "payments taxed through PAYE",
+     "EU/EEA residents"
+    ],
+    "base": "any payment for artistic services, direct or through a loan-out, and payments for rights such as image rights",
+    "final": "yes where it is the only Irish income; otherwise included on a return"
+   },
+   "applies": "2026; other non-resident performers and writers are taxed by return (not read).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "FWT must be applied to relevant payments made to visiting non-resident artistes, from outside the EU or EEA, where these artistes are engaged, by companies who qualify for the Film Tax Credit, to appear in qualifying film and television productions made in Ireland."
+    },
+    {
+     "src": 4,
+     "said": "The FWT is set at the standard rate on Income Tax which is currently 20%."
+    },
+    {
+     "src": 4,
+     "said": "it is accepted that it clearly includes actors, but that it does not extend to support staff such as cameramen, producers, directors etc."
+    },
+    {
+     "src": 4,
+     "said": "Following the conclusion of the Brexit transition period from 1 January 2021, UK artistes are also subject to the withholding tax."
+    },
+    {
+     "src": 4,
+     "said": "FWT is not applied to payments which are taxed through the PAYE system"
+    },
+    {
+     "src": 4,
+     "said": "Return of Income is not required, the FWT deducted is regarded as a full and final settlement of the specified person’s liability in the State."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Under the Artists' Exemption, a resident whose books or other writing, plays, music, paintings or sculpture Revenue determines to be original and creative pays no income tax on up to €50,000 a year of earnings from those works (whether USC and PRSI apply is not read).",
+   "value": {
+    "currency": "EUR",
+    "exemptPerYear": 50000,
+    "categories": [
+     "books or other forms of writing",
+     "plays",
+     "musical compositions",
+     "paintings",
+     "sculptures"
+    ],
+    "screenplays": "not stated as a category"
+   },
+   "applies": "Section 195 TCA 1997, 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "This means that income up to a maximum of €50,000 per annum from these works are exempt from Income Tax."
+    },
+    {
+     "src": 5,
+     "said": "books or other forms of writing plays musical compositions paintings or other similar pictures sculptures"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer supplying only services must register for VAT once annual turnover exceeds €42,500 (€85,000 for goods).",
+   "value": {
+    "currency": "EUR",
+    "servicesThreshold": 42500,
+    "goodsThreshold": 85000,
+    "rate": "not read"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "€42,500 in the case of persons supplying services only."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The Irish tax year is the calendar year; the self-assessment return (Form 11) and balance are due 31 October of the next year, later when paid and filed online (18 November 2026 for 2025).",
+   "value": {
+    "currency": "EUR",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue2025": "2026-10-31",
+    "returnDueROS2025": "2026-11-18"
+   },
+   "applies": "Self-assessed individuals.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The Pay and File deadline for the 2025 Income Tax Return (Form 11) is Saturday 31 October 2026."
+    },
+    {
+     "src": 7,
+     "said": "The deadline for paying and filing on ROS for the 2025 Income Tax Return (Form 11) is Wednesday 18 November 2026."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A self-employed worker pays Class S PRSI of 4.2% of reckonable income until 30 September 2026 and 4.35% from 1 October 2026 (at least €650 a year); for a contribution year split by a change the law blends the rates by months, which for 2026 gives (4.2% × 9 + 4.35% × 3) ÷ 12 = 4.2375%.",
+   "value": {
+    "classS": {
+     "rateTo2026-09-30": 0.042,
+     "rateFrom2026-10-01": 0.0435,
+     "blended2026": 0.042375,
+     "minimumAnnual": 650,
+     "currency": "EUR"
+    }
+   },
+   "applies": "Self-employed contributors (a freelance screen worker among them), contribution year 2026.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "(2) Each provision amended under subsection (1) is amended, on and from 1 October 2025, by the substitution of the text referred to in column (5) … (3) Each provision amended under subsection (2) is amended, on and from 1 October 2026, by the substitution of the text referred to in column (6) … 9. Section 21(1)(a) “4 per cent” “4.1 per cent” “4.2 per cent” “4.35 per cent” “4.5 per cent” “4.7 per cent”"
+    },
+    {
+     "src": 9,
+     "said": "the rate of the contribution payable by the person in respect of the contribution year shall be determined by the following formula— ((A x C) + (B x D))/12 where— A is the first rate, B is the second rate, C is the number of months (including part months) in the contribution year during which the first rate is effective in relation to the person, and D is the number of months (including part months) in the contribution year during which the second rate is effective in relation to the person."
+    },
+    {
+     "src": 10,
+     "said": "there shall be payable by him or her a self-employment contribution which shall be the greater of an amount equal to F179 [ 4.35 per cent ] of the reckonable income or the amount of F180 [ € 650 ] ; … F179 Substituted (1.10.2026) by Social Welfare (Miscellaneous Provisions) Act 2024 (24/2024), s. 3(3) and Table, amendment 9, col. (6), commenced as per subs. (3)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is charged to Irish income tax on profits from a profession or employment exercised in Ireland; outside the film withholding scheme nothing is withheld from a fee paid directly to an actor, producer or director for a film, radio or television production (professional services withholding does not apply), so the tax is paid on an Irish return.",
+   "value": {
+    "charge": "Schedule D, TCA 1997 s.18(1) para 1(a)(iii)",
+    "PSWTOnActorsProducersDirectorsFilmTV": false,
+    "withholdingOutsideFWT": "none"
+   },
+   "applies": "A non-resident performer, writer or director working in Ireland other than under film withholding tax, 2026.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "(iii) any person, whether a citizen of Ireland or not, although not resident in the State, from any property whatever in the State, or from any trade, profession or employment exercised in the State,"
+    },
+    {
+     "src": 12,
+     "said": "Payments made directly to actors, producers and directors and for post- production facilities solely for the purposes of making a film, radio or television programme or series are not subject to PSWT."
+    }
+   ]
+  }
+ ],
+ "country": "IE",
+ "sources": [
+  {
+   "url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/tax-relief-charts/index.aspx",
+   "title": "Revenue: Tax rates, bands and reliefs",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Single or widowed or surviving civil partner, without qualifying children €44,000 @ 20%, balance @ 40% … Married or in a civil partnership (one spouse or civil partner with income) €53,000 @ 20%, balance @ 40% … Single Person 2,000 2,000 1,875 1,775 1,700 … PAYE Tax Credit 2,000 2,000 1,875 1,775 1,700 Earned Income Tax Credit (max.) 2,000"
+  },
+  {
+   "url": "https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-thresholds.aspx",
+   "title": "Revenue: Standard rates and thresholds of USC",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2026 Threshold for 2026 Rate First €12,012 0.5% Next €16,688 2% Next €41,344 3% Balance 8%"
+  },
+  {
+   "url": "https://www.saffery.com/ie/insights/articles/upcoming-prsi-rate-changes-effective-1-october-2026-what-employers-need-to-know/",
+   "title": "Saffery: Upcoming PRSI rate changes effective 1 October 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.ie/en/publication/ffa563-prsi-class-a-rates",
+   "said": "Employee PRSI (Class A): the rate will rise from 4.20% to 4.35% of reckonable earnings. Employees earning €352 or less a week will continue to be exempt from employee PRSI. … Employer PRSI (Class A): the standard rate will rise from 11.25% to 11.40%. The reduced rate will rise from 9.00% to 9.15% for employees within the applicable weekly earnings threshold. … Since 1 January 2026, the weekly earnings threshold used to determine whether the standard or reduced employer PRSI rate applies has increased from €527 to €552 per week."
+  },
+  {
+   "url": "https://www.revenue.ie/en/jobs-and-pensions/emergency-tax/index.aspx",
+   "title": "Revenue: Emergency Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income Tax and Universal Social Charge (USC) are deducted from your gross pay at the Emergency Tax rates by your employer. This happens in certain circumstances where your employer is unable to get a Revenue Payroll Notification (RPN) for you."
+  },
+  {
+   "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-18/18-01a-01.pdf",
+   "title": "Revenue Tax and Duty Manual Part 18-01A-01, Film Withholding Tax (updated May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "FWT must be applied to relevant payments made to visiting non-resident artistes, from outside the EU or EEA, where these artistes are engaged, by companies who qualify for the Film Tax Credit, to appear in qualifying film and television productions made in Ireland. … The FWT is set at the standard rate on Income Tax which is currently 20%. … it is accepted that it clearly includes actors, but that it does not extend to support staff such as cameramen, producers, directors etc. … Following the conclusion of the Brexit transition period from 1 January 2021, UK artistes are also subject to the withholding tax. … FWT is not applied to payments which are taxed through the PAYE system … Return of Income is not required, the FWT deducted is regarded as a full and final settlement of the specified person’s liability in the State."
+  },
+  {
+   "url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-and-employment/artists-exemption/index.aspx",
+   "title": "Revenue: Artists' Exemption (published 23 October 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This means that income up to a maximum of €50,000 per annum from these works are exempt from Income Tax. … books or other forms of writing plays musical compositions paintings or other similar pictures sculptures"
+  },
+  {
+   "url": "https://www.revenue.ie/en/vat/vat-registration/who-should-register-for-vat/persons-required-register-goods-services-abroad.aspx",
+   "title": "Revenue: VAT thresholds (published 27 October 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "€42,500 in the case of persons supplying services only."
+  },
+  {
+   "url": "https://www.revenue.ie/en/self-assessment-and-self-employment/filing-your-tax-return/index.aspx",
+   "title": "Revenue: Filing your tax return",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Pay and File deadline for the 2025 Income Tax Return (Form 11) is Saturday 31 October 2026. … The deadline for paying and filing on ROS for the 2025 Income Tax Return (Form 11) is Wednesday 18 November 2026."
+  },
+  {
+   "url": "https://www.irishstatutebook.ie/2024/en/act/pub/0024/sec0003.html",
+   "title": "Social Welfare (Miscellaneous Provisions) Act 2024 (No. 24 of 2024), section 3 and Table",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(2) Each provision amended under subsection (1) is amended, on and from 1 October 2025, by the substitution of the text referred to in column (5) … (3) Each provision amended under subsection (2) is amended, on and from 1 October 2026, by the substitution of the text referred to in column (6) … 9. Section 21(1)(a) “4 per cent” “4.1 per cent” “4.2 per cent” “4.35 per cent” “4.5 per cent” “4.7 per cent”"
+  },
+  {
+   "url": "https://www.irishstatutebook.ie/2024/en/act/pub/0024/sec0009.html",
+   "title": "Social Welfare (Miscellaneous Provisions) Act 2024, section 9 (inserting section 38BA of the Social Welfare Consolidation Act 2005)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the rate of the contribution payable by the person in respect of the contribution year shall be determined by the following formula— ((A x C) + (B x D))/12 where— A is the first rate, B is the second rate, C is the number of months (including part months) in the contribution year during which the first rate is effective in relation to the person, and D is the number of months (including part months) in the contribution year during which the second rate is effective in relation to the person."
+  },
+  {
+   "url": "https://revisedacts.lawreform.ie/eli/2005/act/26/section/21/revised/en/html",
+   "title": "Social Welfare Consolidation Act 2005, section 21 (Law Reform Commission revised text)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "there shall be payable by him or her a self-employment contribution which shall be the greater of an amount equal to F179 [ 4.35 per cent ] of the reckonable income or the amount of F180 [ € 650 ] ; … F179 Substituted (1.10.2026) by Social Welfare (Miscellaneous Provisions) Act 2024 (24/2024), s. 3(3) and Table, amendment 9, col. (6), commenced as per subs. (3)."
+  },
+  {
+   "url": "https://www.irishstatutebook.ie/1997/en/act/pub/0039/sec0018.html",
+   "title": "Taxes Consolidation Act 1997, section 18 (Schedule D), as enacted",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(iii) any person, whether a citizen of Ireland or not, although not resident in the State, from any property whatever in the State, or from any trade, profession or employment exercised in the State,"
+  },
+  {
+   "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-18/18-01-04.pdf",
+   "title": "Revenue, Tax and Duty Manual Part 18-01-04, Professional Services Withholding Tax (last updated November 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Payments made directly to actors, producers and directors and for post- production facilities solely for the purposes of making a film, radio or television programme or series are not subject to PSWT."
+  }
+ ],
+ "blockers": []
+}

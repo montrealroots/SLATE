@@ -1,0 +1,142 @@
+{
+ "topic": "tax.KG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kyrgyzstan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Personal income tax is a flat 10% on the year's taxable income (5% or 1% for some employees in preferential zones, the high-tech and creative parks, disability groups and garment work), after standard deductions of 6.5 settlement indicators a month for the person and one per dependant, and deductions for state social insurance and up to 8% for private pension contributions; there is no regional layer.",
+   "value": {
+    "rate": 0.1,
+    "reducedRates": {
+     "0.05": "border zones, High-Tech and Creative Industries Park residents, disability groups I-II",
+     "0.01": "garment and textile employees to 1 January 2030"
+    },
+    "personalDeductionPerMonth": "6.5 settlement indicators (its som value not read)",
+    "dependantDeductionPerMonth": "1 settlement indicator",
+    "regional": null
+   },
+   "applies": "Tax Code arts. 193, 194, 197 as amended to 6 August 2026; the som value of the settlement indicator is set separately and was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Статья 197. Ставка подоходного налога 1. Ставка подоходного налога устанавливается в размере 10 процентов, если иное не предусмотрено настоящей статьей. … Статья 194. Стандартные вычеты Стандартные вычеты состоят: 1) из персонального вычета - в размере 6,5 расчетного показателя за каждый месяц налогового периода; 2) из вычета на иждивенцев налогоплательщика - в размере одного расчетного показателя на каждого иждивенца за каждый месяц налогового периода;"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; an individual entrepreneur or a person with income not taxed at source files the single tax return by 1 May of the next year (the individuals named in art. 107 by 1 April) and pays the balance by the filing date.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "entrepreneurAndOthers": "05-01",
+     "art107Individuals": "04-01"
+    }
+   },
+   "applies": "Tax Code arts. 106, 188, 199.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Статья 188. Налоговый период Налоговым периодом по подоходному налогу является календарный год. … 6. Единая налоговая декларация составляется за календарный год и представляется: 1) организацией - до 1 апреля года, следующего за отчетным годом; 2) физическими лицами, указанными в части 1 статьи 107 настоящего Кодекса, - до 1 апреля года, следующего за отчетным годом; 3) физическим лицом, не указанным в пункте 2 настоящей части, а также индивидуальным предпринимателем - до 1 мая года, следующего за отчетным годом."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer, and anyone paying an individual who is not its employee (other than a registered individual entrepreneur or a patent holder), is the tax agent: it withholds the 10% income tax at source and pays it by the 20th of the following month; for an employee whose base is below the average monthly wage, the base is raised to that wage.",
+   "value": {
+    "rate": 0.1,
+    "payBy": "20th of the following month",
+    "exemptPayees": [
+     "individual entrepreneur",
+     "patent holder"
+    ]
+   },
+   "applies": "Tax Code arts. 200-202.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1. Выплата дохода физическому лицу, не находящемуся с ним в трудовых отношениях, приводит к возникновению у налогового агента обязанности уплаты подоходного налога им как источником дохода от суммы такой выплаты, за исключением дохода: … 3) выплаченного индивидуальному предпринимателю; 4) выплаченного физическому лицу, осуществляющему индивидуальную трудовую деятельность на основе патента. … 1. Подоходный налог, удерживаемый налоговым агентом, подлежит уплате в бюджет не позднее 20 числа месяца, следующего за месяцем:"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual paid by a Kyrgyz payer has the 10% income tax withheld by the payer as tax agent, without the standard deductions, which do not apply to non-residents; a foreign organisation without a permanent establishment bears 10% at source on royalties and on work and services performed in the Kyrgyz Republic.",
+   "value": {
+    "individual": {
+     "rate": 0.1,
+     "standardDeduction": false,
+     "final": null
+    },
+    "foreignOrganisation": {
+     "royalties": 0.1,
+     "servicesPerformedInKG": 0.1,
+     "base": "gross, no deductions"
+    }
+   },
+   "applies": "Tax Code arts. 193(2), 197, 201, 249; whether the withholding is final for a non-resident individual is not stated in these articles.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2. Стандартный вычет применяется для всех категорий налогоплательщиков, за исключением физического лица-нерезидента. … 3) авторские гонорары, роялти - 10 процентов; 4) работы, услуги, выполненные и оказанные иностранной организацией на территории Кыргызской Республики, - 10 процентов;"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors get no special rate: the income tax article gives reduced rates only for preferential zones, the parks, disability and garment work, so an author's fees and royalties are taxed at 10%; royalties paid to a foreign organisation bear 10% at source.",
+   "value": {
+    "specialRate": null,
+    "rate": 0.1
+   },
+   "applies": "Tax Code arts. 197 and 249.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Статья 197. Ставка подоходного налога 1. Ставка подоходного налога устанавливается в размере 10 процентов, если иное не предусмотрено настоящей статьей. … 3) авторские гонорары, роялти - 10 процентов;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 12% of a taxable supply; a person in business under the general tax regime must register for VAT from the date of tax registration or of moving to the general regime (art. 255 sets no turnover threshold).",
+   "value": {
+    "rate": 0.12,
+    "registration": "every general-regime business"
+   },
+   "applies": "Tax Code arts. 254-255; who may stay in a special regime (single tax, patent) instead was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Статья 254. Ставка НДС 1. Если иное не предусмотрено настоящим Кодексом, ставка НДС устанавливается в размере 12 процентов от облагаемой поставки и облагаемого импорта. … 1. Субъект, осуществляющий предпринимательскую деятельность и уплачивающий налоги в соответствии с общим налоговым режимом, подлежит регистрации по НДС:"
+    }
+   ]
+  }
+ ],
+ "country": "KG",
+ "sources": [
+  {
+   "url": "https://sti.gov.kg/api/Kenesh/get-version?versionId=299",
+   "title": "Налоговый кодекс Кыргызской Республики от 18 января 2022 года № 3, в редакции Закона от 6 августа 2026 года № 145 (State Tax Service legal base, sti.gov.kg, version of 2026-08-06; Russian text extracted from the service's JSON)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Статья 197. Ставка подоходного налога 1. Ставка подоходного налога устанавливается в размере 10 процентов, если иное не предусмотрено настоящей статьей. … Статья 194. Стандартные вычеты Стандартные вычеты состоят: 1) из персонального вычета - в размере 6,5 расчетного показателя за каждый месяц налогового периода; 2) из вычета на иждивенцев налогоплательщика - в размере одного расчетного показателя на каждого иждивенца за каждый месяц налогового периода; … Статья 188. Налоговый период Налоговым периодом по подоходному налогу является календарный год. … 6. Единая налоговая декларация составляется за календарный год и представляется: 1) организацией - до 1 апреля года, следующего за отчетным годом; 2) физическими лицами, указанными в части 1 статьи 107 настоящего Кодекса, - до 1 апреля года, следующего за отчетным годом; 3) физическим лицом, не указанным в пункте 2 настоящей части, а также индивидуальным предпринимателем - до 1 мая года, следующего за отчетным годом. … 1. Выплата дохода физическому лицу, не находящемуся с ним в трудовых отношениях, приводит к возникновению у налогового агента обязанности уплаты подоходного налога им как источником дохода от суммы такой выплаты, за исключением дохода: … 3) выплаченного индивидуальному предпринимателю; 4) выплаченного физическому лицу, осуществляющему индивидуальную трудовую деятельность на основе патента. … 1. Подоходный налог, удерживаемый налоговым агентом, подлежит уплате в бюджет не позднее 20 числа месяца, следующего за месяцем: … 2. Стандартный вычет применяется для всех категорий налогоплательщиков, за исключением физического лица-нерезидента. … 3) авторские гонорары, роялти - 10 процентов; 4) работы, услуги, выполненные и оказанные иностранной организацией на территории Кыргызской Республики, - 10 процентов; … Статья 197. Ставка подоходного налога 1. Ставка подоходного налога устанавливается в размере 10 процентов, если иное не предусмотрено настоящей статьей. … 3) авторские гонорары, роялти - 10 процентов; … Статья 254. Ставка НДС 1. Если иное не предусмотрено настоящим Кодексом, ставка НДС устанавливается в размере 12 процентов от облагаемой поставки и облагаемого импорта. … 1. Субъект, осуществляющий предпринимательскую деятельность и уплачивающий налоги в соответствии с общим налоговым режимом, подлежит регистрации по НДС:"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Social Fund contributions (employee and employer shares, base, 2026 rules approved by the Cabinet).",
+   "tried": {
+    "institution": "sti.gov.kg (State Tax Service) returned only a 700-byte JavaScript shell; sti.gov.kg/ru and socfond.kg (Social Fund) did not answer this environment || 2026-11-01 retry: sti.gov.kg's front end reads a public JSON API (/api/Kenesh/get-documents, get-version); the Tax Code as amended to 6 August 2026 was read from it and has no social-contribution chapter; socfond.kg (Social Fund) gives no answer (curl 000)",
+    "official-register": "cbd.minjust.gov.kg (Ministry of Justice legal database, Tax Code) did not answer || 2026-11-01 retry: cbd.minjust.gov.kg (the legal database) gives no answer (curl 000); minjust.gov.kg HTTP 403",
+    "web-search": "one search: only EOR/payroll vendors (Rivermate, Asanify) and a 24.kg headline on 2026 social-contribution rules returned; the 200-search budget for this run was then exhausted || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Worldwide Tax Summaries Kyrgyzstan pages return 404 (removed) || 2026-11-01 retry: no tax-firm summary read this turn",
+    "archive": "web.archive.org unreachable from this environment (connection reset) || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

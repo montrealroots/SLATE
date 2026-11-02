@@ -1,0 +1,138 @@
+{
+ "topic": "tax.SL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Sierra Leone: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "nonResident",
+   "finding": "From 1 January 2026 the Finance Act 2026 raises withholding on management or professional fees paid to non-residents from 15% to 20% (non-resident contractors from 10% to 20%), withheld on the gross before payment.",
+   "value": {
+    "rate": 0.2,
+    "previous": 0.15,
+    "contractors": 0.2,
+    "base": "gross amount payable",
+    "threshold": null,
+    "final": null,
+    "from": "2026-01-01"
+   },
+   "applies": "Payments to non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Withholding tax on payments to non-resident contractors increases from 10% to 20% . Withholding tax on management or professional fees paid to non-residents increases from 15% to 20% . Payments covered under this provision are not treated as employment income. The payer is required to withhold tax at source on the gross amount payable before making payment to the non-resident. Reference: Second Schedule to the Income Tax Act 2000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The Finance Act 2026, gazetted on 7 January 2026, applies to payroll from 1 January 2026 and leaves personal income tax brackets and NASSIT rates unchanged from 2025.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "bracketsUnchangedFrom": 2025
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Finance Act 2026, published in the Government Gazette Extraordinary Vol. CLXVII No.3 on 7 January 2026, introduces amendments to the Income Tax Act affecting payroll from 1 January 2026. Personal Income Tax brackets and Social Security (NASSIT) contribution rates remain unchanged from 2025."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "NASSIT takes 15% of an employee's earnings each month: the employer deducts 5% from pay and adds 10% of its own, paying the total within fifteen days after the month ends; a self-employed or voluntary member pays the full 15% of declared income; membership is mandatory for formal-sector employees and voluntary for the self-employed.",
+   "value": {
+    "employee": 0.05,
+    "employer": 0.1,
+    "selfEmployed": 0.15,
+    "selfEmployedBase": "declared income",
+    "selfEmployedMembership": "voluntary",
+    "dueDays": 15,
+    "ceiling": "none stated"
+   },
+   "applies": "2026 (PaySpace's note on the Finance Act 2026 says NASSIT rates are unchanged); no earnings ceiling is stated on NASSIT's pages.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers should deduct 5% from the earnings of an employee at the end of every month, as that employee’s Social Security contribution; The employer should then add 10% of the employee’s earnings as that employer's contribution on behalf of the employee; The total 15% contribution should be paid to NASSIT within fifteen days after the end of the month. … A self-employed/voluntary contributor pays the full 15% on his/her declared income."
+    },
+    {
+     "src": 2,
+     "said": "The scheme covers all formal sector employers and employees on a mandatory basis. It provides voluntary membership for the self employed."
+    }
+   ]
+  }
+ ],
+ "country": "SL",
+ "sources": [
+  {
+   "url": "https://support.payspace.com/portal/en/kb/articles/sierra-leone-2026-finance-act",
+   "title": "PaySpace: Sierra Leone | 2026 Finance Act",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2026_121df05d9b.pdf",
+   "said": "Withholding tax on payments to non-resident contractors increases from 10% to 20% . Withholding tax on management or professional fees paid to non-residents increases from 15% to 20% . Payments covered under this provision are not treated as employment income. The payer is required to withhold tax at source on the gross amount payable before making payment to the non-resident. Reference: Second Schedule to the Income Tax Act 2000. … The Finance Act 2026, published in the Government Gazette Extraordinary Vol. CLXVII No.3 on 7 January 2026, introduces amendments to the Income Tax Act affecting payroll from 1 January 2026. Personal Income Tax brackets and Social Security (NASSIT) contribution rates remain unchanged from 2025."
+  },
+  {
+   "url": "https://nassit.org.sl/our-services/contributions",
+   "title": "Contributions (National Social Security and Insurance Trust, Sierra Leone)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employers should deduct 5% from the earnings of an employee at the end of every month, as that employee’s Social Security contribution; The employer should then add 10% of the employee’s earnings as that employer's contribution on behalf of the employee; The total 15% contribution should be paid to NASSIT within fifteen days after the end of the month. … A self-employed/voluntary contributor pays the full 15% on his/her declared income."
+  },
+  {
+   "url": "https://nassit.org.sl/faqs",
+   "title": "FAQs (National Social Security and Insurance Trust, Sierra Leone)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The scheme covers all formal sector employers and employees on a mandatory basis. It provides voluntary membership for the self employed."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The personal income tax bands (Income Tax Act 2000, First Schedule, as last amended) in new leones.",
+   "tried": {
+    "institution": "nra.gov.sl did not answer this environment; its CMS PDF host fails TLS verification (not bypassed) || 2026-11-01 retry: nra.gov.sl and www.nra.gov.sl again refused by the egress proxy (curl 000); mof.gov.sl answers but was not searched for residents; nassit.org.sl read (social now recorded).",
+    "official-register": "Finance Act 2026 PDF unreachable (TLS); Sierra Leone Gazette not online || 2026-11-01 retry: SierraLII (sierralii.gov.sl/legislation) holds the Finance Acts 2021, 2022 and 2024 (saved as SL-sierralii-finance-act-*.pdf); 2022 and 2024 are image scans whose OCR could not finish under the machine's load this turn, and 2021 states amounts in old leones before the 2022-2024 redenomination; the Income Tax Act 2000, the Goods and Services Tax Act 2009 and the Finance Acts 2025/2026 are not on SierraLII.",
+    "web-search": "searched Finance Act 2026 PAYE bands: only payroll vendors and calculators (unverified, not used) || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('NRA Sierra Leone Finance Act 2026 residents').",
+    "trade-press": "PaySpace says brackets unchanged but does not state them || 2026-11-01 retry: taxsummaries.pwc.com/sierra-leone returns 404 (checked 2026-11-01); PaySpace note already saved.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "PAYE method and remittance date.",
+   "tried": {
+    "institution": "nra.gov.sl unreachable || 2026-11-01 retry: nra.gov.sl and www.nra.gov.sl again refused by the egress proxy (curl 000); mof.gov.sl answers but was not searched for withholding; nassit.org.sl read (social now recorded).",
+    "official-register": "not reached || 2026-11-01 retry: SierraLII (sierralii.gov.sl/legislation) holds the Finance Acts 2021, 2022 and 2024 (saved as SL-sierralii-finance-act-*.pdf); 2022 and 2024 are image scans whose OCR could not finish under the machine's load this turn, and 2021 states amounts in old leones before the 2022-2024 redenomination; the Income Tax Act 2000, the Goods and Services Tax Act 2009 and the Finance Acts 2025/2026 are not on SierraLII.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('NRA Sierra Leone Finance Act 2026 withholding').",
+    "trade-press": "not found || 2026-11-01 retry: taxsummaries.pwc.com/sierra-leone returns 404 (checked 2026-11-01); PaySpace note already saved.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "GST rate and registration threshold.",
+   "tried": {
+    "institution": "nra.gov.sl unreachable || 2026-11-01 retry: nra.gov.sl and www.nra.gov.sl again refused by the egress proxy (curl 000); mof.gov.sl answers but was not searched for vat; nassit.org.sl read (social now recorded).",
+    "official-register": "not reached || 2026-11-01 retry: SierraLII (sierralii.gov.sl/legislation) holds the Finance Acts 2021, 2022 and 2024 (saved as SL-sierralii-finance-act-*.pdf); 2022 and 2024 are image scans whose OCR could not finish under the machine's load this turn, and 2021 states amounts in old leones before the 2022-2024 redenomination; the Income Tax Act 2000, the Goods and Services Tax Act 2009 and the Finance Acts 2025/2026 are not on SierraLII.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('NRA Sierra Leone Finance Act 2026 vat').",
+    "trade-press": "not found || 2026-11-01 retry: taxsummaries.pwc.com/sierra-leone returns 404 (checked 2026-11-01); PaySpace note already saved.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Treatment of royalties.",
+   "tried": {
+    "institution": "nra.gov.sl unreachable || 2026-11-01 retry: nra.gov.sl and www.nra.gov.sl again refused by the egress proxy (curl 000); mof.gov.sl answers but was not searched for authors; nassit.org.sl read (social now recorded).",
+    "official-register": "not reached || 2026-11-01 retry: SierraLII (sierralii.gov.sl/legislation) holds the Finance Acts 2021, 2022 and 2024 (saved as SL-sierralii-finance-act-*.pdf); 2022 and 2024 are image scans whose OCR could not finish under the machine's load this turn, and 2021 states amounts in old leones before the 2022-2024 redenomination; the Income Tax Act 2000, the Goods and Services Tax Act 2009 and the Finance Acts 2025/2026 are not on SierraLII.",
+    "web-search": "not run || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('NRA Sierra Leone Finance Act 2026 authors').",
+    "trade-press": "not found || 2026-11-01 retry: taxsummaries.pwc.com/sierra-leone returns 404 (checked 2026-11-01); PaySpace note already saved.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

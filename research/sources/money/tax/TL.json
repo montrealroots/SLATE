@@ -1,0 +1,171 @@
+{
+ "topic": "tax.TL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Timor Leste: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident of Timor-Leste pays wage income tax of 10% on wages over US$500 a month, and 10% on other income over US$6,000 a year; there are no personal deductions or allowances.",
+   "value": {
+    "currency": "USD",
+    "wagesMonthly": [
+     {
+      "from": 0,
+      "to": 500,
+      "rate": 0
+     },
+     {
+      "from": 500,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "otherIncomeAnnual": [
+     {
+      "from": 0,
+      "to": 6000,
+      "rate": 0
+     },
+     {
+      "from": 6000,
+      "to": null,
+      "rate": 0.1
+     }
+    ]
+   },
+   "applies": "Taxes and Duties Act 2008 rates as the ATTL states them on its pages read 2026-11-01 (the pages carry no year; the Act has set these rates since 2008).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Residents The amount of wage income tax payable for wages of residents of Timor-Leste can be calculated from this table: Monthly taxable wage Income tax rate 0 – $500 0% More than $500 10% of the amount over $500"
+    },
+    {
+     "src": 1,
+     "said": "Income Tax Rates Resident natural person Where the taxpayer is a resident natural person: Annual taxable income Tax on this income $0 – $6,000 0% More than $6,000 10%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 4% and the employer 6% of the contributory base to social security, withheld and declared monthly by the 10th.",
+   "value": {
+    "employee": 0.04,
+    "employer": 0.06
+   },
+   "applies": "2026; ceiling not given.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers are required to pay a monthly contribution towards an employee’s social security at a rate of 6% of the “contributory incidence basis.”"
+    },
+    {
+     "src": 2,
+     "said": "The employee’s contribution is payable at 4% of the contributory incidence basis and is withheld by the employer."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds wage income tax, which settles the employee's tax on those wages; royalties bear 10% withholding for residents too.",
+   "value": {
+    "wageTaxFinal": true,
+    "royalties": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The obligation to withhold WIT rests with the employer. An employee in receipt of wages that have been correctly subject to WIT has no further liability to income tax on the amount received."
+    },
+    {
+     "src": 2,
+     "said": "A 10% withholding tax applies to royalties paid to both residents and nonresidents."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual pays a flat 10% on all income; payments of Timor-Leste source income to a non-resident without a permanent establishment bear 10% withholding.",
+   "value": {
+    "rate": 0.1,
+    "withholding": 0.1,
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "For nonresident individuals, a flat rate of 10% applies on all income."
+    },
+    {
+     "src": 2,
+     "said": "All other payments of Timor-Leste source income to nonresidents with no permanent establishment in Timor-Leste are subject to a 10% withholding tax where the payment is not for services identified above."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT in Timor-Leste in 2026 (one is planned for January 2027); a 5% services tax applies only to designated hotel, restaurant, bar and telecommunication services.",
+   "value": {
+    "rate": 0,
+    "threshold": null,
+    "plannedFrom": "2027-01"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "There is no VAT or similar tax in Timor-Leste (but see the sales tax description under “Other,” below); however, Timor-Leste is planning to introduce VAT"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return, where required, is filed and tax paid by 31 March of the next year.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax year: The tax year is the calendar year. Filing status:"
+    },
+    {
+     "src": 2,
+     "said": "An annual income tax return must be filed and any income tax due paid by 31 March following the end of the tax year."
+    }
+   ]
+  }
+ ],
+ "country": "TL",
+ "sources": [
+  {
+   "url": "https://attl.gov.tl/wage-income-tax/",
+   "title": "Autoridade Tributária de Timor-Leste: Wage Income Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Residents The amount of wage income tax payable for wages of residents of Timor-Leste can be calculated from this table: Monthly taxable wage Income tax rate 0 – $500 0% More than $500 10% of the amount over $500"
+  },
+  {
+   "url": "https://attl.gov.tl/annual-income-tax-return-guidelines/",
+   "title": "Autoridade Tributária de Timor-Leste: Annual Income Tax Return Guidelines",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income Tax Rates Resident natural person Where the taxpayer is a resident natural person: Annual taxable income Tax on this income $0 – $6,000 0% More than $6,000 10%"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-timorlestehighlights-2026.pdf",
+   "title": "Timor-Leste Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.segurancasocial.gov.tl/",
+   "said": "Employers are required to pay a monthly contribution towards an employee’s social security at a rate of 6% of the “contributory incidence basis.” … The employee’s contribution is payable at 4% of the contributory incidence basis and is withheld by the employer. … The obligation to withhold WIT rests with the employer. An employee in receipt of wages that have been correctly subject to WIT has no further liability to income tax on the amount received. … A 10% withholding tax applies to royalties paid to both residents and nonresidents. … For nonresident individuals, a flat rate of 10% applies on all income. … All other payments of Timor-Leste source income to nonresidents with no permanent establishment in Timor-Leste are subject to a 10% withholding tax where the payment is not for services identified above. … There is no VAT or similar tax in Timor-Leste (but see the sales tax description under “Other,” below); however, Timor-Leste is planning to introduce VAT … Tax year: The tax year is the calendar year. Filing status: … An annual income tax return must be filed and any income tax due paid by 31 March following the end of the tax year."
+  }
+ ],
+ "blockers": []
+}

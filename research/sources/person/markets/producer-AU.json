@@ -1,0 +1,162 @@
+{
+ "topic": "markets.producer.AU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Australia. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "A feature must spend at least A$500,000 of qualifying Australian production expenditure to claim the Producer Offset, and above-the-line costs (development, the producers', director's, writers' and principal cast's pay) count only up to 20% of total film expenditure.",
+   "value": {
+    "minimumQAPEFeatureAUD": 500000,
+    "aboveTheLineCapShareOfTotalExpenditure": 0.2,
+    "atlIncludes": [
+     "development and script",
+     "producers including executive producers",
+     "principal director",
+     "writers",
+     "principal cast"
+    ],
+    "documentariesExempt": true
+   },
+   "applies": "Australia, Producer Offset (ITAA 1997 Div 376), guidelines of July 2026 for projects starting principal photography on or after 1 July 2021; the 40%/30% rates are held in world.json and producer-calibration.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Feature film $500,000 N/A … Above-the-line (ATL) expenditure which can be QAPE is capped at 20% of total film expenditure … The ATL Cap applies to all films applying for the Producer Offset, except for documentaries. … B. producers, including but not limited to executive producers and co-"
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Screen Australia sets no percentage cap on producer fees in its Terms of Trade; the binding limit is the Producer Offset's 20% above-the-line cap, beyond which producer fees earn no offset. Its production funding over A$500,000 is a recoupable equity investment, the producer's Offset contribution must be at least 90% of the Offset's projected value for features, and once equity is repaid the producer takes 50% of profit.",
+   "value": {
+    "producerFeePercentCap": null,
+    "screenAustraliaEquityAboveAUD": 500000,
+    "offsetContributionMinShareFeature": 0.9,
+    "producerProfitShareAfterRecoupment": 0.5
+   },
+   "applies": "Australia, Screen Australia Terms of Trade effective 4 December 2017 (current file, read 2026-11-01; the producer-calibration blocker found the older URL 404).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Screen Australia production funding over $500,000 will be provided as a recoupable equity investment. … For Offset projects, that contribution will be at least 90% of the projected value of … Once all equity investment is repaid, the producer’s profit share will be 50%."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "In 2024/25, 34 Australian theatrical features went into production for A$379 million (38 the year before); 14 of them cost A$1–5 million, eight A$5–10 million, five A$10–20 million and four over A$20 million; the Location Offset's rise to 30% from July 2023 drove a record A$1.0 billion from 20 international features.",
+   "value": {
+    "year": "2024/25",
+    "australianTheatricalFeatures": 34,
+    "spendAUD": 379000000,
+    "previousYearFeatures": 38,
+    "byBudget": {
+     "1to5mAUD": 14,
+     "5to10mAUD": 8,
+     "10to20mAUD": 5,
+     "over20mAUD": 4
+    },
+    "locationOffsetRate": 0.3,
+    "locationOffsetFrom": "2023-07",
+    "internationalShootFeatures": 20,
+    "internationalShootSpendAUD": 1000000000
+   },
+   "applies": "Australia, Screen Australia Drama Report 2024/25 (published February 2026); features under A$1 million are captured retrospectively.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "A $379 million spend on 34 Australian theatrical features, up from $215 million on 38 titles in the prior year. … with the main concentration in the $1-5 million range — 14 of the 34 — two down on last year. … The number of features produced for over $20 million increased from one to four. Fewer titles were made in the $10-20 million range (five compared to last year’s eight) and the $5-10 million range increased from seven last year to eight in 2024/25. … driven primarily by the Location Offset increase to 30% from July 2023. … A record spend of $1.0 billion from 20 international shoot features."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Screen Producers Australia is the national body for independent screen producers; members pay a levy on each production, which counts as qualifying expenditure for the Producer Offset.",
+   "value": {
+    "name": "Screen Producers Australia",
+    "dues": "levy per production (rate in SPA's levy statement, not read)",
+    "levyIsQAPE": true
+   },
+   "applies": "Australia; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "As the national peak body for independent screen producers, SPA advocates for the issues that matter to the sector … SPA members contribute to the organisation’s advocacy and industry activities through a levy applied to each production, regardless of format or funding source. … The levy is included in the standard A–Z budget template and is recognised as Qualifying Australian Production Expenditure (QAPE) for the purposes of the Producer Offset."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Australia's Location Offset refunds 30% of a production's qualifying Australian spend for a feature, mini-series or TV drama series that spends at least A$20 million here (a series at least A$1.5 million an hour), and the PDV Offset refunds 30% of qualifying post, digital and visual effects spend of at least A$500,000.",
+   "value": {
+    "locationOffsetRate": 0.3,
+    "locationMinQAPE_AUD": 20000000,
+    "locationSeriesMinPerHourAUD": 1500000,
+    "pdvOffsetRate": 0.3,
+    "pdvMinQAPE_AUD": 500000,
+    "excludes": "documentaries (for features and mini-series), advertising, game and panel shows, public events, training films",
+    "law": "Income Tax Assessment Act 1997, Division 376, compilation in force 2026-10-01"
+   },
+   "applies": "Australia, any production company (Australian resident or with a permanent establishment and ABN) certified by the Arts Minister; the producer offset (Australian films) is held separately.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The amount of the location offset is 30% of the total of the company’s * qualifying Australian production expenditure on the * film … Conditions relating to expenditure thresholds (5) The conditions in this subsection are that: (a) the total of the company’s * qualifying Australian production expenditure on the * film (as determined by the * Arts Minister under section 376 ‑ 30) is at least $20 million … the amount worked out for the film under subsection (6) is at least $1.5 million … The amount of the PDV offset is 30% of the total of the company’s * qualifying Australian production expenditure (as determined by the * Arts Minister under section 376 ‑ 50) on a * film, to the extent that it relates to * post, digital and visual effects production for the film. … Conditions relating to expenditure thresholds (5) The conditions of this subsection are that: (a) the total of the company’s * qualifying Australian production expenditure on the * film (as determined by the * Arts Minister under section 376 ‑ 50), to the extent that it relates to * post, digital and visual effects production for the film, is at least $500,000"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "AU",
+ "sources": [
+  {
+   "url": "https://www.screenaustralia.gov.au/wp-content/uploads/2025/08/Guidelines-Producer-Offset-2024.pdf",
+   "title": "Screen Australia: Producer Offset Guidelines (July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Feature film $500,000 N/A … Above-the-line (ATL) expenditure which can be QAPE is capped at 20% of total film expenditure … The ATL Cap applies to all films applying for the Producer Offset, except for documentaries. … B. producers, including but not limited to executive producers and co-"
+  },
+  {
+   "url": "https://www.screenaustralia.gov.au/wp-content/uploads/2025/07/Terms-of-Trade-December-2017.pdf",
+   "title": "Screen Australia: Terms of Trade (effective 4 December 2017)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Screen Australia production funding over $500,000 will be provided as a recoupable equity investment. … For Offset projects, that contribution will be at least 90% of the projected value of … Once all equity investment is repaid, the producer’s profit share will be 50%."
+  },
+  {
+   "url": "https://www.screenaustralia.gov.au/insights-and-trends/industry-reports/drama-report/",
+   "title": "Screen Australia: Drama Report 2024/25",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A $379 million spend on 34 Australian theatrical features, up from $215 million on 38 titles in the prior year. … with the main concentration in the $1-5 million range — 14 of the 34 — two down on last year. … The number of features produced for over $20 million increased from one to four. Fewer titles were made in the $10-20 million range (five compared to last year’s eight) and the $5-10 million range increased from seven last year to eight in 2024/25. … driven primarily by the Location Offset increase to 30% from July 2023. … A record spend of $1.0 billion from 20 international shoot features."
+  },
+  {
+   "url": "https://www.screenproducers.org.au/membership",
+   "title": "Screen Producers Australia: Membership",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As the national peak body for independent screen producers, SPA advocates for the issues that matter to the sector … SPA members contribute to the organisation’s advocacy and industry activities through a levy applied to each production, regardless of format or funding source. … The levy is included in the standard A–Z budget template and is recognised as Qualifying Australian Production Expenditure (QAPE) for the purposes of the Producer Offset."
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_7/document_7.html",
+   "title": "Federal Register of Legislation: Income Tax Assessment Act 1997, Volume 7 (Division 376), compilation as at 1 October 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The amount of the location offset is 30% of the total of the company’s * qualifying Australian production expenditure on the * film … Conditions relating to expenditure thresholds (5) The conditions in this subsection are that: (a) the total of the company’s * qualifying Australian production expenditure on the * film (as determined by the * Arts Minister under section 376 ‑ 30) is at least $20 million … the amount worked out for the film under subsection (6) is at least $1.5 million … The amount of the PDV offset is 30% of the total of the company’s * qualifying Australian production expenditure (as determined by the * Arts Minister under section 376 ‑ 50) on a * film, to the extent that it relates to * post, digital and visual effects production for the film. … Conditions relating to expenditure thresholds (5) The conditions of this subsection are that: (a) the total of the company’s * qualifying Australian production expenditure on the * film (as determined by the * Arts Minister under section 376 ‑ 50), to the extent that it relates to * post, digital and visual effects production for the film, is at least $500,000"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "language",
+   "sought": "The language Australian screen work is made in (a census or screen-agency figure).",
+   "tried": {
+    "institution": "Screen Australia pages read give none. | Retry 2026-11-01 (producer retry): Federal Register of Legislation, ITAA 1997 Division 376 (saved producer-AU-itaa1997-vol7.html): the offsets set no language test; Screen Australia Producer Offset guidelines (saved) mention language only of the guidelines themselves.",
+    "official-register": "ABS 2021 Census QuickStats (abs.gov.au/census/find-census-data/quickstats/2021/AUS) returned 503 twice, 2026-11-01. | Retry 2026-11-01 (producer retry): ITAA 1997 vol. 7 text searched for \"language\": no match.",
+    "web-search": "Not separately searched within this run. | Retry 2026-11-01 (producer retry): \"Screen Australia \\\"languages other than English\\\" Australian drama feature films produced number\": no count of titles by language.",
+    "trade-press": "None. | Retry 2026-11-01 (producer retry): Metro Magazine (metromagazine.com.au/launching-the-rocket, via search snippet) says hardly one Australian film a year uses another language for its dialogue, naming no primary; not used.",
+    "archive": "Not tried (archive resets). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

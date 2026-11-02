@@ -1,0 +1,104 @@
+{
+ "country": "DJ",
+ "read": "2026-11-01",
+ "route": "Autorisation de travail (visa du contrat, Ministère du Travail)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer (art. 30: 'La demande de visa incombe à l’employeur'), filing the contract with the employment services.",
+  "first": "A written fixed-term employment contract; the Minister may refuse where equivalent national skills exist on the labour market.",
+  "fees": null,
+  "processing": {
+   "standard": {
+    "n": 60,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "Le Ministre chargé du Travail peut refuser la délivrance ou le renouvellement de l’autorisation de travail lorsque la qualification professionnelle du travailleur ne répond pas, ou plus, aux besoins de l'économie nationale. ou encore lorsqu’il existe sur le marché du travail des compétences et qualifications nationales équivalentes à celles du travailleur étranger.",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.icnl.org/wp-content/uploads/Djibouti_labcode.pdf",
+   "title": "Code du Travail, Loi n°133/AN/05/5ème L du 28 janvier 2006 (ICNL copy of the Journal officiel text)",
+   "read": "2026-11-01",
+   "said": "Le contrat de travail pour étranger est obligatoirement constaté par écrit. Il fait l’objet d’un visa délivré par le Ministre chargé du Travail. … Cette autorisation est temporaire. Elle est délivrée pour une durée d’un an ; elle peut être renouvelée plusieurs fois … Sans réponse, sous 60 jours, à compter de la date de dépôt du contrat de travail par l’employeur, auprès des services concernés du Ministère chargé du Travail, l’autorisation est réputée accordée … La demande de visa incombe à l’employeur. … lorsqu’il existe sur le marché du travail des compétences et qualifications nationales équivalentes à celles du travailleur étranger.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "processing",
+    "validity",
+    "eligibility"
+   ]
+  },
+  {
+   "url": "https://www4.aucegypt.edu/CMRS/Files/28.pdf",
+   "title": "Loi n°28/AN/13 amending Loi n°153/AN/12/6ème L on the work permit tariff (AUC CMRS copy)",
+   "read": "2026-11-01",
+   "said": "Les frais d'établissements du permis de travail, pour une durée d'une année, sont fixés à deux cent mille francs Djibouti (200.000 FD) par autorisation de travail.",
+   "kind": "primary"
+  },
+  {
+   "url": "https://ccd.dj/wp-content/uploads/2022/06/Textes-modifiant-ou-completant-le-Code-du-Travail.pdf",
+   "title": "Chambre de Commerce de Djibouti, Textes modifiant ou complétant le Code du Travail",
+   "read": "2026-11-01",
+   "said": "Loi N° 172/AN/17/7ème L portant modification des dispositions de la loi n°28/AN/7ème L portant amendement de la loi n°153/AN/12/6ème L instituant le tarif applicable aux permis de travail pour les travailleurs étrangers en République de Djibouti La présente loi modifie le niveau de tarification des permis des travailleurs étrangers en République de Djibouti.",
+   "kind": "primary"
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The work permit tariff in force",
+   "tried": {
+    "institution": "Ministry of Labour site not found; guichet-unique.dj's copy of Loi 172/AN/17 answered 503 (http) and reset (https). | 2026-11-01 retry: guichet-unique.dj/wp-content/uploads/2018/04/Loi_Permis_Travail.pdf (Loi 172/AN/17, linked by the Chamber of Commerce's compilation) retried over https: connection reset (curl: (35)); no Ministry of Labour site found.",
+    "official-register": "Loi 153/AN/12 as amended in 2013 read (200,000 FD/year); Loi 172/AN/17 not reached; presidence.dj text pages answered 404 at layer 3. | 2026-11-01 retry: Labour Code (ICNL's Journal officiel copy, saved DJ-ct.pdf) re-read for 'artiste', 'dispens', union and minimum pay: no performer rule, no union step, no pay rule for the permit, no exempt engagement; the CCD compilation (saved DJ-ccd.pdf) names Loi 172/AN/17 of 16/11/2020 as changing the tariff, without the amount.",
+    "web-search": "'Djibouti autorisation de travail étranger frais FDJ visa du contrat ministère du travail coût' and '\"frais d'établissement\" \"permis de travail\" Djibouti décret presidence.dj': only the 2013 figure and commercial guides. | 2026-11-01 retry: '\"172/AN/17\" permis de travail tarif Djibouti travailleurs étrangers montant FDJ' (2026-11-01): only the 2013 figure (200,000 FD, superseded) and guides.",
+    "trade-press": "Rivermate, G-P: say fees change, no figure with a primary. | 2026-11-01 retry: africarrieres.com Djibouti employer guide (fetched, saved DJ-africarrieres.html): AI-written, no fee and no primary; Globalization Partners, Playroll, Rivermate in results: no figure with a primary.",
+    "archive": "Not tried for guichet-unique.dj (archive API rate-limited earlier). | 2026-11-01 retry: archive.org availability API for the guichet-unique.dj PDF: no snapshot (2026-11-01); web.archive.org resets the connection."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Union consultation, pay rule or exempt engagement for a foreign performer's work authorisation",
+   "tried": {
+    "institution": "2026-11-01 retry: guichet-unique.dj/wp-content/uploads/2018/04/Loi_Permis_Travail.pdf (Loi 172/AN/17, linked by the Chamber of Commerce's compilation) retried over https: connection reset (curl: (35)); no Ministry of Labour site found.",
+    "official-register": "2026-11-01 retry: Labour Code (ICNL's Journal officiel copy, saved DJ-ct.pdf) re-read for 'artiste', 'dispens', union and minimum pay: no performer rule, no union step, no pay rule for the permit, no exempt engagement; the CCD compilation (saved DJ-ccd.pdf) names Loi 172/AN/17 of 16/11/2020 as changing the tariff, without the amount.",
+    "web-search": "2026-11-01 retry: '\"172/AN/17\" permis de travail tarif Djibouti travailleurs étrangers montant FDJ' (2026-11-01): only the 2013 figure (200,000 FD, superseded) and guides.",
+    "trade-press": "2026-11-01 retry: africarrieres.com Djibouti employer guide (fetched, saved DJ-africarrieres.html): AI-written, no fee and no primary; Globalization Partners, Playroll, Rivermate in results: no figure with a primary.",
+    "archive": "2026-11-01 retry: archive.org availability API for the guichet-unique.dj PDF: no snapshot (2026-11-01); web.archive.org resets the connection."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Union consultation, pay rule or exempt engagement for a foreign performer's work authorisation",
+   "tried": {
+    "institution": "2026-11-01 retry: guichet-unique.dj/wp-content/uploads/2018/04/Loi_Permis_Travail.pdf (Loi 172/AN/17, linked by the Chamber of Commerce's compilation) retried over https: connection reset (curl: (35)); no Ministry of Labour site found.",
+    "official-register": "2026-11-01 retry: Labour Code (ICNL's Journal officiel copy, saved DJ-ct.pdf) re-read for 'artiste', 'dispens', union and minimum pay: no performer rule, no union step, no pay rule for the permit, no exempt engagement; the CCD compilation (saved DJ-ccd.pdf) names Loi 172/AN/17 of 16/11/2020 as changing the tariff, without the amount.",
+    "web-search": "2026-11-01 retry: '\"172/AN/17\" permis de travail tarif Djibouti travailleurs étrangers montant FDJ' (2026-11-01): only the 2013 figure (200,000 FD, superseded) and guides.",
+    "trade-press": "2026-11-01 retry: africarrieres.com Djibouti employer guide (fetched, saved DJ-africarrieres.html): AI-written, no fee and no primary; Globalization Partners, Playroll, Rivermate in results: no figure with a primary.",
+    "archive": "2026-11-01 retry: archive.org availability API for the guichet-unique.dj PDF: no snapshot (2026-11-01); web.archive.org resets the connection."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "Union consultation, pay rule or exempt engagement for a foreign performer's work authorisation",
+   "tried": {
+    "institution": "2026-11-01 retry: guichet-unique.dj/wp-content/uploads/2018/04/Loi_Permis_Travail.pdf (Loi 172/AN/17, linked by the Chamber of Commerce's compilation) retried over https: connection reset (curl: (35)); no Ministry of Labour site found.",
+    "official-register": "2026-11-01 retry: Labour Code (ICNL's Journal officiel copy, saved DJ-ct.pdf) re-read for 'artiste', 'dispens', union and minimum pay: no performer rule, no union step, no pay rule for the permit, no exempt engagement; the CCD compilation (saved DJ-ccd.pdf) names Loi 172/AN/17 of 16/11/2020 as changing the tariff, without the amount.",
+    "web-search": "2026-11-01 retry: '\"172/AN/17\" permis de travail tarif Djibouti travailleurs étrangers montant FDJ' (2026-11-01): only the 2013 figure (200,000 FD, superseded) and guides.",
+    "trade-press": "2026-11-01 retry: africarrieres.com Djibouti employer guide (fetched, saved DJ-africarrieres.html): AI-written, no fee and no primary; Globalization Partners, Playroll, Rivermate in results: no figure with a primary.",
+    "archive": "2026-11-01 retry: archive.org availability API for the guichet-unique.dj PDF: no snapshot (2026-11-01); web.archive.org resets the connection."
+   }
+  }
+ ],
+ "note": "Labour Code (Loi n°133/AN/05/5ème L), arts. 24–30, as ICNL holds the Journal officiel text: the employer seeks the visa of the written contract; the visa brings the Minister's work authorisation, one year, renewable several times; the employment services decide, and silence for 60 days from the employer's filing counts as approval. The fee was 200,000 FD a year under Loi n°28/AN/13 amending Loi n°153/AN/12 (read in AUC's copy), but Loi n°172/AN/17/7ème L changed the tariff again (Chamber of Commerce of Djibouti's compilation) and its text (guichet-unique.dj) answered 503 / reset, so no fee is held."
+}

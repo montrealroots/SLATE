@@ -1,0 +1,81 @@
+{
+ "country": "SE",
+ "read": "2026-11-01",
+ "route": "Arbetstillstånd för artister (Migrationsverket)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer starts the application in Migrationsverket's e-service; the performer then completes and files their part.",
+  "first": "an employment contract or engagement contract signed by the performer and the promoter, with the employer's insurances taken out",
+  "fees": [
+   {
+    "what": "work permit application, employee",
+    "amount": "1500.00",
+    "currency": "SEK"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 2,
+    "unit": "months"
+   },
+   "premium": null,
+   "note": "Migrationsverket's waiting-time statistics, first applications, artist: 75% of cases decided in the last 12 months were decided within 2 months (complete and incomplete applications alike)."
+  },
+  "validity": {
+   "n": 2,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": "The employer sends the terms of employment to the trade union relevant to the field, which may give its opinion on them (Fackförbundet får möjlighet att yttra sig).",
+  "eligibility": null,
+  "pay": "För att uppfylla lönekravet ska du ha en månadslön på minst 34 470 kronor . Det motsvarar 90 procent av den aktuella medianlönen som SCB publicerar i juni varje år.",
+  "exempt": {
+   "days": 14,
+   "within": 365
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.migrationsverket.se/du-vill-ansoka/arbeta/anstalld-eller-egen-foretagare/artist.html",
+   "title": "Migrationsverket, Arbetstillstånd för artister",
+   "read": "2026-11-01",
+   "said": "Du behöver inte ansöka om arbetstillstånd om du har blivit inbjuden av en etablerad arrangör för att arbeta i högst 14 dagar under en tolvmånadersperiod. … Du ska ha ett anställningsavtal eller kontrakt Anställningsavtalet eller kontraktet ska innehålla eventuell turnéplan, gage, tidpunkt och plats för engagemanget, och ska vara underskrivet av både dig och arrangören. Du ska ha rätt anställningsvillkor Din lön och andra anställningsvillkor ska vara på minst samma nivå som svenska kollektivavtal eller vad som är brukligt inom yrket eller branschen. Din arbetsgivare ska ha tecknat försäkringar för dig Arbetsgivaren ska ha tecknat sjukförsäkring, livförsäkring, trygghetsförsäkring och tjänstepensionsförsäkring för dig när du påbörjar anställningen. … För att uppfylla lönekravet ska du ha en månadslön på minst 34 470 kronor . Det motsvarar 90 procent av den aktuella medianlönen som SCB publicerar i juni varje år. … Du kan få arbetstillstånd för högst två år, men inte för längre tid än anställningen varar. Du kan aldrig få tillstånd för längre tid än ditt pass är giltigt. Tillståndet går att förlänga. … Vad kostar det att ansöka? Arbetstagare: 1 500 kronor … Hur länge måste jag vänta på beslut? Vi kan inte säga exakt hur länge du måste vänta på beslut. … Det är din arbetsgivare som påbörjar ansökan i e-tjänsten. Fackförbundet får möjlighet att yttra sig Arbetsgivaren skickar information om anställningen till det fackförbund som är relevant för den bransch som anställningen gäller. Fackförbundet får möjlighet att yttra sig om anställningsvillkoren.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees",
+    "processing",
+    "validity",
+    "pay",
+    "exempt",
+    "union"
+   ]
+  },
+  {
+   "url": "https://www.migrationsverket.se/kontakta-oss/vantetider.html",
+   "title": "Migrationsverket, Väntetider (waiting-time statistics, decided cases of the last 12 months)",
+   "read": "2026-11-01",
+   "said": "Förstagångsansökningar 75% av nyligen avgjorda ärenden har avgjorts inom den tid som anges i tabellen. Ansökan gäller Kompletta ansökningar, månader Icke kompletta ansökningar, månader … Ansöka om arbetstillstånd efter besök hos arbetsgivare * * Artist 2 2 Au pair 3 4",
+   "kind": "primary",
+   "fields": [
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "eligibility",
+   "sought": "a criterion of standing for the performer",
+   "tried": {
+    "institution": "the page sets contract, pay and insurance conditions only | 2026-11-01 retry: Migrationsverket artist page re-read: conditions are the contract, pay, insurance and the union's opinion; no merit or reputation criterion.",
+    "official-register": "not read | 2026-11-01 retry: Utlänningsförordningen (2006:97) not reached as text this turn (riksdagen.se not tried); not read.",
+    "web-search": "not separately searched | 2026-11-01 retry: Refused on 2026-11-01: the session's shared web-search limit was reached; no search could be run this turn.",
+    "trade-press": "not tried | 2026-11-01 retry: None reached this turn (search refused).",
+    "archive": "not tried | 2026-11-01 retry: web.archive.org: connection reset from this environment (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Migrationsverket's artist page (singers, musicians, dancers, actors, directors and film-makers): a contract signed by both parties giving the tour plan, fee, time and place; pay and terms at least at Swedish collective-agreement level or the trade's custom; the employer's sickness, life, security and occupational pension insurances; and a monthly salary of at least SEK 34,470 (90% of the median wage) unless the occupation is exempt. SEK 1,500 to apply. Up to two years, never longer than the job, extendable. One invited by an established promoter on Migrationsverket's list may work up to 14 days in twelve months without a permit (the list isn't modelled). Migrationsverket states no waiting time."
+}

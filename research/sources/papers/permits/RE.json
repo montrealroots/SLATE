@@ -1,0 +1,99 @@
+{
+ "country": "RE",
+ "read": "2026-11-01",
+ "route": "Carte de séjour « talent – profession artistique et culturelle »",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies: abroad, for a long-stay visa marked « talent » at the French consulate (under twelve months it stands as the residence permit, validated online within three months of arrival); in France, for the card online (ANEF). The employer asks no work authorisation and pays no foreign-worker tax.",
+  "first": "One or more employment contracts totalling three months or more within twelve months with firms whose main business is creating or exploiting works of the mind, and resources of at least 70% of the gross SMIC a month.",
+  "fees": [
+   {
+    "what": "Long-stay visa (type D)",
+    "amount": "99.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Residence card: droit de timbre",
+    "amount": "50.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Residence card: taxe",
+    "amount": "300.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 4,
+    "unit": "months"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 4,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "« si vous êtes artiste-interprète ou auteur d'œuvre littéraire ou artistique »",
+  "pay": "Resources of at least 70% of the full-time gross SMIC for each month of stay (1,306.91 € a month), at least 51% of it from the artistic activity.",
+  "exempt": {
+   "days": 90,
+   "within": null
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16922",
+   "title": "Service Public (DILA), Carte talent : carte de séjour pluriannuelle d'un étranger en France — Profession artistique et culturelle (vérifié le 1er juin 2026) — national rules, applying in Réunion as an overseas department",
+   "read": "2026-11-01",
+   "said": "Dans le cadre de votre activité salariée, votre employeur n'a pas à demander d'autorisation de travail et est exonéré du paiement de la taxe pour l’emploi d’un ressortissant étranger. … Vous pouvez obtenir une carte de séjour «talent-profession artistique et culturelle» si vous êtes artiste-interprète ou auteur d'œuvre littéraire ou artistique et si vous remplissez les conditions suivantes : Justifier de ressources au moins égales à 70 % du SMIC brut à temps plein par mois de séjour en France, soit 1 306,91 € dont au moins 51 % provenant de votre activité d'artiste-interprète ou d'auteur d'une œuvre littéraire ou artistique Si vous exercez une activité salariée : justifier d’1 ou plusieurs contrats de travail pour une durée totale cumulée de 3 mois ou plus sur une période de 12 mois, conclus avec 1 ou plusieurs entreprises ou établissements dont l’activité principale est la création ou l’exploitation d’œuvres de l’esprit. … Si la durée de votre séjour est inférieure à 12 mois , le consulat vous délivre un visa de long séjour valant titre de séjour portant la mention \"talent\". … Si la carte de séjour vous est attribuée, vous devez régler 350 € (droit de timbre de 50 € + taxe de 300 € ) par timbres fiscaux . … La carte est valable pour une durée identique à celle du contrat de travail dans la limite d'une durée maximale de 4 ans. … Vous devez déposer votre demande de titre de séjour sur internet au plus tôt 4 mois et au plus tard 2 mois avant la fin de validité de votre document de séjour si vous êtes titulaire d’un visa long séjour valant titre de séjour (VLS-TS) ou d’un titre de séjour … Si la préfecture n'a pas répondu au bout de 4 mois , il s'agit d'un refus implicite.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "fees",
+    "processing",
+    "validity",
+    "eligibility",
+    "pay"
+   ]
+  },
+  {
+   "url": "https://sites.service-information-publique.fr/carnac/guide-professionnels/F18141.html",
+   "title": "Service Public fiche F18141 « Combien coûte un visa pour entrer en France ? », as DILA syndicates it to the Ville de Carnac's guide",
+   "read": "2026-11-01",
+   "said": "Visa de long séjour (plus de 3 mois) valable pour la France 99 €",
+   "kind": "secondary",
+   "quotes": "https://www.service-public.gouv.fr/particuliers/vosdroits/F18141",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.culture.gouv.fr/Media/Thematiques/Musique/Files/Guide-pratique-des-visas",
+   "title": "Ministère de la Culture / Zone Franche, Guide pratique des visas et titres de séjour pour les artistes étrangers",
+   "read": "2026-11-01",
+   "said": "Depuis le 29 octobre 2016, les artistes et techniciens du spectacle venant en France afin d’y exercer une activité salariée inférieure ou égale à trois mois ne sont plus soumis à autorisation provisoire de travail",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "A stated time for the prefecture's decision on the card (the 4 months recorded is the statutory implicit-refusal limit, not a stated processing time) and for the consulate's on the visa",
+   "tried": {
+    "institution": "service-public.gouv.fr F16922 and F16162 read 2026-11-01: only the 4-month implicit refusal; france-visas.gouv.fr answers this client with a 503 bot check (\"One moment please\")",
+    "official-register": "Légifrance (CESEDA R. 432-1 and following) answers 403 to this client",
+    "web-search": "'service-public visa long séjour frais 99 € talent' (2026-11-01): no stated processing time",
+    "trade-press": "None in the same results",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "topic": "tax.AX",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Aland Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident of Åland pays Finland's state income tax on its own Åland scale for 2026 (nothing to EUR 22,000 of taxable earned income, then 6.36%, 17.61%, 20.61% and 24.86% above EUR 52,100), plus the Åland municipal income tax, which runs from 17.0% to 19.7% (average 17.67%), with a municipal basic deduction of up to EUR 3,925.",
+   "value": {
+    "currency": "EUR",
+    "stateScale2026": [
+     {
+      "from": 0,
+      "to": 22000,
+      "rate": 0,
+      "taxAtFloor": 0
+     },
+     {
+      "from": 22000,
+      "to": 32600,
+      "rate": 0.0636,
+      "taxAtFloor": 0
+     },
+     {
+      "from": 32600,
+      "to": 40100,
+      "rate": 0.1761,
+      "taxAtFloor": 674.16
+     },
+     {
+      "from": 40100,
+      "to": 52100,
+      "rate": 0.2061,
+      "taxAtFloor": 1994.91
+     },
+     {
+      "from": 52100,
+      "to": null,
+      "rate": 0.2486,
+      "taxAtFloor": 4468.11
+     }
+    ],
+    "municipal2026": {
+     "average": 0.1767,
+     "lowest": 0.17,
+     "highest": 0.197,
+     "commonest": 0.185,
+     "setBy": "each Åland municipality"
+    },
+    "municipalBasicDeductionMax": 3925,
+    "basicDeductionTaper": 0.084,
+    "provincialTax": "not levied (landskapsskatt never used)",
+    "follows": "FI"
+   },
+   "applies": "Persons whose home municipality is in Åland, tax year 2026 (Tuloverolaki 124 § 5 mom.); church tax and health-insurance contributions as in the rest of Finland.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Vuodelta 2026 toimitettavassa verotuksessa maksavat ne verovelvolliset, joiden kotikunta on Ahvenanmaalla, progressiivista valtion tuloveroa tuloverolain 124 §:n 5 momentin mukaisesti seuraavasti: Verotettava ansiotuloa, euroa Vero alarajan kohdalla, euroa Vero ala-rajan ylittävästä tulon osasta, % 0 – 22 000 0,00 0,00 22 000 – 32 600 0,00 6,36 32 600 – 40 100 674,16 17,61 40 100 – 52 100 1 994,91 20,61 52 100 - 4 468,11 24,86"
+    },
+    {
+     "src": 0,
+     "said": "Tähän mennessä maakunta ei kuitenkaan ole vielä omalta osaltaan käyttänyt hyväksi oikeuttaan periä maakuntaveroa (landskapsskatt)."
+    },
+    {
+     "src": 0,
+     "said": "Verovuonna 2026 on perusvähennys enintään 3 925 euroa Ahvenanmaan kunnallisverotuksessa. Jos puhtaiden ansiotulojen määrä vähennysten tekemisen jälkeen ylittää täyden perusvähennyksen, pienennetään perusvähennystä 8,4 prosentilla sen ylittävien tulojen määrästä."
+    },
+    {
+     "src": 1,
+     "said": "Ahvenanmaa % Keskimääräinen 17,67"
+    },
+    {
+     "src": 1,
+     "said": "Korkein tuloveroprosentti 19,7"
+    },
+    {
+     "src": 1,
+     "said": "Alhaisin tuloveroprosentti 17,0 Yleisin tuloveroprosentti 18,5"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Health-insurance contributions (and church tax) are paid in Åland exactly as in the rest of Finland; the social contributions follow Finland.",
+   "value": {
+    "follows": "FI"
+   },
+   "applies": "Åland residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Kirkollisveroa ja sairausvakuutusmaksuja maksetaan Ahvenanmaalla samalla tavalla kuin muualla maassa."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year 2026, as for Finland; withholding, non-resident tax and VAT follow Finland.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "currency": "EUR",
+    "follows": "FI"
+   },
+   "applies": "Åland; the province may set only provincial and municipal taxes, so state taxes (withholding, non-resident tax, VAT) are Finland's.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Vuodelta 2026 toimitettavassa verotuksessa"
+    },
+    {
+     "src": 0,
+     "said": "Ahvenanmaan maakunnalle on annettu oikeus määrätä sekä maakunnalle että maakunnan kunnille maksettavista veroista."
+    }
+   ]
+  }
+ ],
+ "country": "AX",
+ "sources": [
+  {
+   "url": "https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48911/ahvenanmaan-verotus10/",
+   "title": "Ahvenanmaan verotus (Verohallinto, syventävä vero-ohje, verovuosi 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Vuodelta 2026 toimitettavassa verotuksessa maksavat ne verovelvolliset, joiden kotikunta on Ahvenanmaalla, progressiivista valtion tuloveroa tuloverolain 124 §:n 5 momentin mukaisesti seuraavasti: Verotettava ansiotuloa, euroa Vero alarajan kohdalla, euroa Vero ala-rajan ylittävästä tulon osasta, % 0 – 22 000 0,00 0,00 22 000 – 32 600 0,00 6,36 32 600 – 40 100 674,16 17,61 40 100 – 52 100 1 994,91 20,61 52 100 - 4 468,11 24,86 … Tähän mennessä maakunta ei kuitenkaan ole vielä omalta osaltaan käyttänyt hyväksi oikeuttaan periä maakuntaveroa (landskapsskatt). … Verovuonna 2026 on perusvähennys enintään 3 925 euroa Ahvenanmaan kunnallisverotuksessa. Jos puhtaiden ansiotulojen määrä vähennysten tekemisen jälkeen ylittää täyden perusvähennyksen, pienennetään perusvähennystä 8,4 prosentilla sen ylittävien tulojen määrästä. … Kirkollisveroa ja sairausvakuutusmaksuja maksetaan Ahvenanmaalla samalla tavalla kuin muualla maassa. … Ahvenanmaan maakunnalle on annettu oikeus määrätä sekä maakunnalle että maakunnan kunnille maksettavista veroista."
+  },
+  {
+   "url": "https://www.kuntaliitto.fi/sites/default/files/media/file/Kuntien-veroprosentit-2026.pdf",
+   "title": "Kuntien veroprosentit 2026 (Kuntaliitto, updated 18.11.2025, source Verohallinto)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.vero.fi",
+   "said": "Ahvenanmaa % Keskimääräinen 17,67 … Korkein tuloveroprosentti 19,7 … Alhaisin tuloveroprosentti 17,0 Yleisin tuloveroprosentti 18,5"
+  }
+ ],
+ "blockers": []
+}

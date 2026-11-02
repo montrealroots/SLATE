@@ -1,0 +1,258 @@
+{
+ "topic": "tax.CM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Cameroon: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Salaries of a person domiciled in Cameroon are taxed on overall net income at 11% to XAF 2,000,000, 16.5% to XAF 3,000,000, 27.5% to XAF 5,000,000 and 38.5% above; net income from other activities is taxed at 33%.",
+   "value": {
+    "currency": "XAF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 2000000,
+      "rate": 0.11
+     },
+     {
+      "from": 2000000,
+      "to": 3000000,
+      "rate": 0.165
+     },
+     {
+      "from": 3000000,
+      "to": 5000000,
+      "rate": 0.275
+     },
+     {
+      "from": 5000000,
+      "to": null,
+      "rate": 0.385
+     }
+    ],
+    "otherActivities": 0.33,
+    "allowance": null
+   },
+   "applies": "Persons with a fiscal domicile in Cameroon",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Net income (XAF) PIT rate (%) 0 to 2,000,000 11 2,000,001 to 3,000,000 16.5 3,000,001 to 5,000,000 27.5 more than 5,000,000 38.5 The net incomes from other activities are subject to income tax at 33%."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee contributes 4.2% of taxable salary to the CNPS, capped at XAF 750,000 a month, and 1% to the Housing Fund; the employer pays 11.2% to the CNPS on the same capped base, plus 1.75%, 2.5% or 5% of total gross pay for industrial accidents (risk groups A, B, C), 1.5% to the Housing Fund and 1% to the National Employment Fund.",
+   "value": {
+    "currency": "XAF",
+    "employee": {
+     "pension": 0.042,
+     "ceilingMonthly": 750000,
+     "housingFund": 0.01
+    },
+    "employer": {
+     "housingFund": 0.015,
+     "employmentFund": 0.01,
+     "cnps": 0.112,
+     "cnpsCeilingMonthly": 750000,
+     "industrialAccidents": {
+      "A": 0.0175,
+      "B": 0.025,
+      "C": 0.05
+     }
+    },
+    "voluntaryPension": 0.084
+   },
+   "applies": "Employees. PwC does not split the employer's 11.2% between pension and family allowances; the CNPS's own pages refuse this environment.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The rate is 4.2% based on the taxable salary, which shall be capped at XAF 750,000 per month (i.e. XAF 9 million per year). The rate for voluntary insurance for this contribution is 8.4%. Housing Fund and the National Employment Fund Contributions for the Cameroon Housing Fund ( Crédit Foncier du Cameroun ) are made at the rate of 1% of taxable salary paid by the employee and 1.5% paid by the employer. Contributions for the National Employment Fund (FNE) are made at the rate of 1% of taxable salary paid by the employer."
+    },
+    {
+     "src": 2,
+     "said": "Employer and employee must contribute on a monthly basis to Cameroon’s National Social Insurance Fund at 11.2% and 4.2%, respectively. The basis of contribution is capped at XAF 750,000 per month (i.e. XAF 9 million per year). Employers in Cameroon must also contribute 1.75%, 2.5%, or 5% of total salaries to the National Social Insurance Fund for Industrial Accidents when they are respectively classified in groups A, B, or C according to the classification per type of activity."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds salary tax and files by the 15th of the month after payment, regularised by 15 March; a payer withholds 11% from remuneration of any nature paid to artists and sportsmen, whatever their domicile.",
+   "value": {
+    "salaryDue": "15th of following month",
+    "regularisation": "03-15",
+    "artistsWithholding": 0.11
+   },
+   "applies": "Employees and artists",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The PIT return shall be declared/filed by the 15th day of the month following the payment of wages/salaries. A regularisation shall be declared by 15 March following the fiscal year-end"
+    },
+    {
+     "src": 4,
+     "said": "The tax rate applicable to non-commercial revenue is 11% to be deducted … sportsmen and artists, irrespective of their tax domicile."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident artist's remuneration bears the same 11% withholding (applied irrespective of domicile); other services paid abroad and used in Cameroon bear 15%.",
+   "value": {
+    "artists": 0.11,
+    "servicesPaidAbroad": 0.15,
+    "final": "not stated"
+   },
+   "applies": "Non-resident artists and service providers",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The general rate of 15% is applicable to remunerations paid abroad in respect of various services provided and used in Cameroon. … sportsmen and artists, irrespective of their tax domicile."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 15% withholding; for non-commercial income (an author's or artist's) the taxpayer may deduct 30% of revenue as fixed costs or actual costs.",
+   "value": {
+    "nonResidentRoyalties": 0.15,
+    "nonCommercialFlatCosts": 0.3
+   },
+   "applies": "Authors and artists",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalties paid to non-residents are subject to a 15% WHT (the 10% surcharge is not applicable)."
+    },
+    {
+     "src": 5,
+     "said": "taxable income, the taxpayer has the right to choose between a fixed amount of 30% of the revenue or the actual costs based on supporting documentation."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT in Cameroon totals 19.25%, invoiced only by persons under the actual-earnings regime with turnover of at least XAF 50 million.",
+   "value": {
+    "currency": "XAF",
+    "rate": 0.1925,
+    "threshold": 50000000
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The total VAT in Cameroon is 19.25%. … Note that VAT is invoiced only by natural and legal persons whose turnover (taxes excluded) is equal to or above XAF 50 million and who are under the tax regime of actual earnings."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income tax year ends on 31 December; the annual return regularises salary tax by 15 March.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "regularisation": "03-15"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The PIT year-end date is 31 December."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer's 11.2% to the CNPS splits as 7% family benefits and 4.2% pension (the worker pays a matching 4.2%), both on pay capped at 750,000 francs a month; a musician or other self-employed person may join the CNPS's voluntary insurance at 8.4% of average monthly income, between the minimum wage and the same cap.",
+   "value": {
+    "currency": "XAF",
+    "employer": {
+     "familyBenefits": 0.07,
+     "pension": 0.042,
+     "ceilingMonthly": 750000,
+     "familyBenefitsAgricultural": 0.0565,
+     "familyBenefitsPrivateEducation": 0.037
+    },
+    "employee": {
+     "pension": 0.042,
+     "ceilingMonthly": 750000
+    },
+    "voluntary": {
+     "rate": 0.084,
+     "base": "average monthly income, not below the SMIG nor above 750,000",
+     "open": "informal-sector workers, liberal professions, students, sportspeople, musicians, anyone over 18"
+    },
+    "dated": "rates at 1 January 2024 (CLEISS)"
+   },
+   "applies": "CM. Rates as CLEISS states them at 1 January 2024; the CNPS's own pages refuse this environment, so no 2026 restatement was read. Covers pension, invalidity and death only for the voluntary scheme.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Cotisations au 1 er janvier 2024 … Prestations familiales 7 % pour les travailleurs relevant du régime général, y compris les domestiques et les gens de maison … 750 000 F CFA … Assurance pension 4,20 % 4,20 % 750 000 F CFA … les travailleurs des professions libérales (avocats, médecins du privés, ingénieurs, notaires...), les étudiants, les sportifs, les musiciens, toute personne de plus de 18 ans. Le montant de la cotisation représente 8,40 % du revenu mensuel moyen sans que ce revenu ne soit inférieur au SMIG, ni supérieur au plafond des rémunérations en vigueur (750 000 F CFA)."
+    }
+   ]
+  }
+ ],
+ "country": "CM",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income",
+   "title": "Cameroon - Individual - Taxes on personal income (PwC, reviewed 14 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.cm/",
+   "said": "Net income (XAF) PIT rate (%) 0 to 2,000,000 11 2,000,001 to 3,000,000 16.5 3,000,001 to 5,000,000 27.5 more than 5,000,000 38.5 The net incomes from other activities are subject to income tax at 33%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes",
+   "title": "Cameroon - Individual - Other taxes (PwC, reviewed 14 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.cm/",
+   "said": "The rate is 4.2% based on the taxable salary, which shall be capped at XAF 750,000 per month (i.e. XAF 9 million per year). The rate for voluntary insurance for this contribution is 8.4%. Housing Fund and the National Employment Fund Contributions for the Cameroon Housing Fund ( Crédit Foncier du Cameroun ) are made at the rate of 1% of taxable salary paid by the employee and 1.5% paid by the employer. Contributions for the National Employment Fund (FNE) are made at the rate of 1% of taxable salary paid by the employer."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/corporate/other-taxes",
+   "title": "Cameroon - Corporate - Other taxes (PwC), on the Code de prévoyance sociale and CNPS rules",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnps.cm/",
+   "said": "Employer and employee must contribute on a monthly basis to Cameroon’s National Social Insurance Fund at 11.2% and 4.2%, respectively. The basis of contribution is capped at XAF 750,000 per month (i.e. XAF 9 million per year). Employers in Cameroon must also contribute 1.75%, 2.5%, or 5% of total salaries to the National Social Insurance Fund for Industrial Accidents when they are respectively classified in groups A, B, or C according to the classification per type of activity. … The total VAT in Cameroon is 19.25%. … Note that VAT is invoiced only by natural and legal persons whose turnover (taxes excluded) is equal to or above XAF 50 million and who are under the tax regime of actual earnings."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/individual/tax-administration",
+   "title": "Cameroon - Individual - Tax administration (PwC, reviewed 14 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.cm/",
+   "said": "The PIT return shall be declared/filed by the 15th day of the month following the payment of wages/salaries. A regularisation shall be declared by 15 March following the fiscal year-end … The PIT year-end date is 31 December."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/corporate/withholding-taxes",
+   "title": "Cameroon - Corporate - Withholding taxes (PwC, reviewed 14 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.cm/",
+   "said": "The tax rate applicable to non-commercial revenue is 11% to be deducted … sportsmen and artists, irrespective of their tax domicile. … The general rate of 15% is applicable to remunerations paid abroad in respect of various services provided and used in Cameroon. … sportsmen and artists, irrespective of their tax domicile. … Royalties paid to non-residents are subject to a 15% WHT (the 10% surcharge is not applicable)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-cameroon/individual/income-determination",
+   "title": "Cameroon - Individual - Income determination (PwC, reviewed 14 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.cm/",
+   "said": "taxable income, the taxpayer has the right to choose between a fixed amount of 30% of the revenue or the actual costs based on supporting documentation."
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/cameroun.html",
+   "title": "Les cotisations au Cameroun 2024 (CLEISS, Centre des Liaisons Européennes et Internationales de Sécurité Sociale), on the Caisse Nationale de la Prévoyance Sociale's rates",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.cnps.cm/",
+   "said": "Cotisations au 1 er janvier 2024 … Prestations familiales 7 % pour les travailleurs relevant du régime général, y compris les domestiques et les gens de maison … 750 000 F CFA … Assurance pension 4,20 % 4,20 % 750 000 F CFA … les travailleurs des professions libérales (avocats, médecins du privés, ingénieurs, notaires...), les étudiants, les sportifs, les musiciens, toute personne de plus de 18 ans. Le montant de la cotisation représente 8,40 % du revenu mensuel moyen sans que ce revenu ne soit inférieur au SMIG, ni supérieur au plafond des rémunérations en vigueur (750 000 F CFA)."
+  }
+ ],
+ "blockers": []
+}

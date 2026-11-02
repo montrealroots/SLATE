@@ -1,0 +1,131 @@
+{
+ "country": "US",
+ "read": "2026-11-01",
+ "route": "O-1 nonimmigrant (extraordinary ability in the arts or extraordinary achievement in motion picture or television), on Form I-129",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The US employer or agent (the petitioner) files Form I-129 with USCIS; the performer then applies for the O visa at a consulate",
+  "first": "An approved I-129 petition, with a written advisory opinion (consultation) from a peer group or labor organization",
+  "fees": [
+   {
+    "what": "Form I-129 petition, O worker, 1 to 25 named beneficiaries (half for small employers and nonprofits)",
+    "amount": "1055.00",
+    "currency": "USD"
+   },
+   {
+    "what": "Asylum Program Fee on each I-129 ($300 small employer, none for nonprofits)",
+    "amount": "600.00",
+    "currency": "USD"
+   },
+   {
+    "what": "Premium processing (optional)",
+    "amount": "2965.00",
+    "currency": "USD"
+   },
+   {
+    "what": "O category nonimmigrant visa application (MRV) fee",
+    "amount": "205.00",
+    "currency": "USD"
+   }
+  ],
+  "processing": {
+   "standard": null,
+   "premium": {
+    "n": 15,
+    "unit": "business-days"
+   }
+  },
+  "validity": {
+   "n": 3,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": "Consultation with a peer group, labor and/or management organization is mandatory before an O-1 petition is approved; for motion picture or television, with a labor and a management organization; the opinion is advisory, not binding.",
+  "eligibility": "\"Extraordinary ability in the field of arts means distinction\"; in motion pictures or television, \"a very high level of accomplishment ... recognized as outstanding, notable, or leading\".",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2",
+   "title": "eCFR, 8 CFR 214.2(o) Aliens of extraordinary ability or achievement",
+   "read": "2026-11-01",
+   "said": "Extraordinary ability in the field of arts means distinction. Distinction means a high level of achievement in the field of arts evidenced by a degree of skill and recognition substantially above that ordinarily encountered … Extraordinary achievement with respect to motion picture and television productions, as commonly defined in the industry, means a very high level of accomplishment in the motion picture or television industry evidenced by a degree of skill and recognition significantly above that ordinarily encountered to the extent that the person is recognized as outstanding, notable, or leading in the motion picture or television field. … peer group (which could include a person or persons with expertise in the field), labor and/or management organization regarding the nature of the work to be done and the alien's qualifications is mandatory before a petition for an O-1 or O-2 classification can be approved. … consultation with a labor organization and a management organization in the area of the alien's ability is required. … Consultations are advisory and are not binding on the Service. … period of time determined by the Director to be necessary to accomplish the event or activity, not to exceed 3 years. … increments of up to 1 year for an O-1 or O-2 beneficiary to continue or complete the same event or activity for which he or she was admitted",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "union",
+    "eligibility",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-106/section-106.2",
+   "title": "eCFR, 8 CFR 106.2 Fees",
+   "read": "2026-11-01",
+   "said": "Petition for O Nonimmigrant Worker with 1 to 25 named beneficiaries: $1,055. … For small employers and nonprofits as defined in § 106.1(f) , the fees in paragraphs (a)(3)(ii) , (a)(3)(iv) , (a)(3)(vi) , (a)(3)(vii) , and (a)(3)(viii) of this section will be one-half the amount … Asylum Program Fee. In addition to the fees required by § 106.2(a)(3) , (a)(4) and (a)(11) , to fund the asylum program, the Asylum Program Fee must be paid by any petitioner filing a Petition for a Nonimmigrant Worker, Form I-129 … $600. For petitions: ( i ) Filed by a nonprofit as defined in § 106.1(f) : No fee. ( ii ) Filed by a small employer as defined in § 106.1(f) : $300.",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-106/section-106.4",
+   "title": "eCFR, 8 CFR 106.4 Premium processing service",
+   "read": "2026-11-01",
+   "said": "Petition for classification of a nonimmigrant described in section 101(a)(15)(O)(i) or (ii) of the INA—$2,965. … Petition for classification of a nonimmigrant described in section 101(a)(15)(O)(i) or (ii) of the Act: 15 business days.",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "processing"
+   ]
+  },
+  {
+   "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-C/part-22/section-22.1",
+   "title": "eCFR, 22 CFR 22.1 Schedule of fees for consular services",
+   "read": "2026-11-01",
+   "said": "(b) H, L, O, P, Q and R category nonimmigrant visa 205",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing.standard",
+   "sought": "USCIS's stated standard processing time for an O-1 I-129",
+   "tried": {
+    "institution": "uscis.gov O-1 page, G-1055 and premium processing pages: HTTP 403 to this client (2026-11-01); 8 CFR 214.2(o) read: sets a 14-day decision only after the 15-day consultation window in a routine case forwarded to a union, no general time",
+    "official-register": "eCFR 8 CFR 214.2 and 106.4 read; no standard time",
+    "web-search": "not run further: USCIS processing times is a live dashboard the client cannot load",
+    "trade-press": "none used",
+    "archive": "not tried for the live dashboard (JavaScript)"
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "a minimum pay rule for O-1",
+   "tried": {
+    "institution": "uscis.gov 403",
+    "official-register": "8 CFR 214.2(o) read: no wage requirement found in it",
+    "web-search": "none further",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "a paid performing engagement allowed without an O or P petition",
+   "tried": {
+    "institution": "uscis.gov 403",
+    "official-register": "8 CFR 214.2(o) read: none",
+    "web-search": "none further",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  }
+ ]
+}

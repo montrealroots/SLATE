@@ -1,0 +1,282 @@
+{
+ "topic": "tax.EG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Egypt: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 0% on the first EGP 40,000 of net income, then 10%, 15%, 20%, 22.5%, 25% and 27.5% above EGP 1,200,000, with a further annual salary exemption of EGP 20,000; there is no regional income tax.",
+   "value": {
+    "currency": "EGP",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 40000,
+      "rate": 0
+     },
+     {
+      "from": 40000,
+      "to": 55000,
+      "rate": 0.1
+     },
+     {
+      "from": 55000,
+      "to": 70000,
+      "rate": 0.15
+     },
+     {
+      "from": 70000,
+      "to": 200000,
+      "rate": 0.2
+     },
+     {
+      "from": 200000,
+      "to": 400000,
+      "rate": 0.225
+     },
+     {
+      "from": 400000,
+      "to": 1200000,
+      "rate": 0.25
+     },
+     {
+      "from": 1200000,
+      "to": null,
+      "rate": 0.275
+     }
+    ],
+    "salaryExemption": 20000
+   },
+   "applies": "2026. Whether the lower bands are withdrawn at high incomes was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Earned income (EGP*) Tax rate on bracket (%) From 1 to 40,000 0 40,000 to 55,000 10.0 55,000 to 70,000 15.0 70,000 to 200,000 20.0 200,000 to 400,000 22.5 400,000 to 1,200,000 25.0 More than 1,200,000 27.5"
+    },
+    {
+     "src": 0,
+     "said": "Please note that both residents and non-residents are entitled to an annual salary tax exemption of EGP 20,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 31 March of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 following year"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The taxable period is the calendar year starting 1 January and closing on 31 December"
+    },
+    {
+     "src": 1,
+     "said": "The submission deadline for an individual is on or before 31 March following the end of the fiscal year to which the return relates."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 11% and the employer 18.75% of the social insurance salary, which from 1 January 2026 runs from EGP 2,700 to EGP 16,700 a month (EGP 19,300 in 2027).",
+   "value": {
+    "currency": "EGP",
+    "employee": 0.11,
+    "employer": 0.1875,
+    "monthlyBase": {
+     "2026": {
+      "min": 2700,
+      "max": 16700
+     },
+     "2027": {
+      "min": 3200,
+      "max": 19300
+     }
+    }
+   },
+   "applies": "2026; self-employed and performers' terms not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employee contribution percentage is 11% of the total social insurance salary."
+    },
+    {
+     "src": 2,
+     "said": "as of 1 January 2026, the minimum social insurance salary is EGP 2,700, whereas the maximum is EGP 16,700."
+    },
+    {
+     "src": 2,
+     "said": "The employer contribution percentage is 18.75% of the total social insurance salary."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax on pay monthly and files quarterly statements.",
+   "value": {
+    "employee": "monthly withholding, quarterly statements"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax on employment income is withheld at source on a monthly basis. Employers are required to file quarterly tax statements in January, April, July, and October of each year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's pay for work done in Egypt is taxed on the same brackets; service payments and royalties paid to a non-resident bear 20% withholding unless a treaty reduces it.",
+   "value": {
+    "employment": "resident brackets",
+    "servicesWithholding": 0.2,
+    "royaltyWithholding": 0.2
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The above-mentioned brackets also apply to non-residents on the income they receive from an Egyptian treasury or against work performed in Egypt."
+    },
+    {
+     "src": 3,
+     "said": "Service payments are subject to the 20% WHT."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident bear 20% withholding; no special treatment of a resident author's fees was found.",
+   "value": {
+    "nonResidentRoyalty": 0.2
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Royalty payments are subject to 20% WHT."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 14%; registration is mandatory once annual taxable turnover exceeds EGP 500,000.",
+   "value": {
+    "currency": "EGP",
+    "standard": 0.14,
+    "registrationThreshold": 500000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "VAT registration is mandatory for any person whose annual taxable turnover exceeds EGP 500,000, in accordance with the provisions of the VAT law."
+    },
+    {
+     "src": 4,
+     "said": "the standard VAT rate is 14% (previously 13%)"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Egypt taxes the fee for a non-resident performer's activity (an artist's or a sportsperson's, paid to him directly or through any body) at 20% of the gross, withheld by the resident payer and paid to the Tax Authority the next working day; the law does not say the tax is final.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross, no costs deducted",
+    "withheldBy": "resident sole proprietorships and legal persons, and non-residents with a permanent establishment in Egypt",
+    "remitBy": "first working day after the withholding",
+    "final": null
+   },
+   "applies": "Income Tax Law 91 of 2005, art. 56(4) (last amended, per the consolidation read, by Law 101 of 2012); a tax treaty may lower it. Later amendments (Law 30 of 2023 and after) not checked against this article.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "المادة 56 تخضع للضريبة بسعر 20% المبالغ التي يدفعها أصحاب المنشآت الفردية والأشخاص الاعتبارية المقيمة في مصر والجهات غير المقيمة التي لها منشأة دائمة في مصر لغير المقيمين في مصر وذلك دون خصم أي تكاليف منها. وتشمل هذه المبالغ ما يأتي: … 4- مقابل نشاط الرياضي أو الفنان سواء دفع له مباشرةً أو من خلال أي جهة. … بحجز مقدار الضريبة المستحقة وتوريدها إلى المصلحة في أول يوم عمل تال لليوم الذي تم فيه حجز الضريبة. التعديل الأخير بموجب القانون رقم 101 لسنة 2012"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Egypt's Social Insurance and Pensions Law counts writers and artists (الأدباء والفنانين) among the self-employed (employers and those treated as such), who pay old-age, disability and death insurance at 21% of a monthly contribution income they choose from the table annexed to the executive regulations; the rates rise by 1 point every seven years from the law's entry into force, to no more than 26%.",
+   "value": {
+    "category": "ثانيا: أصحاب الأعمال ومن في حكمهم, item 15: الأدباء والفنانين",
+    "rate": 0.21,
+    "base": "monthly contribution income chosen from the executive regulations' table",
+    "employeeRateOldAge": 0.09,
+    "employerRateOldAge": 0.12,
+    "stepUp": "+1 point every 7 years from entry into force, total capped at 26%"
+   },
+   "applies": "Law 148 of 2019, arts. 2 and 19, as consolidated by the site read (\"وفقاً لآخر تعديل\"); the contribution-income table of the executive regulations (Prime Minister's Decree 2437 of 2021) was not read.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "ثانيا- أصحاب الأعمال، ومن في حكمهم: 1- الأفراد الذين يزاولون لحساب … 15- الأدباء والفنانين. … (أ) الحصة التي يلتزم بها صاحب العمل بواقع (12%) من أجور المؤمن عليهم العاملين لديه شهريا. (ب) الحصة التي يلتزم بها المؤمن عليه بواقع (9%) من أجره شهريا. 2- بالنسبة للفئات المشار إليها بالبندين ثانيا وثالثا بواقع (21%) من دخل الاشتراك الشهري الذي يختاره المؤمن عليه من الجدول المرفق باللائحة التنفيذية لهذا القانون. … وتزاد نسبة الاشتراكات كل سبع سنوات اعتبارا من تاريخ العمل بهذا القانون بنسبة (1%) وتقسم مناصفة بين صاحب العمل والمؤمن عليه، على ألا تتجاوز إجمالي نسبة الاشتراكات 26%."
+    }
+   ]
+  }
+ ],
+ "country": "EG",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "Earned income (EGP*) Tax rate on bracket (%) From 1 to 40,000 0 40,000 to 55,000 10.0 55,000 to 70,000 15.0 70,000 to 200,000 20.0 200,000 to 400,000 22.5 400,000 to 1,200,000 25.0 More than 1,200,000 27.5 … Please note that both residents and non-residents are entitled to an annual salary tax exemption of EGP 20,000. … The above-mentioned brackets also apply to non-residents on the income they receive from an Egyptian treasury or against work performed in Egypt."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "The taxable period is the calendar year starting 1 January and closing on 31 December … The submission deadline for an individual is on or before 31 March following the end of the fiscal year to which the return relates. … Tax on employment income is withheld at source on a monthly basis. Employers are required to file quarterly tax statements in January, April, July, and October of each year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nosi.gov.eg/",
+   "said": "The employee contribution percentage is 11% of the total social insurance salary. … as of 1 January 2026, the minimum social insurance salary is EGP 2,700, whereas the maximum is EGP 16,700. … The employer contribution percentage is 18.75% of the total social insurance salary."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "Service payments are subject to the 20% WHT. … Royalty payments are subject to 20% WHT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/egypt/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: egypt Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.eta.gov.eg/",
+   "said": "VAT registration is mandatory for any person whose annual taxable turnover exceeds EGP 500,000, in accordance with the provisions of the VAT law. … the standard VAT rate is 14% (previously 13%)"
+  },
+  {
+   "url": "https://manshurat.org/node/63715",
+   "title": "قانون الضريبة على الدخل رقم 91 لسنة 2005 (Income Tax Law 91 of 2005, consolidated), manshurat.org",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://eta.gov.eg/sites/default/files/2024-03/law_no.91-2005.pdf",
+   "said": "المادة 56 تخضع للضريبة بسعر 20% المبالغ التي يدفعها أصحاب المنشآت الفردية والأشخاص الاعتبارية المقيمة في مصر والجهات غير المقيمة التي لها منشأة دائمة في مصر لغير المقيمين في مصر وذلك دون خصم أي تكاليف منها. وتشمل هذه المبالغ ما يأتي: … 4- مقابل نشاط الرياضي أو الفنان سواء دفع له مباشرةً أو من خلال أي جهة. … بحجز مقدار الضريبة المستحقة وتوريدها إلى المصلحة في أول يوم عمل تال لليوم الذي تم فيه حجز الضريبة. التعديل الأخير بموجب القانون رقم 101 لسنة 2012"
+  },
+  {
+   "url": "https://alberonsy.com/?p=2950",
+   "title": "قانون رقم 148 لسنة 2019 بإصدار قانون التأمينات الإجتماعية والمعاشات وفقاً لآخر تعديل (Social Insurance and Pensions Law 148 of 2019, consolidated), Alber Onsy law office",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://natlex.ilo.org/dyn/natlex2/r/natlex/fe/details?p3_isn=115545",
+   "said": "ثانيا- أصحاب الأعمال، ومن في حكمهم: 1- الأفراد الذين يزاولون لحساب … 15- الأدباء والفنانين. … (أ) الحصة التي يلتزم بها صاحب العمل بواقع (12%) من أجور المؤمن عليهم العاملين لديه شهريا. (ب) الحصة التي يلتزم بها المؤمن عليه بواقع (9%) من أجره شهريا. 2- بالنسبة للفئات المشار إليها بالبندين ثانيا وثالثا بواقع (21%) من دخل الاشتراك الشهري الذي يختاره المؤمن عليه من الجدول المرفق باللائحة التنفيذية لهذا القانون. … وتزاد نسبة الاشتراكات كل سبع سنوات اعتبارا من تاريخ العمل بهذا القانون بنسبة (1%) وتقسم مناصفة بين صاحب العمل والمؤمن عليه، على ألا تتجاوز إجمالي نسبة الاشتراكات 26%."
+  }
+ ],
+ "blockers": []
+}

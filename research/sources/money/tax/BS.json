@@ -1,0 +1,132 @@
+{
+ "topic": "tax.BS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bahamas: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The Bahamas levies no income tax on individuals, so a resident's pay and fees bear none.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Individuals in The Bahamas, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual taxation There is no individual income tax."
+    },
+    {
+     "src": 0,
+     "said": "There are no compliance requirements for individuals, as there is no individual income tax."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's or writer's fee bears no income tax or withholding in The Bahamas; there is no withholding on royalties or service fees.",
+   "value": {
+    "withholding": null
+   },
+   "applies": "Payments to non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "There is no withholding tax on dividends, interest, royalties, or technical service fees, and no branch remittance tax."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National insurance: the employer pays 6.65% and the employee 4.65% of wages up to BSD 3,510 a month (BSD 810 a week); the self-employed pay 10.3% of average insurable income to the same ceiling.",
+   "value": {
+    "currency": "BSD",
+    "employer": 0.0665,
+    "employee": 0.0465,
+    "selfEmployed": 0.103,
+    "ceilingMonthly": 3510,
+    "ceilingWeekly": 810
+   },
+   "applies": "Employees and self-employed people registered with the National Insurance Board.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers are required to pay 6.65% of employees’ wages, with a maximum wage ceiling of BSD 3,510 monthly or BSD 810 weekly. Individuals are also required to register with the National Insurance Board. Employees must contribute 4.65% of wages, up to the maximum wage ceiling. Self-employed individuals are subject to a rate of 10.3% of average insurable income, with a maximum ceiling of BSD 3,510 monthly or BSD 810 weekly."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for and charge VAT once past or expected 12-month taxable activity exceeds BSD 100,000; the standard rate is 10%.",
+   "value": {
+    "currency": "BSD",
+    "threshold12Months": 100000,
+    "standardRate": 0.1,
+    "zeroRate": 0
+   },
+   "applies": "Taxable supplies in The Bahamas (VAT Act); registration within 14 days.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "You are required to register for and charge VAT under the VAT Act if your past or future 12 months of taxable activity exceeds the $100,000 threshold. Most businesses must apply within 14 days of meeting these requirements or face penalties."
+    },
+    {
+     "src": 1,
+     "said": "The standard rate of VAT for most goods and services is 10%."
+    },
+    {
+     "src": 2,
+     "said": "Two rates of VAT are applied which is the standard rate of 10% and a zero rate of 0%."
+    }
+   ]
+  }
+ ],
+ "country": "BS",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-bahamashighlights-2026.pdf",
+   "title": "Bahamas Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://inlandrevenue.finance.gov.bs",
+   "said": "Individual taxation There is no individual income tax. … There are no compliance requirements for individuals, as there is no individual income tax. … There is no withholding tax on dividends, interest, royalties, or technical service fees, and no branch remittance tax. … Employers are required to pay 6.65% of employees’ wages, with a maximum wage ceiling of BSD 3,510 monthly or BSD 810 weekly. Individuals are also required to register with the National Insurance Board. Employees must contribute 4.65% of wages, up to the maximum wage ceiling. Self-employed individuals are subject to a rate of 10.3% of average insurable income, with a maximum ceiling of BSD 3,510 monthly or BSD 810 weekly."
+  },
+  {
+   "url": "https://inlandrevenue.finance.gov.bs/value-added-tax/faqs/",
+   "title": "Value Added Tax – FAQs (Department of Inland Revenue)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You are required to register for and charge VAT under the VAT Act if your past or future 12 months of taxable activity exceeds the $100,000 threshold. Most businesses must apply within 14 days of meeting these requirements or face penalties. … The standard rate of VAT for most goods and services is 10%."
+  },
+  {
+   "url": "https://inlandrevenue.finance.gov.bs/value-added-tax/about-vat/",
+   "title": "About VAT (Department of Inland Revenue)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Two rates of VAT are applied which is the standard rate of 10% and a zero rate of 0%."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "A primary text (statute or the Department of Inland Revenue) stating that no income tax is levied on individuals",
+   "tried": {
+    "institution": "inlandrevenue.finance.gov.bs read (VAT pages only; no income tax page); nib-bahamas.com is a script app (827-byte shell); bahamas.gov.bs HTTP 403 || 2026-11-01 retry: inlandrevenue.finance.gov.bs carries VAT, business licence and property tax pages only; no page states the absence of income tax (re-read 2026-11-01); bahamas.gov.bs still HTTP 403",
+    "official-register": "laws.bahamas.gov.bs reachable; the National Insurance (Contributions) Regulations as amended not located by search || 2026-11-01 retry: laws.bahamas.gov.bs: an absence of tax has no statute to quote; no Income Tax Act appears in the register's index",
+    "web-search": "WebSearch 'Bahamas no personal income tax official Department of Inland Revenue' and 'Bahamas National Insurance contribution rates 2026 ...' || 2026-11-01 retry: 'Bahamas government \"no personal income tax\" site:gov.bs': no gov.bs page indexed; only advisers and press (KPMG primer, PwC, ewnews quoting a minister)",
+    "trade-press": "Deloitte Bahamas Highlights 2026 read; Chambers 2026 guide seen || 2026-11-01 retry: KPMG Bahamas 'A primer on doing business in The Bahamas' and PwC Bahamas summary in results; Deloitte 2026 kept as the source",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API reachable; web.archive.org snapshot fetch resets the connection from this environment"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The NIB contribution rates and wage ceiling in the NIB's or the regulations' own text for 2026",
+   "tried": {
+    "institution": "inlandrevenue.finance.gov.bs read (VAT pages only; no income tax page); nib-bahamas.com is a script app (827-byte shell); bahamas.gov.bs HTTP 403 || 2026-11-01 retry: nib-bahamas.com pages '2024-Adjustments-to-the-Insurable-Wage-Ceiling-Pensions-and-Grants' and 'NIB-News/Changes-to-NIB-Contributions-and-Regulations' return an 827-byte script shell (no text without running the app); the site has no WordPress API",
+    "official-register": "laws.bahamas.gov.bs reachable; the National Insurance (Contributions) Regulations as amended not located by search || 2026-11-01 retry: bahamastradeinfo.gov.bs/?p=229866 (Government of The Bahamas trade portal) carries only the 2022 NIB notice ($710 to $740 a week from 1 July 2022); laws.bahamas.gov.bs National Insurance (Contributions) Regulations not located",
+    "web-search": "WebSearch 'Bahamas no personal income tax official Department of Inland Revenue' and 'Bahamas National Insurance contribution rates 2026 ...' || 2026-11-01 retry: 'Bahamas National Insurance contribution rates 4.65% employee 6.65% employer wage ceiling $810 regulations nib-bahamas.com' and '\"insurable wage ceiling will increase from $740 per week\" $810 July 2024 National Insurance Board': the NIB's 2024 notice is indexed (ceiling $740 to $810 a week, $3,207 to $3,510 a month, from 1 July 2024; contribution rates changed the same day) but its page cannot be read here",
+    "trade-press": "Deloitte Bahamas Highlights 2026 read; Chambers 2026 guide seen || 2026-11-01 retry: Rivermate and Bloomberg Tax ('The Bahamas increases insurable wage ceiling') in results, naming the NIB; Deloitte 2026 kept as the source",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API reachable; web.archive.org snapshot fetch resets the connection from this environment"
+   }
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "topic": "markets.producer.DK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Denmark. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Denmark's production incentive, in force since 1 January 2026 and run by the Agency for Culture and Palaces, refunds 25% of eligible spend in Denmark, at most DKK 20 million a production, for features with a total budget of at least DKK 25 million and DKK 3 million of eligible costs, 60% of finance confirmed and 25% of the budget from abroad; applications are ranked on Danish spend, total budget and a production and cultural test, and producer's fees set as a percentage of the budget and overheads do not count.",
+   "value": {
+    "administeredBy": "Slots- og Kulturstyrelsen (Agency for Culture and Palaces)",
+    "inForce": "2026-01-01",
+    "rate": 0.25,
+    "capDKKPerProduction": 20000000,
+    "feature": {
+     "minTotalBudgetDKK": 25000000,
+     "minEligibleCostsDKK": 3000000
+    },
+    "fictionSeries": {
+     "minBudgetPerMinuteDKK": 150000,
+     "minBudgetPerSeasonDKK": 15000000,
+     "minEligibleCostsDKK": 3000000
+    },
+    "documentary": {
+     "minTotalBudgetDKK": 4000000,
+     "minEligibleCostsDKK": 1000000
+    },
+    "confirmedFinanceAtApplication": 0.6,
+    "foreignFinanceMin": 0.25,
+    "ranking": "Danish eligible spend, total budget, production and cultural test points, a third each",
+    "annualBudgetDKK": {
+     "liveAction": 100000000,
+     "animation": 25000000
+    },
+    "liveActionRoundPotDKK_2026": 58000000,
+    "roundsPerYear": 2,
+    "notEligible": [
+     "producer's fees calculated as a general percentage of the budget or constituting indirect overhead",
+     "overhead and indirect costs including administration fees"
+    ],
+    "firstInstalment": 0.7
+   },
+   "applies": "Denmark; independent lead producers, co-producers or production service companies with a permanent place of business in Denmark; Live Action Scheme guidelines August 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Feature films must have: a total budget of at least DKK 25 million, and eligible costs of at least DKK 3 million. … The scheme is structured as a rebate scheme under which 25 per cent of the eligible expenditure incurred in Denmark for the production may be reimbursed to the grant recipient. … Please also note that a maximum grant of DKK 20 million may be awarded."
+    },
+    {
+     "src": 1,
+     "said": "The following costs are not eligible: … indirect producer costs, including producer’s fees. The cost is not eligi- ble where the fee is calculated as a general percentage of the production budget or constitutes indirect overhead for the production company, • overhead and indirect costs, including administration fees and general oper- ating costs that cannot be directly attributed to specific production activities,"
+    },
+    {
+     "src": 2,
+     "said": "The Live Action Scheme: a scheme for feature films, fiction series, documentary films and documentary series with an annual budget of DKK 100 million. The Animated Films and Series Scheme: a scheme for animated films and animated series with an annual budget of DKK 25 million. … On 1 January 2026, the Act on the Production Incentive for Film and Series Production and the Executive Order on the Production Incentive Scheme became effective."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The Danish Film Institute supports features through two schemes, by Statistics Denmark's account: the consultant scheme (artistic quality, any budget) grants production support to 10 to 12 features a year and the market scheme (films expected to sell more tickets than the average Danish film) to 7 to 9; a supported film must show its budget, with a 5 to 10% contingency, fully financed before support is committed.",
+   "value": {
+    "schemes": {
+     "konsulentordningen": {
+      "featuresPerYear": [
+       10,
+       12
+      ],
+      "basis": "filmic and artistic quality; no genre or audience requirement; any budget"
+     },
+     "markedsordningen": {
+      "featuresPerYear": [
+       7,
+       9
+      ],
+      "basis": "expected to sell more cinema tickets than an average Danish feature"
+     }
+    },
+    "contingencyMargin": [
+     0.05,
+     0.1
+    ],
+    "commitment": "only after budget incl. contingency is documented fully financed",
+    "accountsDue": "3 months after commercial world premiere"
+   },
+   "applies": "Denmark; DFI production support for features, as described by Statistics Denmark's documentation of 'Økonomien i danske spillefilm' (read 2026-11-01). DFI's own terms are a blocker.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Der bliver hvert år bevilget produktionsstøtte til 10-12 spillefilm under Konsulentordningen. De filmprojekter, der bliver støttet under Markedsordningen, må forventes at sælge mere end en gennemsnitlig dansk spillefilm i biografbilletter i danske biografer. Der gives produktionsstøtte til 7–9 film om året."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "The 15 DFI-supported Danish features released in 2024 were financed with DKK 394.9 million (about DKK 26 million each), DKK 197.1 million of it Danish public money other than TV; Danish features in cinemas numbered 27 premieres in 2023, 16 in 2024 and 33 in 2025, and the 19 supported films of 2022 earned DKK 177.1 million in all, DKK 83.5 million of it at the box office.",
+   "value": {
+    "supportedFeaturesReleased": {
+     "2022": 23,
+     "2023": 16,
+     "2024": 15
+    },
+    "financingDKKm_2024": {
+     "danishTotal": 305.7,
+     "danishPublicExclTV": 197.1,
+     "danishPublicTV": 18.7,
+     "danishPrivateExclRights": 54.4,
+     "danishRightsSales": 35.4,
+     "foreignTotal": 89.2,
+     "total": 394.9,
+     "averagePerFilm": 26.3
+    },
+    "danishFeaturePremieres": {
+     "2023": 27,
+     "2024": 16,
+     "2025": 33
+    },
+    "danishFeatureTicketsSameYearThousands": {
+     "2023": 2261,
+     "2024": 1988,
+     "2025": 3502
+    },
+    "revenueDKKm_2022": {
+     "films": 19,
+     "total": 177.1,
+     "cinema": 83.5,
+     "videoVOD": 40.9,
+     "tv": 23.6,
+     "foreign": 29.0
+    },
+    "note": "total and averagePerFilm are sums of the published rows; revenue and financing tables count different film sets (19 vs 23 films for 2022), so no recoupment rate is derived"
+   },
+   "applies": "Denmark; features with DFI consultant- or market-scheme production support, by release year (FILMFIN1, updated 2026-08-17; FILMIND1 latest 2022); Danish feature premieres of all kinds (BIO4TA, same-year tickets).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Finansiering i alt, DK;Film (antal);2024;15,0 … Finansiering i alt, DK;Finansiering (mio. kr.);2024;305,7 … Offentlig finansiering ekskl. tv-støtte, DK;Finansiering (mio. kr.);2024;197,1 … Finansiering i alt, udland;Finansiering (mio. kr.);2024;89,2"
+    },
+    {
+     "src": 5,
+     "said": "Film (antal);Spillefilm, alle målgrupper;2025;Danmark;2025;33"
+    },
+    {
+     "src": 6,
+     "said": "Indtægter i alt;Alle publikumsgrupper;Indtægt (mio. kr.);2022;177,1"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Danish producers' association Producentforeningen admits companies running an active, independent professional film, TV or podcast production business on the written recommendation of two members; dues are a yearly membership fee set by its general meeting plus a percentage of the rights money paid out through Producentrettigheder Danmark.",
+   "value": {
+    "name": "Producentforeningen",
+    "admission": "active independent professional production business; written recommendation from two members",
+    "categories": [
+     "member",
+     "associated (TV producers)",
+     "entrepreneur (small and new companies)"
+    ],
+    "dues": {
+     "membershipFee": "set yearly by the general meeting (amount not published on the page)",
+     "rightsDues": "a percentage of payments from Producentrettigheder Danmark (PRD)"
+    }
+   },
+   "applies": "Denmark; film, TV, animation, podcast and commercials producers; page read 2026-11-01.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "For at blive optaget som medlem af Producentforeningen kræves, at man driver aktiv, selvstændig virksomhed med fremstilling af film-, tv- eller podcastproduktioner af professionel karakter inden for foreningens område. Desuden skal ansøgeren anbefales skriftligt af to af foreningens medlemmer."
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "DK",
+ "sources": [
+  {
+   "url": "https://slks.dk/english/grants/grant/the-live-action-scheme",
+   "title": "Slots- og Kulturstyrelsen: The Live Action Scheme",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Feature films must have: a total budget of at least DKK 25 million, and eligible costs of at least DKK 3 million. … The scheme is structured as a rebate scheme under which 25 per cent of the eligible expenditure incurred in Denmark for the production may be reimbursed to the grant recipient. … Please also note that a maximum grant of DKK 20 million may be awarded."
+  },
+  {
+   "url": "https://slks.dk/fileadmin/user_upload/SLKS/Omraader/Medier/Produktionsrabatordningen/The_Live_Action_Scheme/Guidelines_for_applying_for_support_under_the_Live_Action_Scheme.pdf",
+   "title": "Slots- og Kulturstyrelsen: Guidelines for applying for support under the Live Action Scheme (August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The following costs are not eligible: … indirect producer costs, including producer’s fees. The cost is not eligi- ble where the fee is calculated as a general percentage of the production budget or constitutes indirect overhead for the production company, • overhead and indirect costs, including administration fees and general oper- ating costs that cannot be directly attributed to specific production activities,"
+  },
+  {
+   "url": "https://slks.dk/english/work-areas/media/the-danish-production-incentive-scheme/",
+   "title": "Slots- og Kulturstyrelsen: The Danish Production Incentive Scheme",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Live Action Scheme: a scheme for feature films, fiction series, documentary films and documentary series with an annual budget of DKK 100 million. The Animated Films and Series Scheme: a scheme for animated films and animated series with an annual budget of DKK 25 million. … On 1 January 2026, the Act on the Production Incentive for Film and Series Production and the Executive Order on the Production Incentive Scheme became effective."
+  },
+  {
+   "url": "https://www.dst.dk/da/Statistik/dokumentation/statistikdokumentation/oekonomien-i-danske-spillefilm/statistisk-behandling",
+   "title": "Danmarks Statistik: Økonomien i danske spillefilm – Statistisk behandling",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Der bliver hvert år bevilget produktionsstøtte til 10-12 spillefilm under Konsulentordningen. De filmprojekter, der bliver støttet under Markedsordningen, må forventes at sælge mere end en gennemsnitlig dansk spillefilm i biografbilletter i danske biografer. Der gives produktionsstøtte til 7–9 film om året."
+  },
+  {
+   "url": "https://api.statbank.dk/v1/data/FILMFIN1/CSV?lang=da&FINANSTYPE=*&AKTP=*&Tid=2022,2023,2024",
+   "title": "Danmarks Statistik, Statistikbanken FILMFIN1: Finansiering af danske spillefilm (2022–2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Finansiering i alt, DK;Film (antal);2024;15,0 … Finansiering i alt, DK;Finansiering (mio. kr.);2024;305,7 … Offentlig finansiering ekskl. tv-støtte, DK;Finansiering (mio. kr.);2024;197,1 … Finansiering i alt, udland;Finansiering (mio. kr.);2024;89,2"
+  },
+  {
+   "url": "https://api.statbank.dk/v1/data/BIO4TA/CSV?lang=da&BIO=24,5&TYPMAL=47&URPRIM=2023,2024,2025&NATION2=5000,0000&Tid=2023,2024,2025",
+   "title": "Danmarks Statistik, Statistikbanken BIO4TA: Biograffilm/premierefilm (Danish features, 2023–2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Film (antal);Spillefilm, alle målgrupper;2025;Danmark;2025;33"
+  },
+  {
+   "url": "https://api.statbank.dk/v1/data/FILMIND1/CSV?lang=da&INDTTYPE=*&MLGRP=M00&AKTP=*&Tid=2020,2021,2022",
+   "title": "Danmarks Statistik, Statistikbanken FILMIND1: Indtægter til danske spillefilm (2020–2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Indtægter i alt;Alle publikumsgrupper;Indtægt (mio. kr.);2022;177,1"
+  },
+  {
+   "url": "https://www.pro-f.dk/bliv-medlem",
+   "title": "Producentforeningen: Bliv medlem",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For at blive optaget som medlem af Producentforeningen kræves, at man driver aktiv, selvstændig virksomhed med fremstilling af film-, tv- eller podcastproduktioner af professionel karakter inden for foreningens område. Desuden skal ansøgeren anbefales skriftligt af to af foreningens medlemmer."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "The Danish Film Institute's own terms for feature support: its share of a budget and cap per film, applications funded of applications received, and the cap on producer fee and overheads (Vilkår for støtte til spillefilm, 1 May 2024, Filmaftale 2024–2027).",
+   "tried": {
+    "institution": "www.dfi.dk, /en, /stoette/spillefilm and the 2024 terms PDF all answered '403 Forbidden – Request forbidden by administrative rules' to curl (2026-11-01); not read another way. | Retry 2026-11-01 (producer retry): dfi.dk without www (board minutes PDF dfi.dk/sites/default/files/docs/2024-03/Referat ... 14.12.23.pdf) and www.dfi.dk/viden-om-film/filmdata: 403 Forbidden again; not read another way.",
+    "official-register": "Statistics Denmark's documentation and StatBank tables used for scheme volumes and financing; they give no per-film cap or fee cap. | Retry 2026-11-01 (producer retry): Folketing answer ft.dk/samling/20241/almdel/kuu/spm/128/svar/2116860/2983865.pdf (found by search): 403 Cloudflare challenge; merlin.obs.coe.int/article/10343 (IRIS): 403.",
+    "web-search": "2026-11-01: 'Det Danske Filminstitut spillefilm produktionsstøtte maksimalt procent budget 60/40 ordning markedsordning tilskud kr'; 'DFI vilkår spillefilm producerhonorar overhead \"procent\" produktionsbudget Filminstituttet støtte højst 60 procent' (results all on dfi.dk; the snippets name a 5% producer overhead cap for shorts/documentaries in 2008 terms, not used). | Retry 2026-11-01 (producer retry): \"filmaftale 2024-2027 pdf kum.dk markedsordningen spillefilm maksimalt tilskud procent af produktionsbudget\": the terms PDF and the Filmaftale only on dfi.dk.",
+    "trade-press": "None found quoting the current feature terms. | Retry 2026-11-01 (producer retry): Claus Ladegaard (former DFI head), 'Film funding in Denmark', Netherlands Film Festival, 16 Sep 2025 (filmfestival.nl/media/downloads/Presentation-Danish-film-funding-final-16.09.25.pdf) read: funding totals and break-even counts, no DFI per-film cap or fee cap; not used.",
+    "archive": "archive.org lists a 2025-08-05 snapshot of the 2024 terms PDF; web.archive.org reset the connection twice (2026-11-01). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "feecap",
+   "sought": "The cap DFI sets on producer fee and overheads for supported features.",
+   "tried": {
+    "institution": "dfi.dk 403 (see fund blocker). | Retry 2026-11-01 (producer retry): dfi.dk without www (board minutes PDF dfi.dk/sites/default/files/docs/2024-03/Referat ... 14.12.23.pdf) and www.dfi.dk/viden-om-film/filmdata: 403 Forbidden again; not read another way.",
+    "official-register": "None. | Retry 2026-11-01 (producer retry): Folketing answer ft.dk/samling/20241/almdel/kuu/spm/128/svar/2116860/2983865.pdf (found by search): 403 Cloudflare challenge; merlin.obs.coe.int/article/10343 (IRIS): 403.",
+    "web-search": "As in the fund blocker. | Retry 2026-11-01 (producer retry): \"filmaftale 2024-2027 pdf kum.dk markedsordningen spillefilm maksimalt tilskud procent af produktionsbudget\": the terms PDF and the Filmaftale only on dfi.dk.",
+    "trade-press": "None found. | Retry 2026-11-01 (producer retry): Claus Ladegaard (former DFI head), 'Film funding in Denmark', Netherlands Film Festival, 16 Sep 2025 (filmfestival.nl/media/downloads/Presentation-Danish-film-funding-final-16.09.25.pdf) read: funding totals and break-even counts, no DFI per-film cap or fee cap; not used.",
+    "archive": "web.archive.org reset the connection (2026-11-01). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

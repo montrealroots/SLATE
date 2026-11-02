@@ -1,0 +1,324 @@
+{
+ "topic": "markets.writer.GB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a screenwriter works on in United Kingdom. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "agreement",
+   "finding": "The only collective agreement for UK film writers is the 1992 WGGB/Pact minimum terms agreement, whose schedule dates from 1 October 1990; the WGGB calls it little used and out of date, and its television sections have been replaced.",
+   "value": {
+    "name": "WGGB/Pact Minimum Terms Agreement",
+    "parties": [
+     "Writers' Guild of Great Britain",
+     "Producers Alliance for Cinema & Television (Pact)"
+    ],
+    "effective": "1992-02-03",
+    "schedule_effective": "1990-10-01",
+    "expires": null,
+    "covers": [
+     "feature films over £2m",
+     "feature films £750,000-£2m and TV films £750,000+",
+     "films under £750,000",
+     "TV series and serials with format provided"
+    ]
+   },
+   "applies": "UK feature films made by Pact members; in force since 1992, no new film agreement concluded as of the guide (PDF created 2016-05-09).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "This Agreement effective from 3 February 1992 together with its attached Schedule … Feature Films with a budget in excess of £2 Million … Films with a budget below £750,000"
+    },
+    {
+     "src": 1,
+     "said": "The same system used to apply to film writers under the 1992 agreement between … the only extant collective agreement for film writer contracts in this country … However the Pact film agreement is now little used and shows its age by not covering"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "Under the 1992 Pact agreement a feature over £2m pays a writer at least £23,200 in stages from treatment to principal photography, plus an £8,000 advance against further uses; films below £2m pay at least £14,000.",
+   "value": {
+    "currency": "GBP",
+    "dated": "1990-10-01",
+    "over_2m": {
+     "treatment": {
+      "commencement": 2500,
+      "acceptance": 1500
+     },
+     "first_draft": {
+      "commencement": 4800,
+      "delivery": 4800
+     },
+     "second_draft": {
+      "commencement": 2400,
+      "delivery": 2400
+     },
+     "principal_photography": 4800,
+     "total_minimum": 23200,
+     "additional_use_prepayment": 8000,
+     "total_guaranteed": 31200
+    },
+    "750k_to_2m": {
+     "treatment_commencement": 1000,
+     "first_draft_commencement": 3500,
+     "total_minimum": 14000,
+     "additional_use_advance": 5000
+    },
+    "under_750k": {
+     "total_minimum": 14000,
+     "additional_use_advance": 0
+    },
+    "uk_tv_use_fee_over_2m": {
+     "per_transmission": 2000,
+     "minimum": 6000,
+     "years": 7
+    }
+   },
+   "applies": "Writers on films made by Pact members under the 1992 agreement; rates never updated since 1990 (WGGB recommends inflation uprating).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "SECTION 1: FEATURE FILMS BUDGETED AT £2 MILLION AND OVER … Commencement Payment 2,500 Acceptance Payment 1,500 … Commencement Payment 4,800 Delivery Payment 4,800 … Principal photography payment 4,800 Total minimum Payment 23,200 Additional Use Pre-Payment 8,000 Total Guaranteed Payment 31,200 … *UK TV: £2,000 per transmission … Total Minimum Payment 14,000 … SECTION 3: FILMS BUDGETED BELOW £750,000 … except that the Producer is not required to make the £5,000 advance payment against additional uses"
+    },
+    {
+     "src": 1,
+     "said": "Because of the age of the agreement the WGGB recommends an increase in minimum rates in line with inflation."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "Writing steps are paid at commencement and on delivery or acceptance of each stage, with copyright passing to the producer stage by stage and cut-offs at each stage.",
+   "value": {
+    "stages": [
+     "treatment",
+     "first draft",
+     "second draft",
+     "principal photography"
+    ],
+    "payments_per_stage": [
+     "commencement",
+     "delivery or acceptance"
+    ]
+   },
+   "applies": "Film writers under the 1992 Pact agreement.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Payments at all the stages from treatment to completion set out above are negotiable above the minimum and copyright only passes to the producer at each … Cut-offs apply at each stage from treatment to completion."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "BBC television writers are paid at least £239 a minute (£14,340 an hour) for a single teleplay and £220 a minute (£13,200 an hour) for series and serials, from 15 December 2025.",
+   "value": {
+    "currency": "GBP",
+    "effective": "2025-12-15",
+    "teleplay": {
+     "per_minute": 239,
+     "per_60_min": 14340
+    },
+    "series_serials": {
+     "per_minute": 220,
+     "per_60_min": 13200
+    },
+    "dramatisations_per_60": 9600,
+    "adaptations_per_60": 5880,
+    "attendance_fee_per_day": 128
+   },
+   "applies": "Writers commissioned under the BBC/PMA/WGGB Television Script Agreement.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "effective from 15th December 2025 … Teleplays £ 239 £ 14,340 Series/Serials £ 220 £ 13,200 Dramatisations £ 160 £ 9,600"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "ITV drama pays writers at least £16,460 per hour for an original teleplay and £12,882 per hour for series and serials, from 19 October 2026.",
+   "value": {
+    "currency": "GBP",
+    "effective": "2026-10-19",
+    "original_teleplay_per_hour": 16460,
+    "series_serials_per_hour": 12882,
+    "long_running_series_per_half_hour": 4294,
+    "attendance_fee_per_day": 140
+   },
+   "applies": "Drama commissioned by ITV Network under the ITV/STV/WGGB/PMA agreement (effective 1 January 2010, as amended).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "with effect from 19 October 2026 … Original Teleplay rate £16,460 per hour slot length (pro rata) Series and Serials £12,882 per hour slot length (pro rata) Long Running Series £4,294 per half hour slot length (pro rata)"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "Independent producers (Pact members) pay at least £13,320 for a one-hour single drama and £10,570 for a series or serial hour, rates set from 1 October 2016 and not since published as updated.",
+   "value": {
+    "currency": "GBP",
+    "effective": "2016-10-01",
+    "one_hour_drama": 13320,
+    "series_serials_hour": 10570
+   },
+   "applies": "TV script commissioning by Pact members under the Pact/WGGB TV agreement.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "for a one hour slot-length drama the rate goes up to £13,320. The rate for series and serials rises to £10,570. These rates update those in the current Pact/WGGB Agreement and will take effect from 1st October 2016."
+    }
+   ]
+  },
+  {
+   "item": "option",
+   "finding": "No agreement sets option terms; the WGGB reports film options typically run 12 to 18 months, renewable for a further fee, the first fee usually deductible from the purchase price, and it opposes £1 options.",
+   "value": {
+    "typical_period_months": [
+     12,
+     18
+    ],
+    "renewal": "similar term for a further fee",
+    "first_fee": "on account of purchase price",
+    "renewal_fee": "additional",
+    "rights_share_of_budget_pct": [
+     2,
+     5
+    ]
+   },
+   "applies": "UK film options, as reported by the WGGB.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Typically option periods run for 12 to 18 months, often renewable by the producer for a similar term on payment of a further fee. The initial option fee is usually paid ‘on account of’ (ie is deductible from) the purchase price but the renewal is generally … WGGB opposes so-called £1 … A producer might expect to allocate roughly 2-5% of the budget to rights"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The Writers' Guild of Great Britain is the writers' trade union; full membership costs from £218 a year and needs one contract at guild minimum or £5,000 writing income in a year.",
+   "value": {
+    "body": "Writers' Guild of Great Britain (WGGB)",
+    "currency": "GBP",
+    "annual_from": {
+     "full": 218,
+     "candidate": 119,
+     "student": 33,
+     "affiliate": 330
+    },
+    "full_eligibility": [
+     "one work under contract paid at or above guild minimum rates",
+     "gross non-journalistic writing income over £5,000 in a single year"
+    ],
+    "min_age": 18
+   },
+   "applies": "Writers in the UK, 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Annual membership starts at £218 for Full Members, £119 per year for Candidate Members, £33 per year for Student Members and £330 per year for Affiliate Members"
+    },
+    {
+     "src": 6,
+     "said": "Has written one or more pieces of work under contract for which payment has been received at or above the minimum rates as defined by the current agreements negotiated by the Guild. Has received a gross income from non-journalistic writing in any single year which totals more than the amount defined in Appendix F (£5,000)."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "London is where most UK film production companies are: 4,800 of 9,395 (51.1%) in March 2023, with another 17.7% in the South East around it.",
+   "value": {
+    "filmProductionCompanies": {
+     "London": 4800,
+     "LondonShare": 0.511,
+     "SouthEast": 1665,
+     "SouthEastShare": 0.177,
+     "UK": 9395
+    },
+    "asOf": "2023-03",
+    "source": "ONS Inter-Departmental Business Register via BFI Statistical Yearbook 2024, table 7"
+   },
+   "applies": "United Kingdom; count of film production companies by registered location (not where each shoot happens).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Table 7: National/regional count and distribution of film industry companies, 2023, ranked by total count. … London | 4,800 | 51.1 | … South East | 1,665 | 17.7 | … UK | 9,395 | 100.0 | … Data as at March 2023. … The geographic distribution is given by the location of the company, not its local units,"
+    }
+   ]
+  }
+ ],
+ "role": "writer",
+ "country": "GB",
+ "sources": [
+  {
+   "url": "https://writersguild.org.uk/wp-content/uploads/2024/04/pact-agreement-1992.pdf",
+   "title": "WGGB/Pact Minimum Terms Agreement (1992)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This Agreement effective from 3 February 1992 together with its attached Schedule … Feature Films with a budget in excess of £2 Million … Films with a budget below £750,000 … SECTION 1: FEATURE FILMS BUDGETED AT £2 MILLION AND OVER … Commencement Payment 2,500 Acceptance Payment 1,500 … Commencement Payment 4,800 Delivery Payment 4,800 … Principal photography payment 4,800 Total minimum Payment 23,200 Additional Use Pre-Payment 8,000 Total Guaranteed Payment 31,200 … *UK TV: £2,000 per transmission … Total Minimum Payment 14,000 … SECTION 3: FILMS BUDGETED BELOW £750,000 … except that the Producer is not required to make the £5,000 advance payment against additional uses … Payments at all the stages from treatment to completion set out above are negotiable above the minimum and copyright only passes to the producer at each … Cut-offs apply at each stage from treatment to completion."
+  },
+  {
+   "url": "https://writersguild.org.uk/wp-content/uploads/2024/04/writing-film-a-good-practice-guide.pdf",
+   "title": "WGGB: Writing Film, A Good Practice Guide (PDF created 9 May 2016)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The same system used to apply to film writers under the 1992 agreement between … the only extant collective agreement for film writer contracts in this country … However the Pact film agreement is now little used and shows its age by not covering … Because of the age of the agreement the WGGB recommends an increase in minimum rates in line with inflation. … Typically option periods run for 12 to 18 months, often renewable by the producer for a similar term on payment of a further fee. The initial option fee is usually paid ‘on account of’ (ie is deductible from) the purchase price but the renewal is generally … WGGB opposes so-called £1 … A producer might expect to allocate roughly 2-5% of the budget to rights"
+  },
+  {
+   "url": "https://writersguild.org.uk/wp-content/uploads/2025/12/bbc-tv-rate-card-dec25.pdf",
+   "title": "BBC letter to WGGB: Television Writers Agreement Increase to Minimum Fees 2025 (18 December 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "effective from 15th December 2025 … Teleplays £ 239 £ 14,340 Series/Serials £ 220 £ 13,200 Dramatisations £ 160 £ 9,600"
+  },
+  {
+   "url": "https://writersguild.org.uk/wp-content/uploads/2026/10/ITV-WGGB-PMA-Rates-Card-October-2026-1.pdf",
+   "title": "ITV/STV/WGGB/PMA Rates Card, October 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "with effect from 19 October 2026 … Original Teleplay rate £16,460 per hour slot length (pro rata) Series and Serials £12,882 per hour slot length (pro rata) Long Running Series £4,294 per half hour slot length (pro rata)"
+  },
+  {
+   "url": "https://writersguild.org.uk/wp-content/uploads/2024/07/pact-rate-card.pdf",
+   "title": "WGGB, PMA and Pact joint statement (10 August 2016)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "for a one hour slot-length drama the rate goes up to £13,320. The rate for series and serials rises to £10,570. These rates update those in the current Pact/WGGB Agreement and will take effect from 1st October 2016."
+  },
+  {
+   "url": "https://writersguild.org.uk/join-renew/",
+   "title": "WGGB: Join or renew",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Annual membership starts at £218 for Full Members, £119 per year for Candidate Members, £33 per year for Student Members and £330 per year for Affiliate Members"
+  },
+  {
+   "url": "https://writersguild.org.uk/membership-options/",
+   "title": "WGGB: Membership options",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Has written one or more pieces of work under contract for which payment has been received at or above the minimum rates as defined by the current agreements negotiated by the Guild. Has received a gross income from non-journalistic writing in any single year which totals more than the amount defined in Appendix F (£5,000)."
+  },
+  {
+   "url": "https://core-cms.bfi.org.uk/media/43727/download",
+   "title": "BFI Statistical Yearbook 2024, Film industry companies - data tables (ODS), table 7; linked from https://www.bfi.org.uk/industry-data-insights/statistical-yearbook",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Table 7: National/regional count and distribution of film industry companies, 2023, ranked by total count. … London | 4,800 | 51.1 | … South East | 1,665 | 17.7 | … UK | 9,395 | 100.0 | … Data as at March 2023. … The geographic distribution is given by the location of the company, not its local units,"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "language",
+   "sought": "A source giving the language UK screen work is made in (no markets/GB.json in the actor research).",
+   "tried": {
+    "institution": "BFI statistics pages not reached in this pass; producer research holds BFI production tables but no language field | Retry 2026-11-01: BFI Statistical Yearbook 2024 data tables for screen sector production, film industry companies and employment (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/roles-markets/writer-GB-bfi-2024-production.ods and the others, with text copies): no language field.",
+    "official-register": "none found | Retry 2026-11-01: None found.",
+    "web-search": "2026-11-01 \"BFI statistical yearbook UK films language English share\" returned only release-language box office tables (2014), not production language | Retry 2026-11-01: As before; the BFI language tables found are for films on release, not production.",
+    "trade-press": "none found | Retry 2026-11-01: None found.",
+    "archive": "not tried: web.archive.org resets through this environment's proxy (2026-11-01) | Retry 2026-11-01: UK Web Archive (webarchive.org.uk) answers, but there is no BFI page to recover beyond the current tables read."
+   }
+  }
+ ]
+}

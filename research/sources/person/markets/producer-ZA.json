@@ -1,0 +1,287 @@
+{
+ "topic": "markets.producer.ZA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in South Africa. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The National Film and Video Foundation grants up to R2.2 million (post-production included) to produce a fiction feature for experienced (tier 1) and less experienced (tier 2) filmmakers, up to R260,000 to develop one, and releases production money only once 75% of the finance is confirmed from other sources; its production and development grants are recouped from the film's gross profit alongside the producer.",
+   "value": {
+    "productionCapZAR": {
+     "featureFictionInclPost_tiers1and2": 2200000,
+     "madeForTVMovie_tiers1to3": 350000,
+     "shortFiction_tiers1and2": 300000,
+     "shortFiction_tier3": 250000,
+     "pilot": 300000,
+     "featureOrSeriesAnimation_tiers1and2": 2100000,
+     "featureDocumentary_tier1": 900000,
+     "featureDocumentary_tier2": 700000,
+     "featureDocumentaryCoproduction": 1200000
+    },
+    "developmentCapZAR": {
+     "featureFiction_tiers1and2": 260000,
+     "featureDocumentary_tiers1and2": 220000,
+     "featureAnimation_tiers1and2": 420000
+    },
+    "otherFinanceConfirmedBeforeContract": {
+     "fiction": 0.75,
+     "nonFiction": 0.5
+    },
+    "tiers": {
+     "1": "at least three successful and commercially viable features, series, TV films or documentaries",
+     "2": "one or two features, TV films or documentaries, or at least two shorts or commercials",
+     "3": "new entrants who have produced or directed at least one short"
+    },
+    "recoupment": "recoupable from gross profit, pari passu with the producer by default; not for shorts",
+    "policy": "NFVF Funding Policy, April 2026"
+   },
+   "applies": "South Africa; NFVF development and production grants to South African production companies; policy dated April 2026, published September 2026, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "NATIONAL FILM AND VIDEO FOUNDATION FUNDING POLICY APRIL 2026 … 15. PRODUCTION 15.1. FICTION … Feature film (fiction) inclusive of post-production R 2 200 000.00 1 and 2 Made-for-TV movies R 350 000.00 1, 2, and 3 … For fiction projects (live action and animation), confirmation of a minimum of 75% derived from other funding categories will be required to enable the signing of contracts and release of payments by the NFVF."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "The dtic's South African Film and Television Production Incentive refunds 35% of qualifying South African production expenditure, plus 5% more for productions with at least 30% Black South African heads of department and 30% of spend from Black-owned suppliers, up to R25 million a project; a production needs at least R1.5 million of qualifying spend (R500,000 for documentaries), 75% of its budget spent in South Africa, 60% of principal photography there, a South African director, and 25% of its finance committed when it applies.",
+   "value": {
+    "rate": 0.35,
+    "transformationBonus": 0.05,
+    "capZARPerProject": 25000000,
+    "minQSAPEZAR": {
+     "allFormats": 1500000,
+     "documentary": 500000
+    },
+    "qsapeShareOfBudgetMin": 0.75,
+    "principalPhotographyInSAMin": 0.6,
+    "minShootDaysInSA": 14,
+    "financeSecuredAtApplication": 0.25,
+    "stateFundingCapShareOfBudget": 0.8,
+    "paymentMilestones": {
+     "startPrincipalPhotography": 0.2,
+     "completionPrincipalPhotography": 0.2,
+     "startPostProduction": 0.2,
+     "finalAudit": 0.4
+    },
+    "guidelinesIssued": "2023-09",
+    "status": "under review from August 2026; applications already received processed under existing guidelines; adjudication resumed 2026-08-27; R727.8m and R503.5m in claims paid in 2024/25 and 2025/26; about R255m outstanding at 2026-06-30"
+   },
+   "applies": "South Africa; South African production companies with a special purpose vehicle and B-BBEE level 3 (SPCV level 4); feature films, TV and documentaries; guidelines issued September 2023, programme under review from August 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Incentive is calculated at thirty-five percent (35%) of Qualifying South African Production Expenditure (QSAPE). … The incentive programme offers a reimbursable grant to the maximum of R25 million per qualifying project."
+    },
+    {
+     "src": 2,
+     "said": "7.4 Total funding contribution from state institutions (National, Provincial, Local government, and state-funded agencies) including the dtic, may not exceed 80% of the budget of the project. … 10.2 The incentive is capped at a maximum grant of R25 million per qualifying project."
+    },
+    {
+     "src": 3,
+     "said": "With effect from the date of this notice, the Department, in consultation with the film and television industry, will commence a comprehensive review of the Film and Television Incentive Programme (FTIP) guidelines. … claims amounting to R727,8 million and R503,5 million, respectively, were paid to qualifying beneficiaries. As at 30 June 2026, the programme's outstanding liability amounted to approximately R255 million."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Under the dtic incentive, South African producer fees (at most two working producers) count toward the rebate only up to the lesser of 10% of total production expenditure or R1 million, company overheads up to the lesser of 2% or R200,000, and executive producer fees are financing costs that do not count.",
+   "value": {
+    "producerFees": {
+     "maxShareOfTPE": 0.1,
+     "maxZAR": 1000000,
+     "producersCounted": 2,
+     "rule": "lesser of"
+    },
+    "generalOverheads": {
+     "maxShareOfTPE": 0.02,
+     "maxZAR": 200000,
+     "rule": "lesser of"
+    },
+    "connectedPartyFees": {
+     "maxShareOfTPE": 0.1,
+     "maxZAR": 3000000,
+     "rule": "lesser of"
+    },
+    "executiveProducerFees": "financing expenditure, excluded"
+   },
+   "applies": "South Africa; what counts as qualifying expenditure under the dtic South African Film and Television Production Incentive (guidelines issued September 2023); a cap on what the rebate pays on, not on what a producer may be paid.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Producer fees South African producer fees, limited to two working producers and inclusive of all their travel accommodation and living expenses, are excluded from QSAPE to the extent that they exceed the lesser of: o 10% of the total of the company’s TPE on the film production; or o R1 million in total."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Of 253 films released in South African cinemas in 2023, the NFVF counts 8 domestic films (7 in its origin breakdown), down from 11 in 2022, and they took R5.2 million, 0.9% of the R575.0 million box office.",
+   "value": {
+    "year": 2023,
+    "titlesReleased": 253,
+    "domesticFilmsReleased": 8,
+    "domesticFilmsReleasedOriginChart": 7,
+    "domesticFilms2022": 11,
+    "domesticGrossZAR": 5200000,
+    "domesticShare": 0.009,
+    "totalGrossZAR": 575000000,
+    "admissions": 8300000
+   },
+   "applies": "South Africa, theatrical releases January to December 2023 (NFVF report published 2025); the report gives both 8 and 7 for the domestic count.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Of the 253 titles released at the box office, 8 were domestic films, a decline of 27.27% compared to 11 titles released in 2022. … These domestic films contributed only 0.9% (RSA GBO = R5.2 million) to the total revenue of R575.0 million."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The Independent Producers Organisation represents South Africa's independent film, television and digital producers; its executive committee approves each application, and annual fees run from R500 for an individual to R1,000 to R20,000 for a production company by turnover.",
+   "value": {
+    "name": "Independent Producers Organisation (IPO)",
+    "admission": "application approved by the IPO Executive Committee, then invoice",
+    "annualFeesZAR": {
+     "student": 50,
+     "introductory": 500,
+     "individual": 500,
+     "producerTier5_turnover0to500k": 1000,
+     "producerTier4_500kto1_5m": 5000,
+     "producerTier3_1_5mto5m": 10000,
+     "producerTier2_5mto10m": 15000,
+     "producerTier1_10mPlus": 20000,
+     "honorary": 500,
+     "associate": 500
+    }
+   },
+   "applies": "South Africa; independent producers and production companies; page dated 14 August 2023, updated 6 November 2024, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Note that all membership applications need to be approved by the current IPO Executive Committee. … ANNUAL MEMBERSHIP FEES Student member : R50.00 Introductory Member: R500.00 Individual Member: R500.00 Producer Member Tier 5: (annual turnover 0 – R500 000): R1 000.00 … Producer Member Tier 1: (annual turnover R10 000 000 and more): R20 000.00"
+    },
+    {
+     "src": 6,
+     "said": "The Independent Producers Organisation (IPO) represents, protects, and promotes the interests of independent South African film, television, and digital media producers"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The NFVF's sixth Presidential Employment Stimulus round (PESP6) drew 1,787 applications (1,427 compliant) and approved 273: 110 production projects (R65.0 million), 74 training and 84 marketing projects, and five 'Blockbuster' features and documentaries chosen from 179 applications (113 compliant) that asked for R1.07 billion against a R50 million budget.",
+   "value": {
+    "round": "PESP6",
+    "applications": 1787,
+    "compliant": 1427,
+    "approved": {
+     "stream1Group2Production": 110,
+     "stream2Training": 74,
+     "stream3Marketing": 84,
+     "blockbusters": 5
+    },
+    "approvedFundsZAR": {
+     "streams1to3": 150493669.0,
+     "stream1Group2Production": 64977833.97
+    },
+    "blockbusters": {
+     "applications": 179,
+     "compliant": 113,
+     "requestedZAR": 1070000000,
+     "budgetZAR": 50000000
+    }
+   },
+   "applies": "South Africa, NFVF-administered Presidential Employment Stimulus Programme, sixth round, approvals announced August and September 2026; the NFVF's regular funding cycles are counted separately.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The NFVF has approved funding for 268 projects, representing a total investment of R150,493,669.00 … Stream 1: Production (Group 2) – Project 1 110 projects R64,977,833.97 in approved funding … Stream 2: Skills Development and Training 74 projects … Stream 3: Marketing and Distribution – Project 1 84 projects … PESP6 attracted 1,787 applications , of which 1,427 were compliant across the Blockbuster category and Streams 1, 2 and 3."
+    },
+    {
+     "src": 8,
+     "said": "Five projects have been approved for funding … The Blockbuster group, aimed at supporting tier-one filmmakers and projects, attracted 179 applications , of which 113 were compliant . The compliant applications requested a combined R1.07 billion , against an allocated budget of R50 million"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "ZA",
+ "sources": [
+  {
+   "url": "https://www.nfvf.co.za/wp-content/uploads/2026/09/NFVF-FUNDING-POLICY-2026.edited-1.pdf",
+   "title": "NFVF: Funding Policy (April 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "NATIONAL FILM AND VIDEO FOUNDATION FUNDING POLICY APRIL 2026 … 15. PRODUCTION 15.1. FICTION … Feature film (fiction) inclusive of post-production R 2 200 000.00 1 and 2 Made-for-TV movies R 350 000.00 1, 2, and 3 … For fiction projects (live action and animation), confirmation of a minimum of 75% derived from other funding categories will be required to enable the signing of contracts and release of payments by the NFVF."
+  },
+  {
+   "url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/film-incentive/south-african-film-and-television-production-incentive-3/",
+   "title": "the dtic: South African Film and Television Production Incentive",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Incentive is calculated at thirty-five percent (35%) of Qualifying South African Production Expenditure (QSAPE). … The incentive programme offers a reimbursable grant to the maximum of R25 million per qualifying project."
+  },
+  {
+   "url": "https://www.thedtic.gov.za/wp-content/uploads/South-African-Film-and-Television-Production-Incentive.pdf",
+   "title": "the dtic: Programme Guidelines, South African Film and Television Production Incentive (issued September 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "7.4 Total funding contribution from state institutions (National, Provincial, Local government, and state-funded agencies) including the dtic, may not exceed 80% of the budget of the project. … 10.2 The incentive is capped at a maximum grant of R25 million per qualifying project. … Producer fees South African producer fees, limited to two working producers and inclusive of all their travel accommodation and living expenses, are excluded from QSAPE to the extent that they exceed the lesser of: o 10% of the total of the company’s TPE on the film production; or o R1 million in total."
+  },
+  {
+   "url": "https://www.thedtic.gov.za/wp-content/uploads/Notice-to-FIlm-and-Television-Sector-August-2026.pdf",
+   "title": "the dtic: Reassurance Notice, Film and Television Incentive Programme (August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "With effect from the date of this notice, the Department, in consultation with the film and television industry, will commence a comprehensive review of the Film and Television Incentive Programme (FTIP) guidelines. … claims amounting to R727,8 million and R503,5 million, respectively, were paid to qualifying beneficiaries. As at 30 June 2026, the programme's outstanding liability amounted to approximately R255 million."
+  },
+  {
+   "url": "https://www.nfvf.co.za/wp-content/uploads/2025/04/2023-Box-Office-Report.pdf",
+   "title": "NFVF: South African Box Office Report, 2023 Performance and 10-Year Time Trend Analysis",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Of the 253 titles released at the box office, 8 were domestic films, a decline of 27.27% compared to 11 titles released in 2022. … These domestic films contributed only 0.9% (RSA GBO = R5.2 million) to the total revenue of R575.0 million."
+  },
+  {
+   "url": "https://ipo.org.za/ipo-general-membership/",
+   "title": "Independent Producers Organisation: IPO General Membership",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Note that all membership applications need to be approved by the current IPO Executive Committee. … ANNUAL MEMBERSHIP FEES Student member : R50.00 Introductory Member: R500.00 Individual Member: R500.00 Producer Member Tier 5: (annual turnover 0 – R500 000): R1 000.00 … Producer Member Tier 1: (annual turnover R10 000 000 and more): R20 000.00"
+  },
+  {
+   "url": "https://www.ipo.org.za/",
+   "title": "Independent Producers Organisation: About Us",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Independent Producers Organisation (IPO) represents, protects, and promotes the interests of independent South African film, television, and digital media producers"
+  },
+  {
+   "url": "https://www.nfvf.co.za/press-release-nfvf-releases-pesp6-project-1-stream1-group-2-stream-2-and-stream-3-funding-approvals/",
+   "title": "NFVF press release: PESP6 Project 1 Stream 1 Group 2, Stream 2 and Stream 3 funding approvals",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The NFVF has approved funding for 268 projects, representing a total investment of R150,493,669.00 … Stream 1: Production (Group 2) – Project 1 110 projects R64,977,833.97 in approved funding … Stream 2: Skills Development and Training 74 projects … Stream 3: Marketing and Distribution – Project 1 84 projects … PESP6 attracted 1,787 applications , of which 1,427 were compliant across the Blockbuster category and Streams 1, 2 and 3."
+  },
+  {
+   "url": "https://www.nfvf.co.za/press-release-nfvf-releases-sixth-presidential-employment-stimulus-programme-pesp-6-stream-1-production-group-1-referred-to-as-blockbusters-approvals/",
+   "title": "NFVF press release: PESP 6 Stream 1 Production (Group 1) \"Blockbusters\" approvals, 28 September 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Five projects have been approved for funding … The Blockbuster group, aimed at supporting tier-one filmmakers and projects, attracted 179 applications , of which 113 were compliant . The compliant applications requested a combined R1.07 billion , against an allocated budget of R50 million"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "How many applications to the NFVF's regular production-funding cycles are approved of how many received (PESP6 counts now held).",
+   "tried": {
+    "institution": "nfvf.co.za funding pages, FAQ and Funding Policy April 2026 (none give counts); 'Funding Approvals' page not opened past the funding menu. | Retry 2026-11-01 (producer retry): nfvf.co.za search (?s=PESP6, ?s=approvals) read: PESP6 releases (used) and cycle approval pages for 2018-2021, which list awards without application counts.",
+    "official-register": "NFVF annual reports are tabled in Parliament; not fetched in this pass. | Retry 2026-11-01 (producer retry): pmg.org.za reply to question NW667 (committee-question/36209) read: oversight description, no counts; NFVF APP 2024/25 on pmg.org.za found by search, not read for counts.",
+    "web-search": "Not run for this item on 2026-11-01. | Retry 2026-11-01 (producer retry): \"NFVF annual report 2024/25 pdf number of applications received approved production funding feature films\": the PESP releases and APP only.",
+    "trade-press": "Not searched for this item on 2026-11-01. | Retry 2026-11-01 (producer retry): bizcommunity.com (17 Aug 2026) repeats the NFVF PESP6 release (primary used instead).",
+    "archive": "Not tried; web.archive.org reset this environment's connection on other requests on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

@@ -1,0 +1,320 @@
+{
+ "topic": "markets.producer.FR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in France. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "All public aid to a French film, the avance sur recettes included, may not exceed 50% of its cost (60% for a first or second film or a budget of €1.25 million or less, 70% for those without the tax credit); the avance is repaid from the automatic support the film earns, after a €50,000 deductible, at not less than 25% of those sums and up to 80% of the aid.",
+   "value": {
+    "publicAidCapShareOfCost": 0.5,
+    "difficultOrSmallBudgetCap": 0.6,
+    "difficultOrSmallBudgetWithoutTaxCreditCap": 0.7,
+    "smallBudgetMaxEUR": 1250000,
+    "difficultMeans": "first or second film of the director",
+    "avanceRepayment": {
+     "deductibleEUR": 50000,
+     "minShareOfSupportGenerated": 0.25,
+     "maxShareOfAidRepaid": 0.8
+    },
+    "producerMinCapitalEUR": 45000,
+    "financePlanDueMonthsAfterPromise": 24
+   },
+   "applies": "France, CNC avance sur recettes avant réalisation, descriptif dated September 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le montant total des aides publiques (dont « l’avance sur recettes ») ne pourra pas dépasser 50 % du coût de production du film. … dans la limite de 60 % et sur demande motivée de l'entreprise de production, pour les œuvres cinématographiques \"difficiles\" ou \"à petit budget\". Une œuvre difficile est la première ou la deuxième œuvre d'un réalisateur. Une œuvre à petit budget est celle dont le budget total est inférieur ou égal à 1 250 000 € ; … dans la limite de 70 % pour les œuvres cinématographiques difficiles ou à petit budget qui ne bénéficient pas du crédit d’impôt pour les dépenses de production déléguée. … L’aide se rembourse sur le soutien généré par le film, après application d’une franchise fixée à 50 000 €. Le remboursement s’effectue dans une proportion qui ne peut être inférieure à 25 % des sommes calculées et dans la limite de 80 % de l’aide attribuée. … d’être représenté par une société de production au capital minimum de 45 000 € pour passer devant le comité de chiffrage."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "A French film earns automatic support for its producer from its own exploitation: 106.54% of the cinema ticket tax it generates up to 1.5 million admissions, 80.97% from 1.5 to 5 million and 8.52% beyond, over five years; 9.47% of TV licence fees up to €305,000; 4.26% of video turnover; the delegate producer gets at least 25% of what the film generates.",
+   "value": {
+    "cinemaRatesOfTicketTax": [
+     {
+      "admissionsUpTo": 1500000,
+      "rate": 1.0654
+     },
+     {
+      "admissionsFrom": 1500000,
+      "admissionsUpTo": 5000000,
+      "rate": 0.8097
+     },
+     {
+      "admissionsFrom": 5000000,
+      "rate": 0.0852
+     }
+    ],
+    "cinemaGenerationYears": 5,
+    "tvRateOfLicenceFee": 0.0947,
+    "tvLicenceFeeCeilingEUR": 305000,
+    "tvGenerationYears": 8,
+    "videoRateOfTurnover": 0.0426,
+    "delegateProducerMinShare": 0.25,
+    "accessScalePoints": 100
+   },
+   "applies": "France, CNC soutien automatique to feature production; films holding the agrément de production; rates as read 2026-11-01.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "il a droit au minimum à 25 % du soutien généré par l'œuvre. … L'accès au soutien est fixé par le nombre de points obtenu sur un barème de 100 points … 106,54 % jusqu'à 1 500 000 entrées … 80,97 % de 1 500 000 à 5 000 000 d'entrées … de 8,52 % au-delà de 5 000 000 d'entrées … Le délai de génération est de cinq ans à compter de la date de la première projection publique du film concerné. … Ce taux est actuellement fixé à 9,47 % du prix d'acquisition versé par les services de télévision jusqu'à un plafond de 305 000 € hors taxes. … Ce taux est actuellement fixé à 4,26 %."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "France's tax credit rate depends on the work: a cinema film made wholly or mainly in French (or a regional language of France), and any animated cinema film, earns 30% of eligible French spending; a cinema film in another language earns the base rate of 20%; television and streaming works earn 25% (fiction, animation and, since 2021, documentary) and 10% for filmed live shows; spending counts on at most 80% of the budget, a cinema film's credits are capped at €30 million, and all public aid including the credit is held to 50% of the budget (60% for first and second films or budgets of €1.25 million or less).",
+   "value": {
+    "rate": 0.3,
+    "foreignLanguageRate": 0.2,
+    "eligibleSpendMaxShareOfBudget": 0.8,
+    "capEUR": 30000000,
+    "publicAidCapShareOfBudget": 0.5,
+    "difficultOrSmallBudgetCap": 0.6,
+    "eligibleCost": [
+     "authors",
+     "performers (at the collective-agreement minimum)",
+     "technicians including the director",
+     "technical, transport, lodging and post-production spending in France"
+    ],
+    "note": "Settled 2026-11-01 from the CNC's own pages: the 20/25/30 split in world.json (FR: producer) is article 220 sexies CGI's structure (20% base, 25% audiovisual fiction and animation, 30% French-language and animated cinema); the cinema page's 30% and 20% are the cinema rates within it. Documentary audiovisual works rose from 20% to 25% under the 2021 finance law (art. 145, loi 2020-1721), which the CNC's reproduction of article 220 sexies does not show.",
+    "ratesByWork": {
+     "cinemaFrenchOrRegionalLanguage": 0.3,
+     "cinemaAnimation": 0.3,
+     "cinemaOtherLanguage": 0.2,
+     "audiovisualFiction": 0.25,
+     "audiovisualAnimation": 0.25,
+     "audiovisualDocumentary": 0.25,
+     "audiovisualLiveShowAdaptation": 0.1
+    },
+    "audiovisualFictionCapPerMinuteEUR": {
+     "min": 1250,
+     "max": 10000
+    },
+    "audiovisualDocumentaryCapPerMinuteEUR": 1450,
+    "audiovisualAnimationCapPerMinuteEUR": 6000
+   },
+   "applies": "France, crédit d'impôt cinéma et audiovisuel for delegate producers (CGI art. 220 sexies), CNC pages read 2026-11-01.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Le crédit d’impôt est égal à 30 % du montant total des dépenses éligibles qui ne peuvent représenter plus de 80 % du budget de production et, en cas de coproduction internationale, plus de 80 % de la part française. … Le crédit d'impôt est égal à 20 % du montant total des dépenses éligibles pour les films réalisés dans une langue étrangère justifiée par des raisons artistiques tenant au scénario. … Son montant est plafonné à 30 000 000 € … ne peuvent avoir pour effet de porter à plus de 50 % du budget de production le montant total des aides publiques … Ce seuil est porté à 60 % pour les films difficiles (1er ou 2ème film du réalisateur) ou à petit budget (inférieur ou égal à 1,25 million d'euros)."
+    },
+    {
+     "src": 3,
+     "said": "Le crédit d'impôt, calculé au titre de chaque exercice, est égal à 20 % du montant total des dépenses suivantes effectuées en France … Le taux mentionné au premier alinéa du présent 1 est porté à 25 % en ce qui concerne les œuvres audiovisuelles de fiction et d'animation. Il est porté à 30 % pour les œuvres cinématographiques d’animation et pour les œuvres cinématographiques autres que d’animation réalisées intégralement ou principalement en langue française ou dans une langue régionale en usage en France."
+    },
+    {
+     "src": 4,
+     "said": "Le crédit d'impôt en matière audiovisuelle permet à une société de production de déduire de son imposition sur les sociétés 25% de certaines dépenses de production (dépenses dites éligibles) pour les œuvres de fiction, documentaire, animation et 10% pour les adaptations audiovisuelle de spectacle … La loi de finances pour 2021 a modifié le taux du crédit d’impôt audiovisuel pour les œuvres audiovisuelles appartenant au genre du documentaire. Le nouveau taux est fixé à 25% … 10 000 € par minute produite et livrée lorsque le coût de production est supérieur ou égal à 40 000 € par minute produite et livrée … Plafond déductible pour les œuvres d’animation : 6000€ par minute produite et livrée."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "If anyone engaged as a producer (or a co-writer or lead actor) is paid more than 15% of the first €4 million of the film's cost plus 8% of €4–7 million and 5% of €7–10 million (at most €990,000), the production companies lose access to their automatic support and the avance sur recettes.",
+   "value": {
+    "bands": [
+     {
+      "fromEUR": 0,
+      "toEUR": 4000000,
+      "rate": 0.15
+     },
+     {
+      "fromEUR": 4000000,
+      "toEUR": 7000000,
+      "rate": 0.08
+     },
+     {
+      "fromEUR": 7000000,
+      "toEUR": 10000000,
+      "rate": 0.05
+     }
+    ],
+    "derivedMaximumEUR": 990000,
+    "example": {
+     "costEUR": 8000000,
+     "maxPayEUR": 890000
+    },
+    "appliesTo": [
+     "co-authors",
+     "lead performers",
+     "natural persons engaged as producers"
+    ],
+    "penalty": "no investment of automatic support, no avance sur recettes before or after completion",
+    "since": "2015-07-01"
+   },
+   "applies": "France, CNC cost-control measure for features (fiction and animation; documentaries when the top pay exceeds €990,000), applications from 1 July 2015; derivedMaximumEUR is the sum of the three bands.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Intervenants concernés : coauteurs, artistes-interprètes assurant les rôles principaux et autres personnes physiques engagées en qualité de producteurs d’une œuvre cinématographique de longue durée. … 15 % d’une première tranche du coût de production inférieur à 4 000 000 € ; … 8 % d’une deuxième tranche du coût de production compris entre 4 000 000 € et 7 000 000€ ; … 5 % d’une troisième tranche du coût de production compris entre 7 000 000 € et 10 000 000 €, … 15% de 4 M€ + 8% de (7-4 = 3 M€) + 5% de 1 M€ = 890 000 €. … investir les sommes inscrites sur leur compte automatique ;"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "In 2025 the CNC approved 228 French-initiative films (290 in all) with a median budget of €3.48 million; a quarter (24.1%) cost under €1 million and four cost €20 million or more; 812 films had a first release in French cinemas, 404 of them French.",
+   "value": {
+    "year": 2025,
+    "frenchInitiativeFilmsApproved": 228,
+    "allFilmsApproved": 290,
+    "medianBudgetEUR": 3480000,
+    "interquartileBudgetEUR": [
+     1130000,
+     7070000
+    ],
+    "shareUnder1mEUR": 0.241,
+    "filmsAtOrOver20mEUR": 4,
+    "firstReleases": 812,
+    "frenchFirstReleases": 404
+   },
+   "applies": "France, CNC-approved films and first-run releases, calendar 2025 (published 2026).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "228 films d’initiative française … Le devis médian des films d’initiative française s’établit à 3,48 M€ en 2025 … 50 % des devis se situent entre 1,13 M€ et 7,07 M€ … les films à moins de 1 M€ représentent 24,1 % des FIF agréés en … En 2025, quatre films d’initiative française ont un devis supérieur ou égal à 20 M€"
+    },
+    {
+     "src": 7,
+     "said": "812 … films en première exclusivité en … 404 films français"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The SPI, founded in 1977, represents more than 570 independent production companies in features, shorts, animation, documentary and fiction.",
+   "value": {
+    "name": "Syndicat des Producteurs Indépendants",
+    "founded": "1977-03-03",
+    "members": ">570 companies"
+   },
+   "applies": "France; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Fondé il y a près de 50 ans (3 mars 1977) par des producteurs, indépendants de toute chaîne et de tout groupe le SPI représente plus de 570 sociétés de production indépendantes de longs et courts métrages"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Of 1,823 French-initiative films released 2012-2021, 36.9% (672) ended in surplus for their producers and investors once cinema, video, export and TV revenue were counted (20.2% after cinemas alone); the share rises with budget, from 17.9% under €1 million and 29.2% at €1-2 million to about 44% at €2-7 million and 48-50% above €7 million; across all of them the net balance was €289 million in surplus (€158,000 a film, 3.7% of cost) before overheads and the producer's fee.",
+   "value": {
+    "films": 1823,
+    "released": "2012-2021",
+    "shareInSurplus": {
+     "afterCinema": 0.202,
+     "afterVideo": 0.24,
+     "afterExport": 0.302,
+     "afterTV": 0.369
+    },
+    "filmsInSurplus": {
+     "afterCinema": 369,
+     "afterVideo": 437,
+     "afterExport": 551,
+     "afterTV": 672
+    },
+    "shareInSurplusByCostEUR": {
+     "<1m": 0.179,
+     "1-2m": 0.292,
+     "2-4m": 0.443,
+     "4-5m": 0.436,
+     "5-7m": 0.435,
+     "7-10m": 0.482,
+     "10-15m": 0.48,
+     ">15m": 0.5
+    },
+    "netBalanceEUR": 289000000,
+    "netBalancePerFilmEUR": 158000,
+    "netBalanceShareOfCost": 0.037,
+    "asOf": "2024-12-31",
+    "basis": "balance of revenues against the producers'/investors' share at risk, before overheads and producer remuneration; figures read by OCR and checked against the slide images (pp. 35, 37, 40)"
+   },
+   "applies": "France, films d'initiative française approved by the CNC and released 2012-2021, revenue to end-2024 (CNC study presented to the Assemblée nationale culture committee, 9 June 2026).",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Périmétre : 1 823 films agréés sortis entre 2012 et 2021. … production est en excédent de 289 ME a fin 2024 … Soit une moyenne de 158 K€ par film … 37 % des films dégagent un solde final positif pour les producteurs a … en salles est positif pour 369 films, soit 20,2 % de … positif pour 68 films supplémentaires, soit 437 films au total … Si cette part n’est que de 17,9 % pour les films de … culmine a 50,0 % pour les films dont le coat … 48,2 48,0 50,0 44,3 43,6 43,5"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "FR",
+ "sources": [
+  {
+   "url": "https://www.cnc.fr/documents/36995/145523/Descriptif+de+l%27avance+avant+r%C3%A9alisation+%28septembre+2026%29.pdf/d3a0ef95-7ff3-6a01-dde1-198e0e92babd?t=1788273136608",
+   "title": "CNC: Descriptif de l'avance sur recettes avant réalisation (septembre 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le montant total des aides publiques (dont « l’avance sur recettes ») ne pourra pas dépasser 50 % du coût de production du film. … dans la limite de 60 % et sur demande motivée de l'entreprise de production, pour les œuvres cinématographiques \"difficiles\" ou \"à petit budget\". Une œuvre difficile est la première ou la deuxième œuvre d'un réalisateur. Une œuvre à petit budget est celle dont le budget total est inférieur ou égal à 1 250 000 € ; … dans la limite de 70 % pour les œuvres cinématographiques difficiles ou à petit budget qui ne bénéficient pas du crédit d’impôt pour les dépenses de production déléguée. … L’aide se rembourse sur le soutien généré par le film, après application d’une franchise fixée à 50 000 €. Le remboursement s’effectue dans une proportion qui ne peut être inférieure à 25 % des sommes calculées et dans la limite de 80 % de l’aide attribuée. … d’être représenté par une société de production au capital minimum de 45 000 € pour passer devant le comité de chiffrage."
+  },
+  {
+   "url": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/soutien-automatique-a-la-production-de-long-metrage_191532",
+   "title": "CNC: Soutien automatique à la production de long métrage",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "il a droit au minimum à 25 % du soutien généré par l'œuvre. … L'accès au soutien est fixé par le nombre de points obtenu sur un barème de 100 points … 106,54 % jusqu'à 1 500 000 entrées … 80,97 % de 1 500 000 à 5 000 000 d'entrées … de 8,52 % au-delà de 5 000 000 d'entrées … Le délai de génération est de cinq ans à compter de la date de la première projection publique du film concerné. … Ce taux est actuellement fixé à 9,47 % du prix d'acquisition versé par les services de télévision jusqu'à un plafond de 305 000 € hors taxes. … Ce taux est actuellement fixé à 4,26 %."
+  },
+  {
+   "url": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/credit-dimpot-cinema_132769",
+   "title": "CNC: Crédit d'impôt cinéma",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le crédit d’impôt est égal à 30 % du montant total des dépenses éligibles qui ne peuvent représenter plus de 80 % du budget de production et, en cas de coproduction internationale, plus de 80 % de la part française. … Le crédit d'impôt est égal à 20 % du montant total des dépenses éligibles pour les films réalisés dans une langue étrangère justifiée par des raisons artistiques tenant au scénario. … Son montant est plafonné à 30 000 000 € … ne peuvent avoir pour effet de porter à plus de 50 % du budget de production le montant total des aides publiques … Ce seuil est porté à 60 % pour les films difficiles (1er ou 2ème film du réalisateur) ou à petit budget (inférieur ou égal à 1,25 million d'euros)."
+  },
+  {
+   "url": "https://www.cnc.fr/cinema/reglementation/article-220-sexies-du-code-general-des-impots_138757",
+   "title": "CNC: article 220 sexies du code général des impôts (crédit d'impôt cinéma et audiovisuel)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le crédit d'impôt, calculé au titre de chaque exercice, est égal à 20 % du montant total des dépenses suivantes effectuées en France … Le taux mentionné au premier alinéa du présent 1 est porté à 25 % en ce qui concerne les œuvres audiovisuelles de fiction et d'animation. Il est porté à 30 % pour les œuvres cinématographiques d’animation et pour les œuvres cinématographiques autres que d’animation réalisées intégralement ou principalement en langue française ou dans une langue régionale en usage en France."
+  },
+  {
+   "url": "https://www.cnc.fr/professionnels/aides-et-financements/audiovisuel/production/credit-dimpot-audiovisuel_778316",
+   "title": "CNC: Crédit d'impôt audiovisuel",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le crédit d'impôt en matière audiovisuelle permet à une société de production de déduire de son imposition sur les sociétés 25% de certaines dépenses de production (dépenses dites éligibles) pour les œuvres de fiction, documentaire, animation et 10% pour les adaptations audiovisuelle de spectacle … La loi de finances pour 2021 a modifié le taux du crédit d’impôt audiovisuel pour les œuvres audiovisuelles appartenant au genre du documentaire. Le nouveau taux est fixé à 25% … 10 000 € par minute produite et livrée lorsque le coût de production est supérieur ou égal à 40 000 € par minute produite et livrée … Plafond déductible pour les œuvres d’animation : 6000€ par minute produite et livrée."
+  },
+  {
+   "url": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/mesure--maitrise-des-couts-de-production-des-oeuvres-cinematographiques-de-longue-duree_191783",
+   "title": "CNC: Mesure « maîtrise des coûts de production des œuvres cinématographiques de longue durée »",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Intervenants concernés : coauteurs, artistes-interprètes assurant les rôles principaux et autres personnes physiques engagées en qualité de producteurs d’une œuvre cinématographique de longue durée. … 15 % d’une première tranche du coût de production inférieur à 4 000 000 € ; … 8 % d’une deuxième tranche du coût de production compris entre 4 000 000 € et 7 000 000€ ; … 5 % d’une troisième tranche du coût de production compris entre 7 000 000 € et 10 000 000 €, … 15% de 4 M€ + 8% de (7-4 = 3 M€) + 5% de 1 M€ = 890 000 €. … investir les sommes inscrites sur leur compte automatique ;"
+  },
+  {
+   "url": "https://www.cnc.fr/documents/36995/2526340/La+production+cin%C3%A9matographique+en+2025+-+Les+films+agr%C3%A9%C3%A9s+aux+investissements.pdf/04eaf075-2899-7fb3-bb85-a05f96d18329?t=1773909486250",
+   "title": "CNC: La production cinématographique en 2025, Les films agréés aux investissements",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "228 films d’initiative française … Le devis médian des films d’initiative française s’établit à 3,48 M€ en 2025 … 50 % des devis se situent entre 1,13 M€ et 7,07 M€ … les films à moins de 1 M€ représentent 24,1 % des FIF agréés en … En 2025, quatre films d’initiative française ont un devis supérieur ou égal à 20 M€"
+  },
+  {
+   "url": "https://www.cnc.fr/documents/36995/2559242/Bilan+2025+du+CNC+-+Les+chiffres+cl%C3%A9s.pdf/4e83418d-0be0-0057-9e22-1fe10cc50e95?t=1778586289036",
+   "title": "CNC: Bilan 2025 du CNC, Les chiffres clés",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "812 … films en première exclusivité en … 404 films français"
+  },
+  {
+   "url": "https://www.lespi.org/",
+   "title": "Syndicat des Producteurs Indépendants (SPI): home page",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Fondé il y a près de 50 ans (3 mars 1977) par des producteurs, indépendants de toute chaîne et de tout groupe le SPI représente plus de 570 sociétés de production indépendantes de longs et courts métrages"
+  },
+  {
+   "url": "https://www.cnc.fr/documents/36995/2526340/Le+mod%C3%A8le+%C3%A9conomique+des+films+d%27initiative+fran%C3%A7aise_rapport.pdf/40b4911d-7f2f-7e01-8795-a51bd6e22c04?t=1781104009166",
+   "title": "CNC: Le modèle économique des films d'initiative française (rapport), 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Périmétre : 1 823 films agréés sortis entre 2012 et 2021. … production est en excédent de 289 ME a fin 2024 … Soit une moyenne de 158 K€ par film … 37 % des films dégagent un solde final positif pour les producteurs a … en salles est positif pour 369 films, soit 20,2 % de … positif pour 68 films supplémentaires, soit 437 films au total … Si cette part n’est que de 17,9 % pour les films de … culmine a 50,0 % pour les films dont le coat … 48,2 48,0 50,0 44,3 43,6 43,5"
+  }
+ ],
+ "blockers": []
+}

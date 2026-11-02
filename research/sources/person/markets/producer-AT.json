@@ -1,0 +1,180 @@
+{
+ "topic": "markets.producer.AT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Austria. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "feecap",
+   "finding": "The Austrian Film Institute caps the producer's fee and the overheads it recognises by production cost: on a EUR 1 million film EUR 75,000 fee and EUR 87,000 overheads, falling to 5% and 7.5% from EUR 2.5 million and capped at EUR 250,000 and EUR 375,000 from EUR 5 million; crew pay is recognised at no more than 10% above the collective minimum.",
+   "value": {
+    "currency": "EUR",
+    "rows": [
+     {
+      "productionCost": 200000,
+      "producerFee": 20000,
+      "overheads": 18000
+     },
+     {
+      "productionCost": 1000000,
+      "producerFee": 75000,
+      "overheads": 87000
+     },
+     {
+      "productionCost": 2500000,
+      "producerFee": 125000,
+      "overheads": 187500
+     },
+     {
+      "productionCost": 5000000,
+      "producerFee": 250000,
+      "overheads": 375000
+     }
+    ],
+    "producerFeeMax": 250000,
+    "overheadsMax": 375000,
+    "crewPayMaxAboveKV": 0.1,
+    "producerCashShare": {
+     "rate": 0.025,
+     "cap": 145000
+    },
+    "from": "2026-01-01"
+   },
+   "applies": "Austria, films funded by the ÖFI, guidelines valid from 1 January 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Das Produzent*innen-Honorar ist mit den in Anhang B angeführten Höchstbeträgen begrenzt. … Gagen und Löhne sind in der Kalkulation mindestens mit den entsprechenden kollektivvertraglichen Ansätzen, höchstens jedoch 10% über den kollektivvertraglichen Mindestgagen anzuerkennen. … 2.500.000 125.000 5,00% 187.500 7,50% 82.000 3,28% 110.000 4,40%"
+    },
+    {
+     "src": 1,
+     "said": "sten haben die Eigenmittel (Barmittel) 2,5% der Herstellungskosten zu betragen, gedeckelt mit einem Höchstbetrag von 145.000 EUR."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "FISAplus, the economy ministry's incentive run by aws, pays a non-repayable grant of 30% of eligible spend in Austria plus a 5% green bonus, up to EUR 5 million a film and EUR 7.5 million a series, first come first served, reopened for applications on 2 January 2026.",
+   "value": {
+    "name": "FISAplus",
+    "administeredBy": "Austria Wirtschaftsservice (aws) for the Bundesministerium Wirtschaft, Energie, Tourismus",
+    "rate": 0.3,
+    "greenBonus": 0.05,
+    "base": "eligible costs in Austria",
+    "capFilmEUR": 5000000,
+    "capSeriesEUR": 7500000,
+    "selection": "first come, first served",
+    "openedFrom": "2026-01-02",
+    "approvalWeeks": 6
+   },
+   "applies": "Austria; international service productions and Austrian TV and streaming films and series; applications from 2 January 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "FISAplus ist ein nicht rückzahlbarer Zuschuss in Höhe von 30 % der förderungsfähigen Ausgaben in Österreich – plus 5 % „Grüner Bonus“, bei Umsetzung von Green Filming. Hinweis Seit 2. Jänner 2026, 12:00 Uhr können wieder Projekte über den aws Fördermanager eingereicht werden. … First come - First serve | Zuschuss Volumen 30 % der förderbaren Kosten plus 5 % „Grüner Bonus“ bis EUR 5 Mio. für Filme bis EUR 7,5 Mio. für Serien Einreichtermin ab 02. Jänner 2026, 12 Uhr Dauer der Genehmigung ca. 6 Wochen"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The Austrian Film Institute funds cinema films from a federal contribution of EUR 36.5 million in 2026; its location incentive ÖFI+ (30% of Austrian costs plus a 5% green bonus, at most 80% of the budget as base, minimum Austrian spend EUR 150,000 for fiction) was cut from EUR 44.3 million in 2025 to EUR 2.5 million a year for 2026 to 2028.",
+   "value": {
+    "fund": "Österreichisches Filminstitut (ÖFI)",
+    "federalContributionEUR": {
+     "2025": 21000000,
+     "2026": 36500000,
+     "2027": 34500000,
+     "2028": 34500000
+    },
+    "oefiPlus": {
+     "budgetEUR": {
+      "2025": 44300000,
+      "2026": 2500000,
+      "2027": 2500000,
+      "2028": 2500000
+     },
+     "rate": 0.3,
+     "greenBonus": 0.05,
+     "baseMaxShareOfBudget": 0.8,
+     "minSpendFictionEUR": 150000,
+     "minSpendDocEUR": 80000,
+     "cumulableWithFISAplus": false
+    },
+    "debutFundingMaxShare": 0.4,
+    "asOf": "2026-06"
+   },
+   "applies": "Austria, independently produced cinema films; budget table as of June 2026, guidelines from 1 January 2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Jahr Bundesbeitrag ÖFI in EUR Bundesbeitrag ÖFI+ in EUR 2028 34.500.000 2.500.000 2/ 2027 34.500.000 2.500.000 2/ 2026 36.500.000 2.500.000 2025 21.000.000 44.300.000 */ … 2/ Stand: Juni 2026"
+    },
+    {
+     "src": 1,
+     "said": "6a.6. Bemessungsgrundlage für die Höhe des Zuschusses gemäß ÖFI+ sind die förderbaren österreichischen Herstellungskosten, höchstens jedoch 80% der Gesamtherstellungskosten des zu fördernden Projekts. Die Mindestausgaben in Österreich müssen für fiktionale Produktionen 150.000 EUR, für dokumentarische Produktionen 80.000 EUR betragen. … 6a.8. Der Zuschuss beträgt 30% der anerkannten förderungsfähigen Herstellungskosten in Österreich. Zusätzlich kann ein 5%iger Green Bonus für ökologisch nachhaltiges Produzieren … Eine Kumulierung mit Förderungen nach dem Filmstandortgesetz ist jedoch ausgeschlossen."
+    },
+    {
+     "src": 0,
+     "said": "Der Förderungsbetrag des Filminstituts (Projekt- und/oder Referenzfilmförderung) soll in der Regel 2/5 (40%) der kalkulierten Herstellungskosten nicht übersteigen."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "The Austrian Film Institute's film industry report of December 2025 put Austrian films' share of the domestic cinema market at 6.8%, with 47 productions drawing 2.3 million admissions abroad and record public funding of EUR 164.6 million in 2024.",
+   "value": {
+    "domesticMarketShare": 0.068,
+    "productionsAbroad": 47,
+    "admissionsAbroad": 2300000,
+    "fundingTotal2024EUR": 164600000,
+    "published": "2025-12-02"
+   },
+   "applies": "Austria, ÖFI Filmwirtschaftsbericht published 2 December 2025.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "2024 wurde mit 164,6 Millionen Euro ein „historischer Wert“ bei den Förderungen verzeichnet. … Der österreichische Film habe seine Marktposition im volatilen Kinomarkt mit einem Anteil von 6,8 Prozent behauptet, heißt in einer Aussendung. Auch international generierte das heimische Filmschaffen Erfolge: 47 Produktionen zogen im Ausland 2,3 Millionen Kinobesuche nach sich."
+    }
+   ]
+  }
+ ],
+ "country": "AT",
+ "sources": [
+  {
+   "url": "https://filminstitut.at/wp-content/uploads/2025/12/RICHTLINIEN_2026-2.pdf",
+   "title": "Österreichisches Filminstitut, Förderungsrichtlinien 01. Jänner 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Das Produzent*innen-Honorar ist mit den in Anhang B angeführten Höchstbeträgen begrenzt. … Gagen und Löhne sind in der Kalkulation mindestens mit den entsprechenden kollektivvertraglichen Ansätzen, höchstens jedoch 10% über den kollektivvertraglichen Mindestgagen anzuerkennen. … 2.500.000 125.000 5,00% 187.500 7,50% 82.000 3,28% 110.000 4,40% … Der Förderungsbetrag des Filminstituts (Projekt- und/oder Referenzfilmförderung) soll in der Regel 2/5 (40%) der kalkulierten Herstellungskosten nicht übersteigen."
+  },
+  {
+   "url": "https://filminstitut.at/rechtliches/richtlinien",
+   "title": "Österreichisches Filminstitut, Richtlinien",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "sten haben die Eigenmittel (Barmittel) 2,5% der Herstellungskosten zu betragen, gedeckelt mit einem Höchstbetrag von 145.000 EUR. … 6a.6. Bemessungsgrundlage für die Höhe des Zuschusses gemäß ÖFI+ sind die förderbaren österreichischen Herstellungskosten, höchstens jedoch 80% der Gesamtherstellungskosten des zu fördernden Projekts. Die Mindestausgaben in Österreich müssen für fiktionale Produktionen 150.000 EUR, für dokumentarische Produktionen 80.000 EUR betragen. … 6a.8. Der Zuschuss beträgt 30% der anerkannten förderungsfähigen Herstellungskosten in Österreich. Zusätzlich kann ein 5%iger Green Bonus für ökologisch nachhaltiges Produzieren … Eine Kumulierung mit Förderungen nach dem Filmstandortgesetz ist jedoch ausgeschlossen."
+  },
+  {
+   "url": "https://www.aws.at/fisaplus/",
+   "title": "FISAplus - Austria Wirtschaftsservice",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "FISAplus ist ein nicht rückzahlbarer Zuschuss in Höhe von 30 % der förderungsfähigen Ausgaben in Österreich – plus 5 % „Grüner Bonus“, bei Umsetzung von Green Filming. Hinweis Seit 2. Jänner 2026, 12:00 Uhr können wieder Projekte über den aws Fördermanager eingereicht werden. … First come - First serve | Zuschuss Volumen 30 % der förderbaren Kosten plus 5 % „Grüner Bonus“ bis EUR 5 Mio. für Filme bis EUR 7,5 Mio. für Serien Einreichtermin ab 02. Jänner 2026, 12 Uhr Dauer der Genehmigung ca. 6 Wochen"
+  },
+  {
+   "url": "https://filminstitut.at/ueber-uns/jahresbudget",
+   "title": "Österreichisches Filminstitut, Jahresbudget",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Jahr Bundesbeitrag ÖFI in EUR Bundesbeitrag ÖFI+ in EUR 2028 34.500.000 2.500.000 2/ 2027 34.500.000 2.500.000 2/ 2026 36.500.000 2.500.000 2025 21.000.000 44.300.000 */ … 2/ Stand: Juni 2026"
+  },
+  {
+   "url": "https://orf.at/stories/3413366/",
+   "title": "Bericht: Filmwirtschaft entwickelt sich stabil (ORF.at, 3.12.2025)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://filminstitut.at/",
+   "said": "2024 wurde mit 164,6 Millionen Euro ein „historischer Wert“ bei den Förderungen verzeichnet. … Der österreichische Film habe seine Marktposition im volatilen Kinomarkt mit einem Anteil von 6,8 Prozent behauptet, heißt in einer Aussendung. Auch international generierte das heimische Filmschaffen Erfolge: 47 Produktionen zogen im Ausland 2,3 Millionen Kinobesuche nach sich."
+  }
+ ],
+ "blockers": []
+}

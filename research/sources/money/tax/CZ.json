@@ -1,0 +1,214 @@
+{
+ "topic": "tax.CZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Czechia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 15% on the tax base up to 36 times the average wage (CZK 1,762,812 for 2026) and 23% above, less a basic credit of CZK 30,840 a year; there is no regional or municipal income tax.",
+   "value": {
+    "currency": "CZK",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1762812,
+      "rate": 0.15
+     },
+     {
+      "from": 1762812,
+      "to": null,
+      "rate": 0.23
+     }
+    ],
+    "basicCredit": 30840,
+    "regionalLayer": null
+   },
+   "applies": "Czech tax residents, tax year 2026 (calendar).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "§ 16 Sazba a výpočet daně pro základ daně (1) Sazba daně činí a) 15 % pro část základu daně do 36násobku průměrné mzdy a b) 23 % pro část základu daně přesahující 36násobek průměrné mzdy."
+    },
+    {
+     "src": 0,
+     "said": "§ 35ba Slevy na dani pro poplatníky daně z příjmů fyzických osob (1) Poplatníkům uvedeným v § 2 se daň vypočtená podle § 16, případně snížená podle § 35, 35a nebo § 35b za zdaňovací období snižuje o a) základní slevu ve výši 30 840 Kč na poplatníka,"
+    },
+    {
+     "src": 1,
+     "said": "The 23% tax rate is applicable to income exceeding 36 times the average wage for the calendar year (CZK 1,762,812 for 2026)."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return, where required, is due by 1 April 2027 (1 May if filed electronically, 1 July through a tax adviser).",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-04-01",
+    "returnDueElectronic": "2027-05-01",
+    "returnDueAdviser": "2027-07-01",
+    "currency": "CZK"
+   },
+   "applies": "Czech individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "Where a tax return is required, it generally must be filed and any tax liability must be paid by 1 April of the following year. The deadline is 1 May of the following year if a tax return that is not filed by 1 April is subsequently filed electronically by the taxpayer, or 1 July of the following year if a tax return that is not filed by 1 April is subsequently filed by a tax advisor."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax on employment income is withheld by the employer and remitted to the tax authority; the self-employed file a return or may opt for the lump-sum regime.",
+   "value": {
+    "employment": "employer withholding (advances)",
+    "selfEmployed": "return, or optional lump-sum regime"
+   },
+   "applies": "Employees and the self-employed.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax on employment income is withheld by the employer and remitted to the tax authorities. Self- employed individuals (entrepreneurs) generally must file a tax return but have the option to be subject to a lump-sum tax"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "On gross pay the employer pays 24.8% social security and 9% health; the employee 11.6% (6.5% pension, 0.6% sickness, 4.5% health). A self-employed person pays 42.7% (28% pension, 1.2% unemployment, 13.5% health) on an assessment base of at least 55% of the income tax base. Social security stops at 48 times the average wage (CZK 2,350,416 for 2026); health has no ceiling.",
+   "value": {
+    "currency": "CZK",
+    "employer": {
+     "social": 0.248,
+     "health": 0.09
+    },
+    "employee": {
+     "pension": 0.065,
+     "sickness": 0.006,
+     "health": 0.045,
+     "total": 0.116
+    },
+    "selfEmployed": {
+     "pension": 0.28,
+     "unemployment": 0.012,
+     "health": 0.135,
+     "total": 0.427,
+     "base": "at least 55% of the income tax base"
+    },
+    "socialCeiling": 2350416,
+    "healthCeiling": null
+   },
+   "applies": "Employees and self-employed persons, 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "An employer contributes 9% of the employee’s gross salary to the state health insurance funds and 24.8% of the employee’s gross salary to the state social security funds. An employee contributes 11.6% of gross income (4.5% health insurance, 6.5% old-age pension, 0.6% sickness insurance). A self-employed individual is subject to a mandatory contribution of 42.7% (13.5% health insurance, 28% old-age pension, 1.2% unemployment) on the assessment base (determined as at least 55% of the income tax base)."
+    },
+    {
+     "src": 1,
+     "said": "There is no maximum assessment base for health insurance purposes. The maximum assessment base for social security purposes (i.e., old-age pension contributions and unemployment insurance, applicable in the case of both the employee and the employer, as well as for a self-employed individual) is 48 times the average wage for the calendar year (CZK 2,350,416 for 2026)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's fee for an appearance in the Czech Republic, whoever receives it, is Czech-source income taxed by a 15% special rate withheld at source (35% for residents of non-EU/EEA states without a treaty or information-exchange agreement).",
+   "value": {
+    "rate": 0.15,
+    "rateNoTreaty": 0.35,
+    "base": "gross income from personal public performance in the Czech Republic",
+    "law": "§ 22(1)(f)(2), § 36(1)(a)(1) ZDP",
+    "final": "withholding at the special rate"
+   },
+   "applies": "Non-resident artistes and their co-performers.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2. z osobně vykonávané činnosti na území České republiky nebo zde zhodnocované veřejně vystupujícího umělce, sportovce, artisty a spoluúčinkujících osob, bez ohledu na to, komu tyto příjmy plynou a z jakého právního vztahu,"
+    },
+    {
+     "src": 0,
+     "said": "§ 36 Zvláštní sazba daně (1) Zvláštní sazba daně z příjmů pro poplatníky uvedené v § 2 odst. 3 a § 17 odst. 4, s výjimkou stálé provozovny (§ 22 odst. 2 a 3) a s výjimkou ustanovení odstavce 5, činí a) 15 %, a to 1. z příjmů uvedených v § 22 odst. 1 písm. c), f) a g) bodech 1, 2, 6, 12 až 14,"
+    },
+    {
+     "src": 1,
+     "said": "A 35% rate applies where dividends are paid to a resident of a non- EU or non-EEA jurisdiction with which the Czech Republic does not have a tax treaty or a tax information exchange agreement (TIEA)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for VAT once supplies in the Czech Republic exceed CZK 2 million in a calendar year (payer from 1 January following), or at once on passing CZK 2,536,500; the standard rate is 21%, reduced 12%.",
+   "value": {
+    "currency": "CZK",
+    "threshold": 2000000,
+    "immediateThreshold": 2536500,
+    "standardRate": 0.21,
+    "reduced": 0.12
+   },
+   "applies": "Persons making supplies in the Czech Republic (the source states it for companies; the same thresholds are in the VAT Act for any person).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 21%. A reduced rate of 12% applies to certain supplies"
+    },
+    {
+     "src": 1,
+     "said": "A Czech company must register for VAT if its supplies in the Czech Republic exceed CZK 2 million in a calendar year. In this case, the Czech company will become a VAT payer starting from 1 January of the following year. However, if a Czech company’s supplies in the Czech Republic exceed CZK 2,536,500 in a calendar year, the company will become a VAT payer on the date immediately following the date this threshold is exceeded."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's fee for a contribution to a newspaper, magazine, radio or television from Czech sources, up to CZK 10,000 a month from one payer, is a separate base taxed by withholding at the special rate (15%); other self-employed income, an author's included, may deduct flat expenses of 40% (capped at CZK 800,000).",
+   "value": {
+    "currency": "CZK",
+    "smallContribution": {
+     "monthlyCapPerPayer": 10000,
+     "rate": 0.15,
+     "final": true
+    },
+    "flatExpenses": {
+     "rate": 0.4,
+     "cap": 800000
+    }
+   },
+   "applies": "Authors with self-employed income (§ 7 ZDP).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(6) Příjem autora za příspěvek do novin, časopisu, rozhlasu nebo televize plynoucí ze zdrojů na území České republiky je samostatným základem daně pro daň vybíranou srážkou podle zvláštní sazby daně za předpokladu, že úhrn těchto příjmů od téhož plátce daně nepřesáhne v kalendářním měsíci 10000 Kč"
+    },
+    {
+     "src": 0,
+     "said": "d) 40 % z jiných příjmů ze samostatné činnosti, s výjimkou příjmů podle odstavce 1 písm. d) a odstavce 6; nejvýše lze však uplatnit výdaje do částky 800000 Kč."
+    }
+   ]
+  }
+ ],
+ "country": "CZ",
+ "sources": [
+  {
+   "url": "https://www.zakonyprolidi.cz/cs/1992-586",
+   "title": "Zákon č. 586/1992 Sb., o daních z příjmů, aktuální znění 01.08.2026 - 31.12.2026 (verze 157), Zákony pro lidi",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "§ 16 Sazba a výpočet daně pro základ daně (1) Sazba daně činí a) 15 % pro část základu daně do 36násobku průměrné mzdy a b) 23 % pro část základu daně přesahující 36násobek průměrné mzdy. … § 35ba Slevy na dani pro poplatníky daně z příjmů fyzických osob (1) Poplatníkům uvedeným v § 2 se daň vypočtená podle § 16, případně snížená podle § 35, 35a nebo § 35b za zdaňovací období snižuje o a) základní slevu ve výši 30 840 Kč na poplatníka, … 2. z osobně vykonávané činnosti na území České republiky nebo zde zhodnocované veřejně vystupujícího umělce, sportovce, artisty a spoluúčinkujících osob, bez ohledu na to, komu tyto příjmy plynou a z jakého právního vztahu, … § 36 Zvláštní sazba daně (1) Zvláštní sazba daně z příjmů pro poplatníky uvedené v § 2 odst. 3 a § 17 odst. 4, s výjimkou stálé provozovny (§ 22 odst. 2 a 3) a s výjimkou ustanovení odstavce 5, činí a) 15 %, a to 1. z příjmů uvedených v § 22 odst. 1 písm. c), f) a g) bodech 1, 2, 6, 12 až 14, … (6) Příjem autora za příspěvek do novin, časopisu, rozhlasu nebo televize plynoucí ze zdrojů na území České republiky je samostatným základem daně pro daň vybíranou srážkou podle zvláštní sazby daně za předpokladu, že úhrn těchto příjmů od téhož plátce daně nepřesáhne v kalendářním měsíci 10000 Kč … d) 40 % z jiných příjmů ze samostatné činnosti, s výjimkou příjmů podle odstavce 1 písm. d) a odstavce 6; nejvýše lze však uplatnit výdaje do částky 800000 Kč."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-czechrepublichighlights-2026.pdf",
+   "title": "Czech Republic Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.financnisprava.cz",
+   "said": "The 23% tax rate is applicable to income exceeding 36 times the average wage for the calendar year (CZK 1,762,812 for 2026). … Tax year: The tax year is the calendar year. … Where a tax return is required, it generally must be filed and any tax liability must be paid by 1 April of the following year. The deadline is 1 May of the following year if a tax return that is not filed by 1 April is subsequently filed electronically by the taxpayer, or 1 July of the following year if a tax return that is not filed by 1 April is subsequently filed by a tax advisor. … Tax on employment income is withheld by the employer and remitted to the tax authorities. Self- employed individuals (entrepreneurs) generally must file a tax return but have the option to be subject to a lump-sum tax … An employer contributes 9% of the employee’s gross salary to the state health insurance funds and 24.8% of the employee’s gross salary to the state social security funds. An employee contributes 11.6% of gross income (4.5% health insurance, 6.5% old-age pension, 0.6% sickness insurance). A self-employed individual is subject to a mandatory contribution of 42.7% (13.5% health insurance, 28% old-age pension, 1.2% unemployment) on the assessment base (determined as at least 55% of the income tax base). … There is no maximum assessment base for health insurance purposes. The maximum assessment base for social security purposes (i.e., old-age pension contributions and unemployment insurance, applicable in the case of both the employee and the employer, as well as for a self-employed individual) is 48 times the average wage for the calendar year (CZK 2,350,416 for 2026). … A 35% rate applies where dividends are paid to a resident of a non- EU or non-EEA jurisdiction with which the Czech Republic does not have a tax treaty or a tax information exchange agreement (TIEA). … The standard VAT rate is 21%. A reduced rate of 12% applies to certain supplies … A Czech company must register for VAT if its supplies in the Czech Republic exceed CZK 2 million in a calendar year. In this case, the Czech company will become a VAT payer starting from 1 January of the following year. However, if a Czech company’s supplies in the Czech Republic exceed CZK 2,536,500 in a calendar year, the company will become a VAT payer on the date immediately following the date this threshold is exceeded."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,259 @@
+{
+ "topic": "tax.PH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Philippines: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2023 taxable income is taxed at 0% to PHP 250,000, 15% to 400,000, 20% to 800,000, 25% to 2 million, 30% to 8 million and 35% above; a self-employed person or professional with receipts under the PHP 3 million VAT threshold may instead pay 8% on receipts above PHP 250,000.",
+   "value": {
+    "currency": "PHP",
+    "from": "2023-01-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 250000,
+      "rate": 0
+     },
+     {
+      "from": 250000,
+      "to": 400000,
+      "rate": 0.15
+     },
+     {
+      "from": 400000,
+      "to": 800000,
+      "rate": 0.2
+     },
+     {
+      "from": 800000,
+      "to": 2000000,
+      "rate": 0.25
+     },
+     {
+      "from": 2000000,
+      "to": 8000000,
+      "rate": 0.3
+     },
+     {
+      "from": 8000000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "eightPercentOption": {
+     "rate": 0.08,
+     "above": 250000,
+     "receiptsMax": 3000000,
+     "inLieuOf": "graduated rates and percentage tax"
+    },
+    "regional": null
+   },
+   "applies": "Citizens and resident aliens, and non-resident aliens engaged in business; 2023 onwards. bir.gov.ph pages render by script and the Official Gazette refused this environment (HTTP 403), so PwC is quoted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Beginning 1 January 2023: Taxable income (PHP) Tax on column 1 (PHP) Tax on excess (%) Over Not over 0 250,000 - 0 250,000 400,000 - 15 400,000 800,000 22,500 20 800,000 2,000,000 102,500 25 2,000,000 8,000,000 402,500 30 8,000,000 2,202,500 35"
+    },
+    {
+     "src": 0,
+     "said": "8% tax* on gross sales/receipts and other non-operating income in excess of PHP 250,000 in lieu of the graduated income tax rates and percentage tax (business tax), or the graduated tax rates."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 15 April (tax over PHP 2,000 may be paid half by 15 April and half by 15 October); an employee with one employer whose tax was fully withheld is covered by the employer's BIR Form 2316 (substituted filing).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-15",
+    "instalments": [
+     "04-15",
+     "10-15"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year runs from 1 January to 31 December."
+    },
+    {
+     "src": 1,
+     "said": "The return must be filed on or before 15 April of the succeeding year."
+    },
+    {
+     "src": 1,
+     "said": "The first instalment is due on 15 April while the second and final instalment is due on 15 October."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld from compensation so that, generally, the withholding equals the final liability; any balance is paid with the annual return.",
+   "value": {
+    "employment": "withheld at the graduated rates"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Generally, the income tax withheld from the salaries or compensation of aliens, resident or not, should equal their final tax liability on such compensation. If not, the balance must be paid at the time the annual return is filed."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident alien not engaged in trade or business pays a flat 25% on Philippine-source income; one engaged in business pays the graduated rates; aliens are taxed only on Philippine-source income.",
+   "value": {
+    "notEngagedRate": 0.25,
+    "engaged": "graduated rates"
+   },
+   "applies": "2026; the 180-day test for 'engaged in business' was not read here.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For non-resident aliens not engaged in trade or business in the Philippines, the rate is a flat 25%."
+    },
+    {
+     "src": 0,
+     "said": "Non-resident citizens and aliens, whether or not resident in the Philippines, are taxed only on income from sources within the Philippines."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "PhilHealth takes 5% of monthly basic salary, on a floor of PHP 10,000 and a ceiling of PHP 100,000 (PHP 500 to 5,000 a month), split between employer and employee; SSS takes PHP 250 to 1,750 a month from the employee and up to PHP 3,530 from the employer by salary bracket; Pag-IBIG (HDMF) takes PHP 200 a month from each where pay is at least PHP 10,000.",
+   "value": {
+    "currency": "PHP",
+    "maxForeignEmployeeAnnual2025": 51000,
+    "employerMatches": true,
+    "philhealth": {
+     "rate": 0.05,
+     "floorMonthly": 10000,
+     "ceilingMonthly": 100000,
+     "premiumMonthly": [
+      500,
+      5000
+     ],
+     "scheduleYears": "2024 to 2025"
+    },
+    "sss": {
+     "employeeMonthly": [
+      250,
+      1750
+     ],
+     "employerMaxMonthly": 3530
+    },
+    "hdmf": {
+     "employeeMonthly": 200,
+     "employerMonthly": 200
+    }
+   },
+   "applies": "Employees. PhilHealth's own schedule (Circular 2019-0009) runs to '2024 to 2025' at 5%; no later schedule was found, so 2026 is taken at 5%. The SSS's own tables are images (circulars 2024-006 to 2024-010, effective January 2025) that could not be read as text here; the SSS and HDMF amounts are Deloitte's.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "for direct contributors per PhiiHealth Circular No. 2019-0009 … 2024 to … P1 0,000.01 to P99,999.99 … P500.00 to P5,000.00 … P1 00,000.00 … 5.00%"
+    },
+    {
+     "src": 3,
+     "said": "The maximum annual social tax payable by a foreign national employee is PHP 51,000 for tax year 2025. Social taxes consist of contributions to the Social Security System (SSS) and Philippine Health Insurance Corporation (PHIC)."
+    },
+    {
+     "src": 4,
+     "said": "The maximum monthly employer contribution for an employee in the highest salary bracket is PHP 3,530. Employees are required to make monthly contributions (ranging from PHP 250 to PHP 1,750) to the social security system based on their salary bracket. … The maximum monthly employer contribution for an employee in the highest salary bracket is PHP 2,500 for PHIC and PHP 200 for HDMF."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Entertainers' and film, television and stage directors' services bear 12% VAT where gross receipts pass PHP 3 million in 12 months; below it, a business pays 3% percentage tax unless it chose the 8% income tax.",
+   "value": {
+    "currency": "PHP",
+    "standard": 0.12,
+    "threshold": 3000000,
+    "percentageTax": 0.03
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "A 12% VAT is imposed on services performed in the exercise or practice of profession or calling, including entertainers, musical, radio, movie, and television and stage directors"
+    },
+    {
+     "src": 5,
+     "said": "Persons required to register for VAT are those with gross sales exceeding the VAT threshold, which is currently PHP 3 million, in the past 12 months or reasonably expected to exceed the said threshold in the next 12 months."
+    },
+    {
+     "src": 0,
+     "said": "Business income subjected to graduated tax rates shall also be subject to business tax (i.e. 12% VAT or 3% percentage tax, as applicable)."
+    }
+   ]
+  }
+ ],
+ "country": "PH",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/philippines/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Philippines, Individual - Taxes on personal income (last reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.officialgazette.gov.ph/2017/12/19/republic-act-no-10963/",
+   "said": "Beginning 1 January 2023: Taxable income (PHP) Tax on column 1 (PHP) Tax on excess (%) Over Not over 0 250,000 - 0 250,000 400,000 - 15 400,000 800,000 22,500 20 800,000 2,000,000 102,500 25 2,000,000 8,000,000 402,500 30 8,000,000 2,202,500 35 … 8% tax* on gross sales/receipts and other non-operating income in excess of PHP 250,000 in lieu of the graduated income tax rates and percentage tax (business tax), or the graduated tax rates. … For non-resident aliens not engaged in trade or business in the Philippines, the rate is a flat 25%. … Non-resident citizens and aliens, whether or not resident in the Philippines, are taxed only on income from sources within the Philippines. … Business income subjected to graduated tax rates shall also be subject to business tax (i.e. 12% VAT or 3% percentage tax, as applicable)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/philippines/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Philippines, Individual - Tax administration (last reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.officialgazette.gov.ph/2017/12/19/republic-act-no-10963/",
+   "said": "The tax year runs from 1 January to 31 December. … The return must be filed on or before 15 April of the succeeding year. … The first instalment is due on 15 April while the second and final instalment is due on 15 October. … Generally, the income tax withheld from the salaries or compensation of aliens, resident or not, should equal their final tax liability on such compensation. If not, the balance must be paid at the time the annual return is filed."
+  },
+  {
+   "url": "https://www.philhealth.gov.ph/partners/employers/ContributionTable_v2.pdf",
+   "title": "Premium contribution schedule for direct contributors, PhilHealth Circular No. 2019-0009 (Philippine Health Insurance Corporation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "for direct contributors per PhiiHealth Circular No. 2019-0009 … 2024 to … P1 0,000.01 to P99,999.99 … P500.00 to P5,000.00 … P1 00,000.00 … 5.00%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/philippines/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Philippines, Individual - Other taxes (last reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.officialgazette.gov.ph/2017/12/19/republic-act-no-10963/",
+   "said": "The maximum annual social tax payable by a foreign national employee is PHP 51,000 for tax year 2025. Social taxes consist of contributions to the Social Security System (SSS) and Philippine Health Insurance Corporation (PHIC). … A 12% VAT is imposed on services performed in the exercise or practice of profession or calling, including entertainers, musical, radio, movie, and television and stage directors"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-philippineshighlights-2026.pdf",
+   "title": "Philippines Highlights 2026 (Deloitte), on the Social Security Act of 2018 (RA 11199), the Universal Health Care Act (RA 11223) and the HDMF Law (RA 9679)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sss.gov.ph/sss-contribution-table/",
+   "said": "The maximum monthly employer contribution for an employee in the highest salary bracket is PHP 3,530. Employees are required to make monthly contributions (ranging from PHP 250 to PHP 1,750) to the social security system based on their salary bracket. … The maximum monthly employer contribution for an employee in the highest salary bracket is PHP 2,500 for PHIC and PHP 200 for HDMF."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/philippines/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Philippines, Corporate - Other taxes (last reviewed 2 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.officialgazette.gov.ph/2017/12/19/republic-act-no-10963/",
+   "said": "Persons required to register for VAT are those with gross sales exceeding the VAT threshold, which is currently PHP 3 million, in the past 12 months or reasonably expected to exceed the said threshold in the next 12 months."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The SSS 2025+ schedule as text (15% total, monthly salary credit range) and the expanded withholding rate on talent fees paid to a resident freelancer (RR 2-98 as amended); PhilHealth is now read from its own table.",
+   "tried": {
+    "institution": "bir.gov.ph/income-tax 2026-11-01: page body renders by script (no text served); SSS and PhilHealth sites not reached in this pass || 2026-11-01 retry: sss.gov.ph answers on retry: SSS Contribution Table page read (saved PH-sss-contribution-table.html): the schedules are JPG images (Cir-2024-006 Employers, Cir-2024-008 Self-Employed); OCR by tesseract timed out twice in this environment, so they were not read. philhealth.gov.ph ContributionTable_v2.pdf read and quoted (saved PH-philhealth-contribution-table.pdf). bir.gov.ph pages still render by script.",
+    "official-register": "officialgazette.gov.ph RA 10963: HTTP 403, not read another way || 2026-11-01 retry: officialgazette.gov.ph returns HTTP 403 (not read another way); RR 2-98 not reached.",
+    "web-search": "not run for these items in this pass || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC Philippines: only the PHP 51,000 2025 maximum || 2026-11-01 retry: Deloitte Philippines Highlights 2026 read (saved PH-deloitte-2026.pdf, quoted for SSS and HDMF amounts); it gives no talent-fee withholding rate.",
+    "archive": "not tried || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01)."
+   }
+  }
+ ]
+}

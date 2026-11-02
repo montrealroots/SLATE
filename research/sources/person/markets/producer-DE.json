@@ -1,0 +1,233 @@
+{
+ "topic": "markets.producer.DE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Germany. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "Since 2025 the federal jury-based cultural fund, run by the FFA, gives up to €1 million to a fiction feature (€500,000 to a documentary), aimed at features costing up to €6 million; in 2025 its jury decided 117 fiction applications for production and project development and approved 33, for about €13.5 million.",
+   "value": {
+    "maxPerFictionFeatureEUR": 1000000,
+    "maxPerDocumentaryEUR": 500000,
+    "targetBudgetMaxFictionEUR": 6000000,
+    "targetBudgetMaxDocumentaryEUR": 5000000,
+    "minRuntimeMinutes": 79,
+    "aidIntensityCap": 0.5,
+    "aidIntensityCapEUCoproduction": 0.6,
+    "aidIntensityCapDifficult": 0.95,
+    "producerOwnShareMin": 0.05,
+    "decided2025": {
+     "fictionApplications": 117,
+     "fictionApproved": 33,
+     "fictionAmountEUR": 13457537,
+     "approvalRate": 0.282
+    }
+   },
+   "applies": "Germany, federal jury-based cultural film funding (BKM programmes moved to the FFA on 1 January 2025); counts for 2025 cover production and project-development applications for fiction together; approvalRate is 33/117.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Für die Herstellung programmfüllender Spielfilme können Förderungen von bis zu 1 Million Euro vergeben werden. Die Herstellung programmfüllender Dokumentarfilme kann mit bis zu 500.000 Euro gefördert werden. … Die Förderung richtet sich grundsätzlich an Spielfilmvorhaben mit Gesamtherstellungskosten bis zu 6 Mio. Euro und Dokumentarfilmvorhaben mit Gesamtherstellungskosten bis zu 5 Mio. Euro. … Spiel- und Dokumentarfilme müssen eine Mindestlänge von 79 Minuten haben … Fördernehmer*innen müssen gem. FFG einen Eigenanteil in Höhe von mindestens 5 Prozent der Gesamtkosten nachweisen. … Die zulässige Förderintensität beträgt grundsätzlich 50 Prozent der Gesamtherstellungskosten. … Bei Koproduktion mit min. einem anderen Land der Europäischen Union darf die Beihilfeintensität 60 Prozent der Gesamtherstellungskosten nicht überschreiten. … Bei schwierigen audiovisuellen Werken (ehemals „klein und schwierige Filme“) darf die Beihilfeintensität bis zu 95 Prozent betragen."
+    },
+    {
+     "src": 1,
+     "said": "Die Jury entschied über 117 Anträge auf Produktions- und Projektentwick- … von denen 33 mit einer Fördersumme von … rund 13,5 Mio. Euro bewilligt wurden. … 13.457.537"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The FFA's levy-funded production support now goes automatically by reference points: a fiction feature needs at least 25,000 points (one per paid admission in its first year, or points for festival success), the year's budget is shared in proportion to points, at most €2 million per film, to be spent on a new project within three years; the writer and director each get 5% (up to €30,000).",
+   "value": {
+    "minPointsFiction": 25000,
+    "minPointsTalentChildrenDocumentary": 10000,
+    "pointBasis": "paid admissions in the year after first release (minimum ticket €2) plus festival points",
+    "maxPerFilmEUR": 2000000,
+    "useWithinYears": 3,
+    "writerShare": 0.05,
+    "directorShare": 0.05,
+    "writerDirectorShareCapEUR": 30000,
+    "awardedOnce": "end of May each year",
+    "since": "2025-01-01 (FFG 2025)"
+   },
+   "applies": "Germany, FFA Referenzförderung for producers of feature films under the FFG in force from 1 January 2025.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Seit Inkrafttreten des novellierten Filmförderungsgesetzes am 1. Januar 2025 wird die abgabefinanzierte FFA-Film- und Verleihförderung weitgehend nach dem Referenzprinzip vergeben"
+    },
+    {
+     "src": 3,
+     "said": "Ein programmfüllender Spielfilm benötigt mindestens 25.000 Referenzpunkte … Die Referenzpunktzahl aus dem Zuschauererfolg entspricht bei programmfüllenden Filmen der Besuchszahl im Zeitraum eines Jahres nach der Erstaufführung gegen Entrichtung eines marktüblichen Eintrittspreises (Mindestpreis 2 Euro … Die Höchstfördersumme für einen Film beträgt zwei Millionen Euro. … Werden die Gelder nicht innerhalb von drei Jahren projektbezogen abgerufen, verfallen sie automatisch. … automatisch mit jeweils 5 Prozent, maximal jedoch 30.000 Euro, an der zuerkannten Fördersumme für den Film beteiligt."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Federally funded German features may budget a producer's fee of at most 5% of total cost (excluding the fee), no more than €250,000 (a flat €15,000 under €300,000, €25,000 up to €500,000), and company overheads of at most 10% of production costs up to €5 million, 5% above, capped at €650,000.",
+   "value": {
+    "producerFeeMaxShare": 0.05,
+    "producerFeeMaxEUR": 250000,
+    "producerFeeFlatEUR": [
+     {
+      "budgetUpToEUR": 300000,
+      "feeEUR": 15000
+     },
+     {
+      "budgetFromEUR": 300000,
+      "budgetUpToEUR": 500000,
+      "feeEUR": 25000
+     }
+    ],
+    "overheadMaxShareUpTo5mEUR": 0.1,
+    "overheadMaxShareAbove5mEUR": 0.05,
+    "overheadMaxEUR": 650000,
+    "ownerAsDirectorFeeShare": 0.04,
+    "ownerAsLineProducerFeeShare": 0.027,
+    "example": {
+     "budgetEUR": 3250000,
+     "maxProducerFeeEUR": 154375
+    }
+   },
+   "applies": "Germany, FFA-administered federal jury-based production funding (calculation rules read 2026-11-01; the page refers to the same producer-fee rules under the FFG).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Der max. Ansatz für das (deutsche) Hersteller*innenhonorar beträgt 5 Prozent der Gesamtherstellungskosten (ohne vorherigen Ansatz der Gage), maximal jedoch 250.000 Euro. … Projekte bis 300.000 Euro Gesamtherstellungskosten dürfen pauschal bis zu 15.000 Euro Hersteller*innenhonorar kalkulieren, Projekte zwischen 300.000 Euro und 500.000 Euro Gesamtherstellungskosten pauschal bis zu 25.000 Euro. … Der maximale Ansatz des Herstellerhonorars beträgt in diesem Beispiel 154.375,00 Euro … Regiegage: 4 Prozent der Gesamtherstellungskosten (ohne vorherigen Ansatz der Gage) … Herstellungsleiter*in: 2,7 Prozent der Gesamtherstellungskosten … Handlungskosten können mit max. 10 Prozent bei Fertigungskosten bis zu 5.000.000 Euro und max. 5 Prozent ab 5.000.000,00 Euro€ Fertigungskosten kalkuliert werden. Der max. Ansatz der Handlungskosten ist bei 650.000,00 Euro gedeckelt."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "From 1 February 2025 both federal incentives, the DFFF and the German Motion Picture Fund, pay a uniform 30% of German production costs, and both continue in 2026.",
+   "value": {
+    "rate": 0.3,
+    "from": "2025-02-01",
+    "programmes": [
+     "DFFF",
+     "GMPF"
+    ],
+    "continuesIn": 2026
+   },
+   "applies": "Germany; DFFF I terms (cap, thresholds) are held in world.json and not repeated.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Die Anreizförderung durch den Deutschen Filmförderfonds DFFF und den German Motion Picture Fund GMPF bleibt im Jahr 2026 bestehen. Zum 1. Februar 2025 wurde die Förderquote einheitlich auf 30 Prozent der deutschen Herstellungskosten angehoben."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "237 German films (co-productions included) had a first release in German cinemas in 2025, 149 of them fiction, out of 705 first releases; they sold 21.3 million tickets, 27.8% of first-release tickets, and German films took 27.4% of all tickets.",
+   "value": {
+    "year": 2025,
+    "germanFirstReleases": 237,
+    "germanFictionFirstReleases": 149,
+    "germanDocumentaryFirstReleases": 88,
+    "allFirstReleases": 705,
+    "germanFirstReleaseTickets": 21299498,
+    "germanShareOfFirstReleaseTickets": 0.278,
+    "germanMarketShareAllTickets": 0.274,
+    "previous": {
+     "2024": 213,
+     "2023": 223,
+     "2022": 237,
+     "2021": 191
+    }
+   },
+   "applies": "Germany, FFA cinema statistics for calendar 2025 (distributors' reports).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "237 213 11,3 % 21.299.498 14.739.568 44,5 % 27,8 % 19,6 % … Gesamt 705 622 13,3 % … Spielfilme 149 124 20,2 % … 237 213 11,3 % 223 237 191 … Für deutsche Filme wurden 24,3 Mio. Tickets verkauft"
+    },
+    {
+     "src": 5,
+     "said": "Deutscher Marktanteil (Tickets)5 27,4 %"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The Produktionsallianz represents about 370 film, television and audiovisual production companies in Germany.",
+   "value": {
+    "name": "Produktionsallianz",
+    "members": "about 370 companies"
+   },
+   "applies": "Germany; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "vertritt als starker Verband die … von rund 370 Produktionsunternehmen. Alle unsere Mitglieder"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "DE",
+ "sources": [
+  {
+   "url": "https://www.ffa.de/Jurybasierte-Filmfoerderung-fuer-programmfuellende-Filme.html",
+   "title": "FFA: Jurybasierte kulturelle Produktionsförderung für programmfüllende Filme (Richtlinie der jurybasierten kulturellen Filmförderung des Bundes)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Für die Herstellung programmfüllender Spielfilme können Förderungen von bis zu 1 Million Euro vergeben werden. Die Herstellung programmfüllender Dokumentarfilme kann mit bis zu 500.000 Euro gefördert werden. … Die Förderung richtet sich grundsätzlich an Spielfilmvorhaben mit Gesamtherstellungskosten bis zu 6 Mio. Euro und Dokumentarfilmvorhaben mit Gesamtherstellungskosten bis zu 5 Mio. Euro. … Spiel- und Dokumentarfilme müssen eine Mindestlänge von 79 Minuten haben … Fördernehmer*innen müssen gem. FFG einen Eigenanteil in Höhe von mindestens 5 Prozent der Gesamtkosten nachweisen. … Die zulässige Förderintensität beträgt grundsätzlich 50 Prozent der Gesamtherstellungskosten. … Bei Koproduktion mit min. einem anderen Land der Europäischen Union darf die Beihilfeintensität 60 Prozent der Gesamtherstellungskosten nicht überschreiten. … Bei schwierigen audiovisuellen Werken (ehemals „klein und schwierige Filme“) darf die Beihilfeintensität bis zu 95 Prozent betragen. … Der max. Ansatz für das (deutsche) Hersteller*innenhonorar beträgt 5 Prozent der Gesamtherstellungskosten (ohne vorherigen Ansatz der Gage), maximal jedoch 250.000 Euro. … Projekte bis 300.000 Euro Gesamtherstellungskosten dürfen pauschal bis zu 15.000 Euro Hersteller*innenhonorar kalkulieren, Projekte zwischen 300.000 Euro und 500.000 Euro Gesamtherstellungskosten pauschal bis zu 25.000 Euro. … Der maximale Ansatz des Herstellerhonorars beträgt in diesem Beispiel 154.375,00 Euro … Regiegage: 4 Prozent der Gesamtherstellungskosten (ohne vorherigen Ansatz der Gage) … Herstellungsleiter*in: 2,7 Prozent der Gesamtherstellungskosten … Handlungskosten können mit max. 10 Prozent bei Fertigungskosten bis zu 5.000.000 Euro und max. 5 Prozent ab 5.000.000,00 Euro€ Fertigungskosten kalkuliert werden. Der max. Ansatz der Handlungskosten ist bei 650.000,00 Euro gedeckelt."
+  },
+  {
+   "url": "https://www.ffa.de/files/dokumentenverwaltung/publikationen-presse/2025/FFA-Foerderungen_2025.pdf",
+   "title": "FFA: Förderungen 2025 (annual funding report)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Die Jury entschied über 117 Anträge auf Produktions- und Projektentwick- … von denen 33 mit einer Fördersumme von … rund 13,5 Mio. Euro bewilligt wurden. … 13.457.537"
+  },
+  {
+   "url": "https://www.ffa.de/ffa-2025.html",
+   "title": "FFA: FFA 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Seit Inkrafttreten des novellierten Filmförderungsgesetzes am 1. Januar 2025 wird die abgabefinanzierte FFA-Film- und Verleihförderung weitgehend nach dem Referenzprinzip vergeben … Die Anreizförderung durch den Deutschen Filmförderfonds DFFF und den German Motion Picture Fund GMPF bleibt im Jahr 2026 bestehen. Zum 1. Februar 2025 wurde die Förderquote einheitlich auf 30 Prozent der deutschen Herstellungskosten angehoben."
+  },
+  {
+   "url": "https://www.ffa.de/Zuerkennung-fuer-Hersteller-programmfuellender-Filme.html",
+   "title": "FFA: Zuerkennung für Hersteller programmfüllender Filme (Referenzförderung)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ein programmfüllender Spielfilm benötigt mindestens 25.000 Referenzpunkte … Die Referenzpunktzahl aus dem Zuschauererfolg entspricht bei programmfüllenden Filmen der Besuchszahl im Zeitraum eines Jahres nach der Erstaufführung gegen Entrichtung eines marktüblichen Eintrittspreises (Mindestpreis 2 Euro … Die Höchstfördersumme für einen Film beträgt zwei Millionen Euro. … Werden die Gelder nicht innerhalb von drei Jahren projektbezogen abgerufen, verfallen sie automatisch. … automatisch mit jeweils 5 Prozent, maximal jedoch 30.000 Euro, an der zuerkannten Fördersumme für den Film beteiligt."
+  },
+  {
+   "url": "https://www.ffa.de/files/dokumentenverwaltung/publikationen-presse/2025/FFA-Kinojahr_2025.pdf",
+   "title": "FFA: Das Kinojahr 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "237 213 11,3 % 21.299.498 14.739.568 44,5 % 27,8 % 19,6 % … Gesamt 705 622 13,3 % … Spielfilme 149 124 20,2 % … 237 213 11,3 % 223 237 191 … Für deutsche Filme wurden 24,3 Mio. Tickets verkauft"
+  },
+  {
+   "url": "https://www.ffa.de/files/dokumentenverwaltung/Kinoergebnisse-ab-2025/1%20Kino-%20und%20Filmergebnisse/Kino-%20und%20Filmergebnisse%202025.pdf",
+   "title": "FFA: Kino- und Filmergebnisse 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Deutscher Marktanteil (Tickets)5 27,4 %"
+  },
+  {
+   "url": "https://www.produktionsallianz.de/",
+   "title": "Produktionsallianz: home page",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "vertritt als starker Verband die … von rund 370 Produktionsunternehmen. Alle unsere Mitglieder"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "outcomes",
+   "sought": "How many German films earn back their cost, by budget.",
+   "tried": {
+    "institution": "FFA Kinojahr 2025 and Förderungen 2025 give releases, tickets and funding, not recoupment; the FFA's repayment of conditionally repayable loans (pre-2025) was not found in these reports. | Retry 2026-11-01 (producer retry): ffa.de reachable; no recoupment study in the FFA reports already saved (Kinojahr 2025, Förderungen 2025).",
+    "official-register": "None found. | Retry 2026-11-01 (producer retry): None found (Bundestag hearing statements from 2008 surfaced by search, out of date).",
+    "web-search": "Not separately searched within this run. | Retry 2026-11-01 (producer retry): \"FFA Studie Wirtschaftlichkeit deutscher Kinofilme Refinanzierung Herstellungskosten Anteil Filme die ihre Kosten einspielen\": DIW, Castendyk (Media Perspektiven 1/2013) and a 2014 Roland Berger study cited by IRIS, none with a share of films recouping.",
+    "trade-press": "None read. | Retry 2026-11-01 (producer retry): Media Perspektiven 01/2013 (Castendyk) analyses oversupply, not cost recovery; not used.",
+    "archive": "Not tried (archive resets). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

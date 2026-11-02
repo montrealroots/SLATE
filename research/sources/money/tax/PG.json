@@ -1,0 +1,250 @@
+{
+ "topic": "tax.PG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Papua New Guinea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first PGK 20,000 of taxable income, then 30% to 33,000, 35% to 70,000, 40% to 250,000 and 42% above; a non-resident pays 22% from the first kina; income tax is national (some provinces levy a head tax).",
+   "value": {
+    "currency": "PGK",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 20000,
+      "rate": 0
+     },
+     {
+      "from": 20000,
+      "to": 33000,
+      "rate": 0.3
+     },
+     {
+      "from": 33000,
+      "to": 70000,
+      "rate": 0.35
+     },
+     {
+      "from": 70000,
+      "to": 250000,
+      "rate": 0.4
+     },
+     {
+      "from": 250000,
+      "to": null,
+      "rate": 0.42
+     }
+    ],
+    "nonResidentBrackets": [
+     {
+      "from": 0,
+      "to": 20000,
+      "rate": 0.22
+     },
+     {
+      "from": 20000,
+      "to": 33000,
+      "rate": 0.3
+     },
+     {
+      "from": 33000,
+      "to": 70000,
+      "rate": 0.35
+     },
+     {
+      "from": 70000,
+      "to": 250000,
+      "rate": 0.4
+     },
+     {
+      "from": 250000,
+      "to": null,
+      "rate": 0.42
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Individuals, including salary or wages",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rates for residents are as follows: Taxable income (PGK*) Tax thereon (PGK) Tax on excess (%) 20,000 0 30 33,000 3,900 35 70,000 16,850 40 250,000 88,850 42"
+    },
+    {
+     "src": 0,
+     "said": "The rates for non-residents are as follows: Taxable income (PGK) Tax thereon (PGK) Tax on excess (%) 0 0 22 20,000 4,400 30 33,000 8,300 35 70,000 21,250 40 250,000 93,250 42"
+    },
+    {
+     "src": 1,
+     "said": "While some provinces have a 'head tax', Papua New Guinea does not have a local tax system."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; returns are due by 31 March of the next year; employees fully taxed at source need not file; provisional tax on other income is paid in three instalments.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year is generally the period 1 January to 31 December."
+    },
+    {
+     "src": 2,
+     "said": "Annual income tax returns are generally due for lodgement by 31 March of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "There is no social security; superannuation is compulsory for PNG citizen employees (6% employee, 8.4% employer, of gross basic salary) and voluntary for non-citizens.",
+   "value": {
+    "employee": 0.06,
+    "employer": 0.084,
+    "citizensOnly": true,
+    "base": "gross basic salary"
+   },
+   "applies": "Employees of employers of 15 or more",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Papua New Guinea does not have a social security system. However, there are compulsory superannuation contributions for PNG citizen employees (superannuation contributions are not currently required for non-citizen employees but may be made on a voluntary basis)."
+    },
+    {
+     "src": 1,
+     "said": "6.0% employee contributions (i.e. after-tax contributions). 8.4% employer contributions (i.e. pre-tax contributions)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Salary or wages tax is assessed fortnightly from standard tables and is a final tax; employers remit it monthly.",
+   "value": {
+    "employee": "fortnightly salary or wages tax, final"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Salary or wages income is subject to salary or wages tax and is subject to fortnightly assessment of tax, regardless of the employer's actual pay period. The tax assessed is a final tax and is determined by reference to standard rate tables."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "From 1 January 2026 a payment to a non-resident entertainer or entertainment group bears a final non-resident tax of 10% of the gross; royalties 10% (30% to an associate).",
+   "value": {
+    "rate": 0.1,
+    "base": "gross",
+    "final": true,
+    "from": "2026-01-01",
+    "royalties": {
+     "nonAssociate": 0.1,
+     "associate": 0.3
+    }
+   },
+   "applies": "Non-residents without a PNG permanent establishment (ITA 2025 s 14)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Non-resident tax (NRT) under Section 14 of ITA 2025 imposes a final tax (via withholding under Part 10) on specified categories of PNG-source income derived by non-resident persons (individuals or corporations) where the income is not attributable to a PE in Papua New Guinea."
+    },
+    {
+     "src": 3,
+     "said": "Entertainment fees (payments to non-resident entertainers or entertainment groups): 10%."
+    },
+    {
+     "src": 3,
+     "said": "Royalties: 10% (non-associate recipient); 30% (associate recipient)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties for the use of copyright paid to a non-resident bear 10% final non-resident tax; the Small Business Tax regime excludes professional services; no special regime for resident authors was found.",
+   "value": {
+    "nonResidentRoyalties": 0.1
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 3,
+     "said": "as consideration for the use of, or right to use, any copyright, patent, trademark, design, model, plan, secret formula, or process"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "GST is 10% on most supplies; the registration threshold is PGK 250,000 of turnover in an income year.",
+   "value": {
+    "currency": "PGK",
+    "standard": 0.1,
+    "threshold": 250000
+   },
+   "applies": "Supplies in PNG",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The GST rate is 10% and applies to most goods and services supplied in Papua New Guinea."
+    },
+    {
+     "src": 0,
+     "said": "2% of turnover for a small business that derives less than the registration threshold for GST (currently PGK 250,000 in an income year)"
+    }
+   ]
+  }
+ ],
+ "country": "PG",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/papua-new-guinea/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Papua New Guinea, Individual - Taxes on personal income (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.irc.gov.pg/",
+   "said": "The rates for residents are as follows: Taxable income (PGK*) Tax thereon (PGK) Tax on excess (%) 20,000 0 30 33,000 3,900 35 70,000 16,850 40 250,000 88,850 42 … The rates for non-residents are as follows: Taxable income (PGK) Tax thereon (PGK) Tax on excess (%) 0 0 22 20,000 4,400 30 33,000 8,300 35 70,000 21,250 40 250,000 93,250 42 … 2% of turnover for a small business that derives less than the registration threshold for GST (currently PGK 250,000 in an income year)"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Papua New Guinea, Individual - Other taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.irc.gov.pg/",
+   "said": "While some provinces have a 'head tax', Papua New Guinea does not have a local tax system. … Papua New Guinea does not have a social security system. However, there are compulsory superannuation contributions for PNG citizen employees (superannuation contributions are not currently required for non-citizen employees but may be made on a voluntary basis). … 6.0% employee contributions (i.e. after-tax contributions). 8.4% employer contributions (i.e. pre-tax contributions). … The GST rate is 10% and applies to most goods and services supplied in Papua New Guinea."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/papua-new-guinea/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Papua New Guinea, Individual - Tax administration (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.irc.gov.pg/",
+   "said": "The tax year is generally the period 1 January to 31 December. … Annual income tax returns are generally due for lodgement by 31 March of the following year. … Salary or wages income is subject to salary or wages tax and is subject to fortnightly assessment of tax, regardless of the employer's actual pay period. The tax assessed is a final tax and is determined by reference to standard rate tables."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/papua-new-guinea/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Papua New Guinea, Corporate - Withholding taxes (last reviewed 23 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.irc.gov.pg/",
+   "said": "Non-resident tax (NRT) under Section 14 of ITA 2025 imposes a final tax (via withholding under Part 10) on specified categories of PNG-source income derived by non-resident persons (individuals or corporations) where the income is not attributable to a PE in Papua New Guinea. … Entertainment fees (payments to non-resident entertainers or entertainment groups): 10%. … Royalties: 10% (non-associate recipient); 30% (associate recipient). … as consideration for the use of, or right to use, any copyright, patent, trademark, design, model, plan, secret formula, or process"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Income Tax Act 2025 schedules (resident and non-resident rates, NRT on entertainers) from the IRC or the gazette",
+   "tried": {
+    "institution": "irc.gov.pg returns HTTP 403 to this environment (2026-11-01) || 2026-11-01 retry: irc.gov.pg again 403.",
+    "official-register": "Income Tax Act 2025 text (PacLII) not reached: paclii.org returned 403 || 2026-11-01 retry: paclii.org again 403; parliament.gov.pg bills page and its WordPress media search ('income', 'tax', 'Income Tax Act 2025') return no Income Tax Act 2025 file.",
+    "web-search": "not separately searched; PwC (reviewed 23 September 2026) describes ITA 2025 in force from 2026 || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Papua New Guinea Income Tax Act 2025 schedule rates').",
+    "trade-press": "PwC Worldwide Tax Summaries used || 2026-11-01 retry: PwC PNG (already saved) remains the source.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

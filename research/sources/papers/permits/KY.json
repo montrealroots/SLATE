@@ -1,0 +1,157 @@
+{
+ "country": "KY",
+ "read": "2026-11-01",
+ "route": "Temporary Work Permit (WORC)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The employer and the employee together, on WORC's form T1 (the employer's cover letter and signature; it cannot be an agency's signature), with the correct work permit fee and a non-refundable application fee.",
+  "first": "WORC vets the application for suitable and available Caymanians (a temporary vacancy need not be advertised); for a musical or theatrical entertainer, a demo of the show to be performed.",
+  "fees": [
+   {
+    "what": "Application for the grant of a temporary work permit for an entertainer",
+    "amount": "250.00",
+    "currency": "KYD"
+   },
+   {
+    "what": "Temporary work permit fee, up to 90 days, Grand Cayman (an artist or musician in the performing arts, annual fee CI$550)",
+    "amount": "200.00",
+    "currency": "KYD"
+   },
+   {
+    "what": "Same, Cayman Brac and Little Cayman",
+    "amount": "150.00",
+    "currency": "KYD"
+   },
+   {
+    "what": "Express determination fee (decision within two business days or refund)",
+    "amount": "450.00",
+    "currency": "KYD"
+   },
+   {
+    "what": "Repatriation fee for the worker and dependants (if applicable)",
+    "amount": "250.00",
+    "currency": "KYD"
+   }
+  ],
+  "processing": {
+   "standard": null,
+   "premium": {
+    "n": 2,
+    "unit": "business-days"
+   }
+  },
+  "validity": {
+   "n": 6,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://my.egov.ky/documents/d/worc/t1-temporary-work-permit-revised-fillable-202608-004f-1-?download=true",
+   "title": "Workforce Opportunities and Residency Cayman, Form T1, Application for a Temporary Work Permit (revised 2026/08)",
+   "read": "2026-11-01",
+   "said": "How long do you wish this Temporary Work Permit to be valid for: 1 Month 3 Months 6 Months 8 Months (Seasonal Temporary Only) … Signature of Employer (Cannot be Agency Signature) … Correct work permit fee, including a non-refundable Application fee of: CI $150 (where the annual work permit fee is $2,100 or less); CI $250 (where the annual work permit fee is $2,100-$10,400); CI $500 (where the annual work permit fee is more than $10,400) CI $250 repatriation fee for the worker and dependants (if appl … Musical and Theatric Entertainer: Provide a demo tape/CD/DVD of show",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "fees",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://my.egov.ky/web/worc/immigration-forms",
+   "title": "Workforce Opportunities and Residency Cayman, Immigration Forms",
+   "read": "2026-11-01",
+   "said": "TE1 - Temporary Work Permit Extension",
+   "kind": "primary",
+   "fields": [
+    "validity"
+   ]
+  },
+  {
+   "url": "https://my.egov.ky/web/worc/work-permit-permanent-residency-faq",
+   "title": "Workforce Opportunities and Residency Cayman, Work Permit and Permanent Residency FAQ",
+   "read": "2026-11-01",
+   "said": "Job Vacancies for Temporary Applications do not need to be advertised on the Jobs & Online Payments Service. However, these applications will still be vetted to see if there are any suitable and available Caymanians.",
+   "kind": "primary",
+   "fields": [
+    "first"
+   ]
+  },
+  {
+   "url": "https://www.gov.ky/documents/35692/0/CaymanianProtection%28Fees%29Regulations%2C2026_MADE.pdf/df186a33-80f9-2a0b-d2c1-570df6d88690?t=1776359047875",
+   "title": "Caymanian Protection (Fees) Regulations, 2026 (SL 14 of 2026), Schedule items 18 and 18.5, Part 2 (gov.ky, Ministry of Caymanian Employment and Immigration)",
+   "read": "2026-11-01",
+   "said": "Supplement No. 1 published with Legislation Gazette No. 23 dated 16th April, 2026. … 18 56, 63, 72 TEMPORARY WORK PERMIT - ENTERTAINER: (in accordance with the Caymanian Protection (Temporary Work Permits and Business Visitors’ Permits) Regulations (2024 Revision) ): 18.1 Application for the grant of a temporary work permit for an entertainer 250 … The table below shows the express fees for applications and work permit fees for the grant or renewal of temporary work permits for up to ninety days. Where the work permit is valid for a period between ninety- one days and one hundred and eighty days, the fee payable is fifty percent of the cost of an annual work permit … (b) where the annual work permit fee payable is between $376 and $875 200 150 450 … Note 5: Where an express application is made for a temporary work permit and a decision on that application is not communicated within two business days after receipt of the application, the express application fee shall be refunded to the applicant. … TOURISM and SERVICE INDUSTRY … Artist/Musician (person in fine arts/performing arts) 550 412.50 412.50",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "WORC's stated decision time for a Temporary Work Permit",
+   "tried": {
+    "institution": "WORC forms and FAQ: none stated (the T1 mentions an Express Fee 'if applicable' without its amount or time) | Retry 2026-11-01: gov.ky/web/mcei/immigrationreform links the 2026 regulations: the Caymanian Protection (Fees) Regulations, 2026 set a two-business-day express decision for a temporary work permit (filled as premium), and no standard time; the Caymanian Protection (Temporary Work Permits and Business Visitors' Permits) (Amendment) Regulations, 2026 (SL 15 of 2026) amend only citations and the fee reference.",
+    "official-register": "None reached | Retry 2026-11-01: legislation.gov.ky not tried; the Temporary Work Permits Regulations 2022 Revision on caymanlawschool.ky resets the connection (curl 35).",
+    "web-search": "Same search (2026-11-01) | Retry 2026-11-01: 'WORC Cayman temporary work permit processing time working days' and 'Cayman Islands Immigration (Transition) Regulations temporary work permit \"express\" fee schedule hours': Cayman Compass reports WORC saying 'seven to 14 days' (2023) and 'within 14 days', not WORC's own statement.",
+    "trade-press": "Cayman Compass bot-checks this client | Retry 2026-11-01: caymanresident.com (a relocation guide, names no primary) and Cayman Compass (bot-checks this client) only; visitcaymanislands.com's film-commission work-permit page answers 403.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) | Retry 2026-11-01: web.archive.org resets the connection (2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "The regulation exempting short visits (search results report a discretionary exemption under 10 days and one for recording up to six months)",
+   "tried": {
+    "institution": "WORC pages: not stated | Retry 2026-11-01: The 2026 fee regulations and the TWP amendment regulations (gov.ky) read: no union step, criterion, pay rule or exemption for entertainers in them.",
+    "official-register": "The regulation itself wasn't reached | Retry 2026-11-01: Caymanian Protection (Fees) Regulations, 2026 and SL 15 of 2026 read in full.",
+    "web-search": "Same search (2026-11-01): only news snippets | Retry 2026-11-01: Searches above; nothing further.",
+    "trade-press": "Cayman Compass bot-checks this client | Retry 2026-11-01: None quoting a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "A stated criterion for an entertainer's temporary permit",
+   "tried": {
+    "institution": "T1 checklist: only the documents (a demo of the show) | Retry 2026-11-01: The 2026 fee regulations and the TWP amendment regulations (gov.ky) read: no union step, criterion, pay rule or exemption for entertainers in them.",
+    "official-register": "Not reached | Retry 2026-11-01: Caymanian Protection (Fees) Regulations, 2026 and SL 15 of 2026 read in full.",
+    "web-search": "Same search (2026-11-01) | Retry 2026-11-01: Searches above; nothing further.",
+    "trade-press": "Bot-checked | Retry 2026-11-01: None quoting a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "Any minimum pay",
+   "tried": {
+    "institution": "T1 asks the salary only; no rule | Retry 2026-11-01: The 2026 fee regulations and the TWP amendment regulations (gov.ky) read: no union step, criterion, pay rule or exemption for entertainers in them.",
+    "official-register": "Not reached | Retry 2026-11-01: Caymanian Protection (Fees) Regulations, 2026 and SL 15 of 2026 read in full.",
+    "web-search": "Same search (2026-11-01) | Retry 2026-11-01: Searches above; nothing further.",
+    "trade-press": "Bot-checked | Retry 2026-11-01: None quoting a primary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) | Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "union",
+   "tried": {
+    "institution": "Retry 2026-11-01: The 2026 fee regulations and the TWP amendment regulations (gov.ky) read: no union step, criterion, pay rule or exemption for entertainers in them.",
+    "official-register": "Retry 2026-11-01: Caymanian Protection (Fees) Regulations, 2026 and SL 15 of 2026 read in full.",
+    "web-search": "Retry 2026-11-01: Searches above; nothing further.",
+    "trade-press": "Retry 2026-11-01: None quoting a primary.",
+    "archive": "Retry 2026-11-01: web.archive.org resets (2026-11-01)."
+   }
+  }
+ ],
+ "note": "From 1 May 2026 the Immigration (Transition) Act is the Caymanian Protection Act and its fees are in the Caymanian Protection (Fees) Regulations, 2026, which carry a temporary work permit category for entertainers (item 18). The grant fee follows the occupation's annual fee band; the schedule's nearest occupation for an actor is 'Artist/Musician (person in fine arts/performing arts)', CI$550 a year, giving CI$200 for up to 90 days on Grand Cayman. For 91 to 180 days the fee is half the annual fee."
+}

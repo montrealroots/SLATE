@@ -1,0 +1,269 @@
+{
+ "topic": "markets.writer.FR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a screenwriter works on in France. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "agreement",
+   "finding": "French fiction features are covered by the interprofessional screenwriter-producer agreement signed 15 October 2025 and extended to the whole sector by order of 16 October 2025; it applies from 15 January 2026 for three years, renewable.",
+   "value": {
+    "name": "Accord interprofessionnel sur les pratiques contractuelles entre auteurs-scénaristes et producteurs d'œuvres cinématographiques de long métrage de fiction",
+    "signed": "2025-10-15",
+    "extension_order": "2025-10-16",
+    "jo": "2025-10-21",
+    "in_force": "2026-01-15",
+    "years": 3,
+    "renewal": "tacit, 3-year periods",
+    "producers": [
+     "API",
+     "SPI",
+     "UPC"
+    ],
+    "authors": [
+     "SCA",
+     "SRF",
+     "ARP",
+     "SACD"
+    ],
+    "excludes": [
+     "documentary",
+     "animation"
+    ]
+   },
+   "applies": "French-law commissioning and assignment contracts for fiction features meant for first release in French cinemas.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Arrêté du 16 octobre 2025 a officialisé l’ … extension de l’accord interprofessionnel sur les pratiques contractuelles entre auteurs-scénaristes et producteurs d’œuvres cinématographiques de long-métrage de fiction, signé la veille, le … 15 octobre 2025 … principales organisations de producteurs (API, SPI, UPC) et d’auteurs (SCA, SRF, ARP, SACD) … Cet accord entrera en vigueur trois mois après sa signature, soit le 15 janvier 2026. Il est conclu pour une durée de trois ans"
+    },
+    {
+     "src": 1,
+     "said": "La ministre de la Culture souhaite étendre immédiatement cet accord à l’ensemble du secteur."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "A fiction feature writer is guaranteed a floor writing fee, owed whether or not the film is made: €17,000 for a sole writer, €13,600 each for two, €11,000 each for three; paid 15% at signature, 20% per dialogued version, 10% for the rewrite.",
+   "value": {
+    "currency": "EUR",
+    "mgep_per_writer": {
+     "1": 17000,
+     "2": 13600,
+     "3": 11000
+    },
+    "mgep_per_script": {
+     "1": 17000,
+     "2": 27200,
+     "3": 33000
+    },
+    "schedule_pct": {
+     "signature": 15,
+     "each_dialogued_version_to_vdef": 20,
+     "rewrite": 10
+    },
+    "from": "2026-01-15"
+   },
+   "applies": "Fiction features under the extended 2025 agreement; excluded: flat-fee authors, authors after stage 3, writer-coproducers; exempt: emerging producers, majority-foreign coproductions.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Minimum Garanti Écriture Plancher (MGEP) … 1 auteur 17 000 € 17 000 € 2 auteurs 13 600 € chacun 27 200 € 3 auteurs 11 000 € chacun 33 000 € … (15 % à la signature, 20 % à la remise de chaque version dialoguée jusqu’à la Vdef, 10 % pour la réécriture)"
+    },
+    {
+     "src": 2,
+     "said": "Un Minimum Garanti d’Ecriture « plancher » (MGEP) assurera aux scénaristes une rémunération minimale durant tout le travail d’écriture, que le film se fasse ou non"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "If the film is made, the writer also earns a minimum indexation of 2.5% to 3% (2.5% for adaptations) of external financing up to €6 million, negotiable above.",
+   "value": {
+    "rate_pct_original": [
+     2.5,
+     3
+    ],
+    "rate_pct_adaptation": 2.5,
+    "base": "external financing",
+    "base_cap_eur": 6000000,
+    "guaranteed_share_pct_min": 50
+   },
+   "applies": "Fiction features under the extended 2025 agreement, due only on production.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Cette indexation est calculée par l’application d’un taux (allant de 2,5 % à 3 % pour les œuvres originales en fonction de la couverture des frais généraux et du salaire producteur, et 2,5 % pour les adaptations) sur une assiette des financements externes (aides publiques, apports des coproducteurs, MG des mandataires, etc.) jusqu’à 6 millions d’euros"
+    }
+   ]
+  },
+  {
+   "item": "agreement",
+   "finding": "French TV fiction writing is under the interprofessional agreement of 22 March 2023, in force from 1 July 2023: a series bible pays at least €6,000, €11,000 once a broadcaster signs development and €20,000 if produced.",
+   "value": {
+    "name": "Accord interprofessionnel sur les pratiques contractuelles dans la fiction",
+    "signed": "2023-03-22",
+    "in_force": "2023-07-01",
+    "currency": "EUR",
+    "bible_min": {
+     "commissioned": 6000,
+     "broadcaster_development_deal": 11000,
+     "produced": 20000
+    },
+    "excludes": [
+     "daily soaps",
+     "shorts under 6 minutes with over 50 episodes a year",
+     "interactive or social-only fiction"
+    ]
+   },
+   "applies": "French-law contracts for audiovisual fiction.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Un accord interprofessionnel a été signé le 22 mars 2023 … Un minimum de 6 000 € bruts au titre de la commande de la bible initiale … Ce minimum est porté à 11 000 € bruts si une convention de développement est signée avec un éditeur de services, Il est porté à 20 000 € bruts si la série est mise en production. … L’accord entre en vigueur le 1er juillet 2023."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "A French TV fiction must spend at least 3% of direct costs on writing (3.6% with a structured writers' room), at least €27,550 and at most €1.2 million per hour, 70% of it due at the first dialogued version; fictions under €600,000 an hour are exempt.",
+   "value": {
+    "currency": "EUR",
+    "min_writing_envelope_pct": {
+     "no_room": 3,
+     "room": 3.6,
+     "adaptation_no_room": 2.5,
+     "adaptation_room": 2.7
+    },
+    "floor_per_hour": 27550,
+    "floor_per_hour_adapted": 20625,
+    "ceiling_per_hour": 1200000,
+    "exempt_below_direct_cost_per_hour": 600000,
+    "pct_due_at_first_dialogued_version": 70
+   },
+   "applies": "French TV fiction under the 2023 agreement.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Le montant global de l’EME est égal à 3% des dépenses directes … Le montant global de l’EME est égal à 3,6% des dépenses directes … Un plancher de 27 550 € par heure pour les œuvres non adaptées … Un plafond de 1,2 M€ par par heure. … au moins 70% du montant total des droits d’auteur bruts de l’EME à la remise de la première version de la continuité́ dialoguée … dépenses directes sont inférieures à 600 000 euros par heure"
+    }
+   ]
+  },
+  {
+   "item": "option",
+   "finding": "The 2023 TV agreement sets no minimum for an option, which is negotiated freely and may only cover a text already written.",
+   "value": {
+    "minimum": null,
+    "price": "negotiated"
+   },
+   "applies": "French TV fiction under the 2023 agreement.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "minimas pour les options. L’option est négociée de gré à gré entre l’auteur et le producteur. Attention : une option ne porte que sur un texte déjà écrit."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "The Guilde française des scénaristes is the screenwriters' union: professional dues run from €96 a year up to 1% of screenwriting income, for writers with 26 broadcast or 52 commissioned minutes; recent graduates pay €50 a year.",
+   "value": {
+    "body": "La Guilde française des scénaristes",
+    "currency": "EUR",
+    "annual_dues": [
+     {
+      "income_to": 20000,
+      "eur": 96
+     },
+     {
+      "income_to": 30000,
+      "eur": 132
+     },
+     {
+      "income_to": 40000,
+      "eur": 216
+     },
+     {
+      "income_to": 50000,
+      "eur": 324
+     },
+     {
+      "income_to": 100000,
+      "eur": 720
+     },
+     {
+      "income_over": 100000,
+      "pct": 1
+     }
+    ],
+    "probationary_eur_per_year": 50,
+    "probationary_years": 3,
+    "eligibility": [
+     "26 minutes broadcast under commission contract",
+     "52 minutes commissioned, broadcast or not"
+    ]
+   },
+   "applies": "Screenwriters in France, 2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Cotisation annuelle de 96,00 € à 1% des revenus net annuels liés au scénario. … Au moins 26 minutes d’un scénario ou plusieurs scénarios cumulés ayant fait l’objet de contrat de commande et de cession de droits d’auteur, diffusé(s) ; Au moins 52 minutes d’un scénario ou plusieurs scénarios ayant fait l’objet d’un contrat de commande et de cession de droits d’auteur, diffusé(s) ou non … de 40 001 € à 50 000 € 27 € 324 €"
+    }
+   ]
+  }
+ ],
+ "role": "writer",
+ "country": "FR",
+ "sources": [
+  {
+   "url": "https://www.lofficieldesmetiers.fr/cinema-extension-de-laccord-interprofessionnel-entre-scenaristes-et-producteurs-de-long-metrage/",
+   "title": "L'Officiel des métiers: Cinéma, extension de l'accord interprofessionnel entre scénaristes et producteurs de long-métrage",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052404038",
+   "said": "Arrêté du 16 octobre 2025 a officialisé l’ … extension de l’accord interprofessionnel sur les pratiques contractuelles entre auteurs-scénaristes et producteurs d’œuvres cinématographiques de long-métrage de fiction, signé la veille, le … 15 octobre 2025 … principales organisations de producteurs (API, SPI, UPC) et d’auteurs (SCA, SRF, ARP, SACD) … Cet accord entrera en vigueur trois mois après sa signature, soit le 15 janvier 2026. Il est conclu pour une durée de trois ans … Minimum Garanti Écriture Plancher (MGEP) … 1 auteur 17 000 € 17 000 € 2 auteurs 13 600 € chacun 27 200 € 3 auteurs 11 000 € chacun 33 000 € … (15 % à la signature, 20 % à la remise de chaque version dialoguée jusqu’à la Vdef, 10 % pour la réécriture) … Cette indexation est calculée par l’application d’un taux (allant de 2,5 % à 3 % pour les œuvres originales en fonction de la couverture des frais généraux et du salaire producteur, et 2,5 % pour les adaptations) sur une assiette des financements externes (aides publiques, apports des coproducteurs, MG des mandataires, etc.) jusqu’à 6 millions d’euros"
+  },
+  {
+   "url": "https://www.culture.gouv.fr/presse/communiques-de-presse/rachida-dati-ministre-de-la-culture-salue-un-accord-essentiel-pour-les-auteurs-scenaristes-de-cinema-et-annonce-qu-elle-procedera-a-son-extension",
+   "title": "Ministère de la Culture: Rachida Dati salue un accord essentiel pour les auteurs scénaristes de cinéma et annonce qu'elle procédera à son extension",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La ministre de la Culture souhaite étendre immédiatement cet accord à l’ensemble du secteur."
+  },
+  {
+   "url": "https://www.cnc.fr/professionnels/communiques-de-presse/gaetan-bruel-salue-la-signature-de-laccord-interprofessionnel-sur-les-scenaristes-de-cinema_2478934",
+   "title": "CNC: Gaëtan Bruel salue la signature de l'accord interprofessionnel sur les scénaristes de cinéma",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Un Minimum Garanti d’Ecriture « plancher » (MGEP) assurera aux scénaristes une rémunération minimale durant tout le travail d’écriture, que le film se fasse ou non"
+  },
+  {
+   "url": "https://www.guildedesscenaristes.org/fp8_accord-fiction-2023",
+   "title": "Guilde française des scénaristes: Guide de l'accord sur les pratiques contractuelles dans la fiction 2023",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.guildedesscenaristes.org/wp-content/uploads/2023/03/Accord_interpro_pratiques_contractuelles_fiction_2023.pdf",
+   "said": "Un accord interprofessionnel a été signé le 22 mars 2023 … Un minimum de 6 000 € bruts au titre de la commande de la bible initiale … Ce minimum est porté à 11 000 € bruts si une convention de développement est signée avec un éditeur de services, Il est porté à 20 000 € bruts si la série est mise en production. … L’accord entre en vigueur le 1er juillet 2023. … Le montant global de l’EME est égal à 3% des dépenses directes … Le montant global de l’EME est égal à 3,6% des dépenses directes … Un plancher de 27 550 € par heure pour les œuvres non adaptées … Un plafond de 1,2 M€ par par heure. … au moins 70% du montant total des droits d’auteur bruts de l’EME à la remise de la première version de la continuité́ dialoguée … dépenses directes sont inférieures à 600 000 euros par heure … minimas pour les options. L’option est négociée de gré à gré entre l’auteur et le producteur. Attention : une option ne porte que sur un texte déjà écrit."
+  },
+  {
+   "url": "https://www.guildedesscenaristes.org/adherer/",
+   "title": "Guilde française des scénaristes: Adhérer",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Cotisation annuelle de 96,00 € à 1% des revenus net annuels liés au scénario. … Au moins 26 minutes d’un scénario ou plusieurs scénarios cumulés ayant fait l’objet de contrat de commande et de cession de droits d’auteur, diffusé(s) ; Au moins 52 minutes d’un scénario ou plusieurs scénarios ayant fait l’objet d’un contrat de commande et de cession de droits d’auteur, diffusé(s) ou non … de 40 001 € à 50 000 € 27 € 324 €"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "option",
+   "sought": "Option terms (price, length) for fiction features under the 2025 cinema agreement.",
+   "tried": {
+    "institution": "CNC and Ministry of Culture press releases (read) do not give them | Retry 2026-11-01: Guilde française des scénaristes communiqué of 14 October 2025 on the cinema agreement (https://www.guildedesscenaristes.org/la-guilde-francaise-des-scenaristes-dit-non-a-laccord-cinema/, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/roles-markets/writer-FR-gds-non-accord-cinema.html) gives the MGEP floors but nothing on options; the 2021 \"Accord relatif aux clauses types\" for cinema (scan, OCR saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/roles-markets/writer-FR-clauses-types-cinema-2021.ocr.txt) sets conditions for CNC aid, no option terms.",
+    "official-register": "Légifrance JORFTEXT000052404038 refused with a bot check (403), not read another way | Retry 2026-11-01: Légifrance tried in three forms (jorf/id/JORFTEXT000052404038 with and without www, and the ELI path): 403 each time; not read another way.",
+    "web-search": "2026-11-01 two searches on the agreement's amounts; none on options found | Retry 2026-11-01: \"accord 15 octobre 2025 pratiques contractuelles auteurs-scénaristes producteurs long métrage texte pdf option durée rémunération\": no text of the agreement found.",
+    "trade-press": "L'Officiel des métiers summary (read) does not mention options | Retry 2026-11-01: European Audiovisual Observatory IRIS/Merlin article 10412 answered 403; change.org petition (not a primary) gives the MGEP amounts only.",
+    "archive": "archive.org availability API lists no snapshot of the JORF page | Retry 2026-11-01: web.archive.org reset the connection again (2026-11-01); archive.ph reset; arquivo.pt answered 403; not read another way."
+   }
+  }
+ ]
+}

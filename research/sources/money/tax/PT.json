@@ -1,0 +1,405 @@
+{
+ "topic": "tax.PT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Portugal: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 a resident's taxable income is taxed on brackets of 12.5% to EUR 8,342, 15.7% to 12,587, 21.2% to 17,838, 24.1% to 23,089, 31.1% to 29,397, 34.9% to 43,090, 43.1% to 46,566, 44.6% to 86,634 and 48% above, plus a solidarity surcharge of 2.5% on income from EUR 80,000 to 250,000 and 5% above; joint filers apply the scale to half the income; there is no municipal income tax layer.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 8342,
+      "rate": 0.125
+     },
+     {
+      "from": 8342,
+      "to": 12587,
+      "rate": 0.157
+     },
+     {
+      "from": 12587,
+      "to": 17838,
+      "rate": 0.212
+     },
+     {
+      "from": 17838,
+      "to": 23089,
+      "rate": 0.241
+     },
+     {
+      "from": 23089,
+      "to": 29397,
+      "rate": 0.311
+     },
+     {
+      "from": 29397,
+      "to": 43090,
+      "rate": 0.349
+     },
+     {
+      "from": 43090,
+      "to": 46566,
+      "rate": 0.431
+     },
+     {
+      "from": 46566,
+      "to": 86634,
+      "rate": 0.446
+     },
+     {
+      "from": 86634,
+      "to": null,
+      "rate": 0.48
+     }
+    ],
+    "solidarity": [
+     {
+      "from": 80000,
+      "to": 250000,
+      "rate": 0.025
+     },
+     {
+      "from": 250000,
+      "to": null,
+      "rate": 0.05
+     }
+    ],
+    "jointSplitting": 2,
+    "regional": null
+   },
+   "applies": "Residents, 2026 (CIRS art. 68 as worded by Lei 73-A/2025)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Até 8 342 ​12,50 12,500 De mais de 8 342 até 12 587 15,70 13,579 De mais de 12 587 até 17 838 21,20 ​ 15,823 De mais de 17 838 até 23 089 24,10 17,705 De mais de 23 089 até 29 397 31,10 20,579 De mais de 29 397 até 43 090 34,90 25,130 De mais de 43 090 até 46 566 43,10 26,472 De mais de 46 566​ até 86 634 44,60 34,856 ​ Superior a 86 634 48,00"
+    },
+    {
+     "src": 1,
+     "said": "De mais de 80 000 até 250 000 . . . . . . . . . . . . . . . . 2,5 Superior a 250 000 . . . . . . . . . . . . . . . . . . . . . . . . . . 5"
+    },
+    {
+     "src": 2,
+     "said": "For the purpose of applying the tax rate, the taxable income is divided by two if the taxpayers are married and not judicially separated, as well as in the case of de facto marriages, whatever the circumstances, should they opt for joint taxation."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed screen worker (category B, artistic services) with gross income under EUR 200,000 is taxed under the simplified regime on 75% of income from the professional services listed in the art. 151 table.",
+   "value": {
+    "simplifiedRegime": {
+     "turnoverBelow": 200000,
+     "coefficientServicesListed": 0.75,
+     "coefficientSales": 0.15
+    }
+   },
+   "applies": "Self-employed residents, 2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The simplified regime will apply only to taxpayers who, not having opted for organised accounts, have a turnover or a gross business and professional income lower than EUR 200,000 (for 2026) in the previous year. Under this simplified regime, the above income is taxed on 0.15% of sales of products or 0.75% of income arising from business and professional services listed in the table referred to in Article 151 of the PIT Code."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is filed from 1 April to 30 June of the next year; the assessment is issued by 31 July and paid by 31 August.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": [
+     "04-01",
+     "06-30"
+    ],
+    "paymentDue": "08-31"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "é entregue, por transmissão eletrónica de dados, de 1 de abril a 30 de junho, independentemente de este dia ser útil ou não útil."
+    },
+    {
+     "src": 5,
+     "said": "the Portuguese tax authorities should issue the tax assessment by 31 July of that year and the respective tax due, if applicable, should be paid by 31 August."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 11% and the employer 23.75% of gross pay to social security; a self-employed worker pays 21.4% on a base of 70% of service income (capped at 12 times the IAS), and a client paying 50-80% (7%) or over 80% (10%) of the worker's fees pays an entity contribution.",
+   "value": {
+    "employee": 0.11,
+    "employer": 0.2375,
+    "selfEmployed": {
+     "rate": 0.214,
+     "base": "70% of service income in the prior three months",
+     "cap": "12 x IAS per month"
+    },
+    "entityContribution": {
+     "50to80pct": 0.07,
+     "over80pct": 0.1
+    }
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 6,
+     "said": "the contributions are due on the employee’s gross remuneration at rates of 11% and 23.75% by the employee and the employer, respectively."
+    },
+    {
+     "src": 6,
+     "said": "The contributions rate applicable to self-employees corresponds to 21.4%."
+    },
+    {
+     "src": 6,
+     "said": "The relevant remuneration corresponds to 70% of the income from services rendered and to 20% of the income related to the production and sales of products. The basis of contributions considered in each month has a limit of 12 times the IAS. A 10% contribution rate is due by employers if 80% or more of the fees earned by the self-employee come from services for the same company, for the same person with a business activity, or to the same group. A 7% contribution rate is due by employers when the economic dependence of the self-employee varies between 50% and 80%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold monthly under PAYE tables; a payer with organised accounts withholds 23% from fees for the professional activities in the art. 151 table, 11.5% from other category B services, and 16.5% from intellectual property income earned by its original author.",
+   "value": {
+    "employee": "monthly withholding tables",
+    "listedProfessions": 0.23,
+    "otherCategoryB": 0.115,
+    "authorsIP": 0.165
+   },
+   "applies": "Payments by entities with organised accounts",
+   "sources": [
+    {
+     "src": 7,
+     "said": "a) 16,5 %, tratando-se de rendimentos da categoria B referidos na alínea c) do n.º 1 do artigo 3.º"
+    },
+    {
+     "src": 7,
+     "said": "b) 23 %, tratando-se de rendimentos decorrentes das atividades profissionais especificamente previstas na tabela a que se refere o artigo 151.º;"
+    },
+    {
+     "src": 7,
+     "said": "c) 11,5 %, tratando-se de rendimentos da categoria B referidos na alínea b) do n.º 1 e nas alíneas g) e i) do n.º 2 do artigo 3.º, não compreendidos na alínea anterior;"
+    },
+    {
+     "src": 5,
+     "said": "Portugal uses a pay-as-you-earn (PAYE) system, adjusted by annual tax return filing."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director has a final 25% withheld from gross Portuguese-source employment and professional income, even for isolated acts (none on monthly pay up to the minimum wage from a single payer).",
+   "value": {
+    "rate": 0.25,
+    "base": "gross",
+    "final": true,
+    "minimumWageExemption": "monthly income up to the minimum wage from a single payer"
+   },
+   "applies": "Non-residents (CIRS art. 71(4))",
+   "sources": [
+    {
+     "src": 8,
+     "said": "4 - Estão sujeitos a retenção na fonte a título definitivo, à taxa liberatória de 25 %, os seguintes rendimentos obtidos em território português por não residentes: a) Os rendimentos do trabalho dependente e todos os rendimentos empresariais e profissionais, ainda que decorrentes de atos isolados;"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's intellectual-property income earned as original owner is category B income, withheld at 16.5% by payers with organised accounts; the Tax Benefits Statute's 50% exclusion is in the next entry.",
+   "value": {
+    "withholding": 0.165,
+    "category": "B"
+   },
+   "applies": "Resident authors",
+   "sources": [
+    {
+     "src": 7,
+     "said": "a) 16,5 %, tratando-se de rendimentos da categoria B referidos na alínea c) do n.º 1 do artigo 3.º"
+    },
+    {
+     "src": 3,
+     "said": "or from intellectual rights (when earned by the original owner) may be taxed either in accordance with a simplified regime or based on the taxpayer’s accounts."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 23% (22% Madeira, 16% Azores); a freelancer whose turnover in Portugal did not exceed EUR 15,000 in the previous calendar year is exempt (and cannot deduct input VAT).",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.23,
+    "madeira": 0.22,
+    "azores": 0.16,
+    "threshold": 15000,
+    "basis": "previous calendar year's turnover"
+   },
+   "applies": "Supplies in Portugal",
+   "sources": [
+    {
+     "src": 6,
+     "said": "the standard rate of 23% (22% in the Autonomous Region of Madeira; 16% in the Autonomous Region of the Azores)"
+    },
+    {
+     "src": 9,
+     "said": "Beneficiam da isenção do imposto os sujeitos passivos com sede ou domicílio em território nacional que, não praticando operações de exportação ou atividades conexas, não tenham atingido, no ano civil anterior, um volume de negócios anual em território nacional superior a 15 000 €."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident author who is the original owner of the rights counts only 50% of his literary, artistic or scientific property income (net of other benefits) in his taxable income, the amount left out capped at EUR 10,000 a year (Tax Benefits Statute art. 58, extended from 1 January 2022 for the statute's five-year term, so through 2026); works without literary, artistic or scientific character, architecture and advertising are excluded.",
+   "value": {
+    "currency": "EUR",
+    "inclusionShare": 0.5,
+    "maxExcludedPerYear": 10000,
+    "law": "EBF art. 58",
+    "inForce": {
+     "from": "2022-01-01",
+     "to": "2026-12-31"
+    }
+   },
+   "applies": "Resident authors who are the original rights holders; 2022 to 2026 (the five-year term of EBF art. 3(1) counted from the extension's effect on 1 January 2022).",
+   "sources": [
+    {
+     "src": 10,
+     "said": "Os rendimentos provenientes da propriedade literária, artística e científica, incluindo os provenientes da alienação de obras de arte de exemplar único e os provenientes das obras de divulgação pedagógica e científica, quando auferidos por titulares de direitos de autor ou conexos residentes em território português, desde que sejam os titulares originários, são considerados no englobamento, para efeitos do IRS, apenas por 50 % do seu valor, líquido de outros benefícios. … 2 - Excluem-se do disposto no número anterior os rendimentos provenientes de obras escritas sem carácter literário, artístico ou científico, obras de arquitectura e obras publicitárias. 3 - A importância a excluir do englobamento nos termos do n.º 1 não pode exceder €10 000."
+    },
+    {
+     "src": 11,
+     "said": "A vigência dos artigos 58.º e 62.º-A do EBF é prorrogada nos termos do n.º 1 do artigo 3.º do EBF. … A prorrogação do artigo 58.º do EBF, nos termos do artigo 10.º, produz efeitos desde 1 de janeiro de 2022"
+    },
+    {
+     "src": 12,
+     "said": "As normas que consagram os benefícios fiscais constantes das partes ii e iii do presente Estatuto vigoram durante um período de cinco anos, salvo quando disponham em contrário."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The activity table of CIRS art. 151 lists actors under code 2010 (\"Artistas de teatro, bailado, cinema, rádio e televisão\"), so an actor's fees bear the 23% withholding for listed professional activities; it has no code for writers or film directors, whose services fall to \"Outros artistas\" (2015) or \"Outros prestadores de serviços\" (1519) and whose copyright income is withheld as intellectual property.",
+   "value": {
+    "activityCodes": {
+     "actorsTheatreFilmRadioTv": 2010,
+     "otherArtists": 2015,
+     "otherServiceProviders": 1519
+    }
+   },
+   "applies": "From the Portaria 1011/2001 table as amended by Portaria 23/2022 (in force 2026).",
+   "sources": [
+    {
+     "src": 13,
+     "said": "2 - Artistas plásticos e assimilados, actores e músicos: 2010 Artistas de teatro, bailado, cinema, rádio e televisão; … 2015 Outros artistas; … 1519 Outros prestadores de serviços."
+    }
+   ]
+  }
+ ],
+ "country": "PT",
+ "sources": [
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx",
+   "title": "Código do IRS, Artigo 68.º Taxas gerais (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Até 8 342 ​12,50 12,500 De mais de 8 342 até 12 587 15,70 13,579 De mais de 12 587 até 17 838 21,20 ​ 15,823 De mais de 17 838 até 23 089 24,10 17,705 De mais de 23 089 até 29 397 31,10 20,579 De mais de 29 397 até 43 090 34,90 25,130 De mais de 43 090 até 46 566 43,10 26,472 De mais de 46 566​ até 86 634 44,60 34,856 ​ Superior a 86 634 48,00"
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68a.aspx",
+   "title": "Código do IRS, Artigo 68.º-A Taxa adicional de solidariedade (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De mais de 80 000 até 250 000 . . . . . . . . . . . . . . . . 2,5 Superior a 250 000 . . . . . . . . . . . . . . . . . . . . . . . . . . 5"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/portugal/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Portugal, Individual - Taxes on personal income (last reviewed 03 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/",
+   "said": "For the purpose of applying the tax rate, the taxable income is divided by two if the taxpayers are married and not judicially separated, as well as in the case of de facto marriages, whatever the circumstances, should they opt for joint taxation."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/portugal/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries, Portugal, Individual - Income determination (last reviewed 03 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/",
+   "said": "The simplified regime will apply only to taxpayers who, not having opted for organised accounts, have a turnover or a gross business and professional income lower than EUR 200,000 (for 2026) in the previous year. Under this simplified regime, the above income is taxed on 0.15% of sales of products or 0.75% of income arising from business and professional services listed in the table referred to in Article 151 of the PIT Code. … or from intellectual rights (when earned by the original owner) may be taxed either in accordance with a simplified regime or based on the taxpayer’s accounts."
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs60.aspx",
+   "title": "Código do IRS, Artigo 60.º Prazo de entrega da declaração (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "é entregue, por transmissão eletrónica de dados, de 1 de abril a 30 de junho, independentemente de este dia ser útil ou não útil."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/portugal/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Portugal, Individual - Tax administration (last reviewed 03 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/",
+   "said": "the Portuguese tax authorities should issue the tax assessment by 31 July of that year and the respective tax due, if applicable, should be paid by 31 August. … Portugal uses a pay-as-you-earn (PAYE) system, adjusted by annual tax return filing."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/portugal/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Portugal, Individual - Other taxes (last reviewed 03 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.seg-social.pt/",
+   "said": "the contributions are due on the employee’s gross remuneration at rates of 11% and 23.75% by the employee and the employer, respectively. … The contributions rate applicable to self-employees corresponds to 21.4%. … The relevant remuneration corresponds to 70% of the income from services rendered and to 20% of the income related to the production and sales of products. The basis of contributions considered in each month has a limit of 12 times the IAS. A 10% contribution rate is due by employers if 80% or more of the fees earned by the self-employee come from services for the same company, for the same person with a business activity, or to the same group. A 7% contribution rate is due by employers when the economic dependence of the self-employee varies between 50% and 80%. … the standard rate of 23% (22% in the Autonomous Region of Madeira; 16% in the Autonomous Region of the Azores)"
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs101.aspx",
+   "title": "Código do IRS, Artigo 101.º Retenção sobre rendimentos de outras categorias (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a) 16,5 %, tratando-se de rendimentos da categoria B referidos na alínea c) do n.º 1 do artigo 3.º … b) 23 %, tratando-se de rendimentos decorrentes das atividades profissionais especificamente previstas na tabela a que se refere o artigo 151.º; … c) 11,5 %, tratando-se de rendimentos da categoria B referidos na alínea b) do n.º 1 e nas alíneas g) e i) do n.º 2 do artigo 3.º, não compreendidos na alínea anterior;"
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx",
+   "title": "Código do IRS, Artigo 71.º Taxas liberatórias (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "4 - Estão sujeitos a retenção na fonte a título definitivo, à taxa liberatória de 25 %, os seguintes rendimentos obtidos em território português por não residentes: a) Os rendimentos do trabalho dependente e todos os rendimentos empresariais e profissionais, ainda que decorrentes de atos isolados;"
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/civa_rep/Pages/artigo-53-o-do-civa.aspx",
+   "title": "Código do IVA, Artigo 53.º (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Beneficiam da isenção do imposto os sujeitos passivos com sede ou domicílio em território nacional que, não praticando operações de exportação ou atividades conexas, não tenham atingido, no ano civil anterior, um volume de negócios anual em território nacional superior a 15 000 €."
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-58-ordm-.aspx",
+   "title": "Estatuto dos Benefícios Fiscais, Artigo 58.º Propriedade intelectual (Autoridade Tributária e Aduaneira)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Os rendimentos provenientes da propriedade literária, artística e científica, incluindo os provenientes da alienação de obras de arte de exemplar único e os provenientes das obras de divulgação pedagógica e científica, quando auferidos por titulares de direitos de autor ou conexos residentes em território português, desde que sejam os titulares originários, são considerados no englobamento, para efeitos do IRS, apenas por 50 % do seu valor, líquido de outros benefícios. … 2 - Excluem-se do disposto no número anterior os rendimentos provenientes de obras escritas sem carácter literário, artístico ou científico, obras de arquitectura e obras publicitárias. 3 - A importância a excluir do englobamento nos termos do n.º 1 não pode exceder €10 000."
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_20_2023.pdf",
+   "title": "Lei n.º 20/2023, de 17 de maio, arts. 10.º and 14.º (Autoridade Tributária e Aduaneira copy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A vigência dos artigos 58.º e 62.º-A do EBF é prorrogada nos termos do n.º 1 do artigo 3.º do EBF. … A prorrogação do artigo 58.º do EBF, nos termos do artigo 10.º, produz efeitos desde 1 de janeiro de 2022"
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-3-ordm-.aspx",
+   "title": "Estatuto dos Benefícios Fiscais, Artigo 3.º Caducidade dos benefícios fiscais (redação da Lei n.º 82/2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As normas que consagram os benefícios fiscais constantes das partes ii e iii do presente Estatuto vigoram durante um período de cinco anos, salvo quando disponham em contrário."
+  },
+  {
+   "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/portaria_1011-2001_de_21_de_agosto_i_serie_b.pdf",
+   "title": "Portaria n.º 1011/2001, de 21 de agosto, Tabela de actividades do artigo 151.º do CIRS (consolidated, AT copy)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2 - Artistas plásticos e assimilados, actores e músicos: 2010 Artistas de teatro, bailado, cinema, rádio e televisão; … 2015 Outros artistas; … 1519 Outros prestadores de serviços."
+  }
+ ],
+ "blockers": []
+}

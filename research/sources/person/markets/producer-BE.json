@@ -1,0 +1,114 @@
+{
+ "topic": "markets.producer.BE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Belgium. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Belgium's federal Tax Shelter (since 2003) is not a fixed-rate rebate: certified Belgian (co-)producers raise money from Belgian companies that receive tax certificates, against an obligation to spend eligible audiovisual expenses in Belgium and the EEA within 18 months (24 for animation); producers net between 38% and 40% of eligible Belgian expenditure, and investors earn 12-month Euribor plus 450 basis points for up to 18 months.",
+   "value": {
+    "name": "Tax Shelter",
+    "since": 2003,
+    "netShareOfEligibleBelgianSpend": {
+     "min": 0.38,
+     "max": 0.4
+    },
+    "investorInterest": "12-month Euribor + 450 bp, max 18 months",
+    "spendWindowMonths": {
+     "standard": 18,
+     "animation": 24
+    },
+    "eligibleProducer": "Belgian company whose main purpose is audiovisual production, not a broadcaster",
+    "certifiedBy": "Federal Public Service Finance"
+   },
+   "applies": "Belgium, European works and treaty co-productions with a certified Belgian producer.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Unlike many other incentive systems within Europe, the Tax Shelter is not a cash or tax rebate expressed as a fixed percentage. … producers can finance between 38% and 40% of eligible Belgian expenditure through the Tax Shelter mechanism. … This interest is calculated according to the average 12-month Euribor rate, increased by 450 basis points, over a maximum period of 18 months. … the Belgian (co-)producer must make the eligible expenses within 18 months (24 months for animation) of signing the framework agreement. … The Belgian Tax Shelter system has been in place since 2003"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "Flanders' economic fund Screen Flanders has an annual budget of €3.5 million over two calls and awards at most €400,000 per feature or series, as refundable advances on net receipts; cultural support comes from the Flanders Audiovisual Fund (VAF) and the French-speaking Community's CCA, and in Brussels screen.brussels invested more than €3 million in 29 projects in 2023.",
+   "value": {
+    "screenFlanders": {
+     "annualBudgetEUR": 3500000,
+     "calls": 2,
+     "maxPerProjectEUR": 400000,
+     "form": "refundable advance on net receipts",
+     "selective": true
+    },
+    "screenBrussels2023": {
+     "investedEUR": "more than 3,000,000",
+     "projects": 29,
+     "expectedSpendEUR": 24000000
+    },
+    "cultural": [
+     "VAF (Flanders)",
+     "Centre du Cinéma et de l'Audiovisuel (Fédération Wallonie-Bruxelles)"
+    ]
+   },
+   "applies": "Belgium; Screen Flanders as published 2026; screen.brussels results for 2023.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "With an annual budget of 3.5 million euros, spread over two separate calls … Belgian producers can apply for support for fiction, animation and documentary features and series for a maximum amount of 400,000 euros. The support is awarded as refundable advances on net receipts."
+    },
+    {
+     "src": 2,
+     "said": "This year, more than 3 million euros were invested in 29 projects that should generate at least 24 million euros in direct audiovisual expenditure."
+    },
+    {
+     "src": 3,
+     "said": "the CCA in the French-speaking part of Belgium, and with the Netherlands Film Fund."
+    }
+   ]
+  }
+ ],
+ "country": "BE",
+ "sources": [
+  {
+   "url": "https://www.screenflanders.be/en/financing/other-funds-incentives/tax-shelter",
+   "title": "Screen Flanders: Tax Shelter",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Unlike many other incentive systems within Europe, the Tax Shelter is not a cash or tax rebate expressed as a fixed percentage. … producers can finance between 38% and 40% of eligible Belgian expenditure through the Tax Shelter mechanism. … This interest is calculated according to the average 12-month Euribor rate, increased by 450 basis points, over a maximum period of 18 months. … the Belgian (co-)producer must make the eligible expenses within 18 months (24 months for animation) of signing the framework agreement. … The Belgian Tax Shelter system has been in place since 2003"
+  },
+  {
+   "url": "https://www.screenflanders.be/en/financing/screen-flanders",
+   "title": "Screen Flanders: Screen Flanders",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "With an annual budget of 3.5 million euros, spread over two separate calls … Belgian producers can apply for support for fiction, animation and documentary features and series for a maximum amount of 400,000 euros. The support is awarded as refundable advances on net receipts."
+  },
+  {
+   "url": "https://screen.brussels/en/news/results-2023",
+   "title": "screen.brussels: Results 2023 (12 December 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This year, more than 3 million euros were invested in 29 projects that should generate at least 24 million euros in direct audiovisual expenditure."
+  },
+  {
+   "url": "https://www.vaf.be/en",
+   "title": "Flanders Audiovisual Fund (VAF)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the CCA in the French-speaking part of Belgium, and with the Netherlands Film Fund."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "feecap",
+   "sought": "A cap on producer fee and overheads set by the VAF, the CCA or the Tax Shelter rules",
+   "tried": {
+    "institution": "Screen Flanders and VAF pages read (no cap stated); the FPS Finance tax shelter page bot-checks this environment (not read another way); vlaio.be answered 403 || retry 2026-11-01: https://www.vaf.be/ read (home page; no producer-fee cap or writer fee scale linked); scenaristengilde.be feature-film scenario remains members-only",
+    "official-register": "SCP 303.01 texts (mediarte) carry no producer cap || retry 2026-11-01: WIPO Lex country profile https://www.wipo.int/wipolex/en/members/profile/BE read 2026-11-01 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets-world/BE-wipolex.html): lists copyright and media laws, none setting this; FPS Finance tax-shelter page still bot-checks (not read another way)",
+    "web-search": "search \"tax shelter production audiovisuelle exonération 421% plafond\" returned no official page with a fee cap || retry 2026-11-01: \"VAF reglement productie langspeelfilm producentenloon algemene kosten maximum percentage\": no reglement text in the results",
+    "trade-press": "none found quoting a primary || retry 2026-11-01: none quoting a VAF or CCA cap",
+    "archive": "not tried || retry 2026-11-01: archive.org availability API answered 429 Too Many Requests and web.archive.org/web/2025/https://scenaristengilde.be/ reset the connection (curl 35), 2026-11-01; no snapshot read"
+   }
+  }
+ ]
+}

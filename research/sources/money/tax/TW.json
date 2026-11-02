@@ -1,0 +1,304 @@
+{
+ "topic": "tax.TW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Taiwan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's net taxable income for 2026 is taxed at 5% to TWD 610,000, 12% to 1,380,000, 20% to 2,770,000, 30% to 5,190,000 and 40% above, after a personal exemption of TWD 101,000, a standard deduction of 136,000 (single) and a salary special deduction of up to 227,000.",
+   "value": {
+    "currency": "TWD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 610000,
+      "rate": 0.05
+     },
+     {
+      "from": 610000,
+      "to": 1380000,
+      "rate": 0.12
+     },
+     {
+      "from": 1380000,
+      "to": 2770000,
+      "rate": 0.2
+     },
+     {
+      "from": 2770000,
+      "to": 5190000,
+      "rate": 0.3
+     },
+     {
+      "from": 5190000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "exemption": 101000,
+    "standardDeduction": {
+     "single": 136000,
+     "married": 272000
+    },
+    "salaryDeduction": 227000,
+    "regional": null
+   },
+   "applies": "Tax year 2026 (filed May 2027); residents (183 days or more).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Table of Progressive Tax Rates for the Year 2026(Unit: NTD) Net Taxable Income × Tax Rate － Progressive Difference = Tax Payable 0~610,000 × 5% － 0 = 610,001~1,380,000 × 12% － 42,700 = 1,380,001~2,770,000 × 20% － 153,100 = 2,770,001~5,190,000 × 30% － 430,100 = 5,190,001 and above × 40% － 949,100 ="
+    },
+    {
+     "src": 1,
+     "said": "2026 101,000 151,500 136,000 272,000 227,000 270,000 25,000 150,000 227,000 180,000 180,000"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is filed and any balance paid between 1 and 31 May of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": [
+     "05-01",
+     "05-31"
+    ]
+   },
+   "applies": "Individuals (Income Tax Act art. 71).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "A taxpayer shall, within the period from May 1 to May 31 of each year, fill out and file to the competent tax authority an annual income tax return"
+    },
+    {
+     "src": 3,
+     "said": "The tax year is the same as the calendar year, which runs from 1 January through 31 December."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Labour insurance in 2026 is 12.5% of the insured monthly salary (11.5% ordinary risk plus 1% employment insurance), borne 20% by the worker, 70% by the employer and 10% by government; national health insurance and labour pension are on top (foreigners are outside the labour pension).",
+   "value": {
+    "laborInsurance": {
+     "rate": 0.125,
+     "employeeShare": 0.2,
+     "employerShare": 0.7,
+     "governmentShare": 0.1
+    },
+    "nhiSupplementary": 0.0211,
+    "laborPensionForeigners": null
+   },
+   "applies": "2026; on the insured salary grade, which is capped.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "勞保費率則為12.5％，其中普通事故保險費率為11.5％，就業保險費率則為1％。勞雇負擔比例則以勞工20％、雇主70％、政府10％計算"
+    },
+    {
+     "src": 5,
+     "said": "Taiwan social security programs include the Labour Insurance Program (LIP), National Health Insurance Program (NHIP), and Labour Pension Program (LPP). However, foreign individuals are not eligible for participating in the LPP."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax is withheld from locally paid salaries and the balance settled on the May return.",
+   "value": {
+    "employee": "withholding on locally paid salaries"
+   },
+   "applies": "Residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "There is income tax withholding on locally paid salaries. Additional tax due must be paid at the time of filing before 31 May of the following year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident (under 183 days) is withheld 20% on remuneration for professional practice (a performer's, writer's or director's fee), 18% on salaries (6% where monthly pay is at most 1.5 times the minimum wage) and 20% on royalties, final.",
+   "value": {
+    "professionalPractice": 0.2,
+    "salary": 0.18,
+    "lowSalary": 0.06,
+    "royalties": 0.2,
+    "final": true
+   },
+   "applies": "Non-residents (Withholding Rate Standards).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The withholding tax rate on salaries is 18%. In the case that the monthly salaries in full amount are equal to or lower than one and a half times of the monthly baseline salary as assessed by the Executive Yuan, the withholding tax rate is 6% from January 1st, 2009."
+    },
+    {
+     "src": 6,
+     "said": "The withholding tax rate on royalties is 20%."
+    },
+    {
+     "src": 6,
+     "said": "The withholding tax rate on the remuneration to a professional practice is 20%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An individual's income from publishing articles, books, musical compositions and drama productions is exempt up to TWD 180,000 a year in total.",
+   "value": {
+    "currency": "TWD",
+    "exemptUpTo": 180000
+   },
+   "applies": "Income Tax Act art. 4(1)(23).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Individual income derived from publishing articles, books, musical compositions, drama productions, drawing cartoons, and remuneration on an hourly basis for speeches. However, the total amount of such income for the whole year shall not exceed NT$ 180,000;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Business tax (VAT) is 5%; specified industries and small businesses pay gross business receipts tax at 2% to 5% instead.",
+   "value": {
+    "standard": 0.05,
+    "gbrt": [
+     0.02,
+     0.05
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The standard VAT rate is 5%. Gross business receipts tax (GBRT) GBRT is applicable to specified industries (e.g. financial institutions, small businesses) at rates ranging from 2% to 5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "For a resident, the payer withholds 10% of a professional practitioner's fee (an author's or performer's included) and of royalties, and from salaries either by the salary withholding table or a flat 5% of the month's pay, the employee choosing.",
+   "value": {
+    "residentProfessionalFee": 0.1,
+    "royalty": 0.1,
+    "salaryFlatOption": 0.05,
+    "salaryTableOption": "Salary Income Withholding Regulations"
+   },
+   "applies": "Residents, 2026; the salary table is the blocker.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "一、薪資按下列二種方式擇一扣繳，由納稅義務人自行選定適用之 … （二）按全月給付總額扣取百分之五。 … 六、權利金按給付額扣取百分之十 … 八、執行業務者之報酬按給付額扣取百分之十"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A professional practitioner's own professional services are not a sale of services under the business tax, and authors and performers are professional practitioners, so a writer's or performer's own fee bears no business tax (VAT).",
+   "value": {
+    "businessTaxOnOwnFee": false
+   },
+   "applies": "Individuals working on their own account as authors or performers; a company or registered business supplying the same services is taxed.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "提供勞務予他人，或提供貨物與他人使用、收益，以取得代價者，為銷售勞務。但執行業務者提供其專業性勞務及個人受僱提供勞務，不包括在內"
+    },
+    {
+     "src": 9,
+     "said": "本法稱執行業務者，係指律師、會計師、建築師、技師、醫師、藥師、助產士、著作人、經紀人、代書人、工匠、表演人及其他以技藝自力營生者"
+    }
+   ]
+  }
+ ],
+ "country": "TW",
+ "sources": [
+  {
+   "url": "https://www.ntbt.gov.tw/English/multiplehtml/3f18d2625aea4187b0d90e9b929afe4c",
+   "title": "National Taxation Bureau of Taipei, MOF: Progressive Tax Rate (resident)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Table of Progressive Tax Rates for the Year 2026(Unit: NTD) Net Taxable Income × Tax Rate － Progressive Difference = Tax Payable 0~610,000 × 5% － 0 = 610,001~1,380,000 × 12% － 42,700 = 1,380,001~2,770,000 × 20% － 153,100 = 2,770,001~5,190,000 × 30% － 430,100 = 5,190,001 and above × 40% － 949,100 ="
+  },
+  {
+   "url": "https://www.ntbt.gov.tw/English/download/ed20f4e3834f441bb48ae7c9c85f6eb5",
+   "title": "National Taxation Bureau of Taipei, MOF: Table of Exemption and Deduction, 2019 to 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2026 101,000 151,500 136,000 272,000 227,000 270,000 25,000 150,000 227,000 180,000 180,000"
+  },
+  {
+   "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003",
+   "title": "Income Tax Act (Laws & Regulations Database of the Republic of China, English translation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A taxpayer shall, within the period from May 1 to May 31 of each year, fill out and file to the competent tax authority an annual income tax return … Individual income derived from publishing articles, books, musical compositions, drama productions, drawing cartoons, and remuneration on an hourly basis for speeches. However, the total amount of such income for the whole year shall not exceed NT$ 180,000;"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/taiwan/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Taiwan, Individual - Tax administration (reviewed 20 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003",
+   "said": "The tax year is the same as the calendar year, which runs from 1 January through 31 December. … There is income tax withholding on locally paid salaries. Additional tax due must be paid at the time of filing before 31 May of the following year."
+  },
+  {
+   "url": "https://www.ctee.com.tw/news/20260121701103-430104",
+   "title": "Commercial Times (ctee.com.tw), 21 January 2026: 2026 labour and health insurance premiums",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.bli.gov.tw/",
+   "said": "勞保費率則為12.5％，其中普通事故保險費率為11.5％，就業保險費率則為1％。勞雇負擔比例則以勞工20％、雇主70％、政府10％計算"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/taiwan/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Taiwan, Individual - Other taxes (reviewed 20 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.bli.gov.tw/",
+   "said": "Taiwan social security programs include the Labour Insurance Program (LIP), National Health Insurance Program (NHIP), and Labour Pension Program (LPP). However, foreign individuals are not eligible for participating in the LPP. … The standard VAT rate is 5%. Gross business receipts tax (GBRT) GBRT is applicable to specified industries (e.g. financial institutions, small businesses) at rates ranging from 2% to 5%."
+  },
+  {
+   "url": "https://www.ntbt.gov.tw/English/multiplehtml/ba45b04ae8d4483f9a1681fc37ca6b37",
+   "title": "National Taxation Bureau of Taipei, MOF: Rate Applicable (non-resident staying less than 91 days)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The withholding tax rate on salaries is 18%. In the case that the monthly salaries in full amount are equal to or lower than one and a half times of the monthly baseline salary as assessed by the Executive Yuan, the withholding tax rate is 6% from January 1st, 2009. … The withholding tax rate on royalties is 20%. … The withholding tax rate on the remuneration to a professional practice is 20%."
+  },
+  {
+   "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340028",
+   "title": "各類所得扣繳率標準 (Withholding Rate Standards), Laws & Regulations Database of the Republic of China (Taiwan)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "一、薪資按下列二種方式擇一扣繳，由納稅義務人自行選定適用之 … （二）按全月給付總額扣取百分之五。 … 六、權利金按給付額扣取百分之十 … 八、執行業務者之報酬按給付額扣取百分之十"
+  },
+  {
+   "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340080",
+   "title": "加值型及非加值型營業稅法 (Value-added and Non-value-added Business Tax Act), amended 28 May 2025, Laws & Regulations Database",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "提供勞務予他人，或提供貨物與他人使用、收益，以取得代價者，為銷售勞務。但執行業務者提供其專業性勞務及個人受僱提供勞務，不包括在內"
+  },
+  {
+   "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340003",
+   "title": "所得稅法 (Income Tax Act), art. 11, Laws & Regulations Database",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "本法稱執行業務者，係指律師、會計師、建築師、技師、醫師、藥師、助產士、著作人、經紀人、代書人、工匠、表演人及其他以技藝自力營生者"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The 2026 salary withholding table under the Salary Income Withholding Regulations (薪資所得扣繳辦法), the first of the two methods in art. 2(1) of the Withholding Rate Standards",
+   "tried": {
+    "institution": "NTBT English pages read for non-residents only; dot.gov.tw resets the connection (2026-11-01) || 2026-11-01 retry: NTBT pages already held; dot.gov.tw still resets",
+    "official-register": "Withholding Rate Standards on law.moj.gov.tw not read || 2026-11-01 retry: law.moj.gov.tw read: Withholding Rate Standards art. 2 (resident fees 10%, salaries by the Salary Withholding Regulations' table or 5% flat): now a figure; the Salary Income Withholding Regulations' table itself not read",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Taiwan: withholding on salaries, no rate || 2026-11-01 retry: PwC Taiwan already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

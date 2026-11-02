@@ -1,0 +1,224 @@
+{
+ "topic": "tax.AM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Armenia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 20% income tax on salary and most other income (from 1 January 2023); royalties and property rent are taxed at 10%; there is no allowance and no regional layer.",
+   "value": {
+    "currency": "AMD",
+    "flatRate": 0.2,
+    "royalties": 0.1,
+    "rent": 0.1,
+    "allowance": null,
+    "regionalLayer": null
+   },
+   "applies": "Armenian residents, calendar year 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Starting from 1 January 2023, income tax should be calculated at a 20% flat rate."
+    },
+    {
+     "src": 1,
+     "said": "Income from royalties is subject to 10% tax and interest (if not exempt) is subject to 20% tax starting from 1 January 2023. If paid by a tax agent (i.e. legal entity, individual entrepreneur), tax should be withheld at source. Income from lease of property is subject to 10% tax."
+    },
+    {
+     "src": 2,
+     "said": "Article 150. Income tax rates 1. Unless otherwise prescribed by parts 1.1-15 of this Article, the income tax in respect of the tax base shall be calculated at the following rates: Period Income tax rate from 1 January 2020 23 percent from 1 January 2021 22 percent from 1 January 2022 21 percent from 1 January 2023 20 percent … 6. The income tax on royalties shall be calculated at a 10 percent rate. 7. The income tax on rentals shall be calculated at a 10 percent rate"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A tax agent (company or entrepreneur) withholds income tax from every payment to an individual (a final monthly withholding at 20% on other income) and transfers it by the 20th of the following month; an invoiced payment to a registered entrepreneur is not withheld.",
+   "value": {
+    "rate": 0.2,
+    "remitBy": "20th of the following month",
+    "exception": "registered individual entrepreneur against invoice"
+   },
+   "applies": "Payments by Armenian tax agents.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Other income paid by a tax agent is subject to final withholding on a monthly basis. The taxable base is the gross income minus deductible income. Other income will be withheld at a flat rate of 20%."
+    },
+    {
+     "src": 3,
+     "said": "Any income payment by a tax agent to an individual is subject to withholding unless the payment is to an individual entrepreneur and against appropriate invoices,"
+    },
+    {
+     "src": 3,
+     "said": "WHT from payments to individuals must be transferred to the State Budget not later than the 20th day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a declaration for income not taxed at source is due by 1 November 2026 for 2025, and from 2027 between 2 March and 1 July of the following year.",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnWindowFrom2027": {
+     "from": "03-02",
+     "to": "07-01"
+    },
+    "currency": "AMD"
+   },
+   "applies": "Armenian individuals.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Individuals who receive income that has not been subject to Armenian tax at source are required to file a personal tax declaration by 1 November 2026 for the calendar year 2025. Starting from 2027, the filing period shall be from 2 March to 1 July of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee born after 1 January 1974 pays a funded pension contribution of 5% of monthly gross pay under AMD 500,000, or 10% of pay (capped at AMD 1,125,000) less AMD 25,000 above that (at most AMD 87,500); from 25 December 2025 a citizen earning over AMD 200,000 pays a health contribution of AMD 4,800 (to AMD 500,000) or 10,800 a month. An entrepreneur pays 5% of income to AMD 6 million a year, or 10% less AMD 300,000 above.",
+   "value": {
+    "currency": "AMD",
+    "pension": {
+     "below500k": 0.05,
+     "above500k": "10% of pay (cap 1,125,000) - 25,000",
+     "maxMonthly": 87500
+    },
+    "health": {
+     "from": "2025-12-25",
+     "over200kTo500k": 4800,
+     "over500k": 10800
+    },
+    "entrepreneur": {
+     "to6m": 0.05,
+     "above6m": "10% - 300,000"
+    },
+    "employer": "not stated in the source"
+   },
+   "applies": "Employees and individual entrepreneurs born after 1 January 1974.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "5% of the monthly gross salary if it is less than AMD 500,000. 10% of the monthly gross salary (but not more than the maximum threshold) minus AMD 25,000 if the monthly gross salary is more than AMD 500,000 (capped at AMD 87,500)."
+    },
+    {
+     "src": 4,
+     "said": "For a gross salary up to AMD 500,000, the contribution is AMD 4,800. For a gross salary exceeding AMD 500,001, the contribution is AMD 10,800."
+    },
+    {
+     "src": 4,
+     "said": "An entrepreneur whose basic annual income does not exceed AMD 6 million should make monthly social payment in the amount of 5% of the gross income. If the annual gross income of an individual entrepreneur exceeds AMD 6 million, the payment in the amount of the difference of 10% of the income and AMD 300,000 should be withheld."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's income for services from Armenian sources (a performer's or writer's fee) bears a 20% withholding; royalties paid to non-residents bear 10%.",
+   "value": {
+    "services": 0.2,
+    "royalties": 0.1
+   },
+   "applies": "Payments to non-residents.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Other income (from services) received from Armenian sources is subject to WHT at the rate of 20%."
+    },
+    {
+     "src": 5,
+     "said": "Interests, royalties, income from the lease of property, and capital gains (except capital gains from the sale of securities) are subject to WHT at the rate of 10%,"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The standard VAT rate is 20%; a small business under AMD 115 million of prior-year income may use the turnover tax instead of VAT.",
+   "value": {
+    "currency": "AMD",
+    "standardRate": 0.2,
+    "turnoverTaxThreshold": 115000000,
+    "turnoverTax": {
+     "otherActivity": 0.1,
+     "rentalInterestRoyalty": 0.1,
+     "replaces": "VAT for an individual entrepreneur"
+    }
+   },
+   "applies": "Turnover tax (Tax Code Article 258) replaces VAT for an individual entrepreneur who elects it: 10% on income from other activity (a freelance screen worker's services) and 10% on rental, interest and royalty.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The standard rate of VAT is 20%."
+    },
+    {
+     "src": 6,
+     "said": "The turnover tax ( see below ) generally replaces VAT obligations for SMEs. One of the requirements is that the taxpayer must not cross the income threshold of AMD 115 million for the previous year."
+    },
+    {
+     "src": 2,
+     "said": "3. For individual entrepreneurs the turnover tax shall substitute the VAT. … Article 258. Turnover tax rates 1. Considering the provisions prescribed by parts 2-8 of this Article, the turnover tax against the tax base of transactions considered a turnover taxable object shall be calculated at the following rates: … (5) Rental, interest, royalty 10 … (10) Incomes derived from other activity 10"
+    }
+   ]
+  }
+ ],
+ "country": "AM",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/individual/significant-developments",
+   "title": "Armenia – individual/significant-developments (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "Starting from 1 January 2023, income tax should be calculated at a 20% flat rate."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/individual/taxes-on-personal-income",
+   "title": "Armenia – Taxes on personal income (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "Income from royalties is subject to 10% tax and interest (if not exempt) is subject to 20% tax starting from 1 January 2023. If paid by a tax agent (i.e. legal entity, individual entrepreneur), tax should be withheld at source. Income from lease of property is subject to 10% tax. … Other income paid by a tax agent is subject to final withholding on a monthly basis. The taxable base is the gross income minus deductible income. Other income will be withheld at a flat rate of 20%."
+  },
+  {
+   "url": "https://www.arlis.am/en/acts/216349",
+   "title": "Tax Code of the Republic of Armenia, Article 150 (official English translation, ARLIS, consolidated with amendments to 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 150. Income tax rates 1. Unless otherwise prescribed by parts 1.1-15 of this Article, the income tax in respect of the tax base shall be calculated at the following rates: Period Income tax rate from 1 January 2020 23 percent from 1 January 2021 22 percent from 1 January 2022 21 percent from 1 January 2023 20 percent … 6. The income tax on royalties shall be calculated at a 10 percent rate. 7. The income tax on rentals shall be calculated at a 10 percent rate … 3. For individual entrepreneurs the turnover tax shall substitute the VAT. … Article 258. Turnover tax rates 1. Considering the provisions prescribed by parts 2-8 of this Article, the turnover tax against the tax base of transactions considered a turnover taxable object shall be calculated at the following rates: … (5) Rental, interest, royalty 10 … (10) Incomes derived from other activity 10"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/individual/tax-administration",
+   "title": "Armenia – Tax administration (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "Any income payment by a tax agent to an individual is subject to withholding unless the payment is to an individual entrepreneur and against appropriate invoices, … WHT from payments to individuals must be transferred to the State Budget not later than the 20th day of the following month. … Individuals who receive income that has not been subject to Armenian tax at source are required to file a personal tax declaration by 1 November 2026 for the calendar year 2025. Starting from 2027, the filing period shall be from 2 March to 1 July of the following year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/individual/other-taxes",
+   "title": "Armenia – Other taxes (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "5% of the monthly gross salary if it is less than AMD 500,000. 10% of the monthly gross salary (but not more than the maximum threshold) minus AMD 25,000 if the monthly gross salary is more than AMD 500,000 (capped at AMD 87,500). … For a gross salary up to AMD 500,000, the contribution is AMD 4,800. For a gross salary exceeding AMD 500,001, the contribution is AMD 10,800. … An entrepreneur whose basic annual income does not exceed AMD 6 million should make monthly social payment in the amount of 5% of the gross income. If the annual gross income of an individual entrepreneur exceeds AMD 6 million, the payment in the amount of the difference of 10% of the income and AMD 300,000 should be withheld."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/corporate/withholding-taxes",
+   "title": "Armenia – Withholding taxes (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "Other income (from services) received from Armenian sources is subject to WHT at the rate of 20%. … Interests, royalties, income from the lease of property, and capital gains (except capital gains from the sale of securities) are subject to WHT at the rate of 10%,"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/armenia/corporate/other-taxes",
+   "title": "Armenia – Other taxes (corporate) (PwC Worldwide Tax Summaries, last reviewed 30 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.src.am",
+   "said": "The standard rate of VAT is 20%. … The turnover tax ( see below ) generally replaces VAT obligations for SMEs. One of the requirements is that the taxpayer must not cross the income threshold of AMD 115 million for the previous year."
+  }
+ ],
+ "blockers": []
+}

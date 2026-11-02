@@ -1,0 +1,160 @@
+{
+ "topic": "markets.producer.NG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Nigeria. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "Nigeria's public money for producers is a loan, not a grant: under the Central Bank's Creative Industry Financing Initiative a movie production business can borrow up to N30 million (a distribution business up to N500 million) through its own bank, at no more than 9% a year all charges included, repaid over up to ten years.",
+   "value": {
+    "scheme": "Creative Industry Financing Initiative (CIFI), CBN with the Bankers' Committee",
+    "form": "bank loan",
+    "maxLoanNGN": {
+     "movieProduction": 30000000,
+     "movieDistribution": 500000000
+    },
+    "maxInterestRatePerYear": 0.09,
+    "maxTenorYears": 10,
+    "published": "2019"
+   },
+   "applies": "Nigeria; movie production and distribution businesses applying through a deposit money bank; terms as the CBN published them in 2019 (whether the window is still open on 2026-11-01 was not confirmed).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2.2 You can get a loan of up to: a) N3 million for Software Engineering Student b) N30 million for Movie Production business c) N500 million for Movie Distribution business … 4.1 The maximum interest rate of 9.0% per annum (all charges inclusive) is applicable to all loans. … b) For Movie Production and Distribution, it is a maximum of ten years"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Nigeria has no rebate on a film's production spend; instead, since 1 January 2026 the Nigeria Tax Act lists motion picture, video and television production, distribution and exhibition as a priority sector whose companies may earn an economic development tax credit of 5% a year, for 5 years, on qualifying capital expenditure, if they invest at least N5 billion; the sector's listing lapses after 15 years.",
+   "value": {
+    "name": "Economic Development Tax Incentive (EDTI)",
+    "rate": 0.05,
+    "base": "qualifying capital expenditure",
+    "administeredBy": "Nigerian Investment Promotion Commission; credit granted by the Nigeria Revenue Service",
+    "guidelinesIssued": "2026-07",
+    "productionRebate": false,
+    "scheme": "Economic Development Tax Incentive (Nigeria Tax Act 2025, Part II, ss. 165-186, Tenth Schedule)",
+    "sector": "Motion picture, video and television programme production, distribution and exhibition (S/N 20)",
+    "creditRatePerYear": 0.05,
+    "creditYears": 5,
+    "minQCE_NGN": 5000000000,
+    "sectorSunsetYears": 15
+   },
+   "applies": "Nigeria, companies in the listed priority sector, from 1 January 2026 (Act gazetted 26 June 2025); NIPC administers applications.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "2.1 The EDTI is a tax incentive scheme that grants tax credit on Qualifying Capital Expenditure (QCE) to priority sectors listed in the Tenth Schedule to the NTA, 2025. The incentive provides a 5% tax credit on the QCE value as it relates to the threshold provided in the Tenth Schedule to the NTA."
+    },
+    {
+     "src": 2,
+     "said": "Official Gazette No. 117 Lagos–– 26th June 2025 Vol. 112 … 165.—(1)The sectors listed in the Tenth Schedule to thisAct are classified as priority sectors for the purposes of economic development tax incentives. … 176.—(1) The economic development tax credit at the rate of 5% per annum for a period of 5 years shall apply to each eligible Qualifying Capital Expenditure … Motion picture, video and television programme production, distribution and exhibition. N5b 15 years"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "West African cinemas grossed N15.6 billion in 2025 from 2.79 million admissions and 248 new releases on 122 screens' sites; 81 releases were Nollywood films, which took 49.4% of the box office, and 14 of them earned over N100 million, at an average ticket of N5,596.",
+   "value": {
+    "year": 2025,
+    "grossNGN": 15600000000,
+    "admissions": 2790000,
+    "newReleases": 248,
+    "cinemas": 122,
+    "nollywoodReleases": 81,
+    "nollywoodShare": 0.494,
+    "nollywoodTitlesOverN100m": 14,
+    "avgTicketNGN": 5596,
+    "region": "West Africa (FilmOne scorecard)"
+   },
+   "applies": "West Africa (Nigeria's cinemas dominant), calendar 2025; FilmOne Entertainment's scorecard as reported by Voice of Nigeria; how many films earn back their cost is not given.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "generating a total box office gross of N15.6 billion from theatrical releases across the region. … The figure, compiled by FilmOne Entertainment, represents admission of 2.79 million cinema goers with 248 new releases screened across 122 cinemas in West Africa. … 14 Nollywood films earned above N100 million as the average movie ticket price for the year stood at N5,596. … Nollywood accounted for 49.4 per cent of the total market share … there were 81 Nollywood films, 92 Hollywood releases and 52 Indian titles screened during the year"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "NG",
+ "sources": [
+  {
+   "url": "https://www.cbn.gov.ng/Out/2019/CCD/Creative%20Industry%20Financing.pdf",
+   "title": "Central Bank of Nigeria: Creative Industry Financing Initiative (2019)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2.2 You can get a loan of up to: a) N3 million for Software Engineering Student b) N30 million for Movie Production business c) N500 million for Movie Distribution business … 4.1 The maximum interest rate of 9.0% per annum (all charges inclusive) is applicable to all loans. … b) For Movie Production and Distribution, it is a maximum of ten years"
+  },
+  {
+   "url": "https://res.cloudinary.com/djxwoilou/raw/upload/v1784899984/ipawas/nigeria/incentives/application-guidelines-for-economic-development-tax-incentive_ffocjj.pdf",
+   "title": "NIPC: Economic Development Tax Incentive, Application Guidelines (issued July 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2.1 The EDTI is a tax incentive scheme that grants tax credit on Qualifying Capital Expenditure (QCE) to priority sectors listed in the Tenth Schedule to the NTA, 2025. The incentive provides a 5% tax credit on the QCE value as it relates to the threshold provided in the Tenth Schedule to the NTA."
+  },
+  {
+   "url": "https://media.premiumtimesng.com/wp-content/files/2026/01/Final-Approved-Copy-for-Print-NIGERIA-TAX-ACT-2025.pdf",
+   "title": "Nigeria Tax Act, 2025 (Act No. 7), Official Gazette No. 117 of 26 June 2025, certified approved copy as hosted by Premium Times",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Official Gazette No. 117 Lagos–– 26th June 2025 Vol. 112 … 165.—(1)The sectors listed in the Tenth Schedule to thisAct are classified as priority sectors for the purposes of economic development tax incentives. … 176.—(1) The economic development tax credit at the rate of 5% per annum for a period of 5 years shall apply to each eligible Qualifying Capital Expenditure … Motion picture, video and television programme production, distribution and exhibition. N5b 15 years"
+  },
+  {
+   "url": "https://von.gov.ng/west-africa-box-office-hits-n15-6bn-in-2025/",
+   "title": "Voice of Nigeria: West Africa Box Office Hits N15.6bn in 2025 (7 Jan 2026), quoting FilmOne Entertainment's 2025 box office scorecard",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.filmoneng.com/",
+   "said": "generating a total box office gross of N15.6 billion from theatrical releases across the region. … The figure, compiled by FilmOne Entertainment, represents admission of 2.79 million cinema goers with 248 new releases screened across 122 cinemas in West Africa. … 14 Nollywood films earned above N100 million as the average movie ticket price for the year stood at N5,596. … Nollywood accounted for 49.4 per cent of the total market share … there were 81 Nollywood films, 92 Hollywood releases and 52 Indian titles screened during the year"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "A current federal grant fund for film producers (reported: N1.5 billion in 2024 from a N5 billion Creative Fund with Providus Bank) from the ministry or the Nigerian Film Corporation.",
+   "tried": {
+    "institution": "No Federal Ministry of Art, Culture, Tourism and the Creative Economy or Nigerian Film Corporation page found. | Retry 2026-11-01 (producer retry): nfc.gov.ng reached: its WordPress feed (/wp-json/wp/v2/posts, pages) lists six posts and template pages, none on a production fund.",
+    "official-register": "None found. | Retry 2026-11-01 (producer retry): nrs.gov.ng renders by script; nipc.gov.ng home page names no film fund.",
+    "web-search": "2026-11-01: 'Nigeria film production incentive rebate 2025 2026 Nollywood federal government fund producers'. | Retry 2026-11-01 (producer retry): No new result beyond the 2024 Creative Fund reports.",
+    "trade-press": "innovation-village.com (28 Jun 2024, saved producer-NG-innovationvillage-1-5bn.html) reports the N1.5 billion allocation with no primary URL; not used. | Retry 2026-11-01 (producer retry): innovation-village.com (2024) only, without a primary URL; not used.",
+    "archive": "Not tried; web.archive.org reset this environment's connection on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "outcomes",
+   "sought": "How many Nigerian films earn back their cost (releases and grosses now held from FilmOne's 2025 scorecard via Voice of Nigeria).",
+   "tried": {
+    "institution": "filmoneng.com (FilmOne) home page read: no scorecard; www.filmone.ng and filmoneentertainment.com refused by the proxy (502); CEAN has no site found. | Retry 2026-11-01 (producer retry): filmoneng.com home page (saved earlier) carries no scorecard file; the scorecard was posted to FilmOne's social media.",
+    "official-register": "NFVCB classification counts are already in markets/NG.json (not repeated); no release or gross register found. | Retry 2026-11-01 (producer retry): None: no national register of costs and returns.",
+    "web-search": "2026-11-01: 'Cinema Exhibitors Association of Nigeria 2025 box office report Nollywood films released number gross share'. | Retry 2026-11-01 (producer retry): \"FilmOne Entertainment 2025 box office report West Africa pdf Nollywood titles released share CEAN annual box office report\": press reports of the scorecard (used via VON); no cost data.",
+    "trade-press": "News Agency of Nigeria (6 Jan 2026, saved producer-NG-nan-wa-boxoffice-2025.html) quotes FilmOne's 2025 West Africa scorecard (N15.6bn gross; 81 Nollywood releases; Nollywood 49.4% share) with no URL to the scorecard; not used. | Retry 2026-11-01 (producer retry): von.gov.ng (7 Jan 2026, saved producer-NG-von-boxoffice-2025.html) used for releases and grosses; nothing on recoupment.",
+    "archive": "Not tried; web.archive.org reset this environment's connection on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "union",
+   "sought": "The producers' association (Association of Movie Producers or a producers' guild): admission and fees.",
+   "tried": {
+    "institution": "No AMP or Producers Guild of Nigeria site found. | Retry 2026-11-01 (producer retry): No site found for AMP, ANCOP or a Producers Guild of Nigeria.",
+    "official-register": "nfvcb.gov.ng/?p=2016 (industry guilds list) redirected to the NFVCB home page with no list. | Retry 2026-11-01 (producer retry): NFVCB guild directive reported (2020) but no list reachable.",
+    "web-search": "2026-11-01: 'Producers Guild of Nigeria membership requirements fee official site OR Association of Movie Producers Nigeria registration'. | Retry 2026-11-01 (producer retry): \"\\\"Association of Nollywood Core Producers\\\" OR \\\"Producers Guild of Nigeria\\\" OR \\\"Association of Movie Producers\\\" membership form registration fee requirements\": a 2020 report of ANCOP's court case against the NFVCB registration directive only.",
+    "trade-press": "Reports name AMP as a FRENGAN member but give no admission terms. | Retry 2026-11-01 (producer retry): 21stcenturychronicle.com (2020) on the ANCOP/NFVCB dispute gives no admission terms; not used.",
+    "archive": "Not tried; web.archive.org reset this environment's connection on 2026-11-01. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "feecap",
+   "sought": "Any cap a Nigerian funder sets on the producer's fee and overheads.",
+   "tried": {
+    "institution": "CBN CIFI circular sets loan size, rate and tenor only. | Retry 2026-11-01 (producer retry): Nigeria Tax Act 2025 (saved certified copy) sets the incentive by capital expenditure, no producer-fee rule; CBN CIFI circular sets none.",
+    "official-register": "None found. | Retry 2026-11-01 (producer retry): Nigeria Tax Act 2025 gazette read (Tenth Schedule): no fee cap.",
+    "web-search": "Not run separately on 2026-11-01. | Retry 2026-11-01 (producer retry): No separate query; no funder found that budgets producer fees.",
+    "trade-press": "None found. | Retry 2026-11-01 (producer retry): None.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

@@ -1,0 +1,169 @@
+{
+ "topic": "tax.QA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Qatar: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Qatar taxes no salaries, wages or allowances; a self-employed person's Qatar-source business income is taxed at 10% of taxable income (a Qatari or GCC national's share is exempt).",
+   "value": {
+    "currency": "QAR",
+    "employment": 0,
+    "business": {
+     "rate": 0.1
+    },
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0
+     }
+    ]
+   },
+   "applies": "Income Tax Law No. 24 of 2018 as amended by Law No. 11 of 2022.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the provisions of the attached Income Tax Law shall not apply to the following: 1. Ministries and other governmental agencies, as well as public authorities and institutions. 2. International organizations and their offices and branches operating in the state. 3. Salaries, wages, allowances, and their equivalents."
+    },
+    {
+     "src": 0,
+     "said": "The tax rate is 10% of the taxable income of the taxpayer during the tax year."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is normally the calendar year; a return is due within four months after the year ends.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "within four months after year end (30 April)"
+   },
+   "applies": "Taxpayers with taxable income (not employees).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Financial Year: The accounting period for which the project prepares its financial statements, which is the calendar year or twelve (12) consecutive months ending on the last day of any month except December, with the President’s authorization."
+    },
+    {
+     "src": 1,
+     "said": "Taxpayers are to submit their tax returns within four months following the c"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social insurance is paid by employers only for Qatari employees; a foreign worker pays none.",
+   "value": {
+    "foreignWorkers": 0,
+    "qatariEmployees": "employer pays social insurance (rate not read)"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers have to pay social insurance in respect of Qatari employees."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld from a resident's pay, since salaries are untaxed.",
+   "value": {
+    "employee": null
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "3. Salaries, wages, allowances, and their equivalents."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Fees for services performed wholly or partly in Qatar paid to a non-resident with no permanent establishment there, and royalties, bear a final 5% withholding on the gross amount, subject to treaties.",
+   "value": {
+    "rate": 0.05,
+    "base": "gross amount, no cost deductions",
+    "final": true
+   },
+   "applies": "Non-residents without a permanent establishment in Qatar; a performer's or director's fee for work in Qatar is a service fee.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2. Subject to the provisions of tax agreements, a final withholding tax of 5% of the gross amount applies to royalties, interest, commissions, and payments for services performed wholly or partly in the state, and paid to non-residents for activities not related to a permanent establishment in the state, as specified by the Regulation."
+    },
+    {
+     "src": 0,
+     "said": "Fees for services specified in Article (9/2) of the Law are subject to a five percent (5%) withholding tax on the total amount, without any cost deductions, if these services are wholly or partly performed in the State."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Qatar has not introduced VAT; its draft law and regulations had not been published by September 2026.",
+   "value": {
+    "standard": 0,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The laws and respective executive regulations have not been published yet."
+    }
+   ]
+  }
+ ],
+ "country": "QA",
+ "sources": [
+  {
+   "url": "https://gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf",
+   "title": "General Tax Authority: Income Tax Law (Law No. 24 of 2018, as amended) and its Executive Regulations, English edition 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the provisions of the attached Income Tax Law shall not apply to the following: 1. Ministries and other governmental agencies, as well as public authorities and institutions. 2. International organizations and their offices and branches operating in the state. 3. Salaries, wages, allowances, and their equivalents. … The tax rate is 10% of the taxable income of the taxpayer during the tax year. … Financial Year: The accounting period for which the project prepares its financial statements, which is the calendar year or twelve (12) consecutive months ending on the last day of any month except December, with the President’s authorization. … 2. Subject to the provisions of tax agreements, a final withholding tax of 5% of the gross amount applies to royalties, interest, commissions, and payments for services performed wholly or partly in the state, and paid to non-residents for activities not related to a permanent establishment in the state, as specified by the Regulation. … Fees for services specified in Article (9/2) of the Law are subject to a five percent (5%) withholding tax on the total amount, without any cost deductions, if these services are wholly or partly performed in the State."
+  },
+  {
+   "url": "https://gta.gov.qa/en/taxes-info",
+   "title": "General Tax Authority (Qatar): Taxes information",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Taxpayers are to submit their tax returns within four months following the c"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/qatar/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Qatar, Individual - Other taxes (reviewed 17 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.grsia.gov.qa/",
+   "said": "Employers have to pay social insurance in respect of Qatari employees. … The laws and respective executive regulations have not been published yet."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "GTA Income Tax Law and Regulations 2024 read: royalties to non-residents bear 5%; no resident author rule || 2026-11-01 retry: GTA Income Tax Law and Regulations 2024 (saved earlier) re-checked: royalties to non-residents 5%; no rule for a resident author",
+    "official-register": "same text || 2026-11-01 retry: none further",
+    "web-search": "not run separately || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Qatar: none || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "The social-insurance rates for a Qatari employee (GRSIA)",
+   "tried": {
+    "institution": "grsia.gov.qa not read (rates for nationals only; a foreign screen worker pays none) || 2026-11-01 retry: grsia.gov.qa (now daman.gov.qa) 'Laws and Legislations' page, Arabic and English, is a SharePoint page whose content loads only by script (no law text in the HTML)",
+    "official-register": "not read || 2026-11-01 retry: Law No. 1 of 2022 on social insurance not found: almeezan.qa (Qatar Legal Portal) answers with a 6 KB script-only shell, no law text, for the home page and LawPage.aspx",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC Qatar: rate not given || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

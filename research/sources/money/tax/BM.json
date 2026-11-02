@@ -1,0 +1,307 @@
+{
+ "topic": "tax.BM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bermuda: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Bermuda, a British Overseas Territory with its own tax laws, levies no income tax on individuals; pay is taxed instead by payroll tax, whose employee portion runs from 0.25% on the first BMD 48,000 a year to 12.5% on 500,001 to 1,000,000, nothing above.",
+   "value": {
+    "currency": "BMD",
+    "incomeTax": null,
+    "follows": null,
+    "payrollTaxEmployee": [
+     {
+      "from": 0,
+      "to": 48000,
+      "rate": 0.0025
+     },
+     {
+      "from": 48000,
+      "to": 96000,
+      "rate": 0.0775
+     },
+     {
+      "from": 96000,
+      "to": 200000,
+      "rate": 0.1075
+     },
+     {
+      "from": 200000,
+      "to": 500000,
+      "rate": 0.115
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.125
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0
+     }
+    ]
+   },
+   "applies": "Employee portion, 1 April 2026 to 31 March 2027, applied to the annual rate of pay; the employer may deduct it from pay but is liable for it.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Since income taxes are not imposed on individuals in Bermuda, income tax rates are not relevant in the context of Bermuda taxation."
+    },
+    {
+     "src": 1,
+     "said": "Payroll Tax, levied under the Payroll Tax Act 1995 and the Payroll Tax Rates Act 1995 , is a tax on all employers, self-employed persons, and deemed employees on the remuneration paid in their business."
+    },
+    {
+     "src": 2,
+     "said": "0 - $48,000 $48,000 0.25% $48,0001 - $96,000 $48,000 7.75% $96,001 - $200,000 $104,000 10.75% $200,001 - $500,000 $300,000 11.50% $500,001 - $1,000,000 $500,000 12.50% MAXIMUM TAXABLE REMUNERATION $1,000,000"
+    },
+    {
+     "src": 2,
+     "said": "Employers have the option to deduct the employee portion of payroll tax from employees however the responsibility to pay the full amount of tax (i.e. employer plus employee portions) rests with the employer."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Payroll tax runs on a year from 1 April to 31 March, paid quarterly on 15 January, 15 April, 15 July and 15 October; individuals file no income tax return.",
+   "value": {
+    "start": "04-01",
+    "end": "03-31",
+    "payrollTaxDue": [
+     "01-15",
+     "04-15",
+     "07-15",
+     "10-15"
+    ],
+    "individualReturn": null
+   },
+   "applies": "Payroll tax 2026-27.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Payroll Tax must be paid in Bermuda on 15 January, 15 April, 15 July, and 15 October every year."
+    },
+    {
+     "src": 2,
+     "said": "EMPLOYEE PORTION TAX RATES APRIL 1, 2026 - MARCH 31, 2027"
+    },
+    {
+     "src": 3,
+     "said": "Since income taxes are not imposed on individuals in Bermuda, tax returns are not required to be completed for individual income tax compliance purposes ."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays a payroll tax employer portion by size and class (0.5% under BMD 200,000 of payroll up to 9.5% above 1,000,000; 9.75% for exempted undertakings); social insurance is a flat weekly contribution, from 1 August 2026 BMD 39.25 from the employee and 39.25 from the employer (only the employer's 39.25 past 65), and a self-employed person pays 78.50 (39.25 past 65).",
+   "value": {
+    "currency": "BMD",
+    "socialInsuranceWeekly": {
+     "currency": "BMD",
+     "from": "2026-08-01",
+     "employee": 39.25,
+     "employer": 39.25,
+     "employeeOver65": 0,
+     "employerOver65": 39.25,
+     "selfEmployed": 78.5,
+     "selfEmployedOver65": 39.25
+    },
+    "payrollTaxEmployer": [
+     {
+      "payrollTo": 200000,
+      "rate": 0.005
+     },
+     {
+      "payrollTo": 350000,
+      "rate": 0.02
+     },
+     {
+      "payrollTo": 500000,
+      "rate": 0.0475
+     },
+     {
+      "payrollTo": 1000000,
+      "rate": 0.07
+     },
+     {
+      "payrollTo": null,
+      "rate": 0.095
+     }
+    ],
+    "exemptUndertakings": 0.0975,
+    "remunerationCap": 1000000
+   },
+   "applies": "Payroll tax from 1 April 2026; social insurance as reported by PwC in October 2026 (the latest primary notice found is the 2018 increase to 71.84).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Taxpayers with an annual payroll less than $200,000 (or less than $50,000 p/qtr.) 0.5%"
+    },
+    {
+     "src": 2,
+     "said": "Taxpayers with an annual payroll greater than $1,000,000 p/a (>$250,000 p/qtr.) 9.50% All Exempt Undertakings 9.75%"
+    },
+    {
+     "src": 4,
+     "said": "Weekly Rates of Contributions … 1 (a) Employed person over school-leaving age and under the age of 65. … $39.25 $39.25 … (b) Employed person over the age of 65. — $39.25 … 2 (a) Self-employed person over school-leaving age of and under the age of 65. … $78.50 — … amended by BR 80 / 2026 para. 3 effective 1 August 2026"
+    },
+    {
+     "src": 5,
+     "said": "Paragraph 3 comes into operation on 1 August 2026. … Paragraph 1(a) $39.25 … Paragraph 2(a) $78.50"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld for income tax; the employer may deduct the employee portion of payroll tax and the employee's social insurance from pay.",
+   "value": {
+    "incomeTax": null,
+    "payrollTaxEmployeePortion": "may be deducted by the employer"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employers have the option to deduct the employee portion of payroll tax from employees"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A foreign performer or contractor working in Bermuda pays no income tax; foreign contractors and subcontractors must pay payroll tax on remuneration for services provided in Bermuda.",
+   "value": {
+    "incomeTax": null,
+    "payrollTax": "applies to foreign contractors and subcontractors"
+   },
+   "applies": "Non-residents working in Bermuda.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Foreign contractors and subcontractors in Bermuda must also pay Payroll Tax."
+    },
+    {
+     "src": 1,
+     "said": "Taxable remuneration includes the sum of wages/salaries and benefits paid in cash or in kind to employees, self-employed persons, and deemed employees as a result of services provided in Bermuda."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Bermuda has no VAT or sales tax.",
+   "value": {
+    "standard": 0,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "There is no VAT or sales tax in Bermuda."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A musician or other entertainer is, for each performance, the employee of whoever engages him, whatever the contract says, so the engager accounts for payroll tax on his pay; a Bermudian musician or entertainer pays 0% employee payroll tax on that pay.",
+   "value": {
+    "deemedEmployee": "musician or other entertainer, of the person engaging him, per performance",
+    "bermudianEntertainerEmployeeRate": 0
+   },
+   "applies": "Musicians and other entertainers engaged in Bermuda; the 0% rate for those with Bermudian status, from 1 April 2019",
+   "sources": [
+    {
+     "src": 7,
+     "said": "A musician or other entertainer (whether or not, apart from this subsection, he is the employee of any other person) is for the purposes of this Act, as respects any performance for which he is engaged by any person (regardless of the terms of the engagement), the employee of the latter person and not of any other person. … a Bermudian musician or other entertainer shall not be liable to payroll tax at the employee's standard rate in relation to his remuneration as a musician or entertainer, but shall instead be charged at the rate prescribed in the Rates Act for the purposes of this section."
+    },
+    {
+     "src": 8,
+     "said": "Bermudian musicians and other entertainers … 0% is prescribed as the rate for the purposes of section 9D."
+    }
+   ]
+  }
+ ],
+ "country": "BM",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/bermuda/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Bermuda, Individual - Taxes on personal income (reviewed 16 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.bm/payroll-tax",
+   "said": "Since income taxes are not imposed on individuals in Bermuda, income tax rates are not relevant in the context of Bermuda taxation."
+  },
+  {
+   "url": "https://www.gov.bm/payroll-tax",
+   "title": "Government of Bermuda, Office of the Tax Commissioner: Payroll Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Payroll Tax, levied under the Payroll Tax Act 1995 and the Payroll Tax Rates Act 1995 , is a tax on all employers, self-employed persons, and deemed employees on the remuneration paid in their business. … Payroll Tax must be paid in Bermuda on 15 January, 15 April, 15 July, and 15 October every year. … Foreign contractors and subcontractors in Bermuda must also pay Payroll Tax. … Taxable remuneration includes the sum of wages/salaries and benefits paid in cash or in kind to employees, self-employed persons, and deemed employees as a result of services provided in Bermuda."
+  },
+  {
+   "url": "https://www.gov.bm/calculating-payroll-tax-2026",
+   "title": "Government of Bermuda, Office of the Tax Commissioner: Calculating Payroll Tax for the period April 1, 2026 – March 31, 2027",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "0 - $48,000 $48,000 0.25% $48,0001 - $96,000 $48,000 7.75% $96,001 - $200,000 $104,000 10.75% $200,001 - $500,000 $300,000 11.50% $500,001 - $1,000,000 $500,000 12.50% MAXIMUM TAXABLE REMUNERATION $1,000,000 … Employers have the option to deduct the employee portion of payroll tax from employees however the responsibility to pay the full amount of tax (i.e. employer plus employee portions) rests with the employer. … EMPLOYEE PORTION TAX RATES APRIL 1, 2026 - MARCH 31, 2027 … Taxpayers with an annual payroll less than $200,000 (or less than $50,000 p/qtr.) 0.5% … Taxpayers with an annual payroll greater than $1,000,000 p/a (>$250,000 p/qtr.) 9.50% All Exempt Undertakings 9.75%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bermuda/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Bermuda, Individual - Tax administration (reviewed 16 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.bm/payroll-tax",
+   "said": "Since income taxes are not imposed on individuals in Bermuda, tax returns are not required to be completed for individual income tax compliance purposes ."
+  },
+  {
+   "url": "https://www.bermudalaws.bm/Laws/Consolidated%20Law/1970/Contributory%20Pensions%20Act%201970",
+   "title": "Contributory Pensions Act 1970 (consolidated), First Schedule, bermudalaws.bm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Weekly Rates of Contributions … 1 (a) Employed person over school-leaving age and under the age of 65. … $39.25 $39.25 … (b) Employed person over the age of 65. — $39.25 … 2 (a) Self-employed person over school-leaving age of and under the age of 65. … $78.50 — … amended by BR 80 / 2026 para. 3 effective 1 August 2026"
+  },
+  {
+   "url": "https://www.bermudalaws.bm/Document/70286ae8-6351-46f3-8947-16b0326c88af",
+   "title": "Contributory Pensions (Amendment of Contributions and Benefits) Order 2026, BR 80 / 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Paragraph 3 comes into operation on 1 August 2026. … Paragraph 1(a) $39.25 … Paragraph 2(a) $78.50"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bermuda/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Bermuda, Individual - Other taxes (reviewed 16 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gov.bm/payroll-tax",
+   "said": "There is no VAT or sales tax in Bermuda."
+  },
+  {
+   "url": "https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995",
+   "title": "Payroll Tax Act 1995 (consolidated), ss. 3 and 9D, bermudalaws.bm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A musician or other entertainer (whether or not, apart from this subsection, he is the employee of any other person) is for the purposes of this Act, as respects any performance for which he is engaged by any person (regardless of the terms of the engagement), the employee of the latter person and not of any other person. … a Bermudian musician or other entertainer shall not be liable to payroll tax at the employee's standard rate in relation to his remuneration as a musician or entertainer, but shall instead be charged at the rate prescribed in the Rates Act for the purposes of this section."
+  },
+  {
+   "url": "https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Rates%20Act%201995",
+   "title": "Payroll Tax Rates Act 1995 (consolidated), s. 4C, bermudalaws.bm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Bermudian musicians and other entertainers … 0% is prescribed as the rate for the purposes of section 9D."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties",
+   "tried": {
+    "institution": "no income tax; payroll tax pages show no author rule || retry-8 2026-11-01: gov.bm payroll-tax page re-read via search results: no author or royalty rule",
+    "official-register": "not read || retry-8 2026-11-01: Payroll Tax Act 1995 and Payroll Tax Rates Act 1995 read in full on bermudalaws.bm: no provision on royalties or authors (searched 'royalt', 'copyright'); remuneration is 'actual remuneration' under s. 7; the only creative-work rule is ss. 3 and 9D for musicians and entertainers (recorded as a figure)",
+    "web-search": "not run || retry-8 2026-11-01: 'Bermuda payroll tax royalties author self-employed remuneration \"payroll tax\" exempt royalties writer': no source addresses royalties under payroll tax; KPMG TIES says no withholding on royalties to non-residents",
+    "trade-press": "PwC Bermuda: none || retry-8 2026-11-01: PwC Bermuda corporate other taxes and KPMG TIES Bermuda (search results): no withholding tax on royalties; nothing on an author's own royalties",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and the availability API answered 429 on 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "topic": "tax.MC",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Monaco: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Monaco levies no income tax on individuals domiciled there; French nationals who moved to Monaco (or cannot show five years' habitual residence at 13 October 1962) stay taxable in France on all their income under article 7-1 of the 1963 Franco-Monegasque convention. The direct taxes (the land tax, the personal and furniture tax and the business licence tax) were abolished by Sovereign Ordinance of 8 February 1869.",
+   "value": {
+    "incomeTax": null,
+    "exception": {
+     "who": "French nationals domiciled in Monaco (convention of 18 May 1963, art. 7-1)",
+     "follows": "FR"
+    },
+    "abolishedBy": "Ordonnance souveraine du 8 février 1869 (Journal de Monaco n° 556, 14 février 1869)"
+   },
+   "applies": "Individuals domiciled in Monaco.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A partir de ce jour sont supprimés dans Notre Principauté la Contribution foncière, la Contribution personnelle et mobilière et l'impôt des patentes. … Donné en Notre Palais à Monaco, le huit février mil huit cent soixante-neuf."
+    },
+    {
+     "src": 1,
+     "said": "La principauté de Monaco ne soumet pas les personnes physiques qui ont leur domicile sur son territoire à l’impôt sur le revenu. Cela étant, l'article 7-1 de la convention fiscale entre la France et la principauté de Monaco signée à Paris le 18 mai 1963 prévoit, sous certaines conditions, de soumettre les ressortissants français domiciliés à Monaco à l’impôt sur le revenu en France à raison de l’ensemble de leurs revenus"
+    },
+    {
+     "src": 2,
+     "said": "En effet, Monaco ne connaissant ni impôt sur le revenu, ni impôt sur la fortune"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 October 2026 pay bears: CCSS (health and family, employer) 13.40% (13.45% where affiliated to the CGCS) up to EUR 10,000 a month; CAR pension 6.85% employee and 7.45% employer base plus 0.94% variable employer, up to EUR 6,276 a month; CMRC supplementary pension tranche A 10.020% (4.008% employee, 6.012% employer) up to EUR 4,067 and tranche B 24.290% (9.716%/14.574%) up to 8 times that; UNEDIC unemployment 6.40% (2.40%/4.00%) up to EUR 16,020 a month.",
+   "value": {
+    "currency": "EUR",
+    "period": "month",
+    "from": "2026-10-01",
+    "lines": [
+     {
+      "name": "CCSS",
+      "employer": 0.134,
+      "employerIfCGCS": 0.1345,
+      "ceiling": 10000
+     },
+     {
+      "name": "CAR",
+      "employee": 0.0685,
+      "employerBase": 0.0745,
+      "employerVariable": 0.0094,
+      "ceiling": 6276
+     },
+     {
+      "name": "CMRC Tranche A",
+      "employee": 0.04008,
+      "employer": 0.06012,
+      "ceiling": 4067
+     },
+     {
+      "name": "CMRC Tranche B",
+      "employee": 0.09716,
+      "employer": 0.14574,
+      "ceiling": "8 x 4067"
+     },
+     {
+      "name": "UNEDIC",
+      "employee": 0.024,
+      "employer": 0.04,
+      "ceiling": 16020
+     }
+    ],
+    "dueDate": "10th of the month"
+   },
+   "applies": "Salaried employees of Monaco employers; self-employed schemes (CAMTI/CARTI) were not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "PLAFONDS ET TAUX DE COTISATIONS au 1er octobre 2026"
+    },
+    {
+     "src": 3,
+     "said": "Annuel Mensuel 13,40 % pour les employeurs ne cotisant pas à la CGCS 120 000 € 10 000 € 13,45 % pour les employeurs affiliés à cet organisme"
+    },
+    {
+     "src": 3,
+     "said": "75 312 € 6 276 € Taux de base Employeur 7,45 % 15,24 %"
+    },
+    {
+     "src": 3,
+     "said": "Taux de base Salarié 6,85 %"
+    },
+    {
+     "src": 3,
+     "said": "Taux variable Employeur 0,94 %"
+    },
+    {
+     "src": 3,
+     "said": "Part salariale 4,008 % 10,020 %"
+    },
+    {
+     "src": 3,
+     "said": "Tranche A 4067 € Part employeur 6,012 %"
+    },
+    {
+     "src": 3,
+     "said": "Tranche B Part salariale 9,716 % 24,290 %"
+    },
+    {
+     "src": 3,
+     "said": "Part employeur 14,574 %"
+    },
+    {
+     "src": 3,
+     "said": "192 240 € 16 020 € Taux de base Employeur 4,00 %"
+    },
+    {
+     "src": 3,
+     "said": "Taux de base Salarié 2,40 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A Monaco freelancer's fee bears VAT levied on the same basis and at the same rates as in France (20% standard); the threshold therefore follows France.",
+   "value": {
+    "standardRate": 0.2,
+    "reduced": [
+     0.1,
+     0.055
+    ],
+    "follows": "FR"
+   },
+   "applies": "Business transactions in Monaco (customs union with France, convention of 18 May 1963).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Value Added Tax is levied on the same basis and at the same rate as in France. The most commonly applied rates are: The usual rate of 20% The reduced rate of 10%, except for basic products (5.5 %)"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "With no income tax there is nothing withheld from pay in Monaco but the social contributions; French nationals caught by article 7-1 follow France.",
+   "value": {
+    "incomeTaxWithheld": null,
+    "follows": "FR (art. 7-1 French nationals only)"
+   },
+   "applies": "Employees in Monaco.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "La principauté de Monaco ne soumet pas les personnes physiques qui ont leur domicile sur son territoire à l’impôt sur le revenu."
+    }
+   ]
+  }
+ ],
+ "country": "MC",
+ "sources": [
+  {
+   "url": "https://journaldemonaco.gouv.mc/content/download/46587/1085502/file/JO_1869_J_0556.pdf",
+   "title": "Journal de Monaco n° 556, 14 février 1869, Actes officiels: Ordonnance souveraine du 8 février 1869 (journaldemonaco.gouv.mc)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A partir de ce jour sont supprimés dans Notre Principauté la Contribution foncière, la Contribution personnelle et mobilière et l'impôt des patentes. … Donné en Notre Palais à Monaco, le huit février mil huit cent soixante-neuf."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/export/pdf/317763",
+   "title": "BOI-INT-CVB-MCO-10-20210602, Convention fiscale avec Monaco – impôt sur le revenu (BOFiP-Impôts, DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La principauté de Monaco ne soumet pas les personnes physiques qui ont leur domicile sur son territoire à l’impôt sur le revenu. Cela étant, l'article 7-1 de la convention fiscale entre la France et la principauté de Monaco signée à Paris le 18 mai 1963 prévoit, sous certaines conditions, de soumettre les ressortissants français domiciliés à Monaco à l’impôt sur le revenu en France à raison de l’ensemble de leurs revenus"
+  },
+  {
+   "url": "https://www.senat.fr/rap/l20-301/l20-3011.html",
+   "title": "Rapport n° 301 (2020-2021), Sénat – exposé général",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "En effet, Monaco ne connaissant ni impôt sur le revenu, ni impôt sur la fortune"
+  },
+  {
+   "url": "https://www.caisses-sociales.mc/content/download/3439/file/Lettre_information_aux_employeurs_octobre_2025.pdf",
+   "title": "Lettre d'information aux Employeurs CCSS - CAR - CMRC, OCT 2026 (Caisses Sociales de Monaco)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PLAFONDS ET TAUX DE COTISATIONS au 1er octobre 2026 … Annuel Mensuel 13,40 % pour les employeurs ne cotisant pas à la CGCS 120 000 € 10 000 € 13,45 % pour les employeurs affiliés à cet organisme … 75 312 € 6 276 € Taux de base Employeur 7,45 % 15,24 % … Taux de base Salarié 6,85 % … Taux variable Employeur 0,94 % … Part salariale 4,008 % 10,020 % … Tranche A 4067 € Part employeur 6,012 % … Tranche B Part salariale 9,716 % 24,290 % … Part employeur 14,574 % … 192 240 € 16 020 € Taux de base Employeur 4,00 % … Taux de base Salarié 2,40 %"
+  },
+  {
+   "url": "https://monentreprise.gouv.mc/en/themes/accounting-obligations-and-tax/tax/vat/vat",
+   "title": "Value Added Tax (monentreprise.gouv.mc, Gouvernement Princier)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Value Added Tax is levied on the same basis and at the same rate as in France. The most commonly applied rates are: The usual rate of 20% The reduced rate of 10%, except for basic products (5.5 %)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "Whether Monaco withholds any tax on a non-resident performer's, writer's or director's fee",
+   "tried": {
+    "institution": "monentreprise.gouv.mc VAT page read; no page on artistes found || 2026-11-01 retry: legimonaco.mc answers (HTTP 200) but is script-built: its explorer pages (~~write/explorer/type=regulation/dateAsc) serve no list in their text and /search returns 404; gouv.mc and monentreprise.gouv.mc answer (HTTP 200) but no page on payments to non-resident artistes was located without search.",
+    "official-register": "BOFiP 317763 covers only Monaco-domiciled persons || 2026-11-01 retry: journaldemonaco.gouv.mc read: Journal n° 556 of 14 February 1869 (saved MC-jdm-1869-0556.pdf) carries the 1869 ordinance abolishing the direct contributions (now quoted under residents); it says nothing of payments to non-resident performers, and no later ordinance on them was found.",
+    "web-search": "WebSearch on Monaco income tax and the 1963 convention: no source on artistes' withholding || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "none found || 2026-11-01 retry: No Deloitte Monaco 2026 Highlights (HTTP 404); KPMG Monaco (already noted) names the ordinance without its text.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org/wayback/available lists a 2026-10-15 snapshot of legimonaco.mc; web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

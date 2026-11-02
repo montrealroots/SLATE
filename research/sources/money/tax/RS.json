@@ -1,0 +1,237 @@
+{
+ "topic": "tax.RS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Serbia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay is taxed at a flat 10% after a monthly non-taxable amount of RSD 34,221; royalties and other income at 20%. A complementary annual tax of 10%, then 15%, falls on net income above three times the national average annual wage (six times for those under 40). There is no regional income tax.",
+   "value": {
+    "currency": "RSD",
+    "employment": {
+     "rate": 0.1,
+     "monthlyNonTaxable": 34221
+    },
+    "selfEmployed": 0.1,
+    "royaltiesAndOther": 0.2,
+    "complementaryAnnual": {
+     "rate10": {
+      "above": "3 x average annual wage (6 x under 40)",
+      "upTo": "9 x (12 x under 40)"
+     },
+     "rate15": "above that"
+    }
+   },
+   "applies": "2026; the average-wage thresholds are published each year.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The rates are 10% for employment income (salary) and self-employment income (of entrepreneurs); 15% for income from capital; and 20% for rental income, income from royalties, and other income."
+    },
+    {
+     "src": 1,
+     "said": "Employment income remains subject to PIT at a 10% flat rate after deducting the RSD 34,221 non-taxable salary cap, payable by a method of withholding."
+    },
+    {
+     "src": 0,
+     "said": "Complementary annual income tax is imposed at progressive rates of 10% and 15% on net income in excess of prescribed thresholds. The 10% rate applies to net income in excess of three times the Serbian annual average wage (six times the Serbian annual average wage for taxpayers under the age of 40)"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the tax authority generates the complementary annual tax return by 1 April and the taxpayer checks and amends it by 15 May.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "annualReturn": {
+     "generatedBy": "04-01",
+     "taxpayerDeadline": "05-15"
+    }
+   },
+   "applies": "2026 income, filed 2027.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The supplementary annual tax return is generated in the tax authority system by 1 April of the current year for the previous tax year period. The deadline for the taxpayer to check and amend the tax return in the tax authority system is 15 May of the current year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 19.9% (14% pension, 5.15% health, 0.75% unemployment) and the employer 15.15% (10% pension, 5.15% health), on pay from 35.05% up to five times the published average monthly salary.",
+   "value": {
+    "employee": {
+     "pension": 0.14,
+     "health": 0.0515,
+     "unemployment": 0.0075
+    },
+    "employer": {
+     "pension": 0.1,
+     "health": 0.0515
+    },
+    "base": {
+     "min": "35.05% of average monthly salary",
+     "max": "5 x average monthly salary"
+    }
+   },
+   "applies": "2026; other income (royalties, contracts) carries contributions at its own rates, not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "For the employee: Pension and disability insurance: 14%. Health insurance: 5.15%. Unemployment insurance: 0.75%. For the employer: Pension and disability insurance: 10%. Health insurance: 5.15%."
+    },
+    {
+     "src": 3,
+     "said": "the maximum tax base for social security contributions is capped at five times the average monthly salary published by official statistics in Serbia at the moment of salary payment."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds 10% income tax and the employee's 19.9% contributions from pay; a Serbian payer withholds 20% from royalties and service fees paid to an individual.",
+   "value": {
+    "employee": {
+     "pit": 0.1,
+     "contributions": 0.199
+    },
+    "royaltyOrFeeToIndividual": 0.2
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "withhold personal income tax (PIT) and social security contributions on payment of salaries to employees, at the following rates: 10% PIT. 19.9% social security contributions payable by the employee. 15.15% social security contributions payable by the employer."
+    },
+    {
+     "src": 0,
+     "said": "A 20% withholding tax applies to royalties paid to a resident"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Serbian-source income; a non-resident performer's income from entertainment, artistic or sports programmes in Serbia is taxed (as his own income or, if paid to another, by withholding), and royalties paid to a non-resident bear 20% unless a treaty reduces it.",
+   "value": {
+    "scope": "Serbian-source income",
+    "royaltyWithholding": 0.2,
+    "performers": "taxed as the individual's income; else withholding"
+   },
+   "applies": "No separate artiste rate was read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "non-residents are taxable on their Serbian-sourced income and worldwide income related to their work in/for the Republic of Serbia."
+    },
+    {
+     "src": 6,
+     "said": "WHT is also payable on a non-resident’s income realised on the basis of performing variety, entertaining, artistic, sports, and similar programs in Serbia, which is not taxed as income of an individual (performer, musician, sportsman, etc.)."
+    },
+    {
+     "src": 0,
+     "said": "Royalties: Royalties paid by a resident legal entity to a nonresident legal entity or nonresident individual are subject to a 20%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's royalties are taxed at 20% after a standard cost deduction of 50%, 43% or 34% of the gross, by type of work.",
+   "value": {
+    "rate": 0.2,
+    "standardCost": [
+     0.5,
+     0.43,
+     0.34
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Standard costs are used to reduce taxable base, and are equal to 50%, 43%, and 34% of the gross income, depending of the type of royalty. The tax rate applicable to royalty income is 20% after deduction of stan"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 20% (10% reduced); a freelancer must register once turnover passes RSD 8 million in the previous 12 months.",
+   "value": {
+    "currency": "RSD",
+    "standard": 0.2,
+    "reduced": 0.1,
+    "registrationThreshold": 8000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "realized turnover of an amount exceeding RSD 8 million in the previous 12 months."
+    },
+    {
+     "src": 4,
+     "said": "The standard VAT rate is 20% for most taxable supplies."
+    }
+   ]
+  }
+ ],
+ "country": "RS",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-serbiahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Serbia Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "The rates are 10% for employment income (salary) and self-employment income (of entrepreneurs); 15% for income from capital; and 20% for rental income, income from royalties, and other income. … Complementary annual income tax is imposed at progressive rates of 10% and 15% on net income in excess of prescribed thresholds. The 10% rate applies to net income in excess of three times the Serbian annual average wage (six times the Serbian annual average wage for taxpayers under the age of 40) … A 20% withholding tax applies to royalties paid to a resident … Royalties: Royalties paid by a resident legal entity to a nonresident legal entity or nonresident individual are subject to a 20% … realized turnover of an amount exceeding RSD 8 million in the previous 12 months."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries: serbia Individual - Income determination",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "Employment income remains subject to PIT at a 10% flat rate after deducting the RSD 34,221 non-taxable salary cap, payable by a method of withholding. … Standard costs are used to reduce taxable base, and are equal to 50%, 43%, and 34% of the gross income, depending of the type of royalty. The tax rate applicable to royalty income is 20% after deduction of stan"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: serbia Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "The supplementary annual tax return is generated in the tax authority system by 1 April of the current year for the previous tax year period. The deadline for the taxpayer to check and amend the tax return in the tax authority system is 15 May of the current year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: serbia Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "For the employee: Pension and disability insurance: 14%. Health insurance: 5.15%. Unemployment insurance: 0.75%. For the employer: Pension and disability insurance: 10%. Health insurance: 5.15%. … the maximum tax base for social security contributions is capped at five times the average monthly salary published by official statistics in Serbia at the moment of salary payment."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: serbia Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "withhold personal income tax (PIT) and social security contributions on payment of salaries to employees, at the following rates: 10% PIT. 19.9% social security contributions payable by the employee. 15.15% social security contributions payable by the employer. … The standard VAT rate is 20% for most taxable supplies."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: serbia Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "non-residents are taxable on their Serbian-sourced income and worldwide income related to their work in/for the Republic of Serbia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/serbia/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: serbia Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.purs.gov.rs/",
+   "said": "WHT is also payable on a non-resident’s income realised on the basis of performing variety, entertaining, artistic, sports, and similar programs in Serbia, which is not taxed as income of an individual (performer, musician, sportsman, etc.)."
+  }
+ ],
+ "blockers": []
+}

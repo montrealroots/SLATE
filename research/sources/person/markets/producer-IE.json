@@ -1,0 +1,247 @@
+{
+ "topic": "markets.producer.IE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Ireland. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "Screen Ireland lends up to 70% of an Irish fiction feature's budget to a maximum of €950,000 when the budget is €3 million or less, up to 65% between €1 million and €1.2 million for €3–7 million budgets, and up to 65% to a maximum of €1.3 million for €7–20 million (up to €100,000 more with a female writer or director); development funding stops at €125,000 per project, and total state aid is held to 50% of cost unless the film is low-budget (€3 million or less) or difficult.",
+   "value": {
+    "irishFiction": [
+     {
+      "budgetUpToEUR": 3000000,
+      "maxShare": 0.7,
+      "maxEUR": 950000
+     },
+     {
+      "budgetFromEUR": 3000000,
+      "budgetUpToEUR": 7000000,
+      "maxShare": 0.65,
+      "rangeEUR": [
+       1000000,
+       1200000
+      ]
+     },
+     {
+      "budgetFromEUR": 7000000,
+      "budgetUpToEUR": 20000000,
+      "maxShare": 0.65,
+      "maxEUR": 1300000
+     }
+    ],
+    "femaleTalentExtraEUR": 100000,
+    "creativeCoproductionNormalMaxEUR": 350000,
+    "developmentMaxEUR": 125000,
+    "developmentMatchedAboveEUR": 75000,
+    "stateAidCap": 0.5,
+    "lowBudgetMaxEUR": 3000000,
+    "contingencyShareOfBudget": 0.1,
+    "irishSpendRatio": "1.5:1",
+    "form": "limited-recourse loans recoupable pro rata pari passu with other equity"
+   },
+   "applies": "Ireland, Screen Ireland Fiction: Irish Production (feature films, animation features included), limits read 2026-11-01; non-Irish writers or directors get significantly less.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the amount of state aid used to finance a film project may not exceed 50% of its total cost, subject to, inter alia, where the film is considered to be ‘low budget' or ‘difficult' … A film may be considered ‘low budget’ if its production budget does not exceed €3 million. … The maximum amount of Screen Ireland development funding that can be provided to any one project is €125,000. … For projects with budgets of up to €3 million … Screen Ireland can provide up to 70% of the budget with a maximum of €950,000 … For projects with budgets of over €3 million and not more than €7 million … Screen Ireland can provide up to 65% of the budget, between €1,000,000 and €1,200,000 … For projects with budgets of over €7 million and not more than €20 million … Screen Ireland can provide up to 65% of the budget, with a maximum of €1,300,000 … enhanced production funding of up to an additional €100,000 is available to projects with Female Talent (writer and/or director, writer/director) attached … but will not normally exceed €350,000 per project."
+    },
+    {
+     "src": 1,
+     "said": "Funding is provided in the form of limited-recourse loans recoverable from a share of revenues from the exploitation of the project and also entitling Screen Ireland to a share of net profits. … All projects in receipt of Screen Ireland funding must provide and allow for a contingency of 10% of the submitted production budget. … Screen Ireland requires a 1.5:1 spend ratio on its investment."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "On a Screen Ireland-funded film the Irish producer, writer and director share a 60% recoupment corridor, with 10% each to an Irish director and an Irish writer (45% to the company if only one of them is Irish, 50% if neither is).",
+   "value": {
+    "corridorTotal": 0.6,
+    "irishDirector": 0.1,
+    "irishWriter": 0.1,
+    "companyIfOneIrish": 0.45,
+    "companyIfNoneIrish": 0.5,
+    "companyIfBothIrishDerived": 0.4,
+    "note": "the guidelines' list leaves the company's share blank when both are Irish; 0.40 is 60% less the two 10% shares"
+   },
+   "applies": "Ireland, Screen Ireland production funding of features, TV drama, documentary and animation.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "are entitled to share in a recoupment corridor of 60% subject to certain terms and conditions. … 10% to Irish Director, and … 10% to Irish Writer. … 45% to Production Company, … In the event that neither the writer nor director are Irish the recoupment corridor shall simply be 50% to the Production Company."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Since 20 May 2025 a feature with qualifying expenditure under €20 million and an EEA national or resident in a key creative role can take Section 481 at 40% (the 'Scéal uplift') instead of 32%, the higher rate applied on completion.",
+   "value": {
+    "rate": 0.4,
+    "standardRate": 0.32,
+    "qualifyingExpenditureBelowEUR": 20000000,
+    "certifiedFrom": "2025-05-20",
+    "keyCreativeEEA": true,
+    "interimClaimRate": 0.32
+   },
+   "applies": "Ireland, enhanced Section 481 credit for lower-budget film (Finance Act 2024; S.I. 197 of 2025); the 32% standard credit and €125m cap are held in world.json.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The enhanced credit can apply only to qualifying films certified on, or after, 20 May 2025. … An enhanced rate of 40% may apply to the film Corporation Tax Credit for qualifying lower budget films, where: … the qualifying expenditure on the film is less than €20 million … one or more of the key creative roles is performed by an individual who is either a national of, or ordinarily resident in, a European Economic Area (EEA) State. … On completion, if the qualifying film meets the criteria for the enhanced credit, the value of the credit is calculated using the 40% rate."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "Revenue accepts producer-related fees (producer, co-producer, executive producer and company overhead) as eligible for Section 481 up to 15% of the global budget when eligible spending is over 80% of it, or 10% when it is under 80%; higher only if substantiated at arm's length.",
+   "value": {
+    "maxShareOfGlobalBudgetIfEligibleOver80": 0.15,
+    "maxShareOfGlobalBudgetIfEligibleUnder80": 0.1,
+    "covers": [
+     "Producer",
+     "Co-Producer",
+     "Executive Producer",
+     "Production/Overhead corporate fees"
+    ],
+    "notAMinimum": true
+   },
+   "applies": "Ireland, Section 481, Revenue Tax and Duty Manual Part 15-02-04 (last reviewed August 2026).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "These fees will be categorised in the budget as including “Producer”, “Co- Producer”, “Executive Producer” fees and “Production/Overhead” corporate fees. … that the eligible producer-related fees do not exceed 15% of the global budget where the eligible expenditure is in excess of 80% of the global budget; or … that the eligible producer-related fees do not exceed 10% of the global budget where the eligible expenditure is less than 80% of the global budget. … the percentages indicated above are not intended to operate as a minimum-level fee rate for production services."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "20 Screen Ireland-supported films were released in cinemas in 2024; that year it advanced €22.5 million in production loans, took back €0.7 million in recoupment and provided €21.5 million against loans it does not expect repaid.",
+   "value": {
+    "year": 2024,
+    "supportedFilmsReleased": 20,
+    "productionLoansAdvancedEUR": 22487000,
+    "productionRecoupmentEUR": 707000,
+    "productionProvisionEUR": 21476000,
+    "developmentLoansAdvancedEUR": 3417000
+   },
+   "applies": "Ireland, Screen Ireland Annual Report 2024 (financial statements, €000s); recoupment in a year relates to earlier loans, so the ratio is a proxy.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Throughout the year, 20 Screen Ireland-supported films were released in cinemas … Advanced during the year 22,487 3,417 25,904 … Recoupment during the year (707) (782) (1,489) … Provision for year (21,476) (2,900) (24,376) … A provision is made based on the likely percentage of loans which will be repaid"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Screen Producers Ireland represents independent producers in negotiations with government, broadcasters, funders and unions; membership is €500 a year (€225 for an emerging producer).",
+   "value": {
+    "name": "Screen Producers Ireland",
+    "standardDuesEURPerYear": 500,
+    "emergingDuesEURPerYear": 225
+   },
+   "applies": "Ireland; read 2026-11-01.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "we represent our members in discussions and negotiations with the Government, state bodies, broadcasters, funding agents and trade unions. … Standard Membership €500 per annum … Emerging Producer Membership €225 per annum"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "In 2021 Screen Ireland decided 26 applications for Irish (feature) production funding and funded 19; across all production schemes 83 of 122, and 63 of 120 feature film development applications.",
+   "value": {
+    "year": 2021,
+    "irishProduction": {
+     "applications": 26,
+     "successful": 19
+    },
+    "creativeCoProduction": {
+     "applications": 10,
+     "successful": 7
+    },
+    "allProduction": {
+     "applications": 122,
+     "successful": 83
+    },
+    "featureDevelopment": {
+     "applications": 120,
+     "successful": 63
+    }
+   },
+   "applies": "Ireland, Screen Ireland decisions made 1 January to 31 December 2021 (later annual reports, 2022-2024, publish no such table).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "This information relates to projects that were assessed and decisions made between 1st January and 31st December 2021. … Feature Film Development 120 63 … Irish Production 26 19 … Creative Co-Production 10 7 … Total 122 83"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "IE",
+ "sources": [
+  {
+   "url": "https://www.screenireland.ie/funding/funding-process-and-procedure/regulations-and-limits",
+   "title": "Screen Ireland: Funding Regulations and Limits",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the amount of state aid used to finance a film project may not exceed 50% of its total cost, subject to, inter alia, where the film is considered to be ‘low budget' or ‘difficult' … A film may be considered ‘low budget’ if its production budget does not exceed €3 million. … The maximum amount of Screen Ireland development funding that can be provided to any one project is €125,000. … For projects with budgets of up to €3 million … Screen Ireland can provide up to 70% of the budget with a maximum of €950,000 … For projects with budgets of over €3 million and not more than €7 million … Screen Ireland can provide up to 65% of the budget, between €1,000,000 and €1,200,000 … For projects with budgets of over €7 million and not more than €20 million … Screen Ireland can provide up to 65% of the budget, with a maximum of €1,300,000 … enhanced production funding of up to an additional €100,000 is available to projects with Female Talent (writer and/or director, writer/director) attached … but will not normally exceed €350,000 per project."
+  },
+  {
+   "url": "https://www.screenireland.ie/funding/funding-process-and-procedure/production-funding-guidelines",
+   "title": "Screen Ireland: Production Funding Guidelines",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Funding is provided in the form of limited-recourse loans recoverable from a share of revenues from the exploitation of the project and also entitling Screen Ireland to a share of net profits. … All projects in receipt of Screen Ireland funding must provide and allow for a contingency of 10% of the submitted production budget. … Screen Ireland requires a 1.5:1 spend ratio on its investment. … are entitled to share in a recoupment corridor of 60% subject to certain terms and conditions. … 10% to Irish Director, and … 10% to Irish Writer. … 45% to Production Company, … In the event that neither the writer nor director are Irish the recoupment corridor shall simply be 50% to the Production Company."
+  },
+  {
+   "url": "https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/film-relief/lower-budget-film.aspx",
+   "title": "Revenue: Enhanced credit for lower budget film (published 18 June 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The enhanced credit can apply only to qualifying films certified on, or after, 20 May 2025. … An enhanced rate of 40% may apply to the film Corporation Tax Credit for qualifying lower budget films, where: … the qualifying expenditure on the film is less than €20 million … one or more of the key creative roles is performed by an individual who is either a national of, or ordinarily resident in, a European Economic Area (EEA) State. … On completion, if the qualifying film meets the criteria for the enhanced credit, the value of the credit is calculated using the 40% rate."
+  },
+  {
+   "url": "https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-15/15-02-04.pdf",
+   "title": "Revenue: Tax and Duty Manual Part 15-02-04, Section 481 Film Corporation Tax Credit (last reviewed August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "These fees will be categorised in the budget as including “Producer”, “Co- Producer”, “Executive Producer” fees and “Production/Overhead” corporate fees. … that the eligible producer-related fees do not exceed 15% of the global budget where the eligible expenditure is in excess of 80% of the global budget; or … that the eligible producer-related fees do not exceed 10% of the global budget where the eligible expenditure is less than 80% of the global budget. … the percentages indicated above are not intended to operate as a minimum-level fee rate for production services."
+  },
+  {
+   "url": "https://www.screenireland.ie/images/uploads/general/Annual_Report_2024_3.pdf",
+   "title": "Fís Éireann/Screen Ireland: Annual Report 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Throughout the year, 20 Screen Ireland-supported films were released in cinemas … Advanced during the year 22,487 3,417 25,904 … Recoupment during the year (707) (782) (1,489) … Provision for year (21,476) (2,900) (24,376) … A provision is made based on the likely percentage of loans which will be repaid"
+  },
+  {
+   "url": "https://screenproducersireland.com/membership",
+   "title": "Screen Producers Ireland: Membership",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "we represent our members in discussions and negotiations with the Government, state bodies, broadcasters, funding agents and trade unions. … Standard Membership €500 per annum … Emerging Producer Membership €225 per annum"
+  },
+  {
+   "url": "https://www.screenireland.ie/images/uploads/general/Annual_Report_2021_3.pdf",
+   "title": "Screen Ireland: Annual Report 2021",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This information relates to projects that were assessed and decisions made between 1st January and 31st December 2021. … Feature Film Development 120 63 … Irish Production 26 19 … Creative Co-Production 10 7 … Total 122 83"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "Applications against awards for Screen Ireland production funding after 2021 (2021 now held from its annual report).",
+   "tried": {
+    "institution": "screenireland.ie funding-decisions lists awards by fund, not applications; Annual Report 2024 gives amounts, not application counts. | Retry 2026-11-01 (producer retry): screenireland.ie annual reports 2021 (table, used), 2022 and 2023 (Screen_Ireland_Annual_Report_2023.pdf) read: the 2022 and 2023 reports carry no applications table.",
+    "official-register": "Council of Europe/Eurimages statistics page for Ireland 2021 (rm.coe.int/112-statistics-2021-ireland/1680a92952) returned 403 to curl, 2026-11-01; not read another way. | Retry 2026-11-01 (producer retry): Oireachtas library copy of the 2022 report (opac.oireachtas.ie/.../TCAGSMdoclaid060324_164130.pdf): TLS certificate not verifiable (curl 60), not bypassed.",
+    "web-search": "2026-11-01: 'Screen Ireland annual report 2024 number of applications received production funding feature films approved' found only the 2021 figure in that blocked document. | Retry 2026-11-01 (producer retry): \"Screen Ireland annual report \\\"applications received\\\" production funding feature film 2023 OR 2024 OR 2025\": only the 2021 statistics and older press.",
+    "trade-press": "script.ie and hotpress.com slate counts (20 features in the 2024 slate) are not application counts; not used. | Retry 2026-11-01 (producer retry): Irish Times (2018 equality figures) gives application growth, not counts; not used.",
+    "archive": "Not tried (archive resets). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

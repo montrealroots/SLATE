@@ -1,0 +1,141 @@
+{
+ "topic": "tax.GN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guinea: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "social",
+   "finding": "Social security contributions are 23% of pay between a floor of GNF 550,000 and a ceiling of GNF 2,500,000 a month: 18% from the employer and 5% from the employee, the employer paying both shares to the CNSS by the 15th after the month or quarter.",
+   "value": {
+    "currency": "GNF",
+    "employer": 0.18,
+    "employee": 0.05,
+    "floorMonthly": 550000,
+    "ceilingMonthly": 2500000,
+    "branches": {
+     "family": 0.06,
+     "workInjury": 0.04,
+     "sickness": 0.065,
+     "pension": 0.065
+    }
+   },
+   "applies": "Salaried workers; the self-employed regime is not stated on this page.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le plafond est de 2 500 000 GNF Le plancher est de 550 000 GNF Le taux des cotisations sociales Il représente 23% du salaire soumis à cotisation. Ce taux de financement est reparti ainsi qu’il suit : Employeur 18% Salarié 5% … Prestations familiales 6% Accident du travail et Maladies professionnelles 4% Assurance maladies 6,5% Retraite Vieillesse Invalidité Décès 6,5% … Le versement des cotisations se fait dans les quinze (15) premiers jours qui suivent le mois ou le trimestre échu"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A provider with no tax domicile in Guinea (no Guinean tax number) has 15% withheld at source on non-salary income paid to it, on the gross amount billed before VAT (General Tax Code, art. 198); Enabel states it is not applied to residents of the countries with a double-tax agreement with Guinea (France, Morocco and Tunisia, as of 2025). Whether the withholding is final was not found stated.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross amount paid, excluding VAT",
+    "appliesTo": "non-salary income of a provider without a Guinean NIF (no tax domicile in Guinea)",
+    "law": "Code général des impôts, art. 198",
+    "treatyCountries2025": [
+     "FR",
+     "MA",
+     "TN"
+    ],
+    "final": null
+   },
+   "applies": "Guinea, as applied in June 2025 by Enabel (the Belgian development agency) in a public tender; the CGI's own text was not reached (mbudget.gov.gn HTTP 403).",
+   "searched": "Web search 2026-11-02: 'Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires' returned trykintsugi.com, rivermate, CMS (2016-17), financialafrik.com, copeps.fr and Enabel's tender Q&A (read: this finding).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Il sera retenu à la source 15 % sur les revenus non-salariaux (Art. 198 du Code général des impôts) si le prestataire ne possède pas de NIF en Guinée (= contractant sans domicile fiscal en Guinée). … Cependant, si le soumissionnaire a son siège fiscal dans un pays ayant conclu un accord de non-double imposition avec la Guinée (actuellement la France, le Maroc et la Tunisie), cette retenue ne sera pas appliquée. … Le taux de la retenue est fixé à quinze pourcent (15%) du montant brut des sommes versées. Le montant brut est le montant facturé hors Taxe sur la Valeur Ajoutée (TVA)."
+    }
+   ]
+  }
+ ],
+ "country": "GN",
+ "sources": [
+  {
+   "url": "https://cnss.gov.gn/cotisations-sociales-employeurs/",
+   "title": "Cotisations sociales employeurs (Caisse Nationale de Sécurité Sociale de Guinée)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le plafond est de 2 500 000 GNF Le plancher est de 550 000 GNF Le taux des cotisations sociales Il représente 23% du salaire soumis à cotisation. Ce taux de financement est reparti ainsi qu’il suit : Employeur 18% Salarié 5% … Prestations familiales 6% Accident du travail et Maladies professionnelles 4% Assurance maladies 6,5% Retraite Vieillesse Invalidité Décès 6,5% … Le versement des cotisations se fait dans les quinze (15) premiers jours qui suivent le mois ou le trimestre échu"
+  },
+  {
+   "url": "https://www.enabel.be/app/uploads/2025/05/Question-Reponse.pdf",
+   "title": "Enabel, e-Procurement forum report for tender GIN23008-10019 (Guinea), questions and answers of June 2025",
+   "read": "2026-11-02",
+   "kind": "secondary",
+   "quotes": "https://www.mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf",
+   "said": "Il sera retenu à la source 15 % sur les revenus non-salariaux (Art. 198 du Code général des impôts) si le prestataire ne possède pas de NIF en Guinée (= contractant sans domicile fiscal en Guinée). … Cependant, si le soumissionnaire a son siège fiscal dans un pays ayant conclu un accord de non-double imposition avec la Guinée (actuellement la France, le Maroc et la Tunisie), cette retenue ne sera pas appliquée. … Le taux de la retenue est fixé à quinze pourcent (15%) du montant brut des sommes versées. Le montant brut est le montant facturé hors Taxe sur la Valeur Ajoutée (TVA)."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Personal income tax brackets, allowance and regional layer for 2026",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return due date",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding from pay and from a freelancer's fee",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether the 15% withheld under CGI art. 198 (now a finding, from Enabel) is final, any artistes' rule, and the CGI's own text.",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Special treatment of authors' royalties",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "VAT/GST rate and registration threshold",
+   "tried": {
+    "institution": "dni.gov.gn and impots.gov.gn unreachable (connection failed, 2026-11-01); mef.gov.gn reached: its finance-law page offers only the 2022 finance law; mbudget.gov.gn returns 403 || 2026-11-01 retry: dni.gov.gn and impots.gov.gn still fail (connection, 2026-11-01); mef.gov.gn read again by its own site search ('code general des impots') and media library ('finances 2026'): only 2022 news of the new CGI's roll-out, no text or rates; mbudget.gov.gn 403",
+    "official-register": "Journal officiel de Guinée and the CGI not found online from here || 2026-11-01 retry: sgg.gov.gn (Secrétariat général du Gouvernement) laws list read, pages 1 to 3: no finance law or CGI posted; journal-officiel.sgg.gov.gn answers 403 'Page non trouvée'",
+    "web-search": "not run: the session's shared web-search budget was used up on 2026-11-01 before this country || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01); the lead's word that search worked again came after the limit was spent || Web search 2026-11-02 (depth round): \"Guinée Code général des impôts barème retenue sur traitements et salaires RTS tranches taux 2026 impôt sur le revenu personnes physiques\" returned the Ministry of Budget's CGI PDF (mbudget.gov.gn/wp-content/uploads/Code-General-des-Impots.pdf: HTTP 403 from this environment, 2026-11-02, not read another way), africarrieres.com and afrotools.com (employer guides and a calculator: a 0% band to GNF 1,000,000 and \"0%–35% on 7 bands\" for 2026, no primary named), rivermate, globalization-partners, tradingeconomics (a single 20% figure) and webguine.site (an old US commercial guide): no band edges from a source naming its primary; \"Guinée Conakry retenue à la source prestations de services non-résidents taux libératoire droits d'auteur TVA 18% seuil d'assujettissement chiffre d'affaires\" returned trykintsugi.com (VAT 18%, reverse charge under CGI art. 373 bis, no threshold), CMS (2016 note of a planned 20% VAT; 2017 finance laws), copeps.fr, financialafrik.com (2017), taxratesbycountry.com and Enabel's tender Q&A (CGI art. 198: 15% on non-residents' non-salary income, now a nonResident finding): no authors' rule, no VAT threshold, no return date.",
+    "trade-press": "no firm summary (PwC, Deloitte 2026) exists for this country (Deloitte URL returns 404) || 2026-11-01 retry: No PwC or Deloitte summary exists for Guinea; none read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

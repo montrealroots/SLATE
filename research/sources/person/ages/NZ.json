@@ -1,0 +1,329 @@
+{
+ "topic": "ages.NZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in New Zealand: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "majority",
+   "finding": "Full age in New Zealand is twenty, under the Age of Majority Act 1970 (layer 3 has no New Zealand row).",
+   "value": {
+    "age": 20,
+    "law": "Age of Majority Act 1970, s 4"
+   },
+   "applies": "Everyone. Contracts are governed by their own age of eighteen (see minorsContracts). The Act's own text could not be read: legislation.govt.nz answered with an AWS WAF challenge and NZLII with a Cloudflare challenge, so this rests on a law firm quoting the Act.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "According to the Age of Majority Act 1970, the age at which a person is legally recognised as an adult in New Zealand is 20 years old."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "A contract by anyone under eighteen is unenforceable against the minor unless a court finds it fair and reasonable, and is fully binding if the District Court approves it before it is made; the screen agreement for actors is signed by a parent or guardian for an artist under eighteen.",
+   "value": {
+    "minorUnder": 18,
+    "binding": "District Court approval before the contract (CCLA 2017 s 98), on application by the minor, another party or a guardian (s 99)",
+    "otherwise": "unenforceable against the minor but otherwise effective (s 86); the court may enforce it if fair and reasonable (ss 87-88)",
+    "industry": "SPADA/Equity Individual Performance Agreement: parent or legal guardian signs on behalf of and guarantees an artist under 18",
+    "setAside": null
+   },
+   "applies": "The Act covers every contract, so writing, directing and producing deals as well as performing. The Act was read in the reprint as at 14 July 2017 (hosted by an insurer, the official site being bot-checked); later amendments are not read. No set-aside of earnings was found (blocker).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "minor means a person who is under the age of 18 years, and a person is of full age if he or she has reached the age of 18 years"
+    },
+    {
+     "src": 1,
+     "said": "Every contract entered into by a minor is unenforceable against the minor but otherwise has effect as if the minor were of full age."
+    },
+    {
+     "src": 1,
+     "said": "Every contract entered into by a minor has effect as if the minor were of full age if, before the contract is entered into by the minor, it is approved under this section by the District Court."
+    },
+    {
+     "src": 2,
+     "said": "Where the Artist is under the age of 18 at the time of signature on this Agreement, their parent or legal guardian (not the Agent) must sign below:"
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "No permit is required; the hours come from the producers' and actors' agreement: up to 8 years 6 hours door to door, 9 to 11 years 8 hours door to door, 12 to 16 years 10 hours plus travel, at most 5 days a week, a 12-hour overnight break, a chaperone, and 10 hours of schoolwork a week on long engagements; anyone 15 or under works only outside school hours and not 10pm to 6am.",
+   "value": {
+    "permit": null,
+    "childUnder": 16,
+    "hoursPerDay": [
+     {
+      "to": 8,
+      "hours": 6,
+      "basis": "door to door, travel included"
+     },
+     {
+      "from": 9,
+      "to": 11,
+      "hours": 8,
+      "basis": "door to door, travel included"
+     },
+     {
+      "from": 12,
+      "to": 16,
+      "hours": 10,
+      "basis": "working, plus travel"
+     }
+    ],
+    "daysPerWeek": 5,
+    "consecutiveDays": 5,
+    "overnightBreakHours": 12,
+    "night": {
+     "from": "22:00",
+     "to": "06:00",
+     "except": "with the parent's or guardian's agreement (ScreenSafe)"
+    },
+    "chaperone": "a primary-duty chaperone; two if 5 or more children, ratio never below 1:4",
+    "schoolworkHoursPerWeek": 10,
+    "law": "outside school hours only for those 15 or under (Education and Training Act 2020); not 10pm-6am (Health and Safety at Work regulations, Part 4)"
+   },
+   "applies": "The agreement binds productions using it (NZ feature film and television drama) and covers the Artist, a performer; nothing found extends the hours rules to a young writer or director, who falls only under the general school-hours and night rules.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "a Child Artist is a child when they are under 16 years of age during any of the Pre-Production or Principal Photography Dates of the Production."
+    },
+    {
+     "src": 2,
+     "said": "Up to and including 8 year olds 6 hours door to door (includes travel time) 9 to 11 year olds 8 hours door to door (includes travel time) 12 to 16 years 10 hours working plus travel"
+    },
+    {
+     "src": 2,
+     "said": "The Artist will work no more than 5 consecutive days, and no more than 5 days in a calendar week) 5. The Child Artist will have at least a 12 hour overnight break (i.e. turnaround), exclusive of travel time."
+    },
+    {
+     "src": 2,
+     "said": "On long term engagements, the Producer will ensure that the Child Artist is allocated 10 hours per working week for schoolwork (exclusive of production days off)."
+    },
+    {
+     "src": 3,
+     "said": "Children under the age of 16-years-old should not work between the hours of 10pm and 6am. However, if required, work may be undertaken during these hours in consultation with, and if agreed to, by the child's parent or guardian."
+    },
+    {
+     "src": 4,
+     "said": "If you hire any school-aged students who are 15 years old or under, their work hours must: be outside of school hours only (this is an education requirement) not be between 10pm and 6am (this is a health and safety requirement)."
+    }
+   ]
+  },
+  {
+   "item": "minimumWorkAge",
+   "finding": "Employment New Zealand names no minimum age for work; for anyone 15 or under it sets only that work is outside school hours (unless the Ministry of Education's exemption certificate) and not between 10pm and 6am.",
+   "value": {
+    "general": null,
+    "light": null,
+    "under16": {
+     "schoolHours": false,
+     "night": {
+      "from": "22:00",
+      "to": "06:00"
+     }
+    }
+   },
+   "applies": "Every employee. That the law sets no general minimum age is a reading of the agency's page, not a statement found (blocker).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "You do not have to meet this restriction if you have a certificate of exemption."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "Equity New Zealand admits young performers under 17 at a reduced fee (NZ$101.66 a year in 2026); DEGANZ (directors and editors) has a student tier for full-time tertiary students and states no age.",
+   "value": {
+    "equityNZ": {
+     "youngPerformerUnder": 17,
+     "annualFeeNZD2026": 101.66
+    },
+    "DEGANZ": {
+     "student": "full-time student at a NZ tertiary institution",
+     "age": null
+    },
+    "NZWG": null
+   },
+   "applies": "Performers (Equity NZ) and directors (DEGANZ). The New Zealand Writers Guild's rules were not reached (blocker).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Young performers (under 17) pay a further reduced amount."
+    },
+    {
+     "src": 5,
+     "said": "Young performer (under 17 years) One $1.96 $3.91 $7.82 $101.66"
+    },
+    {
+     "src": 6,
+     "said": "Student Member If you are a FULLTIME student at a NZ tertiary institution."
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "The New Zealand Film Commission's feature development funding is open to an experienced New Zealand filmmaker who is a citizen or permanent resident; no age or capacity rule is stated.",
+   "value": {
+    "NZFC": {
+     "age": null,
+     "who": "experienced New Zealand filmmaker; New Zealand citizen or permanent resident"
+    }
+   },
+   "applies": "Feature film development funding page. The fund guideline PDFs refused this environment (S3 AccessDenied), so other funds' rules are not read.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Who can apply You can apply if: You are an experienced New Zealand filmmaker The filmmaker is a New Zealand citizen or permanent resident"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "A person under eighteen cannot be a company director.",
+   "value": {
+    "directorMinAge": 18
+   },
+   "applies": "Companies registered under the Companies Act 1993 (the Companies Office cites the Act; its s 151 text was not read, the legislation site being bot-checked).",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Some of the reasons you cannot be a director include if you are: under 18 years of age"
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "The New Zealand Writers Guild sets no age: it admits by credits or screenwriting earnings for full tiers, and as associates writers not yet produced who are students (with a current student ID) or unwaged.",
+   "value": {
+    "NZWG": {
+     "minimumAge": null,
+     "fullTiers": "by screen credits and earnings (A+ more than 50 minutes of credits or over $50,000 earned in the previous year)",
+     "associateStudent": "a writer not yet produced, with a current student ID",
+     "joiningFeeNZD": 60
+    }
+   },
+   "applies": "NZWG Tiers & Benefits page, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "The NZWG Membership framework helps to assist members grow, allowing for writers to join as Associates or Students and work their way up to one of our full Membership levels of C through to A+. … Associate (Student) Annual Fee $ 115 Save $ Monthly Fee $ 12 Credits / Earnings: A writer who has yet to have script writing produced, who is currently a student (copy of current Student ID card required)"
+    }
+   ]
+  }
+ ],
+ "country": "NZ",
+ "sources": [
+  {
+   "url": "https://sharptudhope.co.nz/news-articles/time-to-grow-up-understanding-new-zealands-age-of-majority/",
+   "title": "Sharp Tudhope: Time to grow up? Understanding New Zealand's age of majority",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://legislation.govt.nz/act/public/1970/137/en/latest/",
+   "said": "According to the Age of Majority Act 1970, the age at which a person is legally recognised as an adult in New Zealand is 20 years old."
+  },
+  {
+   "url": "https://www.vero.co.nz/documents/marine/contract-and-commercial-law-act-2017.pdf",
+   "title": "Contract and Commercial Law Act 2017, reprint as at 14 July 2017",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.legislation.govt.nz/act/public/2017/0005/latest/whole.html",
+   "said": "minor means a person who is under the age of 18 years, and a person is of full age if he or she has reached the age of 18 years … Every contract entered into by a minor is unenforceable against the minor but otherwise has effect as if the minor were of full age. … Every contract entered into by a minor has effect as if the minor were of full age if, before the contract is entered into by the minor, it is approved under this section by the District Court."
+  },
+  {
+   "url": "https://spada.co.nz/assets/READ-ONLY-SPADA-NZ-Actors-Equity-Individual-Performance-Agreement.pdf",
+   "title": "SPADA / NZ Actors' Equity Individual Performance Agreement (2014, amended December 2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Where the Artist is under the age of 18 at the time of signature on this Agreement, their parent or legal guardian (not the Agent) must sign below: … a Child Artist is a child when they are under 16 years of age during any of the Pre-Production or Principal Photography Dates of the Production. … Up to and including 8 year olds 6 hours door to door (includes travel time) 9 to 11 year olds 8 hours door to door (includes travel time) 12 to 16 years 10 hours working plus travel … The Artist will work no more than 5 consecutive days, and no more than 5 days in a calendar week) 5. The Child Artist will have at least a 12 hour overnight break (i.e. turnaround), exclusive of travel time. … On long term engagements, the Producer will ensure that the Child Artist is allocated 10 hours per working week for schoolwork (exclusive of production days off)."
+  },
+  {
+   "url": "https://www.wiftnz.org.nz/media/3a4b025m/screensafe_child_safety_guidelines.pdf",
+   "title": "ScreenSafe Child Safety Guidelines",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Children under the age of 16-years-old should not work between the hours of 10pm and 6am. However, if required, work may be undertaken during these hours in consultation with, and if agreed to, by the child's parent or guardian."
+  },
+  {
+   "url": "https://www.employment.govt.nz/starting-employment/hiring/hiring-young-people",
+   "title": "Employment New Zealand: Hiring young people",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you hire any school-aged students who are 15 years old or under, their work hours must: be outside of school hours only (this is an education requirement) not be between 10pm and 6am (this is a health and safety requirement). … You do not have to meet this restriction if you have a certificate of exemption."
+  },
+  {
+   "url": "https://equity.org.nz/?p=186",
+   "title": "Equity New Zealand: Join us (fees 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Young performers (under 17) pay a further reduced amount. … Young performer (under 17 years) One $1.96 $3.91 $7.82 $101.66"
+  },
+  {
+   "url": "https://www.deganz.co.nz/members/degnz-rules-terms-conditions/",
+   "title": "DEGANZ: Membership Rules and Terms and Conditions",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Student Member If you are a FULLTIME student at a NZ tertiary institution."
+  },
+  {
+   "url": "https://www.nzfilm.co.nz/funding-support-nz-filmmakers/funding/feature-film-development-funding",
+   "title": "NZFC: Feature film development funding",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Who can apply You can apply if: You are an experienced New Zealand filmmaker The filmmaker is a New Zealand citizen or permanent resident"
+  },
+  {
+   "url": "https://companies-register.companiesoffice.govt.nz/help-centre/company-directors/who-can-be-a-director/",
+   "title": "Companies Office: Who can be a director",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Some of the reasons you cannot be a director include if you are: under 18 years of age"
+  },
+  {
+   "url": "https://www.nzwg.org.nz/members/tiers-and-benefits",
+   "title": "New Zealand Writers Guild: Tiers & Benefits",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The NZWG Membership framework helps to assist members grow, allowing for writers to join as Associates or Students and work their way up to one of our full Membership levels of C through to A+. … Associate (Student) Annual Fee $ 115 Save $ Monthly Fee $ 12 Credits / Earnings: A writer who has yet to have script writing produced, who is currently a student (copy of current Student ID card required)"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "majority",
+   "sought": "the text of the Age of Majority Act 1970 s 4 from an official copy",
+   "tried": {
+    "institution": "legislation.govt.nz (act/public/1970/137 html and pdf): HTTP 202 with x-amzn-waf-action: challenge, a bot check, not read another way | Retry 2026-11-01: legislation.govt.nz (act/public/1970/0137/latest/whole.html) and demo.legislation.govt.nz both answered HTTP 202 with no body (the WAF challenge) again; not read another way",
+    "official-register": "NZLII (www and http): Cloudflare 'Attention Required' challenge; mail.nzlii.org: CONNECT 502 | Retry 2026-11-01: nzlii.org answered a Cloudflare 403 again",
+    "web-search": "searched 'Age of Majority Act 1970 20 years full age site:govt.nz' and variants: only the legislation site and NZLII carry the text; Te Ara answered 403 | Retry 2026-11-01: '\"Age of Majority Act 1970\" \"20 years\" New Zealand govt.nz age of majority 20 justice.govt.nz OR govt.nz': only legislation.govt.nz (WAF), mail.nzlii.org (timed out on 2026-11-01) and the law-firm copy (held, secondary)",
+    "trade-press": "Sharp Tudhope (law firm) quotes the Act: used, marked secondary | Retry 2026-11-01: Sharp Tudhope (held)",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "minorsContracts",
+   "sought": "a statutory share of a minor's earnings to be set aside, and where (New Zealand)",
+   "tried": {
+    "institution": "CCLA 2017 subpart 6 read (no set-aside); Equity NZ and SPADA pages read | Retry 2026-11-01: NZWG and existing Equity NZ, SPADA pages re-checked: no earnings set-aside",
+    "official-register": "legislation.govt.nz bot-checked; no other register found | Retry 2026-11-01: legislation.govt.nz WAF challenge",
+    "web-search": "searched for a New Zealand child performer earnings trust: nothing found | Retry 2026-11-01: 'New Zealand child actor earnings trust parents law Contract and Commercial Law Act minors court approval contract child performer savings': only US states' Coogan rules and a Collaborate (agency) guide; no New Zealand set-aside",
+    "trade-press": "none found | Retry 2026-11-01: none",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "minimumWorkAge",
+   "sought": "a statement in law or by the agency that New Zealand sets no general minimum working age",
+   "tried": {
+    "institution": "Employment NZ 'hiring young people' read: hours rules only; its 'young employees' page answered 404 | Retry 2026-11-01: employment.govt.nz 'young employees' page (starting-employment/rights-and-responsibilities/young-employees) answered 404 again; the hiring page (already held) states hours and pay, not 'no minimum age'",
+    "official-register": "legislation.govt.nz bot-checked (Education and Training Act 2020, Health and Safety at Work regulations) | Retry 2026-11-01: legislation.govt.nz WAF challenge (Education and Training Act 2020)",
+    "web-search": "searched 'employment.govt.nz children young workers minimum age': only trade articles (HCA magazine) say there is none | Retry 2026-11-01: 'employment.govt.nz no minimum age employ young people children under 16 school hours Education and Training Act': only secondary sources (Sprintlaw, HCA, retail.kiwi, Business Central) state there is no general minimum age",
+    "trade-press": "HCA magazine and Sprintlaw say no general minimum age, but name no primary URL | Retry 2026-11-01: Business Central's A-Z guide PDF timed out; Sprintlaw names no primary URL; not held",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

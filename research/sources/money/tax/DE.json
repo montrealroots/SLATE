@@ -1,0 +1,374 @@
+{
+ "topic": "tax.DE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Germany: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Germany's 2026 income tax is a formula tariff: nothing up to the €12,348 basic allowance, a rising rate from 14% to about 24% up to €17,799 and on to 42% at €69,879, 42% to €277,825 and 45% above; married couples filing jointly pay twice the tax on half their joint income. A 5.5% solidarity surcharge is added only where the income tax exceeds €20,350 (€40,700 joint).",
+   "value": {
+    "currency": "EUR",
+    "grundfreibetrag": 12348,
+    "zones": [
+     {
+      "from": 0,
+      "to": 12348,
+      "formula": "0"
+     },
+     {
+      "from": 12348,
+      "to": 17799,
+      "formula": "(914.51*y + 1400)*y, y=(zvE-12348)/10000",
+      "marginalRate": "14% rising"
+     },
+     {
+      "from": 17799,
+      "to": 69878,
+      "formula": "(173.10*z + 2397)*z + 1034.87, z=(zvE-17799)/10000",
+      "marginalRate": "about 24% rising to 42%"
+     },
+     {
+      "from": 69878,
+      "to": 277825,
+      "formula": "0.42*x - 11135.63",
+      "rate": 0.42
+     },
+     {
+      "from": 277825,
+      "to": null,
+      "formula": "0.45*x - 19470.38",
+      "rate": 0.45
+     }
+    ],
+    "splitting": "joint assessment: 2 × tax on half the joint income",
+    "solidaritySurcharge": {
+     "rate": 0.055,
+     "freigrenzeSingle": 20350,
+     "freigrenzeJoint": 40700,
+     "cap": "11.9% of the excess over the Freigrenze"
+    },
+    "churchTax": "for church members, set by state law (not read)",
+    "regionalLayer": null
+   },
+   "applies": "Veranlagungszeitraum 2026 (calendar year); marginal rates between zone edges are derived from the statutory formula, not stated in it.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Sie beträgt ab dem Veranlagungszeitraum 2026 vorbehaltlich der §§ 32b, 32d, 34, 34a, 34b und 34c jeweils in Euro für zu versteuernde Einkommen 1. bis 12 348 Euro (Grundfreibetrag): 0; 2. von 12 349 Euro bis 17 799 Euro: (914,51 • y + 1 400) • y; 3. von 17 800 Euro bis 69 878 Euro: (173,10 • z + 2 397) • z + 1 034,87; 4. von 69 879 Euro bis 277 825 Euro: 0,42 • x – 11 135,63; 5. von 277 826 Euro an: 0,45 • x – 19 470,38."
+    },
+    {
+     "src": 0,
+     "said": "das Zweifache des Steuerbetrags, der sich für die Hälfte ihres gemeinsam zu versteuernden Einkommens nach Absatz 1 ergibt (Splitting-Verfahren)"
+    },
+    {
+     "src": 1,
+     "said": "Der Solidaritätszuschlag beträgt 5,5 Prozent der Bemessungsgrundlage."
+    },
+    {
+     "src": 2,
+     "said": "1. in den Fällen des § 32a Absatz 5 und 6 des Einkommensteuergesetzes 40 700 Euro, 2. in anderen Fällen 20 350 Euro übersteigt."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee and the employer each pay half of pension insurance 18.6%, unemployment 2.6%, health 14.6% plus the fund's additional rate (average 2.9%) and long-term care 3.6% (employee +0.6% if childless); pension and unemployment stop at €101,400 a year, health and care at €69,750. A self-employed artist or writer in the Künstlersozialkasse pays only the employee half on estimated annual income, the KSK covering the rest from the hirers' 4.9% levy (5.0% in 2027) and a federal grant.",
+   "value": {
+    "currency": "EUR",
+    "employeeShare": {
+     "pension": 0.093,
+     "unemployment": 0.013,
+     "health": 0.073,
+     "healthAdditionalAverageHalf": 0.0145,
+     "care": 0.018,
+     "careChildlessExtra": 0.006
+    },
+    "employerShare": {
+     "pension": 0.093,
+     "unemployment": 0.013,
+     "health": 0.073,
+     "healthAdditionalAverageHalf": 0.0145,
+     "care": 0.018
+    },
+    "ceilings": {
+     "pensionUnemploymentAnnual": 101400,
+     "healthCareAnnual": 69750
+    },
+    "KSK": {
+     "memberPays": "half: RV 9.3%, KV 7.3% + half the fund's additional rate, PV 1.8% (+0.6% childless)",
+     "base": "estimated annual work income (Jahresarbeitseinkommen)",
+     "hirersLevy": {
+      "2026": 0.049,
+      "2027": 0.05
+     }
+    }
+   },
+   "applies": "2026; KSK for self-employed artists and publicists (actors on a production's payroll are employees).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Krankenversicherung (KV) - allgemeiner Beitragssatz 14,6 % 7,3 % 7,3 %"
+    },
+    {
+     "src": 3,
+     "said": "(festgelegt vom Bundesministerium für Gesundheit) 2,9 % Rentenversicherung (RV) 18,6 % 9,3 % 9,3 % Arbeitslosenversicherung (AV) 2,6 % 1,3 % 1,3 %"
+    },
+    {
+     "src": 3,
+     "said": "Beschäftigte ohne Kinder 3,6 % - 0,6 % 4,2 % 1,8 % 2,4 %"
+    },
+    {
+     "src": 4,
+     "said": "in der allgemeinen Rentenversicherung auf 101 400 Euro jährlich"
+    },
+    {
+     "src": 5,
+     "said": "Im Jahr 2026 beträgt die Beitragsbemessungsgrenze (BBG) in der Kranken- und Pflegeversicherung 69.750 Euro jährlich (5.812,50 Euro monatlich). In der Renten- und Arbeitslosenversicherung liegt sie 2026 bei 101.400 Euro pro Jahr (8.450 Euro pro Monat)."
+    },
+    {
+     "src": 6,
+     "said": "Rentenversicherungsbeitrag = Anteil des Versicherten 9,3 % von 10.000,00 € = 930,00 € jährlich"
+    },
+    {
+     "src": 6,
+     "said": "Krankenversicherungsbeitrag = Anteil des Versicherten 7,3 % von 10.000,00 €"
+    },
+    {
+     "src": 6,
+     "said": "Pflegeversicherungsbeitrag = Anteil des Versicherten 1,8 % (+ 0,6 % für Kinderlose)"
+    },
+    {
+     "src": 7,
+     "said": "2020 2021 2022 2023 2024 2025 2026 2027 4,2 4,2 4,2 5,0 5,0 5,0 4,9 5,0"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds wage tax (Lohnsteuer) from each payment of wages, for resident and non-resident employees alike; a freelancer's fee has nothing withheld and the tax is settled by assessment.",
+   "value": {
+    "currency": "EUR",
+    "wages": "Lohnsteuer by tax class (§ 39b EStG; Programmablaufplan 2026 not read)",
+    "freelanceFee": {
+     "withholding": 0
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Bei unbeschränkt und beschränkt einkommensteuerpflichtigen Arbeitnehmern hat der Arbeitgeber den Lohnsteuerabzug nach Maßgabe der Absätze 2 bis 6 durchzuführen."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's fee for a performance in Germany, and royalties for the use of copyrights, bear 15% withheld from the gross (plus solidarity surcharge), none where a performance pays €250 or less; it settles the tax, unless the performer applies for an assessment. Wages already under wage-tax withholding are excluded.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.15,
+    "plusSolidaritySurcharge": 0.055,
+    "base": "total receipts (gross)",
+    "thresholdPerPerformance": 250,
+    "royalties": {
+     "rate": 0.15
+    },
+    "final": "yes, unless an assessment is applied for (§ 50 (2) sentence 2 no. 5)",
+    "excluded": "income from employment already subject to wage tax"
+   },
+   "applies": "Beschränkt Steuerpflichtige (non-residents), 2026; actors, directors and writers alike where the income is from a performance or from rights.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "bei Einkünften, die durch im Inland ausgeübte künstlerische, sportliche, artistische, unterhaltende oder ähnliche Darbietungen erzielt werden"
+    },
+    {
+     "src": 9,
+     "said": "Der Steuerabzug beträgt 15 Prozent, in den Fällen des Absatzes 1 Nummer 4 beträgt er 30 Prozent der gesamten Einnahmen."
+    },
+    {
+     "src": 9,
+     "said": "Bei Einkünften im Sinne des Absatzes 1 Nummer 1 wird ein Steuerabzug nicht erhoben, wenn die Einnahmen je Darbietung 250 Euro nicht übersteigen."
+    },
+    {
+     "src": 9,
+     "said": "insbesondere von Urheberrechten und gewerblichen Schutzrechten"
+    },
+    {
+     "src": 10,
+     "said": "gilt bei beschränkt Steuerpflichtigen durch den Steuerabzug als abgegolten."
+    },
+    {
+     "src": 10,
+     "said": "5. für Einkünfte im Sinne des § 50a Absatz 1 Nummer 1, 2 und 4, wenn die Veranlagung zur Einkommensteuer beantragt wird;"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's grant or transfer of rights under copyright law bears the reduced 7% VAT rate instead of 19%; income tax gives royalties no special rate in the sources read.",
+   "value": {
+    "vatOnCopyrightRights": 0.07,
+    "incomeTax": "ordinary tariff (§ 34 EStG relief for multi-year work not read)"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "c) die Einräumung, Übertragung und Wahrnehmung von Rechten, die sich aus dem Urheberrechtsgesetz ergeben,"
+    },
+    {
+     "src": 11,
+     "said": "(2) Die Steuer ermäßigt sich auf sieben Prozent für die folgenden Umsätze:"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 19% VAT (7% for granting copyright rights and for performing artists' theatre and concert-like performances) unless the freelancer is a small business: turnover of no more than €25,000 last year and €100,000 this year.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.19,
+    "reduced": 0.07,
+    "smallBusiness": {
+     "previousYear": 25000,
+     "currentYear": 100000
+    }
+   },
+   "applies": "2026, businesses established in Germany.",
+   "sources": [
+    {
+     "src": 12,
+     "said": "wenn der Gesamtumsatz nach Absatz 2 im vorangegangenen Kalenderjahr 25 000 Euro nicht überschritten hat und im laufenden Kalenderjahr 100 000 Euro nicht überschreitet."
+    },
+    {
+     "src": 11,
+     "said": "(1) Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage"
+    },
+    {
+     "src": 11,
+     "said": "sowie die den Theatervorführungen und Konzerten vergleichbaren Darbietungen ausübender Künstler"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The German tax year is the calendar year; the return is due seven months after the year ends (31 July 2027 for 2026) unless an adviser files it.",
+   "value": {
+    "currency": "EUR",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-07-31"
+   },
+   "applies": "Individuals filing themselves; adviser-prepared returns have a later deadline (not read).",
+   "sources": [
+    {
+     "src": 13,
+     "said": "spätestens sieben Monate nach Ablauf des Kalenderjahres"
+    }
+   ]
+  }
+ ],
+ "country": "DE",
+ "sources": [
+  {
+   "url": "https://www.gesetze-im-internet.de/estg/__32a.html",
+   "title": "Einkommensteuergesetz § 32a Einkommensteuertarif",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sie beträgt ab dem Veranlagungszeitraum 2026 vorbehaltlich der §§ 32b, 32d, 34, 34a, 34b und 34c jeweils in Euro für zu versteuernde Einkommen 1. bis 12 348 Euro (Grundfreibetrag): 0; 2. von 12 349 Euro bis 17 799 Euro: (914,51 • y + 1 400) • y; 3. von 17 800 Euro bis 69 878 Euro: (173,10 • z + 2 397) • z + 1 034,87; 4. von 69 879 Euro bis 277 825 Euro: 0,42 • x – 11 135,63; 5. von 277 826 Euro an: 0,45 • x – 19 470,38. … das Zweifache des Steuerbetrags, der sich für die Hälfte ihres gemeinsam zu versteuernden Einkommens nach Absatz 1 ergibt (Splitting-Verfahren)"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/solzg_1995/__4.html",
+   "title": "Solidaritätszuschlaggesetz 1995 § 4 Zuschlagsatz",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Der Solidaritätszuschlag beträgt 5,5 Prozent der Bemessungsgrundlage."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/solzg_1995/__3.html",
+   "title": "SolZG 1995 § 3",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. in den Fällen des § 32a Absatz 5 und 6 des Einkommensteuergesetzes 40 700 Euro, 2. in anderen Fällen 20 350 Euro übersteigt."
+  },
+  {
+   "url": "https://www.tk.de/firmenkunden/versicherung/beitraege-faq-und-mehr/beitragssaetze/aktuelle-beitragssaetze-in-der-sozialversicherung-2031554",
+   "title": "Techniker Krankenkasse: Aktuelle Beitragssätze in der Sozialversicherung (06.01.2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Krankenversicherung (KV) - allgemeiner Beitragssatz 14,6 % 7,3 % 7,3 % … (festgelegt vom Bundesministerium für Gesundheit) 2,9 % Rentenversicherung (RV) 18,6 % 9,3 % 9,3 % Arbeitslosenversicherung (AV) 2,6 % 1,3 % 1,3 % … Beschäftigte ohne Kinder 3,6 % - 0,6 % 4,2 % 1,8 % 2,4 %"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/svbezgrv_2026/__4.html",
+   "title": "Sozialversicherungsrechengrößen-Verordnung 2026 § 4",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "in der allgemeinen Rentenversicherung auf 101 400 Euro jährlich"
+  },
+  {
+   "url": "https://www.tk.de/firmenkunden/versicherung/beitraege-faq-und-mehr/zahlen-und-grenzwerte/beitragsbemessungsgrenzen-2033026",
+   "title": "Techniker Krankenkasse: Beitragsbemessungsgrenzen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Im Jahr 2026 beträgt die Beitragsbemessungsgrenze (BBG) in der Kranken- und Pflegeversicherung 69.750 Euro jährlich (5.812,50 Euro monatlich). In der Renten- und Arbeitslosenversicherung liegt sie 2026 bei 101.400 Euro pro Jahr (8.450 Euro pro Monat)."
+  },
+  {
+   "url": "https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/beitrag",
+   "title": "Künstlersozialkasse: Beitrag",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Rentenversicherungsbeitrag = Anteil des Versicherten 9,3 % von 10.000,00 € = 930,00 € jährlich … Krankenversicherungsbeitrag = Anteil des Versicherten 7,3 % von 10.000,00 € … Pflegeversicherungsbeitrag = Anteil des Versicherten 1,8 % (+ 0,6 % für Kinderlose)"
+  },
+  {
+   "url": "https://www.kuenstlersozialkasse.de/unternehmen-und-verwerter/kuenstlersozialabgabe",
+   "title": "Künstlersozialkasse: Künstlersozialabgabe",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2020 2021 2022 2023 2024 2025 2026 2027 4,2 4,2 4,2 5,0 5,0 5,0 4,9 5,0"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/estg/__39b.html",
+   "title": "EStG § 39b Einbehaltung der Lohnsteuer",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Bei unbeschränkt und beschränkt einkommensteuerpflichtigen Arbeitnehmern hat der Arbeitgeber den Lohnsteuerabzug nach Maßgabe der Absätze 2 bis 6 durchzuführen."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/estg/__50a.html",
+   "title": "EStG § 50a Steuerabzug bei beschränkt Steuerpflichtigen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "bei Einkünften, die durch im Inland ausgeübte künstlerische, sportliche, artistische, unterhaltende oder ähnliche Darbietungen erzielt werden … Der Steuerabzug beträgt 15 Prozent, in den Fällen des Absatzes 1 Nummer 4 beträgt er 30 Prozent der gesamten Einnahmen. … Bei Einkünften im Sinne des Absatzes 1 Nummer 1 wird ein Steuerabzug nicht erhoben, wenn die Einnahmen je Darbietung 250 Euro nicht übersteigen. … insbesondere von Urheberrechten und gewerblichen Schutzrechten"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/estg/__50.html",
+   "title": "EStG § 50",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "gilt bei beschränkt Steuerpflichtigen durch den Steuerabzug als abgegolten. … 5. für Einkünfte im Sinne des § 50a Absatz 1 Nummer 1, 2 und 4, wenn die Veranlagung zur Einkommensteuer beantragt wird;"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__12.html",
+   "title": "Umsatzsteuergesetz § 12 Steuersätze",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "c) die Einräumung, Übertragung und Wahrnehmung von Rechten, die sich aus dem Urheberrechtsgesetz ergeben, … (2) Die Steuer ermäßigt sich auf sieben Prozent für die folgenden Umsätze: … (1) Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage … sowie die den Theatervorführungen und Konzerten vergleichbaren Darbietungen ausübender Künstler"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html",
+   "title": "UStG § 19 Besteuerung der Kleinunternehmer",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "wenn der Gesamtumsatz nach Absatz 2 im vorangegangenen Kalenderjahr 25 000 Euro nicht überschritten hat und im laufenden Kalenderjahr 100 000 Euro nicht überschreitet."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/ao_1977/__149.html",
+   "title": "Abgabenordnung § 149 Abgabe der Steuererklärungen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "spätestens sieben Monate nach Ablauf des Kalenderjahres"
+  }
+ ],
+ "blockers": []
+}

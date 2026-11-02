@@ -1,0 +1,154 @@
+{
+ "country": "MK",
+ "read": "2026-11-01",
+ "route": "Дозвола за привремен престој заради работа (Ministry of Internal Affairs), on the Employment Service Agency's opinion",
+ "routeChanged": true,
+ "permit": {
+  "applies": "The foreigner applies to the Ministry of Internal Affairs (in person, through a lawyer with power of attorney, or through the employing company's lawyer), with a signed employment contract; the Employment Service Agency gives its opinion.",
+  "first": "The Employment Service Agency's opinion on the use of the annual quota and the current needs of the labour market",
+  "fees": [
+   {
+    "what": "Administrative fee on the application (form no. 2)",
+    "amount": "50",
+    "currency": "MKD"
+   },
+   {
+    "what": "Payment on the first temporary residence permit for employment",
+    "amount": "4000",
+    "currency": "MKD"
+   },
+   {
+    "what": "Second payment (not charged to citizens of Serbia, Montenegro and Kosovo)",
+    "amount": "2150",
+    "currency": "MKD"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://localeconomy.gazibaba.gov.mk/wp-content/uploads/2023/12/zakon-za-vrabotuvanje-i-rabota-na-stranci.pdf",
+   "title": "Закон за вработување и работа на странци, Службен весник на РМ 217/2015, arts. 4, 5, 7, 10, 11 (Municipality of Gazi Baba)",
+   "read": "2026-11-01",
+   "said": "поседуваат дозвола за привремен престој заради работа издадена од Министерството за … внатрешни работи или дозвола за работа издадена од Агенцијата за вработување на Република Македонија и регулиран престој по друг основ во Република Македонија. Во постапката за стекнување на дозвола за привремен престој заради работа согласно со закон, Агенцијата за вработување на Република Македонија издава мислење врз основ на искористеноста на квотата и моменталните потреби на пазарот на труд во Република Македонија. … Работна дозвола се издава за определен временски период до една година или на неопределено време. … Работна дозвола која се издава за определен временски период до една година е обновлив … а кои не престојуваат во државата повеќе од седум дена се должни, во зависност од тоа каде ги",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "first",
+    "validity",
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://av.gov.mk/employment-of-foreign-citizens.nspx",
+   "title": "Employment Service Agency of the Republic of North Macedonia, Employment of foreign citizens",
+   "read": "2026-11-01",
+   "said": "ESARM ISSUES WORK PERMITS TO FOREIGN CITIZENS WITH REGULATED RESIDENCE IN REPUBLIC OF NORTH MACEDONIA ON THE FOLLOWING GROUNDS … ESARM ISSUES CERTIFICATES FOR REGISTRATION OF SHORT-TERM SERVICES PROVIDED BY FOREIGN CITIZENS, NOT REQUIRING WORK PERMIT - Creative services in the field of the culture, … ESARM GIVES OPINION ON ELIGIBILITY FOR ISSUANCE OF TEMPORARY RESIDENCE PERMIT FOR WORK PURPOSES TO A FOREIGN CITIZEN - For employment of a foreign citizen",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://portal.mdt.gov.mk/post-body-files/upatstvo-i-postapka-za-oddelni-prava-baranja-na-strancite-file-ESeu.pdf",
+   "title": "Ministry of Internal Affairs, Потребни документи за вработување – прв пат (documents for a first temporary residence permit for employment), linked from mvr.gov.mk/mk-MK/uslugi/upatstvo-i-postapka-za-oddelni-prava-baranja-na-strancite",
+   "read": "2026-11-01",
+   "said": "Образец бр. 2 со Уплатница од 50 денари за административна такса … 1. Плаќање од 4000 денари … 2. Плаќање од 2150 денари … Државите на Р.Србија, Р.Црна Гора и Косово плаќаат само 4000 денари … Поднесител на барањето може да биде лично странецот, адвокат полномошник или вработен во фирмата како правник . … 5. Потпишан договор за вработување помеѓу работодавачот и странецот",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "applies"
+   ]
+  },
+  {
+   "url": "https://mvr.gov.mk/mk-MK/uslugi/upatstvo-i-postapka-za-oddelni-prava-baranja-na-strancite",
+   "title": "Ministry of Internal Affairs, Упатство и постапка за одделни права (барања) на странците",
+   "read": "2026-11-01",
+   "said": "Упатство и постапка за одделни права (барања) на странците",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "decision time for the residence permit for work (the Agency's own work permit: five working days, art. 8)",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: mvr.gov.mk foreigners' procedures page and its documents for a first employment permit and an extension (read): no decision time; av.gov.mk (Agency) re-checked: no time.",
+    "official-register": "Law on Foreigners not read | Retry 2026-11-01: The Law on Foreigners and its rulebook not reached (slvesnik.com.mk, the Official Gazette: no connection, HTTP 000); the 2015 Law on Employment and Work of Foreigners (Gazi Baba copy, read) sets no decision time, pay rule or criteria for performers.",
+    "web-search": "not run | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (2026-11-01); the earlier pass ran none for this country either.",
+    "trade-press": "none | Retry 2026-11-01: None reachable without search.",
+    "archive": "none | Retry 2026-11-01: web.archive.org: no connection (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "validity",
+   "sought": "the residence permit's term (the one year recorded is the Agency work permit's, art. 7(2))",
+   "tried": {
+    "institution": "none",
+    "official-register": "Law on Foreigners not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "union",
+   "sought": "union consultation",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: mvr.gov.mk foreigners' procedures page and its documents for a first employment permit and an extension (read): no decision time; av.gov.mk (Agency) re-checked: no time.",
+    "official-register": "Law art. 5: unions may propose quota measures, no consultation on an engagement | Retry 2026-11-01: The Law on Foreigners and its rulebook not reached (slvesnik.com.mk, the Official Gazette: no connection, HTTP 000); the 2015 Law on Employment and Work of Foreigners (Gazi Baba copy, read) sets no decision time, pay rule or criteria for performers.",
+    "web-search": "not run | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (2026-11-01); the earlier pass ran none for this country either.",
+    "trade-press": "none | Retry 2026-11-01: None reachable without search.",
+    "archive": "none | Retry 2026-11-01: web.archive.org: no connection (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "criteria",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: mvr.gov.mk foreigners' procedures page and its documents for a first employment permit and an extension (read): no decision time; av.gov.mk (Agency) re-checked: no time.",
+    "official-register": "none | Retry 2026-11-01: The Law on Foreigners and its rulebook not reached (slvesnik.com.mk, the Official Gazette: no connection, HTTP 000); the 2015 Law on Employment and Work of Foreigners (Gazi Baba copy, read) sets no decision time, pay rule or criteria for performers.",
+    "web-search": "not run | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (2026-11-01); the earlier pass ran none for this country either.",
+    "trade-press": "none | Retry 2026-11-01: None reachable without search.",
+    "archive": "none | Retry 2026-11-01: web.archive.org: no connection (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "minimum pay",
+   "tried": {
+    "institution": "none | Retry 2026-11-01: mvr.gov.mk foreigners' procedures page and its documents for a first employment permit and an extension (read): no decision time; av.gov.mk (Agency) re-checked: no time.",
+    "official-register": "none | Retry 2026-11-01: The Law on Foreigners and its rulebook not reached (slvesnik.com.mk, the Official Gazette: no connection, HTTP 000); the 2015 Law on Employment and Work of Foreigners (Gazi Baba copy, read) sets no decision time, pay rule or criteria for performers.",
+    "web-search": "not run | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (2026-11-01); the earlier pass ran none for this country either.",
+    "trade-press": "none | Retry 2026-11-01: None reachable without search.",
+    "archive": "none | Retry 2026-11-01: web.archive.org: no connection (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "days without a permit (art. 11's seven days need a ministry's consent: see note)",
+   "tried": {
+    "institution": "read | Retry 2026-11-01: mvr.gov.mk foreigners' procedures page and documents lists read: no short-engagement exemption named; av.gov.mk re-checked.",
+    "official-register": "art. 11 read | Retry 2026-11-01: 2015 Law on Employment and Work of Foreigners art. 11 (saved) as before; Law on Foreigners not reached (slvesnik.com.mk: HTTP 000).",
+    "web-search": "not run | Retry 2026-11-01: No new search possible: the shared web-search budget for this turn was exhausted (tool refusal, 2026-11-01).",
+    "trade-press": "none | Retry 2026-11-01: None reachable without search.",
+    "archive": "none | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  }
+ ],
+ "note": "A foreigner providing creative services in culture (music and dance performance, film, video) for a stay of up to seven days needs no work permit but the prior consent of the Ministry of Culture, the Ministry of Economy, the Agency of Youth and Sport or the municipality, and the work registered (art. 11): layer 3 models this as a consent, not days without a permit. Retry 2026-11-01: fees and who may file come from the Ministry of Internal Affairs' own list of documents for a first employment permit (MKD 50 administrative fee on the form, then MKD 4,000 and MKD 2,150; citizens of Serbia, Montenegro and Kosovo pay only the 4,000). The list names the payments without saying what the second is for."
+}

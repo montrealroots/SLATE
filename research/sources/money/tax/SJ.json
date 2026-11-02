@@ -1,0 +1,284 @@
+{
+ "topic": "tax.SJ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Svalbard and Jan Mayen: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Svalbard is its own tax area: pay and pensions earned there are taxed by deduction at 8% up to 12 times the National Insurance basic amount (G) and 22% above, with no allowances or deductions; other income (a freelancer's business income) is taxed at 16% of net income after a NOK 20,000 personal deduction; there is no municipal layer.",
+   "value": {
+    "currency": "NOK",
+    "salary": {
+     "brackets": [
+      {
+       "from": 0,
+       "to": "12G",
+       "rate": 0.08
+      },
+      {
+       "from": "12G",
+       "to": null,
+       "rate": 0.22
+      }
+     ],
+     "G": 136549,
+     "GFrom": "2026-05-01",
+     "twelveG": 1638588,
+     "deductions": null
+    },
+    "otherIncome": {
+     "rate": 0.16,
+     "personalDeduction": 20000
+    },
+    "youthFreeAmount": "ages 13-19 at year end, up to the mainland frikort limit, refunded (from 2026)",
+    "regional": null
+   },
+   "applies": "Income year 2026; salary under the Svalbard withholding scheme (svalbardskatteloven § 3-1), other income under § 3 c of the 2026 decision. The G used is the one last fixed for the income year.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income."
+    },
+    {
+     "src": 1,
+     "said": "a) Inntekt som blir skattlagd ved lønnstrekk etter svalbardskattelova § 3-1: Låg sats: 8 pst. Høg sats: 22 pst."
+    },
+    {
+     "src": 1,
+     "said": "c) Anna inntekt: 16 pst. Personlege skattytarar skal ha eit frådrag i alminneleg inntekt som er omfatta av bokstav c, på 20 000 kroner."
+    },
+    {
+     "src": 2,
+     "said": "Etter svalbardskatteloven § 3-1 benyttes det grunnbeløp som sist ble fastsatt for inntektsåret."
+    },
+    {
+     "src": 3,
+     "said": "Grunnbeløpet (G) per 1. mai 2026 er 136 549 kroner."
+    },
+    {
+     "src": 4,
+     "said": "Tax deducted according to the withholding tax scheme for Svalbard is entirely gross tax. No deductions for the tax calculation basis are granted."
+    },
+    {
+     "src": 5,
+     "said": "Ungdom som ved utløpet av inntektsåret er fra og med 13 til og med 19 år, skal ikke betale skatt av lønn"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Jan Mayen takes Svalbard's rates: pay for work on Jan Mayen (a stay over 30 days) is taxed under the Jan Mayen Tax Act at the same rates and contributions as Svalbard, but the tax goes to the worker's home municipality on the mainland.",
+   "value": {
+    "janMayen": {
+     "paidTo": "NO",
+     "minStayDays": 30,
+     "rates": "Svalbard's (this file)"
+    }
+   },
+   "applies": "Jan Mayen (and Norway's Antarctic dependencies)",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Lønn og andre ytingar for arbeid på Jan Mayen eller i dei norske bilanda i Antarktis blir skattlagde etter reglane i Svalbardskattelova, dersom kvart einskild opphald i samband med arbeidet overstig 30 døgn."
+    },
+    {
+     "src": 2,
+     "said": "Lønnsinntekt som er skattepliktig etter Jan Mayen-skatteloven, skattlegges etter de samme satsene som gjelder for Svalbard. Satsene for trygdeavgift og arbeidsgiveravgift er også de samme."
+    },
+    {
+     "src": 2,
+     "said": "inntekt som er skattepliktig etter Jan Mayen-skatteloven, skattlegges i personens bostedskommune."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; the tax return is due by 30 April, and by 31 May for the self-employed.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "selfEmployedReturnDue": "05-31"
+   },
+   "applies": "Persons taxed to Svalbard",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Fristen for å levere skattemeldingen er 30. april hvert år."
+    },
+    {
+     "src": 7,
+     "said": "Mottar du skattemelding for næringsdrivende må du levere innen 31. mai."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The worker pays a national insurance contribution of 7.6% of pay (5.1% of pensions) on Svalbard; the employer pays no employer's contribution (a 0% zone) on income taxed under the Svalbard Tax Act, and the same holds on Jan Mayen.",
+   "value": {
+    "currency": "NOK",
+    "employee": 0.076,
+    "pensions": 0.051,
+    "employer": 0,
+    "ceiling": null
+   },
+   "applies": "2026 for the employee rates; the 0% employer rate from the 2023 circular (latest found)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The national insurance contributions related to salary, etc. is 7.6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+    },
+    {
+     "src": 2,
+     "said": "Det skal ikke betales arbeidsgiveravgift for inntekt som blir skattlagt etter svalbardskatteloven."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts the 8%/22% tax and the 7.6% contribution from every payment of pay or fees for work, with no tax card; the deduction is in general the final settlement for the pay.",
+   "value": {
+    "rates": {
+     "tax": [
+      0.08,
+      0.22
+     ],
+     "contribution": 0.076
+    },
+    "final": true,
+    "covers": "salary and remuneration for work and assignments in and outside employment, fees, commissions"
+   },
+   "applies": "Pay for work on Svalbard (stay of at least 30 consecutive days)",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The employer must deduct tax from salary/pension when this is paid to the employee/benefit recipient. The deducted tax is, in general, a final settlement of the tax liability for the salary/pension."
+    },
+    {
+     "src": 4,
+     "said": "salary and other remunerations for work and assignments in and outside of employment, such as fees, commissions, etc."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A visiting performer, writer or director is taxed on Svalbard pay only when the stay lasts at least 30 consecutive days (then under the same final 8%/22% deduction); a shorter stay leaves the pay taxable on the mainland or in the home country; a stay of 12 months makes the person resident from its start.",
+   "value": {
+    "minStayDays": 30,
+    "rate": [
+     0.08,
+     0.22
+    ],
+    "final": true,
+    "residentAfterMonths": 12,
+    "shorterStay": "taxed where the person is resident"
+   },
+   "applies": "Non-residents working on Svalbard",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Salary or other remuneration for work on Svalbard is taxable when the stay lasts at least 30 consecutive days, see the Svalbard Taxation Act section 2-2, subsection 1. If the stay lasts less than 30 days, the salary income will be taxable on the mainland or in any other country where the employee is a resident."
+    },
+    {
+     "src": 4,
+     "said": "If the stay lasts at least 12 months, the person will be considered a tax resident from the beginning of the stay."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT on Svalbard or Jan Mayen: goods and services consumed there bear none (services sold from Svalbard to buyers on the mainland can bear Norwegian VAT).",
+   "value": {
+    "standard": 0,
+    "threshold": null,
+    "note": "remote services sold to the mainland may bear NO VAT"
+   },
+   "applies": "Supplies on Svalbard and Jan Mayen",
+   "sources": [
+    {
+     "src": 8,
+     "said": "forbruk av varer og tjenester på Svalbard og Jan Mayen fremdeles skal skje uten merverdiavgift"
+    }
+   ]
+  }
+ ],
+ "country": "SJ",
+ "sources": [
+  {
+   "url": "https://www.skatteetaten.no/en/rates/tax-rates-on-svalbard/",
+   "title": "Skatteetaten, Tax rates on Svalbard (2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. … The national insurance contributions related to salary, etc. is 7.6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+  },
+  {
+   "url": "https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Innstillinger/Stortinget/2025-2026/inns-202526-017s/?m=3",
+   "title": "Stortinget, Innst. 17 S (2025-2026), Komiteens tilråding: forslag til vedtak om formues- og inntektsskatt til Svalbard for inntektsåret 2026 (adopted as Stortingsvedtak 2025-12-19 nr. 2780)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a) Inntekt som blir skattlagd ved lønnstrekk etter svalbardskattelova § 3-1: Låg sats: 8 pst. Høg sats: 22 pst. … c) Anna inntekt: 16 pst. Personlege skattytarar skal ha eit frådrag i alminneleg inntekt som er omfatta av bokstav c, på 20 000 kroner."
+  },
+  {
+   "url": "https://www.skatteetaten.no/en/rettskilder/type/skattedirektoratets-meldinger/svalbardmeldingen-2023/",
+   "title": "Skattedirektoratet, Svalbardmeldingen 2023 (the latest annual circular found)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Etter svalbardskatteloven § 3-1 benyttes det grunnbeløp som sist ble fastsatt for inntektsåret. … Lønnsinntekt som er skattepliktig etter Jan Mayen-skatteloven, skattlegges etter de samme satsene som gjelder for Svalbard. Satsene for trygdeavgift og arbeidsgiveravgift er også de samme. … inntekt som er skattepliktig etter Jan Mayen-skatteloven, skattlegges i personens bostedskommune. … Det skal ikke betales arbeidsgiveravgift for inntekt som blir skattlagt etter svalbardskatteloven."
+  },
+  {
+   "url": "https://www.nav.no/grunnbelopet",
+   "title": "NAV, Grunnbeløpet i folketrygden",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Grunnbeløpet (G) per 1. mai 2026 er 136 549 kroner."
+  },
+  {
+   "url": "https://www.skatteetaten.no/en/person/taxes/get-the-taxes-right/svalbard/foreign-labour/",
+   "title": "Skatteetaten, Taxation of salary for work on Svalbard",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tax deducted according to the withholding tax scheme for Svalbard is entirely gross tax. No deductions for the tax calculation basis are granted. … The employer must deduct tax from salary/pension when this is paid to the employee/benefit recipient. The deducted tax is, in general, a final settlement of the tax liability for the salary/pension. … salary and other remunerations for work and assignments in and outside of employment, such as fees, commissions, etc. … Salary or other remuneration for work on Svalbard is taxable when the stay lasts at least 30 consecutive days, see the Svalbard Taxation Act section 2-2, subsection 1. If the stay lasts less than 30 days, the salary income will be taxable on the mainland or in any other country where the employee is a resident. … If the stay lasts at least 12 months, the person will be considered a tax resident from the beginning of the stay."
+  },
+  {
+   "url": "https://stortinget.no/globalassets/pdf/lovvedtak/2025-2026/vedtak-202526-011.pdf",
+   "title": "Stortinget, Lovvedtak 11 (2025-2026), endringer i Svalbardskatteloven (ny § 3-3 Fribeløp for ungdom)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ungdom som ved utløpet av inntektsåret er fra og med 13 til og med 19 år, skal ikke betale skatt av lønn"
+  },
+  {
+   "url": "https://www.skatteetaten.no/nn/bedrift-og-organisasjon/arbeidsgiver/a-meldinga/rettleiinga-til-a-meldinga/sarskilde-grupper/jan-mayen-og-dei-norske-bilanda-i-antarktis/",
+   "title": "Skatteetaten, Rettleiinga til a-meldinga: Jan Mayen og dei norske bilanda i Antarktis",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lønn og andre ytingar for arbeid på Jan Mayen eller i dei norske bilanda i Antarktis blir skattlagde etter reglane i Svalbardskattelova, dersom kvart einskild opphald i samband med arbeidet overstig 30 døgn."
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/svalbard/skattemelding/",
+   "title": "Skatteetaten, Skattemelding og skatteoppgjør for Svalbard",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Fristen for å levere skattemeldingen er 30. april hvert år. … Mottar du skattemelding for næringsdrivende må du levere innen 31. mai."
+  },
+  {
+   "url": "https://www.skatteetaten.no/contentassets/d16bc0f562a64c1a96a1f31746c53602/skd1004.pdf",
+   "title": "Skattedirektoratet, SKD 10/04, Endringer i merverdiavgiftsloven (2004)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "forbruk av varer og tjenester på Svalbard og Jan Mayen fremdeles skal skje uten merverdiavgift"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties on Svalbard, the 2026 national insurance rate on a sole proprietor's income, and a 2026 statement of the employer's 0% rate and of VAT",
+   "tried": {
+    "institution": "skatteetaten.no Svalbard pages read; svalbardmeldingen-2025/2026 URLs return 404; latest circular found is 2023 || 2026-11-01 retry: skatteetaten.no read again: /person/skatt/hjelp-til-riktig-skatt/svalbard/ (overview, no rates), /satser/trygdeavgift/ and /satser/arbeidsgiveravgift/ (mainland 2026 rates: 7.6% wages, 10.8% other business income; neither names Svalbard); /satser/skatt-pa-svalbard/ and /bedrift-og-organisasjon/arbeidsgiver/svalbard/ return 404",
+    "official-register": "lovdata.no returns HTTP 405 to this environment (svalbardskatteloven and Stortingsvedtak 2025-12-19-2780 not read there; the committee text of the decision read on stortinget.no) || 2026-11-01 retry: lovdata.no still refuses (405); not read another way",
+    "web-search": "searched 'skatteetaten svalbardmeldingen 2026 OR 2025' and 'Svalbard merverdiavgift ... arbeidsgiveravgift Svalbard lønnstrekkordningen' || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "not tried || 2026-11-01 retry: PwC Worldwide Tax Summaries Norway (individual other-taxes, taxes-on-personal-income; corporate other-taxes) read 2026-11-01: none mentions Svalbard",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

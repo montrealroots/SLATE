@@ -1,0 +1,348 @@
+{
+ "topic": "tax.MX",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mexico: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 the annual federal ISR tariff runs from 1.92% on the first $10,135.11 to 35% above $5,107,703.93, by brackets with a fixed fee plus a marginal rate; there is no tax-free allowance in the tariff and no state income tax.",
+   "value": {
+    "currency": "MXN",
+    "brackets": [
+     {
+      "from": 0.01,
+      "to": 10135.11,
+      "fixed": 0,
+      "rate": 0.0192
+     },
+     {
+      "from": 10135.12,
+      "to": 86022.11,
+      "fixed": 194.59,
+      "rate": 0.064
+     },
+     {
+      "from": 86022.12,
+      "to": 151176.19,
+      "fixed": 5051.37,
+      "rate": 0.1088
+     },
+     {
+      "from": 151176.2,
+      "to": 175735.66,
+      "fixed": 12140.13,
+      "rate": 0.16
+     },
+     {
+      "from": 175735.67,
+      "to": 210403.69,
+      "fixed": 16069.64,
+      "rate": 0.1792
+     },
+     {
+      "from": 210403.7,
+      "to": 424353.97,
+      "fixed": 22282.14,
+      "rate": 0.2136
+     },
+     {
+      "from": 424353.98,
+      "to": 668840.14,
+      "fixed": 67981.92,
+      "rate": 0.2352
+     },
+     {
+      "from": 668840.15,
+      "to": 1276925.98,
+      "fixed": 125485.07,
+      "rate": 0.3
+     },
+     {
+      "from": 1276925.99,
+      "to": 1702567.97,
+      "fixed": 307910.81,
+      "rate": 0.32
+     },
+     {
+      "from": 1702567.98,
+      "to": 5107703.92,
+      "fixed": 444116.23,
+      "rate": 0.34
+     },
+     {
+      "from": 5107703.93,
+      "to": null,
+      "fixed": 1601862.46,
+      "rate": 0.35
+     }
+    ],
+    "allowance": 0,
+    "regional": null
+   },
+   "applies": "Resident individuals, ejercicio 2026 (arts. 97 and 152 LISR)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "II. Tarifa para el cálculo del impuesto correspondiente al ejercicio de 2026 a que se refieren los artículos 97 y 152 de la Ley del ISR, así como la regla 3.17.1. … 0.01 10,135.11 0 1.92 … 10,135.12 86,022.11 194.59 6.40 … 1,702,567.98 5,107,703.92 444,116.23 34.00 … 5,107,703.93 En adelante 1,601,862.46 35.00"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year and the annual return is filed in April of the following year.",
+   "value": {
+    "currency": "MXN",
+    "start": "01-01",
+    "end": "12-31",
+    "returnMonth": "04"
+   },
+   "applies": "Resident individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Artículo 150. Las personas físicas que obtengan ingresos en un año de calendario, a excepción de los exentos y de aquéllos por los que se haya pagado impuesto definitivo, están obligadas a pagar su impuesto anual mediante declaración que presentarán en el mes de abril del año siguiente, ante las oficinas autorizadas."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A company paying an individual for professional services withholds 10% of the fee with no deduction as a provisional payment (and two-thirds of the VAT, by regulation, not read); an individual with business or professional income up to $3.5 million a year may opt for RESICO and pay 1% to 2.5% of monthly cash receipts.",
+   "value": {
+    "currency": "MXN",
+    "professionalFeesByCompany": 0.1,
+    "resico": {
+     "ceiling": 3500000,
+     "monthly": [
+      {
+       "upTo": 25000,
+       "rate": 0.01
+      },
+      {
+       "upTo": 50000,
+       "rate": 0.011
+      },
+      {
+       "upTo": 83333.33,
+       "rate": 0.015
+      },
+      {
+       "upTo": 208333.33,
+       "rate": 0.02
+      },
+      {
+       "upTo": 3500000,
+       "rate": 0.025
+      }
+     ]
+    },
+    "employees": "monthly tariff of art. 96 (Anexo 8)"
+   },
+   "applies": "Residents, 2026",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Cuando los contribuyentes presten servicios profesionales a las personas morales, éstas deberán retener, como pago provisional, el monto que resulte de aplicar la tasa del 10% sobre el monto de los pagos que les efectúen, sin deducción alguna … no hubieran excedido de la cantidad de tres millones quinientos mil pesos. … Hasta 25,000.00 1.00% Hasta 50,000.00 1.10% Hasta 83,333.33 1.50% Hasta 208,333.33 2.00% Hasta 3,500,000.00 2.50%"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's income from artistic activity or public performances in Mexico is taxed at 25% of the gross income with no deduction, withheld by a payer resident in Mexico; one with a qualifying representative may instead pay the top tariff rate on net income.",
+   "value": {
+    "rate": 0.25,
+    "base": "gross income, no deductions",
+    "threshold": null,
+    "final": true,
+    "option": "top art. 152 rate (35%) on net income via a representative (art. 174)"
+   },
+   "applies": "Non-resident performers and others connected to the performance, including promotion",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Artículo 170. En el caso de ingresos que obtengan las personas físicas o morales, en ejercicio de sus actividades artísticas o deportivas, o de la realización o presentación de espectáculos públicos, se considerará que la fuente de riqueza se encuentra en territorio nacional cuando dicha actividad, o presentación se lleve a cabo en el país. … El impuesto se determinará aplicando la tasa del 25% sobre el total del ingreso obtenido sin deducción alguna, debiendo efectuar la retención la persona que haga los pagos"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's income for letting others publish written works of their creation in books, newspapers or magazines (or reproduce recordings of their music) for sale to the public is exempt up to twenty annual minimum wages, and exempt from VAT where the works are registered; neither applies to income from services.",
+   "value": {
+    "isrExemption": "up to 20 x general minimum wage (as written) a year; excess taxed",
+    "vatExempt": true,
+    "excludes": "exploitation in services or other business"
+   },
+   "applies": "Resident authors (screenplays fall under the VAT exemption only if within the LFDA art. 13 fractions listed and registered)",
+   "sources": [
+    {
+     "src": 1,
+     "said": "XXIX. Los que se obtengan, hasta el equivalente de veinte salarios mínimos generales del área geográfica que corresponda al contribuyente elevados al año, por permitir a terceros la publicación de obras escritas de su creación en libros, periódicos o revistas"
+    },
+    {
+     "src": 2,
+     "said": "XVI.- Por los que obtengan contraprestaciones los autores en los casos siguientes: … b) Por transmitir temporalmente los derechos patrimoniales u otorgar temporalmente licencias de uso a terceros, correspondientes a obras de su autoría a que se refieren las fracciones I a VII, IX, X, XII, XIII y XIV del artículo 13 y el artículo 78 de la Ley Federal del Derecho de Autor, que estén inscritas en el Registro Público del Derecho de Autor de la Secretaría de Educación Pública."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16% with no small-supplier threshold found in the law; a company receiving independent personal services from an individual must withhold the VAT charged to it.",
+   "value": {
+    "rate": 0.16,
+    "threshold": null,
+    "retentionByCompanies": true
+   },
+   "applies": "Freelancers (servicios personales independientes)",
+   "sources": [
+    {
+     "src": 2,
+     "said": "El impuesto se calculará aplicando a los valores que señala esta Ley, la tasa del 16%. … II. Sean personas morales que: a) Reciban servicios personales independientes, o usen o gocen temporalmente bienes, prestados u otorgados por personas físicas, respectivamente."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays IMSS contributions including 0.625% for disability and life, 1.125% for old age and severance, 0.375% for pensioners' medical care, 0.25% for sickness cash benefits and 0.40% on pay above three times the reference wage for sickness benefits in kind; the employer pays 1.75% for disability and life, 2% retirement, 1.05% pensioners' care, 0.70% for sickness cash benefits, a fixed 20.40% of one reference daily wage per worker plus 1.10% on pay above three times it for sickness benefits in kind, and in 2026 an old-age rate by wage band of 3.150% (minimum wage), 3.676% (to 1.50 UMA), 4.851% (1.51-2.00), 5.556% (2.01-2.50), 6.026% (2.51-3.00), 6.361% (3.01-3.50), 6.613% (3.51-4.00) and 7.513% (4.01 UMA and above); the UMA is MXN 117.31 a day from 1 February 2026; the contribution base is capped at 25 times the reference wage.",
+   "value": {
+    "employee": {
+     "invalidezVida": 0.00625,
+     "cesantiaVejez": 0.01125,
+     "gastosMedicosPensionados": 0.00375,
+     "enfermedadMaternidadDinero": 0.0025,
+     "enfermedadMaternidadEspecieExcedente3": 0.004
+    },
+    "employer": {
+     "invalidezVida": 0.0175,
+     "retiro": 0.02,
+     "gastosMedicosPensionados": 0.0105,
+     "cesantiaVejezFinalTable": "3.150%-11.875% by wage band",
+     "enfermedadMaternidadDinero": 0.007,
+     "enfermedadMaternidadCuotaFija": 0.204,
+     "enfermedadMaternidadEspecieExcedente3": 0.011,
+     "cesantiaVejez2026": [
+      {
+       "from": 0,
+       "to": 1.0,
+       "unit": "SM",
+       "rate": 0.0315
+      },
+      {
+       "from": 1.01,
+       "to": 1.5,
+       "unit": "UMA",
+       "rate": 0.03676
+      },
+      {
+       "from": 1.51,
+       "to": 2.0,
+       "unit": "UMA",
+       "rate": 0.04851
+      },
+      {
+       "from": 2.01,
+       "to": 2.5,
+       "unit": "UMA",
+       "rate": 0.05556
+      },
+      {
+       "from": 2.51,
+       "to": 3.0,
+       "unit": "UMA",
+       "rate": 0.06026
+      },
+      {
+       "from": 3.01,
+       "to": 3.5,
+       "unit": "UMA",
+       "rate": 0.06361
+      },
+      {
+       "from": 3.51,
+       "to": 4.0,
+       "unit": "UMA",
+       "rate": 0.06613
+      },
+      {
+       "from": 4.01,
+       "to": null,
+       "unit": "UMA",
+       "rate": 0.07513
+      }
+     ]
+    },
+    "ceiling": "25 x reference wage (art. 28)",
+    "UMA2026": {
+     "currency": "MXN",
+     "daily": 117.31,
+     "monthly": 3566.22,
+     "annual": 42794.64,
+     "from": "2026-02-01"
+    }
+   },
+   "applies": "Employees under the IMSS regime obligatorio, 2026. The sickness-in-kind fixed fee (20.40%) and excess rates (1.10% employer, 0.40% worker) are the sums the law's art. 106 and its 1995 Décimo Noveno transitorio produce (13.9% + 10 x 0.65 points; 6% - 10 x 0.49; 2% - 10 x 0.16, applied 1998-2007); the law's text names the Federal District minimum wage as the reference, which the UMA replaced under the 2016 desindexation decree (the decree itself not quoted here). The old-age table is read by OCR from an image in the Chamber of Deputies' LSS PDF (page 153).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Artículo 147. A los patrones y a los trabajadores les corresponde cubrir, para el seguro de invalidez y vida el uno punto setenta y cinco por ciento y el cero punto seiscientos veinticinco por ciento sobre el salario base de cotización, respectivamente. … b) Los trabajadores cubrirán una cuota del uno punto ciento veinticinco por ciento sobre el salario base de cotización. … I. En el ramo de retiro, a los patrones les corresponde cubrir el importe equivalente al dos por ciento del salario base de cotización del trabajador. … 1.00 SM* 3.150% … 4.01 UMA en adelante 11.875% … De dicha cuota corresponderá al patrón pagar el uno punto cero cinco por ciento, a los trabajadores el cero punto trescientos setenta y cinco por ciento … estableciéndose como límite superior el equivalente a veinticinco veces el salario mínimo general que rija en el Distrito Federal"
+    },
+    {
+     "src": 4,
+     "said": "2023 2024 2025 2026 2027 2028 2029 2030 … 1.0 SM* 3.150% 3.150% … 1.50 UMA** 3.281% 3.413% 3.544% 3.676% … UMA 3.575% 4.000% 4.426% 4.851% … 5.556% … UMA 3.869% 4.588% 5.307% … 6.026% … 6.361% … 4.016% 4.882% 5.747% … 6.613% … 4.01 UMA en … 7.513%"
+    },
+    {
+     "src": 3,
+     "said": "I. Por cada asegurado se pagará mensualmente una cuota diaria patronal equivalente al trece punto nueve por ciento de un salario mínimo general diario para el Distrito Federal; … una cuota adicional patronal equivalente al seis por ciento y otra adicional obrera del dos por ciento, de la cantidad que resulte de la diferencia entre el salario base de cotización y tres veces el salario mínimo … con una cuota del uno por ciento sobre el salario base de cotización, que se pagará de la forma siguiente: I. A los patrones les corresponderá pagar el setenta por ciento de dicha cuota; II. A los trabajadores les corresponderá pagar el veinticinco por ciento de la misma … DECIMO NOVENO. La tasa sobre el salario mínimo general diario del Distrito Federal a que se refiere la fracción I del artículo 106, se incrementará el primero de julio de cada año en sesenta y cinco centésimas de punto porcentual. Estas modificaciones comenzarán en el año de 1998 y terminarán en el año 2007. … Las tasas a que se refiere la fracción II del artículo 106, se reducirán el primero de julio de cada año en cuarenta y nueve centésimas de punto porcentual la que corresponde a los patrones y en dieciséis centésimas de punto porcentual la que corresponde pagar a los trabajadores."
+    },
+    {
+     "src": 5,
+     "said": "Los valores de la UMA que entrarán en vigor a partir del 1 de febrero de 2026 son: … Diario 117.31 pesos mexicanos … Mensual 3 566.22 pesos mexicanos … Anual 42 794.64 pesos mexicanos"
+    }
+   ]
+  }
+ ],
+ "country": "MX",
+ "sources": [
+  {
+   "url": "https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rmf/anexos/Anexo-8-RMF-2026_DOF-28122025.pdf",
+   "title": "SAT, Anexo 8 de la Resolución Miscelánea Fiscal para 2026 (DOF 28-12-2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "II. Tarifa para el cálculo del impuesto correspondiente al ejercicio de 2026 a que se refieren los artículos 97 y 152 de la Ley del ISR, así como la regla 3.17.1. … 0.01 10,135.11 0 1.92 … 10,135.12 86,022.11 194.59 6.40 … 1,702,567.98 5,107,703.92 444,116.23 34.00 … 5,107,703.93 En adelante 1,601,862.46 35.00"
+  },
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LISR.pdf",
+   "title": "Ley del Impuesto sobre la Renta, texto vigente (Cámara de Diputados, última reforma DOF 01-04-2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artículo 150. Las personas físicas que obtengan ingresos en un año de calendario, a excepción de los exentos y de aquéllos por los que se haya pagado impuesto definitivo, están obligadas a pagar su impuesto anual mediante declaración que presentarán en el mes de abril del año siguiente, ante las oficinas autorizadas. … Cuando los contribuyentes presten servicios profesionales a las personas morales, éstas deberán retener, como pago provisional, el monto que resulte de aplicar la tasa del 10% sobre el monto de los pagos que les efectúen, sin deducción alguna … no hubieran excedido de la cantidad de tres millones quinientos mil pesos. … Hasta 25,000.00 1.00% Hasta 50,000.00 1.10% Hasta 83,333.33 1.50% Hasta 208,333.33 2.00% Hasta 3,500,000.00 2.50% … Artículo 170. En el caso de ingresos que obtengan las personas físicas o morales, en ejercicio de sus actividades artísticas o deportivas, o de la realización o presentación de espectáculos públicos, se considerará que la fuente de riqueza se encuentra en territorio nacional cuando dicha actividad, o presentación se lleve a cabo en el país. … El impuesto se determinará aplicando la tasa del 25% sobre el total del ingreso obtenido sin deducción alguna, debiendo efectuar la retención la persona que haga los pagos … XXIX. Los que se obtengan, hasta el equivalente de veinte salarios mínimos generales del área geográfica que corresponda al contribuyente elevados al año, por permitir a terceros la publicación de obras escritas de su creación en libros, periódicos o revistas"
+  },
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LIVA.pdf",
+   "title": "Ley del Impuesto al Valor Agregado, texto vigente (Cámara de Diputados, última reforma DOF 12-11-2021)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "XVI.- Por los que obtengan contraprestaciones los autores en los casos siguientes: … b) Por transmitir temporalmente los derechos patrimoniales u otorgar temporalmente licencias de uso a terceros, correspondientes a obras de su autoría a que se refieren las fracciones I a VII, IX, X, XII, XIII y XIV del artículo 13 y el artículo 78 de la Ley Federal del Derecho de Autor, que estén inscritas en el Registro Público del Derecho de Autor de la Secretaría de Educación Pública. … El impuesto se calculará aplicando a los valores que señala esta Ley, la tasa del 16%. … II. Sean personas morales que: a) Reciban servicios personales independientes, o usen o gocen temporalmente bienes, prestados u otorgados por personas físicas, respectivamente."
+  },
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf",
+   "title": "Ley del Seguro Social, texto vigente (Cámara de Diputados, última reforma DOF 15-01-2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artículo 147. A los patrones y a los trabajadores les corresponde cubrir, para el seguro de invalidez y vida el uno punto setenta y cinco por ciento y el cero punto seiscientos veinticinco por ciento sobre el salario base de cotización, respectivamente. … b) Los trabajadores cubrirán una cuota del uno punto ciento veinticinco por ciento sobre el salario base de cotización. … I. En el ramo de retiro, a los patrones les corresponde cubrir el importe equivalente al dos por ciento del salario base de cotización del trabajador. … 1.00 SM* 3.150% … 4.01 UMA en adelante 11.875% … De dicha cuota corresponderá al patrón pagar el uno punto cero cinco por ciento, a los trabajadores el cero punto trescientos setenta y cinco por ciento … estableciéndose como límite superior el equivalente a veinticinco veces el salario mínimo general que rija en el Distrito Federal … I. Por cada asegurado se pagará mensualmente una cuota diaria patronal equivalente al trece punto nueve por ciento de un salario mínimo general diario para el Distrito Federal; … una cuota adicional patronal equivalente al seis por ciento y otra adicional obrera del dos por ciento, de la cantidad que resulte de la diferencia entre el salario base de cotización y tres veces el salario mínimo … con una cuota del uno por ciento sobre el salario base de cotización, que se pagará de la forma siguiente: I. A los patrones les corresponderá pagar el setenta por ciento de dicha cuota; II. A los trabajadores les corresponderá pagar el veinticinco por ciento de la misma … DECIMO NOVENO. La tasa sobre el salario mínimo general diario del Distrito Federal a que se refiere la fracción I del artículo 106, se incrementará el primero de julio de cada año en sesenta y cinco centésimas de punto porcentual. Estas modificaciones comenzarán en el año de 1998 y terminarán en el año 2007. … Las tasas a que se refiere la fracción II del artículo 106, se reducirán el primero de julio de cada año en cuarenta y nueve centésimas de punto porcentual la que corresponde a los patrones y en dieciséis centésimas de punto porcentual la que corresponde pagar a los trabajadores."
+  },
+  {
+   "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf",
+   "title": "Ley del Seguro Social (Cámara de Diputados, última reforma DOF 15-01-2026), Transitorio Segundo del Decreto DOF 16-12-2020, tabla (page 153, image, OCR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2023 2024 2025 2026 2027 2028 2029 2030 … 1.0 SM* 3.150% 3.150% … 1.50 UMA** 3.281% 3.413% 3.544% 3.676% … UMA 3.575% 4.000% 4.426% 4.851% … 5.556% … UMA 3.869% 4.588% 5.307% … 6.026% … 6.361% … 4.016% 4.882% 5.747% … 6.613% … 4.01 UMA en … 7.513%"
+  },
+  {
+   "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/uma/uma2026.pdf",
+   "title": "INEGI, Comunicado de prensa 1/26 (8 de enero de 2026): Unidad de Medida y Actualización",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Los valores de la UMA que entrarán en vigor a partir del 1 de febrero de 2026 son: … Diario 117.31 pesos mexicanos … Mensual 3 566.22 pesos mexicanos … Anual 42 794.64 pesos mexicanos"
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,116 @@
+{
+ "country": "FI",
+ "read": "2026-11-01",
+ "route": "Muu oleskelulupa ansiotyötä varten: residence permit for professional work in culture or the arts (Aliens Act section 74(1)(9); Finnish Immigration Service)",
+ "routeChanged": true,
+ "permit": {
+  "applies": "The worker applies to the Finnish Immigration Service (Migri), online through Enter Finland, for a residence permit for work.",
+  "first": "None beyond the engagement: the permit for professional work in culture or the arts is granted without the labour-market test (sections 72 and 72 b do not apply); the worker's means must be secured mainly by income from that work.",
+  "fees": [
+   {
+    "what": "First residence permit for work, no labour-market test, paper application (2026)",
+    "amount": "630",
+    "currency": "EUR"
+   },
+   {
+    "what": "First residence permit for work, no labour-market test, electronic application (2026)",
+    "amount": "530",
+    "currency": "EUR"
+   },
+   {
+    "what": "Extended permit (jatkolupa), paper application (2026)",
+    "amount": "430",
+    "currency": "EUR"
+   },
+   {
+    "what": "Extended permit (jatkolupa), electronic application (2026)",
+    "amount": "230",
+    "currency": "EUR"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "\"toimii ammattimaisesti kulttuurin tai taiteen alalla\" (works professionally in the field of culture or the arts; Aliens Act 74(1)(9)).",
+  "pay": "No wage floor (the salary threshold belongs to the labour-tested employee permit); the means must be secured for the permit's term, mainly by income from the work the permit is for.",
+  "exempt": {
+   "days": 90,
+   "within": 180
+  }
+ },
+ "sources": [
+  {
+   "url": "https://finlex.fi/fi/lainsaadanto/2004/301",
+   "title": "Ulkomaalaislaki 301/2004 (Aliens Act), current Finnish text, Finlex (read from the page's embedded data)",
+   "read": "2026-11-01",
+   "said": "Ulkomaalaisella on oikeus tehdä ansiotyötä ja harjoittaa elinkeinoa ilman oleskelulupaa enintään … 90 päivän ajan minkä tahansa 180 päivän jakson aikana, jos hän: … tulee kutsun tai sopimuksen nojalla ammattitaiteilijaksi tai -urheilijaksi tai tällaista avustavaksi, huoltavaksi tai valmentavaksi työntekijäksi tai elinkeinonharjoittajaksi tai urheilutuomariksi; … toimii ammattimaisesti kulttuurin tai taiteen alalla; … Muu oleskelulupa ansiotyötä tai elinkeinon harjoittamista varten myönnetään hakemuksesta ulkomaalaiselle, joka: … Oleskeluluvan myöntämiseen ei sovelleta 72 ja 72 b §:ää. … Toimeentulon on oltava turvattu tulolla, joka pääosin saadaan siitä perusteesta, jota varten oleskelulupa myönnetään. … Jollei jäljempänä tässä pykälässä toisin säädetä, ensimmäinen määräaikainen oleskelulupa myönnetään yhdeksi vuodeksi, jollei oleskelulupaa haeta lyhyemmäksi ajaksi. … Uusi määräaikainen oleskelulupa myönnetään enintään neljäksi vuodeksi.",
+   "kind": "primary",
+   "fields": [
+    "exempt",
+    "first",
+    "eligibility",
+    "validity",
+    "pay"
+   ]
+  },
+  {
+   "url": "https://enterfinland.fi/eServices/info/workpermit",
+   "title": "Enter Finland (Finnish Immigration Service), Residence permit on the basis of work",
+   "read": "2026-11-01",
+   "said": "You are coming to Finland to work, to do an internship, to volunteer to do research or for a working holiday.",
+   "kind": "primary",
+   "fields": [
+    "applies"
+   ]
+  },
+  {
+   "url": "https://finlex.fi/api/media/statute-consolidated/1144138/media/8402.pdf",
+   "title": "Sisäministeriön asetus Maahanmuuttoviraston suoritteiden maksullisuudesta vuonna 2026 (1336/2025), liite (fee table), Finlex",
+   "read": "2026-11-01",
+   "said": "ensimmäistä oleskelulupaa työntekoa varten, ei työvoiman saatavuusharkintaa ....630 € … ensimmäistä oleskelulupaa työntekoa varten, … ei työvoiman saatavuusharkintaa, sähköinen hakemus ............................................530 € … uutta määräaikaista oleskelulupaa (jatkolupa) .........................................................430 € … uutta määräaikaista oleskelulupaa (jatkolupa), sähköinen hakemus ........................230 €",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://finlex.fi/fi/lainsaadanto/2025/1336",
+   "title": "Sisäministeriön asetus Maahanmuuttoviraston suoritteiden maksullisuudesta vuonna 2026 (1336/2025), Finlex",
+   "read": "2026-11-01",
+   "said": "Tämä asetus tulee voimaan 1 päivänä tammikuuta 2026 ja on voimassa vuoden 2026 loppuun.",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "Migri's stated decision time",
+   "tried": {
+    "institution": "migri.fi answers 403 with a bot challenge (2026-11-01: migri.fi/en/fees); Enter Finland lists the application types only. | Retry 2026-11-01: migri.fi/en/processing-times, migri.fi/kasittelyajat, migri.fi/kulttuurin-ja-taiteenalan-tyo and the target-time notice migri.fi/en/-/tiettyjen-oleskelulupien-kasittelylle-asetettu-tavoiteaika: all 403 (bot challenge); finlandabroad.fi/web/ind/residence-permits and um.fi: 403.",
+    "official-register": "Aliens Act 301/2004 read on Finlex for the exemption; the Ministry of the Interior's 2026 fee decree for Migri wasn't located on Finlex (search found only its consultation drafts on hankeikkuna.fi). | Retry 2026-11-01: Aliens Act 301/2004 (Finlex) and fee decree 1336/2025 read in full: neither sets a decision time for a section 74 permit.",
+    "web-search": "'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 oleskelulupa työnteon perusteella euroa finlex': drafts and a Migri notice of 2026 fee changes (permanent residence, entrepreneurs), no fee for a performer's work permit. | Retry 2026-11-01: 'Migri käsittelyaika \"muu ansiotyö\" taiteilija oleskelulupa kuukautta': only press on employee permits (60-day averages, a 2-week fast track for specialists) and a 2022 Migri estimate for other grounds, none current for this permit.",
+    "trade-press": "Valtioneuvosto's notices on 2025/2026 fee changes name no artist permit fee or decision time. | Retry 2026-11-01: Kaleva, MTV Uutiset, Verkkouutiset items in the same search give averages for specialist or employee permits only, not section 74 culture permits.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org: no connection from this environment (HTTP 000, 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "migri.fi answers 403 with a bot challenge (2026-11-01: migri.fi/en/fees); Enter Finland lists the application types only. | Retry 2026-11-01: migri.fi 403; the Aliens Act read on Finlex: its employer obligations ask the employer to tell the shop steward the foreign worker's name and the collective agreement applied (a notice after hiring, not a consultation before the permit).",
+    "official-register": "Aliens Act 301/2004 read on Finlex for the exemption; the Ministry of the Interior's 2026 fee decree for Migri wasn't located on Finlex (search found only its consultation drafts on hankeikkuna.fi). | Retry 2026-11-01: Aliens Act 301/2004 read in full on Finlex: no union consultation for a section 74 permit.",
+    "web-search": "'sisäministeriön asetus Maahanmuuttoviraston maksullisista suoritteista 2026 oleskelulupa työnteon perusteella euroa finlex': drafts and a Migri notice of 2026 fee changes (permanent residence, entrepreneurs), no fee for a performer's work permit. | Retry 2026-11-01: Same search; nothing on a union consultation for an artist permit.",
+    "trade-press": "Valtioneuvosto's notices on 2025/2026 fee changes name no artist permit fee or decision time. | Retry 2026-11-01: None found.",
+    "archive": "web.archive.org resets the connection from this environment (tried 2026-11-01). | Retry 2026-11-01: web.archive.org: no connection (HTTP 000)."
+   }
+  }
+ ],
+ "note": "Layer 3 couldn't read the Aliens Act's work without a residence permit; it is now read from Finlex's Finnish text: a foreigner may work without a residence permit for at most 90 days in any 180 if they come, on an invitation or a contract, as a professional artist or athlete or their assisting, maintenance or coaching staff. So an invited or contracted performer works up to 90 days in 180 without the permit (the visa or visa-free stay still applies). Longer work needs the residence permit, whose fee, decision time, term and conditions sit on migri.fi, which bot-checks this client. Retry 2026-11-01: the route is corrected to the Aliens Act section 74(1)(9) permit for professional work in culture or the arts, which skips the labour-market test; its fee is therefore the 2026 decree 1336/2025 line for a first work permit without the labour-market test (EUR 630 paper, 530 electronic). The first permit is one year (section 53), a new fixed-term permit up to four years (section 54). The \"first permit applied from abroad\" rests on a search summary of migri.fi/kulttuurin-ja-taiteenalan-tyo, which answers 403 here, so it is not quoted."
+}

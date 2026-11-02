@@ -1,0 +1,82 @@
+{
+ "topic": "tax.UM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in United States Minor Outlying Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The U.S. Minor Outlying Islands have no settled population and no tax of their own. They are outside the Code's geographical \"United States\" (only the States and D.C.), and the IRS lists Baker, Howland, Jarvis, Johnston, Kingman, Midway, Palmyra and Wake as insular areas whose income qualifies for none of the territory exclusions, so a U.S. citizen or resident working there files an ordinary U.S. return on that pay with no possession exclusion (§ 931 reaches only Guam, American Samoa and the CNMI).",
+   "value": {
+    "follows": "US",
+    "possessionExclusion": null
+   },
+   "applies": "For a U.S. citizen or resident all tax figures are those of the United States; Navassa is not named in Publication 570. How a non-resident alien's pay for work there is sourced is a blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(c) Specified possession For purposes of this section, the term \"specified possession\" means Guam, American Samoa, and the Northern Mariana Islands."
+    },
+    {
+     "src": 1,
+     "said": "we conclude that the Taxpayer is not entitled to claim the I.R.C. § 931 exclusion, because Johnston Island is not a “specified possession” as defined in I.R.C. § 931(c)."
+    },
+    {
+     "src": 1,
+     "said": "Johnston Island is an unincorporated territory of the United States."
+    },
+    {
+     "src": 2,
+     "said": "The term \"United States\" when used in a geographical sense includes only the States and the District of Columbia."
+    },
+    {
+     "src": 3,
+     "said": "the five territories listed earlier because that income will … not qualify for any of the exclusions or other benefits … Baker Island, … Howland Island, … Jarvis Island, … Johnston Island, … Kingman Reef, … Midway Islands, … Palmyra Atoll, and … Wake Island."
+    }
+   ]
+  }
+ ],
+ "country": "UM",
+ "sources": [
+  {
+   "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapN-partIII-subpartD-sec931.htm",
+   "title": "26 U.S.C. § 931, Income from sources within Guam, American Samoa, or the Northern Mariana Islands (U.S. Code, 2023 ed., govinfo)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(c) Specified possession For purposes of this section, the term \"specified possession\" means Guam, American Samoa, and the Northern Mariana Islands."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-wd/9920013.pdf",
+   "title": "IRS Field Service Advice 199920013 (released 21 May 1999): claim of exclusion under I.R.C. § 931 for compensation earned in Johnston Island",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "we conclude that the Taxpayer is not entitled to claim the I.R.C. § 931 exclusion, because Johnston Island is not a “specified possession” as defined in I.R.C. § 931(c). … Johnston Island is an unincorporated territory of the United States."
+  },
+  {
+   "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+   "title": "26 U.S.C. § 7701, Definitions (U.S. Code, 2024 ed., govinfo)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The term \"United States\" when used in a geographical sense includes only the States and the District of Columbia."
+  },
+  {
+   "url": "https://www.irs.gov/pub/irs-pdf/p570.pdf",
+   "title": "IRS Publication 570 (2025), Tax Guide for Individuals With Income From U.S. Territories",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the five territories listed earlier because that income will … not qualify for any of the exclusions or other benefits … Baker Island, … Howland Island, … Jarvis Island, … Johnston Island, … Kingman Reef, … Midway Islands, … Palmyra Atoll, and … Wake Island."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "How pay earned on the Minor Outlying Islands by a non-resident alien is taxed: the islands are outside the geographical United States (§ 7701(a)(9), now read), so whether that pay is foreign-source and outside U.S. tax for a non-resident alien needs an IRS statement or regulation. (The earlier question, an IRS statement naming the islands, is answered by Publication 570.)",
+   "tried": {
+    "institution": "irs.gov reachable: only written determinations on Johnston Island found (199920013; not precedent by its own terms) || 2026-11-01 retry: irs.gov Publication 570 (2025) fetched and read: names the islands as insular areas outside the territory exclusions; says nothing on non-resident aliens there.",
+    "official-register": "uscode.house.gov returned 404 for § 7701 (geographical meaning of United States); govinfo § 931 read || 2026-11-01 retry: govinfo 26 U.S.C. § 7701 (2024 ed.) read and saved; uscode.house.gov again 404 for § 7701.",
+    "web-search": "WebSearch 'IRS Wake Island Midway Johnston Atoll income tax \"United States\" possession section 931 minor outlying islands' || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('nonresident alien wages Wake Island Johnston Atoll source of income').",
+    "trade-press": "Farrell v. United States (10th Cir. 2002) seen in results; ca10.washburnlaw.edu not reachable (curl 000) || 2026-11-01 retry: law.cornell.edu § 7701 reachable (200) but secondary to the govinfo text; no firm commentary on the islands found.",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

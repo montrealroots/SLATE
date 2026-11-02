@@ -1,0 +1,195 @@
+{
+ "topic": "tax.NA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Namibia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Namibia taxes an individual's Namibian-source income at progressive rates: nothing to N$100,000, 18% to N$150,000, then 25%, 28%, 30%, 32%, and 37% above N$1,550,000.",
+   "value": {
+    "currency": "NAD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 100000,
+      "rate": 0
+     },
+     {
+      "from": 100000,
+      "to": 150000,
+      "rate": 0.18
+     },
+     {
+      "from": 150000,
+      "to": 350000,
+      "rate": 0.25
+     },
+     {
+      "from": 350000,
+      "to": 550000,
+      "rate": 0.28
+     },
+     {
+      "from": 550000,
+      "to": 850000,
+      "rate": 0.3
+     },
+     {
+      "from": 850000,
+      "to": 1550000,
+      "rate": 0.32
+     },
+     {
+      "from": 1550000,
+      "to": null,
+      "rate": 0.37
+     }
+    ],
+    "partTimeFlat": 0.18
+   },
+   "applies": "Tax year 1 March 2026 to 28 February 2027 (Deloitte 2026). Source basis: residents and non-residents alike.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Up to 100,000 0% 100,001–150,000 18% of amount over 100,000 150,001–350,000 9,000 + 25% of amount over 150,000 350,001–550,000 59,000 + 28% of amount over 350,000 550,001–850,000 115,000 + 30% of amount over 550,000 850,001–1,550,000 205,000 + 32% of amount over 850,000 Over 1,550,000 429,000 + 37% of amount over"
+    },
+    {
+     "src": 0,
+     "said": "Individuals are taxable on all income received or accrued from a Namibian source or a deemed Namibian source."
+    },
+    {
+     "src": 1,
+     "said": "Any person who earns a salary of&nbsp;more than N$ 100,000 per annum&nbsp;should register as a taxpayer"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 1.8% of basic salary, 0.9% each from employee and employer, at most N$99 each a month (on earnings above N$11,000).",
+   "value": {
+    "currency": "NAD",
+    "employee": 0.009,
+    "employer": 0.009,
+    "maxMonthlyEach": 99,
+    "ceilingMonthly": 11000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Social security contributions are calculated at 1.8% of the employee’s basic salary, shared equally between the employer and the employee (0.9% each). The current maximum contribution is NAD 198 per employee (i.e., NAD 99 payable by the employee and NAD 99 payable by the employer) for employees whose monthly earnings are above NAD 11,000."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PAYE monthly at the individual rates and remits it monthly.",
+   "value": {
+    "method": "PAYE at the annual scale"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax on employment income is withheld by the employer under the PAYE system and remitted monthly to the tax authorities."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments to non-resident entertainers bear a 10% withholding tax unless a treaty reduces it; non-residents otherwise pay the same rates on Namibian employment and business income.",
+   "value": {
+    "entertainers": 0.1,
+    "final": null
+   },
+   "applies": "Whether the 10% is final was not stated.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A 10% withholding tax applies to payments made to nonresident entertainers"
+    },
+    {
+     "src": 0,
+     "said": "The same tax rates apply to nonresidents in respect of employment and business income earned in Namibia."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%; a business must register above an annual turnover of N$1 million.",
+   "value": {
+    "currency": "NAD",
+    "rate": 0.15,
+    "threshold": 1000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard rate is 15%."
+    },
+    {
+     "src": 0,
+     "said": "The registration threshold for VAT purposes is annual turnover of NAD 1 million."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year runs 1 March to 28 February; returns are due by 30 June for salaried and 30 September for other individuals.",
+   "value": {
+    "start": "03-01",
+    "due": {
+     "on": "06-30",
+     "after": 0
+    },
+    "dueNonSalaried": {
+     "on": "09-30",
+     "after": 0
+    }
+   },
+   "applies": "Due dates fall in the calendar year the tax year ends.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax year for individuals is from 1 March to 28 February."
+    },
+    {
+     "src": 0,
+     "said": "Returns are due by 30 June for salaried individuals, and by 30 September for non-salaried individuals."
+    }
+   ]
+  }
+ ],
+ "country": "NA",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-namibiahighlights-2026.pdf",
+   "title": "Namibia Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.namra.org.na/tax-schedules",
+   "said": "Up to 100,000 0% 100,001–150,000 18% of amount over 100,000 150,001–350,000 9,000 + 25% of amount over 150,000 350,001–550,000 59,000 + 28% of amount over 350,000 550,001–850,000 115,000 + 30% of amount over 550,000 850,001–1,550,000 205,000 + 32% of amount over 850,000 Over 1,550,000 429,000 + 37% of amount over … Individuals are taxable on all income received or accrued from a Namibian source or a deemed Namibian source. … Social security contributions are calculated at 1.8% of the employee’s basic salary, shared equally between the employer and the employee (0.9% each). The current maximum contribution is NAD 198 per employee (i.e., NAD 99 payable by the employee and NAD 99 payable by the employer) for employees whose monthly earnings are above NAD 11,000. … Tax on employment income is withheld by the employer under the PAYE system and remitted monthly to the tax authorities. … A 10% withholding tax applies to payments made to nonresident entertainers … The same tax rates apply to nonresidents in respect of employment and business income earned in Namibia. … The standard rate is 15%. … The registration threshold for VAT purposes is annual turnover of NAD 1 million. … The tax year for individuals is from 1 March to 28 February. … Returns are due by 30 June for salaried individuals, and by 30 September for non-salaried individuals."
+  },
+  {
+   "url": "https://www.namra.org.na/individual-tax/",
+   "title": "Individual tax (Namibia Revenue Agency)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any person who earns a salary of&nbsp;more than N$ 100,000 per annum&nbsp;should register as a taxpayer"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Special treatment of authors' royalties.",
+   "tried": {
+    "institution": "namra.org.na: nothing found. || 2026-11-01 retry: namra.org.na Tax Café no. 5 (4 October 2022) on foreign entertainers read: s. 35A 25% final withholding only, nothing on authors; itas.namra.org.na withholding flyer returns HTTP 403 (not read another way)",
+    "official-register": "None. || 2026-11-01 retry: Income Tax Act 24 of 1981 text not reached on a reachable host",
+    "web-search": "Not searched. || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "Deloitte: royalty withholding for non-residents only. || 2026-11-01 retry: Deloitte 2026 (already read): royalty withholding for non-residents only",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

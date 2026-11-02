@@ -1,0 +1,207 @@
+{
+ "topic": "markets.producer.IN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in India. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "India's national production incentive reimburses 30% of qualifying spend in India (plus 5% for at least 15% Indian crew and 5% for significant Indian content, up to 40%), capped at ₹30 crore a project, for foreign productions through an Indian service company and for official treaty co-productions, where the Indian co-producer claims 30%; live shoots must spend at least ₹3 crore in India, and the scheme's budget was ₹150 crore a year for 2023-24 and 2024-25, paid first come first served.",
+   "value": {
+    "baseRate": 0.3,
+    "bonusIndianCrew15pct": 0.05,
+    "bonusSignificantIndianContent": 0.05,
+    "maxRate": 0.4,
+    "capPerProjectINR": 300000000,
+    "previousCapINR": 25000000,
+    "minimumQPE": {
+     "liveShootINR": 30000000,
+     "documentary": 0,
+     "animationVfxPostINR": 10000000
+    },
+    "officialCoproduction": {
+     "rate": 0.3,
+     "capINR": 300000000,
+     "claimant": "Indian co-producer"
+    },
+    "annualBudgetINR": {
+     "2023-24": 1500000000,
+     "2024-25": 1500000000
+    },
+    "reserveEachINR": 100000000,
+    "eligibleFrom": "shooting permission or co-production status granted after 2022-04-01",
+    "administeredBy": "Film Facilitation Office (NFDC), managed by Invest India",
+    "domesticOnlyProductions": "not eligible (no national incentive for purely Indian productions found)"
+   },
+   "applies": "India, foreign films and official co-productions under India's bilateral audiovisual treaties; revised guidelines read 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Upto 40% of the qualifying production expenditure incurred in India, with an enhanced cap of the incentive payout of Rupees 300 Million/ INR 30 Crore (significant enhancement from earlier limit of Rupees 2.5 Cr), can be claimed by the Indian Production Services Company on behalf of the Foreign Production or the Official Co-production. The scheme is administered by the Film Facilitation Office set up by the Ministry under National Film Development Corporation and managed by Invest India. … Minimum Qualifying Production Expenditure (QPE) of Rs 3 Crore/ INR 30 Million in India (Nil for Documentaries) … Reimbursement of upto 30% of QPE. o Bonus incentive of 5% of QPE for employing at least 15% Indian Labour. o Additional bonus incentive of 5% of QPE for Significant Indian Content. … For the first two years i.e financial years 2023-24 and 2024-25, the total available budget will be Rs 1.5 Billion/150 Crore each. … Reimbursement of 30% of Qualifying Production Expenditure (QPE) incurred in India subject to a cap of INR 300 million/ Rs 30 Crore per project. … Application to be made by Indian Coproducer"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "India's film board certified 3,164 feature films in 2025 (2,357 for theatrical release, the rest for video or digital, dubbed versions counted separately); by language Hindi had 601 (322 theatrical), Tamil 500, Kannada 411, Telugu 396, Malayalam 351, Bhojpuri 168, Bengali 166 and Marathi 136.",
+   "value": {
+    "year": 2025,
+    "featureCertifications": 3164,
+    "theatrical": 2357,
+    "byLanguage": {
+     "Hindi": {
+      "all": 601,
+      "theatrical": 322
+     },
+     "Tamil": {
+      "all": 500,
+      "theatrical": 348
+     },
+     "Kannada": {
+      "all": 411,
+      "theatrical": 301
+     },
+     "Telugu": {
+      "all": 396,
+      "theatrical": 337
+     },
+     "Malayalam": {
+      "all": 351,
+      "theatrical": 246
+     },
+     "Bhojpuri": {
+      "all": 168,
+      "theatrical": 159
+     },
+     "Bengali": {
+      "all": 166,
+      "theatrical": 126
+     },
+     "Marathi": {
+      "all": 136,
+      "theatrical": 129
+     },
+     "Gujarati": {
+      "all": 107,
+      "theatrical": 99
+     },
+     "Punjabi": {
+      "all": 68,
+      "theatrical": 55
+     },
+     "English": {
+      "all": 27,
+      "theatrical": 24
+     }
+    },
+    "countBasis": "rows counted from the CBFC list by its Language column (certificate-number pattern) on 2026-11-01; each certificate is a row, so a film dubbed into several languages appears once per language"
+   },
+   "applies": "India, feature films certified by the CBFC in calendar 2025.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "List of feature films certified in 2025 … Sr. No. Title Language Certificate No. Certificate Date … 1 NADUBETTU APPANNA Arebhashe DIL/1/19/2025-BAN 25 August 2025 92 Theatrical Anupama Sharadhi Bhavishya Cinemas U"
+    }
+   ]
+  },
+  {
+   "item": "language",
+   "finding": "Indian feature films are made in many languages, not one: of the 3,164 certified in 2025, Hindi was the largest single language (601) but Tamil, Kannada, Telugu and Malayalam together had 1,658, and at least 25 languages appear in the list.",
+   "value": {
+    "largestLanguage": "Hindi",
+    "hindiShare": 0.19,
+    "southIndianFour": 1658,
+    "languagesListed": ">=25",
+    "countBasis": "as for the 2025 certification count"
+   },
+   "applies": "India, CBFC feature certifications 2025; complements markets/IN.json, which holds Hindi for Mumbai's industry with a language blocker.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "List of feature films certified in 2025 … Sr. No. Title Language Certificate No. Certificate Date"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "India's main producers' body is the Producers Guild of India, founded in 1954 as The Film Producers Guild of India Ltd and covering television since 2004, which represents film, television and digital producers before government on regulation, copyright, tax and incentives.",
+   "value": {
+    "name": "Producers Guild of India",
+    "founded": 1954,
+    "televisionFrom": 2004,
+    "services": [
+     "title registration",
+     "publicity clearance",
+     "list of certified films",
+     "industry reports"
+    ]
+   },
+   "applies": "India (Mumbai-based, national), read 2026-11-01.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Producers Guild of India (GUILD) is the premier film, television and digital content producers’ body representing the pre-eminent producers of audio-visual content in India … Established as ‘The Film Producers Guild of India Ltd’ in 1954 by stalwarts of the Indian film industry including Raj Kapoor, Mehboob Khan, Sasadhar Mukerji, B.N. Sircar, V. Shantaram, Vijay Bhatt, B.R. Chopra, Guild incorporated the television sector within its fold in 2004"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "IN",
+ "sources": [
+  {
+   "url": "https://mib.gov.in/sites/default/files/2024-02/Revised%20incentive%20guidelines.pdf",
+   "title": "Ministry of Information and Broadcasting: Guidelines of the Incentive Scheme for Production of Foreign Films in India & Official Coproduction under AV Coproduction Treaty (revised, file dated 2024-02)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Upto 40% of the qualifying production expenditure incurred in India, with an enhanced cap of the incentive payout of Rupees 300 Million/ INR 30 Crore (significant enhancement from earlier limit of Rupees 2.5 Cr), can be claimed by the Indian Production Services Company on behalf of the Foreign Production or the Official Co-production. The scheme is administered by the Film Facilitation Office set up by the Ministry under National Film Development Corporation and managed by Invest India. … Minimum Qualifying Production Expenditure (QPE) of Rs 3 Crore/ INR 30 Million in India (Nil for Documentaries) … Reimbursement of upto 30% of QPE. o Bonus incentive of 5% of QPE for employing at least 15% Indian Labour. o Additional bonus incentive of 5% of QPE for Significant Indian Content. … For the first two years i.e financial years 2023-24 and 2024-25, the total available budget will be Rs 1.5 Billion/150 Crore each. … Reimbursement of 30% of Qualifying Production Expenditure (QPE) incurred in India subject to a cap of INR 300 million/ Rs 30 Crore per project. … Application to be made by Indian Coproducer"
+  },
+  {
+   "url": "https://www.cbfcindia.gov.in/assets/pdf/Films_certified_2025.pdf",
+   "title": "Central Board of Film Certification: List of feature films certified in 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "List of feature films certified in 2025 … Sr. No. Title Language Certificate No. Certificate Date … 1 NADUBETTU APPANNA Arebhashe DIL/1/19/2025-BAN 25 August 2025 92 Theatrical Anupama Sharadhi Bhavishya Cinemas U"
+  },
+  {
+   "url": "https://www.producersguildindia.com/",
+   "title": "Producers Guild of India: home page (About Guild)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Producers Guild of India (GUILD) is the premier film, television and digital content producers’ body representing the pre-eminent producers of audio-visual content in India … Established as ‘The Film Producers Guild of India Ltd’ in 1954 by stalwarts of the Indian film industry including Raj Kapoor, Mehboob Khan, Sasadhar Mukerji, B.N. Sircar, V. Shantaram, Vijay Bhatt, B.R. Chopra, Guild incorporated the television sector within its fold in 2004"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fund",
+   "sought": "The national film fund's terms (NFDC production scheme: share of budget, cap, how many applications funded).",
+   "tried": {
+    "institution": "nfdcindia.com: curl TLS failure (certificate chain not verifiable, curl 60), not bypassed; archive.nfdcindia.com Production Guidelines PDF: proxy CONNECT 502; ffo.gov.in: no response. | Retry 2026-11-01 (producer retry): archive.nfdcindia.com Production_Guidelines.pdf: no reply (curl 000) again; nfdcindia.com still not reached.",
+    "official-register": "Lok Sabha answers on eparlib.nic.in (AU4230, 89470) found by search: proxy CONNECT 502. | Retry 2026-11-01 (producer retry): eparlib.nic.in / eparlib.sansad.in Lok Sabha answers (AU4230, 53348): no reply (curl 000). sansad.in and pib.gov.in reachable but the reply text was not located.",
+    "web-search": "2026-11-01: 'NFDC film production funding scheme first time directors Indian languages 2025 co-produce budget limit crore guidelines'. Snippets: 100% financing of a first-time director's film and co-production with private producers; no per-film cap or acceptance count. | Retry 2026-11-01 (producer retry): \"NFDC \\\"co-production\\\" scheme Indian films ... Lok Sabha reply ...\"; \"pib.gov.in DCDFC scheme NFDC production of films regional languages first-time directors films produced 2024-25 Lok Sabha\": NFDC produces under the DCDFC scheme (100% centrally funded) and finances 100% of a debutant's first feature (older answers); no share, cap or acceptance count.",
+    "trade-press": "filminformation.com notice (Dec 2021) of an NFDC call gives no terms quoted from NFDC. | Retry 2026-11-01 (producer retry): All India Radio (newsonair.gov.in, 1 Apr 2026, saved producer-IN-newsonair-dcdfc-2026.html) reports the Lok Sabha reply naming the DCDFC scheme, with no terms; not used as a figure.",
+    "archive": "Not tried: web.archive.org refused (429/reset) earlier the same session. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "feecap",
+   "sought": "A cap a funder sets on an Indian producer's fee and overheads.",
+   "tried": {
+    "institution": "MIB incentive guidelines (read) set qualifying expenditure but no producer-fee cap in the parts read; NFDC guidelines unreachable (see fund). | Retry 2026-11-01 (producer retry): NFDC hosts unreachable (see fund).",
+    "official-register": "None found. | Retry 2026-11-01 (producer retry): Lok Sabha archive unreachable (curl 000).",
+    "web-search": "Covered by the NFDC search above; no fee cap surfaced. | Retry 2026-11-01 (producer retry): No new phrasing beyond the NFDC searches above; no fee cap surfaced.",
+    "trade-press": "None found. | Retry 2026-11-01 (producer retry): None.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "outcomes",
+   "sought": "How many Indian films are released and how many earn back their cost, by budget.",
+   "tried": {
+    "institution": "CBFC gives certifications only; Producers Guild 'Industry Reports' page not opened for a recoupment table. | Retry 2026-11-01 (producer retry): Producers Guild of India pages give no recoupment table.",
+    "official-register": "MIB annual report not located for this count. | Retry 2026-11-01 (producer retry): None found.",
+    "web-search": "2026-11-01: 'India films released 2025 how many hits flops recovered cost percentage Hindi films box office report producers guild' found only gross collections (Ormax: ₹13,395 crore in 2025, Hindi 41%, 37 films over ₹100 crore), no cost or recoupment data. | Retry 2026-11-01 (producer retry): \"Producers Guild of India report film recovery rate percentage of films recover cost 2025 Hindi films profitable share budget\": Ormax grosses only.",
+    "trade-press": "Ormax Media (ormaxmedia.com) is a private analyst's own box-office tracking without production costs; not used for recoupment. | Retry 2026-11-01 (producer retry): Onmanorama (28 Dec 2024) reports the Kerala Film Producers Association's count of 2024 Malayalam losses (Rs 700 crore) without a URL to the association's report; not used.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

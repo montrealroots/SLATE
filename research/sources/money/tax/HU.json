@@ -1,0 +1,281 @@
+{
+ "topic": "tax.HU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Hungary: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 15% personal income tax on all income; there is no general tax-free amount (family and age allowances apply) and no regional or municipal income tax.",
+   "value": {
+    "currency": "HUF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.15
+     }
+    ],
+    "allowance": 0
+   },
+   "applies": "2026; family allowances, the under-25 and the mothers' exemptions are not modelled here.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Rates: The personal income tax rate is 15%."
+    },
+    {
+     "src": 0,
+     "said": "A family tax allowance also may apply. Special tax allowances and exemptions are available for mothers with at least three children."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return and any tax are due by 20 May of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "05-20 following year"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Tax returns and the payment of any tax are due by 20 May of the year following the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 18.5% social security contribution on gross pay and the employer 13% social contribution tax, with no ceiling on employment income.",
+   "value": {
+    "currency": "HUF",
+    "employee": 0.185,
+    "employer": 0.13,
+    "ceiling": null,
+    "minimumWageMonthly2026": 322800
+   },
+   "applies": "2026, employment income. The self-employed are in the next entry.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A biztosított által fizetendő járulékok 2020. július 1-jétől [1] társadalombiztosítási járulék 18,5%"
+    },
+    {
+     "src": 2,
+     "said": "A szociális hozzájárulási adó általános mértéke … 2022. január 1-jétől 13 %"
+    },
+    {
+     "src": 3,
+     "said": "Minimálbér 30% 30-ad rész 2026.01.01-jétől 322 800 Ft 96 840 Ft 3 228 Ft"
+    },
+    {
+     "src": 4,
+     "said": "The social security contribution base is the gross income paid to the employee. The employer's contribution rate (so-called 'social tax') is 13% in 2026. The employees' social security contribution rate is 18.5%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the 15% income tax and the 18.5% contribution from pay; a Hungarian payer withholds 15% from fees and royalties paid to an individual.",
+   "value": {
+    "employee": {
+     "pit": 0.15,
+     "contribution": 0.185
+    },
+    "individualFee": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Filing and payment: Personal income tax and social security generally are paid through withholding."
+    },
+    {
+     "src": 0,
+     "said": "technical services paid to individuals are subject to personal income tax withheld at a rate of 15%, unless the rate is reduced"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed at 15% only on Hungarian-source income, which includes pay for work done in Hungary even when paid from abroad.",
+   "value": {
+    "rate": 0.15,
+    "scope": "Hungarian-source income"
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "foreign resident individuals are taxed only on Hungarian- source income."
+    },
+    {
+     "src": 5,
+     "said": "Income derived from employment activity performed in Hungary can qualify as domestic-source income, even if it is paid from abroad."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to an individual have 15% income tax withheld, reduced where a treaty applies; no lower rate for authors was found.",
+   "value": {
+    "royaltyWithholding": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalties paid to individuals are subject to personal"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 27% (reduced 18% and 5%); a freelancer whose domestic turnover neither was in 2025 nor is expected in 2026 above HUF 20 million may choose the subjective VAT exemption (HUF 22 million from 2027, HUF 24 million from 2028).",
+   "value": {
+    "currency": "HUF",
+    "standard": 0.27,
+    "reduced": [
+     0.18,
+     0.05
+    ],
+    "smallBusinessExemption": {
+     "2026": 20000000,
+     "2027": 22000000,
+     "2028": 24000000
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Az alanyi adómentesség választására jogosító értékhatár 2026-tól 18 millió forintról 20 millió forintra [1] , 2027-től 22 millió forintra, 2028-tól pedig 24 millió forintra emelkedik."
+    },
+    {
+     "src": 4,
+     "said": "VAT is payable on sales of goods and the supply of services at the general rate of 27%. Reduced rates of 18% and 5% are applicable for some goods and services"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A sole entrepreneur (egyéni vállalkozó) in a main occupation pays 18.5% social security contribution on his drawings (or, under flat-rate taxation, on his flat-rate income) and 13% social contribution tax, each on at least the monthly minimum wage (HUF 322,800 in 2026) or the guaranteed minimum wage (HUF 373,200) where his main activity needs at least secondary qualifications; the 13% stops once his year's income reaches 24 times the minimum wage. No separate scheme for performers or authors was found.",
+   "value": {
+    "currency": "HUF",
+    "selfEmployed": {
+     "socialSecurity": 0.185,
+     "socialContributionTax": 0.13,
+     "minimumBaseMonthly": 322800,
+     "minimumBaseMonthlyQualified": 373200,
+     "socialContributionTaxCapMultipleOfMinimumWage": 24
+    }
+   },
+   "applies": "2026, a sole entrepreneur in his main occupation; the 112.5% multiplier on the minimum base no longer applies from 1 January 2026.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "A biztosított főfoglalkozású egyéni vállalkozó a 18,5 százalék társadalombiztosítási járulékot … vállalkozói jövedelem szerinti adózás esetén a vállalkozói kivét, … A társadalombiztosítási járulék alapja havonta legalább a minimálbér (a továbbiakban: járulékfizetési alsó határ). … (2026-ban ez az összeg havi 322 800 forint). … akkor a garantált bérminimum havi összege (2026-ban 373 200 forint)."
+    },
+    {
+     "src": 7,
+     "said": "egyéni vállalkozó 13 százalék szociális hozzájárulási adót köteles fizetni, amíg … a tárgyévben el nem éri a minimálbér összegének huszonnégyszeresét … Az egyéni vállalkozót saját maga után havonta terhelő adó alapja legalább a minimálbér … 2026. január 1-jétől nem kell alkalmazni a 112,5 százalékos szorzót."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A sole entrepreneur may instead pay the small-taxpayer flat tax (KATA) of HUF 50,000 a month, which covers his contributions, with a 40% surtax on revenue above HUF 18 million a year; but KATA ends the day before he takes a fee from a business payer (Hungarian or foreign), so a screen worker paid by a production company cannot use it.",
+   "value": {
+    "currency": "HUF",
+    "kata": {
+     "monthly": 50000,
+     "surtaxRate": 0.4,
+     "surtaxAboveAnnualRevenue": 18000000,
+     "onlyFromPrivateIndividuals": true
+    }
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 8,
+     "said": "A kisadózó egyéni vállalkozónak havi 50 ezer forint tételes adót kell fizetnie. … A kisadózó egyéni vállalkozónak 40 százalékos különadót kell fizetnie a kisadózói bevételének a naptári évben elért összegéből a 18 millió forintos keretösszeget meghaladó … a bevétel megszerzését megelőző nappal, ha a kisadózó egyéni vállalkozó az Art. szerinti kifizetőtől (ideértve a külföldi kifizetőt … is) termékértékesítés, szolgáltatásnyújtás ellenértékeként szerez bevételt."
+    }
+   ]
+  }
+ ],
+ "country": "HU",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-hungaryhighlights-2026.pdf",
+   "title": "Deloitte International Tax: Hungary Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek",
+   "said": "Rates: The personal income tax rate is 15%. … A family tax allowance also may apply. Special tax allowances and exemptions are available for mothers with at least three children. … Tax year: The tax year is the calendar year. … Tax returns and the payment of any tax are due by 20 May of the year following the tax year. … Filing and payment: Personal income tax and social security generally are paid through withholding. … technical services paid to individuals are subject to personal income tax withheld at a rate of 15%, unless the rate is reduced … foreign resident individuals are taxed only on Hungarian- source income. … Royalties paid to individuals are subject to personal"
+  },
+  {
+   "url": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek/fizetendo_jar",
+   "title": "Fizetendő járulékok 2026. január 1-jétől (NAV, 2026.01.05.)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A biztosított által fizetendő járulékok 2020. július 1-jétől [1] társadalombiztosítási járulék 18,5%"
+  },
+  {
+   "url": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek/szocialis_hozzajarulasi_ado/a-szocialis-hozzajarulasi-ado-merteke",
+   "title": "A szociális hozzájárulási adó mértéke (NAV)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A szociális hozzájárulási adó általános mértéke … 2022. január 1-jétől 13 %"
+  },
+  {
+   "url": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek/minimalber_garantalt",
+   "title": "Minimálbér, garantált bérminimum (NAV, 2026.01.05.)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Minimálbér 30% 30-ad rész 2026.01.01-jétől 322 800 Ft 96 840 Ft 3 228 Ft"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/hungary/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: hungary Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek",
+   "said": "The social security contribution base is the gross income paid to the employee. The employer's contribution rate (so-called 'social tax') is 13% in 2026. The employees' social security contribution rate is 18.5%. … VAT is payable on sales of goods and the supply of services at the general rate of 27%. Reduced rates of 18% and 5% are applicable for some goods and services"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/hungary/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: hungary Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek",
+   "said": "Income derived from employment activity performed in Hungary can qualify as domestic-source income, even if it is paid from abroad."
+  },
+  {
+   "url": "https://nav.gov.hu/ado/afa/Emelkedik_az_alanyi_adomentesseg_ertekhatara",
+   "title": "Emelkedik az alanyi adómentesség értékhatára (NAV)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Az alanyi adómentesség választására jogosító értékhatár 2026-tól 18 millió forintról 20 millió forintra [1] , 2027-től 22 millió forintra, 2028-tól pedig 24 millió forintra emelkedik."
+  },
+  {
+   "url": "https://nav.gov.hu/pfile/file?path=/ugyfeliranytu/nezzen-utana/inf_fuz/2026/03.-Az-egyeni-vallalkozok-szja--es-jarulekkotelezettsege-2026.-08.-31.",
+   "title": "NAV információs füzet 3: Az egyéni vállalkozók szja- és járulékkötelezettsége (2026.08.31.)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A biztosított főfoglalkozású egyéni vállalkozó a 18,5 százalék társadalombiztosítási járulékot … vállalkozói jövedelem szerinti adózás esetén a vállalkozói kivét, … A társadalombiztosítási járulék alapja havonta legalább a minimálbér (a továbbiakban: járulékfizetési alsó határ). … (2026-ban ez az összeg havi 322 800 forint). … akkor a garantált bérminimum havi összege (2026-ban 373 200 forint). … egyéni vállalkozó 13 százalék szociális hozzájárulási adót köteles fizetni, amíg … a tárgyévben el nem éri a minimálbér összegének huszonnégyszeresét … Az egyéni vállalkozót saját maga után havonta terhelő adó alapja legalább a minimálbér … 2026. január 1-jétől nem kell alkalmazni a 112,5 százalékos szorzót."
+  },
+  {
+   "url": "https://nav.gov.hu/pfile/file?path=/ugyfeliranytu/nezzen-utana/inf_fuz/2026/99.-Kisadozo-vallalkozok-teteles-adoja-kata-2026.-02.-20",
+   "title": "NAV információs füzet 99: Kisadózó vállalkozók tételes adója (kata) (2026.02.20.)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A kisadózó egyéni vállalkozónak havi 50 ezer forint tételes adót kell fizetnie. … A kisadózó egyéni vállalkozónak 40 százalékos különadót kell fizetnie a kisadózói bevételének a naptári évben elért összegéből a 18 millió forintos keretösszeget meghaladó … a bevétel megszerzését megelőző nappal, ha a kisadózó egyéni vállalkozó az Art. szerinti kifizetőtől (ideértve a külföldi kifizetőt … is) termékértékesítés, szolgáltatásnyújtás ellenértékeként szerez bevételt."
+  }
+ ],
+ "blockers": []
+}

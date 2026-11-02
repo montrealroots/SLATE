@@ -1,0 +1,245 @@
+{
+ "topic": "tax.VN",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Vietnam: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's employment income is taxed monthly at 5% to VND 10 million, 10% to 30 million, 20% to 60 million, 30% to 100 million and 35% above, after a personal deduction of VND 15.5 million a month (VND 6.2 million per dependent) and compulsory insurance contributions; there is no regional layer.",
+   "value": {
+    "currency": "VND",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 10000000,
+      "rate": 0.05
+     },
+     {
+      "from": 10000000,
+      "to": 30000000,
+      "rate": 0.1
+     },
+     {
+      "from": 30000000,
+      "to": 60000000,
+      "rate": 0.2
+     },
+     {
+      "from": 60000000,
+      "to": 100000000,
+      "rate": 0.3
+     },
+     {
+      "from": 100000000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "personalDeduction": 15500000,
+    "dependentDeduction": 6200000,
+    "businessIncomeTaxableAbove": 500000000,
+    "regionalLayer": null
+   },
+   "applies": "Vietnamese tax residents, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employment income: resident Up to 10 million 5% Over 10 million and up to 30 million 10% Over 30 million and up to 60 million 20% Over 60 million and up to 100 million 30% Over 100 million 35%"
+    },
+    {
+     "src": 0,
+     "said": "Other tax deductions include a personal deduction and a dependent deduction of VND 15.5 million per taxpayer and VND 6.2 million per dependent (subject to frequent adjustments)"
+    },
+    {
+     "src": 0,
+     "said": "private business income with annual revenue exceeding VND 500 million"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds tax on employment income monthly or quarterly; where there is no labour contract or it runs under three months (a freelance or day engagement), 10% is withheld on any payment of VND 2 million or more.",
+   "value": {
+    "employment": "employer, monthly or quarterly",
+    "noContractOrUnder3Months": {
+     "rate": 0.1,
+     "onPaymentsFrom": 2000000
+    }
+   },
+   "applies": "Payments by Vietnamese payers.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax on employment income is withheld by the employer and remitted to the tax authorities on a monthly or quarterly basis."
+    },
+    {
+     "src": 0,
+     "said": "However, where there is no labor contract or the contractual term is less than three months, the income derived is subject to a flat rate of 10% on payments of VND 2 million and above."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is generally the calendar year; an individual filing directly must file and pay by the last day of the fourth month after year end (30 April 2027 for 2026).",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-04-30",
+    "currency": "VND"
+   },
+   "applies": "Individuals in Vietnam.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year generally is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "For individuals who file tax returns directly with the tax authorities, the normal deadline for tax return submission and tax payment is the last day of the fourth month following the calendar year end."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A Vietnamese employee pays 8% social, 1.5% health and 1% unemployment insurance; the employer 17.5%, 3%, 1% and 0.5% accident insurance. For a foreign employee, where covered, the employer pays 17.5% social and 3% health and the employee 8% and 1.5%.",
+   "value": {
+    "vietnamese": {
+     "employee": {
+      "si": 0.08,
+      "hi": 0.015,
+      "ui": 0.01
+     },
+     "employer": {
+      "si": 0.175,
+      "hi": 0.03,
+      "ui": 0.01,
+      "accident": 0.005
+     }
+    },
+    "foreign": {
+     "employee": {
+      "si": 0.08,
+      "hi": 0.015
+     },
+     "employer": {
+      "si": 0.175,
+      "hi": 0.03
+     }
+    },
+    "ceiling": "not stated in the source"
+   },
+   "applies": "Employees in Vietnam.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For Vietnamese employees, the employer is required to make SI, HI, UI, and labor accident and occupational disease insurance contributions of 17.5%, 3%, 1%, and 0.5% (0.3% for special cases with official approval), respectively. Vietnamese employees are required to make SI, HI, and UI contributions at rates of 8%, 1.5%, and 1% of the employee’s salary, allowances, and other additional income, respectively."
+    },
+    {
+     "src": 0,
+     "said": "For foreign employees, in certain circumstances, the employer is required to contribute to HI at a rate of 3% and to SI at a rate of 17.5% (17.3% for special cases with official approval)."
+    },
+    {
+     "src": 0,
+     "said": "Foreign employees are required to make HI contributions at a rate of 1.5% in certain circumstances and retirement and death fund contributions for SI at a rate of 8%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's employment income from Vietnam is taxed at a flat 20%, withheld at source.",
+   "value": {
+    "rate": 0.2,
+    "base": "Vietnam-source employment income",
+    "final": "flat rate"
+   },
+   "applies": "Non-resident individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employment income of nonresidents is subject to a flat rate of 20%."
+    },
+    {
+     "src": 0,
+     "said": "Employment income: nonresident 20%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to an individual, resident or not, bear a 5% withholding.",
+   "value": {
+    "royaltiesToIndividuals": 0.05
+   },
+   "applies": "Royalty payments (a writer's or director's rights) to individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A 5% withholding tax rate applies to royalties paid to resident and nonresident individuals, while a 10% rate applies to royalties paid to nonresident companies."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Everyone trading taxable services in Vietnam registers for VAT; the standard rate is temporarily 8% to 31 December 2026 (10% for excluded supplies).",
+   "value": {
+    "standardRateTemporary": 0.08,
+    "standardRate": 0.1,
+    "temporaryUntil": "2026-12-31",
+    "reduced": [
+     0,
+     0.05
+    ],
+    "threshold": "not stated in the source"
+   },
+   "applies": "Taxable supplies in Vietnam.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A temporarily reduced standard rate of VAT of 8% applies to most goods and services until 31 December 2026. For goods and services that are excluded from the temporary reduction, the standard rate of VAT is 10%."
+    },
+    {
+     "src": 0,
+     "said": "All organizations and individuals carrying on the production or trading of taxable goods and services in Vietnam must register for VAT purposes."
+    }
+   ]
+  }
+ ],
+ "country": "VN",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-vietnamhighlights-2026.pdf",
+   "title": "Vietnam Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gdt.gov.vn",
+   "said": "Employment income: resident Up to 10 million 5% Over 10 million and up to 30 million 10% Over 30 million and up to 60 million 20% Over 60 million and up to 100 million 30% Over 100 million 35% … Other tax deductions include a personal deduction and a dependent deduction of VND 15.5 million per taxpayer and VND 6.2 million per dependent (subject to frequent adjustments) … private business income with annual revenue exceeding VND 500 million … Tax on employment income is withheld by the employer and remitted to the tax authorities on a monthly or quarterly basis. … However, where there is no labor contract or the contractual term is less than three months, the income derived is subject to a flat rate of 10% on payments of VND 2 million and above. … Tax year: The tax year generally is the calendar year. … For individuals who file tax returns directly with the tax authorities, the normal deadline for tax return submission and tax payment is the last day of the fourth month following the calendar year end. … For Vietnamese employees, the employer is required to make SI, HI, UI, and labor accident and occupational disease insurance contributions of 17.5%, 3%, 1%, and 0.5% (0.3% for special cases with official approval), respectively. Vietnamese employees are required to make SI, HI, and UI contributions at rates of 8%, 1.5%, and 1% of the employee’s salary, allowances, and other additional income, respectively. … For foreign employees, in certain circumstances, the employer is required to contribute to HI at a rate of 3% and to SI at a rate of 17.5% (17.3% for special cases with official approval). … Foreign employees are required to make HI contributions at a rate of 1.5% in certain circumstances and retirement and death fund contributions for SI at a rate of 8%. … Employment income of nonresidents is subject to a flat rate of 20%. … Employment income: nonresident 20% … A 5% withholding tax rate applies to royalties paid to resident and nonresident individuals, while a 10% rate applies to royalties paid to nonresident companies. … A temporarily reduced standard rate of VAT of 8% applies to most goods and services until 31 December 2026. For goods and services that are excluded from the temporary reduction, the standard rate of VAT is 10%. … All organizations and individuals carrying on the production or trading of taxable goods and services in Vietnam must register for VAT purposes."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 PIT schedule and deductions in the law's own text (and whether the first half of 2026 used the earlier seven-band schedule)",
+   "tried": {
+    "institution": "gdt.gov.vn not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: gdt.gov.vn and www.gdt.gov.vn rechecked 2026-11-01: no answer (curl 000); mof.gov.vn answers 2 KB (redirect shell, no content); xaydungchinhsach.chinhphu.vn: connection reset",
+    "official-register": "vbpl.vn HTTP 403 and thuvienphapluat.vn HTTP 403 to curl 2026-11-01; chinhphu.vn and mof.gov.vn reachable but the 2025 PIT Law and the family-deduction resolution not located on them || retry-8 2026-11-01: chinhphu.vn legal-document system (he-thong-van-ban) answers, but its listing and keyword pages render no result rows for 'thuế thu nhập cá nhân' in the HTML (results load by script); vanban.chinhphu.vn: no answer; luatvietnam.vn search answers 403 (not read another way); vbpl.vn and thuvienphapluat.vn 403 in the earlier pass",
+    "web-search": "not run separately; the Deloitte 2026 summary was the search result used || retry-8 2026-11-01: a search for 'Luật Thuế thu nhập cá nhân 2025 biểu thuế lũy tiến 5 bậc giảm trừ gia cảnh hộ kinh doanh ngưỡng doanh thu 500 triệu' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Deloitte Vietnam Highlights 2026 read || retry-8 2026-11-01: Deloitte Vietnam Highlights 2026 (used); no other reachable",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The revenue threshold below which an individual business household pays no VAT, in the law's own text",
+   "tried": {
+    "institution": "gdt.gov.vn not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: gdt.gov.vn and www.gdt.gov.vn rechecked 2026-11-01: no answer (curl 000); mof.gov.vn answers 2 KB (redirect shell, no content); xaydungchinhsach.chinhphu.vn: connection reset",
+    "official-register": "vbpl.vn HTTP 403 and thuvienphapluat.vn HTTP 403 to curl 2026-11-01; chinhphu.vn and mof.gov.vn reachable but the 2025 PIT Law and the family-deduction resolution not located on them || retry-8 2026-11-01: chinhphu.vn legal-document system (he-thong-van-ban) answers, but its listing and keyword pages render no result rows for 'thuế thu nhập cá nhân' in the HTML (results load by script); vanban.chinhphu.vn: no answer; luatvietnam.vn search answers 403 (not read another way); vbpl.vn and thuvienphapluat.vn 403 in the earlier pass",
+    "web-search": "not run separately; the Deloitte 2026 summary was the search result used || retry-8 2026-11-01: a search for 'Luật Thuế thu nhập cá nhân 2025 biểu thuế lũy tiến 5 bậc giảm trừ gia cảnh hộ kinh doanh ngưỡng doanh thu 500 triệu' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "Deloitte Vietnam Highlights 2026 read || retry-8 2026-11-01: Deloitte Vietnam Highlights 2026 (used); no other reachable",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "topic": "tax.SO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Somalia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Under the Income Tax Law 2025 a resident individual pays personal income tax of 0% to USD 1,200 a year, 6% to 6,000, 12% to 18,000 and 18% above (20% flat for a resident under 18); a resident is anyone present 183 days or more in a 12-month period, among other tests.",
+   "value": {
+    "currency": "USD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1200,
+      "rate": 0
+     },
+     {
+      "from": 1200,
+      "to": 6000,
+      "rate": 0.06
+     },
+     {
+      "from": 6000,
+      "to": 18000,
+      "rate": 0.12
+     },
+     {
+      "from": 18000,
+      "to": null,
+      "rate": 0.18
+     }
+    ],
+    "under18": 0.2,
+    "allowance": 1200,
+    "residenceDays": 183
+   },
+   "applies": "Resident individuals (ITA 2025 art. 5, 7, 9, 10)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "PIT for resident individuals below the age of 18 years is 20% at a flat tax rate 4. The PIT rate of tax for resident shall be ▪ per annum USD 0-1,200: 0% ▪ per annum USD >1,200 - 6,000: 6% ▪ per annum USD >6,000 - 18,000: 12% ▪ per annum >USD 18,000: 18%"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer collects tax from wages and sends it to the Inland Revenue Department, so an employee with one job and no other income files no return; payments for services bear 10% withholding at source.",
+   "value": {
+    "paye": true,
+    "serviceFees": 0.1
+   },
+   "applies": "Employees and service providers",
+   "sources": [
+    {
+     "src": 0,
+     "said": "If you are an employee, your tax is collected from your wages by your employer on your behalf and sent to the Inland Revenue Department (IRD). … Service Fees (Adeeg) 10%"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual pays personal income tax at a flat 18% on Somali-source income; service payments bear 10% withholding at source.",
+   "value": {
+    "rate": 0.18,
+    "serviceFeeWithholding": 0.1,
+    "final": "not stated"
+   },
+   "applies": "Non-resident individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "PIT for non-resident individuals is 18% at a flat tax rate"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties and payments for intellectual property rights bear 15% withholding.",
+   "value": {
+    "royaltyWithholding": 0.15
+   },
+   "applies": "Authors and rights holders",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalty Fees (Xuquuqda Milkiyada) 15%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment is the calendar year unless another is approved; the annual return and any balance are due by 31 March of the following year, with quarterly instalments during the year.",
+   "value": {
+    "currency": "USD",
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31",
+    "instalments": "quarterly"
+   },
+   "applies": "Taxpayers with business or investment income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The year of assessment is by default the same as calendar year i.e. January- December. … you must always complete your annual Income Tax return and send it to the IRD within 3 months after the end of the Income Tax year i.e., by March 31st"
+    }
+   ]
+  }
+ ],
+ "country": "SO",
+ "sources": [
+  {
+   "url": "https://mof.gov.so/sites/default/files/Publications/Somalia%20Income%20Tax%20Manual_English%20Version.pdf",
+   "title": "Somalia Income Tax Manual for the Income Tax Law 2025 and Income Tax Regulations 2025 (Ministry of Finance, Revenue Directorate, November 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PIT for resident individuals below the age of 18 years is 20% at a flat tax rate 4. The PIT rate of tax for resident shall be ▪ per annum USD 0-1,200: 0% ▪ per annum USD >1,200 - 6,000: 6% ▪ per annum USD >6,000 - 18,000: 12% ▪ per annum >USD 18,000: 18% … If you are an employee, your tax is collected from your wages by your employer on your behalf and sent to the Inland Revenue Department (IRD). … Service Fees (Adeeg) 10% … PIT for non-resident individuals is 18% at a flat tax rate … Royalty Fees (Xuquuqda Milkiyada) 15% … The year of assessment is by default the same as calendar year i.e. January- December. … you must always complete your annual Income Tax return and send it to the IRD within 3 months after the end of the Income Tax year i.e., by March 31st"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "The sales tax rate on services and any registration threshold (the manual names a Sales Tax registration only)",
+   "tried": {
+    "institution": "2026-11-01: mof.gov.so inland-revenue publications listed; Income Tax Manual read || 2026-11-01 retry: mof.gov.so answers, but its site search (Drupal /search/node and the WordPress search API) returns 'Page not found' or no JSON; no social insurance institution found",
+    "official-register": "2026-11-01: mof.gov.so legislation categories (Revenue Act 2019, other acts) read; the Sales Tax law text not found there || 2026-11-01 retry: mof.gov.so legislation categories already read; the Sales Tax law not among them",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "2026-11-01: no PwC or Deloitte summary for Somalia (404) || 2026-11-01 retry: No PwC or Deloitte summary for Somalia (404)",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Any mandatory social contribution on pay in Somalia",
+   "tried": {
+    "institution": "2026-11-01: mof.gov.so read; no social insurance institution located without search || 2026-11-01 retry: mof.gov.so answers, but its site search (Drupal /search/node and the WordPress search API) returns 'Page not found' or no JSON; no social insurance institution found",
+    "official-register": "2026-11-01: mof.gov.so legislation categories (Revenue Act 2019, other acts) read; the Sales Tax law text not found there || 2026-11-01 retry: mof.gov.so legislation categories already read; the Sales Tax law not among them",
+    "web-search": "2026-11-01: refused: the session web-search budget was used up || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "2026-11-01: no PwC or Deloitte summary for Somalia (404) || 2026-11-01 retry: No PwC or Deloitte summary for Somalia (404)",
+    "archive": "2026-11-01: web.archive.org unreachable through the proxy this session || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

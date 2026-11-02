@@ -1,0 +1,68 @@
+{
+ "topic": "tax.VA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Vatican: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay of every kind owed by the Holy See and the central bodies of the Church to dignitaries, employees and wage-earners, permanent or not, is exempt from any tax in Italy, to the state or any other body, under article 17 of the Lateran Treaty; no Vatican income tax law was found.",
+   "value": {
+    "holySeePayTaxInItaly": 0,
+    "vaticanIncomeTax": null,
+    "since": "1929-01-01"
+   },
+   "applies": "Pay from the Holy See and entities it runs",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art. 17 Le retribuzioni, di qualsiasi natura, dovute dalla Santa Sede, dagli altri enti centrali della Chiesa Cattolica e dagli enti gestiti direttamente dalla Santa Sede anche fuori di Roma, a dignitari, impiegati e salariati, anche non stabili, saranno nel territorio italiano esenti, a decorrere dal 1° gennaio 1929, da qualsiasi tributo tanto verso lo Stato quanto verso ogni altro ente."
+    }
+   ]
+  }
+ ],
+ "country": "VA",
+ "sources": [
+  {
+   "url": "https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html",
+   "title": "Patti Lateranensi (11 febbraio 1929), Trattato fra la Santa Sede e l'Italia, art. 17 (vatican.va)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 17 Le retribuzioni, di qualsiasi natura, dovute dalla Santa Sede, dagli altri enti centrali della Chiesa Cattolica e dagli enti gestiti direttamente dalla Santa Sede anche fuori di Roma, a dignitari, impiegati e salariati, anche non stabili, saranno nel territorio italiano esenti, a decorrere dal 1° gennaio 1929, da qualsiasi tributo tanto verso lo Stato quanto verso ogni altro ente."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "A Vatican City State law stating that the State levies no personal income tax (and the treatment of pay from employers other than the Holy See).",
+   "tried": {
+    "institution": "vatican.va Lateran Treaty read; vaticanstate.va legislation not searched in this pass || 2026-11-01 retry: vaticanstate.va Legislazione e normativa read: normativa-generale, normativa-altre-materie, normativa-sul-personale-del-governatorato (saved VA-gov-*.html): no law on taxes, tributes or contributions listed.",
+    "official-register": "Acta Apostolicae Sedis / Supplemento per le leggi not searched || 2026-11-01 retry: The same vaticanstate.va lists are the State's published legislation (Leggi fondamentali, normativa generale); Acta Apostolicae Sedis supplement not online in text here; no Vatican tax law found.",
+    "web-search": "one search: only press and EOR guides say Vatican salaries are untaxed || 2026-11-01 retry: 'Città del Vaticano legge imposte dirette \"non esistono imposte\" Governatorato tributi residenti cittadini vaticani' (Italian): press and theses only; the 2015 Italy-Holy See fiscal convention (vatican.va) covers financial income of Italian residents.",
+    "trade-press": "catholicphilly / NCR articles on the 2015 Italy-Holy See tax agreement (capital income only) not used || 2026-11-01 retry: fiscomania.com and Blitz Quotidiano (press, no primary text) state Holy See employees are IRPEF-exempt, which is the Lateran Treaty art. 17 already quoted; not used.",
+    "archive": "web.archive.org unreachable || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset the connection on https and return 403 on http from this environment (2026-11-01), so no snapshot could be read."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Pension and health contributions on Holy See pay (Fondo Pensioni, FAS). The Regolamento del Fondo Pensioni on vatican.va (ULSA Bollettino 6, art. 8) gives 22% of ordinary pay, an old text; press puts it at 33% (2023, PMI) or 26% (2026, BBVA blog) and reports a new statute in August 2026: the current rate is not on an official page.",
+   "tried": {
+    "institution": "not tried || 2026-11-01 retry: vatican.va Labour Office (ULSA) read: Regolamento del Fondo Pensioni (ulsa_b06_9_it.html, saved VA-ulsa-b06-9.html): art. 8 \"un contributo, comprensivo della quota a carico del dipendente, pari al 22% sulla retribuzione ordinaria\", undated in force; contribuzione volontaria (VA-ulsa-b17-2.html); Holy See–Italy social security convention (VA-ulsa-b12-1.pdf): no current rate. vaticanstate.va Legislazione e normativa read: normativa-generale, normativa-altre-materie, normativa-sul-personale-del-governatorato (saved VA-gov-*.html): no law on taxes, tributes or contributions listed.",
+    "official-register": "not tried || 2026-11-01 retry: Papa Francesco, revision of the Fondo Pensioni statute (c.vatican.va apost. letter 2015-05-28) located by search; the 2026 statute (reported by ACI Prensa, 2 Aug 2026) not found on vatican.va.",
+    "web-search": "not run || 2026-11-01 retry: 'Stato della Città del Vaticano esenzione imposte retribuzioni dipendenti Santa Sede Fondo Pensioni contributo percentuale' and 'Fondo Pensioni Vaticano contributo 33% retribuzione imponibile 23,81% massimale annuo 2025 OR 2026' (Italian): conflicting press figures (33% in 2023 with a €113,520 ceiling; 26% in 2026).",
+    "trade-press": "conflicting EOR guides, not used || 2026-11-01 retry: PMI.it (2023) and BBVA Mi Jubilación (2026) conflict and quote no primary; not used.",
+    "archive": "web.archive.org unreachable || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset the connection on https and return 403 on http from this environment (2026-11-01), so no snapshot could be read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax on a visiting performer's fee in the Vatican.",
+   "tried": {
+    "institution": "not found || 2026-11-01 retry: vaticanstate.va Legislazione e normativa read: normativa-generale, normativa-altre-materie, normativa-sul-personale-del-governatorato (saved VA-gov-*.html): no law on taxes, tributes or contributions listed; nothing on payments to visiting performers.",
+    "official-register": "not tried || 2026-11-01 retry: Same lists: no tax or withholding law.",
+    "web-search": "not run || 2026-11-01 retry: 'Città del Vaticano legge imposte dirette \"non esistono imposte\" Governatorato tributi …' (Italian): nothing on visiting performers' fees.",
+    "trade-press": "not found || 2026-11-01 retry: No tax firm publishes a Vatican summary (no PwC, Deloitte or EY page found).",
+    "archive": "web.archive.org unreachable || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset the connection on https and return 403 on http from this environment (2026-11-01), so no snapshot could be read."
+   }
+  }
+ ]
+}

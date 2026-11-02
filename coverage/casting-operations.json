@@ -1,0 +1,38 @@
+{
+ "engine": "person.acting",
+ "axis": "casting-operation",
+ "universe": {
+  "keys": [
+   "acting.breakdown",
+   "acting.audition"
+  ]
+ },
+ "rows": [
+  {
+   "key": "acting.breakdown",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4622",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::a breakdown > is posted exactly as the draws give it, in the market's language",
+    "tests/person/acting/acting.test.ts::a breakdown > comes out at the shares: men near 58 in 100, an ethnicity open or silent near 6 in 10, a woman's part in her 30s near a third",
+    "tests/person/acting/acting.test.ts::a breakdown > acting.breakdown: an actor auditions only for a part casting has posted"
+   ]
+  },
+  {
+   "key": "acting.audition",
+   "status": "game",
+   "register": [
+    "R-4620",
+    "R-4622",
+    "R-4624"
+   ],
+   "tests": [
+    "tests/person/acting/acting.test.ts::a breakdown's fit > refuses an audition where the person doesn't fit, for a breakdown not posted or answered, or before the person is made"
+   ]
+  }
+ ]
+}

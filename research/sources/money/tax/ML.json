@@ -1,0 +1,208 @@
+{
+ "topic": "tax.ML",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mali: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay is taxed by the tax on wages (ITS) on annual taxable income: 0% to XOF 330,000, 5% to 578,400, 12% to 1,176,400, 18% to 1,789,733, 26% to 2,384,195, 31% to 3,494,130 and 37% above, less family reductions.",
+   "value": {
+    "currency": "XOF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 330000,
+      "rate": 0
+     },
+     {
+      "from": 330000,
+      "to": 578400,
+      "rate": 0.05
+     },
+     {
+      "from": 578400,
+      "to": 1176400,
+      "rate": 0.12
+     },
+     {
+      "from": 1176400,
+      "to": 1789733,
+      "rate": 0.18
+     },
+     {
+      "from": 1789733,
+      "to": 2384195,
+      "rate": 0.26
+     },
+     {
+      "from": 2384195,
+      "to": 3494130,
+      "rate": 0.31
+     },
+     {
+      "from": 3494130,
+      "to": null,
+      "rate": 0.37
+     }
+    ]
+   },
+   "applies": "CGI art. 10 (Loi n°2016-10), from 1 July 2015. The DGI's online Code is a consolidation of 2017 (later finance laws not merged); see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "les taux applicables au revenu imposable sont fixés comme suit pour chaque tranche de revenu : · 0 à 330.000 : 0 % · 330.001 à 578.400 : 5 % · 578.401 à 1.176.400 : 12 % · 1.176.401 à 1.789.733 : 18 % · 1.789.734 à 2.384.195 : 26 % · 2.384.196 à 3.494.130 : 31 % · au-delà de 3.494.130 : 37 %"
+    },
+    {
+     "src": 1,
+     "said": "L’impôt sur les traitements et salaires est progressif et tient compte de la situation familiale."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "ITS is withheld monthly from pay; employers also pay a 3.5% flat employer contribution (CFE), 1% housing tax and, where liable to business tax, 2% training tax and 2% youth employment tax on gross payroll.",
+   "value": {
+    "employee": "ITS monthly",
+    "employerPayrollTaxes": {
+     "CFE": 0.035,
+     "housing": 0.01,
+     "training": 0.02,
+     "youthEmployment": 0.02
+    }
+   },
+   "applies": "2026 (DGI page). The DGI's online Code is a consolidation of 2017 (later finance laws not merged); see blocker.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Le taux de la contribution forfaitaire est fixé à 3,5% et est calculée sur le montant brut des rémunérations, traitements, salaires, indemnités, payés à l’ensemble de leur personnel par les personnes et sociétés."
+    },
+    {
+     "src": 1,
+     "said": "La taxe logement est due par les employeurs et est fixée à 1% de la masse salariale brute."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident without a permanent establishment in Mali has 30% withheld from fees for services and copyright royalties, on half the gross (a 50% flat deduction for costs), so 15% of the gross; this applies expressly to visiting theatre, music and other artists giving performances or concerts, after deducting admission taxes.",
+   "value": {
+    "rate": 0.3,
+    "base": "50% of gross",
+    "effective": 0.15,
+    "artistes": true
+   },
+   "applies": "CGI art. 94 to 97 (L.F. 2013); treaties may override. The DGI's online Code is a consolidation of 2017 (later finance laws not merged); see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Les mêmes dispositions s’appliquent également aux artistes de théâtre, de musique et autres non domiciliés au Mali et qui organisent ou font organiser occasionnellement des représentations ou des concerts."
+    },
+    {
+     "src": 0,
+     "said": "Pour les prestations de services, le montant des sommes imposables est déterminé en appliquant aux encaissements bruts une déduction forfaitaire de 50 % au titre des charges."
+    },
+    {
+     "src": 0,
+     "said": "Art.97.- (L.F.2013) Le taux de la retenue est fixé à 30 %."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Copyright royalties on literary, artistic or scientific works, films included, paid to a non-resident bear the same 30% withholding on the reduced base; no resident author rule was read.",
+   "value": {
+    "nonResidentRoyalty": {
+     "rate": 0.3
+    }
+   },
+   "applies": "CGI art. 94. The DGI's online Code is a consolidation of 2017 (later finance laws not merged); see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "l’usage ou la concession de l’usage d’un droit d’auteur sur une œuvre littéraire, artistique ou scientifique y compris les films cinématographiques et de télévisions"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% on services not exempt (5% on listed goods).",
+   "value": {
+    "standard": 0.18,
+    "reduced": 0.05
+   },
+   "applies": "CGI art. 229 (Loi n°11-078); threshold not read. The DGI's online Code is a consolidation of 2017 (later finance laws not merged); see blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "18 % pour les autres produits et les services non exonérés"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year: business profits are taxed each year on the previous year's results with the accounting year matching the calendar year, the balance of business-profits tax is paid by 30 April of the following year, and employers file a yearly statement of every employee's pay in January; tax on wages is otherwise settled by monthly withholding.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "businessBalanceDue": "04-30 (next year)",
+    "employerAnnualStatement": "January"
+   },
+   "applies": "On the DGI's online Code as consolidated in August 2017; whether a later finance law moved these dates was not confirmed (see residents blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "L’impôt est établi chaque année sur les bénéfices obtenus pendant l’année précédente. L’exercice comptable coïncide avec l’année civile."
+    },
+    {
+     "src": 0,
+     "said": "le reliquat de l’impôt sur les béné-fices industriels et commerciaux et de l’impôt sur les sociétés est payé au plus tard le 30 avril de l’année qui suit celle de la réalisation des revenus."
+    },
+    {
+     "src": 0,
+     "said": "est tenu de déposer dans le courant du mois de janvier de chaque année auprès du service d’assiette territorialement compétent, un état récapitulatif présentant pour chacune des personnes qu’il a occupées au cours de l’année précédente"
+    }
+   ]
+  }
+ ],
+ "country": "ML",
+ "sources": [
+  {
+   "url": "https://www.dgi.gouv.ml/CGI/",
+   "title": "Code Général des Impôts (Direction Générale des Impôts du Mali, online consolidation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "les taux applicables au revenu imposable sont fixés comme suit pour chaque tranche de revenu : · 0 à 330.000 : 0 % · 330.001 à 578.400 : 5 % · 578.401 à 1.176.400 : 12 % · 1.176.401 à 1.789.733 : 18 % · 1.789.734 à 2.384.195 : 26 % · 2.384.196 à 3.494.130 : 31 % · au-delà de 3.494.130 : 37 % … Les mêmes dispositions s’appliquent également aux artistes de théâtre, de musique et autres non domiciliés au Mali et qui organisent ou font organiser occasionnellement des représentations ou des concerts. … Pour les prestations de services, le montant des sommes imposables est déterminé en appliquant aux encaissements bruts une déduction forfaitaire de 50 % au titre des charges. … Art.97.- (L.F.2013) Le taux de la retenue est fixé à 30 %. … l’usage ou la concession de l’usage d’un droit d’auteur sur une œuvre littéraire, artistique ou scientifique y compris les films cinématographiques et de télévisions … 18 % pour les autres produits et les services non exonérés … L’impôt est établi chaque année sur les bénéfices obtenus pendant l’année précédente. L’exercice comptable coïncide avec l’année civile. … le reliquat de l’impôt sur les béné-fices industriels et commerciaux et de l’impôt sur les sociétés est payé au plus tard le 30 avril de l’année qui suit celle de la réalisation des revenus. … est tenu de déposer dans le courant du mois de janvier de chaque année auprès du service d’assiette territorialement compétent, un état récapitulatif présentant pour chacune des personnes qu’il a occupées au cours de l’année précédente"
+  },
+  {
+   "url": "https://www.dgi.gouv.ml/les-impots-a-payer/",
+   "title": "Les impôts à payer (DGI Mali)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "L’impôt sur les traitements et salaires est progressif et tient compte de la situation familiale. … Le taux de la contribution forfaitaire est fixé à 3,5% et est calculée sur le montant brut des rémunérations, traitements, salaires, indemnités, payés à l’ensemble de leur personnel par les personnes et sociétés. … La taxe logement est due par les employeurs et est fixée à 1% de la masse salariale brute."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Confirmation that the ITS scale, the non-resident 30% and VAT rates stand in the 2026 Finance Law.",
+   "tried": {
+    "institution": "dgi.gouv.ml answers; its online Code is the 2017 consolidation and its 'impôts à payer' page has no rates for ITS or VAT thresholds (2026-11-01). inps.ml resets the connection. || 2026-11-01 retry: dgi.gouv.ml home read again: links only the 2017 CGI, e-quitus manual and annual reports 2024/2025 (not read for rates); no 2026 finance law posted.",
+    "official-register": "sgg-mali.ml (Journal officiel) not read 2026-11-01. || 2026-11-01 retry: sgg-mali.ml answers (200); its 'Le Journal officiel' and 'Les codes consolidés' pages list no documents in their HTML (no PDF links), so the Loi de finances 2026 and the social security code were not found there.",
+    "web-search": "Not run for Mali (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Mali loi de finances 2026 ITS barème' / 'INPS Mali taux de cotisation 2026').",
+    "trade-press": "No PwC or Deloitte summary for Mali (Deloitte 2026: 404). || 2026-11-01 retry: taxsummaries.pwc.com/mali returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  },
+  {
+   "item": "social",
+   "sought": "INPS contribution rates (employee and employer) and ceilings for 2026.",
+   "tried": {
+    "institution": "dgi.gouv.ml answers; its online Code is the 2017 consolidation and its 'impôts à payer' page has no rates for ITS or VAT thresholds (2026-11-01). inps.ml resets the connection. || 2026-11-01 retry: inps.ml again unreachable (curl 000); dgi.gouv.ml carries no INPS rates.",
+    "official-register": "sgg-mali.ml (Journal officiel) not read 2026-11-01. || 2026-11-01 retry: sgg-mali.ml answers (200); its 'Le Journal officiel' and 'Les codes consolidés' pages list no documents in their HTML (no PDF links), so the Loi de finances 2026 and the social security code were not found there.",
+    "web-search": "Not run for Mali (2026-11-01). || 2026-11-01 retry: refused: the session's web-search limit (200 calls per turn, shared) was reached before this query ('Mali loi de finances 2026 ITS barème' / 'INPS Mali taux de cotisation 2026').",
+    "trade-press": "None. || 2026-11-01 retry: taxsummaries.pwc.com/mali returns 404 (checked 2026-11-01).",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org connection reset through the proxy (curl 000)."
+   }
+  }
+ ]
+}

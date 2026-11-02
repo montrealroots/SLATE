@@ -1,0 +1,251 @@
+{
+ "topic": "tax.FJ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Fiji: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From the 2024 tax year a resident pays nothing on the first FJD 30,000, 18% to 50,000, 20% to 270,000, then 33% rising one point per band to 38% from 500,000 and 39% above 1,000,000.",
+   "value": {
+    "currency": "FJD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.18
+     },
+     {
+      "from": 50000,
+      "to": 270000,
+      "rate": 0.2
+     },
+     {
+      "from": 270000,
+      "to": 300000,
+      "rate": 0.33
+     },
+     {
+      "from": 300000,
+      "to": 350000,
+      "rate": 0.34
+     },
+     {
+      "from": 350000,
+      "to": 400000,
+      "rate": 0.35
+     },
+     {
+      "from": 400000,
+      "to": 450000,
+      "rate": 0.36
+     },
+     {
+      "from": 450000,
+      "to": 500000,
+      "rate": 0.37
+     },
+     {
+      "from": 500000,
+      "to": 1000000,
+      "rate": 0.38
+     },
+     {
+      "from": 1000000,
+      "to": null,
+      "rate": 0.39
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Tax years from 2024, in force until amended (so 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "These income tax rates apply to Personal Income Tax assessments for resident individuals from the 2024 tax year onwards and will remain effective until amended by the Income Tax Regulations."
+    },
+    {
+     "src": 0,
+     "said": "0 – 30,000 Nil 30,001 – 50,000 18% of excess over $30,000 50,001 – 270,000 $3,600 + 20% of excess over $50,000 270,001 – 300,000 $47,600 + 33% of excess over $270,000 300,001 – 350,000 $57,500 + 34% of excess over $300,000 350,001 – 400,000 $74,500 + 35% of excess over $350,000 400,001 – 450,000 $92,000 + 36% of excess over $400,000 450,001 – 500,000 $110,000 + 37% of excess over $450,000 500,001 – 1,000,000 $128,500 + 38% of excess over"
+    },
+    {
+     "src": 0,
+     "said": "1,000,001 + $318,500 + 39% of excess over $1,000,000 Income Tax Rates for Non-Resident Individuals."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee contributes the mandated 8% of wages to the Fiji National Provident Fund and the employer a mandatory 10%; an employer contribution above the 10% is taxable pay.",
+   "value": {
+    "employee": 0.08,
+    "employer": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "You can choose to pay more than the mandated 8% contributions from your wages to boost your FNPF savings,"
+    },
+    {
+     "src": 2,
+     "said": "Example excess FNPF, any amount of FNPF contribution exceeding the mandatory 10% employer contribution will be subject to PAYE and entered in the bonus column when filing payday."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual is taxed at 20% from the first dollar to FJD 270,000 and at the resident top rates above; a fee for professional or other independent services (and royalties) paid to a non-resident bears 15% non-resident withholding tax.",
+   "value": {
+    "currency": "FJD",
+    "nonResidentScale": "20% to 270,000, then as residents",
+    "nrwht": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "0 – 30,000 20% of excess over $0 30,001 – 50,000 $6,000 + 20% of excess over $30,000 50,001 – 270,000 $10,000 + 20% of excess over $50,000"
+    },
+    {
+     "src": 0,
+     "said": "2026 15% Royalty, Management fee, Natural resource amount, fee for the provision of professional or other independent services"
+    },
+    {
+     "src": 3,
+     "said": "It is a tax withheld on sources that have been derived in Fiji for the provision of professional or other independent services."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 12.5% from 1 August 2025 (15% before), with a zero rate for listed items.",
+   "value": {
+    "standard": 0.125,
+    "from": "2025-08-01",
+    "previous": 0.15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax Year Tax Rate Effective Date 2025 0%, 12.5% 1st August 2025 2024 0%, 15% 1st August 2024"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PAYE from a primary employment by the cumulative formula of reg. 6 of the Income Tax (Withholding Tax) Regulations 2013 (the year's tax on projected pay, less tax withheld to date), at a flat 20% on a secondary employment or where the employee has not lodged a tax code declaration within 5 working days, and pays it in by the last day of the next month.",
+   "value": {
+    "primary": "cumulative annualised formula (Withholding Tax Regulations 2013 reg. 6)",
+    "secondaryRate": 0.2,
+    "noDeclarationRate": 0.2,
+    "due": "last day of the following month"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "you are required to deduct tax at the no-declaration rate of twenty percent (20%) from your employee’s gross employment income. … The secondary rate of PAYE to be applied is twenty percent (20%) of the gross payment. … Income Tax to withhold = (A1/F × G) – B1 + Income Tax on C2 – Income Tax on C1 … The filing should no later than the last day of the month following the month to which the PAYE relates."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Tax years are calendar years (the 2017 rates split the year at 31 July and 31 December); an employee's or self-employed person's income tax return is due 3 months after the end of the tax year, so by 31 March.",
+   "value": {
+    "taxYear": "calendar year",
+    "returnDue": "3 months after the end of the tax year"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income Tax • Employees or Representatives • PIT S (Employees) • Self-employed (i.e. farmers, consultants, taxi … • 3 months after end of tax year"
+    },
+    {
+     "src": 0,
+     "said": "Year of Assessment 2017 (1st August – 31st December 2017) … Year of Assessment 2017 (1st January – 31st July)"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A business must register for VAT within 21 days of its gross annual turnover exceeding FJD 100,000; below that it may register voluntarily.",
+   "value": {
+    "currency": "FJD",
+    "registrationThreshold": 100000,
+    "registerWithinDays": 21
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Businesses must register for VAT with FRCS if their gross annual turnover is more than $100,000. • Businesses may voluntarily register for VAT if their gross annual turnover is below the threshold."
+    }
+   ]
+  }
+ ],
+ "country": "FJ",
+ "sources": [
+  {
+   "url": "https://frcs.org.fj/tax-rates-and-codes/",
+   "title": "Fiji Revenue and Customs Service: Tax Rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "These income tax rates apply to Personal Income Tax assessments for resident individuals from the 2024 tax year onwards and will remain effective until amended by the Income Tax Regulations. … 0 – 30,000 Nil 30,001 – 50,000 18% of excess over $30,000 50,001 – 270,000 $3,600 + 20% of excess over $50,000 270,001 – 300,000 $47,600 + 33% of excess over $270,000 300,001 – 350,000 $57,500 + 34% of excess over $300,000 350,001 – 400,000 $74,500 + 35% of excess over $350,000 400,001 – 450,000 $92,000 + 36% of excess over $400,000 450,001 – 500,000 $110,000 + 37% of excess over $450,000 500,001 – 1,000,000 $128,500 + 38% of excess over … 1,000,001 + $318,500 + 39% of excess over $1,000,000 Income Tax Rates for Non-Resident Individuals. … 0 – 30,000 20% of excess over $0 30,001 – 50,000 $6,000 + 20% of excess over $30,000 50,001 – 270,000 $10,000 + 20% of excess over $50,000 … 2026 15% Royalty, Management fee, Natural resource amount, fee for the provision of professional or other independent services … Tax Year Tax Rate Effective Date 2025 0%, 12.5% 1st August 2025 2024 0%, 15% 1st August 2024 … Year of Assessment 2017 (1st August – 31st December 2017) … Year of Assessment 2017 (1st January – 31st July)"
+  },
+  {
+   "url": "https://myfnpf.com.fj/",
+   "title": "Fiji National Provident Fund: home page",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You can choose to pay more than the mandated 8% contributions from your wages to boost your FNPF savings,"
+  },
+  {
+   "url": "https://frcs.org.fj/files/2026/08/Employer-Guide-2026.pdf",
+   "title": "FRCS, Employer Guide 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Example excess FNPF, any amount of FNPF contribution exceeding the mandatory 10% employer contribution will be subject to PAYE and entered in the bonus column when filing payday. … you are required to deduct tax at the no-declaration rate of twenty percent (20%) from your employee’s gross employment income. … The secondary rate of PAYE to be applied is twenty percent (20%) of the gross payment. … Income Tax to withhold = (A1/F × G) – B1 + Income Tax on C2 – Income Tax on C1 … The filing should no later than the last day of the month following the month to which the PAYE relates."
+  },
+  {
+   "url": "https://frcs.org.fj/files/2025/03/Brochure-Non-Resident-Withholding-Tax-NRWHT-.pdf",
+   "title": "FRCS brochure: Non-Resident Withholding Tax (NRWHT), March 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "It is a tax withheld on sources that have been derived in Fiji for the provision of professional or other independent services."
+  },
+  {
+   "url": "https://frcs.org.fj/files/2025/03/Brochure-Filing-Obligations-.pdf",
+   "title": "FRCS, Filing Obligations (brochure, 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income Tax • Employees or Representatives • PIT S (Employees) • Self-employed (i.e. farmers, consultants, taxi … • 3 months after end of tax year"
+  },
+  {
+   "url": "https://frcs.org.fj/files/2025/06/VAT-Guide-01.11.2-Online-version.pdf",
+   "title": "FRCS, VAT Guide (online version)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Businesses must register for VAT with FRCS if their gross annual turnover is more than $100,000. • Businesses may voluntarily register for VAT if their gross annual turnover is below the threshold."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "frcs.org.fj rates page and NRWHT brochure read; PAYE tables, return date and the FNPF employer share not read || retry 2026-11-01: frcs.org.fj: Employer Guide 2026, Filing Obligations brochure, VAT Guide and the PIT page read and saved: none names a special rule for authors' fees or royalties (only non-resident royalties at 15% NRWHT, already cited)",
+    "official-register": "Income Tax Act 2015 not read || retry 2026-11-01: laws.gov.fj answers (200, 32 KB shell); the Income Tax Act 2015 text not found in its served HTML",
+    "web-search": "not run || retry 2026-11-01: refused by the search tool on 2026-11-01: the turn's shared limit of 200 searches was reached; not worked around",
+    "trade-press": "no PwC Fiji summary (HTTP 404) || retry 2026-11-01: no PwC Fiji summary (404, as before); no other firm reached",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01: web.archive.org: connection reset again 2026-11-01"
+   }
+  }
+ ]
+}

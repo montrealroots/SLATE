@@ -1,0 +1,220 @@
+{
+ "topic": "tax.RE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Reunion: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "La Réunion is a French overseas department: income tax is computed by the same rules as in metropolitan France, then reduced; it follows France's tax.",
+   "value": {
+    "follows": "FR"
+   },
+   "applies": "Income tax, social contributions, withholding, non-residents' and authors' rules as in France, with the differences given here.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Aux termes du 3 du I de l'article 197 du CGI , l es abattements de 30 % ou 40 % (cf. § 40 ) sont réservés aux contribuables domiciliés dans les DOM."
+    },
+    {
+     "src": 0,
+     "said": "Les bénéfices réalisés et les revenus perçus en métropole ainsi que ceux provenant des départements d'outre-mer sont taxés selon les règles métropolitaines."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A taxpayer domiciled in La Réunion pays France's income tax from its scale, reduced by 30% up to €2,450 (CGI art. 197, I-3).",
+   "value": {
+    "currency": "EUR",
+    "reduction": {
+     "rate": 0.3,
+     "cap": 2450
+    }
+   },
+   "applies": "From the taxation of 2018 income; the BOFiP actualité of 26 February 2019 is the latest statement read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Le montant de l'impôt sur le revenu est réduit de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion"
+    },
+    {
+     "src": 1,
+     "said": "La baisse des plafonds s'applique à compter de l'imposition des revenus de l'année 2018."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Where no personal rate is known, an employer in La Réunion withholds by the default grid for Guadeloupe, La Réunion and Martinique: nothing below €1,875 a month, rising to 43% from €60,893.",
+   "value": {
+    "currency": "EUR",
+    "from": "2026-05-01",
+    "monthlyBrackets": [
+     {
+      "from": 0,
+      "to": 1875,
+      "rate": 0
+     },
+     {
+      "from": 1875,
+      "to": 1989,
+      "rate": 0.005
+     },
+     {
+      "from": 1989,
+      "to": 2191,
+      "rate": 0.013
+     },
+     {
+      "from": 2191,
+      "to": 2392,
+      "rate": 0.021
+     },
+     {
+      "from": 2392,
+      "to": 2642,
+      "rate": 0.029
+     },
+     {
+      "from": 2642,
+      "to": 2786,
+      "rate": 0.035
+     },
+     {
+      "from": 2786,
+      "to": 2881,
+      "rate": 0.041
+     },
+     {
+      "from": 2881,
+      "to": 3170,
+      "rate": 0.053
+     },
+     {
+      "from": 3170,
+      "to": 3920,
+      "rate": 0.075
+     },
+     {
+      "from": 3920,
+      "to": 5016,
+      "rate": 0.099
+     },
+     {
+      "from": 5016,
+      "to": 5697,
+      "rate": 0.119
+     },
+     {
+      "from": 5697,
+      "to": 6599,
+      "rate": 0.138
+     },
+     {
+      "from": 6599,
+      "to": 7907,
+      "rate": 0.158
+     },
+     {
+      "from": 7907,
+      "to": 8789,
+      "rate": 0.179
+     },
+     {
+      "from": 8789,
+      "to": 9989,
+      "rate": 0.2
+     },
+     {
+      "from": 9989,
+      "to": 13738,
+      "rate": 0.24
+     },
+     {
+      "from": 13738,
+      "to": 18253,
+      "rate": 0.28
+     },
+     {
+      "from": 18253,
+      "to": 27858,
+      "rate": 0.33
+     },
+     {
+      "from": 27858,
+      "to": 60893,
+      "rate": 0.38
+     },
+     {
+      "from": 60893,
+      "to": null,
+      "rate": 0.43
+     }
+    ]
+   },
+   "applies": "Default rate grid from 1 May 2026; a personal rate set by the tax office otherwise applies.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Grille des taux par défaut applicables aux contribuables domiciliés en Guadeloupe, à La Réunion et en Martinique à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 875 euros 0 %"
+    },
+    {
+     "src": 2,
+     "said": "Supérieure ou égale à 27 858 euros et inférieure à 60 893 euros 38 % Supérieure ou égale à 60 893 euros 43 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT in La Réunion is 8.5% at the normal rate and 2.1% reduced (CGI art. 296), in place of France's 20%.",
+   "value": {
+    "rate": 0.085,
+    "reduced": 0.021,
+    "threshold": null
+   },
+   "applies": "2026 (BOI in force from 5 June 2019). The small-business franchise threshold in the DOM was not read; none is given here.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "un taux normal de 8,5 % et un taux réduit de 2,1 %"
+    },
+    {
+     "src": 3,
+     "said": "Aux termes des a et b du 1° de l' article 296 du code général des impôts (CGI) , les taux de TVA applicables dans les collectivités de Guadel"
+    }
+   ]
+  }
+ ],
+ "country": "RE",
+ "sources": [
+  {
+   "url": "https://bofip.impots.gouv.fr/node/8421",
+   "title": "BOFiP BOI-IR-LIQ-20-30-10: IR - Liquidation - Modalités particulières d'imposition - Départements d'outre-mer",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Aux termes du 3 du I de l'article 197 du CGI , l es abattements de 30 % ou 40 % (cf. § 40 ) sont réservés aux contribuables domiciliés dans les DOM. … Les bénéfices réalisés et les revenus perçus en métropole ainsi que ceux provenant des départements d'outre-mer sont taxés selon les règles métropolitaines."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/node/12678",
+   "title": "BOFiP actualité 26/02/2019: IR - Baisse des plafonds de la réduction d'impôt dite « réfaction DOM » (CGI, art. 197, I-3)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le montant de l'impôt sur le revenu est réduit de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion … La baisse des plafonds s'applique à compter de l'imposition des revenus de l'année 2018."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/11255-PGP.html",
+   "title": "BOFiP BOI-BAREME-000037 : Grille des taux par défaut du prélèvement à la source",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Grille des taux par défaut applicables aux contribuables domiciliés en Guadeloupe, à La Réunion et en Martinique à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 875 euros 0 % … Supérieure ou égale à 27 858 euros et inférieure à 60 893 euros 38 % Supérieure ou égale à 60 893 euros 43 %"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/343-PGP.html",
+   "title": "BOFiP BOI-TVA-GEO-20-10: TVA - Régime applicable dans les collectivités d'outre-mer relevant de l'article 73 de la Constitution - Taux applicables",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "un taux normal de 8,5 % et un taux réduit de 2,1 % … Aux termes des a et b du 1° de l' article 296 du code général des impôts (CGI) , les taux de TVA applicables dans les collectivités de Guadel"
+  }
+ ],
+ "blockers": []
+}

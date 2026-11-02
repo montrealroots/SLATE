@@ -722,6 +722,69 @@ What layer 0 holds:
 
 ## Next step
 
+**The depth round's web search, turn 2 (2026-11-02).** At the owner's word ("Run the tax and markets web searches
+now"), six agents (`BRIEF-tm-search.md`) searched about 240 of the 710 tax and market blockers never searched (two
+phrasings, English and the country's own languages) and found about 54, each quote checked against its saved page,
+every secondary naming its primary's URL; the turn's 200 searches were spent. Landed and read: tax 87 researched, 165
+blocked (Cuba's Ley 113, Algeria's CNAS rates and 15% on non-resident artists, Cape Verde's and Grenada's final 20% and
+15%, Egypt's, Ethiopia's, Ecuador's, the Faroes', Saint-Barthélemy's, Djibouti's ...); actor 24 / 228 (Jamaica's market
+on negotiated pay; Monaco at France's agreements plus 5%, its wage law Loi 739 and Arrêté 63-131, read the same by the
+director); director 46 / 206; producer 72 / 180 (Estonia's 30% from €1m, the Czech fund's 50% share and 7 of 27 funded);
+writer 39 / 213; blockers closed by their research removed from the register. The youth wiring's untested lines in the
+four role engines are now killed by tests (each engine's own config at 100%). Resume points, each list's next blocker:
+tax and markets list 1 KG social, 2 EE producer.fund, 3 MQ social, 4 JP social and nonResident, 5 JO nonResident, 6 IQ
+writer.fees; ages list 1 IL unions, 2 IR childPerformers, 3 IM majority, 4 KM minimumWorkAge. web.archive.org answers
+again: every blocker whose archive method says it was unreachable is to be retried there.
+
+**The age readers (2026-11-02, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word ("Start the age readers once
+this lands"), the age research of all 252 countries landed (`research/sources/person/ages/<CC>.json`, register
+`person.ages.<CC>` and `person.ages.blocked.<CC>`, notModeled `youth.unkept`), every quote checked against its saved
+page, every secondary naming its primary's URL. Layer 3's ages read the age of majority and the working age from it
+(one copy of the fact, `tools/papers/ages/person.ts`): 133 researched, 113 blocked, 6 proven; Uganda's working age is
+16 by the Children (Amendment) Act 2016. Military service is out of the game by the owner's ruling ("Dont need
+military service at all"): no field, no reader, no row blocked on it; the blockers that sought only it, or whose
+other facts are now found, are removed. The youth engine (`src/person/youth`, `person.youth`) is read by the actor's,
+writer's, director's and producer's engines: a minor's work the law bars is refused, each engagement needs what the
+law asks (`youth.authorise`: the child performer's permit, the guardian's, a court's or an authority's approval), the
+days are cut to the hours the law allows, and the share the law sets aside (the Coogan trust's 15%, the Caisse des
+dépôts' 90%, Ontario's 25% over $2,000, the Philippines' 30%) is held and paid at majority (`youth.release`); a fund's
+or the company law's age is read by `producing.apply`; Equity UK's young rate is the only union age rule the research
+gives. Coverage: 15 researched, 231 blocked, 6 proven (the dissolved and the unpeopled, their research still cited);
+hours are read for 9 countries; SAG-AFTRA's minor rule is known to exist, unread. The game's readings: R-8482
+(`person.ages.model`, line `youth.model`). Next: the depth round (below), the youth engine's blocked rows among it.
+
+**Every country in tax and the four roles' markets (2026-11-01, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word
+("It should cover across every country"; "Want it done now"; "Retry the blocked tax facts / market facts once all
+countries land"), the tax and the actor's, writer's, director's and producer's markets now read all 252 countries.
+Research: 235 tax files (the 231 of the world round, CA, JP, US and AU re-quoted) and 924 market files (231 countries,
+four roles), each researched, retried and checked by the lead quote by quote against its saved page
+(`$S/vtools/vq.py`, `vb.py`), landed by `$S/vtools/landtax.py` and `landmw.py`; every secondary names its primary's
+URL; interview-only figures (15) and figures whose primary isn't shown went back to blockers. Engines
+(`BRIEF-tax-world-engine.md`, `BRIEF-markets-world-engine.md`): tax 244 compiled plus AN and AQ as no taxing state
+(coverage 82 researched, 170 blocked); actor 55 markets (26 researched rows, 226 blocked); writer 248 agreements
+(39 / 213); director (45 / 207); producer 248 markets (66 / 186); none pending; every game reading merged into its
+model entry (R-5114, R-5229, R-5230, R-5231, R-5259). A territory follows its sovereign only where a source says the
+sovereign's labour law or agreements reach it (GP and RE now on Code du travail L1521-1, L2621-1, L2222-1 and the
+agreements' scopes; the writer's GP and RE blocked: the screenwriter agreements name no territory). unions.ts counts a
+sale offered under the WGA's own agreement (Puerto Rico's) as a signatory's.
+
+**Next, in order.** (1) The age readers, at the owner's word ("Start the age readers once this lands"):
+`BRIEF-age-readers.md`, two parts at once (layer 3's 168 blocked ages from the new research, Uganda's working age 16
+not 14; and the youth engine read by every role), the age research (`$S/ages-roles/out`, `$S/ages-world/out`, 252
+countries) landing with it. (2) The depth round (`BRIEF-depth-round.md`, the owner: "Again I want depth covering every
+basis for every feature leaving NO STONE UNTURNED"): 2,211 blockers, 1,719 without a web search run (the limit is 200
+a turn, shared); the ages' search ran first (about 215 searched, 109 found; resumes at list 1 IL unions, list 2 IR
+childPerformers, list 3 IM majority, list 4 KM minimumWorkAge), then the tax's and markets' ("Run the tax and markets
+web searches next turn too"). (3) Open in the research: hand-check the scans read by eye (markets BJ minimum wage;
+ages BD grants, DZ 1990 labour law, SR 2018 child labour; MA's decoded font; CK, SC, VU, PE by OCR); conflicts kept as
+two readings (RS allowance, GR employee rate, LR services rate, PF VAT franchise, LS VAT threshold, ID majority); BJ
+childPerformers is wrong (Décret 2011-322 art. 29 asks an authorisation); BF majority rests on a press report, GG
+companies on a front page; Cuba's Ley 189 unread; MY and KP institution pages unconfirmed; the writer's French,
+Australian and Puerto Rican followers to be held to the agreements' own reach, and one rule for Puerto Rico across the
+roles (the director keeps the DGA to the US); funds' yes rates for about 45 countries; actor minimums in the 131
+countries with neither a rate nor a source that pay is negotiated. (4) The main-law audit and the own-production model
+(step 4).
+
 **Layer 3 proven (2026-10-31).** CI's full gate passed at `a0520b2` (Gate run 519): 1,631 of 1,631 tests, 30 engines
 with 0 rows pending, 0 advisories, mutation 100.00% (16,970 of 16,970), 14,343 s; recorded in `registry/layers.json`.
 
@@ -737,6 +800,39 @@ credit manuals, Nicholl, the Black List, labs, contests, coverage, awards' rules
 learning outcomes, guild handbooks, staffing programmes). An attribute is on the list only if a source names it.
 KEEP entry 11 (2026-10-26) removed all the attributes from the new build; this research is for planning, and whether
 attributes return, and shown as numbers or not, is the owner's to rule.
+
+**The attributes, researched (2026-10-31, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** The screenwriter is done:
+`research/sources/person/attributes/screenwriter.json` (R-4601, `person.attributes.screenwriter`): 480 attributes
+grouping 754 source terms from 127 pages read that day (10 secondary, each naming the primary it quotes), every quote
+checked against its saved page by `workbench/tools/attrs-check.py`; 25 blockers, each with the five methods, in the
+file. Each attribute is one of its sources' own terms, under a category the lead gave (craft of the script 115, judged
+quality of the script 86, working with others 64, knowledge 52, cognitive ability 46, working trait 44, sensory or
+physical 32, business and career 29, tools and format 12); O*NET's ratings are kept per term. The three parts were
+researched by parallel subagents (registers, judging, teaching), the synonyms grouped by a fourth, each result checked
+by the lead before it landed (`workbench/briefs/BRIEF-attrs.md`; the other roles' form is
+`workbench/briefs/BRIEF-attrs-roles.md`; the file is written by `workbench/tools/attrs-build.py`). The producer, the
+director and the actor were researched the same way the same day (nine subagents, then one grouping each), each
+file checked as the screenwriter's:
+
+- `producer.json` (R-4603): 703 attributes, 927 terms, 152 pages, 28 blockers. The PGA's Producers Mark weighs
+  development 35%, pre-production 20%, production 20%, post-production 25% (animation 35/20/25/20). O*NET's
+  27-2012.01 is retired from O*NET OnLine, so it is read from database 24.3. Left out and named in the note: six
+  music-only ESCO skills, and camera-operating skills on CPNEF-AV's Chargé de production fiche, evidently copied there.
+- `director.json` (R-4602): 656 attributes, 850 terms, 134 pages, 23 blockers. 27-2012.02 is retired, its ratings
+  from database 24.3. Ten terms left out under `excluded` (UCLA's theatre Directing MFA, KABC's live-newscast post).
+- `actor.json` (R-4604): 683 attributes, 1,021 terms, 158 pages, 35 blockers. Québec, WorkBC and ANZSCO file actors
+  with circus, dance and teaching occupations, so some of their abilities are those occupations'; Spotlight's playing
+  age kept, appearance and nationality left out (who the person is); the SAG-AFTRA agreement read is the 2014 text.
+
+The sources that refused all four roles alike: bls.gov, oscars.org, bafta.org, ScreenSkills, Canada's Job Bank,
+Jobs and Skills Australia and Your Career, CareersPortal, BERUFENET's keyed API, Telefilm; web.archive.org reset
+every connection all day. Each role's blockers are in its file, with the five methods.
+
+The four lists went to the owner on 2026-10-31 as a private page to browse by role and category (the artifact "SLATE
+Role Attributes", built from the four files; not kept in the repository). Ruled the same day: attributes return for
+all four roles (see Questions for the owner). Still the owner's to rule before anything is built: which attributes
+(all researched, or a set chosen from the lists), how they are shown (as numbers or not), and what each one reads and
+changes (read, bite, downstream).
 
 **Saved before layer 4 planning (2026-10-31).** The working files that lived only in the session's scratchpad are
 in `workbench/` (its README says what each holds): the waves' briefs and the four audits' reports (`workbench/briefs/`,
@@ -1893,3 +1989,391 @@ producers' guilds and minimums, its incentives and film agency, its child perfor
 and whether acting is split by sex, its rating body, and its industry's size; a territory follows its sovereign's only
 where a source says so. The coverage of every country is tracked from the first wave and becomes the engine's matrix
 when layer 4 builds it.
+Ruled 2026-10-31, the owner, on the four roles' researched attributes: "Yes, attributes come back for all four roles."
+This overrules KEEP entry 11's "All the attributes" for the screenwriter, the producer, the director and the actor
+alike. What returns is the researched lists (research/sources/person/attributes/<role>.json, R-4601 to R-4604), not
+the first SLATE's twelve abilities, techniques, readiness or mastery by habit; the rest of entries 10 and 11 (Yale,
+School, the pro.* engine) and the dispositions and traits stay out until the owner says otherwise. Still to be asked: which of them, shown
+how, and what each reads and changes; each returns only with a reader that changes an outcome the player meets.
+Ruled 2026-10-31, the owner, on which attributes and how shown: each role keeps its "most-backed set", the lead
+proposing the cut from the source counts and the owner approving it; shown as a number: "It should read for example
+'Dialogue - 92' or something like that." Then: "I want to put an engine/downstream effect behind each attribute. We
+can get into perfectly balancing them later. Lets start with 'Screenwriter'." The screenwriter's proposal is
+workbench/plans/screenwriter-attributes.md: 27 attributes (those named by at least four institutions, less two that
+are readers' conclusions and two folded into others), each with the engine that reads it and the outcome it changes,
+waiting for the owner's approval before anything is built.
+Ruled 2026-10-31, the owner, on how attributes work: "I want my attributes to effect the quality of my work ... I start
+out with all attributes a 100 which will be the max ... create the engine/downstream effect that'll produce the quality
+of what being maxed out at every attribute would be also with other various numbers ... it needs to actually produce
+results depending on how bad or good I am. Also there should be an option to pick how good I want to be in the creation
+suite of the game and if its not maxed out then through doing work my skills/attributes get raised." Taken as approving
+the 27 (the owner building on them). Built the same day, layer 4: `person.attributes` (src/person/attributes: the 27,
+0 to 100, chosen at creation all at one level or each its own, shown "Dialogue - 92", raised by work, faster from low,
+never past 100) and `person.work` (src/person/work: writing a draft, revising it, a reader's grade), each command
+falsified and anchored to its consumer, both at 100% mutation score (260 mutants, workbench/configs/stryker.person.mjs).
+A writer at 100 throughout writes at 97 to 100 in every part and is graded 10 by the Black List; at 50, about 5; at 10,
+3 or under. The model's figures are the game's own (R-4605, `person.work.model`, told to the player by the line
+`work.model`), balanced later at the owner's word; the Black List's weighting and its "an 8 in dialogue cannot rescue a 5
+in plot" are its founder's (R-4601). The attributes' matrix (`coverage/attributes-screenwriter.json`): 20 with their
+reader, 7 pending: Synopsis, Pitching, Networking, Promotion, Persuasion, Speaking and Social Perceptiveness, whose readers
+are the selling and staffing engine and the writers' room (next), and coverage work. The creation screen's choice is
+layer 5's, reading `attributes.choose`.
+Built 2026-10-31, at the owner's word ("Go ahead and build the remaining 7 engines"): the readers of the screenwriter's
+last seven attributes, in src/person/work/career.ts (engine person.work, slice `career`). script.summarise (Synopsis,
+Writing: a script's logline, synopsis and treatment), network.meet (Networking, Speaking, Social Perceptiveness: the
+contacts days among the trade make), script.promote (Promotion, the synopsis, the script's grade: requests to read from
+the contacts approached), script.pitch (Pitching, Speaking, Persuasion, the synopsis: a sale on a request, at the 2026
+MBA's first-year minimum for the form, $173,215 for an original feature with treatment, $71,190 a pilot, $47,460 a
+60-minute episode, none for a short; the script off the market, the buyer a contact), room.join (Speaking, Social
+Perceptiveness, Persuasion: staffed as a Staff Writer through a contact on a pilot or episode sample) and room.season
+(the season's standing: episodes assigned at 50 and 80, kept on at 40, a rung up the WGA's ladder at 70, let go below
+40). The chances are the game's own (R-4606, person.career.model); the minimums and the ladder are the WGA's (R-4241).
+All 27 attributes now have their reader (coverage/attributes-screenwriter.json: 0 pending); the three engines' files
+are at 100% mutation score (503 mutants). Still open in this engine: a sale's fee and a room's pay are recorded, not yet
+paid into the ledger (money.accounts), which waits on how the work pays being ruled with the premise; a room's weekly
+pay by rung needs the MBA's longer weekly rates for story editors read; other countries' guild minimums wait on the
+per-country industry research. Next: the producer, the director and the actor the same way, from their research files.
+Ruled 2026-10-31, the owner, on the attributes' meanings: "I want those meanings to mean something and actually reflect
+on the work and not be for decoration. Just want tons of realism here." So each attribute's sourced meaning is broken
+into the facets the sources name (Dialogue: natural, succinct, a voice unique to each character, revealing character,
+moving the story, as PAGE, AFI, the BBC and the Black List state it), each with a definition the player reads; the
+engines are to score a script facet by facet, readers to grade and note the facets their own criteria name, revisions
+to work on them, and a facet a source ties to another attribute to draw on it. Three research subagents are extracting
+the facet map (workbench/briefs/BRIEF-facets.md), alongside three on the real figures behind the model
+(workbench/briefs/BRIEF-calibration.md). Both land as research files and register entries, then the engines are
+rebuilt on them.
+Rebuilt 2026-10-31 on the facets and the real figures (R-4607, R-4608): the attributes carry their sourced definition
+and facets (src/person/attributes/attributes.json, held to the research by a test); a script is scored facet by facet
+(60% the part's attribute, 25% Writing, 15% the attributes a source ties to the facet, Innovation and Research where
+their own facets name the part); readers grade the facets their own criteria name, the Black List combining its
+components by its regression's weights and the overall's place 0.38 from the weakest, each read's taste a lenience,
+a per-criterion spread and the overall's residual fitted to its readers' agreement (simulated: the same score 26%, a
+point apart 45%, against its 30% and 44%; a writer at 53 averages about its 5.74); notes name the weakest graded
+facets and revisions work on them; a rewrite changes anything, a polish only dialogue, narration and action, in the
+MBA's shares of a draft's time; a feature takes eight weeks at the top, an episode within the MBA's 2.4; skill grows a
+day at a time at two decades to professional; a script's ten documents are written each on its own (the treatment in
+the MBA's 6.1 weeks at the slowest); cold queries answer 1.5%; a third of the specs taken out sell at the market's
+level; a room's season is twenty weeks paid at the MBA's 2026 minimum for the rung. R-4605 and R-4606 now name only
+what no source gives. 58 tests; the three files at 100% mutation score (684 mutants). Still the game's: the shares, the
+spreads at 0 and 100, a pilot's and a short's days, how far a revision carries, the chances of a contact, a warm
+request, a staffing and a room's marks; each blocker in R-4608 says what was tried.
+Ruled 2026-11-01, the owner: "Actually just get rid of all the team stuff because I will be a solo writer." The writers'
+room is gone from the build: room.join and room.season, the WGA's ladder of titles, a season's weeks and pay by rung
+(src/person/work/career.ts; registry/effects.json; the room row of coverage/work-operations.json). The writer writes,
+revises, has scripts read, writes their documents, networks, sends scripts out and pitches alone; a pilot or an
+episode is written and sold as a spec. Speaking, Persuasion and Social Perceptiveness keep their readers in networking
+and the pitch; their room-only facets (the staffing pitch, speaking up in the room, reading the showrunner) stay in
+the sourced meanings but act through no engine now. The room's research stays in R-4608 for the record.
+Ruled 2026-11-01, the owner: "Remove the team facets too." Left out of the game's attributes (src/person/attributes/
+attributes.json; 158 facets of the research's 164), the writers'-room and running-show facets: Pitching's staffing
+pitch and pitching in the room, Speaking's speaking up in the room, Social Perceptiveness's reading the room and reading
+the showrunner, Research's storyline research. Kept, as not team work by their meanings: Networking's everyone in the
+room (everyone one meets), Taking Notes' seeking feedback, Writing's audience and house style. The test holding the data
+to R-4607 names the six; the research file keeps them, as the sources' meanings.
+Owner, 2026-11-01: "We'll get back to this later, just get the research on all of the next 3." The screenwriter's
+engines wait for the owner. The producer's, the director's and the actor's research is under way, to the
+screenwriter's depth: each role's proposed cut (attributes named by at least four institutions, less award or credit
+tests that are outcomes, not attributes: producer 40, director 41, actor 37; workbench/briefs/roles/cut-<role>.json),
+each attribute's facets from the sources (two subagents a role, workbench/briefs/BRIEF-role-facets.md), and the real
+figures each role's work runs on (one subagent a role, workbench/briefs/BRIEF-role-calibration.md). They land as
+research files and register entries like R-4607 and R-4608.
+Done 2026-11-01: the next three roles' research, to the screenwriter's depth. Facets (R-4609 producer, 40 attributes,
+178 facets; R-4610 director, 41 and 207, four facets left out as the researcher's own mapping; R-4611 actor, 37 and
+179) and real figures (R-4612 producer, 28 figures: option terms, financing shares, incentive rates, funders'
+acceptance rates and fee caps, release and recoupment rates; R-4613 director, 18: the DGA's director's cut, minimums
+and episodic days, the CNC's shooting days, festival selection rates of 2 to 3%, a quarter of debut directors making a
+second feature within five years; R-4614 actor, 25: SAG-AFTRA's, Pact/Equity's, UK Theatre's and ACTRA's minimums,
+auditions and self-taping, earnings, training, career length). Every quote checked by the lead. Pages read through a
+second fetcher after this environment was refused (canada.ca's CPTC, Georgia's incentives, some Telefilm releases, the
+Academy's 2024 Nicholl press release) are left out under the rule against getting around a bot check: three figures
+become blockers, and R-4608 loses that one source. Next, when the owner returns to it: each role's cut for approval,
+then its engines, as the screenwriter's.
+Ruled 2026-11-01, the owner, on the attributes: "these attributes wayyyy too bloated. We gotta map some out", shown a
+screen of six broad skills; then, of the proposed map, "Perfect! This more like it", and of the director's editing,
+"Give it that 7th attribute." Each role now holds a handful of broad attributes, 0 to 100, each made of the researched
+attributes it covers (workbench/plans/attribute-map.json, checked to cover every attribute of each role's cut exactly
+once): screenwriter 7 (Story, Characters, Voice, Writing, Revision, Discipline, Pitching), producer 6 (Development,
+Financing, Production, Leadership, Dealmaking, Marketing), director 7 (Vision, Working With Actors, Visual Craft,
+Editing, Script Sense, Leadership, Communication), actor 7 (Acting, Memorization, Voice, Physicality, Camera,
+Direction, Auditioning). The six attributes no institution judges fold in rather than stand alone. Experience, as in
+the owner's example screen, is the record of work done, not a skill set at creation. Next on attributes: re-key the
+screenwriter's engines to its 7 (the parts and facets stay underneath, each part read through the broad attribute that
+covers it), then the other roles' engines on theirs.
+Done 2026-11-01, at the owner's word ("Yes"): the screenwriter's engines re-keyed to its seven broad attributes. The
+player holds Story, Characters, Voice, Writing, Revision, Discipline and Pitching (src/person/attributes/attributes.json:
+each with what it covers, its 27 components keeping their sourced definitions and 158 facets); a component reads the
+level of the broad attribute that covers it (`componentValues`), so a part's facets are scored as before through it;
+work raises each broad attribute whose components it used, once (`practise`). Writing a draft now also raises Pitching,
+since the owner's map puts Film Production Process there; a revision raises Revision whole (Taking Notes, Story Critique
+and Critical Thinking are in it). The attributes' matrix has the seven as its rows. 54 tests; mutation 100% (573).
+
+Done 2026-11-01, at the owner's word ("Build them."): the producer's, the director's and the actor's engines, to the
+screenwriter's standard, built by three subagents at once (workbench/briefs/BRIEF-role-engines.md), each checked by the
+lead against its research before it landed. Each reads every one of its role's broad attributes through their
+components and facets; each command has its consumer and a falsifier; each file is at 100% mutation score
+(workbench/configs/stryker.{producing,directing,acting}.mjs). The trade's figures are the research's; what no source
+gives is the game's own, named in the register and told to the player (placeholder lines producing.model,
+directing.model, acting.model).
+- The director (src/person/directing, R-4615 person.directing.model): directing.prep, .shoot, .cut, .submit, .pursue.
+  A film's story comes from Vision and Script Sense, its performances from Working With Actors, its images from Visual
+  Craft, its cut from Editing; Leadership holds the schedule and carries a short one, Leadership and Communication bring
+  the plan to the set, Communication pitches the next film. The DGA's 2026-27 minimums, guaranteed periods and Low Budget
+  Sideletter levels, the Director's Cut (ten weeks or a day for every two shooting days; four days an hour episode, a day
+  and up to one more a half-hour), the CNC's 32 shooting days (2024), Sundance's, Cannes's, the Berlinale's and TIFF's
+  own counts, and Follows's 25.3% (45% with an audience) for a second feature within five years. Not modeled: SVOD and
+  non-network episodes, pilots, SXSW (no submission count), the odds of a third feature (a third needs no backing until
+  a source gives them).
+- The actor (src/person/acting, R-4616 person.acting.model): acting.audition, .perform. An audition is self-taped 92% of
+  the time (SAG-AFTRA's 2022 survey), scored three fifths from the part's demands and two from audition craft; booking
+  is the game's (2% to 30%, up to half again for the best work played), since no source gives the ratio. A performance
+  reads the craft every part uses (Acting, Direction, Memorization's concentration), the lines where it has any, Camera
+  on screen, Physicality's space and Voice's speaking on stage, and whatever else the part asks. Pay is the agreement's
+  minimum on the first day: SAG-AFTRA's day and weekly rates 2025-2029 and its low-budget tiers (none under $20,000),
+  Pact/Equity's Cinema Films Agreement (£3m and over; a UK film under £3m is refused until Equity's low-budget rates are
+  read), UK Theatre's commercial weeks by seats, ACTRA's IPA. Not modeled: overtime, background and stand-ins,
+  subsidised theatre (its 2025 rate needs a CPI figure not read), the West End.
+- The producer (src/person/producing, R-4617 person.producing.model): producing.option, .renew, .plan, .apply, .raise,
+  .shoot, .release. The WGA's 18-month option at 10% of the 2026 low-budget minimum ($9,226.80), renewals the same; the
+  BFI's ten months left, 13% funded, awards 22% of the budget to £1.25m, fees and overheads 7.5% of direct costs; the
+  UK's IFTC 53% (to £15m) or AVEC 34% on 80% of costs; the EAO's financing shares; the BFI's release and twice-the-
+  budget rates by budget band; the PGA's two features in seven years. UK only for now: it is the one market with a
+  figure at every stage. The option is always the low-budget price (the high-budget one needs the budget in dollars).
+  The producer's schedule reads the director's FEATURE_SHOOT (the CNC's 32 of 2024), not a second copy (the CNC's 33 of
+  2023), and the director reads the screenwriter's spread, so one figure stands in one place.
+- Money is recorded, not yet paid into the ledger, in all three, as the screenwriter's fees are.
+Next: the rest of layer 4 (identity, background, genres, the portrait), then prove the layer.
+Ruled 2026-11-01, the owner, asked what the game reads for a person's legal sex (the Identity page had Pronouns and
+Billed As only): "Add a Sex field." Identity gets Sex (Female, Male) beside Pronouns, read by the papers (military
+service by sex, citizenship by descent from the father only, a passport's sex marker), by casting and by the acting
+awards' categories; Pronouns and Billed As stay their own choices, pronouns still settling Billed As where they can.
+Begun 2026-11-01, at the owner's word ("Continue on to the rest of layer 4"): identity, background, the genres and the
+portrait, planned in workbench/plans/layer4-identity.md (each field with the reader that changes an outcome for the
+player and the research it needs). Six research subagents (workbench/briefs/BRIEF-identity-research.md): casting by
+gender, age, ethnicity, language and accent, and the acting awards' categories; the unions' and guilds'
+professional-name, credit-name, joining and work-authorisation rules; every territory's languages (CLDR) and a level
+scale; the 149 genres' definitions, re-researched to the source in two halves (the first SLATE's repository was not
+reachable from this session); the genres' market figures, a family in the business, wealth by occupation, headshots
+and the writing programmes. Each result is checked by the lead before it lands.
+Ruled 2026-11-01, the owner, on the five genres left without a definition and on Revenge's: "Keep those five and find
+definitions for them, and find actual definition of revenge film." Action Comedy, Buddy Comedy, Holiday, Hood Film and
+Psychological Horror stay on the Genres page; a fourth research subagent looks for their definitions and for a
+definition of the revenge film itself (not of revenge), through routes the first three did not take.
+Ruled 2026-11-01, the owner, told that a part for men was open to anyone male or billed as an actor, and that the
+game held no work permits: "Remember there's an 'Actor' and 'Actress' and we didn't do work permits in layers 0-3 if
+not stay true to the factual and realism and cover that across the game's world map." So casting reads Billed As: a
+part written for men is an actor's, one for women an actress's, whatever the sex field (which the papers and awards
+read); a part for a non-binary performer reads they/them. And the work permit is built: layer 3 held each country's
+performer route (src/papers/work) but not the permit itself; eight research subagents (workbench/briefs/
+BRIEF-permits.md) read, for every country the map's work matrix covers (222 researched and the 24 blocked), who
+applies and what comes first, each fee, the processing time, the term and renewal, any union consultation, the
+eligibility, minimum pay and a short engagement's exemption. The permit engine reads them when they land.
+Decided 2026-11-01 by the lead, from the research's own limits: a genre's effect on a spec's sale is not modeled (the
+trackers count deals by genre, but no source counts the specs written by genre, so no odds follow: the spec-sale
+factor first built assumed them equal and is removed); a BFI genre group with fewer than 30 releases in the year
+counts as the average release (Family's two releases gave 26.8 times the average; the threshold is the game's).
+Ruled 2026-11-01, the owner: "Also if it wasn't obvious Actor (Male) Actress (Female) and for They/Them it could be
+either or." Billed As is the sex: an actor is male and an actress female, wherever a rule reads sex (the papers'
+military service and descent, casting, the acting awards); he/him bills an actor, she/her an actress, and they/them
+leaves the choice of either to the player. The separate Sex field of the same day is folded into it, so the fact is
+held once (`sexOf(person)` reads it from Billed As).
+Ruled 2026-11-01, the owner, as the main law over everything else: "Also I asked for continuity, uniqueness, and
+freshness to everything this game produces. None should be or feel repetitive, the same, and decoration. Everything
+should 100% perfectly flow cohesively and logically covering every single basis and leaving no stone unturned. This
+is the main law and should be engraved in what I want from this build with everything else. This applies to all thats
+has been done and all that is to come." Engraved at the head of CLAUDE.md's rules (the owner documents re-locked for
+it). Owed from it: every engine built so far is checked against it (what it produces repeats only where the real thing
+does; each output follows from the life's state and is read downstream), with a test holding it where it can be held;
+the layer isn't proven until that audit is done.
+Ruled 2026-11-01, the owner, with the main law: "Also attached to that everything will be tested like crazy and will
+be until we get the perfect formula for how the backbone of this game operates." Added to the law in CLAUDE.md (re-
+locked). Owed: beyond each engine's unit and mutation tests, simulation tests that run whole lives through the engines
+over many seeds and attribute levels and hold the outcomes against the research's real distributions (a reader's
+score spread, the share of specs that sell, booking rates, festival odds, second features), each formula kept under
+test and retuned until the owner calls it right.
+Built 2026-11-01, layer 4's person and its readers (five subagents at once, workbench/briefs/BRIEF-identity-readers.md;
+each checked and corrected by the lead before it landed):
+- The person (`person.identity`, src/person/identity; commands identity.make, identity.headshot): the legal and
+  preferred names, the pronouns, Billed As (the sex: `sexOf`), the birth date and place, the citizenships, the
+  languages with their CEFR level, race or ethnicity in the breakdowns' own categories (Sowa 2017), where one grew up,
+  the family's trade, the headshot. Languages from CLDR 49 (tools/person/identity compiles them, SHA-checked); the
+  birthplace and where one grew up suggest them (a tenth of the people, the game's line) and the citizenship.
+- Casting (`person.acting`): acting.breakdown posts parts at the SAG-AFTRA breakdowns' 2017 shares (57.6% for men,
+  37.9% for women, 4.4% open; 33.9% open ethnicity, 30% silent, then each named) and 2025's ages of major characters;
+  acting.audition sees only a part the person fits: Billed As (men's parts an actor's, women's an actress's), they/them
+  for a non-binary part, playing age (Spotlight's five years either way), a named ethnicity they give, the language at
+  C1 (the game's), a headshot for every submission; acting.perform refuses a part in a country the person may not work
+  in and a SAG-AFTRA part from the thirtieth day after the first to a non-member.
+- The unions (`person.unions`, src/person/unions; unions.join): SAG-AFTRA, Equity UK, ACTRA, Canadian Actors' Equity,
+  Actors' Equity Association, the WGA West (24 units; a feature 24, an hour's teleplay 8, from the WGA's chart) and the
+  DGA, each by its own route from the life's work, the card in the preferred name, fees and dues recorded.
+- The genres (`person.genres`, src/person/genres; genres.choose): all 149 with their cited definitions; the work is in
+  the genres one loves (script.write, producing.option); a film's chance of earning twice its budget moves by its BFI
+  group's gross per release (groups under 30 releases count as average).
+- A family in the business: a director's second feature at Follows's 72% against 66% (film and TV trades only), and a
+  writer's first contact from the first day.
+The game's own figures are R-4623 to R-4627, told by the lines identity.model, acting.model, unions.model and
+genres.model. Not built yet: the work permit (research under way, eight subagents), the portrait's image itself (the
+headshot is held as when it was taken), the acting awards' categories (no awards engine yet), papers.ages' readers
+(military service, majority), and the main law's audit of every engine built so far.
+Built 2026-11-01, at the owner's word on work permits ("stay true to the factual and realism and cover that across the
+game's world map"): the work permit (`papers.permits`, src/person/permits, as it reads the person; compiled by
+tools/papers/permits from research/sources/papers/permits/<CC>.json, register papers.permits.<CC> and
+papers.permits.blocked.<CC>). Eight research subagents, six retries and a quote fixer (workbench/briefs/
+BRIEF-permits*.md); every quote checked by the lead against its saved page (507 sources). Of the 246 working countries:
+who applies is known for 204, fees for 147 (index-unit fees priced at their 1 January 2026 values: Belarus, Colombia,
+Tajikistan, Uruguay, Uzbekistan), the term for 164, processing for 119; 208 compile. permits.apply lodges an
+application for a part booked abroad (the engager or the worker, as each country's law says), records its fees and
+schedules its decision at the processing time (premium where offered); permits.decision grants it for its term (the
+engagement's own where the law says so), or refuses it where the life fails a test its records answer (the US O-1's
+distinction, the game's three parts and a best of 75; Turks and Caicos' English; Laos's age 20); permits.renew where
+it renews; acting.perform asks permitted(): a citizenship, a permit in force, or a short engagement inside the
+country's exemption. What isn't known is told (permits.unkept); the game's readings are R-5079 (permits.model).
+Layer 3 corrected from it: 21 routes and 8 exemptions in papers.work, Botswana, the Central African Republic and Libya
+added (their layer 3 blockers removed). Still open: Laos's and Cameroon's fees, Saudi Arabia's and Togo's routes,
+the routes of Belgium, Switzerland and Vietnam not yet landed in papers.work; coverage counts a country blocked where
+any field (a union rule, a pay floor) is, so 231 of 252 rows are blocked though most core facts are found. Parts are
+booked only under the US, UK and Canadian agreements yet, so permits elsewhere wait for those markets.
+Owner, 2026-11-01: "Close the open permit gaps and add more markets." The permit builder closes Laos's and Cameroon's
+fees, Saudi Arabia's and Togo's routes, Belgium's, Switzerland's and Vietnam's route corrections, and the core facts
+still missing in the large film markets. Six research subagents (workbench/briefs/BRIEF-markets.md) read the actor's
+real terms in eighteen more markets (France, Germany, Australia, Ireland, New Zealand, Spain, Italy, India, Japan,
+South Korea, Mexico, Brazil, South Africa, Nigeria, Sweden, Denmark, Norway, the Netherlands): each collective
+agreement or rate card, its minimums by role and tier, the union, the language parts are cast in, the market's city.
+The acting engine takes them as agreements when they land, so a part can be booked in each and its permit reached.
+Owner, 2026-11-01, asked whether writers, directors and producers should get markets too, and told why it fits
+(each role's own guild or fund in each country; permits reached through every role; one law across the four): "Whenever
+we're done with the ones that are processing i'll let you know." Held: the other three roles' markets wait for the
+owner's word, after the actor's eighteen markets and the permit gaps land. When given, the same countries as the
+actor's (and the UK and Canada for writers and directors), each guild's or fund's own terms, the producer starting
+from R-4612's CNC, Telefilm and Screen Australia figures.
+Owner, 2026-11-01, on the actor's markets: "Retry the blocked rates once all markets land." Once the last of the six
+market subagents reports, every blocked rate (Ireland's screen and stage, Australia's industry agreements and union,
+Korea's grade tables, Mexico's ANDA scales, Japan's TV drama, Italy's signatory copy, Brazil's later tables, Spain's
+union and Madrid's 2026 tables, New Zealand's theatre successors, Sweden's SVT, Nigeria's AGN fee) is retried, each
+method a different way, before the markets are built into the acting engine.
+Done 2026-11-01, the permit gaps the owner asked closed: Saudi Arabia's route (Labor Law art. 33) and Togo's (the
+2021 Code: the employer, 15 working days, 2 years) now in papers.work, their layer 3 blockers removed; Belgium's,
+Switzerland's and Vietnam's routes landed (Vietnam's Decree 393/2026 from 5 December 2026); Cameroon's fee priced from
+the part's pay; Japan's processing (18 days, from the Immigration Services Agency's statistics read in a copy), India's
+week, China's engagement-long term, Nigeria's 30 days. Still blocked, attempts dated: Laos's currency, some of Brazil's,
+Italy's, Korea's and Nigeria's fields, Saudi Arabia's other permit facts. 227 countries in papers.work, 210 permits.
+Owner, 2026-11-01: "Now add markets for writers, directors and producers." Nine research subagents (workbench/briefs/
+BRIEF-roles-markets.md), three a role: the writer's and the director's guild agreements, minimums, periods, rights
+and joining in the UK, Canada and the actor's eighteen markets; the producer's funds, incentives, fee caps and
+outcomes in the US, Canada and the eighteen (the UK's BFI already built; R-4612's CNC, Telefilm and Screen Australia
+figures re-read, not repeated). Each lands as research files and register entries, then each role's engine takes its
+markets as the actor's do.
+Built 2026-11-01, the actor's eighteen more markets (person.acting; research/sources/person/markets/<CC>.json,
+person.markets.<CC> and .blocked.<CC>; compiled by tools/person/markets to src/person/acting/markets.json): 44
+agreements and 321 minimums in Australia, Brazil, Denmark, France, Germany, Ireland, India, Italy, Japan, Korea,
+Mexico, Nigeria, the Netherlands, Norway, New Zealand, Spain, Sweden and South Africa, by medium (film, television,
+stage), role, tier and term (day, week, month, year, session, performance, episode), each with its language and its
+market's zone; where no agreement sets an actor's pay (South Africa, Nigeria, India, Japan's live action, Mexico
+beyond its broadcasters, New Zealand's and the Netherlands' screen) pay is left to negotiation, never a made-up
+figure. What isn't known is told (acting.unkept). The game's readings (an actor's years in the work, a month's and a
+year's working days) are R-5114. A part abroad now reaches the permit engine; Germany's, the Netherlands', Norway's
+and Sweden's exemptions count the days worked there within their periods, tested.
+Built 2026-11-01, at the owner's word ("Now add markets for writers, directors and producers"): each role's work in
+twenty markets, researched (60 files, research/sources/person/markets/<role>-<CC>.json, register person.markets.<role>
+.<CC> and .blocked.<CC>, 579 sources each checked against its saved page, one retry a role) and compiled
+(tools/person/markets-<role>/ to src/person/{work,directing,producing}/markets.json):
+- The writer (career.ts): script.offer puts a script in a market's agreement (the writer writing its language at C1,
+  the game's line), a pitch sells it at the agreement's minimum by form and tier or takes an option where the
+  agreement prices one (Canada's IPA, Norway's film agreement); 36 agreements in 20 countries, 14 leaving pay to
+  negotiation; Australia's, Japan's and Mexico's refused and told (writing.unkept). WGA units count only WGA sales.
+- The director (directing.ts): directing.prep in a market's agreement, paid by the job, a budget share, the minute or
+  the day as each sets; 32 agreements (13 setting fees, 8 negotiated, 11 unknown and told by directing.unkept); only
+  Quebec's guarantees periods; cut rights not modeled. The DGA counts only DGA films.
+- The producer (producing.ts): producing.option in a market: its currency, fee and overhead caps, its credit (rate,
+  share counted, cap, threshold), its fund's chance and award within the public-aid cap, Italy's release rate beside
+  the UK's; funding and release refused and told (producing.unkept) where the terms aren't known.
+The game's readings are R-5229 to R-5231. Each engine exports where and how long its work is (saleIn, engagement,
+engagementOf); wiring those into the permit, so a director or producer working abroad needs one as the actor does,
+is next.
+Owner, 2026-11-01: "Let's do that next step then." The permit builder wires every role's work abroad into the work
+permit: permits.apply takes a directing, producing or acting engagement by its own country and days; directing's and
+producing's shoots ask permitted() as acting.perform does; a writer's sale meeting reads papers.visits (a business
+visit where the passport allows it), and a permit only where the research says writing there needs one; a route that
+doesn't cover the role (the research names whom it covers) can't be used, and the player is told.
+Ruled 2026-11-01, the owner: "Build those first 3 starting with ledger first, then build that yes for tv and film.
+This is the direction I want to take in the game instead of being casted. Any tv or film i'm in will be a product of
+mines." Asked how far it reaches, the owner chose "Own productions only": all four roles work only on the player's own
+productions; no auditions for others' parts, no selling scripts to others, no directing or producing others'
+projects. The order: (1) pay into the ledger with each country's tax, (2) the age readers (majority, working age, a
+minor's permits, for all four roles), (3) the main law's audit of every engine built, (4) the own production, film and
+TV: one production record every role reads: the player's script, produced from their own rights (no option to
+themselves) and financed in a market, directed by them (its story from the script's real grades), with themselves cast
+(no audition), each role paid and treated under that market's agreements, the guilds' rules for one person in
+several roles researched first. With (4), the casting market (acting.breakdown, auditions for others) and the
+spec-sale engines (networking, sending out, pitch, offer, sale, option by others) are removed; the markets, unions,
+permits and pay rules stay, read by the player's own productions.
+Owner, 2026-11-01: "And i'll be able to cast other people too correct?" Yes, in step 4: on the player's own production
+the player casts the other parts, writing each breakdown (gender, playing age, a named ethnicity where the part needs
+one, language, as the trade writes them), paying each actor at least the market's minimum for the part (the actor's
+markets, through the ledger from the production's budget), with the unions' rules (Taft-Hartley for a non-member on a
+SAG-AFTRA production) and the permits for a foreign cast; the cast's quality with the director's Working With Actors
+makes the performances. Researched first: the pool of actors one can cast and how their quality and price run,
+casting directors' fees and how auditions are held, and the crew's hiring and minimums (IATSE, Bectu and their peers).
+Ruled 2026-11-01, the owner: "And crew too, like cinematographers, editors, and etc. You know I want depth and to
+cover every single basis leaving no stone left unturned. I also want to control every step of the process of putting
+everything together manually also. We'll get into deeper much later after all the research, but I trust you know
+where my idea is headed." So step 4's production is the player's to build by hand, step by step, with nothing done
+for them: every department's crew hired by the player (the cinematographer, the editor, the production designer, the
+composer, the sound, costume, make-up and hair, the casting director, the first assistant director, the line producer
+and the rest the trade's own department lists name), each at its market's own minimums and terms (the crew unions:
+IATSE, Bectu and their peers; the film agreements' crew schedules), with permits for a foreign crew; and every stage
+of making the work (development, financing, pre-production, the shoot, post, delivery, release; a series' rooms,
+episodes and seasons) a step the player takes. Research first, for every department and stage, before any design is
+fixed: what each does, who hires whom, what each is paid and what each changes in the finished work.
+Built 2026-11-01, at the owner's word ("Let's do that next step then"): every role's work abroad reads the permit.
+permits.apply takes an engagement of any role (an audition booked, a film prepped, a project planned) by its own
+country and days; directing.shoot and directing.cut, and producing's shoot, are refused without a permit in force,
+as acting.perform is (prep books the engagement, so the permit can be applied for on it); a short engagement's days
+count every role's work in that country. A writer writes at home and travels only to the sale meeting, a business
+visit: the pitch reads papers.visits and is refused where every passport needs a visa applied for beforehand (the game
+holds none). Routes whose research names whom they cover (Kazakhstan, Armenia, Japan, Sweden, Egypt) refuse the other
+roles and say so. The permit line reads for any role now ("someone from abroad").
+Owner, 2026-11-01: "Retry the blocked tax facts once all countries land." When the last of the three tax subagents
+reports, every blocked tax fact is retried, each method a different way, before the ledger takes the tax.
+Owner, 2026-11-01: "Start the ledger once the tax retry lands." Briefed (workbench/briefs/BRIEF-ledger.md): a tax
+engine from the 21 countries' research; every money the person engines record paid through the ledger when earned or
+spent, less what the work's country withholds at source (resident or non-resident), converted at the day's rate with
+the bank's fee; each tax year reckoned where the person is resident, the balance due or refunded on the return's date.
+It starts when the second tax retry reports and the research lands.
+Owner, 2026-11-01: "Start the age readers once the ledger lands." Briefed (workbench/briefs/BRIEF-ages-roles.md): for
+the 21 markets, a minor's contract for creative work (approval, the earnings set aside, whether it reaches writing,
+directing and producing as well as performing), a child performer's permit, hours and schooling, the general working
+age and majority where layer 3 left them blocked (California's majority among them), each union's age rules, funds'
+applicant ages and the age to form a company; then the readers in every role's engine. It launches when the ledger
+lands.
+Built 2026-11-01, at the owner's word ("Build those first 3 starting with ledger first"): the ledger pays. A tax engine
+(`money.tax`, src/money/tax; compiled by tools/money/tax from research/sources/money/tax/<CC>.json, money.tax.<CC>
+R-5232..R-5252, blocked R-5253..R-5258) holds 21 countries' resident scales (bands, Germany's zones, allowances,
+credits, surtaxes), employee and self-employed contributions, withholding by kind of work for residents and
+non-residents, VAT and the tax years with their due dates. Every money a person engine records now moves: earned
+(acting.perform, script.pitch, directing's prep, shoot and cut by days, producing.shoot) from the payer's world
+account into the person's account, less what the work's country withholds and its social contributions, at the day's
+rate with the bank's share; spent (producing's option and renewal, unions.join's initiation and first year's dues, a
+permit's fees where the worker pays, a headshot) from the account, refused where it can't cover. tax.reckon at each
+tax year's end where the person lives (the year's income at the resident's scale, less what was withheld, with credit
+for tax withheld abroad up to the tax at home) and tax.settle on the return's due date (paid, refunded, or owed and
+told). The game's readings are R-5259 (tax.model): residence is the first citizenship's country until a residence is
+held; a performer's and a director's pay are wages, a writer's and a producer's fees. Not modeled and told
+(tax.unkept): employers' wage-withholding tables, regional and municipal taxes beyond a rate that applies everywhere,
+formula-written credits. Owed: the tax matrix covers the map's 252 countries and 21 are researched, so 231 rows are
+pending until a tax wave researches the rest, as the owner's coverage law asks; the layer isn't proven until then.
+Owner, 2026-11-01, told the tax matrix covered 21 of the 252 countries: "It should cover across every country so I
+have no clue what stopped that from happening." The lead's own scoping: the tax research was briefed for the 21
+markets where work is paid, against the coverage law (an engine that reads a place covers all 252). Corrected: eight
+subagents research the other 231 under BRIEF-tax.md (a territory that takes its sovereign's tax, or none, says so from
+a source), then their retry. The age research, briefed for the 21 too, goes to every country the same way.
+Owner, 2026-11-01, asked whether the four roles' markets (21 countries) should reach the other 231 now: "Want it done
+now." Eight subagents (workbench/briefs/BRIEF-markets-world.md) research every other country for all four roles at
+once: any agreement, rate card or rule that sets a performer's, a writer's or a director's pay, the producer's fund,
+incentive and caps, the language and the market's city; where nothing sets it, a source saying so is a finding (pay
+negotiated), and a territory that follows its sovereign says so.
+Owner, 2026-11-01: "Retry the blocked market facts once all countries land." When the last of the eight world-market
+subagents reports, every blocked market fact is retried, each method a different way and every "not tried" method
+run, and every finding that rests only on an inference (a territory said to follow its sovereign from its status
+alone, a "none" from a production-services company or a Factbook copy) is held to a source that says it or turned
+back into a blocker.

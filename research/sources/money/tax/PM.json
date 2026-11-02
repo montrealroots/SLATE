@@ -1,0 +1,334 @@
+{
+ "topic": "tax.PM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Saint Pierre and Miquelon: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Saint-Pierre-et-Miquelon sets its own income tax under its local tax code (France's CGI does not apply): for 2025 income, taxed in 2026, the scale per family share is 0% to €10,140, then rises 5 points per band to 50% from €54,600 and 55% above €68,300; pay is first reduced by 10% (at least €500) and then a further 20%, and a single person deducts €550.",
+   "value": {
+    "currency": "EUR",
+    "incomeYear": 2025,
+    "perShare": true,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 10140,
+      "rate": 0
+     },
+     {
+      "from": 10140,
+      "to": 11140,
+      "rate": 0.05
+     },
+     {
+      "from": 11140,
+      "to": 12110,
+      "rate": 0.1
+     },
+     {
+      "from": 12110,
+      "to": 13660,
+      "rate": 0.15
+     },
+     {
+      "from": 13660,
+      "to": 16960,
+      "rate": 0.2
+     },
+     {
+      "from": 16960,
+      "to": 20100,
+      "rate": 0.25
+     },
+     {
+      "from": 20100,
+      "to": 23400,
+      "rate": 0.3
+     },
+     {
+      "from": 23400,
+      "to": 27500,
+      "rate": 0.35
+     },
+     {
+      "from": 27500,
+      "to": 40500,
+      "rate": 0.4
+     },
+     {
+      "from": 40500,
+      "to": 54600,
+      "rate": 0.45
+     },
+     {
+      "from": 54600,
+      "to": 68300,
+      "rate": 0.5
+     },
+     {
+      "from": 68300,
+      "to": null,
+      "rate": 0.55
+     }
+    ],
+    "wageDeductions": {
+     "first": 0.1,
+     "firstMinimum": 500,
+     "second": 0.2
+    },
+    "singleAllowance": 550,
+    "minimumTaxCollected": 110
+   },
+   "applies": "Scale applied per part of the quotient familial (1 for a single person). Read from the tax service's own 2026 calculator (bands and the function that applies 5% per band).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Le code général des impôts de métropole n’est pas applicable sur Saint-Pierre et Miquelon."
+    },
+    {
+     "src": 0,
+     "said": "Les impôts et taxes établis dans l’archipel sont énumérés dans un code spécifique, le code local des impôts."
+    },
+    {
+     "src": 1,
+     "said": "10140, // R01:Barème : Plafond de la 1ère tranche"
+    },
+    {
+     "src": 1,
+     "said": "68300, // R11:Barème : Plafond de la 11e tranche"
+    },
+    {
+     "src": 2,
+     "said": "wv += Math.round((wb1 - wb2) * 0.05 * (wi - 1));"
+    },
+    {
+     "src": 1,
+     "said": "taux1sal : 10, // P16:Premier abattement sur les salaires"
+    },
+    {
+     "src": 1,
+     "said": "taux2sal : 20, // P17:Deuxième abattement sur les salaires"
+    },
+    {
+     "src": 1,
+     "said": "abatcelib : 550, // P01:Etat civil : Abattement personnes célibataires"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident with income taxable in the archipelago is taxed at a 10% rate in the calculator, with a minimum-tax base of €5,500.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.1,
+    "minimumBase": 5500,
+    "final": null
+   },
+   "applies": "Whether the 10% is withheld at source, and whether it is final, was not found.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "tauxnr : 10, // P10:Taux appliqué aux non résidents"
+    },
+    {
+     "src": 1,
+     "said": "impotmininr : 5500, // P09:Base de l'impôt minimum pour les non-résidents"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A self-employed (non-commercial, BNC) worker whose receipts are under €38,000 may use the micro-BNC regime, taxed on receipts less a flat 35%.",
+   "value": {
+    "currency": "EUR",
+    "microBNC": {
+     "ceiling": 38000,
+     "flatDeduction": 0.35
+    }
+   },
+   "applies": "Applies to a freelance writer, director or performer billing as BNC.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Pour les bénéfices non commerciaux dont le chiffre d'affaires est inférieur à 38 000 € : Régime du Micro-BNC : abattement forfaitaire de 35 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT in Saint-Pierre-et-Miquelon: the local tax system has no indirect contributions such as VAT.",
+   "value": {
+    "rate": 0,
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Une des principales caractéristiques de la fiscalité locale est l’absence de contributions indirectes telles que la TVA."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year: income of 2025 is declared to the local tax office and taxed in 2026.",
+   "value": {
+    "start": "01-01",
+    "due": null
+   },
+   "applies": "The 2026 filing and payment dates were not read (the calendar page lists none in text).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "une déclaration qui doit être déposée à la direction des services fiscaux lo - cale, dans laquelle il vous appartient d'indiquer le montant des revenus perçus en 2025 par votre foyer fiscal pour la période courant du jour de votre installation dans l’archipel au 31 décembre 2025."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "In Saint-Pierre-et-Miquelon, as at 1 January 2025, an employee pays 9.67% of pay to the local social security scheme (health 2.75%, old age 6.92%, up to the monthly ceiling of €3,925) plus Agirc-Arrco supplementary pension (3.15% to the ceiling, 8.64% above), and the employer 29.086% or 29.486%; a self-employed worker pays 33.94% to 34.34% (health 9%, old age 15.29%, accidents 1.50%, family 8%) plus supplementary pension of 7% and 8%.",
+   "value": {
+    "currency": "EUR",
+    "asAt": "2025-01-01",
+    "monthlyCeiling": 3925,
+    "employee": {
+     "health": 0.0275,
+     "oldAge": 0.0692,
+     "total": 0.0967,
+     "agircArrco": {
+      "tranche1": 0.0315,
+      "tranche2": 0.0864
+     },
+     "ceg": {
+      "tranche1": 0.0086,
+      "tranche2": 0.0108
+     }
+    },
+    "employer": {
+     "health": 0.0625,
+     "family": 0.08,
+     "oldAge": 0.0837,
+     "accidents": 0.015,
+     "unemployment": 0.0405,
+     "total": [
+      0.29086,
+      0.29486
+     ],
+     "agircArrco": {
+      "tranche1": 0.0472,
+      "tranche2": 0.1295
+     }
+    },
+    "selfEmployed": {
+     "health": 0.09,
+     "oldAge": 0.1529,
+     "accidents": 0.015,
+     "family": 0.08,
+     "training": [
+      0.0015,
+      0.0055
+     ],
+     "total": [
+      0.3394,
+      0.3434
+     ],
+     "supplementaryPension": {
+      "toThreshold": 0.07,
+      "threshold": 43891,
+      "above": 0.08,
+      "upTo": 188400
+     },
+     "unemployment": null
+    }
+   },
+   "applies": "Employees and self-employed workers in Saint-Pierre-et-Miquelon; the CLEISS table is dated 1 January 2025 and no 2026 table was found (unemployment 4% from 1 May 2025).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Tableau des cotisations au 1 er janvier 2025 Risques Part patronale Part salariale Plafond mensuel Assurance maladie 6,25 % 2,75 % 1 plafond de sécurité sociale, soit 3 925 € Allocations familiales 8 % - Assurance vieillesse 8,37 % 6,92 % … Total 29,086 ou 29,486 % 9,67 % … Tranche 1 4,72 % 3,15 % 7,87 % … Tranche 2 12,95 % 8,64 % 21,59 % … Assurance maladie-maternité 9,00 % 1 plafond de sécurité sociale, soit 3 925 € Assurance vieillesse 15,29 % Accidents du travail 1,50 % Allocations familiales 8,00 % … Total 33,94 % à 34,34 % … 7 % sur la partie du revenu inférieure à un seuil (43 891 € en 2025) 8 % sur la partie du revenu comprise entre 43 891 € et 4 fois le plafond annuel de la sécurité sociale (188 400 €) en 2025."
+    }
+   ]
+  }
+ ],
+ "country": "PM",
+ "sources": [
+  {
+   "url": "https://www.services-fiscaux975.fr/files/file/Documentation/2026/DSF-CAMPAGNE_IR-2026-Note_accueil_fonctionnaires_sur_l'archipel.pdf",
+   "title": "Note d'accueil, campagne IR 2026 (Direction des services fiscaux de Saint-Pierre-et-Miquelon)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le code général des impôts de métropole n’est pas applicable sur Saint-Pierre et Miquelon. … Les impôts et taxes établis dans l’archipel sont énumérés dans un code spécifique, le code local des impôts. … une déclaration qui doit être déposée à la direction des services fiscaux lo - cale, dans laquelle il vous appartient d'indiquer le montant des revenus perçus en 2025 par votre foyer fiscal pour la période courant du jour de votre installation dans l’archipel au 31 décembre 2025."
+  },
+  {
+   "url": "https://www.services-fiscaux975.fr/files/file/Calculette/Calculette%202026%20revenus%202025/donnees.js?v=20260205",
+   "title": "Calculette impôts sur le revenu de Saint-Pierre-et-Miquelon, données v1.90 du 05/02/2026 (Direction des services fiscaux / DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "10140, // R01:Barème : Plafond de la 1ère tranche … 68300, // R11:Barème : Plafond de la 11e tranche … taux1sal : 10, // P16:Premier abattement sur les salaires … taux2sal : 20, // P17:Deuxième abattement sur les salaires … abatcelib : 550, // P01:Etat civil : Abattement personnes célibataires … tauxnr : 10, // P10:Taux appliqué aux non résidents … impotmininr : 5500, // P09:Base de l'impôt minimum pour les non-résidents"
+  },
+  {
+   "url": "https://www.services-fiscaux975.fr/files/file/Calculette/Calculette%202026%20revenus%202025/cirspm.js?v=20260205",
+   "title": "Calculette impôts sur le revenu de Saint-Pierre-et-Miquelon, fonctions de calcul (Direction des services fiscaux / DGFiP)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "wv += Math.round((wb1 - wb2) * 0.05 * (wi - 1));"
+  },
+  {
+   "url": "https://www.services-fiscaux975.fr/fr/6-questions-frequentes.html",
+   "title": "Questions fréquentes, professionnels (Direction des services fiscaux de Saint-Pierre-et-Miquelon)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Pour les bénéfices non commerciaux dont le chiffre d'affaires est inférieur à 38 000 € : Régime du Micro-BNC : abattement forfaitaire de 35 %"
+  },
+  {
+   "url": "https://www.iedom.fr/IMG/rapport_annuel_iedom_st-pierre-et-miquelon_2021/index-63.html",
+   "title": "IEDOM, Saint-Pierre-et-Miquelon rapport annuel 2021: fiscalité",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Une des principales caractéristiques de la fiscalité locale est l’absence de contributions indirectes telles que la TVA."
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/stpm.html",
+   "title": "Les cotisations à Saint-Pierre-et-Miquelon 2025 (CLEISS, Centre des liaisons européennes et internationales de sécurité sociale)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tableau des cotisations au 1 er janvier 2025 Risques Part patronale Part salariale Plafond mensuel Assurance maladie 6,25 % 2,75 % 1 plafond de sécurité sociale, soit 3 925 € Allocations familiales 8 % - Assurance vieillesse 8,37 % 6,92 % … Total 29,086 ou 29,486 % 9,67 % … Tranche 1 4,72 % 3,15 % 7,87 % … Tranche 2 12,95 % 8,64 % 21,59 % … Assurance maladie-maternité 9,00 % 1 plafond de sécurité sociale, soit 3 925 € Assurance vieillesse 15,29 % Accidents du travail 1,50 % Allocations familiales 8,00 % … Total 33,94 % à 34,34 % … 7 % sur la partie du revenu inférieure à un seuil (43 891 € en 2025) 8 % sur la partie du revenu comprise entre 43 891 € et 4 fois le plafond annuel de la sécurité sociale (188 400 €) en 2025."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The 2026 social contribution rates and ceilings in Saint-Pierre-et-Miquelon (the 2025 table is now found at CLEISS).",
+   "tried": {
+    "institution": "secuspm.com read 2026-11-01: the \"Taux de cotisations\" page carries no rates in its text; no rate document linked. || 2026-11-01 retry: secuspm.com re-checked; CLEISS (French public body for international social security) page stpm.html read: rates 'au 1er janvier 2025', no 2026 table.",
+    "official-register": "No gazette text reached: jo-spm.fr resets the connection from this environment. || 2026-11-01 retry: jo-spm.fr still resets the connection; legifrance.gouv.fr returns HTTP 403 (not read another way).",
+    "web-search": "Searched for the local scheme rates; nothing primary. || 2026-11-01 retry: refused by the tool: the turn's shared web-search budget (200 calls) was used up on 2026-11-01.",
+    "trade-press": "None found. || 2026-11-01 retry: none naming 2026 SPM rates found on reachable pages.",
+    "archive": "web.archive.org resets the connection from this environment. || 2026-11-01 retry: archive.org availability API answers; web.archive.org snapshots return HTTP 403 (http) or reset (https)."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Whether income tax is withheld at source from pay in Saint-Pierre-et-Miquelon, and on what table.",
+   "tried": {
+    "institution": "services-fiscaux975.fr read (calculator, FAQ, note): no withholding at source described. || 2026-11-01 retry: services-fiscaux975.fr pages (already read) describe no withholding at source; CLEISS SPM page covers social contributions only",
+    "official-register": "jo-spm.fr (code local des impôts, délibération 322/2015) refused. || 2026-11-01 retry: jo-spm.fr resets the connection",
+    "web-search": "Searched; nothing. || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "None found. || 2026-11-01 retry: none found",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "year",
+   "sought": "The 2026 return and payment due dates.",
+   "tried": {
+    "institution": "services-fiscaux975.fr calendar page has no dates in its text. || 2026-11-01 retry: services-fiscaux975.fr calendar page (already read) has no dates in its text",
+    "official-register": "jo-spm.fr refused. || 2026-11-01 retry: jo-spm.fr resets the connection",
+    "web-search": "Searched; nothing. || 2026-11-01 retry: refused by the tool on 2026-11-01: 'this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent)'; queries sent and refused this turn: 'Налоговый кодекс Республики Беларусь статья 199 ставки подоходного налога 2026 13 25 процентов' and 'Eswatini Revenue Service PAYE tax tables 1 July 2026'; no search engine was queried any other way",
+    "trade-press": "None. || 2026-11-01 retry: none found",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org's availability API now answers (snapshots of the institution's site exist), but web.archive.org snapshot pages return HTTP 403 over http and reset over https from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

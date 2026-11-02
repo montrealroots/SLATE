@@ -1,0 +1,10068 @@
+{
+ "topic": "languages",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Continue on to the rest of layer 4\"): the languages each of the map's 252 countries and territories speaks, with each language's share of the population and its official status, from Unicode CLDR 49 (released 2026-10-22), the names of the languages in English, and a scale of how well a language is spoken. One research subagent; every territory's list checked by the lead against the saved CLDR 49 supplementalData.xml (codes written in BCP 47, zh_Hant as zh-Hant). AN (the Netherlands Antilles) and CS (Serbia and Montenegro), dissolved, are not in CLDR 49: AN's last list is CLDR 1.8's (2010), CS has none in any release read. The CEFR's descriptors are read from copies (UHR, DAAD) because coe.int refused this environment.",
+ "figures": [
+  {
+   "item": "territory-languages",
+   "finding": "CLDR 49 (released 2026-10-22) lists the languages of 250 of the game's 252 codes, each with the share of the population functional in it (first and second language together, at the fluency needed to use a phone or computer) and, where it has one, its status as official, de facto official or official in a region.",
+   "value": {
+    "codes": 252,
+    "covered": 250,
+    "rows": 1623,
+    "missing": [
+     "AN",
+     "CS"
+    ],
+    "unknown_language_only": [
+     "AQ",
+     "HM"
+    ],
+    "no_official_language": [
+     "AQ",
+     "BV",
+     "HM",
+     "TF"
+    ],
+    "share_unit": "percent of the territory's population; shares overlap and may sum above or below 100",
+    "official_values": [
+     "official",
+     "de_facto_official",
+     "official_regional",
+     null
+    ]
+   },
+   "applies": "Every code in src/world/gazetteer/countries.json except AN and CS; the figures are CLDR's estimates as of release 49.",
+   "use": "Suggest a birthplace's languages from its territory's rows, highest share first, marking official and de facto official ones as the likely first languages; AQ and HM carry only 'und' (no language) and should suggest none.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Each release of the Unicode CLDR is a stable release and may be used as reference material or cited as a normative reference by other specifications."
+    },
+    {
+     "src": 1,
+     "said": "cldr-common-*.zip  contains the common production data (from cldr/common)."
+    },
+    {
+     "src": 2,
+     "said": "<languagePopulation type=\"fr\" populationPercent=\"29\" officialStatus=\"official\" references=\"R1341\"/>"
+    },
+    {
+     "src": 3,
+     "said": "language population percent — an estimate of the number of people who are functional in that language in that country, including both first and second language speakers. The level of fluency is that necessary to use a UI on a computer, smartphone, or similar devices, rather than complete fluency."
+    },
+    {
+     "src": 3,
+     "said": "The percentages may add up to more than 100% due to multilingual populations, or may be less than 100% due to illiteracy or because the data has not yet been gathered or processed. Languages with smaller populations might not be included."
+    },
+    {
+     "src": 3,
+     "said": "official language — as used in CLDR, a language that can generally be used in all communications with a central government."
+    },
+    {
+     "src": 3,
+     "said": "official regional language — a language that is official ( de jure or de facto ) in a major region within a country, but does not qualify as an official language of the country as a whole."
+    },
+    {
+     "src": 2,
+     "said": "<territory type=\"AQ\" gdp=\"21640000\" literacyPercent=\"99\" population=\"300\">"
+    }
+   ]
+  },
+  {
+   "item": "territory-languages-AN-archive",
+   "finding": "CLDR 1.8 (2010), the last release found that still lists the Netherlands Antilles, gives Papiamento 81% (de facto official), Dutch 1.8% (official) and English 0.79%, on a population of 227,049.",
+   "value": {
+    "AN": [
+     {
+      "lang": "pap",
+      "share": 81.0,
+      "official": "de_facto_official"
+     },
+     {
+      "lang": "nl",
+      "share": 1.8,
+      "official": "official"
+     },
+     {
+      "lang": "en",
+      "share": 0.79,
+      "official": null
+     }
+    ],
+    "population": 227049,
+    "release": "CLDR 1.8.0, core.zip dated 2010-03-26"
+   },
+   "applies": "The Netherlands Antilles (AN), dissolved in 2010; CLDR 49 maps AN to Curaçao, Sint Maarten and the Caribbean Netherlands (CW SX BQ).",
+   "use": "If the game keeps AN as a birthplace for lives born before 2010, read these rows, or the successors' CLDR 49 rows in the order CLDR gives (CW first); the lead decides.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "2010-03-26 12:21"
+    },
+    {
+     "src": 5,
+     "said": "<languagePopulation type=\"pap\" populationPercent=\"81\" officialStatus=\"de_facto_official\"/>"
+    },
+    {
+     "src": 6,
+     "said": "<territoryAlias type=\"AN\" replacement=\"CW SX BQ\" reason=\"deprecated\"/>"
+    }
+   ]
+  },
+  {
+   "item": "language-names",
+   "finding": "Of the 798 language codes the territories use, CLDR 49's English file names 530 directly and 37 more by its own pattern 'Language (Script)'; the other 231 (rare languages) have no CLDR English name and are named from the IANA Language Subtag Registry, the register BCP 47 codes come from.",
+   "value": {
+    "names": {
+     "aa": "Afar",
+     "ab": "Abkhazian",
+     "abq": "Abaza",
+     "abq-Latn": "Abaza (Latin)",
+     "abr": "Abron",
+     "ace": "Acehnese",
+     "ach": "Acoli",
+     "acr": "Achi",
+     "ada": "Adangme",
+     "ady": "Adyghe",
+     "aeb": "Tunisian Arabic",
+     "af": "Afrikaans",
+     "agq": "Aghem",
+     "agu": "Aguacateco",
+     "ak": "Akan",
+     "aln": "Gheg Albanian",
+     "alt": "Southern Altai",
+     "am": "Amharic",
+     "amo": "Amo",
+     "an": "Aragonese",
+     "ann": "Obolo",
+     "aoz": "Uab Meto",
+     "apc": "Levantine Arabic",
+     "apd": "Sudanese Arabic",
+     "aqt": "Angaité",
+     "ar": "Arabic",
+     "arn": "Mapuche",
+     "aro": "Araona",
+     "arq": "Algerian Arabic",
+     "ars": "Najdi Arabic",
+     "ary": "Moroccan Arabic",
+     "arz": "Egyptian Arabic",
+     "as": "Assamese",
+     "asa": "Asu",
+     "ast": "Asturian",
+     "atj": "Atikamekw",
+     "av": "Avaric",
+     "awa": "Awadhi",
+     "ay": "Aymara",
+     "ayo": "Ayoreo",
+     "az": "Azerbaijani",
+     "az-Arab": "Azerbaijani (Arabic)",
+     "az-Cyrl": "Azerbaijani (Cyrillic)",
+     "ba": "Bashkir",
+     "bal": "Baluchi",
+     "ban": "Balinese",
+     "ban-Bali": "Balinese (Balinese)",
+     "bap": "Bantawa",
+     "bar": "Bavarian",
+     "bas": "Basaa",
+     "bax": "Bamun",
+     "bbc": "Batak Toba",
+     "bbj": "Ghomala",
+     "bci": "Baoulé",
+     "be": "Belarusian",
+     "bej": "Beja",
+     "bem": "Bemba",
+     "bew": "Betawi",
+     "bez": "Bena",
+     "bfd": "Bafut",
+     "bfq": "Badaga",
+     "bft": "Balti",
+     "bfy": "Bagheli",
+     "bg": "Bulgarian",
+     "bgc": "Haryanvi",
+     "bgn": "Western Balochi",
+     "bgx": "Balkan Gagauz Turkish",
+     "bhb": "Bhili",
+     "bhi": "Bhilali",
+     "bho": "Bhojpuri",
+     "bi": "Bislama",
+     "bik": "Bikol",
+     "bin": "Bini",
+     "bjj": "Kanauji",
+     "bjn": "Banjar",
+     "bjt": "Balanta-Ganja",
+     "bkm": "Kom",
+     "bku": "Buhid",
+     "bla": "Siksiká",
+     "blo": "Anii",
+     "blt": "Tai Dam",
+     "bm": "Bambara",
+     "bm-Nkoo": "Bambara (N’Ko)",
+     "bmq": "Bomu",
+     "bn": "Bangla",
+     "bo": "Tibetan",
+     "bpy": "Bishnupriya",
+     "bqi": "Bakhtiari",
+     "br": "Breton",
+     "bra": "Braj",
+     "brh": "Brahui",
+     "brx": "Bodo",
+     "bs": "Bosnian",
+     "bs-Cyrl": "Bosnian (Cyrillic)",
+     "bsc": "Bassari",
+     "bsq": "Bassa",
+     "bss": "Akoose",
+     "bto": "Rinconada Bikol",
+     "btv": "Bateri",
+     "bua": "Buriat",
+     "buc": "Bushi",
+     "bug": "Buginese",
+     "bum": "Bulu",
+     "bvb": "Bube",
+     "byn": "Blin",
+     "byv": "Medumba",
+     "bza": "Bandi",
+     "bze": "Jenaama Bozo",
+     "bzj": "Belize Kriol English",
+     "ca": "Catalan",
+     "caa": "Chortí",
+     "cab": "Garifuna",
+     "cac": "Chuj",
+     "cad": "Caddo",
+     "cag": "Nivaclé",
+     "cak": "Kaqchikel",
+     "cch": "Atsam",
+     "ccp": "Chakma",
+     "ccr": "Cacaopera",
+     "cdo": "Min Dong Chinese",
+     "ce": "Chechen",
+     "ceb": "Cebuano",
+     "ceg": "Chamacoco",
+     "cgg": "Chiga",
+     "ch": "Chamorro",
+     "chk": "Chuukese",
+     "chm": "Mari",
+     "cho": "Choctaw",
+     "chp": "Chipewyan",
+     "chr": "Cherokee",
+     "cic": "Chickasaw",
+     "cja": "Western Cham",
+     "cjm": "Eastern Cham",
+     "ckb": "Central",
+     "ckz": "Cakchiquel-Quiché Mixed Language",
+     "clc": "Chilcotin",
+     "co": "Corsican",
+     "cop": "Coptic",
+     "cps": "Capiznon",
+     "cpx": "Pu-Xian Chinese",
+     "cr": "Cree",
+     "crg": "Michif",
+     "crh": "Crimean Tatar",
+     "crk": "Plains Cree",
+     "crl": "Northern East Cree",
+     "crs": "Seselwa Creole French",
+     "cs": "Czech",
+     "csb": "Kashubian",
+     "csw": "Swampy Cree",
+     "cu": "Church Slavic",
+     "cv": "Chuvash",
+     "cy": "Welsh",
+     "da": "Danish",
+     "dak": "Dakota",
+     "dar": "Dargwa",
+     "dav": "Taita",
+     "dcc": "Deccan",
+     "de": "German",
+     "den": "Slave",
+     "dgr": "Dogrib",
+     "dje": "Zarma",
+     "dnj": "Dan",
+     "doi": "Dogri",
+     "dsb": "Lower Sorbian",
+     "dtm": "Tomo Kan Dogon",
+     "dtp": "Central Dusun",
+     "dty": "Dotyali",
+     "dua": "Duala",
+     "dv": "Divehi",
+     "dyo": "Jola-Fonyi",
+     "dyu": "Dyula",
+     "dz": "Dzongkha",
+     "ebu": "Embu",
+     "ecy": "Eteocypriot",
+     "ee": "Ewe",
+     "efi": "Efik",
+     "egl": "Emilian",
+     "el": "Greek",
+     "en": "English",
+     "en-Shaw": "English (Shavian)",
+     "enl": "Enlhet",
+     "enx": "Enxet",
+     "eo": "Esperanto",
+     "es": "Spanish",
+     "esu": "Central Yupik",
+     "et": "Estonian",
+     "eu": "Basque",
+     "ewo": "Ewondo",
+     "ext": "Extremaduran",
+     "fa": "Persian",
+     "fan": "Fang",
+     "fbl": "West Albay Bikol",
+     "ff": "Fula",
+     "ff-Adlm": "Fula (Adlam)",
+     "ffm": "Maasina Fulfulde",
+     "fi": "Finnish",
+     "fia": "Nobiin",
+     "fil": "Filipino",
+     "fit": "Tornedalen Finnish",
+     "fj": "Fijian",
+     "fo": "Faroese",
+     "fon": "Fon",
+     "fr": "French",
+     "frc": "Cajun French",
+     "frp": "Arpitan",
+     "frr": "Northern Frisian",
+     "frs": "Eastern Frisian",
+     "fud": "East Futuna",
+     "fuq": "Central-Eastern Niger Fulfulde",
+     "fur": "Friulian",
+     "fuv": "Nigerian Fulfulde",
+     "fvr": "Fur",
+     "fy": "Western Frisian",
+     "ga": "Irish",
+     "gaa": "Ga",
+     "gag": "Gagauz",
+     "gan": "Gan Chinese",
+     "gay": "Gayo",
+     "gbm": "Garhwali",
+     "gbz": "Zoroastrian Dari",
+     "gcr": "Guianese Creole French",
+     "gd": "Scottish Gaelic",
+     "gez": "Geez",
+     "gil": "Gilbertese",
+     "gjk": "Kachi Koli",
+     "gju": "Gujari",
+     "gl": "Galician",
+     "glk": "Gilaki",
+     "gmy": "Mycenaean Greek",
+     "gn": "Guarani",
+     "gon": "Gondi",
+     "gor": "Gorontalo",
+     "gos": "Gronings",
+     "grb": "Grebo",
+     "grc": "Ancient Greek",
+     "grr": "Taznatit",
+     "grt": "Garo",
+     "gsw": "Swiss German",
+     "gu": "Gujarati",
+     "gub": "Guajajára",
+     "guc": "Wayuu",
+     "gun": "Mbyá Guaraní",
+     "guq": "Aché",
+     "gur": "Frafra",
+     "guz": "Gusii",
+     "gv": "Manx",
+     "gva": "Guana (Paraguay)",
+     "gvr": "Gurung",
+     "gwi": "Gwichʼin",
+     "ha": "Hausa",
+     "ha-Arab": "Hausa (Arabic)",
+     "hak": "Hakka Chinese",
+     "hak-Hant": "Hakka Chinese (Traditional)",
+     "haw": "Hawaiian",
+     "haz": "Hazaragi",
+     "he": "Hebrew",
+     "hi": "Hindi",
+     "hi-Latn": "Hindi (Latin)",
+     "hif": "Fiji Hindi",
+     "hil": "Hiligaynon",
+     "hnd": "Southern Hindko",
+     "hne": "Chhattisgarhi",
+     "hnj": "Hmong Njua",
+     "hnn": "Hanunoo",
+     "hno": "Northern Hindko",
+     "ho": "Hiri Motu",
+     "hoc": "Ho",
+     "hoj": "Hadothi",
+     "hr": "Croatian",
+     "hrx": "Hunsrik",
+     "hsb": "Upper Sorbian",
+     "hsn": "Xiang Chinese",
+     "ht": "Haitian Creole",
+     "hu": "Hungarian",
+     "hur": "Halkomelem",
+     "hy": "Armenian",
+     "hz": "Herero",
+     "ia": "Interlingua",
+     "iba": "Iban",
+     "ibb": "Ibibio",
+     "id": "Indonesian",
+     "ie": "Interlingue",
+     "ife": "Ifè",
+     "ig": "Igbo",
+     "ii": "Sichuan Yi",
+     "ik": "Inupiaq",
+     "ilo": "Iloko",
+     "inh": "Ingush",
+     "io": "Ido",
+     "is": "Icelandic",
+     "it": "Italian",
+     "itz": "Itzá",
+     "iu": "Inuktitut",
+     "iu-Latn": "Inuktitut (Latin)",
+     "ixl": "Ixil",
+     "izh": "Ingrian",
+     "ja": "Japanese",
+     "jac": "Popti'",
+     "jam": "Jamaican Creole English",
+     "jbo": "Lojban",
+     "jgo": "Ngomba",
+     "jmc": "Machame",
+     "jml": "Jumli",
+     "jut": "Jutish",
+     "jv": "Javanese",
+     "ka": "Georgian",
+     "kaa": "Kara-Kalpak",
+     "kab": "Kabyle",
+     "kac": "Kachin",
+     "kaj": "Jju",
+     "kam": "Kamba",
+     "kao": "Xaasongaxango",
+     "kaw": "Kawi",
+     "kbd": "Kabardian",
+     "kcg": "Tyap",
+     "kck": "Kalanga",
+     "kde": "Makonde",
+     "kdt": "Kuy",
+     "kea": "Kabuverdianu",
+     "kek": "Qʼeqchiʼ",
+     "ken": "Kenyang",
+     "kfo": "Koro",
+     "kfr": "Kachhi",
+     "kfy": "Kumaoni",
+     "kg": "Kongo",
+     "kge": "Komering",
+     "kgp": "Kaingang",
+     "kha": "Khasi",
+     "khb": "Lü",
+     "khn": "Khandesi",
+     "khq": "Koyra Chiini",
+     "kht": "Khamti",
+     "khw": "Khowar",
+     "ki": "Kikuyu",
+     "kiu": "Kirmanjki",
+     "kj": "Kuanyama",
+     "kjb": "Q'anjob'al",
+     "kjg": "Khmu",
+     "kk": "Kazakh",
+     "kk-Arab": "Kazakh (Arabic)",
+     "kkj": "Kako",
+     "kl": "Kalaallisut",
+     "kln": "Kalenjin",
+     "km": "Khmer",
+     "kmb": "Kimbundu",
+     "kn": "Kannada",
+     "knf": "Mankanya",
+     "knj": "Western Kanjobal",
+     "knn": "Konkani (individual language)",
+     "ko": "Korean",
+     "koi": "Komi-Permyak",
+     "kok": "Konkani",
+     "kos": "Kosraean",
+     "kpe": "Kpelle",
+     "kqn": "Kaonde",
+     "krc": "Karachay-Balkar",
+     "kri": "Krio",
+     "krj": "Kinaray-a",
+     "krl": "Karelian",
+     "kro": "Kru languages",
+     "kru": "Kurukh",
+     "ks": "Kashmiri",
+     "ksb": "Shambala",
+     "ksf": "Bafia",
+     "ksh": "Colognian",
+     "kss": "Southern Kisi",
+     "ku": "Kurmanji",
+     "ku-Arab": "Kurmanji (Arabic)",
+     "ku-Cyrl": "Kurmanji (Cyrillic)",
+     "kum": "Kumyk",
+     "kv": "Komi",
+     "kvr": "Kerinci",
+     "kvx": "Parkari Koli",
+     "kw": "Cornish",
+     "kwk": "Kwakʼwala",
+     "kxm": "Northern Khmer",
+     "kxp": "Wadiyara Koli",
+     "kxv": "Kuvi",
+     "ky": "Kyrgyz",
+     "ky-Arab": "Kyrgyz (Arabic)",
+     "ky-Latn": "Kyrgyz (Latin)",
+     "la": "Latin",
+     "lad": "Ladino",
+     "lag": "Langi",
+     "lah": "Western Panjabi",
+     "laj": "Lango (Uganda)",
+     "lb": "Luxembourgish",
+     "lbe": "Lak",
+     "lbw": "Tolaki",
+     "lcp": "Western Lawa",
+     "leb": "Lala-Bisa",
+     "len": "Lenca",
+     "lep": "Lepcha",
+     "lez": "Lezghian",
+     "lg": "Ganda",
+     "li": "Limburgish",
+     "lif": "Limbu",
+     "lij": "Ligurian",
+     "lil": "Lillooet",
+     "lir": "Liberian English",
+     "lis": "Lisu",
+     "ljp": "Lampung Api",
+     "lki": "Laki",
+     "lkt": "Lakota",
+     "lld": "Ladin",
+     "lmn": "Lambadi",
+     "lmo": "Lombard",
+     "ln": "Lingala",
+     "lo": "Lao",
+     "lol": "Mongo",
+     "loz": "Lozi",
+     "lrc": "Northern Luri",
+     "lt": "Lithuanian",
+     "ltg": "Latgalian",
+     "lu": "Luba-Katanga",
+     "lua": "Luba-Lulua",
+     "lue": "Luvale",
+     "lun": "Lunda",
+     "luo": "Luo",
+     "luy": "Luyia",
+     "luz": "Southern Luri",
+     "lv": "Latvian",
+     "lwl": "Eastern Lawa",
+     "lzh": "Literary Chinese",
+     "lzz": "Laz",
+     "lzz-Geor": "Laz (Georgian)",
+     "mad": "Madurese",
+     "maf": "Mafa",
+     "mag": "Magahi",
+     "mai": "Maithili",
+     "mak": "Makasar",
+     "mam": "Mam",
+     "man": "Mandingo",
+     "man-Nkoo": "Mandingo (N’Ko)",
+     "mas": "Masai",
+     "maz": "Central Mazahua",
+     "mca": "Maca",
+     "mdf": "Moksha",
+     "mdh": "Maguindanaon",
+     "mdr": "Mandar",
+     "men": "Mende",
+     "mer": "Meru",
+     "mev": "Mano",
+     "mey": "Hassaniyya",
+     "mey-Latn": "Hassaniyya (Latin)",
+     "mfa": "Pattani Malay",
+     "mfe": "Morisyen",
+     "mfv": "Mandjak",
+     "mg": "Malagasy",
+     "mgh": "Makhuwa-Meetto",
+     "mgo": "Metaʼ",
+     "mgp": "Magar",
+     "mgy": "Mbunga",
+     "mh": "Marshallese",
+     "mhn": "Mòcheno",
+     "mi": "Māori",
+     "mic": "Mi'kmaw",
+     "min": "Minangkabau",
+     "mk": "Macedonian",
+     "ml": "Malayalam",
+     "mls": "Masalit",
+     "mn": "Mongolian",
+     "mn-Mong": "Mongolian (Mongolian)",
+     "mni": "Manipuri",
+     "mnp": "Min Bei Chinese",
+     "mnw": "Mon",
+     "moe": "Innu-aimun",
+     "moh": "Mohawk",
+     "mop": "Mopán Maya",
+     "mos": "Mossi",
+     "mr": "Marathi",
+     "mrh": "Mara",
+     "mrj": "Western Mari",
+     "mro": "Mru",
+     "ms": "Malay",
+     "ms-Arab": "Malay (Arabic)",
+     "mt": "Maltese",
+     "mtr": "Mewari",
+     "mua": "Mundang",
+     "mus": "Muscogee",
+     "mvy": "Indus Kohistani",
+     "mwk": "Kita Maninkakan",
+     "mwr": "Marwari",
+     "mwv": "Mentawai",
+     "mww": "Hmong Daw",
+     "mxc": "Manyika",
+     "my": "Burmese",
+     "myv": "Erzya",
+     "myx": "Masaaba",
+     "mzb": "Tumzabt",
+     "mzn": "Mazanderani",
+     "na": "Nauru",
+     "nan": "Min Nan Chinese",
+     "nan-Hant": "Min Nan Chinese (Traditional)",
+     "nap": "Neapolitan",
+     "naq": "Nama",
+     "nb": "Norwegian Bokmål",
+     "nch": "Central Huasteca Nahuatl",
+     "nd": "North Ndebele",
+     "ndc": "Ndau",
+     "nds": "Low German",
+     "ne": "Nepali",
+     "new": "Newari",
+     "ng": "Ndonga",
+     "ngl": "Lomwe",
+     "nhd": "Chiripá",
+     "nhe": "Eastern Huasteca Nahuatl",
+     "nhw": "Western Huasteca Nahuatl",
+     "nij": "Ngaju",
+     "niu": "Niuean",
+     "njo": "Ao Naga",
+     "nl": "Dutch",
+     "nmg": "Kwasio",
+     "nn": "Norwegian Nynorsk",
+     "nnh": "Ngiemboon",
+     "no": "Norwegian",
+     "nod": "Northern Thai",
+     "noe": "Nimadi",
+     "nqo": "N’Ko",
+     "nr": "South Ndebele",
+     "nse": "Nsenga",
+     "nsk": "Naskapi",
+     "nso": "Northern Sotho",
+     "nus": "Nuer",
+     "nv": "Navajo",
+     "nxq": "Naxi",
+     "ny": "Nyanja",
+     "nym": "Nyamwezi",
+     "nyn": "Nyankole",
+     "nzi": "Nzima",
+     "oc": "Occitan",
+     "oj": "Ojibwa",
+     "ojs": "Oji-Cree",
+     "ojw": "Western Ojibwa",
+     "oka": "Okanagan",
+     "om": "Oromo",
+     "or": "Odia",
+     "os": "Ossetic",
+     "osa": "Osage",
+     "pa": "Punjabi",
+     "pa-Arab": "Punjabi (Arabic)",
+     "pag": "Pangasinan",
+     "pam": "Pampanga",
+     "pap": "Papiamento",
+     "pau": "Palauan",
+     "pcd": "Picard",
+     "pcm": "Nigerian Pidgin",
+     "pdc": "Pennsylvania German",
+     "pdt": "Plautdietsch",
+     "pfl": "Palatine German",
+     "pi": "Pali",
+     "pi-Deva": "Pali (Devanagari)",
+     "pi-Mymr": "Pali (Myanmar)",
+     "pi-Sinh": "Pali (Sinhala)",
+     "pi-Thai": "Pali (Thai)",
+     "pis": "Pijin",
+     "pko": "Pökoot",
+     "pl": "Polish",
+     "pms": "Piedmontese",
+     "pnt": "Pontic",
+     "pnt-Cyrl": "Pontic (Cyrillic)",
+     "pnt-Latn": "Pontic (Latin)",
+     "poc": "Poqomam",
+     "poh": "Poqomchi'",
+     "pon": "Pohnpeian",
+     "ppl": "Pipil",
+     "pqm": "Maliseet-Passamaquoddy",
+     "prd": "Parsi-Dari",
+     "prg": "Prussian",
+     "ps": "Pashto",
+     "pt": "Portuguese",
+     "pta": "Pai Tavytera",
+     "puu": "Punu",
+     "qu": "Quechua",
+     "quc": "Kʼicheʼ",
+     "qug": "Chimborazo Highland Quichua",
+     "qum": "Sipacapense",
+     "quv": "Sacapulteco",
+     "raj": "Rajasthani",
+     "rcf": "Réunion Creole French",
+     "rej": "Rejang",
+     "rgn": "Romagnol",
+     "rhg": "Rohingya",
+     "ria": "Riang (India)",
+     "rif": "Riffian",
+     "rif-Tfng": "Riffian (Tifinagh)",
+     "rjs": "Rajbanshi",
+     "rkt": "Rangpuri",
+     "rm": "Romansh",
+     "rmf": "Kalo Finnish Romani",
+     "rmo": "Sinte Romani",
+     "rmt": "Domari",
+     "rmu": "Tavringer Romani",
+     "rn": "Rundi",
+     "rng": "Ronga",
+     "ro": "Romanian",
+     "rob": "Tae'",
+     "rof": "Rombo",
+     "rtm": "Rotuman",
+     "ru": "Russian",
+     "rue": "Rusyn",
+     "rug": "Roviana",
+     "rw": "Kinyarwanda",
+     "rwk": "Rwa",
+     "ryu": "Central Okinawan",
+     "sa": "Sanskrit",
+     "saf": "Safaliba",
+     "sah": "Yakut",
+     "saq": "Samburu",
+     "sas": "Sasak",
+     "sat": "Santali",
+     "sav": "Saafi-Saafi",
+     "saz": "Sourashtra",
+     "sbp": "Sangu",
+     "sc": "Sardinian",
+     "sck": "Sadri",
+     "scn": "Sicilian",
+     "sco": "Scots",
+     "sd": "Sindhi",
+     "sd-Deva": "Sindhi (Devanagari)",
+     "sdc": "Sassarese Sardinian",
+     "sdh": "Southern",
+     "se": "Northern Sami",
+     "sef": "Cebaara Senoufo",
+     "seh": "Sena",
+     "sei": "Seri",
+     "ses": "Koyraboro Senni",
+     "sg": "Sango",
+     "sgs": "Samogitian",
+     "shi": "Tachelhit",
+     "shi-Latn": "Tachelhit (Latin)",
+     "shn": "Shan",
+     "si": "Sinhala",
+     "sid": "Sidamo",
+     "sk": "Slovak",
+     "skr": "Saraiki",
+     "sl": "Slovenian",
+     "sli": "Lower Silesian",
+     "sly": "Selayar",
+     "sm": "Samoan",
+     "sma": "Southern Sami",
+     "smj": "Lule Sami",
+     "smn": "Inari Sami",
+     "sms": "Skolt Sami",
+     "sn": "Shona",
+     "snf": "Noon",
+     "snk": "Soninke",
+     "so": "Somali",
+     "sou": "Southern Thai",
+     "spn": "Sanapaná",
+     "sq": "Albanian",
+     "sr": "Serbian",
+     "sr-Latn": "Serbian (Latin)",
+     "srn": "Sranan Tongo",
+     "srr": "Serer",
+     "srx": "Sirmauri",
+     "ss": "Swati",
+     "ssy": "Saho",
+     "st": "Southern Sotho",
+     "stq": "Saterland Frisian",
+     "stu": "Samtao",
+     "stu-Tale": "Samtao (Tai Le)",
+     "su": "Sundanese",
+     "suk": "Sukuma",
+     "sus": "Susu",
+     "suz": "Sunwar",
+     "sv": "Swedish",
+     "sw": "Swahili",
+     "swb": "Comorian",
+     "swg": "Swabian",
+     "swv": "Shekhawati",
+     "sxn": "Sangir",
+     "syl": "Sylheti",
+     "syr": "Syriac",
+     "szl": "Silesian",
+     "ta": "Tamil",
+     "taj": "Eastern Tamang",
+     "tbw": "Tagbanwa",
+     "tcy": "Tulu",
+     "tdd": "Tai Nüa",
+     "tdg": "Western Tamang",
+     "tdh": "Thulung",
+     "te": "Telugu",
+     "tem": "Timne",
+     "teo": "Teso",
+     "tet": "Tetum",
+     "tg": "Tajik",
+     "tg-Arab": "Tajik (Arabic)",
+     "th": "Thai",
+     "thl": "Dangaura Tharu",
+     "thq": "Kochila Tharu",
+     "thr": "Rana Tharu",
+     "ti": "Tigrinya",
+     "tig": "Tigre",
+     "tiv": "Tiv",
+     "tk": "Turkmen",
+     "tkl": "Tokelauan",
+     "tkr": "Tsakhur",
+     "tkt": "Kathoriya Tharu",
+     "tly": "Talysh",
+     "tmf": "Toba-Maskoy",
+     "tmh": "Tamashek",
+     "tn": "Tswana",
+     "tnr": "Ménik",
+     "to": "Tongan",
+     "tog": "Nyasa Tonga",
+     "toi": "Tonga (Zambia)",
+     "tpi": "Tok Pisin",
+     "tr": "Turkish",
+     "tru": "Turoyo",
+     "trv": "Taroko",
+     "trw": "Torwali",
+     "ts": "Tsonga",
+     "tsd": "Tsakonian",
+     "tsg": "Tausug",
+     "tsj": "Tshangla",
+     "tt": "Tatar",
+     "ttc": "Tektiteko",
+     "ttj": "Tooro",
+     "tts": "Northeastern Thai",
+     "ttt": "Muslim Tat",
+     "tum": "Tumbuka",
+     "tvl": "Tuvalu",
+     "twq": "Tasawaq",
+     "ty": "Tahitian",
+     "tyv": "Tuvinian",
+     "tzj": "Tz'utujil",
+     "tzm": "Central Atlas Tamazight",
+     "udm": "Udmurt",
+     "ug": "Uyghur",
+     "ug-Cyrl": "Uyghur (Cyrillic)",
+     "uk": "Ukrainian",
+     "uli": "Ulithian",
+     "umb": "Umbundu",
+     "und": "Unknown language",
+     "unr": "Mundari",
+     "unr-Deva": "Mundari (Devanagari)",
+     "unx": "Munda",
+     "ur": "Urdu",
+     "usp": "Uspanteco",
+     "uz": "Uzbek",
+     "uz-Arab": "Uzbek (Arabic)",
+     "uz-Cyrl": "Uzbek (Cyrillic)",
+     "vai": "Vai",
+     "vai-Latn": "Vai (Latin)",
+     "ve": "Venda",
+     "vec": "Venetian",
+     "vep": "Veps",
+     "vi": "Vietnamese",
+     "vic": "Virgin Islands Creole English",
+     "vls": "West Flemish",
+     "vmf": "Main-Franconian",
+     "vmw": "Makhuwa",
+     "vot": "Votic",
+     "vro": "Võro",
+     "vun": "Vunjo",
+     "wa": "Walloon",
+     "wae": "Walser",
+     "wal": "Wolaytta",
+     "war": "Waray",
+     "wbp": "Warlpiri",
+     "wbq": "Waddar",
+     "wbr": "Wagdi",
+     "wls": "Wallisian",
+     "wni": "Ndzwani Comorian",
+     "wo": "Wolof",
+     "wsg": "Adilabad Gondi",
+     "wtm": "Mewati",
+     "wuu": "Wu Chinese",
+     "xal": "Kalmyk",
+     "xav": "Xavánte",
+     "xdq": "Kaitag",
+     "xh": "Xhosa",
+     "xin": "Xinca",
+     "xmf": "Mingrelian",
+     "xnr": "Kangri",
+     "xog": "Soga",
+     "xsr": "Sherpa",
+     "yao": "Yao",
+     "yap": "Yapese",
+     "yav": "Yangben",
+     "ybb": "Yemba",
+     "yi": "Yiddish",
+     "yo": "Yoruba",
+     "yrl": "Nheengatu",
+     "yua": "Yucateco",
+     "yue": "Cantonese",
+     "yue-Hans": "Cantonese (Simplified)",
+     "za": "Zhuang",
+     "zag": "Zaghawa",
+     "zdj": "Ngazidja Comorian",
+     "zea": "Zeelandic",
+     "zgh": "Standard Moroccan Tamazight",
+     "zh": "Chinese",
+     "zh-Hant": "Traditional Chinese",
+     "zmi": "Negeri Sembilan Malay",
+     "zu": "Zulu",
+     "zza": "Zaza"
+    },
+    "source_of_each": {
+     "cldr-en": "CLDR 49 en.xml <languages>",
+     "cldr-en-pattern": "CLDR 49 en.xml language + script names joined by its localePattern '{0} ({1})'",
+     "iana": "IANA registry first Description"
+    },
+    "from_iana": [
+     "abq",
+     "abq-Latn",
+     "abr",
+     "acr",
+     "agu",
+     "amo",
+     "aoz",
+     "apc",
+     "apd",
+     "aqt",
+     "ayo",
+     "bap",
+     "bci",
+     "bft",
+     "bfy",
+     "bgx",
+     "bhb",
+     "bhi",
+     "bjj",
+     "bjt",
+     "bku",
+     "bmq",
+     "bsc",
+     "bsq",
+     "bto",
+     "btv",
+     "buc",
+     "bvb",
+     "bza",
+     "bze",
+     "bzj",
+     "caa",
+     "cab",
+     "cac",
+     "cag",
+     "cak",
+     "ccr",
+     "cdo",
+     "ceg",
+     "cja",
+     "cjm",
+     "ckz",
+     "cpx",
+     "dcc",
+     "dnj",
+     "dtm",
+     "dty",
+     "ecy",
+     "enl",
+     "enx",
+     "fbl",
+     "ffm",
+     "fia",
+     "fud",
+     "fuq",
+     "fuv",
+     "fvr",
+     "gbm",
+     "gcr",
+     "gjk",
+     "gju",
+     "gmy",
+     "gos",
+     "grr",
+     "grt",
+     "gub",
+     "gun",
+     "guq",
+     "gva",
+     "gvr",
+     "haz",
+     "hnd",
+     "hne",
+     "hnn",
+     "hno",
+     "hoc",
+     "hoj",
+     "hrx",
+     "ife",
+     "itz",
+     "ixl",
+     "jac",
+     "jml",
+     "kao",
+     "kck",
+     "kdt",
+     "kfr",
+     "kfy",
+     "kge",
+     "khb",
+     "khn",
+     "kht",
+     "kjb",
+     "kjg",
+     "knf",
+     "knj",
+     "knn",
+     "kqn",
+     "kro",
+     "kss",
+     "kvr",
+     "kvx",
+     "kxm",
+     "kxp",
+     "laj",
+     "lbe",
+     "lbw",
+     "lcp",
+     "leb",
+     "len",
+     "lep",
+     "lif",
+     "lir",
+     "lis",
+     "ljp",
+     "lki",
+     "lmn",
+     "lue",
+     "luz",
+     "lwl",
+     "mam",
+     "maz",
+     "mca",
+     "mdh",
+     "mev",
+     "mey",
+     "mey-Latn",
+     "mfa",
+     "mfv",
+     "mgp",
+     "mgy",
+     "mhn",
+     "mls",
+     "mnp",
+     "mnw",
+     "mop",
+     "mrh",
+     "mro",
+     "mtr",
+     "mvy",
+     "mwk",
+     "mww",
+     "mxc",
+     "myx",
+     "mzb",
+     "nch",
+     "ndc",
+     "ngl",
+     "nhd",
+     "nhe",
+     "nhw",
+     "nij",
+     "nod",
+     "noe",
+     "nse",
+     "nsk",
+     "nxq",
+     "pko",
+     "poc",
+     "poh",
+     "ppl",
+     "prd",
+     "pta",
+     "puu",
+     "qum",
+     "quv",
+     "rcf",
+     "ria",
+     "rjs",
+     "rkt",
+     "rmf",
+     "rmo",
+     "rmt",
+     "rmu",
+     "rng",
+     "rob",
+     "ryu",
+     "saf",
+     "sav",
+     "sck",
+     "sef",
+     "skr",
+     "snf",
+     "sou",
+     "spn",
+     "srx",
+     "stu",
+     "stu-Tale",
+     "suz",
+     "swg",
+     "swv",
+     "sxn",
+     "syl",
+     "taj",
+     "tbw",
+     "tdd",
+     "tdg",
+     "tdh",
+     "thl",
+     "thq",
+     "thr",
+     "tkt",
+     "tmf",
+     "tnr",
+     "toi",
+     "tsg",
+     "tsj",
+     "ttc",
+     "ttj",
+     "tts",
+     "tzj",
+     "uli",
+     "unr",
+     "unr-Deva",
+     "unx",
+     "usp",
+     "vic",
+     "wbq",
+     "wbr",
+     "wls",
+     "wni",
+     "wsg",
+     "wtm",
+     "xav",
+     "xdq",
+     "xin",
+     "xsr",
+     "yua",
+     "zag",
+     "zdj",
+     "zmi"
+    ],
+    "counts": {
+     "cldr-en": 530,
+     "cldr-en-pattern": 37,
+     "iana": 231
+    }
+   },
+   "applies": "Every language code in the territories object (BCP 47, script subtags hyphenated), including 'und' ('Unknown language').",
+   "use": "Show a language by this name; CLDR's own names win and the IANA ones fill only the codes CLDR leaves unnamed.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "<language type=\"pap\">Papiamento</language>"
+    },
+    {
+     "src": 7,
+     "said": "<localePattern>{0} ({1})</localePattern>"
+    },
+    {
+     "src": 8,
+     "said": "Subtag: mwk\nDescription: Kita Maninkakan"
+    }
+   ]
+  },
+  {
+   "item": "levels",
+   "finding": "The CEFR's global scale has six levels in three bands: A1 Breakthrough and A2 Waystage (Basic User), B1 Threshold and B2 Vantage (Independent User), C1 Effective Operational Proficiency and C2 Mastery (Proficient User), each with a short descriptor of what the speaker can do.",
+   "value": {
+    "cefr": [
+     {
+      "level": "A1",
+      "band": "Basic User",
+      "name": "Breakthrough",
+      "descriptor": "Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. Can introduce him/herself and others and can ask and answer questions about personal details such as where he/she lives, people he/she knows and things he/she has. Can interact in a simple way provided the other person talks slowly and clearly and is prepared to help."
+     },
+     {
+      "level": "A2",
+      "band": "Basic User",
+      "name": "Waystage",
+      "descriptor": "Can understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. very basic personal and family information, shopping, local geography, employment). Can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters. Can describe in simple terms aspects of his/her background, immediate environment and matters in areas of immediate need."
+     },
+     {
+      "level": "B1",
+      "band": "Independent User",
+      "name": "Threshold",
+      "descriptor": "Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc. Can deal with most situations likely to arise whilst travelling in an area where the language is spoken. Can produce simple connected text on topics which are familiar or of personal interest. Can describe experiences and events, dreams, hopes & ambitions and briefly give reasons and explanations for opinions and plans."
+     },
+     {
+      "level": "B2",
+      "band": "Independent User",
+      "name": "Vantage",
+      "descriptor": "Can understand the main ideas of complex text on both concrete and abstract topics, including technical discussions in his/her field of specialisation. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party. Can produce clear, detailed text on a wide range of subjects and explain a viewpoint on a topical issue giving the advantages and disadvantages of various options."
+     },
+     {
+      "level": "C1",
+      "band": "Proficient User",
+      "name": "Effective Operational Proficiency",
+      "descriptor": "Can understand a wide range of demanding, longer texts, and recognise implicit meaning. Can express him/herself fluently and spontaneously without much obvious searching for expressions. Can use language flexibly and effectively for social, academic and professional purposes. Can produce clear, well-structured, detailed text on complex subjects, showing controlled use of organisational patterns, connectors and cohesive devices."
+     },
+     {
+      "level": "C2",
+      "band": "Proficient User",
+      "name": "Mastery",
+      "descriptor": "Can understand with ease virtually everything heard or read. Can summarise information from different spoken and written sources, reconstructing arguments and accounts in a coherent presentation. Can express him/herself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in more complex situations."
+     }
+    ],
+    "note": "Descriptor text as the UHR copy gives it (CEFR 2001 Table 1 wording); the DAAD copy differs in small words (e.g. C2 'reconstruct' and 'the most complex', C1 'express ideas'); the Council of Europe's own page could not be read from this session."
+   },
+   "applies": "Any language; the CEFR is the Council of Europe's scale, used across Europe for language tests including naturalisation.",
+   "use": "Hold each spoken language at a CEFR level A1 to C2 and show the level with its name and first descriptor sentence.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "C2 Can understand with ease virtually everything heard or read."
+    },
+    {
+     "src": 10,
+     "said": "A1 – Breakthrough Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type."
+    },
+    {
+     "src": 10,
+     "said": "The Common European Framework of Reference for Languages (CEFR) was developed by the Council of Europe."
+    },
+    {
+     "src": 10,
+     "said": "C1 – Effective Operational Proficiency Can understand a wide range of demanding, longer texts, and recognize implicit meaning."
+    },
+    {
+     "src": 10,
+     "said": "C2 – Mastery Can understand with ease virtually everything heard or read."
+    }
+   ]
+  },
+  {
+   "item": "levels-ilr",
+   "finding": "The ILR speaking scale has six base levels, 0 No Proficiency to 5 Functionally Native Proficiency, with plus levels between them.",
+   "value": {
+    "ilr": [
+     {
+      "level": "0",
+      "name": "No Proficiency",
+      "descriptor": "Unable to function in the spoken language."
+     },
+     {
+      "level": "1",
+      "name": "Elementary Proficiency",
+      "descriptor": "Able to satisfy minimum courtesy requirements and maintain very simple face-to-face conversations on familiar topics."
+     },
+     {
+      "level": "2",
+      "name": "Limited Working Proficiency",
+      "descriptor": "Able to satisfy routine social demands and limited work requirements."
+     },
+     {
+      "level": "3",
+      "name": "General Professional Proficiency",
+      "descriptor": "Able to speak the language with sufficient structural accuracy and vocabulary to participate effectively in most formal and informal conversations in practical, social and professional topics."
+     },
+     {
+      "level": "4",
+      "name": "Advanced Professional Proficiency",
+      "descriptor": "Able to use the language fluently and accurately on all levels normally pertinent to professional needs."
+     },
+     {
+      "level": "5",
+      "name": "Functionally Native Proficiency",
+      "descriptor": "Speaking proficiency is functionally equivalent to that of a highly articulate well-educated native speaker and reflects the cultural standards of the country where the language is natively spoken."
+     }
+    ],
+    "plus_levels": "0+ to 4+ when proficiency substantially exceeds a base level"
+   },
+   "applies": "United States government language ratings.",
+   "use": "Optional second scale for a US-government part or job that names an ILR rating; the CEFR stays the one the player sees.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Speaking 0 (No Proficiency) Unable to function in the spoken language."
+    },
+    {
+     "src": 11,
+     "said": "Speaking 1 (Elementary Proficiency) Able to satisfy minimum courtesy requirements and maintain very simple face-to-face conversations on familiar topics."
+    },
+    {
+     "src": 11,
+     "said": "Speaking 2 (Limited Working Proficiency) Able to satisfy routine social demands and limited work requirements."
+    },
+    {
+     "src": 11,
+     "said": "Speaking 3 (General Professional Proficiency) Able to speak the language with sufficient structural accuracy and vocabulary to participate effectively in most formal and informal conversations in practical, social and professional topics."
+    },
+    {
+     "src": 11,
+     "said": "Speaking 4 (Advanced Professional Proficiency) Able to use the language fluently and accurately on all levels normally pertinent to professional needs."
+    },
+    {
+     "src": 11,
+     "said": "Speaking 5 (Functionally Native Proficiency) Speaking proficiency is functionally equivalent to that of a highly articulate well-educated native speaker and reflects the cultural standards of the country where the language is natively spoken."
+    },
+    {
+     "src": 11,
+     "said": "The \"plus level\" designation (coded 06, 16, 26, etc.) will be assigned when proficiency substantially exceeds one base skill level and does not fully meet the criteria for the next \"base level.\""
+    }
+   ]
+  }
+ ],
+ "release": {
+  "name": "Unicode CLDR 49",
+  "released": "2026-10-22",
+  "file": "https://unicode.org/Public/cldr/49/cldr-common-49.zip",
+  "files_dated": "2026-10-21",
+  "sha512": "not verified: https://www.unicode.org/Public/cldr/49/SHASUM512.txt answered 404 (named on the listing page)"
+ },
+ "territories": {
+  "AD": [
+   {
+    "lang": "ca",
+    "share": 51.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 43.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 6.8,
+    "official": null
+   }
+  ],
+  "AE": [
+   {
+    "lang": "ar",
+    "share": 78.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 50.0,
+    "official": null
+   },
+   {
+    "lang": "ml",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "ps",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "bal",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "fa",
+    "share": 1.9,
+    "official": null
+   }
+  ],
+  "AF": [
+   {
+    "lang": "fa",
+    "share": 50.0,
+    "official": "official"
+   },
+   {
+    "lang": "ps",
+    "share": 43.0,
+    "official": "official"
+   },
+   {
+    "lang": "haz",
+    "share": 5.9,
+    "official": null
+   },
+   {
+    "lang": "uz-Arab",
+    "share": 4.7,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tk",
+    "share": 1.7,
+    "official": "official_regional"
+   },
+   {
+    "lang": "prd",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "bgn",
+    "share": 0.63,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.0084,
+    "official": null
+   },
+   {
+    "lang": "ug",
+    "share": 0.0075,
+    "official": null
+   },
+   {
+    "lang": "kk-Arab",
+    "share": 0.005,
+    "official": null
+   }
+  ],
+  "AG": [
+   {
+    "lang": "en",
+    "share": 86.0,
+    "official": "official"
+   },
+   {
+    "lang": "pt",
+    "share": 1.6,
+    "official": null
+   }
+  ],
+  "AI": [
+   {
+    "lang": "en",
+    "share": 95.0,
+    "official": "official"
+   }
+  ],
+  "AL": [
+   {
+    "lang": "sq",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "el",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "mk",
+    "share": 0.47,
+    "official": null
+   }
+  ],
+  "AM": [
+   {
+    "lang": "hy",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 65.0,
+    "official": null
+   },
+   {
+    "lang": "ku",
+    "share": 3.3,
+    "official": null
+   },
+   {
+    "lang": "ku-Cyrl",
+    "share": 3.3,
+    "official": null
+   },
+   {
+    "lang": "az",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "AN": null,
+  "AO": [
+   {
+    "lang": "pt",
+    "share": 67.0,
+    "official": "official"
+   },
+   {
+    "lang": "umb",
+    "share": 29.0,
+    "official": null
+   },
+   {
+    "lang": "kmb",
+    "share": 25.0,
+    "official": null
+   },
+   {
+    "lang": "ln",
+    "share": 0.67,
+    "official": null
+   }
+  ],
+  "AQ": [
+   {
+    "lang": "und",
+    "share": 100.0,
+    "official": null
+   }
+  ],
+  "AR": [
+   {
+    "lang": "es",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "cy",
+    "share": 0.066,
+    "official": null
+   },
+   {
+    "lang": "gn",
+    "share": 0.047,
+    "official": null
+   }
+  ],
+  "AS": [
+   {
+    "lang": "sm",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 97.0,
+    "official": "de_facto_official"
+   }
+  ],
+  "AT": [
+   {
+    "lang": "de",
+    "share": 97.0,
+    "official": "official"
+   },
+   {
+    "lang": "bar",
+    "share": 95.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 73.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 9.0,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 1.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sl",
+    "share": 0.37,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hu",
+    "share": 0.26,
+    "official": "official_regional"
+   }
+  ],
+  "AU": [
+   {
+    "lang": "en",
+    "share": 96.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "wbp",
+    "share": 0.0093,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.0082,
+    "official": null
+   }
+  ],
+  "AW": [
+   {
+    "lang": "nl",
+    "share": 97.0,
+    "official": "official"
+   },
+   {
+    "lang": "pap",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 2.4,
+    "official": null
+   }
+  ],
+  "AX": [
+   {
+    "lang": "sv",
+    "share": 99.0,
+    "official": "official"
+   }
+  ],
+  "AZ": [
+   {
+    "lang": "az",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "az-Cyrl",
+    "share": 9.9,
+    "official": "official"
+   },
+   {
+    "lang": "tly",
+    "share": 9.8,
+    "official": null
+   },
+   {
+    "lang": "ku",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "ku-Cyrl",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "ttt",
+    "share": 0.22,
+    "official": null
+   },
+   {
+    "lang": "tkr",
+    "share": 0.16,
+    "official": null
+   }
+  ],
+  "BA": [
+   {
+    "lang": "bs",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "bs-Cyrl",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 45.0,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 12.0,
+    "official": "official"
+   },
+   {
+    "lang": "sr",
+    "share": 10.0,
+    "official": "official"
+   },
+   {
+    "lang": "sr-Latn",
+    "share": 10.0,
+    "official": "official"
+   }
+  ],
+  "BB": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "BD": [
+   {
+    "lang": "bn",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "rkt",
+    "share": 6.5,
+    "official": null
+   },
+   {
+    "lang": "syl",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "rhg",
+    "share": 0.53,
+    "official": null
+   },
+   {
+    "lang": "ccp",
+    "share": 0.22,
+    "official": null
+   },
+   {
+    "lang": "my",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "grt",
+    "share": 0.073,
+    "official": null
+   },
+   {
+    "lang": "mro",
+    "share": 0.018,
+    "official": null
+   },
+   {
+    "lang": "mni",
+    "share": 0.011,
+    "official": null
+   }
+  ],
+  "BE": [
+   {
+    "lang": "en",
+    "share": 59.0,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 55.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 38.0,
+    "official": "official"
+   },
+   {
+    "lang": "de",
+    "share": 22.0,
+    "official": "official"
+   },
+   {
+    "lang": "vls",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "wa",
+    "share": 5.8,
+    "official": null
+   }
+  ],
+  "BF": [
+   {
+    "lang": "mos",
+    "share": 40.0,
+    "official": null
+   },
+   {
+    "lang": "dyu",
+    "share": 32.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 25.0,
+    "official": "official"
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "BG": [
+   {
+    "lang": "bg",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 25.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 8.0,
+    "official": null
+   }
+  ],
+  "BH": [
+   {
+    "lang": "ar",
+    "share": 87.0,
+    "official": "official"
+   },
+   {
+    "lang": "ml",
+    "share": 3.3,
+    "official": null
+   }
+  ],
+  "BI": [
+   {
+    "lang": "rn",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 59.0,
+    "official": "official"
+   },
+   {
+    "lang": "sw",
+    "share": 0.047,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 0.046,
+    "official": "official"
+   }
+  ],
+  "BJ": [
+   {
+    "lang": "fr",
+    "share": 34.0,
+    "official": "official"
+   },
+   {
+    "lang": "fon",
+    "share": 25.0,
+    "official": null
+   },
+   {
+    "lang": "yo",
+    "share": 6.7,
+    "official": null
+   },
+   {
+    "lang": "blo",
+    "share": 0.3,
+    "official": null
+   }
+  ],
+  "BL": [
+   {
+    "lang": "fr",
+    "share": 85.0,
+    "official": "official"
+   }
+  ],
+  "BM": [
+   {
+    "lang": "en",
+    "share": 92.0,
+    "official": "official"
+   }
+  ],
+  "BN": [
+   {
+    "lang": "ms",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "ms-Arab",
+    "share": 5.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 1.6,
+    "official": null
+   }
+  ],
+  "BO": [
+   {
+    "lang": "es",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "qu",
+    "share": 32.0,
+    "official": "official"
+   },
+   {
+    "lang": "ay",
+    "share": 20.0,
+    "official": "official"
+   },
+   {
+    "lang": "gn",
+    "share": 0.45,
+    "official": null
+   },
+   {
+    "lang": "aro",
+    "share": 0.0009,
+    "official": null
+   }
+  ],
+  "BQ": [
+   {
+    "lang": "pap",
+    "share": 81.0,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 8.0,
+    "official": "official"
+   }
+  ],
+  "BR": [
+   {
+    "lang": "pt",
+    "share": 91.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 8.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 0.84,
+    "official": null
+   },
+   {
+    "lang": "hrx",
+    "share": 0.59,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 0.28,
+    "official": null
+   },
+   {
+    "lang": "vec",
+    "share": 0.24,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ja",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 0.036,
+    "official": null
+   },
+   {
+    "lang": "kgp",
+    "share": 0.024,
+    "official": null
+   },
+   {
+    "lang": "ko",
+    "share": 0.021,
+    "official": null
+   },
+   {
+    "lang": "yrl",
+    "share": 0.01,
+    "official": null
+   },
+   {
+    "lang": "gub",
+    "share": 0.0084,
+    "official": null
+   },
+   {
+    "lang": "xav",
+    "share": 0.0045,
+    "official": null
+   }
+  ],
+  "BS": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "BT": [
+   {
+    "lang": "dz",
+    "share": 47.0,
+    "official": "official"
+   },
+   {
+    "lang": "ne",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "tsj",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "lep",
+    "share": 3.9,
+    "official": null
+   }
+  ],
+  "BV": [
+   {
+    "lang": "no",
+    "share": 100.0,
+    "official": null
+   }
+  ],
+  "BW": [
+   {
+    "lang": "en",
+    "share": 81.0,
+    "official": "official"
+   },
+   {
+    "lang": "tn",
+    "share": 62.0,
+    "official": "official"
+   },
+   {
+    "lang": "af",
+    "share": 0.24,
+    "official": null
+   }
+  ],
+  "BY": [
+   {
+    "lang": "ru",
+    "share": 71.0,
+    "official": "official"
+   },
+   {
+    "lang": "be",
+    "share": 26.0,
+    "official": "official"
+   }
+  ],
+  "BZ": [
+   {
+    "lang": "en",
+    "share": 77.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 55.0,
+    "official": null
+   },
+   {
+    "lang": "bzj",
+    "share": 50.0,
+    "official": null
+   },
+   {
+    "lang": "kek",
+    "share": 6.5,
+    "official": null
+   },
+   {
+    "lang": "mop",
+    "share": 4.0,
+    "official": null
+   },
+   {
+    "lang": "cab",
+    "share": 1.9,
+    "official": null
+   }
+  ],
+  "CA": [
+   {
+    "lang": "en",
+    "share": 87.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 29.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 3.2,
+    "official": null
+   },
+   {
+    "lang": "zh",
+    "share": 2.7,
+    "official": null
+   },
+   {
+    "lang": "pa",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "hi",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "fil",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "yue",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "ur",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 0.93,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 0.85,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 0.65,
+    "official": null
+   },
+   {
+    "lang": "vi",
+    "share": 0.64,
+    "official": null
+   },
+   {
+    "lang": "fa",
+    "share": 0.61,
+    "official": null
+   },
+   {
+    "lang": "gu",
+    "share": 0.58,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "ko",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "uk",
+    "share": 0.36,
+    "official": null
+   },
+   {
+    "lang": "bn",
+    "share": 0.33,
+    "official": null
+   },
+   {
+    "lang": "ro",
+    "share": 0.32,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 0.3,
+    "official": null
+   },
+   {
+    "lang": "ja",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "sr",
+    "share": 0.23,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 0.22,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 0.18,
+    "official": null
+   },
+   {
+    "lang": "so",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "iu",
+    "share": 0.11,
+    "official": "official_regional"
+   },
+   {
+    "lang": "iu-Latn",
+    "share": 0.11,
+    "official": "official_regional"
+   },
+   {
+    "lang": "pdt",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "oj",
+    "share": 0.072,
+    "official": null
+   },
+   {
+    "lang": "ojs",
+    "share": 0.042,
+    "official": null
+   },
+   {
+    "lang": "crk",
+    "share": 0.033,
+    "official": "official_regional"
+   },
+   {
+    "lang": "chp",
+    "share": 0.032,
+    "official": "official_regional"
+   },
+   {
+    "lang": "moe",
+    "share": 0.03,
+    "official": null
+   },
+   {
+    "lang": "mic",
+    "share": 0.024,
+    "official": null
+   },
+   {
+    "lang": "atj",
+    "share": 0.018,
+    "official": null
+   },
+   {
+    "lang": "bla",
+    "share": 0.017,
+    "official": null
+   },
+   {
+    "lang": "cr",
+    "share": 0.013,
+    "official": null
+   },
+   {
+    "lang": "crl",
+    "share": 0.013,
+    "official": null
+   },
+   {
+    "lang": "csw",
+    "share": 0.012,
+    "official": null
+   },
+   {
+    "lang": "war",
+    "share": 0.012,
+    "official": null
+   },
+   {
+    "lang": "ojw",
+    "share": 0.0094,
+    "official": null
+   },
+   {
+    "lang": "den",
+    "share": 0.006,
+    "official": "official_regional"
+   },
+   {
+    "lang": "dgr",
+    "share": 0.0055,
+    "official": "official_regional"
+   },
+   {
+    "lang": "crg",
+    "share": 0.0049,
+    "official": null
+   },
+   {
+    "lang": "moh",
+    "share": 0.0041,
+    "official": null
+   },
+   {
+    "lang": "dak",
+    "share": 0.0039,
+    "official": null
+   },
+   {
+    "lang": "hur",
+    "share": 0.0036,
+    "official": null
+   },
+   {
+    "lang": "nsk",
+    "share": 0.0027,
+    "official": null
+   },
+   {
+    "lang": "clc",
+    "share": 0.0022,
+    "official": null
+   },
+   {
+    "lang": "kwk",
+    "share": 0.0021,
+    "official": null
+   },
+   {
+    "lang": "pqm",
+    "share": 0.0021,
+    "official": null
+   },
+   {
+    "lang": "oka",
+    "share": 0.0018,
+    "official": null
+   },
+   {
+    "lang": "lil",
+    "share": 0.0015,
+    "official": null
+   },
+   {
+    "lang": "gwi",
+    "share": 0.0008,
+    "official": "official_regional"
+   }
+  ],
+  "CC": [
+   {
+    "lang": "ms-Arab",
+    "share": 84.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 17.0,
+    "official": "de_facto_official"
+   }
+  ],
+  "CD": [
+   {
+    "lang": "fr",
+    "share": 51.0,
+    "official": "official"
+   },
+   {
+    "lang": "sw",
+    "share": 50.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "lua",
+    "share": 9.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ln",
+    "share": 3.1,
+    "official": "official_regional"
+   },
+   {
+    "lang": "lu",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "kg",
+    "share": 1.5,
+    "official": "official_regional"
+   },
+   {
+    "lang": "lol",
+    "share": 0.61,
+    "official": null
+   },
+   {
+    "lang": "rw",
+    "share": 0.38,
+    "official": null
+   }
+  ],
+  "CF": [
+   {
+    "lang": "sg",
+    "share": 49.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 29.0,
+    "official": "official"
+   },
+   {
+    "lang": "ln",
+    "share": 0.24,
+    "official": null
+   }
+  ],
+  "CG": [
+   {
+    "lang": "fr",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "ln",
+    "share": 2.4,
+    "official": null
+   }
+  ],
+  "CH": [
+   {
+    "lang": "de",
+    "share": 76.0,
+    "official": "official"
+   },
+   {
+    "lang": "gsw",
+    "share": 66.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "en",
+    "share": 45.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 39.0,
+    "official": "official"
+   },
+   {
+    "lang": "it",
+    "share": 15.0,
+    "official": "official"
+   },
+   {
+    "lang": "lmo",
+    "share": 4.1,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 3.4,
+    "official": null
+   },
+   {
+    "lang": "rm",
+    "share": 0.5,
+    "official": "official_regional"
+   },
+   {
+    "lang": "rmo",
+    "share": 0.29,
+    "official": null
+   },
+   {
+    "lang": "wae",
+    "share": 0.11,
+    "official": null
+   }
+  ],
+  "CI": [
+   {
+    "lang": "fr",
+    "share": 34.0,
+    "official": "official"
+   },
+   {
+    "lang": "bci",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "sef",
+    "share": 4.3,
+    "official": null
+   },
+   {
+    "lang": "dnj",
+    "share": 4.0,
+    "official": null
+   },
+   {
+    "lang": "kfo",
+    "share": 0.23,
+    "official": null
+   }
+  ],
+  "CK": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "CL": [
+   {
+    "lang": "es",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 9.5,
+    "official": null
+   },
+   {
+    "lang": "arn",
+    "share": 1.5,
+    "official": null
+   }
+  ],
+  "CM": [
+   {
+    "lang": "fr",
+    "share": 68.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 38.0,
+    "official": "official"
+   },
+   {
+    "lang": "bum",
+    "share": 4.6,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 3.6,
+    "official": null
+   },
+   {
+    "lang": "ewo",
+    "share": 3.1,
+    "official": null
+   },
+   {
+    "lang": "ybb",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "bbj",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "nnh",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "bkm",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "bas",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "bax",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "byv",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "mua",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "maf",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "bfd",
+    "share": 0.57,
+    "official": null
+   },
+   {
+    "lang": "bss",
+    "share": 0.54,
+    "official": null
+   },
+   {
+    "lang": "kkj",
+    "share": 0.54,
+    "official": null
+   },
+   {
+    "lang": "dua",
+    "share": 0.48,
+    "official": null
+   },
+   {
+    "lang": "mgo",
+    "share": 0.47,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "jgo",
+    "share": 0.34,
+    "official": null
+   },
+   {
+    "lang": "ksf",
+    "share": 0.32,
+    "official": null
+   },
+   {
+    "lang": "ken",
+    "share": 0.25,
+    "official": null
+   },
+   {
+    "lang": "agq",
+    "share": 0.14,
+    "official": null
+   },
+   {
+    "lang": "ha-Arab",
+    "share": 0.14,
+    "official": null
+   },
+   {
+    "lang": "nmg",
+    "share": 0.029,
+    "official": null
+   },
+   {
+    "lang": "yav",
+    "share": 0.0074,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "CN": [
+   {
+    "lang": "zh",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "wuu",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "yue",
+    "share": 5.2,
+    "official": null
+   },
+   {
+    "lang": "yue-Hans",
+    "share": 5.2,
+    "official": null
+   },
+   {
+    "lang": "hsn",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "hak",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "nan",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "gan",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "ii",
+    "share": 0.6,
+    "official": null
+   },
+   {
+    "lang": "ug",
+    "share": 0.55,
+    "official": "official_regional"
+   },
+   {
+    "lang": "za",
+    "share": 0.31,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mn-Mong",
+    "share": 0.26,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bo",
+    "share": 0.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ko",
+    "share": 0.15,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kk-Arab",
+    "share": 0.085,
+    "official": null
+   },
+   {
+    "lang": "lis",
+    "share": 0.045,
+    "official": null
+   },
+   {
+    "lang": "ky-Arab",
+    "share": 0.034,
+    "official": null
+   },
+   {
+    "lang": "nxq",
+    "share": 0.024,
+    "official": null
+   },
+   {
+    "lang": "khb",
+    "share": 0.019,
+    "official": null
+   },
+   {
+    "lang": "tdd",
+    "share": 0.019,
+    "official": null
+   },
+   {
+    "lang": "mww",
+    "share": 0.017,
+    "official": null
+   },
+   {
+    "lang": "lcp",
+    "share": 0.0058,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 0.0045,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.004,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 0.001,
+    "official": null
+   },
+   {
+    "lang": "vi",
+    "share": 0.0005,
+    "official": null
+   },
+   {
+    "lang": "uz-Cyrl",
+    "share": 0.0004,
+    "official": null
+   },
+   {
+    "lang": "stu-Tale",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "lzh",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "CO": [
+   {
+    "lang": "es",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "guc",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "yrl",
+    "share": 0.006,
+    "official": null
+   }
+  ],
+  "CR": [
+   {
+    "lang": "es",
+    "share": 95.0,
+    "official": "official"
+   }
+  ],
+  "CS": null,
+  "CU": [
+   {
+    "lang": "es",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "CV": [
+   {
+    "lang": "kea",
+    "share": 91.0,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 76.0,
+    "official": "official"
+   }
+  ],
+  "CW": [
+   {
+    "lang": "pap",
+    "share": 81.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "nl",
+    "share": 8.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 3.7,
+    "official": null
+   }
+  ],
+  "CX": [
+   {
+    "lang": "en",
+    "share": 83.0,
+    "official": "official"
+   }
+  ],
+  "CY": [
+   {
+    "lang": "el",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 73.0,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 23.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 6.6,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.098,
+    "official": null
+   },
+   {
+    "lang": "ecy",
+    "share": 0.0001,
+    "official": null
+   }
+  ],
+  "CZ": [
+   {
+    "lang": "cs",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 27.0,
+    "official": null
+   },
+   {
+    "lang": "sk",
+    "share": 16.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 0.49,
+    "official": null
+   }
+  ],
+  "DE": [
+   {
+    "lang": "de",
+    "share": 91.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 64.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "bar",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "nds",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 9.0,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "vmf",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "gsw",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "da",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "swg",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 0.79,
+    "official": null
+   },
+   {
+    "lang": "ku",
+    "share": 0.66,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.38,
+    "official": null
+   },
+   {
+    "lang": "ksh",
+    "share": 0.3,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 0.29,
+    "official": null
+   },
+   {
+    "lang": "hsb",
+    "share": 0.016,
+    "official": null
+   },
+   {
+    "lang": "frr",
+    "share": 0.012,
+    "official": "official_regional"
+   },
+   {
+    "lang": "dsb",
+    "share": 0.0083,
+    "official": null
+   },
+   {
+    "lang": "frs",
+    "share": 0.0024,
+    "official": null
+   },
+   {
+    "lang": "stq",
+    "share": 0.0012,
+    "official": null
+   },
+   {
+    "lang": "pfl",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "DJ": [
+   {
+    "lang": "fr",
+    "share": 50.0,
+    "official": "official"
+   },
+   {
+    "lang": "aa",
+    "share": 42.0,
+    "official": null
+   },
+   {
+    "lang": "so",
+    "share": 41.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 7.3,
+    "official": "official"
+   }
+  ],
+  "DK": [
+   {
+    "lang": "da",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 86.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 47.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sv",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "fo",
+    "share": 0.38,
+    "official": null
+   },
+   {
+    "lang": "kl",
+    "share": 0.12,
+    "official": "official_regional"
+   },
+   {
+    "lang": "jut",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "DM": [
+   {
+    "lang": "en",
+    "share": 94.0,
+    "official": "official"
+   }
+  ],
+  "DO": [
+   {
+    "lang": "es",
+    "share": 78.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 0.074,
+    "official": null
+   }
+  ],
+  "DZ": [
+   {
+    "lang": "arq",
+    "share": 83.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 74.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 33.0,
+    "official": "official"
+   },
+   {
+    "lang": "mey",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "kab",
+    "share": 7.8,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "mzb",
+    "share": 0.36,
+    "official": null
+   },
+   {
+    "lang": "grr",
+    "share": 0.026,
+    "official": null
+   }
+  ],
+  "EC": [
+   {
+    "lang": "es",
+    "share": 96.0,
+    "official": "official"
+   },
+   {
+    "lang": "qu",
+    "share": 17.0,
+    "official": "official"
+   },
+   {
+    "lang": "qug",
+    "share": 5.7,
+    "official": null
+   }
+  ],
+  "EE": [
+   {
+    "lang": "et",
+    "share": 71.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 56.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 50.0,
+    "official": null
+   },
+   {
+    "lang": "fi",
+    "share": 21.0,
+    "official": null
+   },
+   {
+    "lang": "vro",
+    "share": 5.7,
+    "official": null
+   },
+   {
+    "lang": "ie",
+    "share": 0.0001,
+    "official": null
+   }
+  ],
+  "EG": [
+   {
+    "lang": "ar",
+    "share": 94.0,
+    "official": "official"
+   },
+   {
+    "lang": "arz",
+    "share": 64.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 35.0,
+    "official": null
+   },
+   {
+    "lang": "cop",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.061,
+    "official": null
+   }
+  ],
+  "EH": [
+   {
+    "lang": "ar",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "mey",
+    "share": 0.0002,
+    "official": null
+   }
+  ],
+  "ER": [
+   {
+    "lang": "ti",
+    "share": 60.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "en",
+    "share": 59.0,
+    "official": "official"
+   },
+   {
+    "lang": "tig",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 4.9,
+    "official": "official"
+   },
+   {
+    "lang": "aa",
+    "share": 3.6,
+    "official": null
+   },
+   {
+    "lang": "ssy",
+    "share": 3.6,
+    "official": null
+   },
+   {
+    "lang": "byn",
+    "share": 1.3,
+    "official": null
+   }
+  ],
+  "ES": [
+   {
+    "lang": "es",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 24.0,
+    "official": null
+   },
+   {
+    "lang": "ca",
+    "share": 17.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "gl",
+    "share": 7.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "eu",
+    "share": 2.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ast",
+    "share": 1.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ext",
+    "share": 0.49,
+    "official": null
+   },
+   {
+    "lang": "an",
+    "share": 0.052,
+    "official": null
+   },
+   {
+    "lang": "oc",
+    "share": 0.01,
+    "official": "official_regional"
+   }
+  ],
+  "ET": [
+   {
+    "lang": "en",
+    "share": 43.0,
+    "official": null
+   },
+   {
+    "lang": "am",
+    "share": 33.0,
+    "official": "official"
+   },
+   {
+    "lang": "om",
+    "share": 32.0,
+    "official": null
+   },
+   {
+    "lang": "so",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "ti",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "sid",
+    "share": 3.5,
+    "official": null
+   },
+   {
+    "lang": "wal",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "aa",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "gez",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "FI": [
+   {
+    "lang": "fi",
+    "share": 94.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 70.0,
+    "official": null
+   },
+   {
+    "lang": "sv",
+    "share": 44.0,
+    "official": "official"
+   },
+   {
+    "lang": "de",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 0.81,
+    "official": null
+   },
+   {
+    "lang": "et",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "rmf",
+    "share": 0.089,
+    "official": null
+   },
+   {
+    "lang": "se",
+    "share": 0.036,
+    "official": null
+   },
+   {
+    "lang": "smn",
+    "share": 0.011,
+    "official": null
+   },
+   {
+    "lang": "sms",
+    "share": 0.011,
+    "official": "official_regional"
+   }
+  ],
+  "FJ": [
+   {
+    "lang": "en",
+    "share": 94.0,
+    "official": "official"
+   },
+   {
+    "lang": "hi",
+    "share": 44.0,
+    "official": null
+   },
+   {
+    "lang": "hif",
+    "share": 41.0,
+    "official": "official"
+   },
+   {
+    "lang": "fj",
+    "share": 39.0,
+    "official": "official"
+   },
+   {
+    "lang": "rtm",
+    "share": 0.26,
+    "official": null
+   }
+  ],
+  "FK": [
+   {
+    "lang": "en",
+    "share": 77.0,
+    "official": "official"
+   }
+  ],
+  "FM": [
+   {
+    "lang": "en",
+    "share": 57.0,
+    "official": "official"
+   },
+   {
+    "lang": "chk",
+    "share": 30.0,
+    "official": null
+   },
+   {
+    "lang": "pon",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "kos",
+    "share": 8.0,
+    "official": null
+   },
+   {
+    "lang": "yap",
+    "share": 6.6,
+    "official": null
+   },
+   {
+    "lang": "uli",
+    "share": 3.0,
+    "official": null
+   }
+  ],
+  "FO": [
+   {
+    "lang": "fo",
+    "share": 95.0,
+    "official": "official"
+   }
+  ],
+  "FR": [
+   {
+    "lang": "fr",
+    "share": 97.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 39.0,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "oc",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "pcd",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "gsw",
+    "share": 0.91,
+    "official": null
+   },
+   {
+    "lang": "br",
+    "share": 0.83,
+    "official": null
+   },
+   {
+    "lang": "co",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.19,
+    "official": null
+   },
+   {
+    "lang": "ca",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "eu",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "frp",
+    "share": 0.094,
+    "official": null
+   },
+   {
+    "lang": "mww",
+    "share": 0.015,
+    "official": null
+   },
+   {
+    "lang": "ia",
+    "share": 0.0002,
+    "official": null
+   }
+  ],
+  "GA": [
+   {
+    "lang": "fr",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "puu",
+    "share": 9.0,
+    "official": null
+   }
+  ],
+  "GB": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 9.0,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 8.0,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 4.0,
+    "official": null
+   },
+   {
+    "lang": "pa",
+    "share": 3.6,
+    "official": null
+   },
+   {
+    "lang": "ur",
+    "share": 3.5,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 3.2,
+    "official": null
+   },
+   {
+    "lang": "gu",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "sco",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "cy",
+    "share": 1.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ro",
+    "share": 0.8,
+    "official": null
+   },
+   {
+    "lang": "bn",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.3,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 0.3,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "lt",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "so",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "ga",
+    "share": 0.15,
+    "official": "official_regional"
+   },
+   {
+    "lang": "gd",
+    "share": 0.11,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kw",
+    "share": 0.0029,
+    "official": null
+   },
+   {
+    "lang": "pi",
+    "share": 0.0002,
+    "official": null
+   },
+   {
+    "lang": "en-Shaw",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GD": [
+   {
+    "lang": "en",
+    "share": 96.0,
+    "official": "official"
+   }
+  ],
+  "GE": [
+   {
+    "lang": "ka",
+    "share": 86.0,
+    "official": "official"
+   },
+   {
+    "lang": "xmf",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 9.0,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "ab",
+    "share": 2.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "os",
+    "share": 2.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ku-Cyrl",
+    "share": 0.89,
+    "official": null
+   },
+   {
+    "lang": "lzz-Geor",
+    "share": 0.002,
+    "official": null
+   }
+  ],
+  "GF": [
+   {
+    "lang": "fr",
+    "share": 62.0,
+    "official": "official"
+   },
+   {
+    "lang": "gcr",
+    "share": 26.0,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 2.4,
+    "official": null
+   }
+  ],
+  "GG": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "GH": [
+   {
+    "lang": "ak",
+    "share": 39.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "en",
+    "share": 21.0,
+    "official": "official"
+   },
+   {
+    "lang": "ee",
+    "share": 11.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "abr",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "gur",
+    "share": 3.5,
+    "official": null
+   },
+   {
+    "lang": "ada",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "gaa",
+    "share": 2.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "nzi",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "ha",
+    "share": 0.86,
+    "official": null
+   },
+   {
+    "lang": "saf",
+    "share": 0.012,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GI": [
+   {
+    "lang": "en",
+    "share": 80.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 50.0,
+    "official": null
+   }
+  ],
+  "GL": [
+   {
+    "lang": "kl",
+    "share": 84.0,
+    "official": "official"
+   },
+   {
+    "lang": "da",
+    "share": 14.0,
+    "official": null
+   }
+  ],
+  "GM": [
+   {
+    "lang": "en",
+    "share": 40.0,
+    "official": "official"
+   },
+   {
+    "lang": "man",
+    "share": 29.0,
+    "official": null
+   },
+   {
+    "lang": "man-Nkoo",
+    "share": 29.0,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GN": [
+   {
+    "lang": "fr",
+    "share": 27.0,
+    "official": "official"
+   },
+   {
+    "lang": "ff",
+    "share": 26.0,
+    "official": null
+   },
+   {
+    "lang": "sus",
+    "share": 24.0,
+    "official": null
+   },
+   {
+    "lang": "man",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "man-Nkoo",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "nqo",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "kpe",
+    "share": 3.8,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GP": [
+   {
+    "lang": "fr",
+    "share": 84.0,
+    "official": "official"
+   }
+  ],
+  "GQ": [
+   {
+    "lang": "es",
+    "share": 87.0,
+    "official": "official"
+   },
+   {
+    "lang": "fan",
+    "share": 51.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 29.0,
+    "official": "official"
+   },
+   {
+    "lang": "bvb",
+    "share": 7.9,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 0.0001,
+    "official": "official"
+   }
+  ],
+  "GR": [
+   {
+    "lang": "el",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 51.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 7.3,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "pnt",
+    "share": 3.7,
+    "official": null
+   },
+   {
+    "lang": "mk",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "bg",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "sq",
+    "share": 0.096,
+    "official": null
+   },
+   {
+    "lang": "tsd",
+    "share": 0.0019,
+    "official": null
+   },
+   {
+    "lang": "gmy",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "grc",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GS": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "GT": [
+   {
+    "lang": "es",
+    "share": 88.0,
+    "official": "official"
+   },
+   {
+    "lang": "cak",
+    "share": 8.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kek",
+    "share": 8.8,
+    "official": null
+   },
+   {
+    "lang": "quc",
+    "share": 8.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mam",
+    "share": 4.6,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 3.1,
+    "official": null
+   },
+   {
+    "lang": "kjb",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "poh",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "acr",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "ixl",
+    "share": 0.89,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tzj",
+    "share": 0.61,
+    "official": null
+   },
+   {
+    "lang": "knj",
+    "share": 0.58,
+    "official": null
+   },
+   {
+    "lang": "cac",
+    "share": 0.43,
+    "official": null
+   },
+   {
+    "lang": "jac",
+    "share": 0.31,
+    "official": null
+   },
+   {
+    "lang": "agu",
+    "share": 0.26,
+    "official": null
+   },
+   {
+    "lang": "caa",
+    "share": 0.13,
+    "official": "official_regional"
+   },
+   {
+    "lang": "poc",
+    "share": 0.09,
+    "official": null
+   },
+   {
+    "lang": "quv",
+    "share": 0.054,
+    "official": "official_regional"
+   },
+   {
+    "lang": "usp",
+    "share": 0.045,
+    "official": "official_regional"
+   },
+   {
+    "lang": "qum",
+    "share": 0.036,
+    "official": null
+   },
+   {
+    "lang": "cab",
+    "share": 0.027,
+    "official": null
+   },
+   {
+    "lang": "ttc",
+    "share": 0.027,
+    "official": null
+   },
+   {
+    "lang": "xin",
+    "share": 0.027,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ckz",
+    "share": 0.018,
+    "official": null
+   },
+   {
+    "lang": "mop",
+    "share": 0.018,
+    "official": null
+   },
+   {
+    "lang": "itz",
+    "share": 0.0091,
+    "official": null
+   }
+  ],
+  "GU": [
+   {
+    "lang": "en",
+    "share": 91.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "ch",
+    "share": 22.0,
+    "official": "official"
+   }
+  ],
+  "GW": [
+   {
+    "lang": "pt",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "knf",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "GY": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "HK": [
+   {
+    "lang": "zh-Hant",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "yue",
+    "share": 90.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 51.0,
+    "official": "official"
+   },
+   {
+    "lang": "zh",
+    "share": 5.0,
+    "official": null
+   }
+  ],
+  "HM": [
+   {
+    "lang": "und",
+    "share": 100.0,
+    "official": null
+   }
+  ],
+  "HN": [
+   {
+    "lang": "es",
+    "share": 91.0,
+    "official": "official"
+   },
+   {
+    "lang": "cab",
+    "share": 0.47,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 0.44,
+    "official": null
+   }
+  ],
+  "HR": [
+   {
+    "lang": "hr",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 49.0,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 1.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "vec",
+    "share": 0.7,
+    "official": "official_regional"
+   }
+  ],
+  "HT": [
+   {
+    "lang": "ht",
+    "share": 81.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 42.0,
+    "official": "official"
+   }
+  ],
+  "HU": [
+   {
+    "lang": "hu",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 20.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "ro",
+    "share": 0.99,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 0.32,
+    "official": null
+   },
+   {
+    "lang": "sk",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "sl",
+    "share": 0.051,
+    "official": null
+   }
+  ],
+  "ID": [
+   {
+    "lang": "id",
+    "share": 64.0,
+    "official": "official"
+   },
+   {
+    "lang": "jv",
+    "share": 34.0,
+    "official": null
+   },
+   {
+    "lang": "su",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "mad",
+    "share": 6.3,
+    "official": null
+   },
+   {
+    "lang": "ms",
+    "share": 3.4,
+    "official": null
+   },
+   {
+    "lang": "min",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "bew",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "ban",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "bug",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "bjn",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "ace",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "ms-Arab",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "sas",
+    "share": 0.97,
+    "official": null
+   },
+   {
+    "lang": "bbc",
+    "share": 0.92,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 0.92,
+    "official": null
+   },
+   {
+    "lang": "mak",
+    "share": 0.73,
+    "official": null
+   },
+   {
+    "lang": "ljp",
+    "share": 0.69,
+    "official": null
+   },
+   {
+    "lang": "rej",
+    "share": 0.46,
+    "official": null
+   },
+   {
+    "lang": "gor",
+    "share": 0.41,
+    "official": null
+   },
+   {
+    "lang": "nij",
+    "share": 0.37,
+    "official": null
+   },
+   {
+    "lang": "kge",
+    "share": 0.32,
+    "official": null
+   },
+   {
+    "lang": "aoz",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "kvr",
+    "share": 0.14,
+    "official": null
+   },
+   {
+    "lang": "lbw",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "gay",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "rob",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "mdr",
+    "share": 0.092,
+    "official": null
+   },
+   {
+    "lang": "sxn",
+    "share": 0.092,
+    "official": null
+   },
+   {
+    "lang": "sly",
+    "share": 0.054,
+    "official": null
+   },
+   {
+    "lang": "mwv",
+    "share": 0.024,
+    "official": null
+   },
+   {
+    "lang": "ban-Bali",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "kaw",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "IE": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "ga",
+    "share": 22.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": null
+   }
+  ],
+  "IL": [
+   {
+    "lang": "he",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 85.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 20.0,
+    "official": "official"
+   },
+   {
+    "lang": "apc",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "ro",
+    "share": 3.7,
+    "official": null
+   },
+   {
+    "lang": "yi",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "lad",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "am",
+    "share": 0.59,
+    "official": null
+   },
+   {
+    "lang": "ti",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "ml",
+    "share": 0.085,
+    "official": null
+   }
+  ],
+  "IM": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "gv",
+    "share": 1.8,
+    "official": "official"
+   }
+  ],
+  "IN": [
+   {
+    "lang": "hi",
+    "share": 41.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 19.0,
+    "official": "official"
+   },
+   {
+    "lang": "bn",
+    "share": 8.1,
+    "official": "official_regional"
+   },
+   {
+    "lang": "te",
+    "share": 7.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mr",
+    "share": 7.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ta",
+    "share": 5.9,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ur",
+    "share": 5.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "gu",
+    "share": 4.5,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kn",
+    "share": 3.7,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ml",
+    "share": 3.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "or",
+    "share": 3.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "pa",
+    "share": 2.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bho",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "awa",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "as",
+    "share": 1.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bgc",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "mag",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "mwr",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "mai",
+    "share": 1.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hne",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "dcc",
+    "share": 0.99,
+    "official": null
+   },
+   {
+    "lang": "bjj",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "ne",
+    "share": 0.56,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sat",
+    "share": 0.55,
+    "official": "official_regional"
+   },
+   {
+    "lang": "wtm",
+    "share": 0.46,
+    "official": null
+   },
+   {
+    "lang": "rkt",
+    "share": 0.43,
+    "official": null
+   },
+   {
+    "lang": "ks",
+    "share": 0.41,
+    "official": "official_regional"
+   },
+   {
+    "lang": "knn",
+    "share": 0.37,
+    "official": null
+   },
+   {
+    "lang": "kok",
+    "share": 0.32,
+    "official": "official_regional"
+   },
+   {
+    "lang": "swv",
+    "share": 0.28,
+    "official": null
+   },
+   {
+    "lang": "gbm",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "lmn",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "sd",
+    "share": 0.26,
+    "official": "official_regional"
+   },
+   {
+    "lang": "gon",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "kfy",
+    "share": 0.22,
+    "official": null
+   },
+   {
+    "lang": "doi",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "kru",
+    "share": 0.19,
+    "official": null
+   },
+   {
+    "lang": "sck",
+    "share": 0.18,
+    "official": null
+   },
+   {
+    "lang": "wbq",
+    "share": 0.18,
+    "official": null
+   },
+   {
+    "lang": "xnr",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "tcy",
+    "share": 0.15,
+    "official": null
+   },
+   {
+    "lang": "wbr",
+    "share": 0.15,
+    "official": null
+   },
+   {
+    "lang": "khn",
+    "share": 0.15,
+    "official": null
+   },
+   {
+    "lang": "sd-Deva",
+    "share": 0.14,
+    "official": "official_regional"
+   },
+   {
+    "lang": "brx",
+    "share": 0.14,
+    "official": null
+   },
+   {
+    "lang": "noe",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "bhb",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "mni",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "raj",
+    "share": 0.1,
+    "official": null
+   },
+   {
+    "lang": "hi-Latn",
+    "share": 0.1,
+    "official": null
+   },
+   {
+    "lang": "hoc",
+    "share": 0.099,
+    "official": null
+   },
+   {
+    "lang": "mtr",
+    "share": 0.097,
+    "official": null
+   },
+   {
+    "lang": "unr",
+    "share": 0.094,
+    "official": null
+   },
+   {
+    "lang": "bhi",
+    "share": 0.092,
+    "official": null
+   },
+   {
+    "lang": "hoj",
+    "share": 0.082,
+    "official": null
+   },
+   {
+    "lang": "kha",
+    "share": 0.08,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kfr",
+    "share": 0.075,
+    "official": null
+   },
+   {
+    "lang": "grt",
+    "share": 0.053,
+    "official": null
+   },
+   {
+    "lang": "unx",
+    "share": 0.048,
+    "official": null
+   },
+   {
+    "lang": "bfy",
+    "share": 0.037,
+    "official": null
+   },
+   {
+    "lang": "srx",
+    "share": 0.035,
+    "official": null
+   },
+   {
+    "lang": "saz",
+    "share": 0.029,
+    "official": null
+   },
+   {
+    "lang": "ccp",
+    "share": 0.028,
+    "official": null
+   },
+   {
+    "lang": "bfq",
+    "share": 0.023,
+    "official": null
+   },
+   {
+    "lang": "njo",
+    "share": 0.023,
+    "official": null
+   },
+   {
+    "lang": "wsg",
+    "share": 0.021,
+    "official": null
+   },
+   {
+    "lang": "ria",
+    "share": 0.013,
+    "official": null
+   },
+   {
+    "lang": "bo",
+    "share": 0.011,
+    "official": null
+   },
+   {
+    "lang": "bpy",
+    "share": 0.0068,
+    "official": null
+   },
+   {
+    "lang": "bft",
+    "share": 0.0062,
+    "official": null
+   },
+   {
+    "lang": "bra",
+    "share": 0.0041,
+    "official": null
+   },
+   {
+    "lang": "lep",
+    "share": 0.0035,
+    "official": null
+   },
+   {
+    "lang": "mrh",
+    "share": 0.0034,
+    "official": null
+   },
+   {
+    "lang": "kxv",
+    "share": 0.0029,
+    "official": null
+   },
+   {
+    "lang": "btv",
+    "share": 0.0026,
+    "official": null
+   },
+   {
+    "lang": "lif",
+    "share": 0.0026,
+    "official": null
+   },
+   {
+    "lang": "lah",
+    "share": 0.0025,
+    "official": null
+   },
+   {
+    "lang": "sa",
+    "share": 0.0012,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kht",
+    "share": 0.0006,
+    "official": null
+   },
+   {
+    "lang": "dv",
+    "share": 0.0003,
+    "official": null
+   },
+   {
+    "lang": "dz",
+    "share": 0.0002,
+    "official": null
+   },
+   {
+    "lang": "pi-Deva",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "IO": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "IQ": [
+   {
+    "lang": "ar",
+    "share": 68.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 35.0,
+    "official": null
+   },
+   {
+    "lang": "ckb",
+    "share": 12.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ku-Arab",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "az-Arab",
+    "share": 1.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "fa",
+    "share": 0.87,
+    "official": null
+   },
+   {
+    "lang": "lrc",
+    "share": 0.61,
+    "official": null
+   },
+   {
+    "lang": "syr",
+    "share": 0.5,
+    "official": null
+   }
+  ],
+  "IR": [
+   {
+    "lang": "fa",
+    "share": 75.0,
+    "official": "official"
+   },
+   {
+    "lang": "az-Arab",
+    "share": 24.0,
+    "official": null
+   },
+   {
+    "lang": "mzn",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "glk",
+    "share": 4.6,
+    "official": null
+   },
+   {
+    "lang": "sdh",
+    "share": 4.5,
+    "official": null
+   },
+   {
+    "lang": "tk",
+    "share": 2.8,
+    "official": null
+   },
+   {
+    "lang": "lrc",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "bal",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "rmt",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "bqi",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "luz",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "lki",
+    "share": 0.76,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.67,
+    "official": null
+   },
+   {
+    "lang": "ckb",
+    "share": 0.63,
+    "official": null
+   },
+   {
+    "lang": "ku-Arab",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "bgn",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "prd",
+    "share": 0.5,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "ps",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "ka",
+    "share": 0.071,
+    "official": null
+   },
+   {
+    "lang": "gbz",
+    "share": 0.0091,
+    "official": null
+   },
+   {
+    "lang": "kk-Arab",
+    "share": 0.0034,
+    "official": null
+   }
+  ],
+  "IS": [
+   {
+    "lang": "is",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "da",
+    "share": 0.62,
+    "official": null
+   }
+  ],
+  "IT": [
+   {
+    "lang": "it",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 34.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 20.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "lmo",
+    "share": 5.7,
+    "official": null
+   },
+   {
+    "lang": "sc",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "vec",
+    "share": 1.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "pms",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "nap",
+    "share": 0.97,
+    "official": null
+   },
+   {
+    "lang": "lij",
+    "share": 0.86,
+    "official": null
+   },
+   {
+    "lang": "scn",
+    "share": 0.82,
+    "official": null
+   },
+   {
+    "lang": "sl",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "sdc",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "fur",
+    "share": 0.06,
+    "official": null
+   },
+   {
+    "lang": "egl",
+    "share": 0.05,
+    "official": null
+   },
+   {
+    "lang": "lld",
+    "share": 0.048,
+    "official": null
+   },
+   {
+    "lang": "ca",
+    "share": 0.035,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.035,
+    "official": null
+   },
+   {
+    "lang": "hr",
+    "share": 0.0057,
+    "official": null
+   },
+   {
+    "lang": "mhn",
+    "share": 0.0023,
+    "official": null
+   },
+   {
+    "lang": "rgn",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "JE": [
+   {
+    "lang": "en",
+    "share": 95.0,
+    "official": "official"
+   }
+  ],
+  "JM": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "jam",
+    "share": 95.0,
+    "official": null
+   }
+  ],
+  "JO": [
+   {
+    "lang": "ar",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "apc",
+    "share": 66.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 45.0,
+    "official": null
+   },
+   {
+    "lang": "ady",
+    "share": 1.0,
+    "official": null
+   }
+  ],
+  "JP": [
+   {
+    "lang": "ja",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "ryu",
+    "share": 0.77,
+    "official": null
+   },
+   {
+    "lang": "ko",
+    "share": 0.52,
+    "official": null
+   }
+  ],
+  "KE": [
+   {
+    "lang": "sw",
+    "share": 66.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 19.0,
+    "official": "official"
+   },
+   {
+    "lang": "ki",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "luy",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "luo",
+    "share": 9.8,
+    "official": null
+   },
+   {
+    "lang": "kam",
+    "share": 7.6,
+    "official": null
+   },
+   {
+    "lang": "kln",
+    "share": 7.6,
+    "official": null
+   },
+   {
+    "lang": "guz",
+    "share": 4.9,
+    "official": null
+   },
+   {
+    "lang": "mer",
+    "share": 4.0,
+    "official": null
+   },
+   {
+    "lang": "mas",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "ebu",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "so",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "dav",
+    "share": 0.82,
+    "official": null
+   },
+   {
+    "lang": "teo",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "pko",
+    "share": 0.69,
+    "official": null
+   },
+   {
+    "lang": "om",
+    "share": 0.47,
+    "official": null
+   },
+   {
+    "lang": "saq",
+    "share": 0.46,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.046,
+    "official": null
+   },
+   {
+    "lang": "pa",
+    "share": 0.017,
+    "official": null
+   },
+   {
+    "lang": "gu",
+    "share": 0.0086,
+    "official": null
+   }
+  ],
+  "KG": [
+   {
+    "lang": "ky",
+    "share": 48.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 36.0,
+    "official": "official"
+   },
+   {
+    "lang": "kaa",
+    "share": 0.019,
+    "official": null
+   }
+  ],
+  "KH": [
+   {
+    "lang": "km",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "cja",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "kdt",
+    "share": 0.11,
+    "official": null
+   }
+  ],
+  "KI": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "gil",
+    "share": 60.0,
+    "official": "official"
+   }
+  ],
+  "KM": [
+   {
+    "lang": "ar",
+    "share": 66.0,
+    "official": "official"
+   },
+   {
+    "lang": "zdj",
+    "share": 37.0,
+    "official": "official"
+   },
+   {
+    "lang": "wni",
+    "share": 34.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 26.0,
+    "official": "official"
+   }
+  ],
+  "KN": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   }
+  ],
+  "KP": [
+   {
+    "lang": "ko",
+    "share": 88.0,
+    "official": "official"
+   }
+  ],
+  "KR": [
+   {
+    "lang": "ko",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "KW": [
+   {
+    "lang": "ar",
+    "share": 100.0,
+    "official": "official"
+   }
+  ],
+  "KY": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   }
+  ],
+  "KZ": [
+   {
+    "lang": "ru",
+    "share": 72.0,
+    "official": "official"
+   },
+   {
+    "lang": "kk",
+    "share": 64.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 6.4,
+    "official": null
+   },
+   {
+    "lang": "ug-Cyrl",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.018,
+    "official": null
+   }
+  ],
+  "LA": [
+   {
+    "lang": "lo",
+    "share": 69.0,
+    "official": "official"
+   },
+   {
+    "lang": "kjg",
+    "share": 5.8,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "mww",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "kdt",
+    "share": 0.96,
+    "official": null
+   }
+  ],
+  "LB": [
+   {
+    "lang": "apc",
+    "share": 100.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 86.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 40.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 38.0,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 5.2,
+    "official": null
+   },
+   {
+    "lang": "ku-Arab",
+    "share": 1.7,
+    "official": null
+   }
+  ],
+  "LC": [
+   {
+    "lang": "en",
+    "share": 90.0,
+    "official": "official"
+   }
+  ],
+  "LI": [
+   {
+    "lang": "de",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "gsw",
+    "share": 85.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "wae",
+    "share": 3.2,
+    "official": null
+   }
+  ],
+  "LK": [
+   {
+    "lang": "si",
+    "share": 68.0,
+    "official": "official"
+   },
+   {
+    "lang": "ta",
+    "share": 15.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "pi-Sinh",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "LR": [
+   {
+    "lang": "en",
+    "share": 83.0,
+    "official": "official"
+   },
+   {
+    "lang": "lir",
+    "share": 74.0,
+    "official": null
+   },
+   {
+    "lang": "kpe",
+    "share": 20.0,
+    "official": null
+   },
+   {
+    "lang": "bsq",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "kro",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "grb",
+    "share": 9.9,
+    "official": null
+   },
+   {
+    "lang": "dnj",
+    "share": 7.9,
+    "official": null
+   },
+   {
+    "lang": "mev",
+    "share": 7.2,
+    "official": null
+   },
+   {
+    "lang": "kss",
+    "share": 4.3,
+    "official": null
+   },
+   {
+    "lang": "vai",
+    "share": 3.8,
+    "official": null
+   },
+   {
+    "lang": "bza",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "men",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "vai-Latn",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "LS": [
+   {
+    "lang": "st",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 27.0,
+    "official": "official"
+   },
+   {
+    "lang": "zu",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "ss",
+    "share": 2.4,
+    "official": null
+   },
+   {
+    "lang": "xh",
+    "share": 0.99,
+    "official": null
+   }
+  ],
+  "LT": [
+   {
+    "lang": "lt",
+    "share": 86.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 80.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 38.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "sgs",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "LU": [
+   {
+    "lang": "fr",
+    "share": 92.0,
+    "official": "official"
+   },
+   {
+    "lang": "lb",
+    "share": 67.0,
+    "official": "official"
+   },
+   {
+    "lang": "de",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 56.0,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 16.0,
+    "official": null
+   }
+  ],
+  "LV": [
+   {
+    "lang": "lv",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 46.0,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 38.0,
+    "official": null
+   },
+   {
+    "lang": "ltg",
+    "share": 8.9,
+    "official": null
+   }
+  ],
+  "LY": [
+   {
+    "lang": "ar",
+    "share": 74.0,
+    "official": "official"
+   }
+  ],
+  "MA": [
+   {
+    "lang": "ary",
+    "share": 87.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 62.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 36.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "zgh",
+    "share": 22.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "tzm",
+    "share": 9.8,
+    "official": "official"
+   },
+   {
+    "lang": "shi",
+    "share": 8.7,
+    "official": null
+   },
+   {
+    "lang": "shi-Latn",
+    "share": 8.7,
+    "official": null
+   },
+   {
+    "lang": "rif",
+    "share": 4.9,
+    "official": null
+   },
+   {
+    "lang": "rif-Tfng",
+    "share": 4.9,
+    "official": null
+   },
+   {
+    "lang": "mey",
+    "share": 0.82,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 0.065,
+    "official": null
+   }
+  ],
+  "MC": [
+   {
+    "lang": "fr",
+    "share": 97.0,
+    "official": "official"
+   }
+  ],
+  "MD": [
+   {
+    "lang": "ro",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "uk",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "bg",
+    "share": 9.4,
+    "official": null
+   },
+   {
+    "lang": "gag",
+    "share": 3.3,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 3.0,
+    "official": null
+   }
+  ],
+  "ME": [
+   {
+    "lang": "sr-Latn",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "sq",
+    "share": 7.9,
+    "official": null
+   },
+   {
+    "lang": "sr",
+    "share": 5.0,
+    "official": null
+   }
+  ],
+  "MF": [
+   {
+    "lang": "fr",
+    "share": 84.0,
+    "official": "official"
+   }
+  ],
+  "MG": [
+   {
+    "lang": "mg",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 27.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 18.0,
+    "official": "official"
+   }
+  ],
+  "MH": [
+   {
+    "lang": "en",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "mh",
+    "share": 73.0,
+    "official": "official"
+   }
+  ],
+  "MK": [
+   {
+    "lang": "mk",
+    "share": 67.0,
+    "official": "official"
+   },
+   {
+    "lang": "sq",
+    "share": 25.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tr",
+    "share": 3.5,
+    "official": null
+   }
+  ],
+  "ML": [
+   {
+    "lang": "bm",
+    "share": 46.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 17.0,
+    "official": "official"
+   },
+   {
+    "lang": "ffm",
+    "share": 7.7,
+    "official": null
+   },
+   {
+    "lang": "snk",
+    "share": 5.9,
+    "official": null
+   },
+   {
+    "lang": "mwk",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "ses",
+    "share": 3.4,
+    "official": null
+   },
+   {
+    "lang": "tmh",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "bm-Nkoo",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "khq",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "dtm",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "kao",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.9,
+    "official": null
+   },
+   {
+    "lang": "bmq",
+    "share": 0.86,
+    "official": null
+   },
+   {
+    "lang": "bze",
+    "share": 0.85,
+    "official": null
+   }
+  ],
+  "MM": [
+   {
+    "lang": "my",
+    "share": 64.0,
+    "official": "official"
+   },
+   {
+    "lang": "shn",
+    "share": 6.4,
+    "official": null
+   },
+   {
+    "lang": "kac",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "rhg",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "mnw",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "mrh",
+    "share": 0.036,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.022,
+    "official": null
+   },
+   {
+    "lang": "stu",
+    "share": 0.017,
+    "official": null
+   },
+   {
+    "lang": "kht",
+    "share": 0.0074,
+    "official": null
+   },
+   {
+    "lang": "pi-Mymr",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "MN": [
+   {
+    "lang": "mn",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "kk-Arab",
+    "share": 7.2,
+    "official": null
+   },
+   {
+    "lang": "zh",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "ug-Cyrl",
+    "share": 0.03,
+    "official": null
+   }
+  ],
+  "MO": [
+   {
+    "lang": "zh-Hant",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "yue",
+    "share": 86.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "en",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "zh",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "nan-Hant",
+    "share": 3.7,
+    "official": null
+   },
+   {
+    "lang": "fil",
+    "share": 3.1,
+    "official": null
+   },
+   {
+    "lang": "pt",
+    "share": 2.3,
+    "official": "official"
+   }
+  ],
+  "MP": [
+   {
+    "lang": "en",
+    "share": 97.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "ch",
+    "share": 18.0,
+    "official": null
+   }
+  ],
+  "MQ": [
+   {
+    "lang": "fr",
+    "share": 81.0,
+    "official": "official"
+   }
+  ],
+  "MR": [
+   {
+    "lang": "mey",
+    "share": 87.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 85.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 5.7,
+    "official": null
+   },
+   {
+    "lang": "wo",
+    "share": 0.23,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "MS": [
+   {
+    "lang": "en",
+    "share": 64.0,
+    "official": "official"
+   }
+  ],
+  "MT": [
+   {
+    "lang": "mt",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 88.0,
+    "official": "official"
+   },
+   {
+    "lang": "it",
+    "share": 56.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": null
+   }
+  ],
+  "MU": [
+   {
+    "lang": "mfe",
+    "share": 90.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 73.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 72.0,
+    "official": "official"
+   },
+   {
+    "lang": "bho",
+    "share": 8.6,
+    "official": null
+   },
+   {
+    "lang": "ur",
+    "share": 5.2,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 2.5,
+    "official": null
+   }
+  ],
+  "MV": [
+   {
+    "lang": "dv",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 75.0,
+    "official": null
+   }
+  ],
+  "MW": [
+   {
+    "lang": "en",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "ny",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "tum",
+    "share": 8.4,
+    "official": null
+   },
+   {
+    "lang": "tog",
+    "share": 0.98,
+    "official": null
+   },
+   {
+    "lang": "zu",
+    "share": 0.33,
+    "official": null
+   }
+  ],
+  "MX": [
+   {
+    "lang": "es",
+    "share": 83.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "en",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "yua",
+    "share": 0.67,
+    "official": null
+   },
+   {
+    "lang": "nhe",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "nhw",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "maz",
+    "share": 0.34,
+    "official": null
+   },
+   {
+    "lang": "nch",
+    "share": 0.19,
+    "official": null
+   },
+   {
+    "lang": "vec",
+    "share": 0.0019,
+    "official": null
+   },
+   {
+    "lang": "sei",
+    "share": 0.0007,
+    "official": null
+   }
+  ],
+  "MY": [
+   {
+    "lang": "ms",
+    "share": 75.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 21.0,
+    "official": null
+   },
+   {
+    "lang": "zh",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 4.2,
+    "official": null
+   },
+   {
+    "lang": "iba",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "jv",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "zmi",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "dtp",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "ml",
+    "share": 0.15,
+    "official": null
+   },
+   {
+    "lang": "bug",
+    "share": 0.079,
+    "official": null
+   },
+   {
+    "lang": "bjn",
+    "share": 0.014,
+    "official": null
+   }
+  ],
+  "MZ": [
+   {
+    "lang": "pt",
+    "share": 27.0,
+    "official": "official"
+   },
+   {
+    "lang": "vmw",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "ndc",
+    "share": 9.9,
+    "official": null
+   },
+   {
+    "lang": "ts",
+    "share": 7.9,
+    "official": null
+   },
+   {
+    "lang": "ngl",
+    "share": 6.8,
+    "official": null
+   },
+   {
+    "lang": "seh",
+    "share": 4.6,
+    "official": null
+   },
+   {
+    "lang": "mgh",
+    "share": 4.5,
+    "official": null
+   },
+   {
+    "lang": "rng",
+    "share": 3.4,
+    "official": null
+   },
+   {
+    "lang": "ny",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "yao",
+    "share": 2.4,
+    "official": null
+   },
+   {
+    "lang": "sw",
+    "share": 0.028,
+    "official": null
+   },
+   {
+    "lang": "zu",
+    "share": 0.0054,
+    "official": null
+   }
+  ],
+  "NA": [
+   {
+    "lang": "af",
+    "share": 75.0,
+    "official": null
+   },
+   {
+    "lang": "kj",
+    "share": 35.0,
+    "official": null
+   },
+   {
+    "lang": "ng",
+    "share": 21.0,
+    "official": null
+   },
+   {
+    "lang": "naq",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "hz",
+    "share": 9.1,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 7.0,
+    "official": "official"
+   },
+   {
+    "lang": "de",
+    "share": 0.9,
+    "official": null
+   },
+   {
+    "lang": "tn",
+    "share": 0.56,
+    "official": null
+   }
+  ],
+  "NC": [
+   {
+    "lang": "fr",
+    "share": 99.0,
+    "official": "official"
+   }
+  ],
+  "NE": [
+   {
+    "lang": "ha",
+    "share": 41.0,
+    "official": null
+   },
+   {
+    "lang": "dje",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": "official"
+   },
+   {
+    "lang": "fuq",
+    "share": 7.0,
+    "official": null
+   },
+   {
+    "lang": "tmh",
+    "share": 6.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "twq",
+    "share": 0.03,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "NF": [
+   {
+    "lang": "en",
+    "share": 96.0,
+    "official": "official"
+   }
+  ],
+  "NG": [
+   {
+    "lang": "en",
+    "share": 53.0,
+    "official": "official"
+   },
+   {
+    "lang": "pcm",
+    "share": 21.0,
+    "official": null
+   },
+   {
+    "lang": "ha",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "ig",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "yo",
+    "share": 13.0,
+    "official": "official"
+   },
+   {
+    "lang": "fuv",
+    "share": 6.7,
+    "official": null
+   },
+   {
+    "lang": "tiv",
+    "share": 1.6,
+    "official": null
+   },
+   {
+    "lang": "efi",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "ibb",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "ha-Arab",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "bin",
+    "share": 0.71,
+    "official": null
+   },
+   {
+    "lang": "kaj",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "kcg",
+    "share": 0.093,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.071,
+    "official": null
+   },
+   {
+    "lang": "cch",
+    "share": 0.021,
+    "official": null
+   },
+   {
+    "lang": "amo",
+    "share": 0.0087,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ann",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "NI": [
+   {
+    "lang": "es",
+    "share": 78.0,
+    "official": "official"
+   }
+  ],
+  "NL": [
+   {
+    "lang": "nl",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 90.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 71.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 19.0,
+    "official": null
+   },
+   {
+    "lang": "nds",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "li",
+    "share": 5.5,
+    "official": null
+   },
+   {
+    "lang": "fy",
+    "share": 4.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "gos",
+    "share": 3.6,
+    "official": null
+   },
+   {
+    "lang": "id",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "zea",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "rif",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 1.2,
+    "official": null
+   }
+  ],
+  "NO": [
+   {
+    "lang": "nb",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "no",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "nn",
+    "share": 25.0,
+    "official": "official"
+   },
+   {
+    "lang": "se",
+    "share": 0.29,
+    "official": "official_regional"
+   }
+  ],
+  "NP": [
+   {
+    "lang": "ne",
+    "share": 44.0,
+    "official": "official"
+   },
+   {
+    "lang": "mai",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "bho",
+    "share": 6.8,
+    "official": null
+   },
+   {
+    "lang": "new",
+    "share": 3.3,
+    "official": null
+   },
+   {
+    "lang": "jml",
+    "share": 3.2,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "dty",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "awa",
+    "share": 2.2,
+    "official": null
+   },
+   {
+    "lang": "thl",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "bap",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "tdg",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "thr",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "mgp",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "lif",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "thq",
+    "share": 1.0,
+    "official": null
+   },
+   {
+    "lang": "bfy",
+    "share": 0.54,
+    "official": null
+   },
+   {
+    "lang": "xsr",
+    "share": 0.52,
+    "official": null
+   },
+   {
+    "lang": "rjs",
+    "share": 0.44,
+    "official": null
+   },
+   {
+    "lang": "taj",
+    "share": 0.43,
+    "official": null
+   },
+   {
+    "lang": "hi",
+    "share": 0.42,
+    "official": null
+   },
+   {
+    "lang": "gvr",
+    "share": 0.29,
+    "official": null
+   },
+   {
+    "lang": "bo",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "tkt",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "suz",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "tdh",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "bn",
+    "share": 0.094,
+    "official": null
+   },
+   {
+    "lang": "unr-Deva",
+    "share": 0.018,
+    "official": null
+   },
+   {
+    "lang": "lep",
+    "share": 0.0091,
+    "official": null
+   }
+  ],
+  "NR": [
+   {
+    "lang": "en",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "na",
+    "share": 70.0,
+    "official": "official"
+   }
+  ],
+  "NU": [
+   {
+    "lang": "en",
+    "share": 56.0,
+    "official": "official"
+   },
+   {
+    "lang": "niu",
+    "share": 56.0,
+    "official": "official"
+   }
+  ],
+  "NZ": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "mi",
+    "share": 2.8,
+    "official": "official"
+   }
+  ],
+  "OM": [
+   {
+    "lang": "ar",
+    "share": 81.0,
+    "official": "official"
+   },
+   {
+    "lang": "bal",
+    "share": 4.9,
+    "official": null
+   },
+   {
+    "lang": "fa",
+    "share": 0.94,
+    "official": null
+   }
+  ],
+  "PA": [
+   {
+    "lang": "es",
+    "share": 69.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 0.13,
+    "official": null
+   }
+  ],
+  "PE": [
+   {
+    "lang": "es",
+    "share": 73.0,
+    "official": "official"
+   },
+   {
+    "lang": "qu",
+    "share": 15.0,
+    "official": "official"
+   },
+   {
+    "lang": "ay",
+    "share": 1.6,
+    "official": null
+   }
+  ],
+  "PF": [
+   {
+    "lang": "fr",
+    "share": 98.0,
+    "official": "official"
+   },
+   {
+    "lang": "ty",
+    "share": 31.0,
+    "official": "official"
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 7.8,
+    "official": null
+   }
+  ],
+  "PG": [
+   {
+    "lang": "tpi",
+    "share": 71.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 50.0,
+    "official": "official"
+   },
+   {
+    "lang": "ho",
+    "share": 2.1,
+    "official": "official"
+   }
+  ],
+  "PH": [
+   {
+    "lang": "en",
+    "share": 64.0,
+    "official": "official"
+   },
+   {
+    "lang": "fil",
+    "share": 60.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 31.0,
+    "official": null
+   },
+   {
+    "lang": "ceb",
+    "share": 24.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ilo",
+    "share": 9.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hil",
+    "share": 8.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bik",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "war",
+    "share": 2.9,
+    "official": "official_regional"
+   },
+   {
+    "lang": "fbl",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "pam",
+    "share": 2.3,
+    "official": null
+   },
+   {
+    "lang": "pag",
+    "share": 1.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mdh",
+    "share": 1.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tsg",
+    "share": 1.1,
+    "official": "official_regional"
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 0.73,
+    "official": null
+   },
+   {
+    "lang": "cps",
+    "share": 0.66,
+    "official": null
+   },
+   {
+    "lang": "krj",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "bto",
+    "share": 0.28,
+    "official": null
+   },
+   {
+    "lang": "hnn",
+    "share": 0.016,
+    "official": null
+   },
+   {
+    "lang": "tbw",
+    "share": 0.0085,
+    "official": null
+   },
+   {
+    "lang": "bku",
+    "share": 0.0068,
+    "official": null
+   }
+  ],
+  "PK": [
+   {
+    "lang": "ur",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "pa-Arab",
+    "share": 70.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 50.0,
+    "official": "official"
+   },
+   {
+    "lang": "lah",
+    "share": 40.0,
+    "official": null
+   },
+   {
+    "lang": "ps",
+    "share": 16.0,
+    "official": null
+   },
+   {
+    "lang": "sd",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "skr",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "bal",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "hno",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "brh",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "fa",
+    "share": 0.66,
+    "official": null
+   },
+   {
+    "lang": "bgn",
+    "share": 0.57,
+    "official": null
+   },
+   {
+    "lang": "hnd",
+    "share": 0.41,
+    "official": null
+   },
+   {
+    "lang": "tg-Arab",
+    "share": 0.33,
+    "official": null
+   },
+   {
+    "lang": "gju",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "bft",
+    "share": 0.18,
+    "official": null
+   },
+   {
+    "lang": "kvx",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "khw",
+    "share": 0.15,
+    "official": null
+   },
+   {
+    "lang": "mvy",
+    "share": 0.14,
+    "official": null
+   },
+   {
+    "lang": "kxp",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "gjk",
+    "share": 0.11,
+    "official": null
+   },
+   {
+    "lang": "ks",
+    "share": 0.069,
+    "official": null
+   },
+   {
+    "lang": "trw",
+    "share": 0.053,
+    "official": null
+   },
+   {
+    "lang": "btv",
+    "share": 0.019,
+    "official": null
+   }
+  ],
+  "PL": [
+   {
+    "lang": "pl",
+    "share": 96.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 33.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 19.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ru",
+    "share": 18.0,
+    "official": null
+   },
+   {
+    "lang": "szl",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "be",
+    "share": 0.58,
+    "official": null
+   },
+   {
+    "lang": "uk",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "csb",
+    "share": 0.13,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sli",
+    "share": 0.031,
+    "official": null
+   },
+   {
+    "lang": "lt",
+    "share": 0.021,
+    "official": "official_regional"
+   },
+   {
+    "lang": "prg",
+    "share": 0.0001,
+    "official": null
+   }
+  ],
+  "PM": [
+   {
+    "lang": "fr",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 3.7,
+    "official": null
+   }
+  ],
+  "PN": [
+   {
+    "lang": "en",
+    "share": 92.0,
+    "official": "official"
+   }
+  ],
+  "PR": [
+   {
+    "lang": "es",
+    "share": 87.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 49.0,
+    "official": "de_facto_official"
+   }
+  ],
+  "PS": [
+   {
+    "lang": "ar",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "apc",
+    "share": 87.0,
+    "official": null
+   }
+  ],
+  "PT": [
+   {
+    "lang": "pt",
+    "share": 96.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 27.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 15.0,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "gl",
+    "share": 0.14,
+    "official": null
+   }
+  ],
+  "PW": [
+   {
+    "lang": "pau",
+    "share": 74.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 8.6,
+    "official": "official"
+   }
+  ],
+  "PY": [
+   {
+    "lang": "gn",
+    "share": 69.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 67.0,
+    "official": "official"
+   },
+   {
+    "lang": "de",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "cag",
+    "share": 0.23,
+    "official": null
+   },
+   {
+    "lang": "gun",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "pta",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "enl",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "enx",
+    "share": 0.075,
+    "official": null
+   },
+   {
+    "lang": "ayo",
+    "share": 0.036,
+    "official": null
+   },
+   {
+    "lang": "ceg",
+    "share": 0.03,
+    "official": null
+   },
+   {
+    "lang": "mca",
+    "share": 0.027,
+    "official": null
+   },
+   {
+    "lang": "tmf",
+    "share": 0.027,
+    "official": null
+   },
+   {
+    "lang": "spn",
+    "share": 0.025,
+    "official": null
+   },
+   {
+    "lang": "guq",
+    "share": 0.024,
+    "official": null
+   },
+   {
+    "lang": "aqt",
+    "share": 0.017,
+    "official": null
+   },
+   {
+    "lang": "nhd",
+    "share": 0.016,
+    "official": null
+   },
+   {
+    "lang": "gva",
+    "share": 0.0003,
+    "official": null
+   }
+  ],
+  "QA": [
+   {
+    "lang": "ar",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "fa",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "ml",
+    "share": 0.25,
+    "official": null
+   }
+  ],
+  "RE": [
+   {
+    "lang": "fr",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "rcf",
+    "share": 71.0,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 15.0,
+    "official": null
+   }
+  ],
+  "RO": [
+   {
+    "lang": "ro",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 31.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "es",
+    "share": 10.0,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 6.6,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 0.21,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 0.13,
+    "official": null
+   },
+   {
+    "lang": "sr-Latn",
+    "share": 0.12,
+    "official": null
+   },
+   {
+    "lang": "bg",
+    "share": 0.037,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.023,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 0.015,
+    "official": null
+   }
+  ],
+  "RS": [
+   {
+    "lang": "sr",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "sr-Latn",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "sq",
+    "share": 19.0,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 4.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ro",
+    "share": 2.1,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hr",
+    "share": 0.93,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sk",
+    "share": 0.85,
+    "official": "official_regional"
+   },
+   {
+    "lang": "uk",
+    "share": 0.0,
+    "official": "official_regional"
+   }
+  ],
+  "RU": [
+   {
+    "lang": "ru",
+    "share": 99.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 3.8,
+    "official": null
+   },
+   {
+    "lang": "tt",
+    "share": 2.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "cv",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "ce",
+    "share": 1.1,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hy",
+    "share": 0.84,
+    "official": null
+   },
+   {
+    "lang": "ba",
+    "share": 0.8,
+    "official": "official_regional"
+   },
+   {
+    "lang": "de",
+    "share": 0.79,
+    "official": null
+   },
+   {
+    "lang": "av",
+    "share": 0.48,
+    "official": "official_regional"
+   },
+   {
+    "lang": "uk",
+    "share": 0.46,
+    "official": null
+   },
+   {
+    "lang": "kbd",
+    "share": 0.34,
+    "official": "official_regional"
+   },
+   {
+    "lang": "myv",
+    "share": 0.31,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kum",
+    "share": 0.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sah",
+    "share": 0.28,
+    "official": "official_regional"
+   },
+   {
+    "lang": "dar",
+    "share": 0.27,
+    "official": null
+   },
+   {
+    "lang": "os",
+    "share": 0.26,
+    "official": null
+   },
+   {
+    "lang": "inh",
+    "share": 0.25,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bua",
+    "share": 0.23,
+    "official": "official_regional"
+   },
+   {
+    "lang": "az-Cyrl",
+    "share": 0.22,
+    "official": "official_regional"
+   },
+   {
+    "lang": "lez",
+    "share": 0.21,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mdf",
+    "share": 0.21,
+    "official": "official_regional"
+   },
+   {
+    "lang": "kk",
+    "share": 0.2,
+    "official": null
+   },
+   {
+    "lang": "krc",
+    "share": 0.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "chm",
+    "share": 0.19,
+    "official": null
+   },
+   {
+    "lang": "tyv",
+    "share": 0.19,
+    "official": "official_regional"
+   },
+   {
+    "lang": "udm",
+    "share": 0.19,
+    "official": "official_regional"
+   },
+   {
+    "lang": "uz",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "tg",
+    "share": 0.16,
+    "official": null
+   },
+   {
+    "lang": "kv",
+    "share": 0.081,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ady",
+    "share": 0.081,
+    "official": "official_regional"
+   },
+   {
+    "lang": "xal",
+    "share": 0.08,
+    "official": null
+   },
+   {
+    "lang": "lbe",
+    "share": 0.065,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ka",
+    "share": 0.06,
+    "official": null
+   },
+   {
+    "lang": "alt",
+    "share": 0.047,
+    "official": null
+   },
+   {
+    "lang": "be",
+    "share": 0.045,
+    "official": null
+   },
+   {
+    "lang": "pnt-Cyrl",
+    "share": 0.04,
+    "official": null
+   },
+   {
+    "lang": "koi",
+    "share": 0.031,
+    "official": "official_regional"
+   },
+   {
+    "lang": "abq",
+    "share": 0.021,
+    "official": null
+   },
+   {
+    "lang": "xdq",
+    "share": 0.015,
+    "official": null
+   },
+   {
+    "lang": "mrj",
+    "share": 0.011,
+    "official": null
+   },
+   {
+    "lang": "fi",
+    "share": 0.01,
+    "official": null
+   },
+   {
+    "lang": "krl",
+    "share": 0.01,
+    "official": null
+   },
+   {
+    "lang": "sr",
+    "share": 0.0042,
+    "official": null
+   },
+   {
+    "lang": "mn",
+    "share": 0.0033,
+    "official": null
+   },
+   {
+    "lang": "vep",
+    "share": 0.0016,
+    "official": null
+   },
+   {
+    "lang": "cu",
+    "share": 0.001,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.0003,
+    "official": null
+   },
+   {
+    "lang": "izh",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "vot",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "RW": [
+   {
+    "lang": "rw",
+    "share": 77.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 15.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 5.8,
+    "official": "official"
+   }
+  ],
+  "SA": [
+   {
+    "lang": "ar",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "ars",
+    "share": 3.0,
+    "official": null
+   }
+  ],
+  "SB": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "pis",
+    "share": 82.0,
+    "official": null
+   },
+   {
+    "lang": "rug",
+    "share": 1.4,
+    "official": null
+   }
+  ],
+  "SC": [
+   {
+    "lang": "crs",
+    "share": 98.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 53.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 38.0,
+    "official": "official"
+   }
+  ],
+  "SD": [
+   {
+    "lang": "apd",
+    "share": 61.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 61.0,
+    "official": "official"
+   },
+   {
+    "lang": "bej",
+    "share": 5.4,
+    "official": null
+   },
+   {
+    "lang": "fvr",
+    "share": 2.7,
+    "official": null
+   },
+   {
+    "lang": "ha-Arab",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "mls",
+    "share": 0.99,
+    "official": null
+   },
+   {
+    "lang": "fia",
+    "share": 0.83,
+    "official": null
+   },
+   {
+    "lang": "zag",
+    "share": 0.51,
+    "official": null
+   }
+  ],
+  "SE": [
+   {
+    "lang": "sv",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 86.0,
+    "official": null
+   },
+   {
+    "lang": "fi",
+    "share": 2.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "fit",
+    "share": 0.55,
+    "official": null
+   },
+   {
+    "lang": "se",
+    "share": 0.33,
+    "official": null
+   },
+   {
+    "lang": "rmu",
+    "share": 0.09,
+    "official": null
+   },
+   {
+    "lang": "yi",
+    "share": 0.028,
+    "official": null
+   },
+   {
+    "lang": "smj",
+    "share": 0.014,
+    "official": null
+   },
+   {
+    "lang": "sma",
+    "share": 0.0028,
+    "official": null
+   },
+   {
+    "lang": "ia",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "SG": [
+   {
+    "lang": "en",
+    "share": 80.0,
+    "official": "official"
+   },
+   {
+    "lang": "zh",
+    "share": 62.0,
+    "official": "official"
+   },
+   {
+    "lang": "ms",
+    "share": 19.0,
+    "official": "official"
+   },
+   {
+    "lang": "nan",
+    "share": 5.8,
+    "official": null
+   },
+   {
+    "lang": "ta",
+    "share": 4.9,
+    "official": "official"
+   },
+   {
+    "lang": "hak",
+    "share": 4.3,
+    "official": null
+   },
+   {
+    "lang": "fil",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "yue",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "id",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "jv",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "bn",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "cdo",
+    "share": 0.9,
+    "official": null
+   },
+   {
+    "lang": "th",
+    "share": 0.7,
+    "official": null
+   },
+   {
+    "lang": "ja",
+    "share": 0.6,
+    "official": null
+   },
+   {
+    "lang": "cpx",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "mad",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "ml",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "pa",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "mnp",
+    "share": 0.3,
+    "official": null
+   }
+  ],
+  "SH": [
+   {
+    "lang": "en",
+    "share": 68.0,
+    "official": "official"
+   }
+  ],
+  "SI": [
+   {
+    "lang": "sl",
+    "share": 87.0,
+    "official": "official"
+   },
+   {
+    "lang": "hr",
+    "share": 61.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 59.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 42.0,
+    "official": null
+   },
+   {
+    "lang": "vec",
+    "share": 1.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hu",
+    "share": 0.44,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 0.19,
+    "official": null
+   }
+  ],
+  "SJ": [
+   {
+    "lang": "nb",
+    "share": 51.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 41.0,
+    "official": null
+   }
+  ],
+  "SK": [
+   {
+    "lang": "sk",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "cs",
+    "share": 47.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 26.0,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 22.0,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "uk",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "pl",
+    "share": 0.93,
+    "official": null
+   }
+  ],
+  "SL": [
+   {
+    "lang": "kri",
+    "share": 95.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 35.0,
+    "official": "official"
+   },
+   {
+    "lang": "men",
+    "share": 27.0,
+    "official": null
+   },
+   {
+    "lang": "tem",
+    "share": 26.0,
+    "official": null
+   },
+   {
+    "lang": "sus",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "ff",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "SM": [
+   {
+    "lang": "it",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "eo",
+    "share": 0.85,
+    "official": null
+   }
+  ],
+  "SN": [
+   {
+    "lang": "wo",
+    "share": 70.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "fr",
+    "share": 26.0,
+    "official": "official"
+   },
+   {
+    "lang": "ff",
+    "share": 21.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "srr",
+    "share": 11.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "dyo",
+    "share": 2.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sav",
+    "share": 1.5,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mfv",
+    "share": 0.77,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bjt",
+    "share": 0.61,
+    "official": "official_regional"
+   },
+   {
+    "lang": "snf",
+    "share": 0.24,
+    "official": "official_regional"
+   },
+   {
+    "lang": "knf",
+    "share": 0.21,
+    "official": "official_regional"
+   },
+   {
+    "lang": "bsc",
+    "share": 0.097,
+    "official": "official_regional"
+   },
+   {
+    "lang": "mey-Latn",
+    "share": 0.038,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tnr",
+    "share": 0.018,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ff-Adlm",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "SO": [
+   {
+    "lang": "so",
+    "share": 78.0,
+    "official": "official"
+   },
+   {
+    "lang": "ar",
+    "share": 34.0,
+    "official": "official"
+   },
+   {
+    "lang": "sw",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "om",
+    "share": 0.42,
+    "official": null
+   }
+  ],
+  "SR": [
+   {
+    "lang": "nl",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "srn",
+    "share": 68.0,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.36,
+    "official": null
+   }
+  ],
+  "SS": [
+   {
+    "lang": "ar",
+    "share": 27.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 27.0,
+    "official": "official"
+   },
+   {
+    "lang": "nus",
+    "share": 5.6,
+    "official": null
+   }
+  ],
+  "ST": [
+   {
+    "lang": "pt",
+    "share": 85.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 20.0,
+    "official": null
+   }
+  ],
+  "SV": [
+   {
+    "lang": "es",
+    "share": 89.0,
+    "official": "official"
+   },
+   {
+    "lang": "ccr",
+    "share": 0.056,
+    "official": null
+   },
+   {
+    "lang": "ppl",
+    "share": 0.041,
+    "official": null
+   },
+   {
+    "lang": "len",
+    "share": 0.02,
+    "official": null
+   }
+  ],
+  "SX": [
+   {
+    "lang": "en",
+    "share": 68.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "vic",
+    "share": 6.7,
+    "official": null
+   },
+   {
+    "lang": "nl",
+    "share": 3.4,
+    "official": "official"
+   }
+  ],
+  "SY": [
+   {
+    "lang": "apc",
+    "share": 85.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 80.0,
+    "official": "official"
+   },
+   {
+    "lang": "ku",
+    "share": 8.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 5.9,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "syr",
+    "share": 0.084,
+    "official": null
+   }
+  ],
+  "SZ": [
+   {
+    "lang": "en",
+    "share": 80.0,
+    "official": "official"
+   },
+   {
+    "lang": "ss",
+    "share": 58.0,
+    "official": "official"
+   },
+   {
+    "lang": "zu",
+    "share": 6.8,
+    "official": null
+   },
+   {
+    "lang": "ts",
+    "share": 1.7,
+    "official": null
+   }
+  ],
+  "TC": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   }
+  ],
+  "TD": [
+   {
+    "lang": "ar",
+    "share": 17.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 13.0,
+    "official": "official"
+   }
+  ],
+  "TF": [
+   {
+    "lang": "fr",
+    "share": 100.0,
+    "official": null
+   }
+  ],
+  "TG": [
+   {
+    "lang": "fr",
+    "share": 41.0,
+    "official": "official"
+   },
+   {
+    "lang": "ee",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "ife",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "blo",
+    "share": 0.15,
+    "official": null
+   }
+  ],
+  "TH": [
+   {
+    "lang": "th",
+    "share": 80.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 27.0,
+    "official": null
+   },
+   {
+    "lang": "tts",
+    "share": 24.0,
+    "official": null
+   },
+   {
+    "lang": "nod",
+    "share": 9.6,
+    "official": null
+   },
+   {
+    "lang": "sou",
+    "share": 8.0,
+    "official": null
+   },
+   {
+    "lang": "mfa",
+    "share": 5.0,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 1.8,
+    "official": null
+   },
+   {
+    "lang": "kxm",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "kdt",
+    "share": 0.48,
+    "official": null
+   },
+   {
+    "lang": "mnw",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.098,
+    "official": null
+   },
+   {
+    "lang": "shn",
+    "share": 0.096,
+    "official": null
+   },
+   {
+    "lang": "mww",
+    "share": 0.047,
+    "official": null
+   },
+   {
+    "lang": "lcp",
+    "share": 0.01,
+    "official": null
+   },
+   {
+    "lang": "lwl",
+    "share": 0.01,
+    "official": null
+   },
+   {
+    "lang": "pi-Thai",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "TJ": [
+   {
+    "lang": "tg",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "fa",
+    "share": 0.78,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.0096,
+    "official": null
+   }
+  ],
+  "TK": [
+   {
+    "lang": "tkl",
+    "share": 69.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 38.0,
+    "official": "official"
+   },
+   {
+    "lang": "sm",
+    "share": 20.0,
+    "official": null
+   }
+  ],
+  "TL": [
+   {
+    "lang": "pt",
+    "share": 59.0,
+    "official": "official"
+   },
+   {
+    "lang": "tet",
+    "share": 59.0,
+    "official": "official"
+   }
+  ],
+  "TM": [
+   {
+    "lang": "tk",
+    "share": 70.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 12.0,
+    "official": null
+   },
+   {
+    "lang": "uz",
+    "share": 9.0,
+    "official": null
+   },
+   {
+    "lang": "ku-Cyrl",
+    "share": 0.4,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.1,
+    "official": null
+   }
+  ],
+  "TN": [
+   {
+    "lang": "aeb",
+    "share": 90.0,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 53.0,
+    "official": "official"
+   }
+  ],
+  "TO": [
+   {
+    "lang": "to",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 28.0,
+    "official": "official"
+   }
+  ],
+  "TR": [
+   {
+    "lang": "tr",
+    "share": 93.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 17.0,
+    "official": null
+   },
+   {
+    "lang": "ku",
+    "share": 5.5,
+    "official": null
+   },
+   {
+    "lang": "apc",
+    "share": 5.2,
+    "official": null
+   },
+   {
+    "lang": "zza",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "kbd",
+    "share": 0.77,
+    "official": null
+   },
+   {
+    "lang": "az",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "az-Arab",
+    "share": 0.65,
+    "official": null
+   },
+   {
+    "lang": "ar",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "bgx",
+    "share": 0.46,
+    "official": null
+   },
+   {
+    "lang": "bg",
+    "share": 0.42,
+    "official": null
+   },
+   {
+    "lang": "ady",
+    "share": 0.39,
+    "official": null
+   },
+   {
+    "lang": "kiu",
+    "share": 0.19,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 0.1,
+    "official": null
+   },
+   {
+    "lang": "hy",
+    "share": 0.056,
+    "official": null
+   },
+   {
+    "lang": "ka",
+    "share": 0.056,
+    "official": null
+   },
+   {
+    "lang": "sr-Latn",
+    "share": 0.028,
+    "official": null
+   },
+   {
+    "lang": "lzz",
+    "share": 0.025,
+    "official": null
+   },
+   {
+    "lang": "sq",
+    "share": 0.021,
+    "official": null
+   },
+   {
+    "lang": "abq-Latn",
+    "share": 0.015,
+    "official": null
+   },
+   {
+    "lang": "pnt-Latn",
+    "share": 0.0061,
+    "official": null
+   },
+   {
+    "lang": "ab",
+    "share": 0.0048,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.0048,
+    "official": null
+   },
+   {
+    "lang": "tru",
+    "share": 0.0036,
+    "official": null
+   },
+   {
+    "lang": "uz",
+    "share": 0.0024,
+    "official": null
+   },
+   {
+    "lang": "ky-Latn",
+    "share": 0.0014,
+    "official": null
+   },
+   {
+    "lang": "kk",
+    "share": 0.0007,
+    "official": null
+   }
+  ],
+  "TT": [
+   {
+    "lang": "en",
+    "share": 88.0,
+    "official": "official"
+   },
+   {
+    "lang": "es",
+    "share": 0.29,
+    "official": null
+   }
+  ],
+  "TV": [
+   {
+    "lang": "tvl",
+    "share": 85.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 9.1,
+    "official": "official"
+   }
+  ],
+  "TW": [
+   {
+    "lang": "zh-Hant",
+    "share": 95.0,
+    "official": "official"
+   },
+   {
+    "lang": "nan-Hant",
+    "share": 57.0,
+    "official": "official"
+   },
+   {
+    "lang": "hak-Hant",
+    "share": 11.0,
+    "official": "official"
+   },
+   {
+    "lang": "trv",
+    "share": 0.02,
+    "official": null
+   }
+  ],
+  "TZ": [
+   {
+    "lang": "sw",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 69.0,
+    "official": "official"
+   },
+   {
+    "lang": "suk",
+    "share": 8.7,
+    "official": null
+   },
+   {
+    "lang": "nym",
+    "share": 3.3,
+    "official": null
+   },
+   {
+    "lang": "kde",
+    "share": 2.5,
+    "official": null
+   },
+   {
+    "lang": "bez",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "ksb",
+    "share": 1.7,
+    "official": null
+   },
+   {
+    "lang": "mas",
+    "share": 1.5,
+    "official": null
+   },
+   {
+    "lang": "mgy",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "asa",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "lag",
+    "share": 0.87,
+    "official": null
+   },
+   {
+    "lang": "jmc",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "rof",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "vun",
+    "share": 0.74,
+    "official": null
+   },
+   {
+    "lang": "rwk",
+    "share": 0.22,
+    "official": null
+   },
+   {
+    "lang": "sbp",
+    "share": 0.2,
+    "official": null
+   }
+  ],
+  "UA": [
+   {
+    "lang": "uk",
+    "share": 65.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 46.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "pl",
+    "share": 2.4,
+    "official": null
+   },
+   {
+    "lang": "yi",
+    "share": 1.3,
+    "official": null
+   },
+   {
+    "lang": "rue",
+    "share": 1.2,
+    "official": null
+   },
+   {
+    "lang": "be",
+    "share": 0.83,
+    "official": null
+   },
+   {
+    "lang": "crh",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "ro",
+    "share": 0.52,
+    "official": null
+   },
+   {
+    "lang": "bg",
+    "share": 0.49,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 0.42,
+    "official": null
+   },
+   {
+    "lang": "hu",
+    "share": 0.37,
+    "official": null
+   },
+   {
+    "lang": "el",
+    "share": 0.02,
+    "official": null
+   }
+  ],
+  "UG": [
+   {
+    "lang": "sw",
+    "share": 75.0,
+    "official": "official"
+   },
+   {
+    "lang": "lg",
+    "share": 13.0,
+    "official": null
+   },
+   {
+    "lang": "nyn",
+    "share": 6.3,
+    "official": null
+   },
+   {
+    "lang": "cgg",
+    "share": 5.4,
+    "official": null
+   },
+   {
+    "lang": "xog",
+    "share": 5.3,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 3.9,
+    "official": "official"
+   },
+   {
+    "lang": "teo",
+    "share": 3.9,
+    "official": null
+   },
+   {
+    "lang": "laj",
+    "share": 3.8,
+    "official": null
+   },
+   {
+    "lang": "ach",
+    "share": 3.7,
+    "official": null
+   },
+   {
+    "lang": "myx",
+    "share": 2.9,
+    "official": null
+   },
+   {
+    "lang": "rw",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "ttj",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "hi",
+    "share": 0.0045,
+    "official": null
+   }
+  ],
+  "UM": [
+   {
+    "lang": "en",
+    "share": 100.0,
+    "official": "de_facto_official"
+   }
+  ],
+  "US": [
+   {
+    "lang": "en",
+    "share": 96.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "es",
+    "share": 9.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 0.69,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 0.56,
+    "official": null
+   },
+   {
+    "lang": "de",
+    "share": 0.47,
+    "official": null
+   },
+   {
+    "lang": "fil",
+    "share": 0.42,
+    "official": null
+   },
+   {
+    "lang": "it",
+    "share": 0.34,
+    "official": null
+   },
+   {
+    "lang": "vi",
+    "share": 0.34,
+    "official": null
+   },
+   {
+    "lang": "ko",
+    "share": 0.3,
+    "official": null
+   },
+   {
+    "lang": "ru",
+    "share": 0.24,
+    "official": null
+   },
+   {
+    "lang": "mww",
+    "share": 0.068,
+    "official": null
+   },
+   {
+    "lang": "nv",
+    "share": 0.05,
+    "official": null
+   },
+   {
+    "lang": "yi",
+    "share": 0.049,
+    "official": null
+   },
+   {
+    "lang": "pdc",
+    "share": 0.039,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.035,
+    "official": null
+   },
+   {
+    "lang": "haw",
+    "share": 0.0089,
+    "official": "official_regional"
+   },
+   {
+    "lang": "frc",
+    "share": 0.0084,
+    "official": null
+   },
+   {
+    "lang": "chr",
+    "share": 0.0077,
+    "official": null
+   },
+   {
+    "lang": "esu",
+    "share": 0.0063,
+    "official": null
+   },
+   {
+    "lang": "dak",
+    "share": 0.0059,
+    "official": null
+   },
+   {
+    "lang": "cho",
+    "share": 0.0033,
+    "official": null
+   },
+   {
+    "lang": "lkt",
+    "share": 0.0024,
+    "official": null
+   },
+   {
+    "lang": "ik",
+    "share": 0.0023,
+    "official": null
+   },
+   {
+    "lang": "mus",
+    "share": 0.0012,
+    "official": null
+   },
+   {
+    "lang": "oka",
+    "share": 0.0001,
+    "official": null
+   },
+   {
+    "lang": "io",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "cic",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "cad",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "jbo",
+    "share": 0.0,
+    "official": null
+   },
+   {
+    "lang": "osa",
+    "share": 0.0,
+    "official": null
+   }
+  ],
+  "UY": [
+   {
+    "lang": "es",
+    "share": 88.0,
+    "official": "official"
+   }
+  ],
+  "UZ": [
+   {
+    "lang": "uz",
+    "share": 85.0,
+    "official": "official"
+   },
+   {
+    "lang": "uz-Cyrl",
+    "share": 15.0,
+    "official": "official"
+   },
+   {
+    "lang": "ru",
+    "share": 14.0,
+    "official": null
+   },
+   {
+    "lang": "kaa",
+    "share": 2.1,
+    "official": null
+   },
+   {
+    "lang": "tr",
+    "share": 0.62,
+    "official": null
+   }
+  ],
+  "VA": [
+   {
+    "lang": "it",
+    "share": 82.0,
+    "official": "de_facto_official"
+   },
+   {
+    "lang": "la",
+    "share": 82.0,
+    "official": null
+   }
+  ],
+  "VC": [
+   {
+    "lang": "en",
+    "share": 96.0,
+    "official": "official"
+   }
+  ],
+  "VE": [
+   {
+    "lang": "es",
+    "share": 82.0,
+    "official": "official"
+   },
+   {
+    "lang": "yrl",
+    "share": 0.0064,
+    "official": null
+   }
+  ],
+  "VG": [
+   {
+    "lang": "en",
+    "share": 98.0,
+    "official": "official"
+   }
+  ],
+  "VI": [
+   {
+    "lang": "en",
+    "share": 75.0,
+    "official": "de_facto_official"
+   }
+  ],
+  "VN": [
+   {
+    "lang": "vi",
+    "share": 86.0,
+    "official": "official"
+   },
+   {
+    "lang": "mww",
+    "share": 1.4,
+    "official": null
+   },
+   {
+    "lang": "zh-Hant",
+    "share": 1.1,
+    "official": null
+   },
+   {
+    "lang": "blt",
+    "share": 0.69,
+    "official": null
+   },
+   {
+    "lang": "hnj",
+    "share": 0.17,
+    "official": null
+   },
+   {
+    "lang": "cjm",
+    "share": 0.089,
+    "official": null
+   }
+  ],
+  "VU": [
+   {
+    "lang": "bi",
+    "share": 90.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 83.0,
+    "official": "official"
+   },
+   {
+    "lang": "fr",
+    "share": 31.0,
+    "official": "official"
+   }
+  ],
+  "WF": [
+   {
+    "lang": "fr",
+    "share": 83.0,
+    "official": "official"
+   },
+   {
+    "lang": "wls",
+    "share": 59.0,
+    "official": null
+   },
+   {
+    "lang": "fud",
+    "share": 30.0,
+    "official": null
+   }
+  ],
+  "WS": [
+   {
+    "lang": "sm",
+    "share": 100.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 2.1,
+    "official": "official"
+   }
+  ],
+  "XK": [
+   {
+    "lang": "sq",
+    "share": 92.0,
+    "official": "official"
+   },
+   {
+    "lang": "aln",
+    "share": 74.0,
+    "official": null
+   },
+   {
+    "lang": "sr",
+    "share": 5.0,
+    "official": "official"
+   },
+   {
+    "lang": "sr-Latn",
+    "share": 5.0,
+    "official": "official"
+   }
+  ],
+  "YE": [
+   {
+    "lang": "ar",
+    "share": 74.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 9.0,
+    "official": null
+   }
+  ],
+  "YT": [
+   {
+    "lang": "swb",
+    "share": 88.0,
+    "official": null
+   },
+   {
+    "lang": "fr",
+    "share": 63.0,
+    "official": "official"
+   },
+   {
+    "lang": "buc",
+    "share": 23.0,
+    "official": null
+   },
+   {
+    "lang": "sw",
+    "share": 1.4,
+    "official": null
+   }
+  ],
+  "ZA": [
+   {
+    "lang": "en",
+    "share": 31.0,
+    "official": "official"
+   },
+   {
+    "lang": "zu",
+    "share": 24.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "xh",
+    "share": 18.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "af",
+    "share": 13.0,
+    "official": "official_regional"
+   },
+   {
+    "lang": "nso",
+    "share": 9.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "tn",
+    "share": 8.2,
+    "official": "official_regional"
+   },
+   {
+    "lang": "st",
+    "share": 7.9,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ts",
+    "share": 4.4,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ss",
+    "share": 2.7,
+    "official": "official_regional"
+   },
+   {
+    "lang": "ve",
+    "share": 2.3,
+    "official": "official_regional"
+   },
+   {
+    "lang": "hi",
+    "share": 2.0,
+    "official": null
+   },
+   {
+    "lang": "nr",
+    "share": 1.6,
+    "official": "official_regional"
+   },
+   {
+    "lang": "sw",
+    "share": 0.0017,
+    "official": null
+   }
+  ],
+  "ZM": [
+   {
+    "lang": "bem",
+    "share": 34.0,
+    "official": null
+   },
+   {
+    "lang": "ny",
+    "share": 19.0,
+    "official": null
+   },
+   {
+    "lang": "en",
+    "share": 16.0,
+    "official": "official"
+   },
+   {
+    "lang": "toi",
+    "share": 11.0,
+    "official": null
+   },
+   {
+    "lang": "loz",
+    "share": 5.5,
+    "official": null
+   },
+   {
+    "lang": "nse",
+    "share": 3.0,
+    "official": null
+   },
+   {
+    "lang": "leb",
+    "share": 2.8,
+    "official": null
+   },
+   {
+    "lang": "tum",
+    "share": 2.6,
+    "official": null
+   },
+   {
+    "lang": "kqn",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "lun",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "lue",
+    "share": 1.5,
+    "official": null
+   }
+  ],
+  "ZW": [
+   {
+    "lang": "sn",
+    "share": 81.0,
+    "official": "official"
+   },
+   {
+    "lang": "en",
+    "share": 42.0,
+    "official": "official"
+   },
+   {
+    "lang": "nd",
+    "share": 12.0,
+    "official": "official"
+   },
+   {
+    "lang": "mxc",
+    "share": 6.5,
+    "official": null
+   },
+   {
+    "lang": "ndc",
+    "share": 6.1,
+    "official": null
+   },
+   {
+    "lang": "kck",
+    "share": 5.3,
+    "official": null
+   },
+   {
+    "lang": "ny",
+    "share": 1.9,
+    "official": null
+   },
+   {
+    "lang": "ve",
+    "share": 0.64,
+    "official": null
+   },
+   {
+    "lang": "tn",
+    "share": 0.22,
+    "official": null
+   }
+  ]
+ },
+ "sources": [
+  {
+   "url": "https://cldr.unicode.org/index/downloads",
+   "title": "CLDR Releases/Downloads (Unicode CLDR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Each release of the Unicode CLDR is a stable release and may be used as reference material or cited as a normative reference by other specifications."
+  },
+  {
+   "url": "https://www.unicode.org/Public/cldr/49/",
+   "title": "Index of /Public/cldr/49 (unicode.org)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "cldr-common-*.zip  contains the common production data (from cldr/common)."
+  },
+  {
+   "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/supplemental/supplementalData.xml",
+   "title": "CLDR 49 supplementalData.xml, territoryInfo",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "<languagePopulation type=\"fr\" populationPercent=\"29\" officialStatus=\"official\" references=\"R1341\"/> … <territory type=\"AQ\" gdp=\"21640000\" literacyPercent=\"99\" population=\"300\">"
+  },
+  {
+   "url": "https://www.unicode.org/reports/tr35/tr35-info.html",
+   "title": "UTS #35 LDML Part 6: Supplemental, Version 49",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "language population percent — an estimate of the number of people who are functional in that language in that country, including both first and second language speakers. The level of fluency is that necessary to use a UI on a computer, smartphone, or similar devices, rather than complete fluency. … The percentages may add up to more than 100% due to multilingual populations, or may be less than 100% due to illiteracy or because the data has not yet been gathered or processed. Languages with smaller populations might not be included. … official language — as used in CLDR, a language that can generally be used in all communications with a central government. … official regional language — a language that is official ( de jure or de facto ) in a major region within a country, but does not qualify as an official language of the country as a whole."
+  },
+  {
+   "url": "https://www.unicode.org/Public/cldr/1.8.0/",
+   "title": "Index of /Public/cldr/1.8.0 (unicode.org)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2010-03-26 12:21"
+  },
+  {
+   "url": "https://www.unicode.org/Public/cldr/1.8.0/core.zip#common/supplemental/supplementalData.xml",
+   "title": "CLDR 1.8.0 supplementalData.xml (core.zip dated 2010-03-26)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "<languagePopulation type=\"pap\" populationPercent=\"81\" officialStatus=\"de_facto_official\"/>"
+  },
+  {
+   "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/supplemental/supplementalMetadata.xml",
+   "title": "CLDR 49 supplementalMetadata.xml, territoryAlias",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "<territoryAlias type=\"AN\" replacement=\"CW SX BQ\" reason=\"deprecated\"/>"
+  },
+  {
+   "url": "https://unicode.org/Public/cldr/49/cldr-common-49.zip#common/main/en.xml",
+   "title": "CLDR 49 en.xml localeDisplayNames",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "<language type=\"pap\">Papiamento</language> … <localePattern>{0} ({1})</localePattern>"
+  },
+  {
+   "url": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+   "title": "IANA Language Subtag Registry (File-Date 2026-09-17)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Subtag: mwk\nDescription: Kita Maninkakan"
+  },
+  {
+   "url": "https://www.uhr.se/globalassets/_uhr.se/internationellt/tjanstemannautbyte/global-scale_language.pdf",
+   "title": "Global Scale (Swedish Council for Higher Education, UHR; reproduces CEFR Table 1)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale",
+   "said": "C2 Can understand with ease virtually everything heard or read."
+  },
+  {
+   "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/cefr/",
+   "title": "Common European Framework of Reference for Languages (DAAD)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale",
+   "said": "A1 – Breakthrough Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. … The Common European Framework of Reference for Languages (CEFR) was developed by the Council of Europe. … C1 – Effective Operational Proficiency Can understand a wide range of demanding, longer texts, and recognize implicit meaning. … C2 – Mastery Can understand with ease virtually everything heard or read."
+  },
+  {
+   "url": "https://www.govtilr.org/Skills/ILRscale2.htm",
+   "title": "Interagency Language Roundtable Language Skill Level Descriptions - Speaking",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Speaking 0 (No Proficiency) Unable to function in the spoken language. … Speaking 1 (Elementary Proficiency) Able to satisfy minimum courtesy requirements and maintain very simple face-to-face conversations on familiar topics. … Speaking 2 (Limited Working Proficiency) Able to satisfy routine social demands and limited work requirements. … Speaking 3 (General Professional Proficiency) Able to speak the language with sufficient structural accuracy and vocabulary to participate effectively in most formal and informal conversations in practical, social and professional topics. … Speaking 4 (Advanced Professional Proficiency) Able to use the language fluently and accurately on all levels normally pertinent to professional needs. … Speaking 5 (Functionally Native Proficiency) Speaking proficiency is functionally equivalent to that of a highly articulate well-educated native speaker and reflects the cultural standards of the country where the language is natively spoken. … The \"plus level\" designation (coded 06, 16, 26, etc.) will be assigned when proficiency substantially exceeds one base skill level and does not fully meet the criteria for the next \"base level.\""
+  }
+ ],
+ "blockers": [
+  {
+   "item": "territory-languages AN",
+   "sought": "CLDR 49 territoryInfo for AN (Netherlands Antilles)",
+   "tried": {
+    "institution": "CLDR 49 supplementalData.xml has no AN territory; supplementalMetadata.xml aliases AN to 'CW SX BQ' (deprecated)",
+    "official-register": "CLDR 1.8.0 (2010-03-26) supplementalData.xml has AN: pap 81 de_facto_official, nl 1.8 official, en 0.79 (given as figure territory-languages-AN-archive)",
+    "web-search": "'CLDR territory language information Netherlands Antilles AN languagePopulation': no current CLDR row",
+    "trade-press": "none applicable to CLDR data",
+    "archive": "web.archive.org: connection reset, then rate limit, then 'Blocked by egress policy' (2026-11-01)"
+   }
+  },
+  {
+   "item": "territory-languages CS",
+   "sought": "CLDR territoryInfo for CS (Serbia and Montenegro)",
+   "tried": {
+    "institution": "CLDR 49 supplementalData.xml has no CS; supplementalMetadata.xml aliases CS to 'RS ME' (deprecated)",
+    "official-register": "CLDR 1.4 (core.zip 2006-07-16) has no territoryInfo; CLDR 1.5.0 (2007-07-30) and 1.8.0 (2010-03-26) territoryInfo have no CS",
+    "web-search": "same search as AN: a 2007 unicode-ml note that CLDR 1.4.1 added RS and ME; no CS language rows",
+    "trade-press": "none applicable",
+    "archive": "web.archive.org blocked by egress policy (2026-11-01)"
+   }
+  },
+  {
+   "item": "levels (Council of Europe's own text)",
+   "sought": "CEFR Table 1 global scale from the Council of Europe itself",
+   "tried": {
+    "institution": "coe.int Table 1 page, rm.coe.int/16809ea0d4 (Companion Volume 2020), rm.coe.int/168045b15e and coe.int/t/dg4/.../Global Scale PDF: all Cloudflare 'Sorry, you have been blocked' (saved as *-refused.html)",
+    "official-register": "Europass CEF-ENG.pdf (europass.europa.eu): 'Page not found'",
+    "web-search": "two phrasings on the C2 and A1 descriptor text and the level names; found UHR, DAAD and university copies",
+    "trade-press": "used UHR (Swedish government agency) and DAAD copies, both naming the Council of Europe",
+    "archive": "snapshot 20260928212249 of the coe.int page exists (archive.org availability API) but web.archive.org reset, rate-limited, then 'Blocked by egress policy'"
+   }
+  }
+ ]
+}

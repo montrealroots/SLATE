@@ -1,0 +1,87 @@
+{
+ "topic": "markets.producer.MT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Malta. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "Malta's cash rebate is 30% of eligible expenditure, raised by up to 10 points at the Film Commissioner's discretion (5 if Malta plays itself or the Malta Film Studios are used, 5 for local crews and services) after a cultural test; above-the-line spend is capped at EUR 12.5 million in total or the rebate at EUR 5 million; 10% of the rebate can be claimed when shooting starts, and applications are due 30 working days before.",
+   "value": {
+    "rate": {
+     "standard": 0.3,
+     "max": 0.4
+    },
+    "uplifts": {
+     "maltaAsMaltaOrStudios": 0.05,
+     "localResources": 0.05
+    },
+    "test": "cultural test",
+    "aboveTheLineCapEUR": 12500000,
+    "rebateCapEUR": 5000000,
+    "advance": "10% of the rebate at start of shooting",
+    "applyBefore": "30 working days before shooting",
+    "foreignPerformerWithholding": 0.1
+   },
+   "applies": "Malta; feature films, TV, animation and VFX; terms as reported 2024-2026 (the Film Commission's own site refuses this environment, 403).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Productions receive a minimum 30 per cent rebate on eligible expenses, which can increase to 35 per cent if Malta is portrayed as itself or if local facilities like the Malta Film Studios are used. Employing local crews can boost the rebate to 40 per cent, provided specific department targets are met. … Productions can claim 10 per cent of the rebate upon the start of shooting, typically receivable within four weeks. … Applications must be submitted 30 working days before shooting begins. … Foreign performers pay a 10 per cent withholding tax"
+    },
+    {
+     "src": 1,
+     "said": "Above-the-Line personnel are capped at a total expenditure of €12,500,000 collectively, or the rebate cannot exceed €5,000,000. … A standard Cultural Test has to be passed to determine the percentage."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "Malta's national film fund is the Screen Support Scheme, run by Arts Council Malta under the culture ministry: in July 2026 it gave EUR 2 million in production grants to six projects (four features, a series, a documentary), with EUR 450,000 the top award per feature.",
+   "value": {
+    "fund": "Screen Support Scheme (Arts Council Malta)",
+    "currency": "EUR",
+    "round": "2026 production",
+    "total": 2000000,
+    "projects": 6,
+    "topAward": 450000,
+    "selectionRate": null,
+    "maxShare": null
+   },
+   "applies": "MT, July 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Arts Council Malta has distributed 2 m EUR for the production of six local projects within the Screen Support Scheme. … each awarded the top amount of 450,000 EUR. … The Screen Support Scheme, managed under the Ministry for the Arts, Culture and National Heritage"
+    }
+   ]
+  }
+ ],
+ "country": "MT",
+ "sources": [
+  {
+   "url": "https://maltainvest.mt/economic-sector/film-production/incentives-for-audiovisual-productions/",
+   "title": "Incentives for Audiovisual Productions (MaltaInvest.mt)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.maltafilmcommission.com/",
+   "said": "Productions receive a minimum 30 per cent rebate on eligible expenses, which can increase to 35 per cent if Malta is portrayed as itself or if local facilities like the Malta Film Studios are used. Employing local crews can boost the rebate to 40 per cent, provided specific department targets are met. … Productions can claim 10 per cent of the rebate upon the start of shooting, typically receivable within four weeks. … Applications must be submitted 30 working days before shooting begins. … Foreign performers pay a 10 per cent withholding tax"
+  },
+  {
+   "url": "https://focal.ch/prodvalue/working_conditions/malta.html",
+   "title": "Production Value: Working Conditions in Malta (FOCAL)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.maltafilmcommission.com/",
+   "said": "Above-the-Line personnel are capped at a total expenditure of €12,500,000 collectively, or the rebate cannot exceed €5,000,000. … A standard Cultural Test has to be passed to determine the percentage."
+  },
+  {
+   "url": "https://filmneweurope.com/news/malta-news/item/128109-grants-arts-council-malta-announces-new-production-grants-in-screen-support-scheme",
+   "title": "GRANTS: Arts Council Malta Announces New Production Grants in Screen Support Scheme (FilmNewEurope, 19 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://artscouncilmalta.gov.mt/",
+   "said": "Arts Council Malta has distributed 2 m EUR for the production of six local projects within the Screen Support Scheme. … each awarded the top amount of 450,000 EUR. … The Screen Support Scheme, managed under the Ministry for the Arts, Culture and National Heritage"
+  }
+ ],
+ "blockers": []
+}

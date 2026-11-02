@@ -1,0 +1,247 @@
+{
+ "topic": "tax.BT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bhutan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2026 (Income Tax Act of Bhutan 2025) an individual's taxable income is free to Nu. 300,000, then taxed at 5% to 500,000, 10% to 750,000, 15% to 1,200,000, 20% to 2,000,000, 25% to 3,500,000 and 30% above; there is no regional layer.",
+   "value": {
+    "currency": "BTN",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 300000,
+      "rate": 0
+     },
+     {
+      "from": 300000,
+      "to": 500000,
+      "rate": 0.05
+     },
+     {
+      "from": 500000,
+      "to": 750000,
+      "rate": 0.1
+     },
+     {
+      "from": 750000,
+      "to": 1200000,
+      "rate": 0.15
+     },
+     {
+      "from": 1200000,
+      "to": 2000000,
+      "rate": 0.2
+     },
+     {
+      "from": 2000000,
+      "to": 3500000,
+      "rate": 0.25
+     },
+     {
+      "from": 3500000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "regional": null,
+    "from": "2026-01-01"
+   },
+   "applies": "Individuals, income years from 2026 (the 2001 Act's slab, still on the DRC PIT page, is repealed)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Where the total taxable income does not exceed Nu. 300,000. Nil Where the total taxable income exceeds Nu. 300,000 but does not exceed Nu. 500,000. 5% of the amount by which the total taxable income exceeds Nu. 300,000."
+    },
+    {
+     "src": 0,
+     "said": "Where the total taxable income exceeds Nu. 2,000,000 but does not exceed Nu. 3,500,000. Nu. 262,500 plus 25% of the amount by which the total taxable income exceeds Nu. 2,000,000."
+    },
+    {
+     "src": 0,
+     "said": "Nu. 637,500 plus 30% of the amount by whic"
+    },
+    {
+     "src": 0,
+     "said": "the provisions of this Act shall come into force on the 13th day of the 11th month of the Wood Female Snake Year corresponding to the 1st Day of January 2026"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; a return is due by the last day of April of the next year, except from a resident with no business and total income not over Nu. 300,000, or a non-resident with only final withholding payments.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "noReturnIf": "resident without a business and income not over Nu. 300,000"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "“Income Year” means: (a) the calendar year starting on the 1st of January and ending on the 31st of December;"
+    },
+    {
+     "src": 0,
+     "said": "every person must file with the Department a return of income for each Income Year not later than the last day ofApril of the following year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "A resident employer withholds monthly from salary on the Department's table (nothing to Nu. 25,000 a month); a resident business paying a service fee to a resident individual who is not its employee withholds 2%.",
+   "value": {
+    "employee": "monthly TDS table (nil up to Nu. 25,000)",
+    "residentServiceFee": 0.02
+   },
+   "applies": "Payments by resident persons",
+   "sources": [
+    {
+     "src": 1,
+     "said": "0 25000 0"
+    },
+    {
+     "src": 0,
+     "said": "(a) for service fees referred to in section 269(1): 2 per cent; (b) for service fees referred to in section 269(2): 5 per cent;"
+    },
+    {
+     "src": 0,
+     "said": "pay a service fee with a source in Bhutan to a resident individual who is not an employee of the payer;"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payment to a foreign entertainer or artiste for activity in Bhutan has its source in Bhutan; a resident payer withholds 5% from a service fee to a non-resident, and that withholding is final unless the income comes through a Bhutan permanent establishment.",
+   "value": {
+    "rate": 0.05,
+    "base": "service fee",
+    "final": true
+   },
+   "applies": "Non-residents without a Bhutan PE",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(c) made to any foreign entertainer, artiste or sportsperson for activity performed in Bhutan."
+    },
+    {
+     "src": 0,
+     "said": "pay a service fee with a source in Bhutan to a non-resident person;"
+    },
+    {
+     "src": 0,
+     "said": "(3) payments made to non-resident persons that are subject to withholding under this Chapter, other than payments derived through a Bhutan permanent establishment"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties and similar investment returns paid by a resident bear 5% withholding (section 266); no special regime for authors was found in the Act.",
+   "value": {
+    "royalties": 0.05
+   },
+   "applies": "Royalties paid in Bhutan",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(a) for types of income referred to in section 31(1) other than the types described in subparagraph (2)(b): 5 per cent;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "GST is 5% on taxable supplies; registration is required at turnover of Nu. 5,000,000 in the previous 12 months (or half that in six months).",
+   "value": {
+    "currency": "BTN",
+    "standard": 0.05,
+    "threshold": 5000000
+   },
+   "applies": "Supplies in Bhutan",
+   "sources": [
+    {
+     "src": 2,
+     "said": "the applicable GST rate on taxable supplies and taxable imports of goods and services shall be 5%."
+    },
+    {
+     "src": 2,
+     "said": "The registration turnover threshold shall be Ngultrum 5,000,000 per annum"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "A private-sector employee in the National Pension and Provident Fund's Private Provident Fund pays 5% of pay and the employer 5%, as the Labour Act sets; a self-employed or informal-sector worker (a freelance screen worker) may contribute voluntarily from Nu. 1,000 to Nu. 25,000 a month; civil servants and corporations pay a combined 26% or 30% under the public scheme.",
+   "value": {
+    "currency": "BTN",
+    "privateProvidentFund": {
+     "employee": 0.05,
+     "employer": 0.05,
+     "basis": "Labour Act"
+    },
+    "selfEmployed": {
+     "compulsory": false,
+     "monthlyMin": 1000,
+     "monthlyMax": 25000
+    },
+    "publicScheme": {
+     "standardTotal": [
+      0.26,
+      0.3
+     ],
+     "split": {
+      "0.26": {
+       "providentFund": 0.1,
+       "pension": 0.16
+      },
+      "0.30": {
+       "providentFund": 0.14,
+       "pension": 0.16
+      }
+     }
+    },
+    "ceiling": null
+   },
+   "applies": "Members as reported by NPPF for 2024 (the latest annual report read); the employee/employer split of the 26%/30% public rates is not stated by NPPF.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "As per the Labor Act, employer contribution is 5% and employee contribution is 5% for member agencies. For self-employed/ informal sector, … they can contribute from Nu. 1000 to Nu. 25,000 monthly. … Standard Contribution Rate 26%, 30% 30% … 26%: 10% PF and 16% Pension … 30%: 14% PF and 16% Pension"
+    }
+   ]
+  }
+ ],
+ "country": "BT",
+ "sources": [
+  {
+   "url": "https://www.drc.gov.bt/wp-content/uploads/2025/09/Income-Tax-Act-of-Bhutan-2025.pdf",
+   "title": "Income Tax Act of Bhutan 2025 (Department of Revenue and Customs)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Where the total taxable income does not exceed Nu. 300,000. Nil Where the total taxable income exceeds Nu. 300,000 but does not exceed Nu. 500,000. 5% of the amount by which the total taxable income exceeds Nu. 300,000. … Where the total taxable income exceeds Nu. 2,000,000 but does not exceed Nu. 3,500,000. Nu. 262,500 plus 25% of the amount by which the total taxable income exceeds Nu. 2,000,000. … Nu. 637,500 plus 30% of the amount by whic … the provisions of this Act shall come into force on the 13th day of the 11th month of the Wood Female Snake Year corresponding to the 1st Day of January 2026 … “Income Year” means: (a) the calendar year starting on the 1st of January and ending on the 31st of December; … every person must file with the Department a return of income for each Income Year not later than the last day ofApril of the following year. … (a) for service fees referred to in section 269(1): 2 per cent; (b) for service fees referred to in section 269(2): 5 per cent; … pay a service fee with a source in Bhutan to a resident individual who is not an employee of the payer; … (c) made to any foreign entertainer, artiste or sportsperson for activity performed in Bhutan. … pay a service fee with a source in Bhutan to a non-resident person; … (3) payments made to non-resident persons that are subject to withholding under this Chapter, other than payments derived through a Bhutan permanent establishment … (a) for types of income referred to in section 31(1) other than the types described in subparagraph (2)(b): 5 per cent;"
+  },
+  {
+   "url": "https://www.drc.gov.bt/wp-content/uploads/2026/01/Withholding-tax-rates-for-employers.pdf",
+   "title": "Department of Revenue and Customs, Annexure I: Withholding tax rates for employers (January 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "0 25000 0"
+  },
+  {
+   "url": "https://www.drc.gov.bt/wp-content/uploads/2025/12/Consolidated-GST-Act-of-Bhutan-2020-and-amendment-thereof.pdf",
+   "title": "Goods and Services Tax Act of Bhutan 2020, consolidated with amendments (Department of Revenue and Customs)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the applicable GST rate on taxable supplies and taxable imports of goods and services shall be 5%. … The registration turnover threshold shall be Ngultrum 5,000,000 per annum"
+  },
+  {
+   "url": "https://www.nppf.org.bt/wp-content/uploads/2025/07/Annual-Report_2024.pdf",
+   "title": "Annual Report 2024 (National Pension and Provident Fund of Bhutan)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As per the Labor Act, employer contribution is 5% and employee contribution is 5% for member agencies. For self-employed/ informal sector, … they can contribute from Nu. 1000 to Nu. 25,000 monthly. … Standard Contribution Rate 26%, 30% 30% … 26%: 10% PF and 16% Pension … 30%: 14% PF and 16% Pension"
+  }
+ ],
+ "blockers": []
+}

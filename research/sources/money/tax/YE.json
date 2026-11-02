@@ -1,0 +1,166 @@
+{
+ "topic": "tax.YE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Yemen: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident Yemeni national pays income tax of 0% to YER 120,000 a year, 10% to 240,000, 15% to 840,000 and 20% above; a resident foreigner pays a flat 20%; monthly salary first deducts YER 10,000 and the 7% social security contribution.",
+   "value": {
+    "currency": "YER",
+    "nationals": [
+     {
+      "from": 0,
+      "to": 120000,
+      "rate": 0
+     },
+     {
+      "from": 120000,
+      "to": 240000,
+      "rate": 0.1
+     },
+     {
+      "from": 240000,
+      "to": 840000,
+      "rate": 0.15
+     },
+     {
+      "from": 840000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "foreignResidents": 0.2,
+    "monthlyExemption": 10000
+   },
+   "applies": "2026; the text also gives salaried nationals' rates as 0% to 15%, and bonuses, fees and commissions at a flat 15%.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Up to 120,000 0% Over 120,000 and up to 240,000 10% Over 240,000 and up to 840,000 15% Over 840,000 20% Individual income tax rate: Resident foreigners 20%"
+    },
+    {
+     "src": 0,
+     "said": "Salary paid as overtime or leave pay, commissions, fees, bonuses, gratuities, and benefits are taxable at the flat rate of 15%."
+    },
+    {
+     "src": 0,
+     "said": "Deductions and allowances available on monthly salary income include YER 10,000 (monthly exemption limit); 7% of gross salary for an employee’s social security contribution"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Under the Sana'a government the employer pays 13% and the employee 7% of salary to the General Corporation for Social Security.",
+   "value": {
+    "employee": 0.07,
+    "employer": 0.13
+   },
+   "applies": "2026; areas outside Sana'a's administration not described.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers operating under the Sana’a government must contribute 13% of a national or foreign employee's salary to the General Corporation for Social Security (GCSS); the employee contributes 7%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer calculates and deducts payroll tax and files the return within the first 10 days of the following month; individuals generally file no return.",
+   "value": {
+    "monthly": true,
+    "remitWithinDays": 10
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The employer is responsible for calculating and deducting payroll tax from its employees’ salaries and for remitting it to the government on behalf of the employee."
+    },
+    {
+     "src": 0,
+     "said": "The tax return must be submitted to the tax authority within the first 10 days of the following month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays a flat 20% on income earned from Yemen; copyright royalties paid to a non-resident bear 10% withholding.",
+   "value": {
+    "rate": 0.2,
+    "royalties": 0.1,
+    "final": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A flat rate of 20% applies to resident foreign employees and a flat rate of 20% applies to nonresidents."
+    },
+    {
+     "src": 0,
+     "said": "A 10% withholding tax applies to payments made to a nonresident in respect of commissions, patents, trademarks, and copyright royalties"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Yemen levies a general sales tax of 5% (10% on some telecommunications); registration is required above YER 50 million of annual turnover.",
+   "value": {
+    "currency": "YER",
+    "rate": 0.05,
+    "threshold": 50000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The general rate is 5%, although a 10% rate applies to some telecommunications and mobile communications products or services."
+    },
+    {
+     "src": 0,
+     "said": "Companies whose annual turnover exceeds YER 50 million or its equivalent are required to register for sales tax purposes."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; employees' tax is settled monthly by the employer.",
+   "value": {
+    "start": "01-01",
+    "due": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year. Filing status:"
+    }
+   ]
+  }
+ ],
+ "country": "YE",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-yemenhighlights-2026.pdf",
+   "title": "Yemen Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.ye/",
+   "said": "Up to 120,000 0% Over 120,000 and up to 240,000 10% Over 240,000 and up to 840,000 15% Over 840,000 20% Individual income tax rate: Resident foreigners 20% … Salary paid as overtime or leave pay, commissions, fees, bonuses, gratuities, and benefits are taxable at the flat rate of 15%. … Deductions and allowances available on monthly salary income include YER 10,000 (monthly exemption limit); 7% of gross salary for an employee’s social security contribution … Employers operating under the Sana’a government must contribute 13% of a national or foreign employee's salary to the General Corporation for Social Security (GCSS); the employee contributes 7%. … The employer is responsible for calculating and deducting payroll tax from its employees’ salaries and for remitting it to the government on behalf of the employee. … The tax return must be submitted to the tax authority within the first 10 days of the following month. … A flat rate of 20% applies to resident foreign employees and a flat rate of 20% applies to nonresidents. … A 10% withholding tax applies to payments made to a nonresident in respect of commissions, patents, trademarks, and copyright royalties … The general rate is 5%, although a 10% rate applies to some telecommunications and mobile communications products or services. … Companies whose annual turnover exceeds YER 50 million or its equivalent are required to register for sales tax purposes. … Tax year: The tax year is the calendar year. Filing status:"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Yemen Tax Authority's own rates (Income Tax Law No. 17 of 2010 as amended), and which authority's rules apply in each part of the country.",
+   "tried": {
+    "institution": "tax.gov.ye not reached in the time. || 2026-11-01 retry: tax.gov.ye answers: its 'ضرائب الدخل' legislation page (saved YE-tax-incometaxes.html) lists ministerial decisions 2011-2017 as PDFs (e.g. images/portfolio/tax/files/incometax/incomemd/22-2017.pdf); the Income Tax Law 17/2010 text itself is not linked there, and this environment's OCR has no Arabic data for scanned PDFs",
+    "official-register": "Official gazette not reached. || 2026-11-01 retry: no other register reachable",
+    "web-search": "Not searched. || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "Deloitte 2026 only; no PwC summary for Yemen. || 2026-11-01 retry: none found this turn",
+    "archive": "web.archive.org reset the connection. || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

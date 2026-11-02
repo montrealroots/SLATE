@@ -1,0 +1,108 @@
+{
+ "country": "HK",
+ "read": "2026-11-01",
+ "route": "Employment visa / entry permit under the General Employment Policy (GEP); Mainland residents under the Admission Scheme for Mainland Talents and Professionals (ASMTP)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer applies to the Immigration Department, with documents from the employing company",
+  "first": "A confirmed offer of employment from a Hong Kong employer (contract or letter of appointment), for a genuine vacancy",
+  "fees": [
+   {
+    "what": "Application fee (non-refundable)",
+    "amount": "600.00",
+    "currency": "HKD"
+   },
+   {
+    "what": "Visa issuance fee, relevant period more than 180 days",
+    "amount": "1300.00",
+    "currency": "HKD"
+   },
+   {
+    "what": "Visa issuance fee, relevant period 180 days or less",
+    "amount": "600.00",
+    "currency": "HKD"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 4,
+    "unit": "weeks"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 36,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": "\"possess special skills, knowledge or experience of value to and not readily available in the HKSAR\"",
+  "pay": "The remuneration package must be broadly commensurate with the prevailing market level for professionals in Hong Kong.",
+  "exempt": {
+   "days": 14,
+   "within": null
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.immd.gov.hk/eng/services/visas/GEP.html",
+   "title": "Immigration Department (HKSAR), General Employment Policy (GEP)",
+   "read": "2026-11-01",
+   "said": "Applicants Note 1 who possess special skills, knowledge or experience of value to and not readily available in the HKSAR may apply to come to work under the GEP. … there is a genuine job vacancy; the applicant has a confirmed offer of employment … the remuneration package including income, accommodation, medical and other fringe benefits is broadly commensurate with the prevailing market level for professionals in the HKSAR. … For applications submitted under the GEP, it normally takes four weeks upon receipt of all the required documents and the relevant application fee. … Persons admitted as professionals under the GEP will normally be granted an initial stay of 36 months on employment condition, or in accordance with the duration of the employment contract (whichever is shorter), upon entry. They may apply for extension of stay",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "eligibility",
+    "pay",
+    "processing",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.immd.gov.hk/eng/specifiedschemes.html",
+   "title": "Immigration Department (HKSAR), New Fee Structure for Visa Applications under Specified Schemes",
+   "read": "2026-11-01",
+   "said": "General Employment Policy Admission Scheme for Mainland Talents and Professionals … Application fee Note 3 600 Two-tiered visa issuance fee with relevant period Note 4 of more than 180 days 1,300 with relevant period Note 4 of not more than 180 days 600",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.info.gov.hk/gia/general/202510/15/P2025101500270.htm",
+   "title": "HKSAR Government press release, LCQ reply on visa fees and the STV Scheme (15 October 2025)",
+   "read": "2026-11-01",
+   "said": "Invited persons may come to Hong Kong to participate in specified short-term activities as visitors without the need to apply for employment visas/entry permits from the ImmD. They may participate in specified short-term activities for up to 14 consecutive calendar days during each trip to Hong Kong, and receive remuneration for the specified activities concerned.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "a union or guild consultation for a performer's GEP application",
+   "tried": {
+    "institution": "ImmD GEP page read in full: no union step named",
+    "official-register": "not searched beyond ImmD (Cap. 115 not read)",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "exempt.within",
+   "sought": "a period within which STV trips are counted",
+   "tried": {
+    "institution": "LCQ reply read: 14 consecutive days per trip, no period",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  }
+ ]
+}

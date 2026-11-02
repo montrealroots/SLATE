@@ -1,0 +1,251 @@
+{
+ "topic": "tax.LA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Laos: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Salaries are taxed monthly at 0% to LAK 2,500,000, 5% to 5,000,000, 10% to 15,000,000, 15% to 25,000,000, 20% to 65,000,000 and 25% above (annually 0% to 30 million up to 25% above 780 million); sole traders and independent contractors pay profit tax on business income instead.",
+   "value": {
+    "currency": "LAK",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 2500000,
+      "rate": 0
+     },
+     {
+      "from": 2500000,
+      "to": 5000000,
+      "rate": 0.05
+     },
+     {
+      "from": 5000000,
+      "to": 15000000,
+      "rate": 0.1
+     },
+     {
+      "from": 15000000,
+      "to": 25000000,
+      "rate": 0.15
+     },
+     {
+      "from": 25000000,
+      "to": 65000000,
+      "rate": 0.2
+     },
+     {
+      "from": 65000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000000,
+      "rate": 0
+     },
+     {
+      "from": 30000000,
+      "to": 60000000,
+      "rate": 0.05
+     },
+     {
+      "from": 60000000,
+      "to": 180000000,
+      "rate": 0.1
+     },
+     {
+      "from": 180000000,
+      "to": 300000000,
+      "rate": 0.15
+     },
+     {
+      "from": 300000000,
+      "to": 780000000,
+      "rate": 0.2
+     },
+     {
+      "from": 780000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ]
+   },
+   "applies": "Lao and foreign individuals, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "All sole traders and independent contractors are subject to profit tax (PT) on their business income derived in Lao PDR."
+    },
+    {
+     "src": 0,
+     "said": "0 2,500,000 2,500,000 0 0 0 2,500,000 5,000,000 2,500,000 5 125,000 125,000 5,000,000 15,000,000 10,000,000 10 1,000,000 1,125,000 15,000,000 25,000,000 10,000,000 15 1,500,000 2,625,000 25,000,000 65,000,000 40,000,000 20 8,000,000 10,625,000 65,000,000 and above - 25"
+    },
+    {
+     "src": 0,
+     "said": "780,000,000 and above - 25"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "PIT is computed monthly; employees now file an annual return by 31 March of the following year.",
+   "value": {
+    "period": "monthly",
+    "annualReturnDue": "03-31"
+   },
+   "applies": "Employees.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employees are now required to obtain a Tax Identification Number (TIN) and file annual PIT returns by 31 March of the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is 5.5% from the employee and 6% from the employer on gross pay, on a base capped at LAK 4.5 million a month; expatriates working over 12 months must register.",
+   "value": {
+    "currency": "LAK",
+    "employee": 0.055,
+    "employer": 0.06,
+    "baseCap": 4500000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "6% of the gross remuneration must be contributed by the employer. 5.5% of the gross remuneration must be contributed by the employee."
+    },
+    {
+     "src": 2,
+     "said": "the total base amount to be calculated is capped at LAK 4.5 million."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds PIT monthly and pays it by the 20th of the following month; income to artists, athletes and committee members bears 10% withholding.",
+   "value": {
+    "remitBy": "20th of the following month",
+    "artists": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employers must withhold the PIT payable from their employees' salaries each month and submit the PIT declaration and payment before the 20th (previously 15th) day of the following month."
+    },
+    {
+     "src": 3,
+     "said": "Income to the committee, artists, athletes-gymnasts, and others 10"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Foreigners working in Lao PDR pay PIT on Lao remuneration however short the stay; withholding of 10% applies to income paid to artists, domestic or foreign.",
+   "value": {
+    "artists": 0.1,
+    "salary": "same scale as residents"
+   },
+   "applies": "Foreign individuals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Expatriates who work in Lao PDR and obtain remuneration in Lao PDR are obligated to pay PIT, regardless of the period of their employment and stay in Lao PDR."
+    },
+    {
+     "src": 3,
+     "said": "WHT is applied to various types of payments made to domestic and foreign recipients."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 10%.",
+   "value": {
+    "standard": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard VAT rate is 10%."
+    }
+   ]
+  }
+ ],
+ "country": "LA",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Lao PDR, Individual - Taxes on personal income (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.la/",
+   "said": "All sole traders and independent contractors are subject to profit tax (PT) on their business income derived in Lao PDR. … 0 2,500,000 2,500,000 0 0 0 2,500,000 5,000,000 2,500,000 5 125,000 125,000 5,000,000 15,000,000 10,000,000 10 1,000,000 1,125,000 15,000,000 25,000,000 10,000,000 15 1,500,000 2,625,000 25,000,000 65,000,000 40,000,000 20 8,000,000 10,625,000 65,000,000 and above - 25 … 780,000,000 and above - 25 … Expatriates who work in Lao PDR and obtain remuneration in Lao PDR are obligated to pay PIT, regardless of the period of their employment and stay in Lao PDR."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lao-pdr/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Lao PDR, Individual - Tax administration (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.la/",
+   "said": "Employees are now required to obtain a Tax Identification Number (TIN) and file annual PIT returns by 31 March of the following year. … Employers must withhold the PIT payable from their employees' salaries each month and submit the PIT declaration and payment before the 20th (previously 15th) day of the following month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lao-pdr/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Lao PDR, Individual - Other taxes (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.la/",
+   "said": "6% of the gross remuneration must be contributed by the employer. 5.5% of the gross remuneration must be contributed by the employee. … the total base amount to be calculated is capped at LAK 4.5 million. … The standard VAT rate is 10%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: Lao PDR, Corporate - Withholding taxes (reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.gov.la/",
+   "said": "Income to the committee, artists, athletes-gymnasts, and others 10 … WHT is applied to various types of payments made to domestic and foreign recipients."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The Tax Department's own PIT table",
+   "tried": {
+    "institution": "tax.gov.la is unreachable from this environment (proxy CONNECT 502, 2026-11-01) || 2026-11-01 retry: tax.gov.la still fails (connection, curl 000); mof.gov.la (www) answers but holds no PIT table on its home page",
+    "official-register": "Tax Law (2019, amended) not read || 2026-11-01 retry: laoofficialgazette.gov.la searched ('ອາກອນລາຍໄດ້', 'Income Tax', 'ອາກອນມູນຄ່າເພີ່ມ'): the Law on Income Tax entry (display id 1581) links a one-page scanned PDF with no text layer; no Lao OCR is installed here (tesseract has eng and nor only), so it could not be read",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Lao PDR used || 2026-11-01 retry: PwC Lao PDR already held; no other summary read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT registration threshold for an individual",
+   "tried": {
+    "institution": "tax.gov.la is unreachable from this environment (proxy CONNECT 502, 2026-11-01) || 2026-11-01 retry: tax.gov.la still fails (connection, curl 000); mof.gov.la (www) answers but holds no PIT table on its home page",
+    "official-register": "Tax Law (2019, amended) not read || 2026-11-01 retry: laoofficialgazette.gov.la searched ('ອາກອນລາຍໄດ້', 'Income Tax', 'ອາກອນມູນຄ່າເພີ່ມ'): the Law on Income Tax entry (display id 1581) links a one-page scanned PDF with no text layer; no Lao OCR is installed here (tesseract has eng and nor only), so it could not be read",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Lao PDR used || 2026-11-01 retry: PwC Lao PDR already held; no other summary read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees",
+   "tried": {
+    "institution": "tax.gov.la is unreachable from this environment (proxy CONNECT 502, 2026-11-01) || 2026-11-01 retry: tax.gov.la still fails (connection, curl 000); mof.gov.la (www) answers but holds no PIT table on its home page",
+    "official-register": "Tax Law (2019, amended) not read || 2026-11-01 retry: laoofficialgazette.gov.la searched ('ອາກອນລາຍໄດ້', 'Income Tax', 'ອາກອນມູນຄ່າເພີ່ມ'): the Law on Income Tax entry (display id 1581) links a one-page scanned PDF with no text layer; no Lao OCR is installed here (tesseract has eng and nor only), so it could not be read",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC Lao PDR used || 2026-11-01 retry: PwC Lao PDR already held; no other summary read",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

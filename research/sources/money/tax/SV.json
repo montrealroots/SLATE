@@ -1,0 +1,247 @@
+{
+ "topic": "tax.SV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in El Salvador: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A domiciled individual's net income is exempt to USD 6,600 a year, then taxed at 10%, 20% and 30% (USD 212.12 plus 10% over USD 4,064 to USD 9,142.86; USD 720 plus 20% over USD 9,142.86 to USD 22,857.14; USD 3,462.86 plus 30% above), as the table is printed; a non-domiciled individual pays 30%.",
+   "value": {
+    "currency": "USD",
+    "exemptTo": 6600,
+    "table": [
+     {
+      "from": 0,
+      "to": 6600,
+      "fixed": 0,
+      "rate": 0,
+      "over": 0
+     },
+     {
+      "from": 6600,
+      "to": 9142.86,
+      "fixed": 212.12,
+      "rate": 0.1,
+      "over": 4064.0
+     },
+     {
+      "from": 9142.86,
+      "to": 22857.14,
+      "fixed": 720.0,
+      "rate": 0.2,
+      "over": 9142.86
+     },
+     {
+      "from": 22857.14,
+      "to": null,
+      "fixed": 3462.86,
+      "rate": 0.3,
+      "over": 22857.14
+     }
+    ],
+    "nonDomiciled": 0.3,
+    "regional": null
+   },
+   "applies": "2026; mh.gob.sv not read in this pass, so PwC is quoted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Net income (USD) Tax rates Over Not over 0.00 6,600.00 Exempt 6,600 .0 0 9,142.86 USD 212.12 plus 10% on the excess over USD 4,064.00 9,142.86 22,857.14 USD 720.00 plus 20% on the excess over USD 9,142.86 22,857.14 and over USD 3,462.86 plus 30% on the excess over USD 22,857.14 Non-domiciled individuals shall compute their income taxes at 30%."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold monthly: nothing to USD 550, then USD 17.67 plus 10% over USD 472 to USD 895.24, USD 60 plus 20% over 895.24 to 2,038.10, and USD 288.57 plus 30% above; a resident individual's fees for services outside employment bear 10% withholding.",
+   "value": {
+    "currency": "USD",
+    "period": "month",
+    "table": [
+     {
+      "from": 0,
+      "to": 550,
+      "fixed": 0,
+      "rate": 0,
+      "over": 0
+     },
+     {
+      "from": 550,
+      "to": 895.24,
+      "fixed": 17.67,
+      "rate": 0.1,
+      "over": 472.0
+     },
+     {
+      "from": 895.24,
+      "to": 2038.1,
+      "fixed": 60.0,
+      "rate": 0.2,
+      "over": 895.24
+     },
+     {
+      "from": 2038.1,
+      "to": null,
+      "fixed": 288.57,
+      "rate": 0.3,
+      "over": 2038.1
+     }
+    ],
+    "residentServicesFee": 0.1
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Income (USD) Withholding rates Over Not over 0.00 550.00 N/A 550.00 895.24 USD 17.67 plus 10% on the excess over USD 472.00 895.24 2,038.10 USD 60.00 plus 20% on the excess over USD 895.24 2,038.10 and over USD 288.57 plus 30% on the excess over USD 2,038.10"
+    },
+    {
+     "src": 1,
+     "said": "Payments to resident individuals with respect to services rendered, other than under a labour relationship, are subject to a 10% WHT."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Payments to a non-resident for income earned in El Salvador, including services rendered or used there, bear 20% withholding (25% to a tax haven); payments for rights in films and music records bear a reduced 5%.",
+   "value": {
+    "rate": 0.2,
+    "taxHaven": 0.25,
+    "filmMusicRights": 0.05
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Payments or amounts credited to non-residents arising from income obtained in El Salvador are subject to a 20% WHT."
+    },
+    {
+     "src": 1,
+     "said": "Payments for transfer of intangible assets or use of the rights to intangibles and tangible assets related to films, movies, music records, cable TV, satellite, etc."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; the annual return is filed within four months and the tax paid by 30 April.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The fiscal year runs from 1 January to 31 December."
+    },
+    {
+     "src": 2,
+     "said": "Income taxes are due no later than 30 April of each year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "ISSS health insurance takes 3% from the employee and 7.5% from the employer on monthly salary up to USD 1,000 (capped at USD 30 and USD 75); the AFP pension takes 7.25% from the employee and 8.75% from the employer on total salary.",
+   "value": {
+    "currency": "USD",
+    "isss": {
+     "employee": 0.03,
+     "employer": 0.075,
+     "capSalaryMonthly": 1000,
+     "employeeCap": 30,
+     "employerCap": 75
+    },
+    "afp": {
+     "employee": 0.0725,
+     "employer": 0.0875,
+     "cap": null
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "0 to 1,000 3 7.50 Note: For individuals who have salaries above USD 1,000, the social security contribution applicable is USD 30.00 for the employee and USD 75.00 for the employer."
+    },
+    {
+     "src": 3,
+     "said": "On the total monthly salary 7.25 8.75"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT (IVA) is 13%.",
+   "value": {
+    "standard": 0.13
+   },
+   "applies": "2026; the registration threshold for a small freelancer was not found in the pages read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "VAT (i.e. Impuesto al Valor Agregado or IVA) is levied at a rate of 13% over the taxable amount."
+    }
+   ]
+  }
+ ],
+ "country": "SV",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/el-salvador/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, El Salvador, Individual - Taxes on personal income (last reviewed 27 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mh.gob.sv/",
+   "said": "Net income (USD) Tax rates Over Not over 0.00 6,600.00 Exempt 6,600 .0 0 9,142.86 USD 212.12 plus 10% on the excess over USD 4,064.00 9,142.86 22,857.14 USD 720.00 plus 20% on the excess over USD 9,142.86 22,857.14 and over USD 3,462.86 plus 30% on the excess over USD 22,857.14 Non-domiciled individuals shall compute their income taxes at 30%. … Income (USD) Withholding rates Over Not over 0.00 550.00 N/A 550.00 895.24 USD 17.67 plus 10% on the excess over USD 472.00 895.24 2,038.10 USD 60.00 plus 20% on the excess over USD 895.24 2,038.10 and over USD 288.57 plus 30% on the excess over USD 2,038.10"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/el-salvador/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, El Salvador, Corporate - Withholding taxes (last reviewed 27 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mh.gob.sv/",
+   "said": "Payments to resident individuals with respect to services rendered, other than under a labour relationship, are subject to a 10% WHT. … Payments or amounts credited to non-residents arising from income obtained in El Salvador are subject to a 20% WHT. … Payments for transfer of intangible assets or use of the rights to intangibles and tangible assets related to films, movies, music records, cable TV, satellite, etc."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/el-salvador/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, El Salvador, Individual - Tax administration (last reviewed 27 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mh.gob.sv/",
+   "said": "The fiscal year runs from 1 January to 31 December. … Income taxes are due no later than 30 April of each year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/el-salvador/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, El Salvador, Individual - Other taxes (last reviewed 27 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.mh.gob.sv/",
+   "said": "0 to 1,000 3 7.50 Note: For individuals who have salaries above USD 1,000, the social security contribution applicable is USD 30.00 for the employee and USD 75.00 for the employer. … On the total monthly salary 7.25 8.75 … VAT (i.e. Impuesto al Valor Agregado or IVA) is levied at a rate of 13% over the taxable amount."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "El Salvador's 2026 income-tax table from the Ministerio de Hacienda (the PwC table's 6,600 exempt band against a USD 4,064 base for the 10% band reads as a partial update of the law's table)",
+   "tried": {
+    "institution": "mh.gob.sv not reached in this pass (2026-11-01) || 2026-11-01 retry: mh.gob.sv answers; its site search for 'tabla de retencion' lists no retention table; its WordPress API refuses unauthenticated requests (HTTP 401) and was not pursued",
+    "official-register": "Diario Oficial / Asamblea Legislativa decree text not fetched || 2026-11-01 retry: Diario Oficial not reached this turn",
+    "web-search": "not run for this item || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC El Salvador (quoted) || 2026-11-01 retry: none found this turn",
+    "archive": "not tried || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "IVA registration threshold for a small taxpayer in El Salvador",
+   "tried": {
+    "institution": "mh.gob.sv not reached || 2026-11-01 retry: mh.gob.sv service page 'Inscripción o Restitución como Contribuyente de IVA Persona Natural' (saved SV-mh-inscripcion-iva-persona-natural.html) read: it cites art. 28 Ley de IVA and asks for proof such as 'Activo de $2,286.00 a $12,000.00', but states no turnover threshold",
+    "official-register": "not read || 2026-11-01 retry: Ley de IVA text not reached this turn",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC: rate only || 2026-11-01 retry: none found this turn",
+    "archive": "not tried || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

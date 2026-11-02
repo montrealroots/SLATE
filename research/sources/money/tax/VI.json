@@ -1,0 +1,175 @@
+{
+ "topic": "tax.VI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in U.S. Virgin Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The US Virgin Islands' income tax follows the United States: the USVI has its own tax system using the same tax laws and rates as the US, administered by the Bureau of Internal Revenue; a bona fide resident pays only to the USVI, on worldwide income.",
+   "value": {
+    "follows": "US",
+    "administeredBy": "Virgin Islands Bureau of Internal Revenue"
+   },
+   "applies": "2026. Rates, brackets and dates are those of the US entry (the USVI mirror code).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The USVI has its own tax system based on the same tax laws and tax rates that apply in the United States."
+    },
+    {
+     "src": 0,
+     "said": "eral, bona fide residents of the USVI pay income taxes only to the USVI."
+    },
+    {
+     "src": 0,
+     "said": "File your tax return with the USVI if you are a U.S. citizen, resident alien, or nonresident alien and a bona fide resident of the USVI during the tax year. Include your worldwide income on your USVI return."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year and filing dates follow the US; the BIR honours an extension filed with the IRS.",
+   "value": {
+    "follows": "US"
+   },
+   "applies": "2026. Rates, brackets and dates are those of the US entry (the USVI mirror code).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "the U.S. Virgin Islands Bureau of Internal Revenue will honor an extension request that is timely filed with the IRS."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Withholding follows the US rules under the mirror code.",
+   "value": {
+    "follows": "US"
+   },
+   "applies": "2026. Rates, brackets and dates are those of the US entry (the USVI mirror code).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The USVI has its own tax system based on the same tax laws and tax rates that apply in the United States."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security follows the US: a bona fide resident with self-employment income pays US self-employment tax (social security and Medicare), and employees pay US FICA.",
+   "value": {
+    "follows": "US"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Bona fide residents of a U.S. territory who have self-employment income must generally pay self-employment tax to the United States. Self-employment tax includes both social security and Medicare."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident with USVI-source income is taxed under the mirror code; a US citizen who is not a bona fide resident pays a portion of the tax to each jurisdiction.",
+   "value": {
+    "follows": "US"
+   },
+   "applies": "2026. Rates, brackets and dates are those of the US entry (the USVI mirror code).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "U.S. citizens or resident aliens (but not bona fide residents of the USVI) with USVI source income pay a portion of the tax to each jurisdiction."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors' royalties are treated as under the US code.",
+   "value": {
+    "follows": "US"
+   },
+   "applies": "2026. Rates, brackets and dates are those of the US entry (the USVI mirror code).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The USVI has its own tax system based on the same tax laws and tax rates that apply in the United States."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT; the BIR administers a gross receipts tax on business receipts.",
+   "value": {
+    "vat": null,
+    "grossReceiptsTax": true
+   },
+   "applies": "Rate and exemption threshold not confirmed; see blocker.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Gross Receipts Online Login"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "The gross receipts tax is 5% of total business receipts with no deduction for costs: a business with annual receipts of USD 225,000 or more pays 5% on all of them and files monthly (30 days after the month); one under 225,000 pays 5% only on receipts above USD 9,000 in each month (an unused month's exemption lapses) and files annually by 30 January.",
+   "value": {
+    "currency": "USD",
+    "rate": 0.05,
+    "base": "gross receipts",
+    "fullTaxFromAnnual": 225000,
+    "monthlyExemptionBelowThat": 9000,
+    "filing": {
+     "atOrAbove225000": "monthly, Form 720V.I., 30 days after month",
+     "below225000": "annual, Form 720-B, by 30 January"
+    },
+    "asOf": "BIR tax structure booklet (2022 file); a change since not checked"
+   },
+   "applies": "Business receipts in the USVI (V.I. Code title 33, chapter 3)",
+   "sources": [
+    {
+     "src": 2,
+     "said": "In General. The Virgin Islands gross receipts tax is a tax on total receipts from the conduct of a business within the Virgin Islands, without reduction for cost of goods sold or services or any other expenses. … 1. Those businesses with annual gross receipts of $225,000 or more, and 2. Those businesses with annual gross receipts of less than $225,000. Businesses in the first category pay a tax of five percent on their entire gross receipts, while businesses in the second category pay a tax of five percent on receipts in excess of $9,000 per month. The $9,000–per–month exemption is lost if not used in one month. … Businesses with gross receipts of more than $225,000 per year are required to file monthly reports on Form 720V.I. The returns are due 30 days following the last day of the month concerned. Businesses with gross receipts of $225,000 or less per year are required to file an annual report with the BIR by the 30th day following the last day of the year concerned on Form 720-B."
+    }
+   ]
+  }
+ ],
+ "country": "VI",
+ "sources": [
+  {
+   "url": "https://www.irs.gov/publications/p570",
+   "title": "Publication 570, Tax Guide for Individuals With Income From U.S. Territories (IRS)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The USVI has its own tax system based on the same tax laws and tax rates that apply in the United States. … eral, bona fide residents of the USVI pay income taxes only to the USVI. … File your tax return with the USVI if you are a U.S. citizen, resident alien, or nonresident alien and a bona fide resident of the USVI during the tax year. Include your worldwide income on your USVI return. … the U.S. Virgin Islands Bureau of Internal Revenue will honor an extension request that is timely filed with the IRS. … Bona fide residents of a U.S. territory who have self-employment income must generally pay self-employment tax to the United States. Self-employment tax includes both social security and Medicare. … U.S. citizens or resident aliens (but not bona fide residents of the USVI) with USVI source income pay a portion of the tax to each jurisdiction."
+  },
+  {
+   "url": "https://bir.vi.gov/",
+   "title": "U.S. Virgin Islands Bureau of Internal Revenue",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Gross Receipts Online Login"
+  },
+  {
+   "url": "https://bir.vi.gov/content/booklets/tax_structure.pdf",
+   "title": "Virgin Islands Tax Structure, Bureau of Internal Revenue (booklet, 2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In General. The Virgin Islands gross receipts tax is a tax on total receipts from the conduct of a business within the Virgin Islands, without reduction for cost of goods sold or services or any other expenses. … 1. Those businesses with annual gross receipts of $225,000 or more, and 2. Those businesses with annual gross receipts of less than $225,000. Businesses in the first category pay a tax of five percent on their entire gross receipts, while businesses in the second category pay a tax of five percent on receipts in excess of $9,000 per month. The $9,000–per–month exemption is lost if not used in one month. … Businesses with gross receipts of more than $225,000 per year are required to file monthly reports on Form 720V.I. The returns are due 30 days following the last day of the month concerned. Businesses with gross receipts of $225,000 or less per year are required to file an annual report with the BIR by the 30th day following the last day of the year concerned on Form 720-B."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Confirmation that the 5% gross receipts tax and the USD 225,000 / 9,000 thresholds of the BIR's 2022 booklet still hold in 2026 (the booklet's figures are recorded)",
+   "tried": {
+    "institution": "bir.vi.gov answers; the home page links to online filing only, no rate page found (2026-11-01). || retry-8 2026-11-01: bir.vi.gov read again: the home page links its Tax Booklet (content/booklets/tax_structure.pdf, 2022, and the 2021 edition), both downloaded and read (gross receipts tax recorded); the News page carries no gross receipts tax change",
+    "official-register": "Virgin Islands Code title 33 (law.justia / legvi.org) not read 2026-11-01. || retry-8 2026-11-01: legvi.org (Legislature of the Virgin Islands) answers but its home page links no Code text; law.justia.com V.I. Code answers 403 (not read another way)",
+    "web-search": "Not run for the USVI (2026-11-01). || retry-8 2026-11-01: a search for 'USVI gross receipts tax rate 2026 Act increase 5%' was refused by the search tool (shared per-turn limit of 200 searches reached)",
+    "trade-press": "None read. || retry-8 2026-11-01: none reachable this turn",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "country": "CZ",
+ "read": "2026-11-01",
+ "route": "Povolení k zaměstnání (krátkodobé zaměstnání do tří měsíců) with a short-term visa for employment; Zaměstnanecká karta for longer employment",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The foreigner applies to the regional branch of the Labour Office (Úřad práce), usually before arriving; the employer may represent them under a power of attorney.",
+  "first": "The employer reports the vacancy to the Labour Office, which issues the permit where the vacancy can't be filled otherwise for the qualification asked or a shortage of workers; then a residence authorisation (visa) from a Czech embassy.",
+  "fees": [
+   {
+    "what": "Administrative fee, application for a work permit (Sazebník správních poplatků, item 9(b))",
+    "amount": "500",
+    "currency": "CZK"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 30,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 2,
+   "unit": "years",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": {
+   "days": 30,
+   "within": 365,
+   "consecutive": 7
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.zakonyprolidi.cz/cs/2004-435",
+   "title": "Zákon č. 435/2004 Sb., o zaměstnanosti, aktuální znění 01.07.2026–31.12.2026 (verze 87), §§ 92 and 98 (Zákony pro lidi)",
+   "read": "2026-11-01",
+   "said": "d) jehož výkon práce na území České republiky nepřesáhne 7 po sobě jdoucích kalendářních dnů nebo celkem 30 dnů v kalendářním roce a jde-li zároveň o výkonného umělce, … Krajská pobočka Úřadu práce vydá povolení k zaměstnání za podmínek, že se jedná o a) oznámené volné pracovní místo (§ 86) a b) volné pracovní místo nelze s ohledem na požadovanou kvalifikaci nebo nedostatek volných pracovních sil obsadit jinak; … Povolení se vydává nejdéle na dobu 2 let.",
+   "kind": "primary",
+   "fields": [
+    "exempt",
+    "first",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://portal.gov.cz/sluzby-vs/vydani-rozhodnuti-o-povoleni-k-zamestnani-cizince-S15103",
+   "title": "Portál veřejné správy, Vydání rozhodnutí o povolení k zaměstnání pro cizince",
+   "read": "2026-11-01",
+   "said": "v řízení můžete být také zastoupen zaměstnavatelem nebo i jiným vámi zplnomocněným zástupcem, a to na základě a v rozsahu písemné plné moci. Kolik budete platit Poplatek za podání Žádosti o povolení k zaměstnání činí 500,- Kč . … povolení k zaměstnání vydává Úřad práce České republiky ve lhůtě stanovené správním řádem (zpravidla ve lhůtě do 30 dnů) a následně si před svým příchodem na území České republiky musíte ještě požádat o pobytové oprávnění na zastupitelském úřadě České republiky. … krátkodobé zaměstnání do tří měsíců.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "fees",
+    "processing",
+    "first"
+   ]
+  },
+  {
+   "url": "https://mpsv.gov.cz/povoleni-k-zamestnani",
+   "title": "Ministerstvo práce a sociálních věcí, Povolení k zaměstnání",
+   "read": "2026-11-01",
+   "said": "podléhá správnímu poplatku podání žádosti cizince o vydání povolení k zaměstnání ve výši 500 Kč (viz položka 9 písm. b) Sazebníku správních poplatků).",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "The Labour Office's and MPSV's pages name none.",
+    "official-register": "Employment Act §§ 89–98 name none.",
+    "web-search": "'uradprace.cz povolení k zaměstnání cizince správní poplatek Kč žádost lhůta 30 dnů': none.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "The performer's criteria",
+   "tried": {
+    "institution": "No performer criteria named; the test is the vacancy's (§ 92(1)).",
+    "official-register": "Employment Act names none for performers beyond § 98(d).",
+    "web-search": "Same search.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum pay rule for the work permit",
+   "tried": {
+    "institution": "Not stated on the pages read.",
+    "official-register": "Not located in §§ 89–98 in this pass.",
+    "web-search": "Same search.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  },
+  {
+   "field": "fees",
+   "sought": "The visa fee for the short-term visa for employment",
+   "tried": {
+    "institution": "Not on the Labour Office's pages; the embassy's visa fee wasn't read.",
+    "official-register": "Not found.",
+    "web-search": "Same search.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Correction to layer 3's note: the Employment Act's § 98(d), in the version in force from 1 July 2026, does name the performing artist (výkonný umělec) among those who need no work permit for work of no more than 7 consecutive calendar days or 30 days in a calendar year. Beyond that, a short engagement takes the Labour Office's work permit for short-term employment of up to three months."
+}

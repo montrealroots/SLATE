@@ -1,0 +1,112 @@
+{
+ "country": "PT",
+ "read": "2026-11-01",
+ "route": "Visto de estada temporária ou de residência para o exercício de atividade profissional de espetáculos",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The performer (or a worker of a show promoter or organiser) applies at a Portuguese consulate, an external service provider, or online through E-Visa",
+  "first": "The page names no prior step; the residence visa's length may be set from an employment contract",
+  "fees": [
+   {
+    "what": "Visto de residência",
+    "amount": "90.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "Visto de estada temporária",
+    "amount": "75.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 30,
+    "unit": "days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": "\"que queira permanecer em Portugal para exercer uma atividade artística (atores, músicos ou bailarinos, por exemplo)\"",
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.gov.pt/servicos/pedir-um-visto-de-residencia-ou-estada-temporaria-para-o-exercicio-de-atividade-profissional-de-espetaculos",
+   "title": "gov.pt, Pedir um visto de residência ou estada temporária para o exercício de atividade profissional de espetáculos (atualizado em 27.03.2026)",
+   "read": "2026-11-01",
+   "said": "Os vistos para o exercício de atividade profissional de espetáculos podem ser pedidos por artistas (atores, músicos ou bailarinos, por exemplo) ou trabalhadores de empresas promotoras ou organizadoras de espetáculos. O visto de estada temporária permite a permanência em Portugal até um ano. O visto de residência permite a permanência em Portugal por um período superior a um ano. Se quiser permanecer em Portugal apenas até 90 dias pode pedir um visto Schengen para efeitos de curta duração … que queira permanecer em Portugal para exercer uma atividade artística (atores, músicos ou bailarinos, por exemplo) … Através do portal E-Visa . Presencialmente, em: Postos consulares portugueses (Embaixadas e Consulados) Prestadores de Serviços Externos … O prazo para decisão sobre pedido de visto é de 30 dias (para vistos de residência e vistos de estada temporária). … A validade do visto de residência é definida de acordo com o objetivo e duração prevista da estadia em Portugal, pode ser definido com base num contrato de trabalho, por exemplo. Visto de residência - 90€ Visto de estada temporária - 75€",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "eligibility",
+    "fees",
+    "processing",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=920&tabela=leis",
+   "title": "Lei n.º 23/2007, de 4 de julho (consolidated, Procuradoria-Geral Regional de Lisboa), artigo 54.º",
+   "read": "2026-11-01",
+   "said": "Sem prejuízo do estabelecido em disposição especial, o visto de estada temporária é concedido pelo tempo da duração da estada e é válido para múltiplas entradas em território nacional.",
+   "kind": "primary",
+   "fields": [
+    "validity"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "a union consultation for a foreign performer",
+   "tried": {
+    "institution": "gov.pt service page read: none named",
+    "official-register": "Lei 23/2007 (PGDL consolidation) searched for espetáculo/artístic: no performer-specific provision found",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "a minimum pay rule",
+   "tried": {
+    "institution": "gov.pt: none named",
+    "official-register": "Lei 23/2007 not found to set one for performers",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "paid performing allowed on a Schengen short-stay visa",
+   "tried": {
+    "institution": "gov.pt points to a Schengen short-stay visa for up to 90 days but does not say paid performing is allowed on it",
+    "official-register": "Lei 23/2007 not found to say",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "validity.renewable",
+   "sought": "whether the temporary-stay visa can be extended",
+   "tried": {
+    "institution": "gov.pt silent",
+    "official-register": "Lei 23/2007 art. 54 read; prorogação article not read",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  }
+ ]
+}

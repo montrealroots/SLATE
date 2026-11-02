@@ -1,0 +1,188 @@
+{
+ "topic": "markets.producer.CZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Czechia. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "The Czech production incentive (filmové pobídky), run by the State Audiovisual Fund (Státní fond audiovize, SFA), pays 25% of eligible costs for live-action features and series (20% before 2025) and 35% for animation and projects without live-action shooting, capped at CZK 450 million a project (CZK 150 million before 2025); from 2026 a live-action feature must have at least CZK 18 million eligible costs and run 60 minutes, a live-action series CZK 7.5 million an episode of 20 minutes.",
+   "value": {
+    "name": "Filmové pobídky (Státní fond audiovize)",
+    "currency": "CZK",
+    "rate": {
+     "liveAction": 0.25,
+     "animationOrNoLiveAction": 0.35,
+     "before2025": 0.2
+    },
+    "capPerProject": {
+     "from2025": 450000000,
+     "before2025": 150000000
+    },
+    "minEligibleCosts2026": {
+     "liveActionFeature": 18000000,
+     "liveActionSeriesPerEpisode": 7500000,
+     "animatedFeature": 5000000
+    },
+    "minRuntime2026": {
+     "liveActionFeatureMin": 60,
+     "liveActionSeriesEpisodeMin": 20
+    },
+    "adminFee2026": 60000,
+    "process2026": "two phases: zápis (entry), then application for the incentive; max. 3 years"
+   },
+   "applies": "Czech Republic; rates and cap from 1 January 2025, entry process and thresholds for projects entered from 1 January 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Procento u pobídek bylo zvýšeno z 20 na 25 procent, u animovaných a nové kategorie digitálně produkovaných projektů dokonce na 35 procent. Maximální výše pobídky u jednoho projektu se zvyšuje ze 150 milionů na 450 milionů korun."
+    },
+    {
+     "src": 1,
+     "said": "zvýšení základní sazby z 20% na 25% • zavedení vyšší sazby 35% pro animovaná AVD a novou kategorii projektů bez natáčení živé herecké akce • zvýšení max. částky filmové pobídky na jeden projekt na 450 mil. Kč"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "The incentive's money for 2026 ran out early: on 27 March 2026 the SFA temporarily stopped taking new incentive entries because the 2026 state grant for incentives, CZK 1,611,972,229, was already committed to projects in the system.",
+   "value": {
+    "year": 2026,
+    "stateGrantCZK": 1611972229,
+    "newEntriesStopped": "2026-03-27",
+    "law": "§ 51(5) zákon o audiovizi"
+   },
+   "applies": "Czech Republic, new incentive entries in 2026; projects already registered or entered continue.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Dne 27. 3. 2026 od 9.00 hod. byl v souladu s § 51 odst. 5 zákona o audiovizi v platném znění dočasně zastaven příjem žádostí o zápis pobídkového projektu. Státní fond audiovize (dále jen „Fond“) musel k tomuto opatření přistoupit z důvodu vyčerpání finančních prostředků dotace ze státního rozpočtu účelově určené na filmové pobídky pro rok 2026, která dle schváleného zákona o státním rozpočtu ze dne 21. 3. 2026 činí 1 611 972 229 Kč"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The national fund is the State Audiovisual Fund (renamed from the State Cinematography Fund on 1 January 2025), financed by 2% levies on cinema tickets and retransmission and a 1% compulsory levy on streaming platforms (of a 3.5% obligation, the rest as direct investment); its selective support runs in four categories (Cinematography, Television Works, Animation and Video Games, Audiovisual Infrastructure), each with its own five-member council. Its share and cap per film and selection rate were not found (see blockers).",
+   "value": {
+    "name": "Státní fond audiovize (SFA)",
+    "from": "2025-01-01",
+    "levies": {
+     "cinemaTicketsAndRetransmission": 0.02,
+     "streamingCompulsory": 0.01,
+     "streamingTotalObligation": 0.035
+    },
+    "categories": [
+     "Kinematografie",
+     "Televizní díla",
+     "Animace a videohry",
+     "Infrastruktura audiovize"
+    ],
+    "councilMembersEach": 5
+   },
+   "applies": "Czech Republic, from 1 January 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Novela zákona o audiovizi změnila od 1. ledna 2025 Státní fond kinematografie na Státní fond audiovize (SFA). … Zásadní změnou na příjmové straně je sjednocení výše takzvaných parafiskálních poplatků na 2 procenta. … odvodem ve výši 3,5 %, který bude kombinací povinného odvodu do Fondu a přímých investic do místní tvorby. Povinný odvod je stanoven ve výši 1 procenta a zbývajících 2,5 procenta je ponechán na rozhodnutí každé platformy. … Nový systéme rozděluje podporu do čtyř kategorií: Kinematografie, Televizní díla, Animace a videohry a Infrastruktura audiovize. … Každá ze čtyř kategorií bude mít vlastní radu s pěti radními"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The State Audiovisual Fund's councils decide each project's support, its amount and its aid intensity; by §57a of the Audiovisual Act the intensity may not exceed the limit set by the directly applicable EU regulation (the limit itself, and the selection rate, are blockers).",
+   "value": {
+    "decides": "Rada Fondu (councils)",
+    "intensityCap": "EU directly applicable regulation (Audiovisual Act §57a)"
+   },
+   "applies": "Czech Republic, Audiovisual Act as consolidated (in force from 2013-01-01).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "§ 13 Rady (1) Rady rozhodují o a) formě podpory audiovize, b) podpoře projektů a její výši, c) náročnosti audiovizuálního díla nebo projektu, připouští-li to jeho povaha, a o výši intenzity veřejné podpory, … § 57a Intenzita veřejné podpory (1) Intenzita veřejné podpory, jíž se pro účely tohoto zákona rozumí objem veřejné podpory poskytnuté na projekt, na jehož realizaci byla poskytnuta podpora podle tohoto zákona, nesmí přesáhnout limit stanovený v přímo použitelném předpisu Evropské"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The State Audiovisual Fund's 2026 call for feature fiction production (2026-A-2-8-37) offers CZK 100 million in all, as investment grants covering at most 50% of a film's total cost (60% for EU cross-border co-productions, 90% for a demanding work or a co-production with a DAC country), with a CZK 20,000 filing fee; in its October 2023 feature production call the Fund backed 7 of 27 applications with EUR 2.5 million, the largest award EUR 600,000.",
+   "value": {
+    "fund": "Státní fond audiovize (State Audiovisual Fund)",
+    "call": "2026-A-2-8-37 Výroba celovečerního hraného filmu",
+    "currency": "CZK",
+    "callTotal": 100000000,
+    "maxShare": 0.5,
+    "maxShareEUCrossBorder": 0.6,
+    "maxShareDemandingOrDAC": 0.9,
+    "filingFee": 20000,
+    "applicationWindow": {
+     "from": "2026-05-22",
+     "to": "2026-06-22"
+    },
+    "decision": "2026-09",
+    "selection2023": {
+     "funded": 7,
+     "applications": 27,
+     "rate": 0.259,
+     "totalEUR": 2500000,
+     "largestEUR": 600000
+    }
+   },
+   "applies": "Czech feature fiction films (over 60 minutes), the 2026 call; the selection rate is the Czech Film Fund's October 2023 feature production call, as its Czech Film Center reported it.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Evidenční číslo výzvy 2026-A-2-8-37 … Celkový objem podpory audiovize 100 000 000 Kč … Maximální intenzita veřejné … 50 % celkových nákladů projektu, resp. 60 % celkových nákladů projektu v … případě přeshraničních koprodukcí … Intenzita veřejné podpory může být zvýšena na 90 % celkových nákladů … Forma podpory audiovize: Investiční dotace … Správní poplatek 20 000 Kč … Celovečerním kinematografickým dílem se pro účely Státního fondu audiovize (dále jen „Fond“) rozumí dílo se stopáží delší než 60 minut."
+    },
+    {
+     "src": 5,
+     "said": "Seven projects out of 27 applications were supported with the total of EUR 2 500 000 in the latest Czech Film Fund's call for the support of feature films' production. The highest support, a total of EUR 600 000, was granted to Wild Hunt"
+    }
+   ]
+  }
+ ],
+ "country": "CZ",
+ "sources": [
+  {
+   "url": "https://fondkinematografie.cz/data/article/2025/01/Novy-Statni-fond-audiovize-prinasi-vyssi-podporu-a-vyhodnejsi-pobidky.pdf",
+   "title": "Nový Státní fond audiovize přináší vyšší podporu a výhodnější pobídky (SFA press release, 2025-01-15)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Procento u pobídek bylo zvýšeno z 20 na 25 procent, u animovaných a nové kategorie digitálně produkovaných projektů dokonce na 35 procent. Maximální výše pobídky u jednoho projektu se zvyšuje ze 150 milionů na 450 milionů korun. … Novela zákona o audiovizi změnila od 1. ledna 2025 Státní fond kinematografie na Státní fond audiovize (SFA). … Zásadní změnou na příjmové straně je sjednocení výše takzvaných parafiskálních poplatků na 2 procenta. … odvodem ve výši 3,5 %, který bude kombinací povinného odvodu do Fondu a přímých investic do místní tvorby. Povinný odvod je stanoven ve výši 1 procenta a zbývajících 2,5 procenta je ponechán na rozhodnutí každé platformy. … Nový systéme rozděluje podporu do čtyř kategorií: Kinematografie, Televizní díla, Animace a videohry a Infrastruktura audiovize. … Každá ze čtyř kategorií bude mít vlastní radu s pěti radními"
+  },
+  {
+   "url": "https://fondkinematografie.cz/data/article/2025/12/Prezentace-pobidky-novela-17122025.pdf",
+   "title": "Novela zákona o audiovizi: Pobídky 2026 (SFA presentation, Pavla Mrázková, 2025-12-17)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "zvýšení základní sazby z 20% na 25% • zavedení vyšší sazby 35% pro animovaná AVD a novou kategorii projektů bez natáčení živé herecké akce • zvýšení max. částky filmové pobídky na jeden projekt na 450 mil. Kč"
+  },
+  {
+   "url": "https://sfa.gov.cz/data/article/2026/03/Doprovodna-informace-k-zastaveni-prijmu-zadosti.pdf",
+   "title": "Doprovodná informace ke Sdělení ředitelky SFA o zastavení příjmu žádostí o zápis pobídkového projektu (SFA, March 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Dne 27. 3. 2026 od 9.00 hod. byl v souladu s § 51 odst. 5 zákona o audiovizi v platném znění dočasně zastaven příjem žádostí o zápis pobídkového projektu. Státní fond audiovize (dále jen „Fond“) musel k tomuto opatření přistoupit z důvodu vyčerpání finančních prostředků dotace ze státního rozpočtu účelově určené na filmové pobídky pro rok 2026, která dle schváleného zákona o státním rozpočtu ze dne 21. 3. 2026 činí 1 611 972 229 Kč"
+  },
+  {
+   "url": "https://www.zakonyprolidi.cz/cs/2012-496",
+   "title": "Zákon č. 496/2012 Sb., o audiovizuálních dílech a podpoře audiovize (zákon o audiovizi), consolidated text (Zákony pro lidi)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "§ 13 Rady (1) Rady rozhodují o a) formě podpory audiovize, b) podpoře projektů a její výši, c) náročnosti audiovizuálního díla nebo projektu, připouští-li to jeho povaha, a o výši intenzity veřejné podpory, … § 57a Intenzita veřejné podpory (1) Intenzita veřejné podpory, jíž se pro účely tohoto zákona rozumí objem veřejné podpory poskytnuté na projekt, na jehož realizaci byla poskytnuta podpora podle tohoto zákona, nesmí přesáhnout limit stanovený v přímo použitelném předpisu Evropské"
+  },
+  {
+   "url": "https://sfa.gov.cz/data/invitation/2026/05/Vyzva-Vyroba-celovecerniho-hraneho-filmu.pdf",
+   "title": "Výzva k podávání žádostí o podporu audiovize: Výroba celovečerního hraného filmu, 2026-A-2-8-37 (Státní fond audiovize)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Evidenční číslo výzvy 2026-A-2-8-37 … Celkový objem podpory audiovize 100 000 000 Kč … Maximální intenzita veřejné … 50 % celkových nákladů projektu, resp. 60 % celkových nákladů projektu v … případě přeshraničních koprodukcí … Intenzita veřejné podpory může být zvýšena na 90 % celkových nákladů … Forma podpory audiovize: Investiční dotace … Správní poplatek 20 000 Kč … Celovečerním kinematografickým dílem se pro účely Státního fondu audiovize (dále jen „Fond“) rozumí dílo se stopáží delší než 60 minut."
+  },
+  {
+   "url": "https://www.filmcenter.gov.cz/en/news/production-grants-were-distributed-among-seven-feature-films-by-the-czech-film-fund",
+   "title": "Production grants were distributed among seven feature films by the Czech Film Fund (Czech Film Center, 9 October 2023)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Seven projects out of 27 applications were supported with the total of EUR 2 500 000 in the latest Czech Film Fund's call for the support of feature films' production. The highest support, a total of EUR 600 000, was granted to Wild Hunt"
+  }
+ ],
+ "blockers": []
+}

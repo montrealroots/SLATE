@@ -1,0 +1,274 @@
+{
+ "topic": "tax.UY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Uruguay: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's annual income from work (IRPF) is free to UYU 576,576, then taxed at 10% to 823,680, 15% to 1,235,520, 24% to 2,471,040, 25% to 4,118,400, 27% to 6,177,600, 31% to 9,472,320 and 36% above; few deductions (social security and notional amounts for dependent children) are allowed; capital income is taxed at 12%; there is no regional layer.",
+   "value": {
+    "currency": "UYU",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 576576,
+      "rate": 0
+     },
+     {
+      "from": 576576,
+      "to": 823680,
+      "rate": 0.1
+     },
+     {
+      "from": 823680,
+      "to": 1235520,
+      "rate": 0.15
+     },
+     {
+      "from": 1235520,
+      "to": 2471040,
+      "rate": 0.24
+     },
+     {
+      "from": 2471040,
+      "to": 4118400,
+      "rate": 0.25
+     },
+     {
+      "from": 4118400,
+      "to": 6177600,
+      "rate": 0.27
+     },
+     {
+      "from": 6177600,
+      "to": 9472320,
+      "rate": 0.31
+     },
+     {
+      "from": 9472320,
+      "to": null,
+      "rate": 0.36
+     }
+    ],
+    "capitalIncome": 0.12,
+    "regional": null
+   },
+   "applies": "Resident individuals' work income; amounts as given by PwC 'as of 31 December 2025' (indexed to the BPC)",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Annual taxable gross income (UYU*) Tax rate (%) Over Up to 0 576,576 0 576,576 823,680 10 823,680 1,235,520 15 1,235,520 2,471,040 24 2,471,040 4,118,400 25 4,118,400 6,177,600 27 6,177,600 9,472,320 31 9,472,320 36"
+    },
+    {
+     "src": 0,
+     "said": "The tax is levied on capital investments (e.g. interest, rents, royalties, capital gains) at a flat rate of 12%, with some exceptions."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; residents file their annual return between June and August (first payment due toward the end of August); non-residents file and pay in May; employers file monthly.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "residentReturnWindow": "June to August",
+    "nonResidentReturn": "May"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 1,
+     "said": "As regards due dates, residents must file the tax return between June and August; while non-residents must file it in May."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 15% retirement plus 3% to 8% health insurance and 0.1% (18.1% to 23.1%), and the employer 12.625%; retirement contributions apply to monthly pay up to UYU 288,826 until 31 December 2026.",
+   "value": {
+    "currency": "UYU",
+    "employee": {
+     "retirement": 0.15,
+     "health": [
+      0.03,
+      0.08
+     ],
+     "labourFund": 0.001
+    },
+    "employer": {
+     "total": 0.12625,
+     "retirement": 0.075,
+     "health": 0.05
+    },
+    "retirementCeilingMonthly": 288826
+   },
+   "applies": "Employees, 2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The employer contributes an amount equivalent to 12.625% and withholds 18.1% to 23.1% from the employee"
+    },
+    {
+     "src": 2,
+     "said": "Both employer and employee retirement contribution rates are applicable up to a monthly amount of UYU 288,826 until 31 December 2026 (the exceeding amount is exempt)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold IRPF monthly at the employee's rate; the self-employed make advance payments, and certain payers withhold 7% of gross from service fees above about UYU 63,000.",
+   "value": {
+    "employee": "monthly withholding",
+    "selfEmployedServices": {
+     "rate": 0.07,
+     "above": 63000
+    }
+   },
+   "applies": "Payments in Uruguay",
+   "sources": [
+    {
+     "src": 1,
+     "said": "In cases where self-employed income derived from rendering of services will be higher than approximately UYU 63,000, certain previously defined taxpayers must withhold at a rate of 7% on gross income."
+    },
+    {
+     "src": 1,
+     "said": "Employers are required to withhold at the appropriate personal rate applied to net taxable remuneration of each employee."
+    },
+    {
+     "src": 3,
+     "said": "Services provided by resident individuals generally are subject to a 7% withholding tax."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays IRNR on Uruguayan-source gross income; payments for services provided in Uruguay by non-residents (a performance, writing or directing) bear 12% withholding (25% to a tax-haven resident), collected by the local payer. The retention is 12% of the amount paid plus the retention itself (VAT excluded); the year closes 31 December and a non-resident may make the retentions definitive, which frees them from filing a return for that income.",
+   "value": {
+    "rate": 0.12,
+    "base": "gross Uruguayan-source income",
+    "lowTaxJurisdiction": 0.25,
+    "final": "collected by withholding",
+    "services": 0.12,
+    "grossUp": true,
+    "finalByElection": true
+   },
+   "applies": "Non-residents without a PE",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Artículo 24 (Liquidación del impuesto).- La liquidación y pago se realizará anualmente, en las condiciones que establezca la Dirección General Impositiva. El cierre del ejercicio económico será el 31 de diciembre … Los contribuyentes podrán darle carácter definitivo a las retenciones y percepciones efectuadas por las rentas gravadas, quedando liberados -exclusivamente por las rentas que hubieran sido objeto de retención o percepción según el caso- de la obligación de practicar la liquidación y presentar la correspondiente declaración jurada. … Artículo 31 (Determinación de la retención).- Las retenciones a que refieren los artículos anteriores se determinarán aplicando la tasa del 12% (doce por ciento), a la suma del monto acreditado o pagado más la retención correspondiente, sin tomar en cuenta el Impuesto al Valor Agregado si correspondiere."
+    },
+    {
+     "src": 5,
+     "said": "All Uruguayan-sourced income obtained by non-residents (other than those obtained through a PE in Uruguay) is taxed at flat rates of up to 12% on gross income, with some exceptions. This tax is basically collected by way of WHT."
+    },
+    {
+     "src": 0,
+     "said": "If the non-resident individual obtains income from a Uruguayan source of any kind, then the local CIT payer must withhold IRNR on the corresponding payment."
+    },
+    {
+     "src": 3,
+     "said": "Payments made for all services provided in Uruguay by nonresidents and technical services (including advertising services) provided by nonresidents from outside Uruguay to corporate income tax payers in Uruguay are subject to withholding tax at a rate of 12%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties are capital income taxed at a flat 12% for residents; no special regime for authors was found.",
+   "value": {
+    "royalties": 0.12
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax is levied on capital investments (e.g. interest, rents, royalties, capital gains) at a flat rate of 12%, with some exceptions."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 22% on services in Uruguay (10% on some items); registration is mandatory for businesses (no turnover threshold is given), and VAT on services rendered in Uruguay by non-residents is withheld by the local recipient.",
+   "value": {
+    "standard": 0.22,
+    "reduced": 0.1,
+    "threshold": 0,
+    "nonResidentServices": "withheld by the local recipient"
+   },
+   "applies": "Supplies in Uruguay",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Uruguayan VAT is levied at a general rate of 22% on the provision of services and on the circulation of goods within the limits of the Uruguayan territory."
+    },
+    {
+     "src": 3,
+     "said": "Registration: Registration is mandatory for businesses. Services rendered by nonresidents in Uruguay are subject to VAT, and the tax is withheld by the local recipient of the services."
+    }
+   ]
+  }
+ ],
+ "country": "UY",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/uruguay/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Uruguay, Individual - Taxes on personal income (last reviewed 02 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gub.uy/direccion-general-impositiva/",
+   "said": "Annual taxable gross income (UYU*) Tax rate (%) Over Up to 0 576,576 0 576,576 823,680 10 823,680 1,235,520 15 1,235,520 2,471,040 24 2,471,040 4,118,400 25 4,118,400 6,177,600 27 6,177,600 9,472,320 31 9,472,320 36 … The tax is levied on capital investments (e.g. interest, rents, royalties, capital gains) at a flat rate of 12%, with some exceptions. … If the non-resident individual obtains income from a Uruguayan source of any kind, then the local CIT payer must withhold IRNR on the corresponding payment."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uruguay/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Uruguay, Individual - Tax administration (last reviewed 02 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gub.uy/direccion-general-impositiva/",
+   "said": "As regards due dates, residents must file the tax return between June and August; while non-residents must file it in May. … In cases where self-employed income derived from rendering of services will be higher than approximately UYU 63,000, certain previously defined taxpayers must withhold at a rate of 7% on gross income. … Employers are required to withhold at the appropriate personal rate applied to net taxable remuneration of each employee."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uruguay/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Uruguay, Individual - Other taxes (last reviewed 02 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.bps.gub.uy/",
+   "said": "The employer contributes an amount equivalent to 12.625% and withholds 18.1% to 23.1% from the employee … Both employer and employee retirement contribution rates are applicable up to a monthly amount of UYU 288,826 until 31 December 2026 (the exceeding amount is exempt). … Uruguayan VAT is levied at a general rate of 22% on the provision of services and on the circulation of goods within the limits of the Uruguayan territory."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-uruguayhighlights-2026.pdf",
+   "title": "Deloitte, Uruguay Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gub.uy/direccion-general-impositiva/",
+   "said": "Services provided by resident individuals generally are subject to a 7% withholding tax. … Payments made for all services provided in Uruguay by nonresidents and technical services (including advertising services) provided by nonresidents from outside Uruguay to corporate income tax payers in Uruguay are subject to withholding tax at a rate of 12%. … Registration: Registration is mandatory for businesses. Services rendered by nonresidents in Uruguay are subject to VAT, and the tax is withheld by the local recipient of the services."
+  },
+  {
+   "url": "https://www.impo.com.uy/bases/decretos/149-2007",
+   "title": "Decreto Nº 149/007 (reglamentación del IRNR), arts. 24 and 31, IMPO (consolidated text; the Latin-1 page saved as UTF-8)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artículo 24 (Liquidación del impuesto).- La liquidación y pago se realizará anualmente, en las condiciones que establezca la Dirección General Impositiva. El cierre del ejercicio económico será el 31 de diciembre … Los contribuyentes podrán darle carácter definitivo a las retenciones y percepciones efectuadas por las rentas gravadas, quedando liberados -exclusivamente por las rentas que hubieran sido objeto de retención o percepción según el caso- de la obligación de practicar la liquidación y presentar la correspondiente declaración jurada. … Artículo 31 (Determinación de la retención).- Las retenciones a que refieren los artículos anteriores se determinarán aplicando la tasa del 12% (doce por ciento), a la suma del monto acreditado o pagado más la retención correspondiente, sin tomar en cuenta el Impuesto al Valor Agregado si correspondiere."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uruguay/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Uruguay, Corporate - Withholding taxes (last reviewed 02 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gub.uy/direccion-general-impositiva/",
+   "said": "All Uruguayan-sourced income obtained by non-residents (other than those obtained through a PE in Uruguay) is taxed at flat rates of up to 12% on gross income, with some exceptions. This tax is basically collected by way of WHT."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The IRPF deemed-expense rate for a self-employed resident artist, and whether a small freelancer may use the literal E (minimum VAT) regime; the IRNR finality is now read from Decreto 149/007.",
+   "tried": {
+    "institution": "gub.uy/direccion-general-impositiva reached (home page); the IRPF/IRNR rate pages and the 2026 BPC value not located this pass || 2026-11-01 retry: gub.uy/direccion-general-impositiva home read; guessed IRNR policy pages return 404; its \"codigos-impuestos\" publication page found (not read).",
+    "official-register": "IMPO (Texto Ordenado, Título 7 and 8) not read || 2026-11-01 retry: IMPO read: Decreto 149/007 (IRNR regulation) saved and quoted (arts. 24, 31); impo.com.uy/bases/todgi/8-2023 returns a 4.4 kB stub; IRPF decree 150/007 not read.",
+    "web-search": "not separately searched; PwC (reviewed 02 September 2026) current || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "PwC (reviewed 02 September 2026) and Deloitte Uruguay Highlights 2026 read || 2026-11-01 retry: PwC and Deloitte Uruguay (saved) already read; neither gives the IRPF deemed-expense rate for artists.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset https and return 403 on http from this environment (2026-11-01)."
+   }
+  }
+ ]
+}

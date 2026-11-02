@@ -1,0 +1,291 @@
+{
+ "topic": "tax.GH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Ghana: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A Ghanaian resident pays income tax for 2026 under the Income Tax (Amendment) Act, 2026 (Act 1178): nothing on the first GH¢7,056 a year, then 5%, 10%, 17.5%, 25%, 30%, and 35% above GH¢600,000; there is no local income tax.",
+   "value": {
+    "currency": "GHS",
+    "annual": [
+     {
+      "from": 0,
+      "to": 7056,
+      "rate": 0
+     },
+     {
+      "from": 7056,
+      "to": 8016,
+      "rate": 0.05
+     },
+     {
+      "from": 8016,
+      "to": 9216,
+      "rate": 0.1
+     },
+     {
+      "from": 9216,
+      "to": 44016,
+      "rate": 0.175
+     },
+     {
+      "from": 44016,
+      "to": 236016,
+      "rate": 0.25
+     },
+     {
+      "from": 236016,
+      "to": 600000,
+      "rate": 0.3
+     },
+     {
+      "from": 600000,
+      "to": null,
+      "rate": 0.35
+     }
+    ]
+   },
+   "applies": "Rates in force from 1 September 2026 (Act 1178); the scale earlier in 2026 was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Year of Assessment 2026 Chargeable Income GH¢ Rate % First 7,056.00 – Next 960.00 5.00 Next 1,200.00 10.00 Next 34,800.00 17.50 Next 192,000.00 25.00 Next 363,984.00 30.00 Exceeding 600,000.00 35.00"
+    },
+    {
+     "src": 0,
+     "said": "These rates took effect September 1st, 2026."
+    },
+    {
+     "src": 1,
+     "said": "There are no local taxes on personal income in Ghana."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts PAYE monthly by the monthly scale (nothing on the first GH¢588, up to 35% above GH¢50,000) and remits it within 15 days of the month's end; a payment to an individual for services bears 7.5% withholding.",
+   "value": {
+    "currency": "GHS",
+    "monthly": [
+     {
+      "from": 0,
+      "to": 588,
+      "rate": 0
+     },
+     {
+      "from": 588,
+      "to": 668,
+      "rate": 0.05
+     },
+     {
+      "from": 668,
+      "to": 768,
+      "rate": 0.1
+     },
+     {
+      "from": 768,
+      "to": 3668,
+      "rate": 0.175
+     },
+     {
+      "from": 3668,
+      "to": 19668,
+      "rate": 0.25
+     },
+     {
+      "from": 19668,
+      "to": 50000,
+      "rate": 0.3
+     },
+     {
+      "from": 50000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "servicesByIndividual": 0.075
+   },
+   "applies": "From 1 September 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Year of Assessment 2026 Chargeable Income GH¢ Rate % First 588.00 – Next 80.00 5.00 Next 100.00 10.00 Next 2,900.00 17.50 Next 16,000.00 25.00 Next 30,332.00 30.00 Exceeding 50,000.00 35.00"
+    },
+    {
+     "src": 2,
+     "said": "Every employer is required to make monthly deductions of tax from the total emoluments of each employee and remit any taxes due within 15 days after the end of the month."
+    },
+    {
+     "src": 3,
+     "said": "Payment to individuals for provision of services 7.5 No"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee contributes 5.5% and the employer 13% to the first two tiers of social security (18.5% in all); contributions up to 16.5% to the voluntary third tier are tax-exempt.",
+   "value": {
+    "employee": 0.055,
+    "employer": 0.13,
+    "tier1": 0.135,
+    "tier2": 0.05,
+    "tier3TaxFreeUpTo": 0.165
+   },
+   "applies": "2026; ceiling not given.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Under the first two tiers, the employee is required to contribute 5.5% while the employer contributes 13%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident individual is taxed at a flat 25% on Ghana-source chargeable income; payments to non-residents for goods, works or any services bear a final 20% withholding, and royalties a final 15%.",
+   "value": {
+    "flatRate": 0.25,
+    "servicesWithholding": {
+     "rate": 0.2,
+     "final": true
+    },
+    "royalties": {
+     "rate": 0.15,
+     "final": true
+    }
+   },
+   "applies": "No artistes' rule apart; a performer's fee falls under services.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The chargeable income of non-resident individuals is generally taxed at a flat rate of 25%."
+    },
+    {
+     "src": 3,
+     "said": "Goods, works, or any services 20 Yes"
+    },
+    {
+     "src": 3,
+     "said": "Royalties, natural resources payments, and rents 15 Yes"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident bear 15% withholding, not final.",
+   "value": {
+    "royaltiesResident": {
+     "rate": 0.15,
+     "final": false
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Royalties and natural resource payments 15 No"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15%, plus the NHIL and GETFund levies of 2.5% each (20% in all); there is no threshold for services, so every supplier of taxable services must register (goods: GH¢750,000 from 1 January 2026).",
+   "value": {
+    "currency": "GHS",
+    "rate": 0.15,
+    "levies": 0.05,
+    "effective": 0.2,
+    "threshold": 0,
+    "goodsThreshold": 750000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "A National Health Insurance Levy (NHIL) (2.5%) and Ghana Education Trust Fund (GETFund) levy (2.5%) are also charged on the VAT-exclusive amount, creating a total"
+    },
+    {
+     "src": 5,
+     "said": "No threshold applies to supplies of services and registration is therefore mandatory for all suppliers of taxable services."
+    },
+    {
+     "src": 5,
+     "said": "A business making, or expecting to make, taxable supply of goods exceeding GHS 750,000 (GHS 200,000 before 1 January 2026)"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is due by 30 April of the following year, with final payment on filing.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "04-30",
+     "after": 1
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Individuals who earn income during a year of assessment are required to file an annual individual income tax return by 30 April following the end of the tax year."
+    },
+    {
+     "src": 2,
+     "said": "Final payment is due at the time of filing the annual PIT return."
+    }
+   ]
+  }
+ ],
+ "country": "GH",
+ "sources": [
+  {
+   "url": "https://gra.gov.gh/domestic-tax/tax-types/paye/",
+   "title": "Pay As You Earn (PAYE) (Ghana Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Year of Assessment 2026 Chargeable Income GH¢ Rate % First 7,056.00 – Next 960.00 5.00 Next 1,200.00 10.00 Next 34,800.00 17.50 Next 192,000.00 25.00 Next 363,984.00 30.00 Exceeding 600,000.00 35.00 … These rates took effect September 1st, 2026. … Year of Assessment 2026 Chargeable Income GH¢ Rate % First 588.00 – Next 80.00 5.00 Next 100.00 10.00 Next 2,900.00 17.50 Next 16,000.00 25.00 Next 30,332.00 30.00 Exceeding 50,000.00 35.00 … The chargeable income of non-resident individuals is generally taxed at a flat rate of 25%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ghana/individual/taxes-on-personal-income",
+   "title": "Ghana: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 27 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gh/domestic-tax/tax-types/paye/",
+   "said": "There are no local taxes on personal income in Ghana."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ghana/individual/tax-administration",
+   "title": "Ghana: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 27 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gh/domestic-tax/tax-types/paye/",
+   "said": "Every employer is required to make monthly deductions of tax from the total emoluments of each employee and remit any taxes due within 15 days after the end of the month. … Final payment is due at the time of filing the annual PIT return."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ghana/corporate/withholding-taxes",
+   "title": "Ghana: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 27 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gh/domestic-tax/tax-types/paye/",
+   "said": "Payment to individuals for provision of services 7.5 No … Goods, works, or any services 20 Yes … Royalties, natural resources payments, and rents 15 Yes … Royalties and natural resource payments 15 No"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/ghana/individual/other-taxes",
+   "title": "Ghana: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 27 October 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ssnit.org.gh/",
+   "said": "Under the first two tiers, the employee is required to contribute 5.5% while the employer contributes 13%."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-ghanahighlights-2026.pdf",
+   "title": "Ghana Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gh/domestic-tax/tax-types/vat/",
+   "said": "A National Health Insurance Levy (NHIL) (2.5%) and Ghana Education Trust Fund (GETFund) levy (2.5%) are also charged on the VAT-exclusive amount, creating a total … No threshold applies to supplies of services and registration is therefore mandatory for all suppliers of taxable services. … A business making, or expecting to make, taxable supply of goods exceeding GHS 750,000 (GHS 200,000 before 1 January 2026) … Individuals who earn income during a year of assessment are required to file an annual individual income tax return by 30 April following the end of the tax year."
+  }
+ ],
+ "blockers": []
+}

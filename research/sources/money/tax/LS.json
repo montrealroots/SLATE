@@ -1,0 +1,142 @@
+{
+ "topic": "tax.LS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Lesotho: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 April 2026 a resident's chargeable income is taxed at 20% up to M77,760 a year (M6,480 a month) and 30% above, less a non-refundable personal tax credit of M12,240 a year (M1,020 a month).",
+   "value": {
+    "currency": "LSL",
+    "from": "2026-04-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 77760,
+      "rate": 0.2
+     },
+     {
+      "from": 77760,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "taxCredit": 12240,
+    "taxCreditMonthly": 1020,
+    "regional": null
+   },
+   "applies": "Tax year from 1 April 2026; the RSL's 2026-27 employment-income guide states the monthly band and credit.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Any chargeable income from M 1.00 up to M 6, 480.00 per month is taxable at 20%; and … Any excess of M 6, 480.00 per month is taxable at 30%. … Individuals are granted a non-refundable tax credit of M1,020.00 per month."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The 2026/27 tax year begins on 1 April 2026.",
+   "value": {
+    "start": "04-01",
+    "end": "03-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The above change is effective 1 April 2026 ."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold PAYE monthly at 20% to M6,480 and 30% above, less the M1,020 monthly credit, and remit it to the RSL by the 15th of the next month.",
+   "value": {
+    "currency": "LSL",
+    "period": "month",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 6480,
+      "rate": 0.2
+     },
+     {
+      "from": 6480,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "creditMonthly": 1020,
+    "remitBy": "15th of the following month"
+   },
+   "applies": "From 1 April 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Any chargeable income from M 1.00 up to M 6, 480.00 per month is taxable at 20%; and … Any excess of M 6, 480.00 per month is taxable at 30%. … has the obligation to remit the tax to the Revenue Services Lesotho by the 15th of every month following the month of deduction."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payer withholds 10% of the gross from a non-resident artiste's or entertainer's fee under a Lesotho-source services contract (s. 108), and 25% from royalties paid to a non-resident (s. 107); the non-resident may file a return if the withholding exceeds the tax otherwise due, so it is final unless a return is filed.",
+   "value": {
+    "currency": "LSL",
+    "artistes": {
+     "rate": 0.1,
+     "base": "gross before VAT",
+     "final": "unless a return is filed"
+    },
+    "royalties": {
+     "rate": 0.25,
+     "treatyRate": 0.1
+    }
+   },
+   "applies": "Income Tax Act 1993 ss. 107-108 as set out in the 2010 public ruling still posted by the RSL; later rate changes not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "In terms of section 108, tax is withheld where payment is made to a non-resident under a Lesotho source services contract. … Artistes; Entertainers; Sportspersons; Auditing; Accounting; Economic; Financial; Legal; Engineering; Architectural; etc. WD3(1993) 10% … Optional for all items in this category … Royalty WD1 (1993) WD1 (1993) WD5 (1993) WD4 (1993) WD5 (1993) 25% … the words “Optional” apply where the law allows filing of a return if the taxpayer feels that the income tax paid during the tax year, by way of withholding, is higher than that which is otherwise payable"
+    }
+   ]
+  }
+ ],
+ "country": "LS",
+ "sources": [
+  {
+   "url": "https://www.rsl.org.ls/sites/default/files/2026-09/Guide%20on%20Taxation%20of%20Employment%20Income%2026-27.pdf",
+   "title": "Revenue Services Lesotho: Guide on Taxation of Employment Income 26-27",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any chargeable income from M 1.00 up to M 6, 480.00 per month is taxable at 20%; and … Any excess of M 6, 480.00 per month is taxable at 30%. … Individuals are granted a non-refundable tax credit of M1,020.00 per month. … Any chargeable income from M 1.00 up to M 6, 480.00 per month is taxable at 20%; and … Any excess of M 6, 480.00 per month is taxable at 30%. … has the obligation to remit the tax to the Revenue Services Lesotho by the 15th of every month following the month of deduction."
+  },
+  {
+   "url": "https://communityhub.sage.com/za/sage-payroll-professional/f/announcements/266224/lesotho-tax-changes-2026-2027-effective-1-april-2026",
+   "title": "Lesotho tax changes 2026-2027 effective 1 April 2026 (Sage Community Hub)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.rsl.org.ls/sites/default/files/2026-06/2026%20-2027%20Income%20Tax%20structure.pdf",
+   "said": "The above change is effective 1 April 2026 ."
+  },
+  {
+   "url": "https://www.rsl.org.ls/sites/default/files/2024-05/Withholding%20Tax%20Guide_3.pdf",
+   "title": "Lesotho Revenue Authority Income Tax Public Ruling Issue 1: Withholding Taxes (Income Tax Act No. 9 of 1993, ss. 107, 108, 157, 158, 160), April 2010, on rsl.org.ls",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In terms of section 108, tax is withheld where payment is made to a non-resident under a Lesotho source services contract. … Artistes; Entertainers; Sportspersons; Auditing; Accounting; Economic; Financial; Legal; Engineering; Architectural; etc. WD3(1993) 10% … Optional for all items in this category … Royalty WD1 (1993) WD1 (1993) WD5 (1993) WD4 (1993) WD5 (1993) 25% … the words “Optional” apply where the law allows filing of a return if the taxpayer feels that the income tax paid during the tax year, by way of withholding, is higher than that which is otherwise payable"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "The VAT rate and registration threshold for a freelancer: the RSL's VAT 101 guide prints the threshold as 'M 2000,000.00 per annum', which reads as either M2,000,000 or a misprint (its own example treats M200,150 of sales in six months as reaching it); the rate is not in the guide. Also still sought: social contributions on pay and the individual return due date.",
+   "tried": {
+    "institution": "rsl.org.ls 2026-11-01: every request (homepage and the 2026-27 structure PDFs) ended in 'Connection reset by peer' || 2026-11-01 retry: rsl.org.ls answered this time: Withholding Tax Guide (2010 ruling), Guide on Taxation of Employment Income 26-27 and VAT 101 guide read and saved; 'Taxation of Foreign Nationals.pdf' reset the connection",
+    "official-register": "Lesotho Government Gazette / Income Tax Act 1993 not reached || 2026-11-01 retry: VAT ACT - 2001.pdf and Income Tax Act 1993 (updated to 1 April 2012) are posted on rsl.org.ls (2026-09 folder); not yet read for the rate; no social-security statute found on the RSL site",
+    "web-search": "2026-11-01 'Lesotho Revenue Services income tax rates 2026/27 20% 30% tax credit monthly threshold rsl.org.ls individuals': rates only || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PaySpace and Sage notices read: rates and credit only || 2026-11-01 retry: PaySpace and Sage notices (rates only) replaced by the RSL's own guide",
+    "archive": "not tried || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "country": "GS",
+ "read": "2026-11-01",
+ "route": "Entry Permit for work",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The worker, or an authorised person on the worker's behalf (a travel agent, a cruise ship operator, a family member), through the online portal.",
+  "first": "Details of the contract or other arrangement under which the work will be done, and the health insurance the Ordinance requires.",
+  "fees": [
+   {
+    "what": "Work permit application",
+    "amount": "0.00",
+    "currency": "GBP"
+   }
+  ],
+  "processing": null,
+  "validity": {
+   "n": 6,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://gov.gs/entry-control-order-permit-application/",
+   "title": "Government of South Georgia & the South Sandwich Islands, Entry Control Ordinance: Permit Application",
+   "read": "2026-11-01",
+   "said": "Applications can be made by an individual, or multiple applications can be made on behalf of a number of persons by an authorised person such as travel agent, cruise ship operator or a family member. … Applications should be received and paid for at least 8 days prior to the 1st intended date of arrival (disembarkation) in the Territories. … A work permit is valid for 6 months. Both visitor and work permits can be extended, where justified, for a period of an additional 30 days for visitors and 6 months for a work permit, respectively. … Applications for permits for work only – Details of the contract or other arrangement under which the applicant proposes to work in the Territories … Work Permits – No charge for a 6-month permit.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "fees",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://laws.gov.gs/wp-content/uploads/2022/07/2022-02-Entry-Control-Ordinance-2022.pdf",
+   "title": "Entry Control Ordinance 2022 (SGSSI Ordinance No. 2 of 2022)",
+   "read": "2026-11-01",
+   "said": "in the case of a permit for work, 12 months from the expected date of the permit holder first entering the Territories or the period required to perform the contract or other agreement under which the work is to be done, whichever is the shorter … in the case of a permit for work, by up to 6 months",
+   "kind": "primary",
+   "fields": [
+    "validity"
+   ]
+  },
+  {
+   "url": "https://laws.gov.gs/wp-content/uploads/2025/07/280728-SGSSI-Gazette-No-4.pdf",
+   "title": "SGSSI Gazette No. 4 (2025), Notice of fee for applications for permit for visit or work",
+   "read": "2026-11-01",
+   "said": "with effect from 1 August 2025, the fee for an application for:- (a) a visitor permit is £200; and (b) a work permit is £0 (nil)",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "processing",
+   "sought": "How long a decision on a work permit takes",
+   "tried": {
+    "institution": "gov.gs permit page: states only the 8-day lead time and the 3-day cut-off. || Retry 2026-11-01: gov.gs pages on expeditions, Regulated Activity Permits and the Entry Control Order application surfaced: the Commissioner decides with a panel's advice for expeditions; late applications may not be processed in time; no decision period for a work permit.",
+    "official-register": "Entry Control Ordinance 2022 read: sets no decision period. || Retry 2026-11-01: SGSSI Gazette No. 4 (2025) and the Entry Control Ordinance 2022 re-read: fees and terms only.",
+    "web-search": "'South Georgia Entry Control Ordinance 2022 work permit filming media visit permit processing': no decision time. || Retry 2026-11-01: WebSearch 'South Georgia and the South Sandwich Islands work permit application decision Commissioner \"Entry Control\" filming crew permit how long approval': gov.gs pages only.",
+    "trade-press": "None found in the same search. || Retry 2026-11-01: None found; the Visiting South Georgia 2024-25 booklet (GSGSSI's own) warns late submissions may not be processed, no period.",
+    "archive": "Not tried; the live page is current. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "Criteria a performer must meet for a work permit",
+   "tried": {
+    "institution": "gov.gs permit page names only contract details and health insurance; the Media Visits page answers 404. || Retry 2026-11-01: gov.gs pages on expeditions, Regulated Activity Permits and the Entry Control Order application surfaced: the Commissioner decides with a panel's advice for expeditions; late applications may not be processed in time; no decision period for a work permit.",
+    "official-register": "Entry Control Ordinance 2022: no performer criteria found. || Retry 2026-11-01: SGSSI Gazette No. 4 (2025) and the Entry Control Ordinance 2022 re-read: fees and terms only.",
+    "web-search": "Same search as above. || Retry 2026-11-01: WebSearch 'South Georgia and the South Sandwich Islands work permit application decision Commissioner \"Entry Control\" filming crew permit how long approval': gov.gs pages only.",
+    "trade-press": "None. || Retry 2026-11-01: None found; the Visiting South Georgia 2024-25 booklet (GSGSSI's own) warns late submissions may not be processed, no period.",
+    "archive": "Not tried. || Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "A union or guild step",
+   "tried": {
+    "institution": "Retry 2026-11-01: gov.gs pages on expeditions, Regulated Activity Permits and the Entry Control Order application surfaced: the Commissioner decides with a panel's advice for expeditions; late applications may not be processed in time; no decision period for a work permit.",
+    "official-register": "Retry 2026-11-01: SGSSI Gazette No. 4 (2025) and the Entry Control Ordinance 2022 re-read: fees and terms only.",
+    "web-search": "Retry 2026-11-01: WebSearch 'South Georgia and the South Sandwich Islands work permit application decision Commissioner \"Entry Control\" filming crew permit how long approval': gov.gs pages only.",
+    "trade-press": "Retry 2026-11-01: None found; the Visiting South Georgia 2024-25 booklet (GSGSSI's own) warns late submissions may not be processed, no period.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "A minimum or market pay rule",
+   "tried": {
+    "institution": "Retry 2026-11-01: gov.gs pages on expeditions, Regulated Activity Permits and the Entry Control Order application surfaced: the Commissioner decides with a panel's advice for expeditions; late applications may not be processed in time; no decision period for a work permit.",
+    "official-register": "Retry 2026-11-01: SGSSI Gazette No. 4 (2025) and the Entry Control Ordinance 2022 re-read: fees and terms only.",
+    "web-search": "Retry 2026-11-01: WebSearch 'South Georgia and the South Sandwich Islands work permit application decision Commissioner \"Entry Control\" filming crew permit how long approval': gov.gs pages only.",
+    "trade-press": "Retry 2026-11-01: None found; the Visiting South Georgia 2024-25 booklet (GSGSSI's own) warns late submissions may not be processed, no period.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "A short engagement needing no permit",
+   "tried": {
+    "institution": "Retry 2026-11-01: gov.gs pages on expeditions, Regulated Activity Permits and the Entry Control Order application surfaced: the Commissioner decides with a panel's advice for expeditions; late applications may not be processed in time; no decision period for a work permit.",
+    "official-register": "Retry 2026-11-01: SGSSI Gazette No. 4 (2025) and the Entry Control Ordinance 2022 re-read: fees and terms only.",
+    "web-search": "Retry 2026-11-01: WebSearch 'South Georgia and the South Sandwich Islands work permit application decision Commissioner \"Entry Control\" filming crew permit how long approval': gov.gs pages only.",
+    "trade-press": "Retry 2026-11-01: None found; the Visiting South Georgia 2024-25 booklet (GSGSSI's own) warns late submissions may not be processed, no period.",
+    "archive": "Retry 2026-11-01: archive.org's availability API (archive.org/wayback/available) answers this client, but every web.archive.org snapshot URL resets the connection (curl: (35) Recv failure: Connection reset by peer, retried 2026-11-01)."
+   }
+  }
+ ],
+ "note": "The Entry Control Ordinance 2022 (in force 1 August 2025) lets a work permit run up to 12 months or the contract's length, whichever is shorter, and be extended by up to 6 months; the Government's page says a work permit is valid for 6 months and extendable by 6. The page's 6 months is held as what is granted. The work permit is free (Gazette notice of 22 July 2025). The Government states no decision time, only that applications must be in and paid at least 8 days before arrival, and none made 3 days or less before arrival is approved."
+}

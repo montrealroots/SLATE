@@ -1,0 +1,197 @@
+{
+ "topic": "tax.TD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Chad: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident's work income (pay and non-commercial income) is taxed after allowances at 0% to XAF 800,000 a year, 10.5% to 6 million, 15% to 7.5 million, 20% to 9 million, 25% to 12 million and 30% above.",
+   "value": {
+    "currency": "XAF",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 800000,
+      "rate": 0
+     },
+     {
+      "from": 800000,
+      "to": 6000000,
+      "rate": 0.105
+     },
+     {
+      "from": 6000000,
+      "to": 7500000,
+      "rate": 0.15
+     },
+     {
+      "from": 7500000,
+      "to": 9000000,
+      "rate": 0.2
+     },
+     {
+      "from": 9000000,
+      "to": 12000000,
+      "rate": 0.25
+     },
+     {
+      "from": 12000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ]
+   },
+   "applies": "Annual basis. PwC's Chad pages were last reviewed on 12 August 2024; no 2026 source was found to confirm or change them (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Work incomes (XAF*) Rates (%) 0 to 800,000 0 800,001 to 6,000,000 10.5 6,000,001 to 7,500,00 15 7,5000,001 to 9,000,000 20 9,000,001 to 12,000,000 25 Above 12,000,000 30"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Return date not read. PwC's Chad pages were last reviewed on 12 August 2024; no 2026 source was found to confirm or change them (see blocker).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The tax year in Chad is the calendar year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 16.5% and the employee 3.5% of gross pay, each on pay up to XAF 500,000 a month.",
+   "value": {
+    "currency": "XAF",
+    "employer": 0.165,
+    "employee": 0.035,
+    "monthlyCeiling": 500000
+   },
+   "applies": "PwC's Chad pages were last reviewed on 12 August 2024; no 2026 source was found to confirm or change them (see blocker).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employer contributions are 16.5% of the gross salary limited to XAF 500,000 per month (XAF 82,500 upper limit). Employee contributions are 3.5% of the gross salary limited to XAF 500,000 per month (XAF 17,500 upper limit)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on income from activities in Chad; income paid to a person resident outside the CEMAC area bears 25% withholding (20% for an individual resident in CEMAC).",
+   "value": {
+    "outsideCEMAC": 0.25,
+    "CEMACindividual": 0.2
+   },
+   "applies": "PwC's Chad pages were last reviewed on 12 August 2024; no 2026 source was found to confirm or change them (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A non-resident individual in Chad is subject to PIT on the income stemming from activities in Chad."
+    },
+    {
+     "src": 3,
+     "said": "WHT on income of non-residents is 25%. It applies to income of any legal or natural person who is not resident in the CEMAC area"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18% (9% on some local products).",
+   "value": {
+    "standard": 0.18,
+    "reduced": 0.09
+   },
+   "applies": "Threshold not read. PwC's Chad pages were last reviewed on 12 August 2024; no 2026 source was found to confirm or change them (see blocker).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The VAT rate applicable in Chad is: 18% on all taxable operations. 9% on local products"
+    }
+   ]
+  }
+ ],
+ "country": "TD",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/chad/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: chad Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gouv.td/",
+   "said": "Work incomes (XAF*) Rates (%) 0 to 800,000 0 800,001 to 6,000,000 10.5 6,000,001 to 7,500,00 15 7,5000,001 to 9,000,000 20 9,000,001 to 12,000,000 25 Above 12,000,000 30 … A non-resident individual in Chad is subject to PIT on the income stemming from activities in Chad."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chad/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: chad Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gouv.td/",
+   "said": "The tax year in Chad is the calendar year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chad/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: chad Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnps-tchad.td/",
+   "said": "Employer contributions are 16.5% of the gross salary limited to XAF 500,000 per month (XAF 82,500 upper limit). Employee contributions are 3.5% of the gross salary limited to XAF 500,000 per month (XAF 17,500 upper limit)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chad/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: chad Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gouv.td/",
+   "said": "WHT on income of non-residents is 25%. It applies to income of any legal or natural person who is not resident in the CEMAC area"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/chad/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: chad Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.finances.gouv.td/",
+   "said": "The VAT rate applicable in Chad is: 18% on all taxable operations. 9% on local products"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Confirmation of the 2026 scale, social rates and VAT from a 2026 source (the Finance Law 2026).",
+   "tried": {
+    "institution": "No Chad tax-authority site reachable was found (finances.gouv.td not answered in this pass), 2026-11-01. || retry 2026-11-01 (world round): finances.gouv.td does not answer (curl 000); dgi.td answers with a Cloudflare challenge ('Just a moment...', HTTP 403): a bot check, not read another way",
+    "official-register": "The Finance Law 2026 of Chad was not found online, 2026-11-01. || retry 2026-11-01 (world round): the Finance Law 2026 of Chad was not found on any reachable government site",
+    "web-search": "Not run for Chad (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Worldwide Tax Summaries (Chad) last reviewed 12 August 2024; Deloitte has no Chad highlights for 2026 (404). || retry 2026-11-01 (world round): PwC Chad (reviewed 12 August 2024, read before) only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "Withholding on a resident freelancer's fee and the employer's monthly scale.",
+   "tried": {
+    "institution": "No Chad tax-authority site reachable was found (finances.gouv.td not answered in this pass), 2026-11-01. || retry 2026-11-01 (world round): finances.gouv.td does not answer (curl 000); dgi.td answers with a Cloudflare challenge ('Just a moment...', HTTP 403): a bot check, not read another way",
+    "official-register": "The Finance Law 2026 of Chad was not found online, 2026-11-01. || retry 2026-11-01 (world round): the Finance Law 2026 of Chad was not found on any reachable government site",
+    "web-search": "Not run for Chad (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Chad pages 2026-11-01: no freelancer rule. || retry 2026-11-01 (world round): PwC Chad (reviewed 12 August 2024, read before) only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "No Chad tax-authority site reachable was found (finances.gouv.td not answered in this pass), 2026-11-01. || retry 2026-11-01 (world round): finances.gouv.td does not answer (curl 000); dgi.td answers with a Cloudflare challenge ('Just a moment...', HTTP 403): a bot check, not read another way",
+    "official-register": "The Finance Law 2026 of Chad was not found online, 2026-11-01. || retry 2026-11-01 (world round): the Finance Law 2026 of Chad was not found on any reachable government site",
+    "web-search": "Not run for Chad (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Chad pages: none. || retry 2026-11-01 (world round): PwC Chad (reviewed 12 August 2024, read before) only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

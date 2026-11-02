@@ -1,0 +1,249 @@
+{
+ "topic": "markets.producer.SE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Sweden. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The Swedish Film Institute's production support for a feature (at least 60 minutes) goes to a production company with an established producer who has made at least one feature or a 6 x 30-minute drama series with approved distribution; it is decided by the CEO on a film commissioner's assessment, paid in five instalments, and repaid from the producer's income at the support's share of the budget once income reaches 135% of approved private capital, for at most five years after release; in 2025 the Institute's average share of supported features' financing was 28%.",
+   "value": {
+    "supportFor": "Swedish feature film, at least 60 minutes, before completion",
+    "producerRequirement": "at least one feature or a drama series of at least 6 x 30 minutes with approved distribution",
+    "decision": "CEO of the Swedish Film Institute on a film commissioner's assessment",
+    "commissionerProcessingWeeks": 6,
+    "instalments": {
+     "onDecision": 0.15,
+     "onSignedCoproductionAgreement": 0.15,
+     "startOfShoot": 0.4,
+     "afterRoughCut": 0.25,
+     "onFinalAccounts": 0.05
+    },
+    "repayment": {
+     "startsWhen": "producer income reaches 135% of approved private capital and 100% of licences and minimum guarantees sold",
+     "share": "support's share of production cost",
+     "endsLatestYearsAfterRelease": 5
+    },
+    "averageSFIShareOfSupportedFeatures2025": 0.28,
+    "featuresSupported2025": {
+     "regular": 14,
+     "talent": 6
+    },
+    "medianBudgetSupportedFeaturesSEK": {
+     "2024": 28000000,
+     "2025": 36000000
+    },
+    "guidelinesRevised": "2026-02-24"
+   },
+   "applies": "Sweden; Swedish majority feature films applying to the Swedish Film Institute; guidelines adopted 19 April 2018, revised 24 February 2026; statistics for 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Med etablerad producent avses en fysisk person som har producerat minst en lång spelfilm eller en dramaserie om minst 6 x 30 minuter. … Återbetalningen startar när producentens totala intäkter uppnår 135 procent på i förhand godkänt privatkapital samt 100 procent på försålda licenser och minimigarantier."
+    },
+    {
+     "src": 1,
+     "said": "Filminstitutets genomsnittliga andel finansiering av långa spelfilmer med produktionsstöd 2025 … 28% … 2025 fördelade Filminstitutet ordinarie stöd till 14 långa spelfilmer och 6 långa spelfilmer inom ramen för Moving Sweden/talangsatsningar. … Medianbudgeten ökade från cirka 28 miljoner kronor 2024 till 36 miljoner 2025."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "Sweden's production incentive, run by Tillväxtverket, refunds at most 25% of eligible costs spent in Sweden, up to SEK 10 million a production, for a feature with a total budget of at least SEK 30 million (SEK 10 million for a documentary) and at least SEK 4 million of eligible costs; where applications outrun the money, the largest eligible spends are granted first.",
+   "value": {
+    "administeredBy": "Tillväxtverket (Swedish Agency for Economic and Regional Growth)",
+    "rate": 0.25,
+    "capSEKPerProduction": 10000000,
+    "minTotalBudgetSEK": {
+     "feature": 30000000,
+     "documentary": 10000000,
+     "dramaSeriesPerEpisode": 10000000,
+     "documentarySeriesPerEpisode": 5000000
+    },
+    "minEligibleCostsSEK": 4000000,
+    "eligibleCosts": "goods and services from business taxed in Sweden, or wages of employees taxable in Sweden",
+    "priority": "descending order of eligible costs",
+    "ordinance": "Förordning (2022:1386), amended to SFS 2026:804 (in force 2026-07-01)"
+   },
+   "applies": "Sweden; companies whose main business is audiovisual production; applications before production in Sweden starts; text as amended by SFS 2026:804, in force 1 July 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "7 § Stöd får ges med högst 25 procent av stödberättigande kostnader, dock med högst 10 000 000 kronor per produktion."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "In a budget for Swedish Film Institute support the producer may charge an administrative mark-up of at most 7% of the budget or SEK 2 million, and members of the producers' association pay it 0.25% of the approved budget (at most SEK 75,000) on every supported feature.",
+   "value": {
+    "administrationMarkupMaxShare": 0.07,
+    "administrationMarkupMaxSEK": 2000000,
+    "producersAssociationLevy": {
+     "share": 0.0025,
+     "maxSEK": 75000,
+     "on": "approved production budget of features granted SFI production support"
+    },
+    "guidelineDated": "2017-03-24 (file name), still linked from the production support page on 2026-11-01"
+   },
+   "applies": "Sweden; budgets of films applying for Swedish Film Institute production support.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Detta konto avser det administrativa påslag som producenten enligt Filminstitutets regelverk har rätt att ta ut om högst 7% av budgeten eller max 2 000 000 sek. … Medlemmar i Film & TV-Producenterna faktureras en avgift på 0,25 % av den godkända produktionsbudgeten (max 75 000) för samtliga långfilmer som beviljas produktionsstöd från Filminstitutet."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "19 Swedish features opened in cinemas in 2025, the fewest since 2021, 13 of them with Film Institute production support; Swedish films took 12% of admissions.",
+   "value": {
+    "year": 2025,
+    "swedishFeaturePremieres": 19,
+    "withSFIProductionSupport": 13,
+    "swedishMarketShare": 0.12,
+    "totalAdmissions": 9800000,
+    "totalGrossSEK": 1350000000,
+    "featurePremieres2024": 24
+   },
+   "applies": "Sweden, cinema releases in 2025.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "19 svenska spelfilmer hade premiär 2025, vilket var lägsta siffran sedan pandemiåret 2021. 13 av filmerna har fått produktionsstöd från Filminstitutet."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Swedish producers are organised in Film & TV-Producenterna, whose members pay the association 0.25% of the approved budget (at most SEK 75,000) of each feature the Film Institute supports.",
+   "value": {
+    "name": "Film & TV-Producenterna",
+    "levyOnSupportedFeatures": {
+     "share": 0.0025,
+     "maxSEK": 75000
+    }
+   },
+   "applies": "Sweden; the association's own admission terms were not read (blocker).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Medlemmar i Film & TV-Producenterna faktureras en avgift på 0,25 % av den godkända produktionsbudgeten (max 75 000) för samtliga långfilmer som beviljas produktionsstöd från Filminstitutet."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Film&TV-Producenterna, the trade association of Swedish film and TV production companies, has about 110 member companies with about SEK 5 billion of combined turnover (2025).",
+   "value": {
+    "name": "Film&TV-Producenterna",
+    "memberCompanies": 110,
+    "combinedTurnoverSEK": 5000000000,
+    "asOf": "2025-06-26",
+    "earlier": {
+     "2022-07-28": 115
+    }
+   },
+   "applies": "Sweden, production companies in film and television, as stated in the association's consultation response of 26 June 2025.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Film&TV-Producenterna YTTRANDE Dnr: Ku2025/00320 2025-06-26 … Organisationen har för närvarande ca 110 medlemsbolag som tillsammans omsätter ca 5 miljarder kronor och representerar merparten av svensk film- och tv-produktion."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "In 2023 the Swedish Film Institute gave about SEK 192 million in production support (SEK 117 million to feature fiction), backing 13 feature fiction films at about SEK 7.4 million each; its market support, abolished from 1 January 2025, had paid up to 30% of the budget of films costing at least SEK 20 million.",
+   "value": {
+    "year": 2023,
+    "productionSupportSEK": 192000000,
+    "featureFictionSEK": 117000000,
+    "featureFictionFilms": 13,
+    "avgPerFeatureSEK": 7400000,
+    "marketSupport": {
+     "maxShareOfBudget": 0.3,
+     "minBudgetSEK": 20000000,
+     "abolished": "2025-01-01"
+    }
+   },
+   "applies": "Sweden, Swedish Film Institute production support 2023, as summarised by the government inquiry SOU 2025:24 from the institute's pages; applications received are not given.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "År 2023 fördelades total ca 192 miljoner kr i produktionsstöd … ca 117 miljoner kr, lång spelfilm … Totalt 13 långa spelfilmer … nomsnitt 7,4 miljoner i produktionsstöd 2023. … Marknadsstödet avskaffades från och med den 1 januari 2025 … kunde stöd utgå med högst 30 procent av budgeten för filmer med en minimibudget på 20 miljoner kr"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "SE",
+ "sources": [
+  {
+   "url": "https://www.filminstitutet.se/sv/sok-stod/produktionsstod/stod-till-spelfilm/produktionsstod34/",
+   "title": "Svenska Filminstitutet: Stöd till produktion av filmprojekt – Lång spelfilm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Med etablerad producent avses en fysisk person som har producerat minst en lång spelfilm eller en dramaserie om minst 6 x 30 minuter. … Återbetalningen startar när producentens totala intäkter uppnår 135 procent på i förhand godkänt privatkapital samt 100 procent på försålda licenser och minimigarantier."
+  },
+  {
+   "url": "https://www.filminstitutet.se/globalassets/2.-fa-kunskap-om-film/analys-och-statistik/publikationer/filmaret-i-siffror/filmaret-i-siffror-2025.pdf",
+   "title": "Svenska Filminstitutet: Filmåret i siffror 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Filminstitutets genomsnittliga andel finansiering av långa spelfilmer med produktionsstöd 2025 … 28% … 2025 fördelade Filminstitutet ordinarie stöd till 14 långa spelfilmer och 6 långa spelfilmer inom ramen för Moving Sweden/talangsatsningar. … Medianbudgeten ökade från cirka 28 miljoner kronor 2024 till 36 miljoner 2025. … 19 svenska spelfilmer hade premiär 2025, vilket var lägsta siffran sedan pandemiåret 2021. 13 av filmerna har fått produktionsstöd från Filminstitutet."
+  },
+  {
+   "url": "https://data.riksdagen.se/dokument/sfs-2022-1386.html",
+   "title": "Riksdagen: Förordning (2022:1386) om statligt stöd till produktion av audiovisuella verk",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "7 § Stöd får ges med högst 25 procent av stödberättigande kostnader, dock med högst 10 000 000 kronor per produktion."
+  },
+  {
+   "url": "https://www.filminstitutet.se/globalassets/1.-sok-stod/produktionsstods-dokument/riktilinjer_budgetmallar_170324.pdf",
+   "title": "Svenska Filminstitutet: Riktlinjer för budgetering av långfilm, kortfilm & dokumentärfilm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Detta konto avser det administrativa påslag som producenten enligt Filminstitutets regelverk har rätt att ta ut om högst 7% av budgeten eller max 2 000 000 sek. … Medlemmar i Film & TV-Producenterna faktureras en avgift på 0,25 % av den godkända produktionsbudgeten (max 75 000) för samtliga långfilmer som beviljas produktionsstöd från Filminstitutet."
+  },
+  {
+   "url": "https://regeringen.se/contentassets/931b27a187b54603beeb3290be43e677/filmtv-producenterna.pdf",
+   "title": "Film&TV-Producenterna: remissvar on SOU 2025:24 (Ku2025/00320), 26 June 2025, published by the Government Offices",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Film&TV-Producenterna YTTRANDE Dnr: Ku2025/00320 2025-06-26 … Organisationen har för närvarande ca 110 medlemsbolag som tillsammans omsätter ca 5 miljarder kronor och representerar merparten av svensk film- och tv-produktion."
+  },
+  {
+   "url": "https://www.regeringen.se/contentassets/2449a27cc55a4a3aa14f9ad2ab484b89/publiken-i-fokus--reformer-for-ett-starkare-filmland-sou-202524.pdf",
+   "title": "SOU 2025:24 Publiken i fokus – reformer för ett starkare filmland (government inquiry, March 2025), summarising filminstitutet.se/sv/sok-stod/produktionsstod/",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.filminstitutet.se/sv/sok-stod/produktionsstod/",
+   "said": "År 2023 fördelades total ca 192 miljoner kr i produktionsstöd … ca 117 miljoner kr, lång spelfilm … Totalt 13 långa spelfilmer … nomsnitt 7,4 miljoner i produktionsstöd 2023. … Marknadsstödet avskaffades från och med den 1 januari 2025 … kunde stöd utgå med högst 30 procent av budgeten för filmer med en minimibudget på 20 miljoner kr"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "union",
+   "sought": "Film&TV-Producenterna's admission rules and membership fee (size now held from its 2025 consultation response).",
+   "tried": {
+    "institution": "www.filmtvp.se and filmtvp.se reset the connection to curl (2026-11-01); www.producenterna.org refused by the proxy (502); www.producenterna.se is an unrelated company. | Retry 2026-11-01 (producer retry): filmtvp.se: connection reset again; the association's own consultation responses on regeringen.se (2015, 2016, 2022, 2025) read: membership size only (2025 used).",
+    "official-register": "Not applicable. | Retry 2026-11-01 (producer retry): regeringen.se remissvar archive: no statutes or fee schedule.",
+    "web-search": "Not run separately on 2026-11-01. | Retry 2026-11-01 (producer retry): \"\\\"Film & TV-Producenterna\\\" medlemskap krav medlemsavgift bli medlem produktionsbolag\": only the regeringen.se responses and c21media (founded 2009 by merger).",
+    "trade-press": "Not searched. | Retry 2026-11-01 (producer retry): c21media.net listing gives the founding, not admission terms; not used.",
+    "archive": "web.archive.org/web/2026/https://www.filmtvp.se/ reset the connection (2026-11-01). | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "fund",
+   "sought": "How many Swedish Film Institute feature production applications are received each year, and any cap on one award (2023 grants and average award now held).",
+   "tried": {
+    "institution": "SFI production support page and Filmåret i siffror 2025 give grants (14 + 6), not applications; no cap stated. | Retry 2026-11-01 (producer retry): filminstitutet.se reachable; no applications statistic found on the pages already saved.",
+    "official-register": "Not tried (SFI annual report to the government). | Retry 2026-11-01 (producer retry): SOU 2025:24 (regeringen.se, saved producer-SE-sou-2025-24.pdf) read: grants and averages (used), no application counts or cap.",
+    "web-search": "Not run for this item on 2026-11-01. | Retry 2026-11-01 (producer retry): \"Filminstitutet årsredovisning 2025 antal ansökningar produktionsstöd långfilm beviljade avslag\": the SOU and Riksdag questions, no counts.",
+    "trade-press": "Not searched. | Retry 2026-11-01 (producer retry): moviezine.se (21 films get production support) gives grants only; not used.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

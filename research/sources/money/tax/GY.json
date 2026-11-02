@@ -1,0 +1,245 @@
+{
+ "topic": "tax.GY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guyana: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident (183 days or more in the year) deducts a personal allowance of GYD 1,680,000 a year (GYD 140,000 a month from 2026) or a third of income, whichever is greater, and pays 25% on chargeable income up to GYD 3,360,000 and 35% above; there is no regional layer.",
+   "value": {
+    "currency": "GYD",
+    "allowance": {
+     "amount": 1680000,
+     "orOneThirdOfIncome": true,
+     "monthly": 140000
+    },
+    "brackets": [
+     {
+      "from": 0,
+      "to": 3360000,
+      "rate": 0.25
+     },
+     {
+      "from": 3360000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Year of income 2026; employed and self-employed; residents taxed on worldwide income",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Resident individuals (i.e. present in Guyana for at least 183 days in the calendar year) will be entitled to a personal allowance of GYD 1,680,000 or 1/3 of their income ( per annum ), whichever is greater. Individuals with chargeable income of less than GYD 3,360,000 per annum pay tax at the rate of 25%; where their chargeable income exceeds GYD 3,360,000 per annum , the incremental rate of tax applicable is 35%."
+    },
+    {
+     "src": 1,
+     "said": "The Government proposes to increase the monthly income tax threshold from GYD130,000 to GYD140,000, with effect from the year of income 2026. This will increase the annual minimum personal allowance from GYD1,560,000 to GYD1,680,000."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of income is the calendar year; returns are due by 30 April of the next year; the self-employed pay quarterly in advance (1 April, 1 July, 1 October, 31 December) and the balance by 30 April.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30",
+    "selfEmployedAdvances": [
+     "04-01",
+     "07-01",
+     "10-01",
+     "12-31"
+    ]
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Tax returns are to be filed by 30 April following the year of income."
+    },
+    {
+     "src": 2,
+     "said": "Self-employed persons are required to pay taxes quarterly in advance on 1 April, 1 July, 1 October, and 31 December of each year. Any outstanding balance is payable on or before 30 April in the following year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National Insurance is compulsory: the employee pays 5.6% and the employer 8.4% (14% in all) of actual pay up to GYD 280,000 a month (GYD 64,615 a week), deducted by the employer and paid by the 15th of the next month; a self-employed person pays 12.5% of declared income and is not covered for industrial benefits.",
+   "value": {
+    "currency": "GYD",
+    "employee": 0.056,
+    "employer": 0.084,
+    "ceilingMonthly": 280000,
+    "selfEmployed": 0.125,
+    "selfEmployedBase": "declared income"
+   },
+   "applies": "2026 (ceiling in force since January 2020 per the Scheme's contribution history).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The total Contribution for Employed Contributors is 14% of the actual Wage / Salary paid to the Employee. This is derived from a 5.6% deduction from the Employee’s pay, and the remaining 8.4% paid by the Employer on behalf of the Employee. The actual wage / salary is, at present, subjected to a ceiling of $280,000.00 per month or $64,615.00 per week for National Insurance purposes. Self-employed Persons contribute 12.5% of their declared Income as Contributions"
+    },
+    {
+     "src": 3,
+     "said": "Self-employed Contributors are not covered for Industrial Benefits."
+    },
+    {
+     "src": 4,
+     "said": "Employee: 5.6% of insurable earnings. Employer: 8.4% of insurable earnings. The insurable earnings ceiling is GYD 280,000 per month."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct income tax from pay under PAYE and remit it by the 14th of the following month.",
+   "value": {
+    "employee": "PAYE"
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Individuals who are employed pay taxes by payroll deduction under the pay-as-you-earn (PAYE) system. The responsibility is on the employer to deduct and remit the taxes to the tax authority by the 14th day of the month following that in which the employment income was paid."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Guyanese income; a non-resident not engaged in trade or business in Guyana has 20% withheld from the gross payment (fees, charges for personal services, royalties), and no further income tax is payable on that payment, so the withholding is final; treaty relief needs the Commissioner-General's satisfaction.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross payment (no deductions)",
+    "final": true,
+    "condition": "payee not engaged in trade or business in Guyana",
+    "treaty": "deduct at 20% unless the Commissioner-General is satisfied a reduced treaty rate applies"
+   },
+   "applies": "2026 on the Act as revised to L.R.O. 1/2012 (ss. 39, 40, Third Schedule); PwC's 2026 summary still gives 20%. Whether a performer working in Guyana counts as engaged in business there is not ruled on in the Act.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A non-resident individual is only liable to tax on income derived from Guyana."
+    },
+    {
+     "src": 5,
+     "said": "WHT is chargeable on gross payments to non-residents. A WHT return and the aggregate of all payments made during a calendar month are due by the 14th day of the following month."
+    },
+    {
+     "src": 6,
+     "said": "There shall be levied and paid income tax (in this Act referred to as withholding tax) at the rate set out in the Third Schedule … on any gross payment not being interest referred to in paragraphs (c), (d) and (e) made to any person not resident in Guyana or to any person on behalf of such non-resident person, where such person is not engaged in trade or business in Guyana"
+    },
+    {
+     "src": 6,
+     "said": "where a payment is subject to withholding tax, income tax under section 5 or corporation tax shall not be payable in respect of such distribution or payment."
+    },
+    {
+     "src": 6,
+     "said": "\"payment\" means a payment without any deductions whatsoever other than a distribution … (c) royalties; (d) management charges or charges for the provision of personal services and technical managerial skills; (e) premiums (other than premiums paid to insurance companies and contributions to pension funds and schemes) commissions, fees and licences;"
+    },
+    {
+     "src": 6,
+     "said": "Withholding tax shall be at the rate of twenty percent on gross distributions, all payments and discounts on treasury bills."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident author bear 20% withholding (10% to the UK and Canada, 15% within CARICOM, under treaty); no special regime for resident authors was found.",
+   "value": {
+    "nonResidentRoyalties": 0.2,
+    "treaty": {
+     "GB": 0.1,
+     "CA": 0.1,
+     "CARICOM": 0.15
+    }
+   },
+   "applies": "Royalties",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Recipient WHT (%) Dividends Interest Royalties Non-treaty 20 20 20 Treaty: Canada 15 25 (1) 10 United Kingdom 10 15 10 CARICOM 0 15 15"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 14% on taxable supplies by a registered person; an individual must register once taxable supplies exceed GYD 15 million.",
+   "value": {
+    "currency": "GYD",
+    "standard": 0.14,
+    "threshold": 15000000
+   },
+   "applies": "A freelancer's supplies in Guyana",
+   "sources": [
+    {
+     "src": 4,
+     "said": "VAT is charged at the rates of 14% or 0% on the taxable supply of goods and services within Guyana by a registered person."
+    },
+    {
+     "src": 4,
+     "said": "Individuals trading in Guyana whose taxable supplies exceed GYD 15 million are required to register and account for VAT."
+    }
+   ]
+  }
+ ],
+ "country": "GY",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/guyana/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Guyana, Individual - Taxes on personal income (last reviewed 02 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gy/tax-services/income-tax/tax-rates-and-thresholds/",
+   "said": "Resident individuals (i.e. present in Guyana for at least 183 days in the calendar year) will be entitled to a personal allowance of GYD 1,680,000 or 1/3 of their income ( per annum ), whichever is greater. Individuals with chargeable income of less than GYD 3,360,000 per annum pay tax at the rate of 25%; where their chargeable income exceeds GYD 3,360,000 per annum , the incremental rate of tax applicable is 35%. … A non-resident individual is only liable to tax on income derived from Guyana."
+  },
+  {
+   "url": "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-gy/documents/ey-gy-budget-summary-2026-20260127.pdf",
+   "title": "EY Guyana, Tax Alert: Guyana Budget 2026 (27 January 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://finance.gov.gy/",
+   "said": "The Government proposes to increase the monthly income tax threshold from GYD130,000 to GYD140,000, with effect from the year of income 2026. This will increase the annual minimum personal allowance from GYD1,560,000 to GYD1,680,000."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guyana/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Guyana, Individual - Tax administration (last reviewed 02 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gy/tax-services/income-tax/tax-rates-and-thresholds/",
+   "said": "Tax returns are to be filed by 30 April following the year of income. … Self-employed persons are required to pay taxes quarterly in advance on 1 April, 1 July, 1 October, and 31 December of each year. Any outstanding balance is payable on or before 30 April in the following year. … Individuals who are employed pay taxes by payroll deduction under the pay-as-you-earn (PAYE) system. The responsibility is on the employer to deduct and remit the taxes to the tax authority by the 14th day of the month following that in which the employment income was paid."
+  },
+  {
+   "url": "https://www.nis.org.gy/information_on_contributions",
+   "title": "Information on Contributions (National Insurance Scheme, Guyana)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The total Contribution for Employed Contributors is 14% of the actual Wage / Salary paid to the Employee. This is derived from a 5.6% deduction from the Employee’s pay, and the remaining 8.4% paid by the Employer on behalf of the Employee. The actual wage / salary is, at present, subjected to a ceiling of $280,000.00 per month or $64,615.00 per week for National Insurance purposes. Self-employed Persons contribute 12.5% of their declared Income as Contributions … Self-employed Contributors are not covered for Industrial Benefits."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guyana/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Guyana, Individual - Other taxes (last reviewed 02 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nis.org.gy/",
+   "said": "Employee: 5.6% of insurable earnings. Employer: 8.4% of insurable earnings. The insurable earnings ceiling is GYD 280,000 per month. … VAT is charged at the rates of 14% or 0% on the taxable supply of goods and services within Guyana by a registered person. … Individuals trading in Guyana whose taxable supplies exceed GYD 15 million are required to register and account for VAT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/guyana/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Guyana, Corporate - Withholding taxes (last reviewed 02 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gra.gov.gy/tax-services/income-tax/tax-rates-and-thresholds/",
+   "said": "WHT is chargeable on gross payments to non-residents. A WHT return and the aggregate of all payments made during a calendar month are due by the 14th day of the following month. … Recipient WHT (%) Dividends Interest Royalties Non-treaty 20 20 20 Treaty: Canada 15 25 (1) 10 United Kingdom 10 15 10 CARICOM 0 15 15"
+  },
+  {
+   "url": "https://mola.gov.gy/public/laws/Volume%2014%20Cap.%2073.06%20-%2081.011695675780.pdf",
+   "title": "Laws of Guyana, Volume 14 (Cap. 73:06 - 81:01), Income Tax Act Cap. 81:01, L.R.O. 1/2012 (Ministry of Legal Affairs)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "There shall be levied and paid income tax (in this Act referred to as withholding tax) at the rate set out in the Third Schedule … on any gross payment not being interest referred to in paragraphs (c), (d) and (e) made to any person not resident in Guyana or to any person on behalf of such non-resident person, where such person is not engaged in trade or business in Guyana … where a payment is subject to withholding tax, income tax under section 5 or corporation tax shall not be payable in respect of such distribution or payment. … \"payment\" means a payment without any deductions whatsoever other than a distribution … (c) royalties; (d) management charges or charges for the provision of personal services and technical managerial skills; (e) premiums (other than premiums paid to insurance companies and contributions to pension funds and schemes) commissions, fees and licences; … Withholding tax shall be at the rate of twenty percent on gross distributions, all payments and discounts on treasury bills."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,44 @@
+{
+ "country": "UA",
+ "read": "2026-11-01",
+ "route": "None: free (no employment permit is needed for artists and art workers working in their profession)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "No one: the employer needs no permit (Law on Employment of the Population, art. 42); the stay is on the visa or residence permit.",
+  "first": null,
+  "fees": null,
+  "processing": null,
+  "validity": null,
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://news.dtkt.ua/labor/labor-relations/67697",
+   "title": "Дебет-Кредит (dtkt.ua), Особливості працевлаштування іноземців в Україні (Ministry of Justice explanation, 4 February 2021)",
+   "read": "2026-11-01",
+   "said": "Дозвіл не потрібен для працевлаштування: іноземців, які постійно проживають в Україні; … спортсменів, які набули професійного статусу, артистів та працівників мистецтва для роботи в Україні за фахом;",
+   "kind": "secondary",
+   "quotes": "https://zakon.rada.gov.ua/laws/show/5067-17",
+   "fields": [
+    "route",
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "route",
+   "sought": "Whether art. 42 still lists artists and art workers in its current text (after amendments since 2021)",
+   "tried": {
+    "institution": "zakon.rada.gov.ua resets the connection (curl 35), 2026-11-01 Retry (2026-11-01): zakon.rada.gov.ua/laws/show/5067-17 and /print reset the connection (ws_closed_mid_exchange, 2026-11-01).",
+    "official-register": "The Rada's database is the official register; not reached Retry (2026-11-01): Verkhovna Rada's database unreachable; i.factor.ua's copies of art. 42 (law-50/section-260/article-38365, -38362, -37926) answer 403.",
+    "web-search": "WebSearch (Ukrainian) 'стаття 42 Закон про зайнятість населення дозвіл не потрібен \"артистів та працівників мистецтва\" 2025': no Ukrainian result Retry (2026-11-01): 'стаття 42 Закону про зайнятість населення дозвіл не потрібен артистів та працівників мистецтва для роботи в Україні за фахом чинна редакція' (2026-11-01): excerpts show the artists' exemption in art. 42 and amendments in July 2023 (3257-IX) and October 2024 (4017-IX, arts. 42-2, 42-9), current wording not read.",
+    "trade-press": "dtkt.ua (2021, quoting the Ministry of Justice) read and confirms layer 3 Retry (2026-11-01): jurliga.ligazakon.net news item on foreigners' employment found; not read.",
+    "archive": "web.archive.org refuses this environment (connection reset, 2026-11-01); no snapshot read. Retry (2026-11-01): web.archive.org resets the connection from this environment (retried 2026-11-01)."
+   }
+  }
+ ]
+}

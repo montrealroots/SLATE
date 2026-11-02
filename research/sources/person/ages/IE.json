@@ -1,0 +1,265 @@
+{
+ "topic": "ages.IE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Ireland: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "childPerformers",
+   "finding": "A child under sixteen may be employed in cultural, artistic, sports or advertising work only under the Minister's licence, applied for at least 21 days ahead; the licence's conditions cap presence on set at 5 hours a day under seven, 7½ hours at seven to thirteen and 8 hours over thirteen, set day windows and yearly totals, require a meal and rest break per 3½ hours, no more than 5 days in 7, and a chaperone for at most twelve children.",
+   "value": {
+    "licence": "Minister's licence under s. 3(2), Protection of Young Persons (Employment) Act 1996",
+    "applyDaysBefore": 21,
+    "conditions": [
+     {
+      "under": 7,
+      "maxOnSet": 5,
+      "window": "09:30-16:30",
+      "yearly": 250,
+      "continuousPerforming": 0.5,
+      "totalPerforming": 2
+     },
+     {
+      "from": 7,
+      "under": 13,
+      "maxOnSet": 7.5,
+      "window": "09:00-17:00",
+      "yearly": 700,
+      "continuousPerforming": 0.75,
+      "totalPerforming": 3
+     },
+     {
+      "over": 13,
+      "maxOnSet": 8,
+      "window": "09:00-19:00",
+      "yearly": 900,
+      "continuousPerforming": 1,
+      "totalPerforming": 4
+     }
+    ],
+    "maxDaysIn7": 5,
+    "chaperoneMaxChildren": 12,
+    "schooling": "alternative teaching if absent from school more than one week"
+   },
+   "applies": "Children under sixteen. The licence covers 'employment of a child in cultural, artistic, sports or advertising activities', not only performing; the hour conditions are the Department's summary of those that may be attached.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The Minister may, by licence, authorise in individual cases, the employment of a child in cultural, artistic, sports or advertising activities"
+    },
+    {
+     "src": 1,
+     "said": "An employer should apply in writing to the Minister for a licence under section 3(2) at least 21 days before the employment commences."
+    },
+    {
+     "src": 1,
+     "said": "for more than 5 hours a day,"
+    },
+    {
+     "src": 1,
+     "said": "may not be present at the place of employment for more than 900 hours in any twelve month period."
+    },
+    {
+     "src": 1,
+     "said": "A chaperon shall not be in charge of more than twelve children at any time."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "A licensed child's earnings (other than expenses) are to be lodged in a post office or bank account in the child's name, as a condition of the licence; the application must enclose the signed contract and the parent's or guardian's written consent.",
+   "value": {
+    "setAside": {
+     "share": 1.0,
+     "of": "sums earned other than expenses",
+     "into": "post office or bank account in the child's name",
+     "basis": "licence condition"
+    },
+    "parentConsent": "letter of consent with the application"
+   },
+   "applies": "Children under sixteen employed under a s. 3(2) licence. How a minor's contract binds (Age of Majority Act 1985, common law) isn't read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Sums earned (other than expenses) shall be lodged in a post office/bank account in the child’s name."
+    },
+    {
+     "src": 1,
+     "said": "A letter giving parent’s or guardian’s consent."
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "No one may be appointed a director of an Irish company before eighteen; an appointment of a minor is void.",
+   "value": {
+    "directorMinimumAge": 18
+   },
+   "applies": "Companies Act 2014, s. 131.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "No person shall be appointed a director or, in the case of an individual, secretary of a company unless he or she has attained the age of 18 years."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "In Ireland a person comes of full age at eighteen (or on marrying earlier); before that a contract binds him if it is for necessaries or, taken as a whole, for his benefit, which reaches contracts of service, apprenticeship and education; no statute sets a child's earnings aside.",
+   "value": {
+    "fullAge": 18,
+    "binding": "necessaries, and contracts of service, apprenticeship or education that taken as a whole benefit the minor (common law)",
+    "setAside": null,
+    "reachesWritingDirecting": "general contract law: any contract of service"
+   },
+   "applies": "Ireland: Age of Majority Act 1985 s 2; the common-law rule as the Law Reform Commission stated it in its 1985 report (LRC 15-1985), whose reform proposals were not enacted as far as traced.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "( b ) after such commencement when he attains the age of eighteen years or, in case he marries before attaining that age, upon his marriage."
+    },
+    {
+     "src": 4,
+     "said": "Certain contracts which, taken as a whole, are for the minor's benefit, are treated as though they were contracts for necessaries, and will bind the minor. These include … contracts of apprenticeship, 51 education, 52 and service, 53 and contracts in analogous areas."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "Ireland's screen bodies admit by credits, not age: the Screen Directors Guild of Ireland requires two screened or broadcast credits (one within three years) and takes no students or first-short directors; Irish Equity's join pages state no age.",
+   "value": {
+    "SDGI": {
+     "minimumAge": null,
+     "admission": "two broadcast or festival-screened credits, one within the last 3 years",
+     "students": false
+    },
+    "Irish Equity (SIPTU)": {
+     "minimumAge": null
+    }
+   },
+   "applies": "SDGI membership pages and Irish Equity's join pages, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "SDGI members must have two broadcast credits i.e. two films/shows screened at a recognised film festival or broadcast on television or SVOD. One of the works must have been made in the last 3 years."
+    },
+    {
+     "src": 6,
+     "said": "SDGI unfortunately does not accept students, individuals just starting (i.e. their first short credit), or individuals with a permanent professional position unrelated to directing."
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "Screen Ireland sets no applicant age: feature development is for Irish producers holding the rights, screenplay development for Irish writers with at least one produced feature or TV drama credit, and bursaries for professionals with three years' full-time experience.",
+   "value": {
+    "Screen Ireland": {
+     "minimumAge": null,
+     "featureDevelopment": "Irish producers with the rights",
+     "screenplayDevelopment": "Irish writers with a produced fiction feature or TV drama credit",
+     "bursaries": "three years' full-time industry experience"
+    }
+   },
+   "applies": "Screen Ireland scheme pages, read 2026-11-01 (deadline 30 October 2026 round).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Experienced Irish talent with at least one produced fiction feature film credit or TV drama credit, including animated TV shows, as a writer"
+    },
+    {
+     "src": 8,
+     "said": "Irish producers with a feature film project they wish to develop, with clear access to the necessary rights"
+    },
+    {
+     "src": 9,
+     "said": "This scheme is for industry professionals working in the Irish film, television, animation, and related sectors with a minimum of three years’ full-time experience relevant to the job area of the applicant."
+    }
+   ]
+  }
+ ],
+ "country": "IE",
+ "sources": [
+  {
+   "url": "https://www.irishstatutebook.ie/eli/1996/act/16/section/3/enacted/en/html",
+   "title": "Protection of Young Persons (Employment) Act 1996, s. 3 (Irish Statute Book)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Minister may, by licence, authorise in individual cases, the employment of a child in cultural, artistic, sports or advertising activities"
+  },
+  {
+   "url": "https://www.workplacerelations.ie/en/Publications_Forms/Notes_on_Employing_Young_Persons_in_Film_TV.pdf",
+   "title": "Note on employing a child by licence under Section 3(2): Film/TV licence (Workplace Relations Commission)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An employer should apply in writing to the Minister for a licence under section 3(2) at least 21 days before the employment commences. … for more than 5 hours a day, … may not be present at the place of employment for more than 900 hours in any twelve month period. … A chaperon shall not be in charge of more than twelve children at any time. … Sums earned (other than expenses) shall be lodged in a post office/bank account in the child’s name. … A letter giving parent’s or guardian’s consent."
+  },
+  {
+   "url": "https://www.irishstatutebook.ie/eli/2014/act/38/section/131/enacted/en/html",
+   "title": "Companies Act 2014, s. 131 (Irish Statute Book)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "No person shall be appointed a director or, in the case of an individual, secretary of a company unless he or she has attained the age of 18 years."
+  },
+  {
+   "url": "https://www.irishstatutebook.ie/eli/1985/act/2/section/2/enacted/en/html",
+   "title": "Age of Majority Act 1985, s 2 (Irish Statute Book)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "( b ) after such commencement when he attains the age of eighteen years or, in case he marries before attaining that age, upon his marriage."
+  },
+  {
+   "url": "https://www.lawreform.ie/_fileupload/Reports/rMinorsContracts.htm",
+   "title": "Law Reform Commission, Report on Minors' Contracts (LRC 15-1985)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Certain contracts which, taken as a whole, are for the minor's benefit, are treated as though they were contracts for necessaries, and will bind the minor. These include … contracts of apprenticeship, 51 education, 52 and service, 53 and contracts in analogous areas."
+  },
+  {
+   "url": "https://sdgi.ie/membership/join/",
+   "title": "Screen Directors Guild of Ireland: Join",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SDGI members must have two broadcast credits i.e. two films/shows screened at a recognised film festival or broadcast on television or SVOD. One of the works must have been made in the last 3 years."
+  },
+  {
+   "url": "https://sdgi.ie/membership/",
+   "title": "Screen Directors Guild of Ireland: Membership",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SDGI unfortunately does not accept students, individuals just starting (i.e. their first short credit), or individuals with a permanent professional position unrelated to directing."
+  },
+  {
+   "url": "https://www.screenireland.ie/funding/development-loans/screenplay-development",
+   "title": "Screen Ireland: Screenplay Development Loans",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Experienced Irish talent with at least one produced fiction feature film credit or TV drama credit, including animated TV shows, as a writer"
+  },
+  {
+   "url": "https://www.screenireland.ie/funding/development-loans/irish-feature-film-development",
+   "title": "Screen Ireland: Irish Feature Film Development",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Irish producers with a feature film project they wish to develop, with clear access to the necessary rights"
+  },
+  {
+   "url": "https://www.screenireland.ie/funding/distribution-loans/bursaries",
+   "title": "Screen Ireland: Bursaries",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "This scheme is for industry professionals working in the Irish film, television, animation, and related sectors with a minimum of three years’ full-time experience relevant to the job area of the applicant."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "unions",
+   "sought": "the Writers Guild of Ireland's rules for members under 18, and SIPTU's (Irish Equity's) rule book on minors",
+   "tried": {
+    "institution": "not fetched | Retry 2026-11-01: irishequity.ie join pages and sdgi.ie read (held); script.ie (Writers Guild of Ireland) answered 403; not read another way",
+    "official-register": "none | Retry 2026-11-01: SIPTU's rule book not found online",
+    "web-search": "not run | Retry 2026-11-01: 'Screen Ireland funding guidelines eligibility applicant 18 years OR over 18 development production company' (funds held); 'Writers Guild of Ireland membership eligibility full member associate member student requirements': no WGI page returned (Irish Writers Union, WFT Ireland only)",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "not tried | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

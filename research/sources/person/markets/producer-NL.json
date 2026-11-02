@@ -1,0 +1,228 @@
+{
+ "topic": "markets.producer.NL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in The Netherlands. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "The Netherlands Film Production Incentive, run by the Netherlands Film Fund, pays 35% of approved qualifying production costs spent in the Netherlands (plus up to 10% more for overruns), counting at most 80% of total costs, for features and animation costing at least EUR 1 million (documentaries EUR 250,000) with at least EUR 150,000 spent in the country and a cinema release; one company may receive at most EUR 3 million a year, total state aid may not pass 50% of costs (60% for multi-country co-productions), and the minister earmarks EUR 20 million a year.",
+   "value": {
+    "rate": 0.35,
+    "overrunTopUpMax": 0.1,
+    "qualifyingCostsMaxShareOfTotal": 0.8,
+    "minProductionCostsEUR": {
+     "featureOrAnimation": 1000000,
+     "documentary": 250000
+    },
+    "minDutchSpendEUR": {
+     "featureOrAnimation": 150000,
+     "documentary": 100000
+    },
+    "capEURPerApplicantPerYear": 3000000,
+    "stateAidMaxShare": {
+     "default": 0.5,
+     "multiStateCoproduction": 0.6
+    },
+    "financingSecuredAtApplication": 0.5,
+    "annualEarmarkEUR": 20000000,
+    "notQualifying": [
+     "overhead",
+     "producer's fee above 7.5% of qualifying production costs",
+     "contingency above 5% of qualifying costs",
+     "development costs already incurred"
+    ],
+    "regulation": "Reglement Stimuleringsmaatregel Filmproductie in Nederland, Staatscourant 2026, 24849 (15 July 2026; minister's approval 23 June 2026)",
+    "2024": {
+     "filmApplications": 98,
+     "filmGrants": 93,
+     "filmEUR": 23812251,
+     "seriesApplications": 28,
+     "seriesGrants": 23,
+     "allGrants": 152,
+     "allApplications": 165,
+     "allEUR": 43109742
+    }
+   },
+   "applies": "Netherlands; production companies applying to the Netherlands Film Fund; regulation published 15 July 2026; 2024 figures from Film Facts & Figures 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "De hoogte van de subsidie wordt bepaald door de door het Fonds goedgekeurde productiekosten die kwalificeren via de kwalificatietoets te vermenigvuldigen met 35%. … De door het Fonds goedgekeurde kwalificerende productiekosten kunnen hooguit 80% van het totaal aan productiekosten bedragen."
+    },
+    {
+     "src": 1,
+     "said": "Netherlands Film Production Incentive - film 98 93 95% 23,812,251 29.7% … Netherlands Film Production Incentive 165 152 92% 43,109,742 40.7%"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The Netherlands Film Fund's selective production support went to 33 of 62 majority feature applications in 2024 (EUR 23.3 million) and 239 of 638 selective production applications across all forms; the 36 Fund-supported majority Dutch features released in 2024 cost on average EUR 2.27 million, 42% of it from the Fund; total state aid to a film is capped at 50% of costs (60% for multi-country co-productions).",
+   "value": {
+    "2024": {
+     "majorityFeatureProduction": {
+      "applications": 62,
+      "grants": 33,
+      "EUR": 23344815
+     },
+     "cinescoop": {
+      "applications": 11,
+      "grants": 2,
+      "EUR": 3600000
+     },
+     "lowBudget": {
+      "applications": 13,
+      "grants": 2,
+      "EUR": 553000
+     },
+     "selectiveProductionAll": {
+      "applications": 638,
+      "grants": 239,
+      "EUR": 45746075
+     },
+     "allFundApplications": 1549,
+     "allFundGrants": 883,
+     "allFundEUR": 105904832
+    },
+    "releasedSupportedMajorityFeatures2024": {
+     "films": 36,
+     "totalCostEURk": 81825,
+     "averageCostEURk": 2273,
+     "fundTotalEURk": 34555,
+     "fundShare": 0.42
+    },
+    "stateAidMaxShare": {
+     "default": 0.5,
+     "multiStateCoproduction": 0.6
+    }
+   },
+   "applies": "Netherlands; Netherlands Film Fund decisions in 2024 and majority Dutch features released in 2024 (Film Facts & Figures 2025); state-aid ceiling from the Fund's Algemeen Reglement of 1 January 2025.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Production support majority (co-)productions 62 33 53% 23,344,815 29.1% … Selective production 638 239 37% 45,746,075 43.2% … In 2024, 883 out of 1549 applications for financial support were approved for funding. … Total 36 majority (co)productions 81,825 18,618 807 15,130 34,555 42% … Average 2,273 960"
+    },
+    {
+     "src": 2,
+     "said": "totaal aan staatssteun verleende subsidies niet meer bedraagt dan 50% van de productiekosten."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "In a budget the Netherlands Film Fund supports, the producer's fee may be at most 7.5% and overhead at most 7.5% capped at EUR 350,000 a film; a Dutch minority co-producer may take 15% (features) or 17.5% (documentaries) for both together, and majority films under EUR 750,000 may take up to 17.5% combined.",
+   "value": {
+    "producersFeeMaxShare": 0.075,
+    "overheadMaxShare": 0.075,
+    "overheadMaxEURPerFilm": 350000,
+    "minorityCoproducerFeePlusOverheadMax": {
+     "feature": 0.15,
+     "documentary": 0.175
+    },
+    "smallMajorityUnderEUR750k_feePlusOverheadMax": 0.175,
+    "protocolDate": "2026-07-01"
+   },
+   "applies": "Netherlands; budgets of productions supported by the Netherlands Film Fund (Financieel & Productioneel Protocol, 1 July 2026).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "De begrotingspost producers fee bedraagt maximaal 7,5%. De begrotingspost overhead bedraagt maximaal 7,5% gemaximeerd tot 350.000 euro per filmproductie."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "56 majority Dutch features and 15 minority co-productions opened in Dutch cinemas in 2024; Fund-supported majority features averaged 72,187 admissions.",
+   "value": {
+    "year": 2024,
+    "majorityDutchFeaturesReleased": 56,
+    "minorityCoproductionsReleased": 15,
+    "averageAdmissionsFundSupportedMajority": 72187,
+    "averageAdmissionsAllDutchFeatures": 74798,
+    "allFilmsReleased": 523,
+    "newDutchFilmsReleased": 88
+   },
+   "applies": "Netherlands, theatrical releases 2024 (Film Facts & Figures 2025).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "A total of 56 Dutch feature films and 15 minority co-production features were released in cinemas in 2024. On average, Fund-supported majority Dutch feature films in 2024 reached an audience of 72.187."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Dutch independent producers are organised in NAPA (Netherlands Audiovisual Producers Alliance), with about 85 member companies; to join, a company must have been registered with the Chamber of Commerce for at least two years, average at least €75,000 net turnover a year and have produced at least two productions outside education, and accept NAPA's code of conduct; dues are given on request.",
+   "value": {
+    "name": "Nederlandse Audiovisuele Producenten Alliantie (NAPA)",
+    "members": 85,
+    "admission": {
+     "chamberOfCommerceYearsMin": 2,
+     "avgNetTurnoverMinEUR": 75000,
+     "productionsMin": 2,
+     "codeOfConduct": true
+    },
+    "dues": "not published (on request from the association secretary)",
+    "city": "Amsterdam"
+   },
+   "applies": "Netherlands, independent audiovisual producers (film, drama series, documentary, animation, games), as published 2026-11-01.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The approx. 85 members are active in various disciplines, including feature film, drama series, documentary, animation, interactive productions and games."
+    },
+    {
+     "src": 5,
+     "said": "Wil je weten of het NAPA-lidmaatschap bij jouw onderneming past, of meer weten over de voorwaarden en contributie? … Producenten die lid willen worden, moeten onder meer minimaal twee jaar bij de Kamer van Koophandel zijn ingeschreven, een gemiddelde netto-jaaromzet van ten minste € 75.000 hebben en minimaal twee producties buiten een opleiding of zelfeducatie hebben geproduceerd. … Ook onderschrijven leden de Gedragscode van NAPA."
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "NL",
+ "sources": [
+  {
+   "url": "https://zoek.officielebekendmakingen.nl/stcrt-2026-24849.pdf",
+   "title": "Staatscourant 2026, 24849: Reglement Stimuleringsmaatregel Filmproductie in Nederland (15 juli 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De hoogte van de subsidie wordt bepaald door de door het Fonds goedgekeurde productiekosten die kwalificeren via de kwalificatietoets te vermenigvuldigen met 35%. … De door het Fonds goedgekeurde kwalificerende productiekosten kunnen hooguit 80% van het totaal aan productiekosten bedragen."
+  },
+  {
+   "url": "https://assets.filmfonds.nl/FFF-2025_2025-09-03-095928_rell.pdf",
+   "title": "Netherlands Film Fund: Film Facts & Figures of the Netherlands, Summer 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Netherlands Film Production Incentive - film 98 93 95% 23,812,251 29.7% … Netherlands Film Production Incentive 165 152 92% 43,109,742 40.7% … Production support majority (co-)productions 62 33 53% 23,344,815 29.1% … Selective production 638 239 37% 45,746,075 43.2% … In 2024, 883 out of 1549 applications for financial support were approved for funding. … Total 36 majority (co)productions 81,825 18,618 807 15,130 34,555 42% … Average 2,273 960 … A total of 56 Dutch feature films and 15 minority co-production features were released in cinemas in 2024. On average, Fund-supported majority Dutch feature films in 2024 reached an audience of 72.187."
+  },
+  {
+   "url": "https://assets.filmfonds.nl/ALGEMEEN-REGLEMENT-1-januari-2025.pdf",
+   "title": "Nederlands Filmfonds: Algemeen Reglement (1 januari 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "totaal aan staatssteun verleende subsidies niet meer bedraagt dan 50% van de productiekosten."
+  },
+  {
+   "url": "https://assets.filmfonds.nl/FINANCIEEL-PRODUCTIONEEL-PROTOCOL-1-juli-2026.pdf",
+   "title": "Nederlands Filmfonds: Financieel & Productioneel Protocol (1 juli 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De begrotingspost producers fee bedraagt maximaal 7,5%. De begrotingspost overhead bedraagt maximaal 7,5% gemaximeerd tot 350.000 euro per filmproductie."
+  },
+  {
+   "url": "https://www.producentenalliantie.nl/english.html",
+   "title": "NAPA: English (About us)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The approx. 85 members are active in various disciplines, including feature film, drama series, documentary, animation, interactive productions and games."
+  },
+  {
+   "url": "https://www.producentenalliantie.nl/lid-worden/",
+   "title": "NAPA: Lid worden",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Wil je weten of het NAPA-lidmaatschap bij jouw onderneming past, of meer weten over de voorwaarden en contributie? … Producenten die lid willen worden, moeten onder meer minimaal twee jaar bij de Kamer van Koophandel zijn ingeschreven, een gemiddelde netto-jaaromzet van ten minste € 75.000 hebben en minimaal twee producties buiten een opleiding of zelfeducatie hebben geproduceerd. … Ook onderschrijven leden de Gedragscode van NAPA."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,246 @@
+{
+ "topic": "tax.KE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Kenya: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Taxable income is taxed at 10% on the first KES 288,000 a year, 25% on the next 100,000, 30% on the next 5,612,000, 32.5% on the next 3,600,000 and 35% above KES 9,600,000; a resident gets a personal relief of KES 2,400 a month (28,800 a year) off the tax.",
+   "value": {
+    "currency": "KES",
+    "from": "2023-07-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 288000,
+      "rate": 0.1
+     },
+     {
+      "from": 288000,
+      "to": 388000,
+      "rate": 0.25
+     },
+     {
+      "from": 388000,
+      "to": 6000000,
+      "rate": 0.3
+     },
+     {
+      "from": 6000000,
+      "to": 9600000,
+      "rate": 0.325
+     },
+     {
+      "from": 9600000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "personalReliefAnnual": 28800,
+    "personalReliefMonthly": 2400,
+    "regional": null
+   },
+   "applies": "Bands effective 1 July 2023 (Finance Act 2023), applied in 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Monthly Pay Bands (Ksh.) Annual Pay Bands (Ksh.) Rate of Tax (%) On the first kShs. 24,000 On the first KShs. 288,000 10 On the next KShs. 8,333 On the next KShs.100,000 25 On the next KShs. 467,667 On the next KShs. 5,612,000 30 On the next KShs.300,000 On the next KShs. 3,600,00 32.5 On all income above KShs. 800,000 On all income above KShs. 9,600,000 35 Personal Tax Relief KShs. 2,400.00 KShs. 28,800.00"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of income is the calendar year; the self-assessment return is due by 30 June of the next year (from 1 January 2027, by the end of the fourth month), any balance is paid by 30 April, and a person owing over KES 40,000 not taxed at source pays instalments on 20 April, 20 June, 20 September and 20 December.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "06-30 of the following year (from 2027: 04-30)",
+    "balanceDue": "04-30",
+    "instalments": [
+     "04-20",
+     "06-20",
+     "09-20",
+     "12-20"
+    ]
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The year of income is a calendar year. Tax returns Individual self-assessment tax returns must be filed by 30 June in the year following the year of income."
+    },
+    {
+     "src": 1,
+     "said": "With effect from 1 January 2027, the Finance Act, 2026 requires an individual to file a self-assessment return, including a self-assessment of tax from all sources, not later than the last day of the fourth month following the end of the year of income."
+    },
+    {
+     "src": 1,
+     "said": "An individual (other than one whose total taxable income has been subjected to tax at source) whose tax liability exceeds KES 40,000 per annum is required to pay four instalment taxes by 20 April, 20 June, 20 September, and 20 December."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts PAYE monthly at the bands and remits it by the 9th of the next month; a payer withholds 5% from a resident's professional or management fees (none where they total KES 24,000 or less a month), which is credited on the return.",
+   "value": {
+    "employment": "PAYE at the bands, remitted by the 9th",
+    "residentProfessionalFees": 0.05,
+    "exemptMonthlyAggregateUpTo": 24000,
+    "final": false
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employers are required to deduct tax (PAYE) from their employees’ emoluments at the prevailing Individual Income Tax Rates and remit the amounts deducted to KRA on or before the 9th day of the following month."
+    },
+    {
+     "src": 2,
+     "said": "Management fees 5% 20% Professional fees 5% 20%"
+    },
+    {
+     "src": 2,
+     "said": "Resident management, professional, training and contractual fees whose aggregate value is Ksh 24,000 and below in a month."
+    },
+    {
+     "src": 2,
+     "said": "Withholding tax is usually not a final tax on resident payees."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident artist or entertainer has 20% withheld from the fee, final where the payee has no permanent establishment in Kenya; non-resident royalties also bear 20%.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross payment",
+    "final": "yes, for a non-resident with no PE",
+    "royaltiesNonResident": 0.2
+   },
+   "applies": "2026; treaties may reduce.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Type of incomes Resident Non Resident Artists and entertainers - 20%"
+    },
+    {
+     "src": 2,
+     "said": "Withholding tax of is final when deducted in relation to a payment made to a non-resident person with no permanent establishment in Kenya"
+    },
+    {
+     "src": 2,
+     "said": "Royalties or natural resource income 5% 20%"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident (an author's or a writer's) bear 5% withholding, credited on the return.",
+   "value": {
+    "residentRoyalties": 0.05
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Royalties or natural resource income 5% 20%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "From 1 February 2026 the employer deducts NSSF up to KES 6,480 a month and matches it; the employee pays 2.75% of gross pay to SHIF; employer and employee each pay 1.5% Affordable Housing Levy.",
+   "value": {
+    "currency": "KES",
+    "nssf": {
+     "employeeMaxMonthly": 6480,
+     "employerMatch": true,
+     "from": "2026-02-01"
+    },
+    "shif": {
+     "employee": 0.0275
+    },
+    "housingLevy": {
+     "employee": 0.015,
+     "employer": 0.015
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Effective 1 February 2026, employers are required to deduct a maximum monthly contribution of KES 6,480 from employees and match the same amount."
+    },
+    {
+     "src": 3,
+     "said": "Employees are required to contribute 2.75% of their gross monthly salary to the SHIF"
+    },
+    {
+     "src": 3,
+     "said": "Effective March 2024, both employers and employees are required to contribute 1.5% of the employee's gross monthly salary."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 16% VAT once taxable supplies reach KES 5 million a year.",
+   "value": {
+    "currency": "KES",
+    "standard": 0.16,
+    "threshold": 5000000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Any person supplying or who expects to supply taxable goods and taxable services with a value of Kshs 5 Million or more in a year is required to register for VAT."
+    },
+    {
+     "src": 3,
+     "said": "VAT is levied at a standard rate of 16% on the supply of taxable goods and services in Kenya"
+    }
+   ]
+  }
+ ],
+ "country": "KE",
+ "sources": [
+  {
+   "url": "https://www.kra.go.ke/individual/filing-paying/types-of-taxes/paye",
+   "title": "PAYE (Kenya Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Monthly Pay Bands (Ksh.) Annual Pay Bands (Ksh.) Rate of Tax (%) On the first kShs. 24,000 On the first KShs. 288,000 10 On the next KShs. 8,333 On the next KShs.100,000 25 On the next KShs. 467,667 On the next KShs. 5,612,000 30 On the next KShs.300,000 On the next KShs. 3,600,00 32.5 On all income above KShs. 800,000 On all income above KShs. 9,600,000 35 Personal Tax Relief KShs. 2,400.00 KShs. 28,800.00 … Employers are required to deduct tax (PAYE) from their employees’ emoluments at the prevailing Individual Income Tax Rates and remit the amounts deducted to KRA on or before the 9th day of the following month."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kenya/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Kenya, Individual - Tax administration (last reviewed 17 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.kra.go.ke/individual/filing-paying/types-of-taxes/paye",
+   "said": "The year of income is a calendar year. Tax returns Individual self-assessment tax returns must be filed by 30 June in the year following the year of income. … With effect from 1 January 2027, the Finance Act, 2026 requires an individual to file a self-assessment return, including a self-assessment of tax from all sources, not later than the last day of the fourth month following the end of the year of income. … An individual (other than one whose total taxable income has been subjected to tax at source) whose tax liability exceeds KES 40,000 per annum is required to pay four instalment taxes by 20 April, 20 June, 20 September, and 20 December."
+  },
+  {
+   "url": "https://www.kra.go.ke/individual/filing-paying/types-of-taxes/individual-withholding-tax",
+   "title": "Individual Withholding Tax (Kenya Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Management fees 5% 20% Professional fees 5% 20% … Resident management, professional, training and contractual fees whose aggregate value is Ksh 24,000 and below in a month. … Withholding tax is usually not a final tax on resident payees. … Type of incomes Resident Non Resident Artists and entertainers - 20% … Withholding tax of is final when deducted in relation to a payment made to a non-resident person with no permanent establishment in Kenya … Royalties or natural resource income 5% 20%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/kenya/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Kenya, Individual - Other taxes (last reviewed 17 July 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.kra.go.ke/individual/filing-paying/types-of-taxes/paye",
+   "said": "Effective 1 February 2026, employers are required to deduct a maximum monthly contribution of KES 6,480 from employees and match the same amount. … Employees are required to contribute 2.75% of their gross monthly salary to the SHIF … Effective March 2024, both employers and employees are required to contribute 1.5% of the employee's gross monthly salary. … VAT is levied at a standard rate of 16% on the supply of taxable goods and services in Kenya"
+  },
+  {
+   "url": "https://www.kra.go.ke/individual/filing-paying/types-of-taxes/value-added-tax",
+   "title": "Value Added Tax (Kenya Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any person supplying or who expects to supply taxable goods and taxable services with a value of Kshs 5 Million or more in a year is required to register for VAT."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,150 @@
+{
+ "topic": "tax.BH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bahrain: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Bahrain levies no income tax on individuals, so a resident's pay and fees bear none.",
+   "value": {
+    "incomeTax": null
+   },
+   "applies": "Individuals in Bahrain, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual taxation There is no individual income tax."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer's or writer's fee bears no withholding: Bahrain has no withholding taxes in 2026 (a 5% withholding on service and royalty payments to companies has only been announced).",
+   "value": {
+    "withholding": null,
+    "announced": {
+     "services": 0.05,
+     "royalties": 0.05,
+     "dividends": 0,
+     "scope": "corporate recipients"
+    }
+   },
+   "applies": "Payments to non-residents, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Withholding tax There are no withholding taxes. Bahrain has announced it intends to introduce withholding tax on certain cross-border payments to corporate entities on Bahrain-source income. The rate would be 0% for dividend payments, and 5% for interest, royalty, and service payments."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social insurance: for a Bahraini, the employee pays 8% (pension, disability, death, unemployment) and the employer a share stated as 15% that rises one point a year from 2024 to reach 20% in 2028; for an expatriate, the employer pays 3% (injuries) and the employee 1% (unemployment); earnings above BHD 4,000 a month are not counted.",
+   "value": {
+    "currency": "BHD",
+    "bahraini": {
+     "employee": 0.08,
+     "employerStated": 0.15,
+     "employer2028": 0.2,
+     "stepPerYear": 0.01
+    },
+    "expatriate": {
+     "employer": 0.03,
+     "employee": 0.01
+    },
+    "ceilingMonthly": 4000
+   },
+   "applies": "Employees in Bahrain; the 2026 employer rate for Bahrainis is not settled by this source (15% stated, but a +1 point a year schedule from 2024 implies more).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "For Bahraini nationals, the employer’s social insurance contribution is 15% and the employee’s contribution is 8%, which covers old age, disability, death, and unemployment. The employer’s share will increase by one percentage point each year between 2024 and 2028, bringing the total percentage of the employer’s share to 20% in 2028. For expatriate employees, the employer’s social insurance contribution is 3%, which covers employment injuries. Expatriate employees contribute 1%, which covers unemployment. The maximum monthly earnings subject to contributions are capped at BHD 4,000."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for VAT once annual taxable turnover exceeds or is expected to exceed BHD 37,500 (voluntary from BHD 18,750); the standard rate is 10%.",
+   "value": {
+    "currency": "BHD",
+    "mandatoryThreshold": 37500,
+    "voluntaryThreshold": 18750,
+    "standardRate": 0.1
+   },
+   "applies": "Taxable supplies in Bahrain.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The standard rate is 10% and applies to most goods and services."
+    },
+    {
+     "src": 0,
+     "said": "Registration: Businesses with an annual VAT taxable turnover exceeding or expected to exceed BHD 37,500 must register for VAT within 30 days of the date when the threshold is exceeded or expected to be exceeded. Taxable persons may voluntarily register for VAT if the annual VAT taxable turnover and/or annual expenses subject to VAT in Bahrain exceed or is expected to exceed BHD 18,750."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Under Law no. 14 of 2022, the pension branch of social insurance for a Bahraini costs the employer 17% and the employee 7% of monthly pay, reached in steps: 11% and 6% on the law's entry into force in 2022, the employee at 7% from the next year and the employer rising one point a year to 17%.",
+   "value": {
+    "pensionBranch": {
+     "employerTarget": 0.17,
+     "employeeTarget": 0.07,
+     "employerAtEntry2022": 0.11,
+     "employeeAtEntry2022": 0.06,
+     "employerStepPerYear": 0.01
+    },
+    "lawInForce": "day after publication; signed 18 April 2022"
+   },
+   "applies": "Bahraini employees; on a yearly step from 2022 the employer's pension share is 14% or 15% in 2026 by the step date (not stated by the law); unemployment and injury shares are in the Deloitte figure above; expatriates are under end-of-service, not the pension branch (art. 10).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1- الحصة التي يلتزم صاحب العمل بسدادها للهيئة العامة شهرياً من اشتراك التأمين وقدرها (17%) من أجور المؤمن عليهم العاملين لديه. 2- الحصة التي يلتزم بها المؤمن عليه وتقع على عاتقه بواقع (7%) من أجره شهرياً … تكون الحصة التي يلتزم المؤمن عليه بسدادها عند نفاذ أحكام هذا القانون (6%) من أجره الشهري، وتزاد في بداية السنة التالية لنفاذ القانون لتكون الحصة المحددة في ذات المادة. وتكون الحصة التي يلتزم صاحب العمل بسدادها للهيئة العامة شهرياً من اشتراك التأمين (11%) من أجور المؤمن عليهم العاملين لديه، وذلك عند نفاذ أحكام هذا القانون، وتزاد سنوياً بمعدل (1%) حتى تصل للحصة المحددة في ذات المادة … يخضع العامل غير البحريني لنظام مكافأة نهاية الخدمة"
+    }
+   ]
+  }
+ ],
+ "country": "BH",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-bahrainhighlights-2026.pdf",
+   "title": "Bahrain Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nbr.gov.bh",
+   "said": "Individual taxation There is no individual income tax. … Withholding tax There are no withholding taxes. Bahrain has announced it intends to introduce withholding tax on certain cross-border payments to corporate entities on Bahrain-source income. The rate would be 0% for dividend payments, and 5% for interest, royalty, and service payments. … For Bahraini nationals, the employer’s social insurance contribution is 15% and the employee’s contribution is 8%, which covers old age, disability, death, and unemployment. The employer’s share will increase by one percentage point each year between 2024 and 2028, bringing the total percentage of the employer’s share to 20% in 2028. For expatriate employees, the employer’s social insurance contribution is 3%, which covers employment injuries. Expatriate employees contribute 1%, which covers unemployment. The maximum monthly earnings subject to contributions are capped at BHD 4,000. … The standard rate is 10% and applies to most goods and services. … Registration: Businesses with an annual VAT taxable turnover exceeding or expected to exceed BHD 37,500 must register for VAT within 30 days of the date when the threshold is exceeded or expected to be exceeded. Taxable persons may voluntarily register for VAT if the annual VAT taxable turnover and/or annual expenses subject to VAT in Bahrain exceed or is expected to exceed BHD 18,750."
+  },
+  {
+   "url": "https://lloc.gov.bh/Legislation/HTM/K1422",
+   "title": "Law no. (14) of 2022 amending certain provisions of the Social Insurance Law issued by Decree-Law no. (24) of 1976 (Legislation and Legal Opinion Commission)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1- الحصة التي يلتزم صاحب العمل بسدادها للهيئة العامة شهرياً من اشتراك التأمين وقدرها (17%) من أجور المؤمن عليهم العاملين لديه. 2- الحصة التي يلتزم بها المؤمن عليه وتقع على عاتقه بواقع (7%) من أجره شهرياً … تكون الحصة التي يلتزم المؤمن عليه بسدادها عند نفاذ أحكام هذا القانون (6%) من أجره الشهري، وتزاد في بداية السنة التالية لنفاذ القانون لتكون الحصة المحددة في ذات المادة. وتكون الحصة التي يلتزم صاحب العمل بسدادها للهيئة العامة شهرياً من اشتراك التأمين (11%) من أجور المؤمن عليهم العاملين لديه، وذلك عند نفاذ أحكام هذا القانون، وتزاد سنوياً بمعدل (1%) حتى تصل للحصة المحددة في ذات المادة … يخضع العامل غير البحريني لنظام مكافأة نهاية الخدمة"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The date each yearly 1-point step of the employer's pension share falls (so the 2026 rate), and the unemployment and employment-injury rates in their own law's text or the SIO's page",
+   "tried": {
+    "institution": "nbr.gov.bh HTTP 403, sio.gov.bh HTTP 403, bahrain.bh HTTP 403 to curl 2026-11-01 (not read another way); mofne.gov.bh reachable, no tax page found || 2026-11-01 retry: sio.gov.bh, nbr.gov.bh and bahrainedb.com answer 403 to curl (2026-11-01); not read another way",
+    "official-register": "lloc.gov.bh (Legislation and Legal Opinion Commission) reachable; Decree-Law 48/2018 (VAT) and the social insurance decrees not located on it by search || 2026-11-01 retry: lloc.gov.bh read: Law no. 14 of 2022 amending the Social Insurance Law (https://lloc.gov.bh/Legislation/HTM/K1422, saved BH-lloc-law-14-2022.html) sets the pension branch at 17% employer and 7% employee, starting at 11% and 6% on entry into force and rising 1 point a year: now a figure. The law does not say on which date each yearly step falls, and the unemployment (Law 78 of 2006) and employment-injury rates were not found on lloc (K7806 returns 'Error'); the 1976 Decree-Law (L2476) is the original text only",
+    "web-search": "WebSearch 'Bahrain no personal income tax official government bahrain.bh' and '... social insurance contribution rates ... SIO': only firms and payroll vendors, conflicting (15%, 17%, 18% employer) || 2026-11-01 retry: 'نسب اشتراكات التأمين الاجتماعي البحرين صاحب العمل المؤمن عليه قانون 2024 هيئة التأمين الاجتماعي' (Arabic): led to Law 14/2022 on lloc.gov.bh; the rest are payroll calculators that conflict (12%, 15%, 17%)",
+    "trade-press": "Deloitte Bahrain Highlights 2026 read || 2026-11-01 retry: Deloitte Bahrain Highlights 2026 (already held) states 15% rising to 20% in 2028, which the law's 17% pension cap does not explain without the injury and unemployment shares; no firm found that states the 2026 step",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API (http://archive.org/wayback/available?url=sio.gov.bh/en) names a snapshot of 2026-03-29, but web.archive.org itself is refused here (http: 'Blocked by egress policy', 403; https: connection fails), so it was not read"
+   }
+  },
+  {
+   "item": "residents",
+   "sought": "A primary text stating that Bahrain levies no personal income tax",
+   "tried": {
+    "institution": "nbr.gov.bh HTTP 403, sio.gov.bh HTTP 403, bahrain.bh HTTP 403 to curl 2026-11-01 (not read another way); mofne.gov.bh reachable, no tax page found || 2026-11-01 retry: bahrainedb.com (Economic Development Board) pages named by search (?p=43805, ?p=58790, 2024-MFG-Factsheet.pdf) answer 403 or redirect to the home page for curl (2026-11-01); nbr.gov.bh 403",
+    "official-register": "lloc.gov.bh (Legislation and Legal Opinion Commission) reachable; Decree-Law 48/2018 (VAT) and the social insurance decrees not located on it by search || 2026-11-01 retry: lloc.gov.bh holds laws that are enacted; a law that does not exist cannot be quoted; no decree imposing a personal income tax found in the LLOC listing by search",
+    "web-search": "WebSearch 'Bahrain no personal income tax official government bahrain.bh' and '... social insurance contribution rates ... SIO': only firms and payroll vendors, conflicting (15%, 17%, 18% employer) || 2026-11-01 retry: 'Bahrain Economic Development Board \"no personal income tax\" site:bahrain.bh OR site:bahrainedb.com OR site:mofne.gov.bh': EDB pages state no personal income tax, but they refuse curl",
+    "trade-press": "Deloitte Bahrain Highlights 2026 read || 2026-11-01 retry: PwC Worldwide Tax Summaries (reviewed 11 January 2026) and Al Tamimi (IBA) say there is no personal income tax, quoting no law, as nothing levies one",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API names a snapshot of nbr.gov.bh of 2026-10-17; web.archive.org is refused here (egress policy), not read"
+   }
+  }
+ ]
+}

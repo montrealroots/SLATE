@@ -1,0 +1,273 @@
+{
+ "topic": "tax.CW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Curacao: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Curaçao levies its own income tax (Landsverordening op de inkomstenbelasting 1943): for 2026, 9.75% to XCG 39,094, then 15%, 23%, 30%, 37.5% and 46.5% above XCG 162,894, less a basic credit (basiskorting) of XCG 2,915.",
+   "value": {
+    "currency": "XCG",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 39094,
+      "rate": 0.0975
+     },
+     {
+      "from": 39094,
+      "to": 52127,
+      "rate": 0.15
+     },
+     {
+      "from": 52127,
+      "to": 78190,
+      "rate": 0.23
+     },
+     {
+      "from": 78190,
+      "to": 110769,
+      "rate": 0.3
+     },
+     {
+      "from": 110769,
+      "to": 162894,
+      "rate": 0.375
+     },
+     {
+      "from": 162894,
+      "to": null,
+      "rate": 0.465
+     }
+    ],
+    "credits": {
+     "basic": 2915,
+     "singleEarner": 1779,
+     "elderly": 1342
+    }
+   },
+   "applies": "From 1 January 2026; amounts indexed each year by ministerial regulation (art. 25 of the ordinance). Cg is the Caribbean guilder (XCG).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "39.094 52.127 3.812 15,00%"
+    },
+    {
+     "src": 0,
+     "said": "162.894 - 41.082 46,50%"
+    },
+    {
+     "src": 0,
+     "said": "9,75%"
+    },
+    {
+     "src": 0,
+     "said": "De basiskorting, bedoeld in het tweede lid, wordt vastgesteld op: Cg 2.915,-."
+    },
+    {
+     "src": 0,
+     "said": "Deze regeling treedt in werking met ingang van 1 januari 2026."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 6% (employer 9%) for old-age insurance AOV and 0.5% each for AWW, on income up to XCG 100,000 (1% for the employee above); basic health insurance BVZ is 4.3% employee and 9.3% employer to XCG 150,000, with 13.6% for the self-employed; AVBZ 1.5% employee and 0.5% employer; ZV 1.9% and OV 0.5–5% fall on the employer.",
+   "value": {
+    "currency": "XCG",
+    "AOV": {
+     "employee": 0.06,
+     "employer": 0.09,
+     "ceiling": 100000,
+     "employeeAboveCeiling": 0.01
+    },
+    "AWW": {
+     "employee": 0.005,
+     "employer": 0.005,
+     "ceiling": 100000
+    },
+    "BVZ": {
+     "employee": 0.043,
+     "employer": 0.093,
+     "selfEmployed": 0.136,
+     "ceiling": 150000
+    },
+    "AVBZ": {
+     "employee": 0.015,
+     "employer": 0.005,
+     "ceiling": 606247.08
+    },
+    "ZV": {
+     "employer": 0.019,
+     "wageCeilingAnnual": 85753.2
+    },
+    "OV": {
+     "employerMin": 0.005,
+     "employerMax": 0.05,
+     "wageCeilingAnnual": 85753.2
+    }
+   },
+   "applies": "2026. The self-employed share of AOV/AWW was not stated in the table.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "AOV 15% werkgeversaandeel: 9,00% werknemersaandeel: 6,00%"
+    },
+    {
+     "src": 1,
+     "said": "PREMIE-INKOMENSGRENS AOV en AWW: XCG. 100.000,00"
+    },
+    {
+     "src": 1,
+     "said": "premie AOV boven grens (voor werknemer): 1%"
+    },
+    {
+     "src": 1,
+     "said": "BVZ 13,6% werkgeversaandeel: 9,3% werknemersaandeel: 4,3%"
+    },
+    {
+     "src": 1,
+     "said": "Zelfstandige 13,6%"
+    },
+    {
+     "src": 1,
+     "said": "PREMIE-INKOMENSGRENS BVZ: XCG. 150.000,00"
+    },
+    {
+     "src": 1,
+     "said": "AVBZ 2% werkgeversaandeel: 0.5% werknemersaandeel: 1.5%"
+    },
+    {
+     "src": 1,
+     "said": "ZV 1,9% volledig ten laste van de werkgever"
+    },
+    {
+     "src": 1,
+     "said": "per jaar XCG. 85.753,20"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds wage tax from pay by daily, weekly or monthly tables.",
+   "value": {
+    "method": "wage tax tables"
+   },
+   "applies": "2026 tables not read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "An employer must withhold wage tax, which is based on daily, weekly, or monthly tables."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Curaçao-source income, at the same progressive rates; there is no withholding on royalties or on fees for technical services.",
+   "value": {
+    "basis": "Curaçao-source income",
+    "royaltiesWithholding": 0,
+    "technicalFeesWithholding": 0,
+    "final": false
+   },
+   "applies": "No artistes' withholding was found.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Nonresidents are taxed only on Curaçao-source income."
+    },
+    {
+     "src": 2,
+     "said": "There is no withholding tax on royalties."
+    },
+    {
+     "src": 2,
+     "said": "There is no withholding tax on fees for technical services."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Curaçao levies a turnover tax (omzetbelasting) of 6% standard, 7% or 9% in some cases, on goods and services; every supplier must in principle register, with no threshold given.",
+   "value": {
+    "rate": 0.06,
+    "increased": [
+     0.07,
+     0.09
+    ],
+    "threshold": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard rate is 6%, with 7% and 9% rates applicable in certain cases."
+    },
+    {
+     "src": 2,
+     "said": "Residents and nonresidents that carry out taxable supplies of goods or services in Curaçao must, in principle, register for sales tax."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; where tax is due the return is filed within six months of its end.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "06-30",
+     "after": 1
+    }
+   },
+   "applies": "Due date read as six months after 31 December.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The tax year is the calendar year."
+    },
+    {
+     "src": 2,
+     "said": "If tax is due, the taxpayer must file a tax return within six months after the end of the tax year."
+    }
+   ]
+  }
+ ],
+ "country": "CW",
+ "sources": [
+  {
+   "url": "https://gobiernu.cw/wp-content/uploads/2025/12/226.-Min-reg-vaststelling-bedragen-ib-2026.pdf",
+   "title": "Ministeriële regeling vaststelling bedragen inkomstenbelasting 2026 (Publicatieblad 2025 no. 226, Curaçao)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "39.094 52.127 3.812 15,00% … 162.894 - 41.082 46,50% … 9,75% … De basiskorting, bedoeld in het tweede lid, wordt vastgesteld op: Cg 2.915,-. … Deze regeling treedt in werking met ingang van 1 januari 2026."
+  },
+  {
+   "url": "https://svbcur.org/wp-content/uploads/2026/01/Tabel-2026.pdf",
+   "title": "Pensioenen, premiepercentages, loongrenzen en premie-inkomensgrenzen sociale verzekeringen 2026 (SVB Curaçao)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "AOV 15% werkgeversaandeel: 9,00% werknemersaandeel: 6,00% … PREMIE-INKOMENSGRENS AOV en AWW: XCG. 100.000,00 … premie AOV boven grens (voor werknemer): 1% … BVZ 13,6% werkgeversaandeel: 9,3% werknemersaandeel: 4,3% … Zelfstandige 13,6% … PREMIE-INKOMENSGRENS BVZ: XCG. 150.000,00 … AVBZ 2% werkgeversaandeel: 0.5% werknemersaandeel: 1.5% … ZV 1,9% volledig ten laste van de werkgever … per jaar XCG. 85.753,20"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-curacaohighlights-2026.pdf",
+   "title": "Curaçao Highlights 2026 (Deloitte)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://gobiernu.cw/",
+   "said": "An employer must withhold wage tax, which is based on daily, weekly, or monthly tables. … Nonresidents are taxed only on Curaçao-source income. … There is no withholding tax on royalties. … There is no withholding tax on fees for technical services. … The standard rate is 6%, with 7% and 9% rates applicable in certain cases. … Residents and nonresidents that carry out taxable supplies of goods or services in Curaçao must, in principle, register for sales tax. … The tax year is the calendar year. … If tax is due, the taxpayer must file a tax return within six months after the end of the tax year."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' fees or royalties in Curaçao.",
+   "tried": {
+    "institution": "gobiernu.cw tax pages not reached beyond the 2026 regulation. || 2026-11-01 retry: belastingdienst.cw read (https://belastingdienst.cw/particulier/inkomstenbelasting/ and /ondernemer/inkomstenbelasting/, saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/CW-bd-particulier-inkomstenbelasting.html and CW-bd-ondernemer-inkomstenbelasting.html): no word on authors, royalties or artists",
+    "official-register": "Publicatieblad 2025 no. 226 read; nothing on authors. || 2026-11-01 retry: inview.nl's open citations of the Landsverordening op de inkomstenbelasting 1943 (Curaçao), arts. 1, 23c, 24, 79, answer 403 to curl; not read another way. The 2022 double-tax ordinance (gobiernu.cw, Lb. 2022 no. 113) defines royalties for treaty purposes only",
+    "web-search": "Searched; nothing. || 2026-11-01 retry: 'Curaçao inkomstenbelasting auteursrecht royalty's natuurlijk persoon belasting tarief Landsverordening inkomstenbelasting 1943 artiesten' (Dutch): treaty texts and the inview.nl citations; nothing naming a special rule for an author's royalties",
+    "trade-press": "Deloitte 2026: no royalty withholding; nothing else. || 2026-11-01 retry: Jongbloed Fiscaal Juristen (Belastingheffing op Curaçao) and Taxence: worldwide income for residents (LvIB arts. 1 and 3); no royalty rule for individuals",
+    "archive": "Archive unreachable from this environment. || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read"
+   }
+  }
+ ]
+}

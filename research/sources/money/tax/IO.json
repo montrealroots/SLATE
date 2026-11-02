@@ -1,0 +1,94 @@
+{
+ "topic": "tax.IO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in British Indian Ocean Territory: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The British Indian Ocean Territory levies no income tax: its Taxation Ordinance bars any law in the Territory from imposing income, corporation or capital gains tax or any similar tax on income, wherever it arises.",
+   "value": {
+    "none": true,
+    "brackets": []
+   },
+   "applies": "Everyone in the Territory",
+   "sources": [
+    {
+     "src": 0,
+     "said": "An Ordinance to discontinue the application in the British Indian Ocean Territory of laws providing for the imposition of taxes and certain duties. … 3. No law having effect in the Territory pursuant to Section 3(2)(a) of the British Indian Ocean Territory (Constitution) Order 2004 shall have effect so as to require or permit the imposition within the Territory of any income tax, corporation tax, capital gains tax or any substantially similar tax upon income, profits, gains and capital whether arising within the Territory or outside it."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "No income tax is imposed in the Territory on anyone, so a visiting performer, writer or director pays none there.",
+   "value": {
+    "rate": 0,
+    "final": true,
+    "threshold": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "shall have effect so as to require or permit the imposition within the Territory of any income tax, corporation tax, capital gains tax or any substantially similar tax upon income, profits, gains and capital whether arising within the Territory or outside it."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The Territory levies no social security contribution and no sales tax or VAT: the revised ordinances hold a Taxation Ordinance and a Charges for Services Ordinance (fees for services the Administration provides) but no social insurance or sales-tax law; the Employment Ordinance instead obliges the employer to keep each employee insured against death or injury at work.",
+   "value": {
+    "socialContribution": 0,
+    "vat": 0,
+    "employerInsurance": "death or personal injury in the course of employment"
+   },
+   "applies": "Read from the full list of BIOT revised ordinances on 2026-11-01 (an absence: no ordinance on either subject is listed).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The Charges for Services Ordinance 1992 A.6 … The Employment Ordinance 1984 G.5 … The Taxation Ordinance 1981 G.2"
+    },
+    {
+     "src": 2,
+     "said": "at all times while any employee is employed in the Territory his employer shall keep him insured against death or personal injury arising out of and in the course of his employment"
+    },
+    {
+     "src": 3,
+     "said": "An Ordinance to authorise the imposition of charges or fees for services or"
+    }
+   ]
+  }
+ ],
+ "country": "IO",
+ "sources": [
+  {
+   "url": "https://www.biot.gov.io/wp-content/uploads/The-Taxation-Ord-1981-G.2.pdf",
+   "title": "The Taxation Ordinance 1981, Revised Ordinances of the British Indian Ocean Territory, Chapter G.2",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An Ordinance to discontinue the application in the British Indian Ocean Territory of laws providing for the imposition of taxes and certain duties. … 3. No law having effect in the Territory pursuant to Section 3(2)(a) of the British Indian Ocean Territory (Constitution) Order 2004 shall have effect so as to require or permit the imposition within the Territory of any income tax, corporation tax, capital gains tax or any substantially similar tax upon income, profits, gains and capital whether arising within the Territory or outside it."
+  },
+  {
+   "url": "https://www.biot.gov.io/governance/legislation/revised-ordinances/",
+   "title": "BIOT Administration, Revised Ordinances (the law as revised under the Law Revision Ordinance 2015)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Charges for Services Ordinance 1992 A.6 … The Employment Ordinance 1984 G.5 … The Taxation Ordinance 1981 G.2"
+  },
+  {
+   "url": "https://www.biot.gov.io/wp-content/uploads/The-Employment-Ord-1984-G.5.pdf",
+   "title": "The Employment Ordinance 1984, Chapter G.5 (revised edition)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "at all times while any employee is employed in the Territory his employer shall keep him insured against death or personal injury arising out of and in the course of his employment"
+  },
+  {
+   "url": "https://www.biot.gov.io/wp-content/uploads/The-Charges-for-Services-Ord-1992-A.6.pdf",
+   "title": "The Charges for Services Ordinance 1992, Chapter A.6 (revised edition, law as at 1 September 2020)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An Ordinance to authorise the imposition of charges or fees for services or"
+  }
+ ],
+ "blockers": []
+}

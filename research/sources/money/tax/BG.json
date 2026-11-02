@@ -1,0 +1,293 @@
+{
+ "topic": "tax.BG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bulgaria: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays a flat 10% on all personal income (after his own mandatory social contributions); there is no tax-free allowance and no regional or municipal income tax. Bulgaria uses the euro from 1 January 2026.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "allowance": 0,
+    "childRelief2026": {
+     "one": 3067.75,
+     "two": 6135.5,
+     "threeOrMore": 9203.25
+    }
+   },
+   "applies": "2026 (Personal Income Taxes Act).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A flat tax rate of 10% applies to all personal income, with some exceptions."
+    },
+    {
+     "src": 1,
+     "said": "Individuals must pay personal income tax (PIT) on their gross income less any mandatory social security contributions they make at their own expense. Very few other deductions are possible."
+    },
+    {
+     "src": 2,
+     "said": "As of 1 January 2026, the euro (EUR) replaces the Bulgarian lev (BGN) as Bulgaria's official currency."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return and payment are due by 30 April of the next year, with a 5% discount (capped at EUR 255.65) for filing and paying electronically by 31 March.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "04-30 following year",
+    "earlyDiscount": {
+     "rate": 0.05,
+     "cap": 255.65,
+     "by": "03-31"
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The tax year in Bulgaria is, without exception, the calendar year."
+    },
+    {
+     "src": 3,
+     "said": "The deadline for submission of tax returns is 30 April of the following year. A reduction of 5% of the outstanding income tax is applicable if the annual tax return is filed electronically by 31 March of the following year, the individual has no outstanding public liabilities, and the tax is paid by 31 March of the following year. T he discount of 5% is capped at EUR 255.65."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 13.78% (10.58% social security, 3.2% health) and the employer 18.92% to 19.62% (the range is the work-accident rate); contributions are on monthly pay up to EUR 2,111.64 (EUR 2,300 from 1 August 2026). A freelancer pays on a chosen monthly base between EUR 550.66 (EUR 620.20 from 1 August 2026) and the same ceiling.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "social": 0.1058,
+     "health": 0.032,
+     "total": 0.1378
+    },
+    "employer": {
+     "total": [
+      0.1892,
+      0.1962
+     ],
+     "health": 0.048
+    },
+    "monthlyCeiling": {
+     "2026-01-01": 2111.64,
+     "2026-08-01": 2300
+    },
+    "freelancerMonthlyBase": {
+     "min": {
+      "2026-01-01": 550.66,
+      "2026-08-01": 620.2
+     },
+     "max": {
+      "2026-01-01": 2111.64,
+      "2026-08-01": 2300
+     }
+    }
+   },
+   "applies": "2026. No performers' scheme was found.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The total national insurance contribution rate (social security and health insurance) is 32.7% to 33.4%*, of which 18.92% to 19.62%* is payable by the employer and 13.78% is payable by the employee."
+    },
+    {
+     "src": 4,
+     "said": "The minimum monthly insurance base for freelancers is EUR 550.66 from 1 January 2026 until 31 July and EUR 620.20 from 1 August 2026 until 31 December 2026. The maximum monthly insurance base for freelancers is EUR 2,111.64 from 1 January 2026 until 31 July, increased to EUR 2,300 effective 1 August 2026."
+    },
+    {
+     "src": 4,
+     "said": "The maximum monthly insurance base is limited to EUR 2,111.64 from 1 January 2026 until 31 July 2026 and to EUR 2,300 from 1 August 2026 onwards."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the 10% tax from pay monthly and remits it by the 25th of the next month; a Bulgarian payer withholds 10% from a resident freelancer's service fee after a 25% statutory deduction for expenses.",
+   "value": {
+    "employee": {
+     "rate": 0.1,
+     "remitBy": "25th of following month"
+    },
+    "freelancer": {
+     "rate": 0.1,
+     "statutoryDeduction": 0.25
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Upon payment of salaries, the employer should withhold personal income tax (PIT) at a flat rate of 10% due on employment remuneration, bonuses, and certain fringe benefits and should remit it to the tax authorities by the 25th day of the following month."
+    },
+    {
+     "src": 6,
+     "said": "to payments to a resident individual (after applying a 25% statutory deduction for expenses)."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A resident author's royalties are taxed at 10% after a 40% statutory deduction for expenses (6% effective); royalties to a non-resident bear a final 10%.",
+   "value": {
+    "resident": {
+     "rate": 0.1,
+     "statutoryDeduction": 0.4
+    },
+    "nonResident": {
+     "rate": 0.1,
+     "final": true
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "resident individual (after applying a 40% statutory deduction for expenses). Royalties paid to a nonresident are subject to a"
+    },
+    {
+     "src": 1,
+     "said": "Royalties are taxed on an annual basis with a 10% flat tax rate if received by Bulgarian tax residents and a 10% final WHT if received by non-residents."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 20%; a freelancer must register once taxable turnover exceeds EUR 51,130 in the current or the previous calendar year, within 7 days.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.2,
+    "reduced": 0.09,
+    "registrationThreshold": 51130,
+    "period": "calendar year"
+   },
+   "applies": "From 1 January 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "A taxable person should register for VAT if its taxable turnover exceeds EUR 51,130 for the current calendar year or for the previous calendar year."
+    },
+    {
+     "src": 5,
+     "said": "The standard VAT rate is 20%, and the reduced VAT rate is 9%."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident artiste's (an actor's, director's or other cultural worker's) fee for work done in Bulgaria, even when paid through an agency or production house, is Bulgarian-source income taxed by a final 10% tax on the gross amount, withheld by the payer; an EU or EEA resident may ask for it to be recomputed with the year's return (art. 37a).",
+   "value": {
+    "rate": 0.1,
+    "base": "gross",
+    "final": true,
+    "article": "PITA art. 37(1) item 8, art. 37(2), art. 46(1)",
+    "recomputeForEUEEA": "art. 37a"
+   },
+   "applies": "2026; the PITA as amended to State Gazette no. 113 of 2025, in force 1 January 2026; a treaty may reduce or remove it.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "8. (изм. - ДВ, бр. 113 от 2007 г., в сила от 01.01.2008 г.) награди и възнаграждения за дейност, извършена на територията на страната от чуждестранни физически лица - общественици, дейци на науката, изкуството, културата и спорта, включително когато доходът е изплатен/начислен чрез трето лице като импресарска агенция, продуцентска къща и други посредници … Окончателният данък за доходите по ал. 1, т. 1 - 9 и по чл. 8, ал. 11 се определя върху брутната сума на начислените/изплатените доходи … Ставката на данъка е 10 на сто за доходите по чл. 37 и чл. 38, ал. 5, 8, 11, 12, 14 и 15"
+    },
+    {
+     "src": 8,
+     "said": "НАП: Облагане с окончателен данък по ЗДДФЛ на възнаграждения и поети разходи на чуждестранни физически лица за артистична дейност в България … ЗДДФЛ: чл.8 ал.5 , чл.37 ал.1 т.8"
+    },
+    {
+     "src": 0,
+     "said": "Any income derived as a result of employment or of rendering services in the territory of Bulgaria is deemed Bulgarian-source income, regardless of from where or by whom it is paid."
+    },
+    {
+     "src": 6,
+     "said": "a nonresident are subject to a 10% withholding tax, unless the rate is reduced under an applicable tax treaty. Bulgaria imposes"
+    }
+   ]
+  }
+ ],
+ "country": "BG",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "A flat tax rate of 10% applies to all personal income, with some exceptions. … Any income derived as a result of employment or of rendering services in the territory of Bulgaria is deemed Bulgarian-source income, regardless of from where or by whom it is paid."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/individual/income-determination",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Individual - Income determination",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "Individuals must pay personal income tax (PIT) on their gross income less any mandatory social security contributions they make at their own expense. Very few other deductions are possible. … Royalties are taxed on an annual basis with a 10% flat tax rate if received by Bulgarian tax residents and a 10% final WHT if received by non-residents."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/individual/significant-developments",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Individual - Significant developments",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "As of 1 January 2026, the euro (EUR) replaces the Bulgarian lev (BGN) as Bulgaria's official currency."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "The tax year in Bulgaria is, without exception, the calendar year. … The deadline for submission of tax returns is 30 April of the following year. A reduction of 5% of the outstanding income tax is applicable if the annual tax return is filed electronically by 31 March of the following year, the individual has no outstanding public liabilities, and the tax is paid by 31 March of the following year. T he discount of 5% is capped at EUR 255.65."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.noi.bg/",
+   "said": "The total national insurance contribution rate (social security and health insurance) is 32.7% to 33.4%*, of which 18.92% to 19.62%* is payable by the employer and 13.78% is payable by the employee. … The minimum monthly insurance base for freelancers is EUR 550.66 from 1 January 2026 until 31 July and EUR 620.20 from 1 August 2026 until 31 December 2026. The maximum monthly insurance base for freelancers is EUR 2,111.64 from 1 January 2026 until 31 July, increased to EUR 2,300 effective 1 August 2026. … The maximum monthly insurance base is limited to EUR 2,111.64 from 1 January 2026 until 31 July 2026 and to EUR 2,300 from 1 August 2026 onwards."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/bulgaria/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: bulgaria Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "Upon payment of salaries, the employer should withhold personal income tax (PIT) at a flat rate of 10% due on employment remuneration, bonuses, and certain fringe benefits and should remit it to the tax authorities by the 25th day of the following month. … A taxable person should register for VAT if its taxable turnover exceeds EUR 51,130 for the current calendar year or for the previous calendar year. … The standard VAT rate is 20%, and the reduced VAT rate is 9%."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-bulgariahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Bulgaria Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "to payments to a resident individual (after applying a 25% statutory deduction for expenses). … resident individual (after applying a 40% statutory deduction for expenses). Royalties paid to a nonresident are subject to a … a nonresident are subject to a 10% withholding tax, unless the rate is reduced under an applicable tax treaty. Bulgaria imposes"
+  },
+  {
+   "url": "https://kik-info.com/normativna-baza/zakoni/zddfl/",
+   "title": "Закон за данъците върху доходите на физическите лица (Personal Income Taxes Act), consolidated text reproduced by KiK-Info, arts. 8(5), 37, 46",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://dv.parliament.bg/",
+   "said": "8. (изм. - ДВ, бр. 113 от 2007 г., в сила от 01.01.2008 г.) награди и възнаграждения за дейност, извършена на територията на страната от чуждестранни физически лица - общественици, дейци на науката, изкуството, културата и спорта, включително когато доходът е изплатен/начислен чрез трето лице като импресарска агенция, продуцентска къща и други посредници … Окончателният данък за доходите по ал. 1, т. 1 - 9 и по чл. 8, ал. 11 се определя върху брутната сума на начислените/изплатените доходи … Ставката на данъка е 10 на сто за доходите по чл. 37 и чл. 38, ал. 5, 8, 11, 12, 14 и 15"
+  },
+  {
+   "url": "https://kik-info.com/stanovishta-na-nap/74b7cfa91ee50632e4214d3d740497bc",
+   "title": "НАП становище 24.09.2012 (KiK-Info listing): final tax under PITA art. 8(5) and 37(1) item 8 on foreign artists' pay",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://nra.bg/",
+   "said": "НАП: Облагане с окончателен данък по ЗДДФЛ на възнаграждения и поети разходи на чуждестранни физически лица за артистична дейност в България … ЗДДФЛ: чл.8 ал.5 , чл.37 ал.1 т.8"
+  }
+ ],
+ "blockers": []
+}

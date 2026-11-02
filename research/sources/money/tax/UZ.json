@@ -1,0 +1,161 @@
+{
+ "topic": "tax.UZ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Uzbekistan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident individual's income is taxed at a flat 12% (dividends and interest 5%), with no allowance or regional layer.",
+   "value": {
+    "currency": "UZS",
+    "brackets": [
+     {
+      "from": 0,
+      "to": null,
+      "rate": 0.12
+     }
+    ],
+    "dividendsInterest": 0.05,
+    "allowance": 0,
+    "regional": null
+   },
+   "applies": "Tax Code art. 381, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Ўзбекистон Республикаси резиденти бўлган жисмоний шахснинг даромадларига, агар ушбу модданинг иккинчи қисмида бошқа қоида назарда тутилмаган бўлса, 12 фоизлик солиқ ставкаси бўйича солиқ солинади."
+    },
+    {
+     "src": 0,
+     "said": "Дивидендлар ва фоизлар тарзидаги даромадларга 5 фоизлик солиқ ставкаси бўйича солиқ солинади."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year; for tax agents the reporting period is one month.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "agentReporting": "monthly"
+   },
+   "applies": "Tax Code art. 384.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "384-модда. Солиқ даври. Ҳисобот даври Suggestion to the document Listen to audio Get a link from a document element Календарь йил солиқ давридир. Suggestion to the document Listen to audio Get a link from a document element Солиқ агентлари учун ҳисобот даври бир ойдир."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The tax is computed and paid by the tax agent paying the income (the employer or other payer), or by the taxpayer himself; some categories may elect to pay on an annual declaration.",
+   "value": {
+    "byTaxAgent": true,
+    "selfAssessed": "income not taxed by an agent"
+   },
+   "applies": "Tax Code art. 385.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1) солиқ тўловчига даромад тўлайдиган солиқ агентлари томонидан; Suggestion to the document Listen to audio Get a link from a document element 2) солиқ тўловчи томонидан мустақил равишда."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays 12% on Uzbek-source income from employment contracts and civil-law contracts and other income (10% on dividends and interest, 6% on international freight).",
+   "value": {
+    "rate": 0.12,
+    "dividendsInterest": 0.1,
+    "freight": 0.06
+   },
+   "applies": "Tax Code art. 382 (as amended by law ЎРҚ-785 of 26 July 2022).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "3 Меҳнат шартномалари (контрактлари) ва фуқаролик-ҳуқуқий хусусиятдаги шартномалар бўйича олинган даромадлар, 1 ва 2-бандларда кўрсатилмаган бошқа даромадлар 12"
+    },
+    {
+     "src": 0,
+     "said": "1 Дивидендлар ва фоизлар 10 2 Ушбу Кодексга мувофиқ аниқланадиган, халқаро ташишларда транспорт хизматлари тақдим этишдан олинадиган даромадлар (фрахтдан олинадиган даромадлар). 6"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays social tax at 12% (budget organisations 25%), calendar-year period with monthly reporting.",
+   "value": {
+    "employer": 0.12,
+    "budgetOrganisations": 0.25
+   },
+   "applies": "Tax Code art. 405; the employee's pension contribution was not read here.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Т/р Солиқ тўловчилар Солиқ ставкалари, фоизларда 1. Солиқ тўловчилар, бундан 2 — 4-бандларда назарда тутилганлар мустасно 12 2. Бюджет ташкилотлари 25"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 12%; an individual entrepreneur becomes a VAT payer once revenue in the tax period exceeds one billion soums (or by choice).",
+   "value": {
+    "currency": "UZS",
+    "standard": 0.12,
+    "thresholdIndividualEntrepreneur": 1000000000
+   },
+   "applies": "Tax Code art. 258 (rate) and the VAT-payer article (threshold).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Агар ушбу Кодекснинг 36-бобида бошқача қоида белгиланмаган бўлса, солиқ ставкаси 12 фоиз миқдорида белгиланади."
+    },
+    {
+     "src": 0,
+     "said": "товарларни (хизматларни) реализация қилишдан олинган даромади солиқ даврида бир миллиард сўмдан ошган ёхуд ихтиёрий равишда қўшилган қиймат солиғини тўлашга ўтган якка тартибдаги тадбиркорлар;"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "From 1 January 2026 an individual entrepreneur or self-employed person whose revenue from goods and services in the tax period does not exceed one billion soums pays turnover tax at 1% instead of profit tax and VAT.",
+   "value": {
+    "currency": "UZS",
+    "rate": 0.01,
+    "revenueCeiling": 1000000000,
+    "from": "2026-01-01"
+   },
+   "applies": "A freelance screen worker registered as an individual entrepreneur or self-employed person; above the ceiling the general regime applies.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2) солиқ даврида товарларни (хизматларни) реализация қилишдан олинган даромади бир миллиард сўмдан ошмаган якка тартибдаги тадбиркорлар ва ўзини ўзи банд қилган шахслар … 5. Якка тартибдаги тадбиркорлар ва ўзини ўзи банд қилган шахслар 1 (467-модданинг биринчи қисми Ўзбекистон Республикасининг 2025 йил 25 декабрдаги ЎРҚ-1108-сонли Қонуни таҳририда"
+    }
+   ]
+  }
+ ],
+ "country": "UZ",
+ "sources": [
+  {
+   "url": "https://lex.uz/en/docs/4674902",
+   "title": "Солиқ кодекси (Tax Code of the Republic of Uzbekistan), consolidated text on lex.uz (National Database of Legislation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ўзбекистон Республикаси резиденти бўлган жисмоний шахснинг даромадларига, агар ушбу модданинг иккинчи қисмида бошқа қоида назарда тутилмаган бўлса, 12 фоизлик солиқ ставкаси бўйича солиқ солинади. … Дивидендлар ва фоизлар тарзидаги даромадларга 5 фоизлик солиқ ставкаси бўйича солиқ солинади. … 384-модда. Солиқ даври. Ҳисобот даври Suggestion to the document Listen to audio Get a link from a document element Календарь йил солиқ давридир. Suggestion to the document Listen to audio Get a link from a document element Солиқ агентлари учун ҳисобот даври бир ойдир. … 1) солиқ тўловчига даромад тўлайдиган солиқ агентлари томонидан; Suggestion to the document Listen to audio Get a link from a document element 2) солиқ тўловчи томонидан мустақил равишда. … 3 Меҳнат шартномалари (контрактлари) ва фуқаролик-ҳуқуқий хусусиятдаги шартномалар бўйича олинган даромадлар, 1 ва 2-бандларда кўрсатилмаган бошқа даромадлар 12 … 1 Дивидендлар ва фоизлар 10 2 Ушбу Кодексга мувофиқ аниқланадиган, халқаро ташишларда транспорт хизматлари тақдим этишдан олинадиган даромадлар (фрахтдан олинадиган даромадлар). 6 … Т/р Солиқ тўловчилар Солиқ ставкалари, фоизларда 1. Солиқ тўловчилар, бундан 2 — 4-бандларда назарда тутилганлар мустасно 12 2. Бюджет ташкилотлари 25 … Агар ушбу Кодекснинг 36-бобида бошқача қоида белгиланмаган бўлса, солиқ ставкаси 12 фоиз миқдорида белгиланади. … товарларни (хизматларни) реализация қилишдан олинган даромади солиқ даврида бир миллиард сўмдан ошган ёхуд ихтиёрий равишда қўшилган қиймат солиғини тўлашга ўтган якка тартибдаги тадбиркорлар; … 2) солиқ даврида товарларни (хизматларни) реализация қилишдан олинган даромади бир миллиард сўмдан ошмаган якка тартибдаги тадбиркорлар ва ўзини ўзи банд қилган шахслар … 5. Якка тартибдаги тадбиркорлар ва ўзини ўзи банд қилган шахслар 1 (467-модданинг биринчи қисми Ўзбекистон Республикасининг 2025 йил 25 декабрдаги ЎРҚ-1108-сонли Қонуни таҳририда"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The employee's individual accumulative pension (INPS) contribution rate for 2026, under the Law on citizens' accumulative pension provision",
+   "tried": {
+    "institution": "lex.uz Tax Code read for PIT, social tax and VAT; turnover tax (arts. 461-470) and self-employed provisions not extracted in this pass || 2026-11-01 retry: lex.uz Tax Code (saved UZ-lex-taxcode-en.html, the Uzbek text as amended by Law ЎРҚ-1108 of 25 December 2025) searched in Uzbek: arts. 461 and 467 (turnover tax: 1% for individual entrepreneurs and the self-employed with revenue up to one billion soums, from 1 January 2026) now a figure; the INPS individual accumulative pension contribution is outside the Tax Code (Law on accumulative pension provision, named at art. 369) and was not read",
+    "official-register": "lex.uz (as above) || 2026-11-01 retry: lex.uz as above; the Law «Фуқароларнинг жамғариб бориладиган пенсия таъминоти тўғрисида» not fetched in the time",
+    "web-search": "not run || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC has no Uzbekistan summary under the slugs tried (HTTP 404) || 2026-11-01 retry: No PwC Uzbekistan summary (404); none read",
+    "archive": "not tried || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

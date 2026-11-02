@@ -1,0 +1,251 @@
+{
+ "topic": "tax.IS",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Iceland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Pay in 2026 is taxed at 31.49% up to ISK 498,122 a month, 37.99% to ISK 1,398,450 and 46.29% above, each combining state tax (16.55%, 23.05%, 31.35%) with the average municipal tax of 14.94% withheld; the personal tax credit is ISK 869,898 a year (ISK 72,492 a month). The municipal rate in the final assessment runs 12.44% to 14.94% by municipality.",
+   "value": {
+    "currency": "ISK",
+    "year": 2026,
+    "periodBrackets": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 498122,
+      "rate": 0.3149
+     },
+     {
+      "from": 498122,
+      "to": 1398450,
+      "rate": 0.3799
+     },
+     {
+      "from": 1398450,
+      "to": null,
+      "rate": 0.4629
+     }
+    ],
+    "state": [
+     0.1655,
+     0.2305,
+     0.3135
+    ],
+    "municipalWithheld": 0.1494,
+    "municipalRange": [
+     0.1244,
+     0.1494
+    ],
+    "taxCreditYear": 869898,
+    "taxCreditMonth": 72492,
+    "creditTransferableToSpouse": 1.0
+   },
+   "applies": "Wage income of residents, 2026 withholding",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Skatthlutfall í staðgreiðslu samanstendur annarsvegar af tekjuskatti og hins vegar meðalútsvari (14,94%). Skatthlutfallið er 31,49% af tekjum 0 - 498.122 kr. (þar af 16,55% tekjuskattur) 37,99% af tekjum 498.123 - 1.398.450 kr. (þar af 23,05% tekjuskattur) 46,29% af tekjum yfir 1.398.450 (þar af 31,35% tekjuskattur) … Persónuafsláttur er 869.898 kr. á ári, eða 72.492 kr. á mánuði. Heimilt er að nýta allan (100%) ónýttan persónuafslátt maka á árinu 2026."
+    },
+    {
+     "src": 1,
+     "said": "The municipal income tax withheld at source is 14.94% but varies from 12.44% to 14.94% in the final assessment, based on the decision of each municipality."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays social security tax (tryggingagjald) of 6.35% of pay in 2026; every employee and self-employed person must have at least 15.5% of pay paid to a pension fund (4% employee, 11.5% employer); everyone aged 16 to 69 pays the elderly fund charge (ISK 14,614 for 2026) and the broadcasting fee (ISK 22,200).",
+   "value": {
+    "currency": "ISK",
+    "year": 2026,
+    "employer": {
+     "socialSecurityTax": 0.0635,
+     "parts": {
+      "general": 0.049,
+      "employmentInsurance": 0.0135,
+      "wageGuaranteeFund": 0.0005,
+      "marketFee": 0.0005
+     },
+     "pension": 0.115
+    },
+    "employee": {
+     "pension": 0.04
+    },
+    "perPerson": {
+     "elderlyFund": 14614,
+     "broadcastingFee": 22200
+    }
+   },
+   "applies": "Employees, employers and self-employed persons",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tryggingagjald er 6,35% Sérstök trygging (0,65%) bætist við vegna launa sjómanna á fiskiskipum. Sundurliðun: - Almennt tryggingagjald 4,90% - Atvinnutryggingagjald 1,35% - Gjald í Ábyrgðasjóð launa vegna gjaldþrota 0,05% - Markaðsgjald 0,05% Samtals til staðgreiðslu 6,35%"
+    },
+    {
+     "src": 2,
+     "said": "The minimum contribution is 15.5% (4% for employees and 11.5% for employers) of all employees’ and self-employed persons’ remunerations. … The payment for the assessment year 2026 is ISK 14,614."
+    },
+    {
+     "src": 3,
+     "said": "There is a National Broadcasting Fee of ISK 22,200 per year."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is withheld at source each month by the payer under the staðgreiðsla system at the rates above, net of the personal credit.",
+   "value": {
+    "system": "staðgreiðsla",
+    "frequency": "monthly"
+   },
+   "applies": "Wage earners",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Individual income taxes are withheld at source each month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's Icelandic remuneration for independent personal services and art performances is taxed by assessment at 20% plus the average municipal rate (14.94% in 2026); a non-resident working temporarily in Iceland pays national and municipal tax on that pay as a resident does.",
+   "value": {
+    "rate": 0.2,
+    "plusMunicipal": 0.1494,
+    "total": 0.3494,
+    "base": "remuneration for art performances and independent services",
+    "final": "taxed by assessment"
+   },
+   "applies": "Non-resident performers and other independent services",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Icelandic-source income in the form of remuneration to non-resident directors and committee members, grants, or remuneration for independent personal services and art performances is taxed by assessment at a rate of 20% plus the average municipal income tax rate, which is 14.94% in 2026."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Payments to authors from rightholders' associations are capital income taxed at 22% once the work is public; authors' and composers' activities are exempt from VAT.",
+   "value": {
+    "rightholderAssociationPayments": 0.22,
+    "vatExempt": true
+   },
+   "applies": "Authors",
+   "sources": [
+    {
+     "src": 1,
+     "said": "As of 1 January 2020, payments to authors from rightholder's associations are considered capital income and taxed at 22% after they have been made available to the public."
+    },
+    {
+     "src": 5,
+     "said": "Activities of authors and musical composers and comparable artistic activities"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 24% (11% reduced) on a taxable fee, but a seller with taxable sales of ISK 2,000,000 or less in each twelve months is exempt from registering; authors', composers' and comparable artistic activities are exempt.",
+   "value": {
+    "currency": "ISK",
+    "rate": 0.24,
+    "reduced": [
+     0.11
+    ],
+    "threshold": 2000000,
+    "period": "twelve months",
+    "exemptActivities": [
+     "authors",
+     "musical composers",
+     "comparable artistic activities"
+    ]
+   },
+   "applies": "Taxable persons",
+   "sources": [
+    {
+     "src": 5,
+     "said": "those who sell taxable goods and services for 2.000.000 ISK or less in each twelve-month period from the beginning of their business activity … The standard rate of VAT in Iceland is 24%. The reduced rate of VAT in Iceland is 11%"
+    },
+    {
+     "src": 6,
+     "said": "Skattþrep virðisaukaskatts 24% 11%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due by 14 March of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-14"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The tax year for individuals equals the calendar year. Tax returns Individuals must file their tax returns before the end of 14 March in the consecutive year after the tax year."
+    }
+   ]
+  }
+ ],
+ "country": "IS",
+ "sources": [
+  {
+   "url": "https://www.skatturinn.is/einstaklingar/stadgreidsla/stadgreidsla/2026/stadgreidsla-2026",
+   "title": "Staðgreiðsla 2026 (Skatturinn)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skatthlutfall í staðgreiðslu samanstendur annarsvegar af tekjuskatti og hins vegar meðalútsvari (14,94%). Skatthlutfallið er 31,49% af tekjum 0 - 498.122 kr. (þar af 16,55% tekjuskattur) 37,99% af tekjum 498.123 - 1.398.450 kr. (þar af 23,05% tekjuskattur) 46,29% af tekjum yfir 1.398.450 (þar af 31,35% tekjuskattur) … Persónuafsláttur er 869.898 kr. á ári, eða 72.492 kr. á mánuði. Heimilt er að nýta allan (100%) ónýttan persónuafslátt maka á árinu 2026. … Tryggingagjald er 6,35% Sérstök trygging (0,65%) bætist við vegna launa sjómanna á fiskiskipum. Sundurliðun: - Almennt tryggingagjald 4,90% - Atvinnutryggingagjald 1,35% - Gjald í Ábyrgðasjóð launa vegna gjaldþrota 0,05% - Markaðsgjald 0,05% Samtals til staðgreiðslu 6,35%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iceland/individual/taxes-on-personal-income",
+   "title": "Iceland - Individual - Taxes on personal income (PwC, reviewed 22 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.althingi.is/lagas/nuna/2003090.html",
+   "said": "The municipal income tax withheld at source is 14.94% but varies from 12.44% to 14.94% in the final assessment, based on the decision of each municipality. … Icelandic-source income in the form of remuneration to non-resident directors and committee members, grants, or remuneration for independent personal services and art performances is taxed by assessment at a rate of 20% plus the average municipal income tax rate, which is 14.94% in 2026. … As of 1 January 2020, payments to authors from rightholder's associations are considered capital income and taxed at 22% after they have been made available to the public."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iceland/individual/other-taxes",
+   "title": "Iceland - Individual - Other taxes (PwC, reviewed 22 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.althingi.is/lagas/nuna/2003090.html",
+   "said": "The minimum contribution is 15.5% (4% for employees and 11.5% for employers) of all employees’ and self-employed persons’ remunerations. … The payment for the assessment year 2026 is ISK 14,614."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iceland/corporate/other-taxes",
+   "title": "Iceland - Corporate - Other taxes (PwC, reviewed 22 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.althingi.is/lagas/nuna/2003090.html",
+   "said": "There is a National Broadcasting Fee of ISK 22,200 per year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/iceland/individual/tax-administration",
+   "title": "Iceland - Individual - Tax administration (PwC, reviewed 22 June 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.althingi.is/lagas/nuna/2003090.html",
+   "said": "Individual income taxes are withheld at source each month. … The tax year for individuals equals the calendar year. Tax returns Individuals must file their tax returns before the end of 14 March in the consecutive year after the tax year."
+  },
+  {
+   "url": "https://www.skatturinn.is/english/companies/value-added-tax/",
+   "title": "Value Added Tax (VAT) (Skatturinn, English)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Activities of authors and musical composers and comparable artistic activities … those who sell taxable goods and services for 2.000.000 ISK or less in each twelve-month period from the beginning of their business activity … The standard rate of VAT in Iceland is 24%. The reduced rate of VAT in Iceland is 11%"
+  },
+  {
+   "url": "https://www.skatturinn.is/einstaklingar/helstutolur/2026/helstu-tolur-og-prosentur-2026",
+   "title": "Helstu tölur og prósentur 2026 (Skatturinn)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skattþrep virðisaukaskatts 24% 11%"
+  }
+ ],
+ "blockers": []
+}

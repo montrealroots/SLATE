@@ -1,0 +1,251 @@
+{
+ "topic": "tax.GL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Greenland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Greenland levies its own income tax as a flat percentage of taxable income: 10% national (landsskat), 26% or 28% municipal and 6% joint-municipal, so 42% (Qeqertalik, Qeqqata, Sermersooq) or 44% (Avannaata, Kujalleq) in total.",
+   "value": {
+    "rateByMunicipality": {
+     "Avannaata": 0.44,
+     "Kujalleq": 0.44,
+     "Qeqertalik": 0.42,
+     "Qeqqata": 0.42,
+     "Sermersooq": 0.42
+    },
+    "components": {
+     "landsskat": 0.1,
+     "kommuneskat": [
+      0.26,
+      0.28
+     ],
+     "faelleskommunal": 0.06
+    },
+    "setBy": "Inatsisartut (national) and each municipality"
+   },
+   "applies": "Income year 2026 (the authority's current table). The municipal personal allowance was not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Kommune Landsskat Kommuneskat Fælleskommunal skat Samlet skat Avannaata Kommunia 10% 28% 6% 44% Kommune Kujalleq 10% 28% 6% 44% Kommune Qeqertalik 10% 26% 6% 42% Qeqqata Kommunia 10% 26% 6% 42% Kommuneqarfik Sermersooq 10% 26% 6% 42%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The income year is the calendar year; the 2025 return was due by 1 May 2026, so the 2026 return is due 1 May 2027.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "05-01 following year"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Et skatteår består af et indkomstår, som varer 12 måneder og som følger kalenderåret."
+    },
+    {
+     "src": 2,
+     "said": "Selvangivelsen skal indsendes senest 1. maj 2026."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "There is no employee social contribution; employers pay a labour-market contribution (AMA) of 1.9% of gross pay in 2026, and employees fully liable in Greenland must pay 11% of A-income into a Greenlandic pension fund.",
+   "value": {
+    "employerAMA2026": 0.019,
+    "mandatoryPension": {
+     "rate": 0.11,
+     "base": "A-income",
+     "from": 2025
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Det betyder, at både private og offentlige arbejdsgivere skal indbetale 1,9 % i AMA i 2026."
+    },
+    {
+     "src": 3,
+     "said": "All employees subject to full tax liability in Greenland must pay 10% in 2024 (11% in 2025 and onwards) to a Greenlandic pension fund based on the A-tax basis (salaries, etc)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Pay and a freelancer's fee are A-income, taxed provisionally through the tax card; the payer of a performer, artist or author must withhold A-tax, and an employer with no tax card withholds 45%.",
+   "value": {
+    "Aincome": [
+     "pay",
+     "freelancer's fee",
+     "board fees"
+    ],
+    "performersAndAuthors": "A-income, payer withholds",
+    "noTaxCardRate": 0.45
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Den løn, din arbejdsgiver betaler dig • Din løn som freelancer, f.eks. oversætter"
+    },
+    {
+     "src": 5,
+     "said": "Selvstyrets bekendtgørelse siger, at koncerter og optræden beskattes som A-indkomst. Det betyder også, at den der betaler musikeren skal indeholde skat når beløbet udbetales."
+    },
+    {
+     "src": 6,
+     "said": "akissarsiannit 45 procentimik sulisitsisoq ilanngaasassaaq."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident with limited liability is taxed on Greenland-source income, including pay for work there (stays over 14 days) and royalties, as a rule at up to 44%; income as an artiste is among it.",
+   "value": {
+    "maxRate": 0.44,
+    "scope": "Greenland-source income",
+    "artistes": true
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "An individual with limited tax liability to Greenland will, as a main rule, be taxed at up to 44% on income from sources in Greenland."
+    },
+    {
+     "src": 7,
+     "said": "Certain other types of personal income, including income as an artiste or sportsman, director’s fees, pension distributions"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Author's fees, copyright payments and artists' fees are A-income (tax withheld by the payer), while royalties and KODA/GRAMEX payments are B-income; an artist may deduct only the costs of the artistic work. Royalties paid abroad bear 30% withholding unless a treaty reduces it.",
+   "value": {
+    "A": [
+     "Forfatterhonorar",
+     "Ophavsret",
+     "Kunstnere, vederlag",
+     "Artister, vederlag"
+    ],
+    "B": [
+     "Royalty",
+     "KODA/GRAMEX-afgifter"
+    ],
+    "royaltyWithholdingNonResident": 0.3
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Forfatterhonorar A Gaver (for modtageren) B Husflid B Kalaallit Nunaata Radioa Medvirken, honorar for A KODA/GRAMEX-afgifter B Kost og logi, værdi af fri A Kunstnere, vederlag A Ophavsret A"
+    },
+    {
+     "src": 5,
+     "said": "Royalty B Sangere og solister, vederlag A"
+    },
+    {
+     "src": 8,
+     "said": "Royalties: 30% (may be reduced due to treaty reduction)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Greenland has no VAT.",
+   "value": {
+    "vat": null
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "There is no VAT in Greenland."
+    }
+   ]
+  }
+ ],
+ "country": "GL",
+ "sources": [
+  {
+   "url": "https://aka.gl/da/borger/skat/skat-udskrivningsprocenter",
+   "title": "Skat - udskrivningsprocenter (Skattestyrelsen, Greenland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Kommune Landsskat Kommuneskat Fælleskommunal skat Samlet skat Avannaata Kommunia 10% 28% 6% 44% Kommune Kujalleq 10% 28% 6% 44% Kommune Qeqertalik 10% 26% 6% 42% Qeqqata Kommunia 10% 26% 6% 42% Kommuneqarfik Sermersooq 10% 26% 6% 42% … Det betyder, at både private og offentlige arbejdsgivere skal indbetale 1,9 % i AMA i 2026."
+  },
+  {
+   "url": "https://aka.gl/da/borger/introduktion-til-skatteaaret",
+   "title": "Introduktion til skatteåret (Skattestyrelsen)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Et skatteår består af et indkomstår, som varer 12 måneder og som følger kalenderåret."
+  },
+  {
+   "url": "https://aka.gl/da/borger/skat/selvangivelse",
+   "title": "Selvangivelse (Skattestyrelsen)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Selvangivelsen skal indsendes senest 1. maj 2026."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greenland/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: greenland Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://aka.gl/da/borger/skat/skattelove",
+   "said": "All employees subject to full tax liability in Greenland must pay 10% in 2024 (11% in 2025 and onwards) to a Greenlandic pension fund based on the A-tax basis (salaries, etc)."
+  },
+  {
+   "url": "https://aka.gl/da/borger/skat/a-og-b-skat",
+   "title": "A- og B-skat (Skattestyrelsen)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Den løn, din arbejdsgiver betaler dig • Din løn som freelancer, f.eks. oversætter"
+  },
+  {
+   "url": "https://aka.gl/da/erhverv/musikere-og-kunstnere",
+   "title": "Musikere og kunstnere (Skattestyrelsen, Greenland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Selvstyrets bekendtgørelse siger, at koncerter og optræden beskattes som A-indkomst. Det betyder også, at den der betaler musikeren skal indeholde skat når beløbet udbetales. … Forfatterhonorar A Gaver (for modtageren) B Husflid B Kalaallit Nunaata Radioa Medvirken, honorar for A KODA/GRAMEX-afgifter B Kost og logi, værdi af fri A Kunstnere, vederlag A Ophavsret A … Royalty B Sangere og solister, vederlag A"
+  },
+  {
+   "url": "https://www.sullissivik.gl/Emner/B_Skatter-afgifter-og-gaeld-til-det-offentlige/Skat/Skattekort_nyt-design_Original",
+   "title": "Akileraartarnermut allagartaq (Sullissivik)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "akissarsiannit 45 procentimik sulisitsisoq ilanngaasassaaq."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greenland/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: greenland Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://aka.gl/da/borger/skat/skattelove",
+   "said": "An individual with limited tax liability to Greenland will, as a main rule, be taxed at up to 44% on income from sources in Greenland. … Certain other types of personal income, including income as an artiste or sportsman, director’s fees, pension distributions"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greenland/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: greenland Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://aka.gl/da/borger/skat/skattelove",
+   "said": "Royalties: 30% (may be reduced due to treaty reduction)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/greenland/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: greenland Corporate - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://aka.gl/da/erhverv/afgifter",
+   "said": "There is no VAT in Greenland."
+  }
+ ],
+ "blockers": []
+}

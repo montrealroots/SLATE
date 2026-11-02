@@ -1,0 +1,118 @@
+{
+ "country": "GG",
+ "read": "2026-11-01",
+ "route": "Short Term Employment Permit",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The Guernsey employer applies for the Employment Permit through the Population Portal; a performer who isn't British or Irish then applies online to UK Visas and Immigration for a Bailiwick work visa once the decision in principle is given.",
+  "first": "A full-time job offer (at least 35 hours a week) from a Guernsey employer, and the Population Management Office's decision in principle on the Employment Permit before the visa.",
+  "fees": [
+   {
+    "what": "Short Term Employment Permit application, in policy (law firm's figure, 2024)",
+    "amount": "120.00",
+    "currency": "GBP"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 8,
+    "unit": "weeks"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 12,
+   "unit": "months",
+   "renewable": true
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://gov.gg/eppfaq",
+   "title": "States of Guernsey, Employment Permit Policy: Frequently asked questions",
+   "read": "2026-11-01",
+   "said": "Short Term Employment Permits will continue to be issued for up to 12 months, renewable upon expiry. … anyone who is not a British or Irish national needs to hold a valid immigration status. This means that any new EU/EEA/Swiss nationals now need to apply for a visa to live and work in Guernsey. … Currently the processing times for 'in-policy' Employment Permits applications are up to approximately 8 weeks from final submission (date the full administration and information is received) for a 'decision in principle'. For 'out of policy' Employment Permits applications are up to approximately 10 weeks from final submission for a 'decision in principle'. … In order for an Employment Permit to be granted a person needs to be working at least 35 hours a week (there are some exceptions), so they are unable to be granted a Permit for part-time employment.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "processing",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://gov.gg/visaguidance",
+   "title": "States of Guernsey, Guernsey visa application guidance",
+   "read": "2026-11-01",
+   "said": "All applications are made online directly to the UK Government's Visas and Immigration office (UKVI), which is a division of the UK Home Office. These applications are specifically designed for the Bailiwick and differ from applications for the rest of the UK Common Travel Area.",
+   "kind": "primary",
+   "fields": [
+    "applies"
+   ]
+  },
+  {
+   "url": "https://www.careyolsen.com/sites/default/files/uploads/CO_GSY_EMP_A-guide-to-Guernsey%27s-population-management-regime-following-the-new-Employment-Permit-Policy_updated_05.2024_0.pdf",
+   "title": "Carey Olsen, A guide to Guernsey's population management regime following the new Employment Permit Policy (updated May 2024); rests on the Population Management (Employment Permit Applications) Regulations, which Carey Olsen's 2022 Guernsey immigration guide names as setting the fees (guernseylegalresources.gg answers this client with a JavaScript bot check, HTTP 403)",
+   "read": "2026-11-01",
+   "said": "There is a small fee associated with making an Employment Permit Application, ranging from £700 for a LTEP (for an in- policy application) to £120 for a STEP (in-policy application). These fees may increase from time to time.",
+   "kind": "secondary",
+   "quotes": "https://www.guernseylegalresources.gg/",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.careyolsen.com/sites/default/files/22551%20CO_RS_GSY_Mondaq%20Immigration%20guide_4-22%20v5.pdf",
+   "title": "Carey Olsen, Immigration guide: Q&A on relocating to Guernsey (April 2022); rests on the Immigration (Bailiwick of Guernsey) Rules 2008, para. 46G (not read: guernseylegalresources.gg bot-checks this client)",
+   "read": "2026-11-01",
+   "said": "take part in a location shoot as a member of a film crew, meaning that they are either a film actor, producer, director or technician, paid or employed by an overseas company and are coming to Bailiwick for location sequences only; … The Population Management (Employment Permit Applications) Regulations, 2017 outline the fees payable for the permits as set out below:",
+   "kind": "secondary",
+   "quotes": "https://www.guernseylegalresources.gg/",
+   "fields": [
+    "exempt",
+    "fees"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "The work visa fee UK Visas and Immigration charges for a Bailiwick of Guernsey work visa, and the current STEP fee in the Regulations",
+   "tried": {
+    "institution": "gov.gg immigration and visa guidance pages link the Immigration (Fees for Work Permits and Leave to Remain) (Bailiwick of Guernsey) Order, 2025 on guernseylegalresources.gg, which answers this client with a 'Just a moment... Enable JavaScript' bot check (HTTP 403).",
+    "official-register": "The UK Home Office fees table of 8 October 2026 (assets.publishing.service.gov.uk, Fees_Table_08_October_26.ods, saved as GG-ukfees-oct26.ods) has no Bailiwick line; visa-fees.homeoffice.gov.uk answers 'Service unavailable'.",
+    "web-search": "'Guernsey immigration entertainer creative worker work permit fee gov.gg', 'gov.gg Short Term Employment Permit application fee 2026'; law-firm guides only (Carey Olsen's £120, used above).",
+    "trade-press": "Guernsey Press and Bailiwick Express items found give the 2021 £120 STEP fee and its waiver to 31 March 2023, not the visa fee.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "Whether a film actor, producer or director paid by an overseas company may work on a location shoot as a business visitor, under para. 46G of the Immigration (Bailiwick of Guernsey) Rules 2008",
+   "tried": {
+    "institution": "gov.gg Population Management FAQ and visa guidance: no visitor work rule given.",
+    "official-register": "guernseylegalresources.gg (the Rules) bot-checks this client (HTTP 403).",
+    "web-search": "'\"Bailiwick of Guernsey\" immigration rules visitor \"permitted paid engagement\" OR entertainer'; Carey Olsen's 2022 guide lists the film-crew activity (above), with no limit in days beyond the visit.",
+    "trade-press": "Mondaq and Legal500 reproductions of the same law-firm guide only.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read."
+   }
+  },
+  {
+   "field": "union",
+   "sought": "Any union or arts-body step for a performer's Employment Permit",
+   "tried": {
+    "institution": "gov.gg Employment Permit FAQ: none named.",
+    "official-register": "Employment Permit Policy (gov.gg/epp) application guides not read in full.",
+    "web-search": "'Guernsey entertainer work permit' searches: none.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org tried for the authority's page: the connection resets from this environment (curl: (35) Recv failure: Connection reset by peer, 2026-11-01); no snapshot read."
+   }
+  }
+ ],
+ "note": "A British or Irish performer needs only the Employment Permit; anyone else a Bailiwick work visa as well, whose fee wasn't found. A film actor, producer or director paid abroad and coming for location sequences only can come as a business visitor (a law firm's reading of the Rules); not modelled in days."
+}

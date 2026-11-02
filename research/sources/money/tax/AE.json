@@ -1,0 +1,218 @@
+{
+ "topic": "tax.AE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in United Arab Emirates: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The UAE levies no income tax on individuals, federal or emirate-level, so a resident's wages and fees bear none.",
+   "value": {
+    "none": true,
+    "currency": "AED",
+    "brackets": []
+   },
+   "applies": "All individuals",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The UAE does not levy income tax on individuals. However, it levies 5 per cent value added tax on the purchase of goods and services."
+    },
+    {
+     "src": 1,
+     "said": "There is currently no personal income tax in the United Arab Emirates. As such, there are no individual tax registration or reporting obligations."
+    }
+   ]
+  },
+  {
+   "item": "scheme",
+   "finding": "An individual working for themselves falls under corporate tax only when conducting business under a commercial licence (or a foreign individual trading regularly in the UAE): 0% on taxable income up to AED 375,000 and 9% above; wages are not business income, and PwC (quoting the Corporate Tax Law) gives an AED 1 million turnover test for natural persons.",
+   "value": {
+    "currency": "AED",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 375000,
+      "rate": 0
+     },
+     {
+      "from": 375000,
+      "to": null,
+      "rate": 0.09
+     }
+    ],
+    "naturalPersonTurnoverThreshold": 1000000,
+    "wagesExcluded": true
+   },
+   "applies": "Natural persons conducting a business or business activity",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Scope CT will apply to: all businesses and individuals conducting business activities under a commercial licence in the UAE … Foreign entities and individuals only if they conduct a trade or business in the UAE in an ongoing or regular manner … CT Rate As per Ministry of Finance, CT rates are: 0 per cent for taxable income up to AED 375,000 9 per cent for taxable income above AED 375,000"
+    },
+    {
+     "src": 1,
+     "said": "Under the UAE CT Law, natural persons who conduct a business or business activity in the United Arab Emirates will be subject to UAE CT at 9% where the total turnover derived from such business or business activity exceeds 1 million UAE dirham (AED). For this purpose, wages, personal investment income, and real estate investment income will not be considered for determining such turnover."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security covers UAE nationals only (other GCC nationals under their home scheme); under Federal Law No. 57 of 2023 the contribution is 26% of the contribution salary, 11% from the insured and 15% from the employer; non-GCC nationals pay none.",
+   "value": {
+    "employee": 0.11,
+    "employer": 0.15,
+    "governmentSupport": {
+     "rate": 0.025,
+     "outOfEmployerShare": true,
+     "salaryBelow": 20000
+    },
+    "covers": "UAE nationals",
+    "nonGCC": "none",
+    "currency": "AED"
+   },
+   "applies": "Emirati employees under Federal Law No. (57) of 2023",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Contribution rates As per the 2023 law, the total contribution rates have become 26%, out of which the insured bears 11% and the employer (government and private sector entities) bears 15%. The UAE government supports private sector entities employing Emiratis whose contribution account salaries are less than Dh20,000, by paying 2.5% out of the employers 15% share."
+    },
+    {
+     "src": 4,
+     "said": "There is a social security regime in the United Arab Emirates that applies to qualifying UAE and other GCC national employees only. Non-GCC nationals are not subject to social security in the United Arab Emirates."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Nothing is withheld from wages for tax, since individuals bear no income tax.",
+   "value": {
+    "none": true
+   },
+   "applies": "All pay",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The UAE does not levy income tax on individuals. However, it levies 5 per cent value added tax on the purchase of goods and services."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer, writer or director bears no income tax; a non-resident without a permanent establishment is subject only to corporate-tax withholding at 0%.",
+   "value": {
+    "rate": 0,
+    "final": true,
+    "threshold": null
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The UAE does not levy income tax on individuals. However, it levies 5 per cent value added tax on the purchase of goods and services."
+    },
+    {
+     "src": 5,
+     "said": "Non-resident persons that do not have a Permanent Establishment in the UAE or that earn UAE sourced income that is not related to their Permanent Establishment may be subject to Withholding Tax (at the rate of 0%)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 5%; a business must register once taxable supplies and imports exceed AED 375,000 (voluntary from AED 187,500).",
+   "value": {
+    "currency": "AED",
+    "standard": 0.05,
+    "threshold": 375000,
+    "voluntaryThreshold": 187500
+   },
+   "applies": "From 1 January 2018",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Value Added Tax (VAT) was introduced across the UAE on 1st January 2018 at a standard rate of 5%. … A business must register for VAT if their taxable supplies and imports exceed the mandatory registration threshold of AED 375,000. They may also opt for voluntary registration if their taxable supplies and imports are below the mandatory threshold but exceed the voluntary registration threshold of AED 187,500."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "There is no personal income tax; a natural person whose business turnover passes AED 1 million in a calendar year is under corporate tax for that Gregorian calendar year, registers by 31 March of the next year and files the return by 30 September of it.",
+   "value": {
+    "currency": "AED",
+    "taxPeriod": "calendar year (1 January to 31 December)",
+    "turnoverThreshold": 1000000,
+    "registerBy": "31 March of the following year",
+    "returnBy": "30 September of the following year",
+    "firstPeriod": 2024
+   },
+   "applies": "Natural persons conducting a business in the UAE, from the 2024 calendar year",
+   "sources": [
+    {
+     "src": 7,
+     "said": "The guide explains that the first potential Tax Period for a natural person conducting a Business or Business Activity is the 2024 Gregorian calendar year. … their total Turnover in that calendar year exceed ed AED 1 million, they are a Taxable Person, who must register for Corporate Tax no later than 31 March of the calendar year following the year in which their total Turnover exceeded the AED 1 million threshold … they are required to submit an application to register for Corporate Tax no later than the 31 March 2025, and, consequently, submit a Corporate Tax Return no later than 30 September 2025."
+    }
+   ]
+  }
+ ],
+ "country": "AE",
+ "sources": [
+  {
+   "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+   "title": "Taxation | The Official Portal of the UAE Government",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The UAE does not levy income tax on individuals. However, it levies 5 per cent value added tax on the purchase of goods and services."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/united-arab-emirates/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: United Arab Emirates, Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+   "said": "There is currently no personal income tax in the United Arab Emirates. As such, there are no individual tax registration or reporting obligations. … Under the UAE CT Law, natural persons who conduct a business or business activity in the United Arab Emirates will be subject to UAE CT at 9% where the total turnover derived from such business or business activity exceeds 1 million UAE dirham (AED). For this purpose, wages, personal investment income, and real estate investment income will not be considered for determining such turnover."
+  },
+  {
+   "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax",
+   "title": "Corporate tax (CT) | The Official Portal of the UAE Government",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Scope CT will apply to: all businesses and individuals conducting business activities under a commercial licence in the UAE … Foreign entities and individuals only if they conduct a trade or business in the UAE in an ongoing or regular manner … CT Rate As per Ministry of Finance, CT rates are: 0 per cent for taxable income up to AED 375,000 9 per cent for taxable income above AED 375,000"
+  },
+  {
+   "url": "https://www.gpssa.gov.ae/pages/en/media-center/news/gpssa-reviews-most-prominent-features-federal-law-no-57-2023",
+   "title": "GPSSA reviews the most prominent features of Federal Law No. (57) of 2023",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Contribution rates As per the 2023 law, the total contribution rates have become 26%, out of which the insured bears 11% and the employer (government and private sector entities) bears 15%. The UAE government supports private sector entities employing Emiratis whose contribution account salaries are less than Dh20,000, by paying 2.5% out of the employers 15% share."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/united-arab-emirates/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: United Arab Emirates, Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.gpssa.gov.ae/pages/en/media-center/news/gpssa-reviews-most-prominent-features-federal-law-no-57-2023",
+   "said": "There is a social security regime in the United Arab Emirates that applies to qualifying UAE and other GCC national employees only. Non-GCC nationals are not subject to social security in the United Arab Emirates."
+  },
+  {
+   "url": "https://mof.gov.ae/en/public-finance/tax/corporate-tax/",
+   "title": "Corporate Tax in the UAE | Ministry of Finance",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Non-resident persons that do not have a Permanent Establishment in the UAE or that earn UAE sourced income that is not related to their Permanent Establishment may be subject to Withholding Tax (at the rate of 0%)."
+  },
+  {
+   "url": "https://mof.gov.ae/en/public-finance/tax/vat/",
+   "title": "Value Added Tax (VAT) | Ministry of Finance",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Value Added Tax (VAT) was introduced across the UAE on 1st January 2018 at a standard rate of 5%. … A business must register for VAT if their taxable supplies and imports exceed the mandatory registration threshold of AED 375,000. They may also opt for voluntary registration if their taxable supplies and imports are below the mandatory threshold but exceed the voluntary registration threshold of AED 187,500."
+  },
+  {
+   "url": "https://tax.gov.ae/en/media.centre/news/fta.urges.natural.persons.to.register.for.corporate.tax.before.end.of.march.2025.to.avoid.administrative.penalties.aspx",
+   "title": "FTA urges Natural Persons to register for Corporate Tax before end of March 2025 to avoid Administrative Penalties | Federal Tax Authority",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The guide explains that the first potential Tax Period for a natural person conducting a Business or Business Activity is the 2024 Gregorian calendar year. … their total Turnover in that calendar year exceed ed AED 1 million, they are a Taxable Person, who must register for Corporate Tax no later than 31 March of the calendar year following the year in which their total Turnover exceeded the AED 1 million threshold … they are required to submit an application to register for Corporate Tax no later than the 31 March 2025, and, consequently, submit a Corporate Tax Return no later than 30 September 2025."
+  }
+ ],
+ "blockers": []
+}

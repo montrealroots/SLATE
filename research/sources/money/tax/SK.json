@@ -1,0 +1,287 @@
+{
+ "topic": "tax.SK",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Slovakia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "For 2026 the tax base from employment, artistic works and performances, rental and other income is taxed at 19% to €43,983.32, 25% to €60,349.21, 30% to €75,010.32 and 35% above; business and other self-employed income is taxed at 15% where turnover is at most €100,000, otherwise on the same scale. There is no local income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 43983.32,
+      "rate": 0.19
+     },
+     {
+      "from": 43983.32,
+      "to": 60349.21,
+      "rate": 0.25
+     },
+     {
+      "from": 60349.21,
+      "to": 75010.32,
+      "rate": 0.3
+     },
+     {
+      "from": 75010.32,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "selfEmployedSmall": {
+     "rate": 0.15,
+     "turnoverMax": 100000
+    },
+    "regional": null
+   },
+   "applies": "Tax period 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "19 % z tej časti základu dane, ktorá nepresiahne sumu 43 983,32 eura vrátane 25 % z tej časti základu dane, ktorá presiahne sumu 43 983,32 eura a nepresiahne sumu 60 349,21 eura vrátane 30 % z tej časti základu dane, ktorá presiahne sumu 60 349,21 eura a nepresiahne sumu 75 010,32 eura vrátane 35 % z tej časti základu dane, ktorá presiahne sumu 75 010,32 eura 2. 15 %"
+    },
+    {
+     "src": 0,
+     "said": "z príjmov z použitia umeleckého diela a použitia umeleckého výkonu (§ 6 ods. 4)"
+    },
+    {
+     "src": 0,
+     "said": "zdaniteľné príjmy (výnosy) z podnikania alebo z inej samostatnej zárobkovej činnosti (podľa § 6 ods. 1 a 2) neprevyšujúce sumu 100 000 eur"
+    },
+    {
+     "src": 1,
+     "said": "There are no local taxes on personal income in Slovakia."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The taxpayer's allowance for 2026 is €5,966.73 (21 times the subsistence minimum of €284.13) for a tax base up to €26,083.13; above that it is €14,661.11 less one third of the tax base, not below zero; it is set only against active (employment or business) income.",
+   "value": {
+    "currency": "EUR",
+    "allowance": 5966.73,
+    "fullUpTo": 26083.13,
+    "taperFormula": "14661.11 - taxBase/3, min 0",
+    "subsistenceMinimum": 284.13
+   },
+   "applies": "Tax period 2026; not available to a recipient of an old-age pension at the start of the year.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Keďže suma životného minima k 1.1.2026 je stanovená vo výške 284,13 eura, nezdaniteľná časť základu dane na daňovníka predstavuje pre rok 2026 sumu 5 966,73 eura."
+    },
+    {
+     "src": 2,
+     "said": "Ak je základ dane daňovníka vyšší ako 26 083,13 eura, nezdaniteľná časť základu dane na daňovníka sa určí ako rozdiel medzi sumou 14 661,11 eur a (vypočítaná ako 51,6-násobok platného životného minima) a jednej tretiny základu dane daňovníka ; ak táto suma je nižšia ako nula, nezdaniteľná časť základu dane ročne na daňovníka sa rovná nule."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a return is due by 31 March of the next year when taxable income passes €2,983.37 for 2026 (extendable by three months, six with foreign income), unless all income was taxed through payroll with an employer's year-end reconciliation or by final withholding.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31 of the following year",
+    "filingThreshold2026": 2983.37,
+    "extension": {
+     "months": 3,
+     "foreignIncomeMonths": 6
+    }
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Daňové priznanie k dani z príjmov fyzických osôb za rok 2026 je fyzická osoba povinná podať v prípade, ak jej celkové zdaniteľné príjmy dosiahnuté v roku 2026 presiahnu sumu 2 983,37 eura"
+    },
+    {
+     "src": 4,
+     "said": "a tax return must be filed by 31 March following the calendar year-end, unless all of the taxpayer's taxable income has been taxed through a Slovak payroll or through WHT"
+    },
+    {
+     "src": 4,
+     "said": "The deadline can be extended up to three months upon notification and up to six months if the individual has income from foreign sources."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds income tax monthly from pay; a self-employed person pays advances based on the prior year's liability.",
+   "value": {
+    "employment": "monthly advances withheld by employer, annual reconciliation",
+    "selfEmployed": "advances on prior-year liability"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Income tax is withheld monthly at source from employment income for employees of a Slovak company or branch"
+    },
+    {
+     "src": 4,
+     "said": "For non-employment income that is not liable to Slovak WHT, individuals are responsible for making advance tax payments on the basis of their previous year's tax liability."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 9.4% social insurance (assessment base capped at €16,764 a month) and 5% health insurance with no cap; the employer pays 24.4% social insurance on the same capped base, 0.8% accident insurance uncapped, and 11% health insurance; a self-employed person pays health insurance at 16% and social insurance from a minimum of €303.11 a month.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "social": 0.094,
+     "health": 0.05,
+     "capMonthly": 16764
+    },
+    "employer": {
+     "social": 0.244,
+     "accident": 0.008,
+     "health": 0.11,
+     "capMonthly": 16764
+    },
+    "selfEmployed": {
+     "health": 0.16,
+     "minSocialMonthly": 303.11,
+     "minBase": "60% of average wage"
+    }
+   },
+   "applies": "From 1 January 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "As of 1 January 2026, employee contributions to social security amount to 9.4% of remuneration, subject to a maximum assessment base of EUR 16,764 per month."
+    },
+    {
+     "src": 5,
+     "said": "Employee contributions to health insurance have increased to 5% of remuneration (reduced rate 2.5%), and since the cap on the assessment base was abolished, health insurance is calculated on the employee’s total remuneration."
+    },
+    {
+     "src": 5,
+     "said": "Employer contributions to social security amount to 24.4% of remuneration, subject to the same maximum assessment base (EUR 16,764 per month)."
+    },
+    {
+     "src": 5,
+     "said": "plus an accident insurance contribution of 0.8% of total payroll, which is not capped. Employer contributions to health insurance remain at 11% of remuneration, with no limit on the assessment base."
+    },
+    {
+     "src": 5,
+     "said": "For self-employed individuals, the minimum assessment base increases to 60% of the average wage, resulting in a minimum monthly social insurance contribution of EUR 303.11. The health insurance contribution rate for self-employed individuals rises from 15% to 16% of the assessment base."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A Slovak payer withholds 19% from fees for services performed in Slovakia and from royalties paid to a non-resident (35% to a non-cooperative jurisdiction), subject to treaty relief; work performed in Slovakia is Slovak-source income.",
+   "value": {
+    "servicesRate": 0.19,
+    "royaltiesRate": 0.19,
+    "nonCooperative": 0.35,
+    "payBy": "15 days after the end of the month following payment"
+   },
+   "applies": "Payments by Slovak payers to non-residents, 2026; whether the 19% is final for an individual performer was not stated.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Payments WHT (%) Fees for services 19/35 Royalties * 19/35"
+    },
+    {
+     "src": 1,
+     "said": "Slovak-source income includes income from work performed in the Slovak Republic"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears 23% VAT once turnover passes €50,000 in the calendar year (registration from the next year, at once above €62,500).",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.23,
+    "reduced": [
+     0.19,
+     0.05
+    ],
+    "threshold": 50000,
+    "immediateThreshold": 62500
+   },
+   "applies": "From 1 January 2025, taxable persons established in Slovakia.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "From 1 January 2025, a basic VAT rate of 23% (previously 20%) applies to all taxable supplies, with certain exceptions."
+    },
+    {
+     "src": 7,
+     "said": "From 1 January 2025, taxable persons established in Slovakia will become VAT payers if their annual turnover exceeds the threshold of EUR 50,000 in the current calendar year. VAT registration is generally effective from the next calendar year; however, if the annual turnover exceeds the threshold of EUR 62,500, VAT registration is effective immediately."
+    }
+   ]
+  }
+ ],
+ "country": "SK",
+ "sources": [
+  {
+   "url": "https://podpora.financnasprava.sk/081400-Sadzba-dane-z-príjmov-fyzickej-osoby-za-rok-2026",
+   "title": "Sadzba dane z príjmov fyzickej osoby za rok 2026 (Finančná správa SR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "19 % z tej časti základu dane, ktorá nepresiahne sumu 43 983,32 eura vrátane 25 % z tej časti základu dane, ktorá presiahne sumu 43 983,32 eura a nepresiahne sumu 60 349,21 eura vrátane 30 % z tej časti základu dane, ktorá presiahne sumu 60 349,21 eura a nepresiahne sumu 75 010,32 eura vrátane 35 % z tej časti základu dane, ktorá presiahne sumu 75 010,32 eura 2. 15 % … z príjmov z použitia umeleckého diela a použitia umeleckého výkonu (§ 6 ods. 4) … zdaniteľné príjmy (výnosy) z podnikania alebo z inej samostatnej zárobkovej činnosti (podľa § 6 ods. 1 a 2) neprevyšujúce sumu 100 000 eur"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/slovak-republic/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Slovak Republic, Individual - Taxes on personal income (last reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2003/595/",
+   "said": "There are no local taxes on personal income in Slovakia. … Slovak-source income includes income from work performed in the Slovak Republic"
+  },
+  {
+   "url": "https://podpora.financnasprava.sk/214187-Nezdaniteln%C3%A1-%C4%8Das%C5%A5-z%C3%A1kladu-dane-na-da%C5%88ovn%C3%ADka-za-rok-2026",
+   "title": "Nezdaniteľná časť základu dane na daňovníka za rok 2026 (Finančná správa SR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Keďže suma životného minima k 1.1.2026 je stanovená vo výške 284,13 eura, nezdaniteľná časť základu dane na daňovníka predstavuje pre rok 2026 sumu 5 966,73 eura. … Ak je základ dane daňovníka vyšší ako 26 083,13 eura, nezdaniteľná časť základu dane na daňovníka sa určí ako rozdiel medzi sumou 14 661,11 eur a (vypočítaná ako 51,6-násobok platného životného minima) a jednej tretiny základu dane daňovníka ; ak táto suma je nižšia ako nula, nezdaniteľná časť základu dane ročne na daňovníka sa rovná nule."
+  },
+  {
+   "url": "https://podpora.financnasprava.sk/516395-Povinnos%C5%A5-poda%C5%A5-da%C5%88ov%C3%A9-priznanie-k-dani-z-pr%C3%ADjmov-FO-za-rok-2026",
+   "title": "Povinnosť podať daňové priznanie k dani z príjmov FO za rok 2026 (Finančná správa SR)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Daňové priznanie k dani z príjmov fyzických osôb za rok 2026 je fyzická osoba povinná podať v prípade, ak jej celkové zdaniteľné príjmy dosiahnuté v roku 2026 presiahnu sumu 2 983,37 eura"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/slovak-republic/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Slovak Republic, Individual - Tax administration (last reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2003/595/",
+   "said": "a tax return must be filed by 31 March following the calendar year-end, unless all of the taxpayer's taxable income has been taxed through a Slovak payroll or through WHT … The deadline can be extended up to three months upon notification and up to six months if the individual has income from foreign sources. … Income tax is withheld monthly at source from employment income for employees of a Slovak company or branch … For non-employment income that is not liable to Slovak WHT, individuals are responsible for making advance tax payments on the basis of their previous year's tax liability."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Slovak Republic, Individual - Other taxes (last reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2003/595/",
+   "said": "As of 1 January 2026, employee contributions to social security amount to 9.4% of remuneration, subject to a maximum assessment base of EUR 16,764 per month. … Employee contributions to health insurance have increased to 5% of remuneration (reduced rate 2.5%), and since the cap on the assessment base was abolished, health insurance is calculated on the employee’s total remuneration. … Employer contributions to social security amount to 24.4% of remuneration, subject to the same maximum assessment base (EUR 16,764 per month). … plus an accident insurance contribution of 0.8% of total payroll, which is not capped. Employer contributions to health insurance remain at 11% of remuneration, with no limit on the assessment base. … For self-employed individuals, the minimum assessment base increases to 60% of the average wage, resulting in a minimum monthly social insurance contribution of EUR 303.11. The health insurance contribution rate for self-employed individuals rises from 15% to 16% of the assessment base."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/slovak-republic/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Slovak Republic, Corporate - Withholding taxes (last reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2003/595/",
+   "said": "Payments WHT (%) Fees for services 19/35 Royalties * 19/35"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/slovak-republic/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Slovak Republic, Corporate - Other taxes (last reviewed 9 September 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/2003/595/",
+   "said": "From 1 January 2025, a basic VAT rate of 23% (previously 20%) applies to all taxable supplies, with certain exceptions. … From 1 January 2025, taxable persons established in Slovakia will become VAT payers if their annual turnover exceeds the threshold of EUR 50,000 in the current calendar year. VAT registration is generally effective from the next calendar year; however, if the annual turnover exceeds the threshold of EUR 62,500, VAT registration is effective immediately."
+  }
+ ],
+ "blockers": []
+}

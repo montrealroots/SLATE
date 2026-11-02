@@ -1,0 +1,434 @@
+{
+ "topic": "ages.AU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Australia: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "childPerformers",
+   "finding": "In New South Wales a child performer or model is anyone under sixteen, the person who casts and directs the child must hold the Children's Guardian's Authority and give 7 days' notice, and film and television work is capped by age (4 hours a day under 3 years, 6 hours at 3 to 7, 8 hours at 8 to 15, within 6 a.m. to 11 p.m.); in Victoria an employer needs a licence for anyone under fifteen, with no minimum age in entertainment, and the Code caps film and television work at 4, 6 and 8 hours a day by age.",
+   "value": {
+    "AU.02": {
+     "child": "under 16",
+     "authority": "Authority to employ children (Office of the Children's Guardian), held by the person who casts and directs",
+     "notice": "7 days",
+     "filmTV": [
+      {
+       "under": "6 months",
+       "daysPerWeek": 1,
+       "window": "06:00-18:00",
+       "hours": 4
+      },
+      {
+       "from": "6 months",
+       "under": 3,
+       "daysPerWeek": 2,
+       "window": "06:00-18:00",
+       "hours": 4
+      },
+      {
+       "from": 3,
+       "under": 8,
+       "daysPerWeek": 4,
+       "window": "06:00-23:00",
+       "hours": 6
+      },
+      {
+       "from": 8,
+       "under": 16,
+       "daysPerWeek": 5,
+       "window": "06:00-23:00",
+       "hours": 8
+      }
+     ],
+     "restBetweenShifts": 12,
+     "schoolDayMaxHours": 4,
+     "workPlusSchoolWeekMax": 50,
+     "nurseUnder3": true,
+     "reachesRoles": [
+      "performer",
+      "model"
+     ]
+    },
+    "AU.07": {
+     "licence": "child employment licence (entertainment), Workforce Inspectorate Victoria, under 15",
+     "minimumAge": null,
+     "filmTV": [
+      {
+       "under": 3,
+       "daysPerWeek": 3,
+       "window": "06:00-18:00",
+       "hours": 4,
+       "consecutiveDays": 3
+      },
+      {
+       "from": 3,
+       "under": 8,
+       "daysPerWeek": 4,
+       "window": "06:00-23:00",
+       "hours": 6,
+       "consecutiveDays": 4
+      },
+      {
+       "from": 8,
+       "under": 15,
+       "daysPerWeek": 5,
+       "window": "06:00-23:00",
+       "hours": 8,
+       "consecutiveDays": 5
+      }
+     ],
+     "restBetweenShifts": 12,
+     "workPlusEducationWeekMax": 40
+    }
+   },
+   "applies": "New South Wales: Children's Guardian Act and Regulation 2022 and the Code of Practice, as the Office of the Children's Guardian sets them out. Victoria: Child Employment Act 2003 and the Mandatory Code of Practice for the Employment of Children in Entertainment (2014), clause 22, Table A. Other States and Territories aren't read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "A child is a performer or model who is under 16 years of age."
+    },
+    {
+     "src": 1,
+     "said": "and you employ children under 16 years of age for work in exhibition or entertainment, still photography or modelling."
+    },
+    {
+     "src": 2,
+     "said": "Under 6 months 1 day 6.00am - 6.00pm 4 hours 6 months to under 3 years 2 days 6.00am - 6.00pm 4 hours 3 years to under 8 years 4 days 6.00am - 11.00pm 6 hours 8 years to under 16 years 5 days 6:00am -11:00pm 8 hours"
+    },
+    {
+     "src": 2,
+     "said": "a child does not start work less than 12 hours after previously finishing work"
+    },
+    {
+     "src": 3,
+     "said": "There is no minimum age of employment in entertainment, but you need a licence to employ anyone under 15."
+    },
+    {
+     "src": 4,
+     "said": "Under 3 years 3 6am-6pm 4 hours 3 3 years and under 8 years 4 6am-11pm* 6 hours** 4 8 years and under 15 years 5 6am-11pm* 8 hours** 5"
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "Screen Australia won't fund an individual applicant under eighteen.",
+   "value": {
+    "Screen Australia": {
+     "minimumAge": 18
+    }
+   },
+   "applies": "Screen Australia's Information for Applicants, general eligibility 2.1; program guidelines may add conditions.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "2.1 An individual applicant must: a. be an Australian citizen; or b. be an Australian permanent resident (holding a permanent visa). c. not be: i. under the age of 18;"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "Only an individual of at least eighteen may be appointed a director of an Australian company.",
+   "value": {
+    "directorMinimumAge": 18
+   },
+   "applies": "Corporations Act 2001 (Cth) s. 201B(1), Compilation No. 149 (C2026C00432).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Only an individual who is at least 18 may be appointed as a director of a company."
+    }
+   ]
+  },
+  {
+   "item": "majority",
+   "finding": "Queensland, Western Australia, Victoria and the Australian Capital Territory each set full age at eighteen.",
+   "value": {
+    "AU.04": 18,
+    "AU.08": 18,
+    "AU.07": 18,
+    "AU.01": 18
+   },
+   "applies": "Queensland (AU.04), Western Australia (AU.08), Victoria (AU.07), Australian Capital Territory (AU.01); New South Wales and South Australia remain blocked.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "17 What is age of majority The age of majority is 18 years."
+    },
+    {
+     "src": 8,
+     "said": "(a)a person who, on or after the commencing day, attains the age of 18 years attains full age and full capacity on attaining that age;"
+    },
+    {
+     "src": 9,
+     "said": "a person who, on or after the day of commencement of this Act attains the age of eighteen years, attains full age and full capacity on attaining that age;"
+    },
+    {
+     "src": 10,
+     "said": "(1) Subject to this Act, a person attains full age for all purposes of the law of the Territory when the person attains the age of 18 years."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "In New South Wales a person under eighteen may sign a contract that is for his benefit and that he understands; in South Australia a court may approve a minor's contract, which then binds him; neither state's pages set aside any share of a child's earnings, and neither rule is limited to performing work.",
+   "value": {
+    "AU.02": {
+     "binding": "a contract for the minor's benefit that the minor understands (Minors (Property and Contracts) Act 1970 ss 18-19)",
+     "setAside": null
+    },
+    "AU.05": {
+     "binding": "a court's consent (Minors Contracts (Miscellaneous Provisions) Act 1979 s 6), or affirmation after 18",
+     "setAside": null
+    },
+    "reachesWritingDirecting": "the rules are general contract law, so they reach any work"
+   },
+   "applies": "New South Wales (AU.02) and South Australia (AU.05); other states not traced.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Sign a contract to buy a mobile phone, car, motorbike, gym membership or rent a place to live 18 Or Any age as long as it is for your benefit and you understand what you are signing ss18 and 19, Minors (Property and Contracts) Act 1970"
+    },
+    {
+     "src": 12,
+     "said": "A minor may make a binding contract with the consent of a court . The minor's parents can apply on the minor’s behalf, if the minor wishes to be bound; or the other party can apply, if they wants to make the contract enforceable against the minor. If the court decides to approve the contract, it will then be legally binding [ Minors Contracts (Miscellaneous Provisions) Act 1979 (SA) s 6]."
+    }
+   ]
+  },
+  {
+   "item": "minimumWorkAge",
+   "finding": "Australia has no national minimum working age: Victoria and Queensland set 13 (11 for delivery work), Western Australia bars most work under 15 but allows shops and restaurants at 13 and deliveries at 10, the ACT bars employment under 15 save light work, New South Wales and South Australia set no age beyond keeping a child at school, and acting or performing is open at any age in Victoria and Western Australia.",
+   "value": {
+    "AU.07": {
+     "generalFrom": 13,
+     "deliveryFrom": 11,
+     "licenceUnder": 15,
+     "entertainment": "no age limit"
+    },
+    "AU.04": {
+     "generalFrom": 13,
+     "deliveryFrom": 11
+    },
+    "AU.08": {
+     "restrictedUnder": 15,
+     "shopsRestaurantsFrom": 13,
+     "deliveryFrom": 10,
+     "performing": "any age"
+    },
+    "AU.01": {
+     "barredUnder": 15,
+     "except": "light work (10 hours a week, more with 7 days' written notice), family business"
+    },
+    "AU.02": {
+     "generalFrom": null,
+     "note": "any age, if the job doesn't stop schooling"
+    },
+    "AU.05": {
+     "generalFrom": null,
+     "note": "any age outside school hours; full-time from 17"
+    }
+   },
+   "applies": "By state and territory; Tasmania and the Northern Territory remain blocked.",
+   "sources": [
+    {
+     "src": 13,
+     "said": "In Victoria, a child must be: 11 to deliver newspapers and advertising material 13 to deliver pharmaceutical products or do other types of work, such as retail or hospitality. There is no age limit for working in entertainment, but there are industry-specific requirements ."
+    },
+    {
+     "src": 14,
+     "said": "The Child Employment Act 2006 prohibits the employment of children below the ages specified in the Child Employment Regulation 2016 . Generally the minimum age for employment is 13. This is lowered to 11 where the child carries out supervised delivery work"
+    },
+    {
+     "src": 15,
+     "said": "As long as the work does not prevent school attendance, children of any age can: work in a family business; perform professionally as an actor, musician, entertainer or in an advertisement; … Children aged 13 and 14 Are allowed to: deliver newspapers, pamphlets or advertising material; work in a shop, fast food outlet, cafe, restaurant;"
+    },
+    {
+     "src": 16,
+     "said": "(1) A person commits an offence if— (a) the person employs a child or young person; and (b) the child or young person is under 15 years old. … (1) Section 795 (1) does not apply to the employment of a child or young person if— (a) the employment is in light work; and (b) the child or young person is employed for 10 hours per week or less."
+    },
+    {
+     "src": 11,
+     "said": "Get a job Any age (as long as your job doesn’t stop you going to school if you haven’t completed Year 10)"
+    },
+    {
+     "src": 17,
+     "said": "You can work before reaching this age provided you do not work during school hours and the work does not interfere with your ability to attend school [Education and Children's Services Act 2019 (SA) s 74(1)]."
+    }
+   ]
+  }
+ ],
+ "country": "AU",
+ "sources": [
+  {
+   "url": "https://ocg.nsw.gov.au/organisations/employing-children-acting-and-modelling",
+   "title": "Employing children in acting and modelling (NSW Office of the Children's Guardian)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A child is a performer or model who is under 16 years of age."
+  },
+  {
+   "url": "https://ocg.nsw.gov.au/organisations/employing-children-acting-and-modelling/authority-employ-children",
+   "title": "Authority to employ children (NSW Office of the Children's Guardian)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "and you employ children under 16 years of age for work in exhibition or entertainment, still photography or modelling."
+  },
+  {
+   "url": "https://ocg.nsw.gov.au/organisations/employing-children-acting-and-modelling/requirements-different-aged-children",
+   "title": "Requirements for different aged children (NSW Office of the Children's Guardian, 27 May 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Under 6 months 1 day 6.00am - 6.00pm 4 hours 6 months to under 3 years 2 days 6.00am - 6.00pm 4 hours 3 years to under 8 years 4 days 6.00am - 11.00pm 6 hours 8 years to under 16 years 5 days 6:00am -11:00pm 8 hours … a child does not start work less than 12 hours after previously finishing work"
+  },
+  {
+   "url": "https://www.vic.gov.au/child-employment-licence-entertainment-and-advertising",
+   "title": "Employing children in entertainment (Workforce Inspectorate Victoria)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "There is no minimum age of employment in entertainment, but you need a licence to employ anyone under 15."
+  },
+  {
+   "url": "https://www.vic.gov.au/guide-employment-children-victorian-entertainment-industry/print-all",
+   "title": "Guide to the employment of children in the Victorian entertainment industry (Workforce Inspectorate Victoria), Mandatory Code of Practice cl. 22",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Under 3 years 3 6am-6pm 4 hours 3 3 years and under 8 years 4 6am-11pm* 6 hours** 4 8 years and under 15 years 5 6am-11pm* 8 hours** 5"
+  },
+  {
+   "url": "https://www.screenaustralia.gov.au/doing-business-with-us/information-for-applicants/",
+   "title": "Information for Applicants (Screen Australia)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2.1 An individual applicant must: a. be an Australian citizen; or b. be an Australian permanent resident (holding a permanent visa). c. not be: i. under the age of 18;"
+  },
+  {
+   "url": "https://www.legislation.gov.au/C2004A00818/2026-09-19/2026-09-19/text/original/pdf/1",
+   "title": "Corporations Act 2001, Volume 1, Compilation No. 149 (Federal Register of Legislation)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Only an individual who is at least 18 may be appointed as a director of a company."
+  },
+  {
+   "url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1995-lra",
+   "title": "Law Reform Act 1995 (Qld), current in-force version, Queensland Legislation",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "17 What is age of majority The age of majority is 18 years."
+  },
+  {
+   "url": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_22.htm/$FILE/Age%20of%20Majority%20Act%201972%20-%20%5B02-a0-11%5D.html",
+   "title": "Age of Majority Act 1972 (WA), reprint 02-a0-11, WA Legislation",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(a)a person who, on or after the commencing day, attains the age of 18 years attains full age and full capacity on attaining that age;"
+  },
+  {
+   "url": "https://content.legislation.vic.gov.au/sites/default/files/1630071a-b562-39f4-b717-977958c3bef0_77-9075aa014%20authorised.pdf",
+   "title": "Age of Majority Act 1977 (Vic), authorised version 014 (in force from 1 August 2015)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a person who, on or after the day of commencement of this Act attains the age of eighteen years, attains full age and full capacity on attaining that age;"
+  },
+  {
+   "url": "https://www.legislation.act.gov.au/DownloadFile/a/1974-46/current/PDF/1974-46.PDF",
+   "title": "Age of Majority Act 1974 (ACT), current republication, ACT Legislation Register",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(1) Subject to this Act, a person attains full age for all purposes of the law of the Territory when the person attains the age of 18 years."
+  },
+  {
+   "url": "https://www.legalaid.nsw.gov.au/content/dam/legalaidnsw/documents/pdf/ways-to-get-help/community-legal-education-(cle)/community-legal-education-schools-and-young-people/When%20Can%20I%20poster%20questions%20and%20answers%20with%20legal%20source%20-%20October%202023.pdf",
+   "title": "Legal Aid NSW, When Can I? (legal sources researched October 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Sign a contract to buy a mobile phone, car, motorbike, gym membership or rent a place to live 18 Or Any age as long as it is for your benefit and you understand what you are signing ss18 and 19, Minors (Property and Contracts) Act 1970 … Get a job Any age (as long as your job doesn’t stop you going to school if you haven’t completed Year 10)"
+  },
+  {
+   "url": "https://lawhandbook.sa.gov.au/ch10s03s03.php",
+   "title": "Legal Services Commission of South Australia, Law Handbook: Who can make a contract",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A minor may make a binding contract with the consent of a court . The minor's parents can apply on the minor’s behalf, if the minor wishes to be bound; or the other party can apply, if they wants to make the contract enforceable against the minor. If the court decides to approve the contract, it will then be legally binding [ Minors Contracts (Miscellaneous Provisions) Act 1979 (SA) s 6]."
+  },
+  {
+   "url": "https://www.vic.gov.au/child-employment-licence",
+   "title": "Workforce Inspectorate Victoria: Employing children under 15 years old (updated 25 August 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In Victoria, a child must be: 11 to deliver newspapers and advertising material 13 to deliver pharmaceutical products or do other types of work, such as retail or hospitality. There is no age limit for working in entertainment, but there are industry-specific requirements ."
+  },
+  {
+   "url": "https://www.business.qld.gov.au/running-business/employing/hiring-recruitment/employing-children/restrictions",
+   "title": "Business Queensland: Restrictions on children working in Queensland (other than in the entertainment industry)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Child Employment Act 2006 prohibits the employment of children below the ages specified in the Child Employment Regulation 2016 . Generally the minimum age for employment is 13. This is lowered to 11 where the child carries out supervised delivery work"
+  },
+  {
+   "url": "https://www.wa.gov.au/node/23700",
+   "title": "Government of Western Australia: When children can work in Western Australia (updated 4 September 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "As long as the work does not prevent school attendance, children of any age can: work in a family business; perform professionally as an actor, musician, entertainer or in an advertisement; … Children aged 13 and 14 Are allowed to: deliver newspapers, pamphlets or advertising material; work in a shop, fast food outlet, cafe, restaurant;"
+  },
+  {
+   "url": "https://www.legislation.act.gov.au/DownloadFile/a/2008-19/current/PDF/2008-19.PDF",
+   "title": "Children and Young People Act 2008 (ACT), republication R97 effective 16 November 2025, ss 795-796",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(1) A person commits an offence if— (a) the person employs a child or young person; and (b) the child or young person is under 15 years old. … (1) Section 795 (1) does not apply to the employment of a child or young person if— (a) the employment is in light work; and (b) the child or young person is employed for 10 hours per week or less."
+  },
+  {
+   "url": "https://lawhandbook.sa.gov.au/ch06s08s04.php",
+   "title": "Legal Services Commission of South Australia, Law Handbook: When can I start work?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You can work before reaching this age provided you do not work during school hours and the work does not interfere with your ability to attend school [Education and Children's Services Act 2019 (SA) s 74(1)]."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "majority",
+   "sought": "the age of majority in New South Wales (Minors (Property and Contracts) Act 1970 s 9) and South Australia (Age of Majority (Reduction) Act 1971 s 3)",
+   "tried": {
+    "institution": "legislation.nsw.gov.au and South Australia's site answered Cloudflare challenges (layer 3); Victoria's and the ACT's legislation pages gave no text (layer 3) | Retry 2026-11-01: legislation.nsw.gov.au (act-1970-060) and legislation.sa.gov.au (the 1971.15 authorised PDF found by search) both answered a Cloudflare 'Just a moment' challenge again; Queensland, WA, Victoria and the ACT read from their registers (now held); lawaccess.nsw.gov.au 'Site Maintenance'",
+    "official-register": "AustLII answered a bot check on 2026-11-01 | Retry 2026-11-01: parliament.nsw.gov.au historic bill PDF (bill 16975) answered 403; Fair Work Commission not relevant",
+    "web-search": "not run again today | Retry 2026-11-01: 'Minors (Property and Contracts) Act 1970 section 9 eighteen years full age NSW legal aid'; 'lawhandbook.sa.gov.au Age of Majority (Reduction) Act 1971'; 'legalaid.nsw.gov.au 18 years adult full age': Legal Aid NSW gives contract capacity at 18 (held under minorsContracts) but no statement of full age; the SA Law Handbook gives contract capacity at 18, not majority",
+    "trade-press": "none | Retry 2026-11-01: none quoting s 9 (NSW) or s 3 (SA) with a primary URL; Find & Connect (a federal history site) describes the SA Act's long title only",
+    "archive": "web.archive.org unreachable (429, connection reset) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; the National Library's web archive (webarchive.nla.gov.au) answered a bot check (Anubis redirect); not read another way"
+   }
+  },
+  {
+   "item": "minorsContracts",
+   "sought": "any rule setting aside a share of a child performer's earnings (any state), and Victoria's, Queensland's and Western Australia's rule on binding a minor's contract",
+   "tried": {
+    "institution": "NSW Office of the Children's Guardian and Workforce Inspectorate Victoria pages read: no set-aside rule stated on them | Retry 2026-11-01: Legal Aid NSW and the SA Law Handbook read (binding rules held); NSW OCG and Victorian guide pages re-read for 'trust', 'earnings', 'wages': no set-aside",
+    "official-register": "NSW Minors (Property and Contracts) Act 1970 behind Cloudflare; AustLII bot check | Retry 2026-11-01: NSW and SA registers bot-checked",
+    "web-search": "not run for this item | Retry 2026-11-01: 'NSW child performer earnings trust account Children's Guardian Code of Practice wages paid to parent child employment regulation 2015 trust': only US states and British Columbia",
+    "trade-press": "none | Retry 2026-11-01: none naming an Australian set-aside",
+    "archive": "unreachable | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; the National Library's web archive (webarchive.nla.gov.au) answered a bot check (Anubis redirect); not read another way"
+   }
+  },
+  {
+   "item": "minimumWorkAge",
+   "sought": "Tasmania's and the Northern Territory's minimum working age",
+   "tried": {
+    "institution": "Victoria's entertainment page states only the entertainment rule; NSW OCG refers other work to the Fair Work Ombudsman (not read) | Retry 2026-11-01: Victoria, Queensland, Western Australia, ACT, NSW and SA read (held); Fair Work Ombudsman (fairwork.gov.au) timed out; SafeWork SA answered a Cloudflare challenge",
+    "official-register": "AustLII bot check | Retry 2026-11-01: Tasmanian and NT registers not searched for a child employment provision (Tasmania's Ai Group summary says no such statute exists)",
+    "web-search": "not run for this item | Retry 2026-11-01: 'Tasmania minimum working age children employment law no minimum age'; 'Northern Territory minimum age employment children under 15 Care and Protection of Children Act': only firms and associations",
+    "trade-press": "none | Retry 2026-11-01: Australian Industry Group (Tasmania: no statute; no primary URL), National Retail Association (NT: under-15 hours 10pm-6am), not held",
+    "archive": "unreachable | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; the National Library's web archive (webarchive.nla.gov.au) answered a bot check (Anubis redirect); not read another way"
+   }
+  },
+  {
+   "item": "unions",
+   "sought": "MEAA's (Equity's), the Australian Writers' Guild's and the Australian Directors' Guild's rules for members under 18",
+   "tried": {
+    "institution": "meaa.org/join fetched; no age rule in its text | Retry 2026-11-01: meaa.org reached (home 200) but no age rule on its join page (earlier); Australian Writers' Guild and Australian Directors' Guild pages seen in search name only citizenship and student enrolment, no age",
+    "official-register": "none | Retry 2026-11-01: Fair Work Commission's copy of MEAA's registered rules (current-rb-129v.docx and .pdf, and the 2018 alteration 129v-r2018-271.pdf) answered 403; not read another way",
+    "web-search": "not run | Retry 2026-11-01: 'MEAA Equity membership under 18 parent guardian consent junior member rules'; 'Australian Writers' Guild membership eligibility age under 18 student member; Australian Directors' Guild membership age': nothing on an age",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "not tried | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; the National Library's web archive (webarchive.nla.gov.au) answered a bot check (Anubis redirect); not read another way"
+   }
+  }
+ ]
+}

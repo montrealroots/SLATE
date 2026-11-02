@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 import slate from './gate/eslint/plugin.js';
 
 export default tseslint.config(
-  { ignores: ['node_modules', 'dist', 'reports', '.stryker-tmp', '.gate', 'docs', 'workbench'] },
+  { ignores: ['node_modules', 'dist', 'reports', '.stryker-tmp*', '.gate', 'docs', 'workbench'] },
   js.configs.recommended,
   ...tseslint.configs.strict,
   {

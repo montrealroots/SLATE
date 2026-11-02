@@ -1,0 +1,333 @@
+{
+ "topic": "markets.producer.ES",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a producer works on (funds, incentives, fee caps, outcomes) in Spain. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "fund",
+   "finding": "The state's general production aid for Spanish feature films (ICAA, Ministry of Culture) pays up to €1.4 million a project, never more than 40% of the cost the ICAA recognises (60% for 'difficult' works), to features with a recognised cost of at least €1.3 million that show 35% of their financing secured; at least 35% of the money is reserved for films directed only by women and 8% for animation.",
+   "value": {
+    "fund": "Ayudas generales para la producción de largometrajes sobre proyecto (ICAA)",
+    "maxPerProjectEUR": 1400000,
+    "maxShareOfRecognisedCost": 0.4,
+    "maxShareDifficultWorks": 0.6,
+    "minimumRecognisedCostEUR": {
+     "fiction": 1300000,
+     "documentary": 300000,
+     "EUorCouncilOfEuropeCopro": 300000,
+     "IberoAmericanCopro": 150000,
+     "otherCopro": 700000
+    },
+    "financingSecuredAtApplication": 0.35,
+    "reserves": {
+     "directedOnlyByWomen": 0.35,
+     "animation": 0.08
+    },
+    "selectionRoundsPerYearMax": 3,
+    "payment": {
+     "inCallYear": 0.6,
+     "followingYearOnceFinancing80pctAndHalfScriptPaid": 0.4
+    },
+    "budgetCutAllowedWithoutRepayment": 0.3
+   },
+   "applies": "Spain, feature films able to obtain Spanish nationality and the cultural certificate, from independent and non-independent producers registered with the ICAA; bases as consolidated to 18 June 2025, amounts set in each year's call.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "podrá alcanzar un importe máximo de 1.400.000 euros, siempre que dicho importe no supere el 40 % del coste reconocido al largometraje por el Instituto de la Cinematografía y de las Artes Audiovisuales. Este porcentaje podrá verse ampliado hasta el 60 % del coste reconocido en el caso de proyectos que tengan la consideración de obras audiovisuales difíciles … Que el coste mínimo del largometraje que reconozca el Instituto de la Cinematografía y de las Artes Audiovisuales en su día, sea de 1.300.000 euros … se reservará un mínimo del 35 % para los proyectos realizados exclusivamente por directoras, y un mínimo del 8 % para los proyectos de animación … tiene garantizada una financiación de, al menos, el 35 % del presupuesto previsto para la producción del largometraje … El 60 % se abonará en el ejercicio económico de la convocatoria correspondiente"
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "The ICAA's selective aid for feature-film projects, judged by a committee on quality out of 50 points (25 needed), pays up to €800,000 a project (€1 million for animation), with set shares reserved for films directed by women (35%), documentaries (10% to 25%), animation (8%) and experimental work (5%).",
+   "value": {
+    "fund": "Ayudas selectivas para la producción de largometrajes sobre proyecto (ICAA)",
+    "maxPerProjectEUR": 800000,
+    "maxPerAnimationProjectEUR": 1000000,
+    "maxShareDifficultWorks": 0.7,
+    "pointsMax": 50,
+    "pointsMinimum": 25,
+    "qualityPointsMax": 45,
+    "budgetFitPointsMax": 5,
+    "reserves": {
+     "directedOnlyByWomen": 0.35,
+     "documentary": [
+      0.1,
+      0.25
+     ],
+     "animation": 0.08,
+     "experimental": 0.05
+    },
+    "payment": "single payment once the award is published, after at least 33% of the script price is paid"
+   },
+   "applies": "Spain, feature-film projects with the cultural certificate; bases consolidated to 18 June 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "podrá alcanzar un importe máximo de 800.000 euros o de 1.000.000 euros si se trata de un proyecto de animación. Este porcentaje podrá verse ampliado hasta el 70 % del coste reconocido … Se destinará un mínimo del 35% para los proyectos realizados exclusivamente por directoras. b) Se destinará entre un mínimo del 10 % y un máximo del 25 % a proyectos de carácter documental. c) Se destinará un mínimo del 8% a proyectos de animación. d) Se destinará un mínimo del 5 % a proyectos de carácter experimental. … Únicamente los proyectos que obtengan un mínimo de 25 puntos, podrán ser considerados para obtener ayuda. … La ayuda se hará efectiva en un único pago una vez publicada la resolución de concesión."
+    }
+   ]
+  },
+  {
+   "item": "fund",
+   "finding": "In the second 2023 round of the ICAA's general production aid, 27 of the 71 feature projects that applied were funded (about 38%), sharing €31,988,000 of the year's €62 million.",
+   "value": {
+    "year": 2023,
+    "round": 2,
+    "applied": 71,
+    "funded": 27,
+    "rate": 0.38,
+    "awardedEUR": 31988000,
+    "annualBudgetEUR": 62000000,
+    "fictionFunded": 25,
+    "animationFunded": 2,
+    "internationalCoproductionsFunded": 9,
+    "directedOnlyByWomen": {
+     "applied": 15,
+     "funded": 13
+    }
+   },
+   "applies": "Spain, ICAA general aid for feature-film projects, second selection procedure of 2023 (resolved 7 December 2023).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "La dotación presupuestaria total para la convocatoria de 2023 es de 62 millones de euros, resuelta en dos procedimientos … ha resuelto el segundo procedimiento de ayudas generales para la producción de largometrajes sobre proyecto de 2023 por un importe de 31.988.000 euros. … En total, han solicitado ayudas 71 proyectos. De estos, 51 son solicitudes realizadas durante el plazo del segundo procedimiento y 20 se han incorporado como suplentes del primer procedimiento. Finalmente, han resultado beneficiarios en esta segunda fase 27 proyectos, de los cuales 25 corresponden a la categoría ficción … De estos 27 proyectos beneficiarios, 9 son coproducciones internacionales. … de los 15 proyectos dirigidos exclusivamente por mujeres que han solicitado ayuda en este segundo procedimiento han resultado beneficiarios 13"
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "A Spanish film or series earns a corporate-tax deduction of 30% of the first €1 million of its cost and 25% of the rest, capped at €20 million a film (€10 million an episode for series), with at least half the base spent in Spain; the deduction plus all other aid may not exceed 50% of production cost, raised to between 60% and 85% for debuts under €1.5 million, co-official-language films, films by women, documentaries and other listed cases.",
+   "value": {
+    "rateFirstEUR1m": 0.3,
+    "rateAboveEUR1m": 0.25,
+    "capPerFilmEUR": 20000000,
+    "capPerSeriesEpisodeEUR": 10000000,
+    "minimumSpainSpendShareOfBase": 0.5,
+    "printsAndPromotionInBaseMaxShareOfCost": 0.4,
+    "aidIntensityCap": {
+     "default": 0.5,
+     "shorts": 0.85,
+     "directorWithAtMostTwoFeaturesBudgetUpTo1_5mEUR": 0.8,
+     "coOfficialLanguage": 0.8,
+     "directorsWithDisability": 0.8,
+     "directedOnlyByWomen": 0.75,
+     "specialCulturalValue": 0.75,
+     "documentaries": 0.75,
+     "animationUpTo2_5mEUR": 0.75,
+     "EUcrossBorder": 0.6,
+     "IberoAmericanCopro": 0.6
+    },
+    "requires": [
+     "Spanish nationality certificate",
+     "cultural certificate",
+     "copy to the Filmoteca Española"
+    ],
+    "subsidiesReduceBase": true
+   },
+   "applies": "Spain, Spanish feature films, shorts and fiction, animation or documentary series with the ICAA's nationality and cultural certificates; article as in force from 29 December 2022.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Del 30 por ciento respecto del primer millón de base de la deducción. b) Del 25 por ciento sobre el exceso de dicho importe. … Al menos el 50 por ciento de la base de la deducción deberá corresponderse con gastos realizados en territorio español. El importe de esta deducción no podrá ser superior a 20 millones de euros. En el caso de series audiovisuales, la deducción se determinará por episodio y el límite a que se refiere el párrafo anterior será de 10 millones de euros por cada episodio producido. … El importe de esta deducción, conjuntamente con el resto de ayudas percibidas, no podrá superar el 50 por ciento del coste de producción. … El 80 por ciento para las producciones dirigidas por una persona que no haya dirigido o codirigido más de dos largometrajes calificados para su explotación comercial en salas de exhibición cinematográfica, cuyo presupuesto de producción no supere 1.500.000 euros. … El 75 por ciento en el caso de producciones realizadas exclusivamente por directoras."
+    }
+   ]
+  },
+  {
+   "item": "feecap",
+   "finding": "In the cost the ICAA recognises for a Spanish film (the base of its aid), the executive producer's fee counts up to 5% of the film's production cost and the company's general overheads up to 7%, with loan interest up to 20% and publicity up to 40%.",
+   "value": {
+    "executiveProducerFeeMaxShareOfProductionCost": 0.05,
+    "overheadsMaxShareOfProductionCost": 0.07,
+    "financeCostsMaxShare": 0.2,
+    "publicityAndPromotionMaxShare": 0.4,
+    "base": "coste de realización de la película"
+   },
+   "applies": "Spain, every film whose cost the ICAA recognises (for aid and for the producer's investment), Orden ECD/2784/2015 as consolidated (last updated 18 June 2025).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "La remuneración del productor ejecutivo hasta el límite del 5 por cien del coste de realización de la película. … El importe de los gastos generales, hasta el límite del 7 por cien del coste de realización de la película. … Los gastos de publicidad y promoción de la película, facturados a la empresa productora, hasta el límite del 40 por cien del coste de realización de la película"
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Spain produced 375 feature films in 2023 (298 wholly Spanish, 77 co-productions) at an average cost of €3.0 million, and 288 Spanish films were released in cinemas that year; Spanish films took 17.5% of admissions (13.4 million) and €82.4 million.",
+   "value": {
+    "featuresProduced": {
+     "2019": 265,
+     "2020": 222,
+     "2021": 273,
+     "2022": 322,
+     "2023": 375
+    },
+    "whollySpanish2023": 298,
+    "coproductions2023": 77,
+    "averageCostEURm": {
+     "2019": 3.4,
+     "2020": 2.8,
+     "2021": 2.7,
+     "2022": 3.5,
+     "2023": 3.0
+    },
+    "averageCostBasis": "features with ICAA-recognised cost and budget over EUR 900,000",
+    "spanishReleases": {
+     "2019": 207,
+     "2020": 159,
+     "2021": 209,
+     "2022": 251,
+     "2023": 288
+    },
+    "spanishAdmissionsM2023": 13.4,
+    "spanishAdmissionsShare2023": 0.175,
+    "spanishGrossEURm2023": 82.4
+   },
+   "applies": "Spain, official cinematography statistics (ICAA and the Ministry of Culture), 2019 to 2023.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Largometrajes 265 222 273 322 375 39,6 34,6 36,7 40,9 40,3 Íntegramente españoles 214 184 228 250 298 31,9 28,7 30,6 31,8 32,0 Coproducidos 51 38 45 72 77 7,6 5,9 6,0 9,1 8,3 Coste medio de producción 3,4 2,8 2,7 3,5 3,0 … Para el cálculo del coste medio de producción de largometrajes sólo se han tenido en cuenta los largometrajes españoles que tienen coste reconocido por el ICAA y con presupuesto mayor de 900 mil euros. … Películas estrenadas 207 159 209 251 288 31,6 36,2 37,6 39,0 39,6 … Por lo que respecta al cine español, con 673 películas exhibidas en 2023, los espectadores ascendieron a 13,4 millones y la recaudación a 82,4 millones de euros."
+    }
+   ]
+  },
+  {
+   "item": "market",
+   "finding": "Of Spain's 553 active film production companies in 2023, 469 (84.8%) made a single film that year, and 195 (35.3%) were in the Community of Madrid, ahead of Catalonia with 107.",
+   "value": {
+    "year": 2023,
+    "activeProducers": 553,
+    "madeOneFilm": 469,
+    "madeTwoToFour": 77,
+    "madeFiveOrMore": 7,
+    "byRegion": {
+     "Madrid": 195,
+     "Cataluña": 107,
+     "Andalucía": 67,
+     "País Vasco": 40,
+     "Comunitat Valenciana": 41
+    },
+    "madridShare": 0.353
+   },
+   "applies": "Spain, film production companies registered with the ICAA that were active in 2023.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "TOTAL 381 340 402 494 553 100 100 100 100 100 Una película 316 293 351 428 469 82,9 86,2 87,3 86,6 84,8 De dos a cuatro películas 62 45 48 62 77 16,3 13,2 11,9 12,6 13,9 Cinco o más películas 3 2 3 4 7 0,8 0,6 0,7 0,8 1,3 … Madrid (Comunidad de) 113 108 124 153 195 29,7 31,8 30,8 31,0 35,3"
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Spanish producers organise in several associations rather than one: for film, AECINE (the Asociación Estatal de Cine, the main association of independent film producers), PIAF, PROFILM (international service production), PATE (television producers), DOCMA (documentary) and DIBOOS (animation); the screen convenio's 2026 tables were signed by APCP, PATE, PIAF, PROA, PROFILM and AECINE.",
+   "value": {
+    "film": [
+     "AECINE",
+     "PIAF",
+     "PROFILM",
+     "PROA",
+     "DOCMA",
+     "AMA (Madrid)"
+    ],
+    "television": [
+     "PATE"
+    ],
+    "animation": [
+     "DIBOOS"
+    ],
+    "advertising": [
+     "APCP"
+    ]
+   },
+   "applies": "Spain, producers' associations as listed by Film Madrid and AECINE, read 2026-11-01; the actor market research (markets/ES.json) holds the convenio signatories.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "PRODUCTORES AECINE Asociación Estatal de Cine aecine.org AMA Asociación Madrileña Audiovisual www.amaudiovisual.es DOCMA Asociación de Cine Documental docma.es PATE Productoras Asociadas de Televisión de España asociacionpate.com PIAF Productoras Independientes Audiovisuales Federadas www.piaf-federacion.com PROFILM Asociación de Empresas Productoras de Audiovisual Internacional … DIBOOS Federación Española de Asociaciones de Productoras de Animación"
+    },
+    {
+     "src": 6,
+     "said": "SOMOS AECINE La principal asociación de productoras de cine independiente de España"
+    }
+   ]
+  }
+ ],
+ "role": "producer",
+ "country": "ES",
+ "sources": [
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-6921",
+   "title": "Orden CUD/582/2020, bases reguladoras de las ayudas estatales para la producción de largometrajes y cortometrajes (texto consolidado, BOE, última actualización 18/06/2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "podrá alcanzar un importe máximo de 1.400.000 euros, siempre que dicho importe no supere el 40 % del coste reconocido al largometraje por el Instituto de la Cinematografía y de las Artes Audiovisuales. Este porcentaje podrá verse ampliado hasta el 60 % del coste reconocido en el caso de proyectos que tengan la consideración de obras audiovisuales difíciles … Que el coste mínimo del largometraje que reconozca el Instituto de la Cinematografía y de las Artes Audiovisuales en su día, sea de 1.300.000 euros … se reservará un mínimo del 35 % para los proyectos realizados exclusivamente por directoras, y un mínimo del 8 % para los proyectos de animación … tiene garantizada una financiación de, al menos, el 35 % del presupuesto previsto para la producción del largometraje … El 60 % se abonará en el ejercicio económico de la convocatoria correspondiente … podrá alcanzar un importe máximo de 800.000 euros o de 1.000.000 euros si se trata de un proyecto de animación. Este porcentaje podrá verse ampliado hasta el 70 % del coste reconocido … Se destinará un mínimo del 35% para los proyectos realizados exclusivamente por directoras. b) Se destinará entre un mínimo del 10 % y un máximo del 25 % a proyectos de carácter documental. c) Se destinará un mínimo del 8% a proyectos de animación. d) Se destinará un mínimo del 5 % a proyectos de carácter experimental. … Únicamente los proyectos que obtengan un mínimo de 25 puntos, podrán ser considerados para obtener ayuda. … La ayuda se hará efectiva en un único pago una vez publicada la resolución de concesión."
+  },
+  {
+   "url": "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/cultura/Paginas/2023/071223-ayudas-produccion-largometrajes.aspx",
+   "title": "La Moncloa (Ministerio de Cultura): Cultura resuelve el segundo procedimiento de ayudas generales para la producción de largometrajes sobre proyecto por un importe de casi 32 millones (7 de diciembre de 2023)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La dotación presupuestaria total para la convocatoria de 2023 es de 62 millones de euros, resuelta en dos procedimientos … ha resuelto el segundo procedimiento de ayudas generales para la producción de largometrajes sobre proyecto de 2023 por un importe de 31.988.000 euros. … En total, han solicitado ayudas 71 proyectos. De estos, 51 son solicitudes realizadas durante el plazo del segundo procedimiento y 20 se han incorporado como suplentes del primer procedimiento. Finalmente, han resultado beneficiarios en esta segunda fase 27 proyectos, de los cuales 25 corresponden a la categoría ficción … De estos 27 proyectos beneficiarios, 9 son coproducciones internacionales. … de los 15 proyectos dirigidos exclusivamente por mujeres que han solicitado ayuda en este segundo procedimiento han resultado beneficiarios 13"
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+   "title": "Ley 27/2014, del Impuesto sobre Sociedades (texto consolidado, BOE), artículo 36 (última actualización del artículo publicada el 28/12/2022)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Del 30 por ciento respecto del primer millón de base de la deducción. b) Del 25 por ciento sobre el exceso de dicho importe. … Al menos el 50 por ciento de la base de la deducción deberá corresponderse con gastos realizados en territorio español. El importe de esta deducción no podrá ser superior a 20 millones de euros. En el caso de series audiovisuales, la deducción se determinará por episodio y el límite a que se refiere el párrafo anterior será de 10 millones de euros por cada episodio producido. … El importe de esta deducción, conjuntamente con el resto de ayudas percibidas, no podrá superar el 50 por ciento del coste de producción. … El 80 por ciento para las producciones dirigidas por una persona que no haya dirigido o codirigido más de dos largometrajes calificados para su explotación comercial en salas de exhibición cinematográfica, cuyo presupuesto de producción no supere 1.500.000 euros. … El 75 por ciento en el caso de producciones realizadas exclusivamente por directoras."
+  },
+  {
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-14022",
+   "title": "Orden ECD/2784/2015, por la que se regula el reconocimiento del coste de una película y la inversión del productor (texto consolidado, BOE)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La remuneración del productor ejecutivo hasta el límite del 5 por cien del coste de realización de la película. … El importe de los gastos generales, hasta el límite del 7 por cien del coste de realización de la película. … Los gastos de publicidad y promoción de la película, facturados a la empresa productora, hasta el límite del 40 por cien del coste de realización de la película"
+  },
+  {
+   "url": "https://lamoncloa.gob.es/serviciosdeprensa/notasprensa/cultura/Documents/2024/160324-%20estadistica-de-cinematografia.pdf",
+   "title": "Ministerio de Cultura (ICAA y División de Estadística): Estadística de Cinematografía, Anuario de Estadísticas Culturales, capítulo 16 (datos 2019 a 2023), nota de prensa de 16 de marzo de 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Largometrajes 265 222 273 322 375 39,6 34,6 36,7 40,9 40,3 Íntegramente españoles 214 184 228 250 298 31,9 28,7 30,6 31,8 32,0 Coproducidos 51 38 45 72 77 7,6 5,9 6,0 9,1 8,3 Coste medio de producción 3,4 2,8 2,7 3,5 3,0 … Para el cálculo del coste medio de producción de largometrajes sólo se han tenido en cuenta los largometrajes españoles que tienen coste reconocido por el ICAA y con presupuesto mayor de 900 mil euros. … Películas estrenadas 207 159 209 251 288 31,6 36,2 37,6 39,0 39,6 … Por lo que respecta al cine español, con 673 películas exhibidas en 2023, los espectadores ascendieron a 13,4 millones y la recaudación a 82,4 millones de euros. … TOTAL 381 340 402 494 553 100 100 100 100 100 Una película 316 293 351 428 469 82,9 86,2 87,3 86,6 84,8 De dos a cuatro películas 62 45 48 62 77 16,3 13,2 11,9 12,6 13,9 Cinco o más películas 3 2 3 4 7 0,8 0,6 0,7 0,8 1,3 … Madrid (Comunidad de) 113 108 124 153 195 29,7 31,8 30,8 31,0 35,3"
+  },
+  {
+   "url": "https://gestiona3.madrid.org/filmmadrid/descargas/apoyo-sector-audiovisual-asociaciones.pdf",
+   "title": "Film Madrid (Ayuntamiento y Comunidad de Madrid): Asociaciones del sector audiovisual",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PRODUCTORES AECINE Asociación Estatal de Cine aecine.org AMA Asociación Madrileña Audiovisual www.amaudiovisual.es DOCMA Asociación de Cine Documental docma.es PATE Productoras Asociadas de Televisión de España asociacionpate.com PIAF Productoras Independientes Audiovisuales Federadas www.piaf-federacion.com PROFILM Asociación de Empresas Productoras de Audiovisual Internacional … DIBOOS Federación Española de Asociaciones de Productoras de Animación"
+  },
+  {
+   "url": "https://aecine.org/",
+   "title": "AECINE (Asociación Estatal de Cine): página de inicio",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "SOMOS AECINE La principal asociación de productoras de cine independiente de España"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "outcomes",
+   "sought": "How many Spanish films earn back their cost (recoupment by budget), beyond production and release counts.",
+   "tried": {
+    "institution": "ICAA/Ministry statistics (read) give films produced, average cost and releases, not recoupment; ICAA aid orders give no outcome data. | Retry 2026-11-01 (producer retry): No ICAA recoupment study located.",
+    "official-register": "BOE: no recoupment series; CULTURABase chapter 16 (read) has none. | Retry 2026-11-01 (producer retry): BOE search results give aid calls, not outcomes.",
+    "web-search": "2026-11-01: 'películas españolas rentabilidad recuperan coste taquilla porcentaje estudio ICAA largometrajes amortizan' found a university study (68% of Spanish takings in the ten top films, 2019-2025) and press (Maldita, Forbes), no recoupment rate. | Retry 2026-11-01 (producer retry): Not repeated in a new phrasing beyond the IT/MX/BR/IN recoupment searches this turn; the earlier Spanish searches stand.",
+    "trade-press": "Forbes España (Goya 2026 profitability) says the data are rarely transparent; Maldita compares takings with aid; neither gives a recoupment count from a primary. | Retry 2026-11-01 (producer retry): None new.",
+    "archive": "Not tried: no primary document identified to look up. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  },
+  {
+   "item": "fund",
+   "sought": "Applications and awards for the ICAA's selective aid (the general aid's 2023 second round is held).",
+   "tried": {
+    "institution": "La Moncloa press release (read) covers the general aid only; ICAA resolution PDFs not located in the pages read. | Retry 2026-11-01 (producer retry): cultura.gob.es redirects (302) without a resolution list in reach.",
+    "official-register": "BOE extracts of the calls give budgets, not application counts. | Retry 2026-11-01 (producer retry): pap.hacienda.gob.es (BDNS) convocatoria 845753 found by search: the call, not the applications count.",
+    "web-search": "2026-11-01: 'ICAA ayudas generales producción largometrajes 2025 resolución solicitudes presentadas proyectos beneficiarios número' returned Señal News items (27 and 29 projects funded in 2025) without application counts. | Retry 2026-11-01 (producer retry): \"ICAA resolución ayudas selectivas producción largometrajes sobre proyecto 2025 solicitudes presentadas desestimadas relación cultura.gob.es pdf\": Señal News and Cineuropa (98 projects in the 2025 definitive selective resolution), no application count.",
+    "trade-press": "senalnews.com reports awards only. | Retry 2026-11-01 (producer retry): cineuropa.org/newsdetail/487052 (98 projects supported, December 2025) gives no applications; not used.",
+    "archive": "Not tried. | Retry 2026-11-01 (producer retry): web.archive.org: http:// refused by the egress policy (\"Blocked by egress policy\"), https:// and the id_ form reset the connection (curl 35); archive.ph reset (curl 35), 2026-11-01."
+   }
+  }
+ ]
+}

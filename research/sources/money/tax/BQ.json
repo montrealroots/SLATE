@@ -1,0 +1,187 @@
+{
+ "topic": "tax.BQ",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bonaire, Saint Eustatius and Saba : a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Bonaire, Sint Eustatius and Saba (Caribbean Netherlands) have their own tax laws (the BES acts), not the European Netherlands' tax: a resident pays a combined wage/income tax of 29.4% on taxable income up to USD 53,198 and 38.4% above, after a tax-free amount of USD 21,956 (2026); the employee's AOV/AWW and health premiums are inside the 29.4% by way of credits.",
+   "value": {
+    "currency": "USD",
+    "sovereign": "NL",
+    "ownSystem": true,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 53198,
+      "rate": 0.294
+     },
+     {
+      "from": 53198,
+      "to": null,
+      "rate": 0.384
+     }
+    ],
+    "taxFree": 21956,
+    "elderlySupplement": 1677
+   },
+   "applies": "2026. The handbook's summary table gives the band edge as USD 51,251 but its rate table as USD 53,198; the rate table is used.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Loonbelasting (bij een belastbare som van niet meer dan USD 51.251) 29,4% Loonbelasting (bij een belastbare som van meer dan USD 51.251) 38,4%"
+    },
+    {
+     "src": 0,
+     "said": "- USD 53.198 - 29,40% USD 53.198 - USD 15.640 38,40%"
+    },
+    {
+     "src": 0,
+     "said": "In 2026 bedraagt de belastingvrije som USD 21.956."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the 2025 income tax return was due by 18 May 2026.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "mid-May following year (2025 return: 2026-05-18)"
+   },
+   "applies": "2026 return due in 2027 on a date set yearly.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "De aangifte Inkomstenbelasting 2025 moet uiterlijk 18 mei 2026 zijn ingediend."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays AOV 25.0%, AWW 1.3% and health insurance 0.5% on pay up to USD 38,390 (2026), credited inside the 29.4% combined levy; the employer pays ZV 0.7%, OV 0.2%, cessantia 0.1% and health insurance 9.3%.",
+   "value": {
+    "currency": "USD",
+    "employee": {
+     "AOV": 0.25,
+     "AWW": 0.013,
+     "health": 0.005,
+     "maxBase": 38390
+    },
+    "employer": {
+     "ZV": 0.007,
+     "OV": 0.002,
+     "CES": 0.001,
+     "health": 0.093
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Premie AOV 25,0% Premie AWW 1,3% Premie ZV 0,7% Premie OV 0,2% Premie CES 0,1% Premie Zorgverzekering 0,5% 9,3%"
+    },
+    {
+     "src": 0,
+     "said": "maximum premiegrondslag. In 2026 is dat USD 38.390."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the combined wage tax and premiums from pay, by period tables; with no valid wage-tax statement it applies the anonymous rate.",
+   "value": {
+    "employee": "combined loonheffing, period tables",
+    "anonymous": "anoniementarief"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "De loonheffing dient u in te houden op het loon van de werknemer."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer engaged without a contract of service is in a deemed employment and has 10% wage tax withheld by the payer; a non-resident gets no tax-free amount.",
+   "value": {
+    "artisteDeemedEmployment": 0.1,
+    "taxFree": 0
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Fictieve dienstbetrekking ja (10%) indien"
+    },
+    {
+     "src": 0,
+     "said": "Artiest die niet op de BES-eilanden woont"
+    },
+    {
+     "src": 0,
+     "said": "Hoofdregel is dat de werknemer die niet op een van de BES-eilanden woont geen recht heeft op de belastingvrije som"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "There is no VAT; general expenditure tax (ABB) on services is 6% on Bonaire and 4% on Sint Eustatius and Saba.",
+   "value": {
+    "ABBservices": {
+     "Bonaire": 0.06,
+     "StEustatiusSaba": 0.04
+    },
+    "ABBgoods": {
+     "Bonaire": 0.08,
+     "StEustatiusSaba": 0.06
+    }
+   },
+   "applies": "2026; no small-business threshold was read.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Eilandgebied Bonaire Sint Eustatius en Saba Algemeen tarief - leveringen/invoer 8% 6% Algemeen tarief - diensten 6% 4%"
+    }
+   ]
+  }
+ ],
+ "country": "BQ",
+ "sources": [
+  {
+   "url": "https://www.belastingdienst-cn.nl/site/binaries/site-content/collections/documents/belastingdienst/lh/2026/handboek-loonheffingen-2026/bes-handboek-loonheffingen-2026.pdf",
+   "title": "Handboek Loonheffingen 2026 (Belastingdienst Caribisch Nederland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Loonbelasting (bij een belastbare som van niet meer dan USD 51.251) 29,4% Loonbelasting (bij een belastbare som van meer dan USD 51.251) 38,4% … - USD 53.198 - 29,40% USD 53.198 - USD 15.640 38,40% … In 2026 bedraagt de belastingvrije som USD 21.956. … Premie AOV 25,0% Premie AWW 1,3% Premie ZV 0,7% Premie OV 0,2% Premie CES 0,1% Premie Zorgverzekering 0,5% 9,3% … maximum premiegrondslag. In 2026 is dat USD 38.390. … De loonheffing dient u in te houden op het loon van de werknemer. … Fictieve dienstbetrekking ja (10%) indien … Artiest die niet op de BES-eilanden woont … Hoofdregel is dat de werknemer die niet op een van de BES-eilanden woont geen recht heeft op de belastingvrije som"
+  },
+  {
+   "url": "https://www.belastingdienst-cn.nl/actueel/nieuws/2026/maart/04/aangifte-inkomstenbelasting-2025",
+   "title": "Aangifte Inkomstenbelasting 2025 (Belastingdienst Caribisch Nederland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De aangifte Inkomstenbelasting 2025 moet uiterlijk 18 mei 2026 zijn ingediend."
+  },
+  {
+   "url": "https://www.belastingdienst-cn.nl/onderwerpen/belastingzaken-bedrijven/algemene-bestedingsbelasting-bedrijven/tarieven-abb",
+   "title": "Tarieven ABB (Belastingdienst Caribisch Nederland)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Eilandgebied Bonaire Sint Eustatius en Saba Algemeen tarief - leveringen/invoer 8% 6% Algemeen tarief - diensten 6% 4%"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties under the BES income tax act.",
+   "tried": {
+    "institution": "belastingdienst-cn.nl answers; no page on royalties found in this pass (2026-11-01). || 2026-11-01 retry: english.belastingdienst-cn.nl tax-return form A 2024 page returns 404; the 2026 Handboek loonheffingen (saved BQ-handboek-loonheffingen-2026.pdf) searched for 'royalt', 'auteurs': it covers artistes (14.2) but not royalties",
+    "official-register": "wetten.overheid.nl (Wet inkomstenbelasting BES) not read 2026-11-01. || 2026-11-01 retry: wetten.overheid.nl (Wet inkomstenbelasting BES) search page: HTTP/2 protocol error, then an empty reply over HTTP/1.1 (2026-11-01)",
+    "web-search": "Not run for Caribbean Netherlands (2026-11-01). || 2026-11-01 retry: Dutch: 'Wet inkomstenbelasting BES royalty's auteursrecht \"Caribisch Nederland\" inkomstenbelasting belastingdienst': only mainland case law and the Belastingregeling voor het Koninkrijk royalty article; no BES rule",
+    "trade-press": "None read. || 2026-11-01 retry: taxlive.nl items in results concern mainland Dutch income tax (Rechtbank Noord-Nederland), not the BES act; not relied on",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API queried for wetten.overheid.nl/BWBR0028230 (the BES act id not confirmed): no snapshot; web.archive.org snapshot fetch resets the connection from this environment"
+   }
+  }
+ ]
+}

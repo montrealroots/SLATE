@@ -1,0 +1,228 @@
+{
+ "topic": "markets.director.NL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a director works on in The Netherlands. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "agreement",
+   "finding": "No collective agreement sets a Dutch film or TV director's fee; since 2025 the sector's fair-pay chain table for film and AV production (directors, writers, cast and crew with producers and public broadcasters) has published minimum freelance start rates, which the Dutch Directors Guild calls minimums to negotiate up from, not guaranteed pay.",
+   "value": {
+    "collectiveAgreement": null,
+    "instrument": "Fair Pay richtlijnen film- en AV-productie (ketentafel Film/AV, fairPACCT)",
+    "since": 2025,
+    "nature": "sector guideline: minimum zzp-starttarieven per task-weight level",
+    "binding": false
+   },
+   "applies": "Netherlands; freelance (zzp) directors on short and feature films, documentaries, animation, innovative media and drama/documentary/animation series, as of 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Werk je mee aan een korte speelfilm, documentaire, animatiefilm, innovatieve mediaproductie of een drama-, documentaire- en animatieserie? Ben je zzp’er of huuur je er weleens één in? Dan is het goed om stil te staan bij fair pay. Sinds 2025 zijn er concrete richtlijnen voor onder meer minimum zzp-starttarieven."
+    },
+    {
+     "src": 1,
+     "said": "Als deelnemer aan de ketentafels heeft de DDG stevig gepleit voor betere honoraria en werkomstandigheden voor regisseurs. Hieruit kwamen onder andere de fair pay-afspraken uit voort: starttarieven die passen bij het niveau van de opdracht en van de maker. Let op: deze ‘starttarieven’ zijn minimumtarieven ! … Het feit dat er sectorbrede afspraken zijn gemaakt over minimumtarieven betekent nog niet altijd dat je je tarief ook zeker kunt stellen."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "The sector's task compass places the director at weight levels J and K, whose minimum freelance start rates in the December 2024 matrix are EUR 50.24 and EUR 58.00 an hour (base EUR 28.80 and 33.25 plus a 74.45% mark-up for social costs and unbillable time and costs), benchmarked on 1 July 2023 collective-agreement salaries.",
+   "value": {
+    "currency": "EUR",
+    "per": "hour",
+    "matrix": "Matrix zzp-starttarieven film- en AV-productie, December 2024",
+    "benchmarkDate": "2023-07-01",
+    "levels": {
+     "J": {
+      "base": 28.8,
+      "markup": 21.44,
+      "startRate": 50.24
+     },
+     "K": {
+      "base": 33.25,
+      "markup": 24.75,
+      "startRate": 58.0
+     }
+    },
+    "markupFactor": 0.7445,
+    "directorLevels": [
+     "J",
+     "K"
+    ],
+    "billableHoursBasis": 1686
+   },
+   "applies": "Netherlands; freelance directors under the film/AV fair-pay guideline (non-binding), rates as of the December 2024 matrix; the 2026 indexed table was not readable (blocker).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "dep:`Regie`,rol:`Regisseur`,niveaus:[`J`,`K`] … Heeft de creatieve verantwoordelijkheid voor het eindproduct."
+    },
+    {
+     "src": 3,
+     "said": "Matrix zzp-starttarieven film- en AV-productie, december 2024 … K € 33,25 € 24,75 € 58,00 … J € 28,80 € 21,44 € 50,24 … Totaal opslagfactor: 74,45% … Op het Strategische niveau (13% van alle belo- ningen) zijn de werkenden vooral regisseurs en uitvoerend producenten."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "Directors are the most underpaid against those start rates: across the six productions studied, paying fair pay would add 81% to the writing-and-directing group's pay and 110% at the strategic level (mostly directors and executive producers), against 40% across feature films, because fixed fees rest on too few hours or too low an hourly rate.",
+   "value": {
+    "extraCostOfFairPay": {
+     "scenarioEnRegie": 0.81,
+     "strategicLevel": 1.1,
+     "featureFilmsAll": 0.4,
+     "documentariesAll": 0.67,
+     "fixedFee": 0.56
+    },
+    "sample": "six selected productions (zes geselecteerde producties)",
+    "date": "2025-03"
+   },
+   "applies": "Netherlands; productions studied by PPMC for Kunsten ’92 (report March 2025).",
+   "sources": [
+    {
+     "src": 3,
+     "said": "De relatieve meerkosten van Fair Pay zijn in verhouding hoog bij de documen- taires (relatief kleine organisaties) en bedragen 67% van de totale beloning van werkenden tegen 40% bij de speelfilms. … De relatieve meerkosten op het Strategisch niveau zijn buitengewoon hoog en bedragen maar liefst 110% van de beloning van deze groep werkenden. Het gaat vooral om regisseurs en uitvoerend producenten, voor wie de beloningen vaak op historisch te lage vuistregels zijn gebaseerd met vrijwel geen relatie tot de gevraagde werkinspanningen. … De afspraken berusten doorgaans op een te lage inschatting van het aantal werkuren en/of een te laag uurtarief, in het bijzonder bij de regisseurs."
+    }
+   ]
+  },
+  {
+   "item": "union",
+   "finding": "Directors' professional body is the Dutch Directors Guild, admitting by board decision anyone working as a professional director whose fiction, documentaries, series, programmes, animation, podcasts or commercials are publicly shown (corporate films alone do not count); 2026 dues are EUR 246 a year standard, EUR 75 to age 30, EUR 100 from 67, free for students.",
+   "value": {
+    "body": "Dutch Directors Guild (DDG)",
+    "fees2026": {
+     "currency": "EUR",
+     "standard": 246,
+     "youthTo30": 75,
+     "podcast": 105,
+     "senior67": 100,
+     "duoWithNetwerkScenarioschrijvers": 85,
+     "student": 0
+    },
+    "admission": "board vote; professional director with regular work for public showing"
+   },
+   "applies": "Netherlands, as of 2026-11-01.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Voor alle lidmaatschappen geldt dat je werkzaam moet zijn (geweest) als professioneel regisseur en met regelmaat audiovisuele producties maakt met als doel publieke vertoning . … Als je enkel bedrijfsfilms of opdrachtfilms maakt, kom je niet in aanmerking voor het lidmaatschap. Je aanmelding wordt besproken in de eerstvolgende bestuursvergadering , waar het bestuur nieuwe leden toelaat of afwijst. … Standaardlidmaatschap €246,- Studentenlidmaatschap Gratis (tot en met het jaar na afstuderen) Jongerenlidmaatschap (tot en met 30 jaar)* €75,- Podcastmakerlidmaatschap €105,- Seniorenlidmaatschap (vanaf 67 jaar) €100,-"
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "The sector's freelance start rates bind in practice through funding: the Film Fund and the public broadcaster NPO have written the guideline into their (subsidy) conditions and check it; the rates have applied since 1 January 2025 and are indexed every 1 January by the average indexation of the two collective agreements they derive from.",
+   "value": {
+    "inForceFrom": "2025-01-01",
+    "indexation": "each 1 January, average indexation of the Cao Toneel en Dans and the Cao voor het Omroeppersoneel",
+    "enforcedBy": [
+     "Nederlands Filmfonds (subsidy conditions)",
+     "NPO (conditions)"
+    ]
+   },
+   "applies": "Netherlands, film and AV productions funded by the Film Fund or commissioned by NPO, 2025 onward.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "De Richtlijn zzp-starttarieven in combinatie met de andere fair pay richtlijnen zijn sinds 1 januari 2025 van kracht en worden jaarlijks per 1 januari geïndexeerd op basis van de gemiddelede indexatie van de twee Cao’s waar de tarieven van zijn afgeleid (Cao Toneel en Dans, Cao voor het Omroeppersoneel). De NPO en het College van Omroepdirecteuren zijn als opdrachtgever aan de ketentafel vertegenwoordigd en hebben de praktijkinstrumenten mede ontwikkeld en vastgesteld. Het Filmfonds en NPO hebben het volgen van de Richtlijn zzp-starttarieven fillm- en AV-productie in combinatie met de andere fair pay praktijkinstrumenten opgenomen in hun (subsidie)voorwaarden en zien hierop toe."
+    }
+   ]
+  },
+  {
+   "item": "cut",
+   "finding": "Dutch law leaves the final version to the producer: under article 45c of the Copyright Act a film is finished when it is ready to be shown, and the producer decides that moment unless producer and makers agree otherwise in writing.",
+   "value": {
+    "statute": "Auteurswet, art. 45c",
+    "decides": "producer",
+    "unless": "written agreement otherwise",
+    "statedIn": "Kamerstuk 33308 nr. 10 (Nota van wijziging, 17 July 2014)"
+   },
+   "applies": "Netherlands, film works; as the government described article 45c in 2014 (the current text on wetten.overheid.nl could not be read from this environment).",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Het huidige artikel 45c Aw bepaalt wanneer een filmwerk voltooid is, te weten op het moment dat een filmwerk vertoningsgereed is. De producent beslist over het moment van vertoningsgereedheid, behoudens schriftelijke andersluidende afspraken."
+    }
+   ]
+  }
+ ],
+ "role": "director",
+ "country": "NL",
+ "sources": [
+  {
+   "url": "https://fairpacct.nl/deelsector-film-av/",
+   "title": "FairPACCT: Deelsector Film/AV",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Werk je mee aan een korte speelfilm, documentaire, animatiefilm, innovatieve mediaproductie of een drama-, documentaire- en animatieserie? Ben je zzp’er of huuur je er weleens één in? Dan is het goed om stil te staan bij fair pay. Sinds 2025 zijn er concrete richtlijnen voor onder meer minimum zzp-starttarieven."
+  },
+  {
+   "url": "https://www.directorsguild.nl/filmwerkwijs-bereken-je-tarief-met-deze-tool/",
+   "title": "Dutch Directors Guild: Filmwerkwijs: bereken je tarief met deze tool!",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Als deelnemer aan de ketentafels heeft de DDG stevig gepleit voor betere honoraria en werkomstandigheden voor regisseurs. Hieruit kwamen onder andere de fair pay-afspraken uit voort: starttarieven die passen bij het niveau van de opdracht en van de maker. Let op: deze ‘starttarieven’ zijn minimumtarieven ! … Het feit dat er sectorbrede afspraken zijn gemaakt over minimumtarieven betekent nog niet altijd dat je je tarief ook zeker kunt stellen."
+  },
+  {
+   "url": "https://tools.filmwerkwijs.nl/assets/index-B1zB4HHc.js",
+   "title": "Filmwerkwijs Fair Pay calculatietool (tools.filmwerkwijs.nl), role data in the tool’s published script",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "dep:`Regie`,rol:`Regisseur`,niveaus:[`J`,`K`] … Heeft de creatieve verantwoordelijkheid voor het eindproduct."
+  },
+  {
+   "url": "https://www.kunsten92.nl/wp-content/uploads/2025/04/20250314-Eindrapport-Fair-Pay-in-de-filmsector.pdf",
+   "title": "PPMC Economisch Advies / Goudriaan Economics: Meerkosten van Fair Pay in de filmsector, eindrapportage (March 2025), Bijlage C (citing the fairPACCT Ketentafel Film/AV practice instruments: Matrix zzp-starttarieven and Berenschot's Van loon naar zzp-starttarief)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://fairpacct.nl/praktijkinstrument-nr-3-film-av-van-loon-naar-zzp-starttarief-oktober-2023-berenschot/",
+   "said": "Matrix zzp-starttarieven film- en AV-productie, december 2024 … K € 33,25 € 24,75 € 58,00 … J € 28,80 € 21,44 € 50,24 … Totaal opslagfactor: 74,45% … Op het Strategische niveau (13% van alle belo- ningen) zijn de werkenden vooral regisseurs en uitvoerend producenten. … De relatieve meerkosten van Fair Pay zijn in verhouding hoog bij de documen- taires (relatief kleine organisaties) en bedragen 67% van de totale beloning van werkenden tegen 40% bij de speelfilms. … De relatieve meerkosten op het Strategisch niveau zijn buitengewoon hoog en bedragen maar liefst 110% van de beloning van deze groep werkenden. Het gaat vooral om regisseurs en uitvoerend producenten, voor wie de beloningen vaak op historisch te lage vuistregels zijn gebaseerd met vrijwel geen relatie tot de gevraagde werkinspanningen. … De afspraken berusten doorgaans op een te lage inschatting van het aantal werkuren en/of een te laag uurtarief, in het bijzonder bij de regisseurs."
+  },
+  {
+   "url": "https://www.directorsguild.nl/wie-zijn-we/voorwaarden-lidmaatschap/",
+   "title": "Dutch Directors Guild: Voorwaarden lidmaatschap",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Voor alle lidmaatschappen geldt dat je werkzaam moet zijn (geweest) als professioneel regisseur en met regelmaat audiovisuele producties maakt met als doel publieke vertoning . … Als je enkel bedrijfsfilms of opdrachtfilms maakt, kom je niet in aanmerking voor het lidmaatschap. Je aanmelding wordt besproken in de eerstvolgende bestuursvergadering , waar het bestuur nieuwe leden toelaat of afwijst. … Standaardlidmaatschap €246,- Studentenlidmaatschap Gratis (tot en met het jaar na afstuderen) Jongerenlidmaatschap (tot en met 30 jaar)* €75,- Podcastmakerlidmaatschap €105,- Seniorenlidmaatschap (vanaf 67 jaar) €100,-"
+  },
+  {
+   "url": "https://www.filmwerkwijs.nl/faq/",
+   "title": "Filmwerkwijs (fairPACCT Ketentafel Film/AV platform), FAQ",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De Richtlijn zzp-starttarieven in combinatie met de andere fair pay richtlijnen zijn sinds 1 januari 2025 van kracht en worden jaarlijks per 1 januari geïndexeerd op basis van de gemiddelede indexatie van de twee Cao’s waar de tarieven van zijn afgeleid (Cao Toneel en Dans, Cao voor het Omroeppersoneel). De NPO en het College van Omroepdirecteuren zijn als opdrachtgever aan de ketentafel vertegenwoordigd en hebben de praktijkinstrumenten mede ontwikkeld en vastgesteld. Het Filmfonds en NPO hebben het volgen van de Richtlijn zzp-starttarieven fillm- en AV-productie in combinatie met de andere fair pay praktijkinstrumenten opgenomen in hun (subsidie)voorwaarden en zien hierop toe."
+  },
+  {
+   "url": "https://zoek.officielebekendmakingen.nl/kst-33308-10.html",
+   "title": "Tweede Kamer, Kamerstuk 33308 nr. 10, Nota van wijziging, Wet auteurscontractenrecht (published 17 July 2014)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Het huidige artikel 45c Aw bepaalt wanneer een filmwerk voltooid is, te weten op het moment dat een filmwerk vertoningsgereed is. De producent beslist over het moment van vertoningsgereedheid, behoudens schriftelijke andersluidende afspraken."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "The 2026 indexed table of film/AV fair-pay zzp start rates (fairPACCT, \"Fair Pay Zzp-Tarieven en salarissen Film AV (Culturele) Producties, Cast en Crew. 2023 - 2026\").",
+   "tried": {
+    "institution": "fairpacct.nl/deelsector-film-av links it at http://fairpacct.nl/download/33960/; the download returned HTTP 403 \"Download fout\" to this environment, as did https://fairpacct.nl/download/34373/ (2026-11-01); not read another way. The Filmwerkwijs tool loads its rates from a database the page does not publish. | Retry 2026-11-01: fairpacct.nl/ketentafel-film-av/ re-read: the published links with their own parameters (http://fairpacct.nl/download/33950/?tmstv=1778250464 PDF, 33960 Excel, 33852 Opdracht Kompas, 33867 Handleiding) all answered HTTP 403; not read another way. filmwerkwijs.nl FAQ read: rates indexed each 1 January (added as a figure), no 2026 table.",
+    "official-register": "No government register holds the guideline; Rijksoverheid fair-pay pages not found to carry the table (2026-11-01) | Retry 2026-11-01: officielebekendmakingen kst-1263608 (OCW letter) read: mentions the zzp start-rate guidelines, no figures; VNPF progress note (vnpf.nl, Sept 2026 docx) read: same.",
+    "web-search": "'fairPACCT ketentafel film AV-productie fair pay starttarieven regisseur richtlijn' (2026-11-01): no table found | Retry 2026-11-01: fairpacct \"zzp-tarieven\" film AV 2026 regisseur: no 2026 table.",
+    "trade-press": "Search listed a Cultureel Persbureau item (April 2025) on the PPMC study; no 2026 rates found in trade press (2026-11-01) | Retry 2026-11-01: Cultureel Persbureau (April 2025) on the PPMC study only; no 2026 rates.",
+    "archive": "web.archive.org availability API: no snapshot of fairpacct.nl/download/33960/; CDX search blocked by egress policy (2026-11-01) | Retry 2026-11-01: archive.org availability API (http://archive.org/wayback/available?url=...) queried fairpacct.nl/download/33950/ on 2026-11-01: no snapshot; every web.archive.org snapshot fetch from this environment failed (https: connection reset; http: HTTP 403), so no snapshot was read."
+   }
+  },
+  {
+   "item": "periods",
+   "sought": "Guaranteed prep, shoot and cut periods or director’s-cut rights for Dutch directors (agreement, Film Fund condition or guild model contract).",
+   "tried": {
+    "institution": "directorsguild.nl home, kennisbank and membership pages read; no model contract or periods found publicly (2026-11-01) | Retry 2026-11-01: directorsguild.nl services, blauwdruk and Filmfonds round-table pages read: no periods (the cut question is now answered by art. 45c, see the cut figure).",
+    "official-register": "No collective agreement exists to register (see agreement figure) | Retry 2026-11-01: wetten.overheid.nl (Auteurswet) answered with an HTTP/2 protocol error and an empty reply; Kamerstuk 33308 nr. 10 read instead (cut only).",
+    "web-search": "'regisseur speelfilm minimumgage Nederland Directors Guild Nederland modelcontract Filmfonds regiehonorarium' and 'Filmfonds fair pay voorwaarde regisseur honorarium starttarieven 2026' (2026-11-01) | Retry 2026-11-01: Auteurswet artikel 45c filmwerk voltooid hoofdregisseur producent: no prep or shoot periods.",
+    "trade-press": "None found (2026-11-01) | Retry 2026-11-01: None found.",
+    "archive": "Not tried | Retry 2026-11-01: archive.org availability API (http://archive.org/wayback/available?url=...) queried wetten.overheid.nl/BWBR0001886 on 2026-11-01: a 2009 snapshot listed, not readable; every web.archive.org snapshot fetch from this environment failed (https: connection reset; http: HTTP 403), so no snapshot was read."
+   }
+  }
+ ]
+}

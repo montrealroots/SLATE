@@ -1,0 +1,274 @@
+{
+ "topic": "tax.LI",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Liechtenstein: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A single resident pays national income tax from 0% on the first CHF 15,855 up to 8% above CHF 211,400; each municipality adds a surcharge of 150% to 180% of the national tax, set yearly, for a combined top rate of about 22.4%. Income includes a notional 4% of net wealth.",
+   "value": {
+    "currency": "CHF",
+    "national": [
+     {
+      "from": 0,
+      "to": 15855,
+      "rate": 0
+     },
+     {
+      "from": 15855,
+      "to": 21140,
+      "rate": 0.01
+     },
+     {
+      "from": 21140,
+      "to": 42281,
+      "rate": 0.03
+     },
+     {
+      "from": 42281,
+      "to": 73990,
+      "rate": 0.04
+     },
+     {
+      "from": 73990,
+      "to": 105700,
+      "rate": 0.05
+     },
+     {
+      "from": 105700,
+      "to": 137410,
+      "rate": 0.06
+     },
+     {
+      "from": 137410,
+      "to": 169120,
+      "rate": 0.065
+     },
+     {
+      "from": 169120,
+      "to": 211400,
+      "rate": 0.07
+     },
+     {
+      "from": 211400,
+      "to": null,
+      "rate": 0.08
+     }
+    ],
+    "municipalSurcharge": {
+     "min": 1.5,
+     "max": 1.8,
+     "setBy": "each municipality, yearly",
+     "nonResidentDefault": 1.5
+    },
+    "personalExemption": {
+     "single": 15855,
+     "singleParent": 23783,
+     "married": 31710
+    },
+    "notionalWealthYield": 0.04
+   },
+   "applies": "2026; married couples and single parents have wider bands.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Individual income tax rate Taxable income (CHF) Rate (national income tax, excluding municipal multipliers) Up to 15,855 0% 15,856–21,140 1% 21,141–42,281 3% 42,282–73,990 4% 73,991–105,700 5% 105,701–137,410 6% 137,411–169,120 6.5% 169,121–211,400 7% Over 211,400 8%"
+    },
+    {
+     "src": 1,
+     "said": "Communal tax is a surcharge on the national income tax due. Communities levy a surcharge of between 150% and 180%. The surcharges are fixed annually by the local governments. Consequently, the tax rate consists of the national tax rate combined with the surcharges, which results in tax rates from 2.5% to 22.4%."
+    },
+    {
+     "src": 1,
+     "said": "Personal exemption 15,855 23,783 31,710"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the return is due in mid-April of the next year (extendable to mid-September against a provisional payment), and tax is due on assessment.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "mid-April following year",
+    "extension": "mid-September"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Tax year: The tax year is the calendar year."
+    },
+    {
+     "src": 0,
+     "said": "Filing and payment: The normal filing deadline is in mid-April of the year following the tax year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 4.70% to old-age, survivors' and disability insurance (AHV/IV) and 0.5% unemployment insurance on the first CHF 126,000; the employer pays slightly more than half of the total; occupational pension is also mandatory.",
+   "value": {
+    "currency": "CHF",
+    "employee": {
+     "AHV_IV": 0.047,
+     "unemployment": 0.005,
+     "unemploymentCeiling": 126000
+    },
+    "employer": "slightly more than 50% of total",
+    "selfEmployedMaxRate": 0.18
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The taxpayer’s share of social security contributions (old-age and dependent pension schemes, disability insurance) is 4.70% (with an upper limit of 18% for self-employed and employed individuals) and 0.5% for unemployment insurance on the first CHF 126,000 of compensation"
+    },
+    {
+     "src": 0,
+     "said": "The employer generally is required to pay slightly"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold wage tax from pay, credited against the assessed tax.",
+   "value": {
+    "employee": "wage withholding"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employers need to deduct a withholding tax (WHT) from the salary of their employees."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed on Liechtenstein employment income and business profits, at the national scale with a 150% municipal multiplier when assessed; there are no withholding taxes on royalties or service fees.",
+   "value": {
+    "scope": "Liechtenstein employment and business income",
+    "municipalMultiplier": 1.5,
+    "royaltyWithholding": 0
+   },
+   "applies": "No artiste-specific rule was found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Nonresidents are taxed on Liechtenstein employment income, business profits, and profits attributable to immovable property located in Liechtenstein."
+    },
+    {
+     "src": 1,
+     "said": "For individuals with a limited tax liability who are ordinary tax-assessed, a general municipal multiplier of 150% will be applied."
+    },
+    {
+     "src": 0,
+     "said": "There are no withholding taxes on dividends, interest, royalties, or fees for technical services in Liechtenstein, and"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Liechtenstein applies Switzerland's VAT law with its own administration: 8.1% standard; an enterprise registers once annual turnover exceeds CHF 100,000.",
+   "value": {
+    "currency": "CHF",
+    "standard": 0.081,
+    "reduced": 0.026,
+    "accommodation": 0.037,
+    "registrationThreshold": 100000,
+    "follows": "CH"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Liechtenstein has adopted the VAT law of Switzerland, while having its own VAT administration. The general VAT rate is 8.1% (7.7% up to 31 December 2023)."
+    },
+    {
+     "src": 0,
+     "said": "Registration: Enterprises whose annual turnover exceeds CHF 100,000 must, in principle, register for VAT purposes."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Liechtenstein has no source tax on a non-resident artiste's fee as such: a person without residence there is taxed only on the domestic income the Tax Act lists, which takes in pay for employed work done in Liechtenstein (taxed by a source deduction the Tax Administration sets, final below CHF 211,400 gross) but not a self-employed performer's or author's fee without a permanent establishment there.",
+   "value": {
+    "artisteSourceTax": null,
+    "employedWork": {
+     "withholding": "set by the Tax Administration (annual income, flat deductions, family)",
+     "finalBelowGross": 211400,
+     "currency": "CHF"
+    },
+    "selfEmployedWithoutPE": "not domestic income",
+    "boardFees": 0.12
+   },
+   "applies": "Persons with neither residence nor habitual abode in Liechtenstein, from the Tax Act as in force on 1 July 2026 (Art. 6 para. 2 and 5, Art. 23, Art. 24, Art. 25).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "2) Natürliche Personen, die weder Wohnsitz noch gewöhnlichen Auf- enthalt im Inland haben, sind mit ihrem inländischen Vermögen und ihrem inländischen Erwerb beschränkt steuerpflichtig. … b) der Erwerb aus im Inland gelegenen Betriebsstätten; … c) der Erwerb aus im Inland ausgeübter unselbständiger Tätigkeit … b) bei Erwerb im Sinne des Art. 6 Abs. 5 Bst. c bis f durch den Steuerabzug … abgegolten; vorbehalten bleibt die ordentliche Veranlagung nach Abs. 2. … abis) bei Erwerb im Sinne von Art. 6 Abs. 5 Bst. c bis f, sofern der Brutto- erwerb 211 400 Franken oder mehr beträgt; … 2) Bei steuerabzugspflichtigem Erwerb im Sinne des Art. 24 Abs. 1 Bst. a … und Abs. 2 Bst. a wird der Steuerabzug von der Steuerverwaltung bestimmt. … 3) Der Steuerabzug beträgt bei steuerabzugspflichtigem Erwerb im … Sinne des Art. 24 Abs. 1 Bst. b und Abs. 2 Bst. b bis d 12 % des Erwerbs."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The Tax Act gives an individual author's fees and royalties no special treatment: for a resident they are part of the income from self-employed activity taxed on the ordinary scale, and royalties paid to a non-resident are not domestic income, so nothing is withheld.",
+   "value": {
+    "special": false,
+    "nonResidentRoyaltyWithholding": null
+   },
+   "applies": "Resident and non-resident authors (Tax Act as in force on 1 July 2026); royalties appear in the Act only as business expenses and as passive income of companies.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "5) Als inländischer Erwerb nach Abs. 2 gelten: … sämtliche Gewinnungskosten, wie Material- und Warenaufwen- dungen, Lohn und Sozialkosten für die Arbeitnehmer, Patent- und Lizenzgebühren, die geschäftsmässig begründeten Abschreibungen"
+    }
+   ]
+  }
+ ],
+ "country": "LI",
+ "sources": [
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-liechtensteinhighlights-2026.pdf",
+   "title": "Deloitte International Tax: Liechtenstein Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.llv.li/de/landesverwaltung/steuerverwaltung",
+   "said": "Individual income tax rate Taxable income (CHF) Rate (national income tax, excluding municipal multipliers) Up to 15,855 0% 15,856–21,140 1% 21,141–42,281 3% 42,282–73,990 4% 73,991–105,700 5% 105,701–137,410 6% 137,411–169,120 6.5% 169,121–211,400 7% Over 211,400 8% … Tax year: The tax year is the calendar year. … Filing and payment: The normal filing deadline is in mid-April of the year following the tax year. … The employer generally is required to pay slightly … Nonresidents are taxed on Liechtenstein employment income, business profits, and profits attributable to immovable property located in Liechtenstein. … There are no withholding taxes on dividends, interest, royalties, or fees for technical services in Liechtenstein, and … Registration: Enterprises whose annual turnover exceeds CHF 100,000 must, in principle, register for VAT purposes."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/liechtenstein/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: liechtenstein Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.llv.li/de/landesverwaltung/steuerverwaltung",
+   "said": "Communal tax is a surcharge on the national income tax due. Communities levy a surcharge of between 150% and 180%. The surcharges are fixed annually by the local governments. Consequently, the tax rate consists of the national tax rate combined with the surcharges, which results in tax rates from 2.5% to 22.4%. … Personal exemption 15,855 23,783 31,710 … For individuals with a limited tax liability who are ordinary tax-assessed, a general municipal multiplier of 150% will be applied."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/liechtenstein/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: liechtenstein Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.ahv.li/",
+   "said": "The taxpayer’s share of social security contributions (old-age and dependent pension schemes, disability insurance) is 4.70% (with an upper limit of 18% for self-employed and employed individuals) and 0.5% for unemployment insurance on the first CHF 126,000 of compensation … Liechtenstein has adopted the VAT law of Switzerland, while having its own VAT administration. The general VAT rate is 8.1% (7.7% up to 31 December 2023)."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: liechtenstein Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.llv.li/de/landesverwaltung/steuerverwaltung",
+   "said": "Employers need to deduct a withholding tax (WHT) from the salary of their employees."
+  },
+  {
+   "url": "https://www.gesetze.li/konso/pdf/2010340000?version=38",
+   "title": "Steuergesetz (SteG), LGBl. 2010 Nr. 340, consolidated text, Fassung 01.07.2026 (Lilex, Gesetzesdatenbank des Fürstentums Liechtenstein), Art. 6, 23-25",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "2) Natürliche Personen, die weder Wohnsitz noch gewöhnlichen Auf- enthalt im Inland haben, sind mit ihrem inländischen Vermögen und ihrem inländischen Erwerb beschränkt steuerpflichtig. … b) der Erwerb aus im Inland gelegenen Betriebsstätten; … c) der Erwerb aus im Inland ausgeübter unselbständiger Tätigkeit … b) bei Erwerb im Sinne des Art. 6 Abs. 5 Bst. c bis f durch den Steuerabzug … abgegolten; vorbehalten bleibt die ordentliche Veranlagung nach Abs. 2. … abis) bei Erwerb im Sinne von Art. 6 Abs. 5 Bst. c bis f, sofern der Brutto- erwerb 211 400 Franken oder mehr beträgt; … 2) Bei steuerabzugspflichtigem Erwerb im Sinne des Art. 24 Abs. 1 Bst. a … und Abs. 2 Bst. a wird der Steuerabzug von der Steuerverwaltung bestimmt. … 3) Der Steuerabzug beträgt bei steuerabzugspflichtigem Erwerb im … Sinne des Art. 24 Abs. 1 Bst. b und Abs. 2 Bst. b bis d 12 % des Erwerbs. … 5) Als inländischer Erwerb nach Abs. 2 gelten: … sämtliche Gewinnungskosten, wie Material- und Warenaufwen- dungen, Lohn und Sozialkosten für die Arbeitnehmer, Patent- und Lizenzgebühren, die geschäftsmässig begründeten Abschreibungen"
+  }
+ ],
+ "blockers": []
+}

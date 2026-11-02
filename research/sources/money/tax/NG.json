@@ -1,0 +1,292 @@
+{
+ "topic": "tax.NG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Nigeria: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 1 January 2026 an individual's taxable income (after reliefs) is taxed at 0% on the first NGN 800,000, then 15%, 18%, 21%, 23% and 25% above NGN 50 million; the rates are national, collected by the State Internal Revenue Service where the person lives.",
+   "value": {
+    "currency": "NGN",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 800000,
+      "rate": 0
+     },
+     {
+      "from": 800000,
+      "to": 3000000,
+      "rate": 0.15
+     },
+     {
+      "from": 3000000,
+      "to": 12000000,
+      "rate": 0.18
+     },
+     {
+      "from": 12000000,
+      "to": 25000000,
+      "rate": 0.21
+     },
+     {
+      "from": 25000000,
+      "to": 50000000,
+      "rate": 0.23
+     },
+     {
+      "from": 50000000,
+      "to": null,
+      "rate": 0.25
+     }
+    ],
+    "administeredBy": "Nigeria Revenue Service or the Internal Revenue Service of a State or the FCT"
+   },
+   "applies": "Nigeria Tax Act 2025, Fourth Schedule, in force from 1 January 2026; employment income at or below the National Minimum Wage is exempt.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(a) First N800,000 at 0%; (b) Next N2,200,000 at 15%; (c) Next N9,000,000 at 18%; (d) Next N13,000,000 at 21%; (e) Next N25,000,000 at 23%; and (f) Above N50,000,000 at 25%."
+    },
+    {
+     "src": 0,
+     "said": "income of a person from an employment where such person earns gross income of National Minimum Wage or less from such employment"
+    },
+    {
+     "src": 1,
+     "said": "\"relevant tax authority\" means Nigeria Revenue Service, the Internal Revenue Service of a State or the Federal Capital Territory in Nigeria"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "There is no flat allowance beyond the 0% band; eligible deductions are the individual's National Housing Fund, health insurance and pension contributions, mortgage interest on an owner-occupied home, life insurance premiums, and rent relief of 20% of rent paid up to NGN 500,000.",
+   "value": {
+    "currency": "NGN",
+    "deductions": [
+     "NHF contributions",
+     "NHIS contributions",
+     "Pension Reform Act contributions",
+     "owner-occupied home loan interest",
+     "life assurance/annuity premiums"
+    ],
+    "rentRelief": {
+     "rate": 0.2,
+     "max": 500000
+    }
+   },
+   "applies": "Nigeria Tax Act 2025, s 30.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(i) the individual's contributions under the National Housing Fund, (ii) the individual's contributions under the National Health Insurance Scheme, (iii) the individual's contributions under the Pension Reform Act,"
+    },
+    {
+     "src": 0,
+     "said": "rent relief of 20% of annual rent paid, subject to a maximum"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment is the calendar year; employers file their employees' emolument return by 31 January; the Act sets no explicit date for an individual's own return, and the state tax authorities set 31 March (Edo State's notice for 2026 names 31 January for employers and 31 March for all other taxable persons).",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "employerAnnualReturn": "31 January",
+    "individualReturn": "31 March"
+   },
+   "applies": "From 2026; the 31 March date is read from the Edo State Internal Revenue Service's notice citing NTAA 2025 ss. 13-14 (the relevant tax authority for a resident individual is the state of residence; other states' notices not read).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "\"year of assessment\" means government tax year being 1st of January to 31 of December of any year."
+    },
+    {
+     "src": 1,
+     "said": "An employer shall file a return with the relevant tax authority for all emoluments paid to its employees, not later than 31 January of each year in respect of all employees in its employment in the preceding year."
+    },
+    {
+     "src": 2,
+     "said": "Pursuant to Section 14 subsections (1), (2) & (3), Section 13 subsection (1) & (2) of the Nigerian Tax Administration Act (NTAA) 2025, & Section 26 of the Nigeria Tax Act (NTA) 2025, the Edo State Internal Revenue Service (EIRS), hereby notifies all employers of labour and all taxable persons in Edo State to file their 2026 Annual Tax Returns not later than 31st of January, 2026 and 31st of March, 2026 respectively."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Under the contributory pension scheme the employer pays at least 10% and the employee 8% of monthly emoluments (or the employer at least 20% alone).",
+   "value": {
+    "pension": {
+     "employer": 0.1,
+     "employee": 0.08,
+     "employerAlone": 0.2,
+     "base": "monthly emoluments (not less than basic, housing and transport)"
+    }
+   },
+   "applies": "Pension Reform Act 2014 s 4 (per PwC's 2014 summary); NHF, NSITF and any performers' scheme not read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The rates of contributions to be made under the new Scheme by both the employer and employee are a minimum of 10% and 8% respectively"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts income tax from emoluments so that the year's deductions equal the tax chargeable (PAYE); a payer of fees deducts tax at source at the rate set by regulation (for consultancy and professional fees to an individual, 5% resident and 10% non-resident under the 2024 regulations).",
+   "value": {
+    "employee": "PAYE: cumulative deduction equal to annual tax",
+    "fees": {
+     "residentIndividual": 0.05,
+     "nonResidentIndividual": 0.1
+    }
+   },
+   "applies": "NTAA 2025 s 51 defers rates to the deduction-at-source regulations; the 2024 regulations' rates are read from PwC's summary, and whether they carry over unchanged into 2026 was not confirmed.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "In arriving at the amount of income tax to be deducted from any payment of or on account of the emolument to an employee, the employer shall ensure that the aggregate amount of all the deductions made during a year of assessment shall equal the income tax chargeable on the employee in respect of its emoluments for that year."
+    },
+    {
+     "src": 1,
+     "said": "Where any payment is made to a person, the person making the payment shall, at the date when payment is made or otherwise settled, deduct the tax at the rate prescribed in regulations relating to deduction of tax at source."
+    },
+    {
+     "src": 4,
+     "said": "Commission, consultancy, 5% 10% 5% 10% Higher rates for non"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident entertainer has 15% deducted at source on amounts earned in Nigeria, and the deduction is the final tax unless he has a permanent establishment or significant economic presence there.",
+   "value": {
+    "rate": 0.15,
+    "final": true,
+    "exceptIf": "permanent establishment or significant economic presence in Nigeria"
+   },
+   "applies": "Rate from the 2024 regulations (PwC summary); finality from the Nigeria Tax Act 2025 (section on non-residents, number not recorded).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Entertainment and N/A 15% NA 15% Applies on amounts"
+    },
+    {
+     "src": 0,
+     "said": "shall be the final tax on that payment unless the person has a permanent establishment or significant economic presence in Nigeria to which the payment is attributable."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to an individual (an author) bear 5% tax at source, resident or non-resident, under the 2024 regulations; no other special treatment was found.",
+   "value": {
+    "royaltyWHT": {
+     "individualResident": 0.05,
+     "individualNonResident": 0.05,
+     "corporate": 0.1
+    }
+   },
+   "applies": "2024 regulations (PwC summary); carry-over into 2026 not confirmed.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Royalties 10% 10% 5% 5% Rates as specified in"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 7.5%; a small business (turnover of NGN 50 million or less, fixed assets under NGN 250 million, and not providing professional services) is exempt from registering, charging and filing.",
+   "value": {
+    "currency": "NGN",
+    "standard": 0.075,
+    "smallBusiness": {
+     "turnoverMax": 50000000,
+     "fixedAssetsBelow": 250000000,
+     "excludes": "professional services"
+    }
+   },
+   "applies": "From 2026; whether a freelance screen worker counts as 'professional services' is not settled by the text read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "VAT shall be charged on the value of all taxable supplies at the rate of 7.5%."
+    },
+    {
+     "src": 1,
+     "said": "\"small business\" means a business that earns gross turnover of N50,000,000 or less per annum with total fixed assets less than N250,000,000, provided that any business providing professional services shall not be classified as a small business"
+    },
+    {
+     "src": 1,
+     "said": "choose to opt out of the exemption granted to small businesses under this Part including registration, charging of tax on its taxable supplies and filing of returns."
+    }
+   ]
+  }
+ ],
+ "country": "NG",
+ "sources": [
+  {
+   "url": "https://thenigerialawyer.com/wp-content/uploads/2025/06/FINAL-COPY-NIGERIA-TAX-ACT-2025-TheNigeriaLawyer.pdf",
+   "title": "Nigeria Tax Act, 2025 (copy of the Act text hosted by TheNigeriaLawyer)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.judy.legal/legislation/akn/ng/act/2025/7",
+   "said": "(a) First N800,000 at 0%; (b) Next N2,200,000 at 15%; (c) Next N9,000,000 at 18%; (d) Next N13,000,000 at 21%; (e) Next N25,000,000 at 23%; and (f) Above N50,000,000 at 25%. … income of a person from an employment where such person earns gross income of National Minimum Wage or less from such employment … (i) the individual's contributions under the National Housing Fund, (ii) the individual's contributions under the National Health Insurance Scheme, (iii) the individual's contributions under the Pension Reform Act, … rent relief of 20% of annual rent paid, subject to a maximum … \"year of assessment\" means government tax year being 1st of January to 31 of December of any year. … shall be the final tax on that payment unless the person has a permanent establishment or significant economic presence in Nigeria to which the payment is attributable. … VAT shall be charged on the value of all taxable supplies at the rate of 7.5%."
+  },
+  {
+   "url": "https://gazettengr.com/wp-content/uploads/NIGERIA-TAX-ADMINISTRATION-ACT-2025.pdf",
+   "title": "Nigeria Tax Administration Act, 2025, Federal Republic of Nigeria Official Gazette No. 117, Vol. 112, 26 June 2025 (scan hosted by gazettengr.com)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "\"relevant tax authority\" means Nigeria Revenue Service, the Internal Revenue Service of a State or the Federal Capital Territory in Nigeria … An employer shall file a return with the relevant tax authority for all emoluments paid to its employees, not later than 31 January of each year in respect of all employees in its employment in the preceding year. … In arriving at the amount of income tax to be deducted from any payment of or on account of the emolument to an employee, the employer shall ensure that the aggregate amount of all the deductions made during a year of assessment shall equal the income tax chargeable on the employee in respect of its emoluments for that year. … Where any payment is made to a person, the person making the payment shall, at the date when payment is made or otherwise settled, deduct the tax at the rate prescribed in regulations relating to deduction of tax at source. … \"small business\" means a business that earns gross turnover of N50,000,000 or less per annum with total fixed assets less than N250,000,000, provided that any business providing professional services shall not be classified as a small business … choose to opt out of the exemption granted to small businesses under this Part including registration, charging of tax on its taxable supplies and filing of returns."
+  },
+  {
+   "url": "https://eirs.gov.ng/notice-of-demand-for-employers-employees-to-file-annual-paye-individual-tax-returns/",
+   "title": "Edo State Internal Revenue Service: Notice of demand for employers & employees to file annual PAYE & individual tax returns (31 December 2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Pursuant to Section 14 subsections (1), (2) & (3), Section 13 subsection (1) & (2) of the Nigerian Tax Administration Act (NTAA) 2025, & Section 26 of the Nigeria Tax Act (NTA) 2025, the Edo State Internal Revenue Service (EIRS), hereby notifies all employers of labour and all taxable persons in Edo State to file their 2026 Annual Tax Returns not later than 31st of January, 2026 and 31st of March, 2026 respectively."
+  },
+  {
+   "url": "https://www.pwc.com/ng/en/assets/pdf/tax-bites-july-2014.pdf",
+   "title": "PwC Nigeria Tax Bites, July 2014 (on the Pension Reform Act 2014)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pencom.gov.ng/",
+   "said": "The rates of contributions to be made under the new Scheme by both the employer and employee are a minimum of 10% and 8% respectively"
+  },
+  {
+   "url": "https://www.pwc.com/ng/en/assets/pdf/highlights-of-the-deduction-at-source-regulations-2024.pdf",
+   "title": "PwC Nigeria, Highlights of the Deduction at Source (Withholding) Regulations 2024",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://assets.kpmg.com/content/dam/kpmg/ng/pdf/2024/10/Deduction%20of%20Tax%20at%20Source%20%28Withholding%29%20Regulations%202024_Gazetted.pdf",
+   "said": "Commission, consultancy, 5% 10% 5% 10% Higher rates for non … Entertainment and N/A 15% NA 15% Applies on amounts … Royalties 10% 10% 5% 5% Rates as specified in"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "withholding",
+   "sought": "The deduction-at-source regulations in force for 2026 under NTAA 2025 s 51 (the primary text)",
+   "tried": {
+    "institution": "nrs.gov.ng bot-checked (see above); firs.gov.ng reset the connection || retry 2026-11-01: nrs.gov.ng 301 to a JavaScript app; firs.gov.ng not reached; the rates schedule not found on any tax-authority host",
+    "official-register": "KPMG-hosted gazetted copy of the 2024 Regulations returned HTTP 404 || retry 2026-11-01: judy.legal/legislation/akn/ng/act/si/2024/34 read (HTTP 200): the static page carries only the table of contents of S.I. No. 34 of 2024, the schedule of rates is not in it; KPMG-hosted gazette copy still HTTP 404",
+    "web-search": "searched 'Deduction of Tax at Source (Withholding) Regulations 2024 ... non-resident artistes' || retry 2026-11-01: '\"Deduction of Tax at Source (Withholding) Regulations\" 2024 gazette pdf firs.gov.ng OR nrs.gov.ng OR gov.ng': only KPMG, PwC, Mondaq, EY and law-firm copies; no government host",
+    "trade-press": "PwC highlights used as secondary || retry 2026-11-01: EY taxnews 2024-1347, Mondaq 1496012, Aluko & Oyebode seen in results; none links a readable government copy",
+    "archive": "web.archive.org snapshot 20250218130403 of the KPMG copy returned HTTP 403 || retry 2026-11-01: web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Pension Reform Act 2014 text, NHF and NSITF rates from the primary",
+   "tried": {
+    "institution": "pencom.gov.ng returned HTTP 406 and then reset the connection on 2026-11-01 || retry 2026-11-01: pencom.gov.ng still HTTP 406 to curl (not read another way)",
+    "official-register": "not found || retry 2026-11-01: judy.legal/legislation/akn/ng/act/2014/4 read: not the Pension Reform Act text (no contribution section)",
+    "web-search": "searched 'Pension Reform Act 2014 section 4 ten percent employer eight percent employee' || retry 2026-11-01: '\"Pension Reform Act, 2014\" pdf \"minimum of ten percent\" employer \"eight percent\" employee section 4': secondary summaries only",
+    "trade-press": "PwC Tax Bites July 2014 used || retry 2026-11-01: blog.lawpavilion.com/?p=48 read (LawPavilion): summarises s. 4 as minimum 10% employer and 8% employee but quotes no primary URL; not used as primary",
+    "archive": "not tried || retry 2026-11-01: web.archive.org reset the connection (curl 35) on every request 2026-11-01; archive.org availability API reachable"
+   }
+  }
+ ]
+}

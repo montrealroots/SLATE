@@ -1,0 +1,649 @@
+{
+ "topic": "tax.FR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in France: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "France taxes a household's income by a progressive scale on each share (quotient familial); the scale set by the loi de finances pour 2026 for 2025 income is 0% to €11,600, then 11%, 30%, 41% and 45% above €181,917. The scale for 2026 income awaits the loi de finances pour 2027.",
+   "value": {
+    "currency": "EUR",
+    "incomeYear": 2025,
+    "setBy": "loi de finances pour 2026",
+    "perShare": true,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 11600,
+      "rate": 0
+     },
+     {
+      "from": 11600,
+      "to": 29579,
+      "rate": 0.11
+     },
+     {
+      "from": 29579,
+      "to": 84577,
+      "rate": 0.3
+     },
+     {
+      "from": 84577,
+      "to": 181917,
+      "rate": 0.41
+     },
+     {
+      "from": 181917,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "municipal": null
+   },
+   "applies": "Resident households; national tax only (no regional or municipal income tax layer). The 2025-income scale is what is assessed in 2026; the 2026-income scale is a blocker.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Jusqu'à 11 600 € 0 % De 11 601 € à 29 579 € 11 % De 29 580 € à 84 577 € 30 % De 84 578 € à 181 917 € 41 % Plus de 181 917 € 45 %"
+    },
+    {
+     "src": 0,
+     "said": "le barème de 2026 (applicable aux revenus de 2025) est fixé par la loi de finances pour 2026"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "On a salary the employee pays 6.9% capped old-age (to the €4,005 monthly ceiling) and 0.4% uncapped, plus CSG 9.2% and CRDS 0.5% on 98.25% of gross; the employer pays 13% (or 7%) health, 8.55% capped and 2.11% uncapped old-age, 5.25% (or 3.45%) family and 4% unemployment, with Agirc-Arrco top-ups on both sides. An artiste-auteur pays 6.90% capped old-age (6.15% after the State's share), CSG 9.20%, CRDS 0.50% and 0.35% training on income up to the €48,060 annual ceiling.",
+   "value": {
+    "currency": "EUR",
+    "PASSmonthly": 4005,
+    "PASSannual": 48060,
+    "employee": {
+     "oldAgeCapped": 0.069,
+     "oldAgeUncapped": 0.004,
+     "CSG": {
+      "rate": 0.092,
+      "base": "98.25% of gross"
+     },
+     "CRDS": {
+      "rate": 0.005,
+      "base": "98.25% of gross"
+     },
+     "agircArrcoT1": 0.0315,
+     "cegT1": 0.0086,
+     "agircArrcoT2": 0.0864,
+     "cegT2": 0.0108
+    },
+    "employer": {
+     "health": "13% or 7%",
+     "CSA": 0.003,
+     "oldAgeCapped": 0.0855,
+     "oldAgeUncapped": 0.0211,
+     "family": "5.25% or 3.45%",
+     "unemployment": {
+      "rate": 0.04,
+      "ceilingMonthly": 16020
+     },
+     "AGS": 0.0025,
+     "agircArrcoT1": 0.0472,
+     "cegT1": 0.0129,
+     "agircArrcoT2": 0.1295,
+     "cegT2": 0.0162
+    },
+    "artistesAuteurs": {
+     "oldAgeCapped": {
+      "rate": 0.069,
+      "stateShare": 0.0075,
+      "net": 0.0615,
+      "ceiling": 48060
+     },
+     "oldAgeUncapped": {
+      "rate": 0.004,
+      "net": 0
+     },
+     "CSG": 0.092,
+     "CRDS": 0.005,
+     "CFP": 0.0035,
+     "baseBNC": "profit + 15%",
+     "baseSalaryDeclared": "100% (CSG/CRDS on 98.25%)"
+    },
+    "intermittents": "unemployment contributions under annexes 8 and 10: 2026 rates not established (see blockers)"
+   },
+   "applies": "2026; general regime (régime général) salaries and artistes-auteurs.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Assurance vieillesse (plafonnée) 2 6,9% 4 005 € 8,55% 4 005 € Assurance vieillesse 0,4% totalité du salaire 2,11% totalité du salaire"
+    },
+    {
+     "src": 1,
+     "said": "Contribution sociale généralisée (CSG) 5 9,2% sur 98,25% du salaire brut - Contribution pour le remboursement de la dette sociale (CRDS) 5 0,5% sur 98,25% du salaire brut - Chômage 6 - 4 % 16 020 €"
+    },
+    {
+     "src": 1,
+     "said": "Le plafond mensuel de la sécurité sociale en 2026 est de 4 005 €."
+    },
+    {
+     "src": 1,
+     "said": "Assurance maladie, maternité, invalidité, décès 1 - 13% ou 7% totalité du salaire"
+    },
+    {
+     "src": 2,
+     "said": "Assurance vieillesse plafonnée (dans la limite des revenus inférieurs au Pass 2026 : 48 060 €) Bénéfice + 15 % 6,90 %, dont 0,75 % prise en charge par l'État. Soit un total final de 6,15 % CSG (contribution sociale généralisée) Bénéfice + 15 % 9,20 % CRDS (contribution au remboursement de la dette sociale) Bénéfice + 15 % 0,50 % CFP (contribution à la formation professionnelle) Bénéfice + 15 % 0,35 %"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Income tax is withheld at source: an employer (or France Travail, for an intermittent's benefit) deducts it from pay at the rate the tax office computes, or by the default grid when it has none (from 0% below €1,635 a month to 43% from €55,558); a self-employed worker pays monthly instalments drawn by the tax office.",
+   "value": {
+    "currency": "EUR",
+    "wages": "personalised rate sent by the DGFiP to the employer",
+    "defaultGridMonthlyMetropole": [
+     {
+      "from": 0,
+      "to": 1635,
+      "rate": 0
+     },
+     {
+      "from": 1635,
+      "to": 1698,
+      "rate": 0.005
+     },
+     {
+      "from": 1698,
+      "to": 1807,
+      "rate": 0.013
+     },
+     {
+      "from": 1807,
+      "to": 1928,
+      "rate": 0.021
+     },
+     {
+      "from": 1928,
+      "to": 2060,
+      "rate": 0.029
+     },
+     {
+      "from": 2060,
+      "to": 2170,
+      "rate": 0.035
+     },
+     {
+      "from": 2170,
+      "to": 2315,
+      "rate": 0.041
+     },
+     {
+      "from": 2315,
+      "to": 2738,
+      "rate": 0.053
+     },
+     {
+      "from": 2738,
+      "to": 3135,
+      "rate": 0.075
+     },
+     {
+      "from": 3135,
+      "to": 3571,
+      "rate": 0.099
+     },
+     {
+      "from": 3571,
+      "to": 4019,
+      "rate": 0.119
+     },
+     {
+      "from": 4019,
+      "to": 4690,
+      "rate": 0.138
+     },
+     {
+      "from": 4690,
+      "to": 5624,
+      "rate": 0.158
+     },
+     {
+      "from": 5624,
+      "to": 7037,
+      "rate": 0.179
+     },
+     {
+      "from": 7037,
+      "to": 8789,
+      "rate": 0.2
+     },
+     {
+      "from": 8789,
+      "to": 12200,
+      "rate": 0.24
+     },
+     {
+      "from": 12200,
+      "to": 16523,
+      "rate": 0.28
+     },
+     {
+      "from": 16523,
+      "to": 25937,
+      "rate": 0.33
+     },
+     {
+      "from": 25937,
+      "to": 55558,
+      "rate": 0.38
+     },
+     {
+      "from": 55558,
+      "to": null,
+      "rate": 0.43
+     }
+    ],
+    "gridFrom": "2026-05-01",
+    "selfEmployed": "monthly or quarterly instalments (acomptes) debited by the tax office"
+   },
+   "applies": "2026; the grid shown applies from 1 May 2026 to taxpayers domiciled in metropolitan France or abroad.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Si vous êtes salarié ou retraité , l'impôt est collecté par votre employeur ou votre caisse de retraite."
+    },
+    {
+     "src": 3,
+     "said": "Vous payez l'impôt sur le revenu correspondant par des acomptes prélevés sur votre compte bancaire directement par l'administration fiscale si vous êtes dans l'une des situations suivantes : Travailleur indépendant"
+    },
+    {
+     "src": 4,
+     "said": "Grille des taux par défaut applicables aux contribuables domiciliés en métropole et hors de France à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 635 euros 0 %"
+    },
+    {
+     "src": 4,
+     "said": "Supérieure ou égale à 25 937 euros et inférieure à 55 558 euros 38 % Supérieure ou égale à 55 558 euros 43 %"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Sums paid for artistic performances given or used in France to a performer with no professional base there, salaries included, bear a 15% withholding on the gross less a flat 10% for expenses; it is final up to the article 182 A limit and the excess is taxed on the progressive scale with credit for the tax withheld (75% for non-salary sums to a non-cooperative state).",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.15,
+    "base": "gross remuneration, salaries included, less a 10% flat allowance (uncapped)",
+    "final": "for the fraction up to the article 182 A limit (2026 amount not read); excess taxed on the scale",
+    "nonCooperativeState": 0.75,
+    "royalties": "authors' royalties to non-residents fall under CGI art. 182 B (not read)"
+   },
+   "applies": "Non-resident performers (artistes du spectacle) working in France, 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "La retenue à la source prévue par l' article 182 A bis du CGI est liquidée au taux de 15 %."
+    },
+    {
+     "src": 5,
+     "said": "La base de la retenue à la source est constituée par le montant brut des rémunérations versées, y compris les salaires, après déduction d'un abattement forfaitaire de 10 % au titre des frais professionnels."
+    },
+    {
+     "src": 5,
+     "said": "la retenue à la source prélevée au taux de 15 % est libératoire de l'impôt sur le revenu pour la fraction de rémunération n'excédant pas la limite d'application"
+    },
+    {
+     "src": 5,
+     "said": "Le VI de l’ article 182 A bis du CGI porte à 75 % le taux de la retenue à la source applicable"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors' royalties declared in full by the payer are taxed under the rules for salaries (with the standard 10% deduction), unless the author opts for non-commercial profits (BNC); either way the author may spread exceptional income by averaging under article 100 bis.",
+   "value": {
+    "regime": "traitements et salaires (CGI art. 93, 1 quater) where royalties are wholly declared by third parties",
+    "option": "BNC by express option",
+    "averaging": "CGI art. 100 bis, combinable with 1 quater"
+   },
+   "applies": "Resident authors of works of the mind (Code de la propriété intellectuelle art. L112-2), 2026.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "soumis à l'impôt sur le revenu selon les règles prévues en matière de traitements et salaires."
+    },
+    {
+     "src": 6,
+     "said": "ont la faculté de se placer sur option expresse, sous le régime de droit commun applicable à la catégorie des revenus non commerciaux."
+    },
+    {
+     "src": 6,
+     "said": "combinaison des dispositions précitées du 1 quater de l’article 93 du CGI et 100 bis du CGI est autorisée"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer is exempt from VAT (franchise en base) while turnover stays within €37,500 for services (€41,250 in the current year); for authors and performers, deliveries of works and assignments of rights have their own thresholds of €50,000 (€55,000), and their other activities €35,000 (€38,500). Once liable, an author's assignment of rights bears 10% and other operations 20%; a publisher, collecting society or producer that is itself registered withholds the VAT on authors' rights (net 9.20% in metropolitan France).",
+   "value": {
+    "currency": "EUR",
+    "services": {
+     "previousYear": 37500,
+     "currentYear": 41250
+    },
+    "authorsPerformersWorksAndRights": {
+     "previousYear": 50000,
+     "currentYear": 55000
+    },
+    "authorsPerformersOther": {
+     "previousYear": 35000,
+     "currentYear": 38500
+    },
+    "ratesWhenRegistered": {
+     "authorsRightsAssignment": 0.1,
+     "otherOperationsOfArtistAuteur": 0.2,
+     "publisherWithholdingNetMetropole": 0.092
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "est inférieur ou égal à 37 500 € (seuil de la franchise en base de TVA)"
+    },
+    {
+     "src": 7,
+     "said": "Le chiffre d'affaires de l'année civile (N) en cours est inférieur ou égal à 41 250 € (seuil majoré de la franchise en base de TVA)"
+    },
+    {
+     "src": 7,
+     "said": "L'auteur d'une œuvre de l'esprit ou l'artiste-interprète peut avoir différents types de revenus."
+    },
+    {
+     "src": 7,
+     "said": "précédente (N-1) inférieur ou égal à 50 000 € (seuil de la franchise en base de TVA)"
+    },
+    {
+     "src": 7,
+     "said": "Le chiffre d'affaires de l'année civile précédente (N-1) est inférieur ou égal à 35 000 € (seuil de la franchise en base de TVA)"
+    },
+    {
+     "src": 8,
+     "said": "Cession de droits d'auteur (droit de représentation, de reproduction, d'adaptation, d'exploitation et d'interprétation) : 10 % Pour toutes les autres opérations : 20 %"
+    },
+    {
+     "src": 8,
+     "said": "Cette retenue est égale au montant de TVA calculée au taux légalement applicable sur les droits d'auteurs ( 10 % ) diminué d'un droit à déduction fixé forfaitairement à 0,80 % , soit une retenue nette de 9,20 % ."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The French tax year is the calendar year; 2026 income is declared from April 2027 (deadline set each year, not yet published).",
+   "value": {
+    "currency": "EUR",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "declarationOpens": "2027-04",
+    "returnDue": null
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "La déclaration 2027 des revenus de 2026 débutera en avril 2027."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The government's finance bill for 2027 (tabled 1 October 2026, not yet voted on 1 November 2026) would raise the scale's limits by 2.1% for income of 2026: 0% to €11,844, 11% to €30,200, 30% to €86,353, 41% to €185,737 and 45% above, per share.",
+   "value": {
+    "currency": "EUR",
+    "incomeYear": 2026,
+    "status": "proposed: projet de loi de finances pour 2027, n° 3210, article 2, tabled 2026-10-01; not enacted on 2026-11-01",
+    "perShare": true,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 11844,
+      "rate": 0
+     },
+     {
+      "from": 11844,
+      "to": 30200,
+      "rate": 0.11
+     },
+     {
+      "from": 30200,
+      "to": 86353,
+      "rate": 0.3
+     },
+     {
+      "from": 86353,
+      "to": 185737,
+      "rate": 0.41
+     },
+     {
+      "from": 185737,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "indexation": 0.021
+   },
+   "applies": "Income of 2026, assessed in 2027, if Parliament passes article 2 as tabled; the rates are those of CGI art. 197 as in force, unchanged by the bill.",
+   "sources": [
+    {
+     "src": 10,
+     "said": "(27) a) Aux deux premiers alinéas, le montant : « 11 600 € » est remplacé par le montant : « 11 844 € » ; … (28) b) A la fin du deuxième alinéa et au troisième alinéa, le montant : « 29 579 € » est remplacé par le montant : « 30 200 € » ; (29) c) A la fin du troisième alinéa et à l’avant-dernier alinéa, le montant : « 84 577 € » est remplacé par le montant : « 86 353 € » ; (30) d) A la fin des deux derniers alinéas, le montant : « 181 917 € » est remplacé par le montant : « 185 737 € » ; … d’évolution de l’indice des prix à la consommation hors tabac de 2026 par rapport à 2025, soit 2,1 %"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "For an intermittent du spectacle (annexes VIII and X) unemployment insurance is 11.40% of pay up to four times the social-security ceiling (€16,020 a month in 2026): 9.00% from the employer (9.50% on a short CDD d'usage of three months or less) and 2.40% from the worker; the employer also pays the Congés Spectacles contribution of 15.5% of gross pay, collected by Audiens.",
+   "value": {
+    "currency": "EUR",
+    "unemploymentIntermittents": {
+     "total": 0.114,
+     "employer": 0.09,
+     "employerCDDUUpTo3Months": 0.095,
+     "employee": 0.024,
+     "ceilingMonthly": 16020
+    },
+    "AGS": 0.0025,
+    "congesSpectacles": {
+     "rate": 0.155,
+     "payer": "employer",
+     "base": "gross pay",
+     "period": "exercice 1 April 2025 to 31 March 2026, unchanged for 2026"
+    }
+   },
+   "applies": "Artists and technicians hired as intermittents du spectacle, 2026.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Assurance chômage 16 020 € … Assurance chômage 4,00 %* 4,00 %* 2,80 % 2,80 % 11,40 % 9,00 %** 2,40 % … ** 9,50 % depuis le 01/05/2025 pour les CDD d’usage d’une durée inférieure ou égale à 3 mois conclus avec les salariés intermittents du spectacle relevant des annexes VIII et X."
+    },
+    {
+     "src": 12,
+     "said": "VIII et X est constitué de deux taux de contribution qui se cumulent à hauteur de 11,4 % : … VIII et X est fixé à 7,4 %, réparti à raison de 5% à la charge des employeurs et 2,4 % à la charge des salariés (C. trav., art. L. 5422-9 2°)."
+    },
+    {
+     "src": 13,
+     "said": "Congés Spectacles : Taux identique à 2025 (15,50%)"
+    },
+    {
+     "src": 14,
+     "said": "Le montant de la cotisation est calculé sur la base des salaires bruts perçus sur la période de référence, avant toute déduction (frais professionnels, etc.). Au titre de l’exercice congés 2025, du 1er avril 2025 au 31 mars 2026, le taux d’appel des cotisations reste inchangé à 15.5 %."
+    },
+    {
+     "src": 15,
+     "said": "• La cotisation, uniquement à la charge de l’employeur, est recouvrée par Audiens."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Once a performer or author is liable for VAT, an assignment of an author's or performer's (artiste-interprète) rights bears 10%, while a performance or other service bears the rate proper to it, which for a service with no reduced rate is the normal 20%.",
+   "value": {
+    "rightsAssignmentAuthorsAndPerformers": 0.1,
+    "serviceFeeNormalRate": 0.2,
+    "law": "CGI art. 279 g (10%), art. 278 (20%)"
+   },
+   "applies": "A performer's, writer's or director's fee in metropolitan France once past the franchise thresholds, 2026.",
+   "sources": [
+    {
+     "src": 16,
+     "said": "200 Le g de l' article 279 du CGI soumet au taux réduit de 10 % de la TVA les cessions des droits patrimoniaux reconnus par la loi aux auteurs des œuvres de l'esprit et aux artistes-interprètes … 320 Les livraisons de biens et les prestations de services effectuées par les auteurs et interprètes des œuvres de l'esprit et les artistes du spectacle doivent être soumises au taux qui leur est propre."
+    },
+    {
+     "src": 17,
+     "said": "1 Le taux normal est applicable à toutes les opérations pour lesquelles aucun autre taux n'est prévu. Il est fixé à 20 % pour la France métropolitaine et la Corse ( CGI, art. 278 )."
+    }
+   ]
+  }
+ ],
+ "country": "FR",
+ "sources": [
+  {
+   "url": "https://www.service-public.fr/particuliers/vosdroits/F1419",
+   "title": "Service Public : Calcul de l'impôt sur le revenu, barème progressif (vérifié le 15 avril 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Jusqu'à 11 600 € 0 % De 11 601 € à 29 579 € 11 % De 29 580 € à 84 577 € 30 % De 84 578 € à 181 917 € 41 % Plus de 181 917 € 45 % … le barème de 2026 (applicable aux revenus de 2025) est fixé par la loi de finances pour 2026"
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/france.html",
+   "title": "CLEISS : Le régime français de sécurité sociale – taux de cotisations au 1er janvier 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Assurance vieillesse (plafonnée) 2 6,9% 4 005 € 8,55% 4 005 € Assurance vieillesse 0,4% totalité du salaire 2,11% totalité du salaire … Contribution sociale généralisée (CSG) 5 9,2% sur 98,25% du salaire brut - Contribution pour le remboursement de la dette sociale (CRDS) 5 0,5% sur 98,25% du salaire brut - Chômage 6 - 4 % 16 020 € … Le plafond mensuel de la sécurité sociale en 2026 est de 4 005 €. … Assurance maladie, maternité, invalidité, décès 1 - 13% ou 7% totalité du salaire"
+  },
+  {
+   "url": "https://www.weblex.fr/chiffres-cles/tableau-des-cotisations-sociales-dues-par-les-artistes-auteurs-annee-2026",
+   "title": "WebLex : Tableau des cotisations sociales dues par les artistes-auteurs – année 2026 (cites the Urssaf page « Taux de cotisations - artistes auteurs, année 2026 », mis à jour le 1er janvier 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-de-cotisations-artiste-aute.html",
+   "said": "Assurance vieillesse plafonnée (dans la limite des revenus inférieurs au Pass 2026 : 48 060 €) Bénéfice + 15 % 6,90 %, dont 0,75 % prise en charge par l'État. Soit un total final de 6,15 % CSG (contribution sociale généralisée) Bénéfice + 15 % 9,20 % CRDS (contribution au remboursement de la dette sociale) Bénéfice + 15 % 0,50 % CFP (contribution à la formation professionnelle) Bénéfice + 15 % 0,35 %"
+  },
+  {
+   "url": "https://www.service-public.fr/particuliers/vosdroits/F34009",
+   "title": "Service Public : Impôt sur le revenu – Prélèvement à la source (vérifié le 15 avril 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Si vous êtes salarié ou retraité , l'impôt est collecté par votre employeur ou votre caisse de retraite. … Vous payez l'impôt sur le revenu correspondant par des acomptes prélevés sur votre compte bancaire directement par l'administration fiscale si vous êtes dans l'une des situations suivantes : Travailleur indépendant"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/11255-PGP.html",
+   "title": "BOFiP BOI-BAREME-000037 : Grille des taux par défaut du prélèvement à la source",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Grille des taux par défaut applicables aux contribuables domiciliés en métropole et hors de France à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 635 euros 0 % … Supérieure ou égale à 25 937 euros et inférieure à 55 558 euros 38 % Supérieure ou égale à 55 558 euros 43 %"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/1819-PGP.html",
+   "title": "BOFiP BOI-IR-DOMIC-10-20-20-20 : Retenue à la source sur les rémunérations des prestations artistiques (CGI art. 182 A bis)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La retenue à la source prévue par l' article 182 A bis du CGI est liquidée au taux de 15 %. … La base de la retenue à la source est constituée par le montant brut des rémunérations versées, y compris les salaires, après déduction d'un abattement forfaitaire de 10 % au titre des frais professionnels. … la retenue à la source prélevée au taux de 15 % est libératoire de l'impôt sur le revenu pour la fraction de rémunération n'excédant pas la limite d'application … Le VI de l’ article 182 A bis du CGI porte à 75 % le taux de la retenue à la source applicable"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/652-PGP.html",
+   "title": "BOFiP BOI-BNC-SECT-20-10-10 : Régime fiscal des produits de droits d'auteur",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "soumis à l'impôt sur le revenu selon les règles prévues en matière de traitements et salaires. … ont la faculté de se placer sur option expresse, sous le régime de droit commun applicable à la catégorie des revenus non commerciaux. … combinaison des dispositions précitées du 1 quater de l’article 93 du CGI et 100 bis du CGI est autorisée"
+  },
+  {
+   "url": "https://www.service-public.fr/professionnels-entreprises/vosdroits/F21746",
+   "title": "Service Public Entreprendre : Franchise en base de TVA (vérifié le 1er janvier 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "est inférieur ou égal à 37 500 € (seuil de la franchise en base de TVA) … Le chiffre d'affaires de l'année civile (N) en cours est inférieur ou égal à 41 250 € (seuil majoré de la franchise en base de TVA) … L'auteur d'une œuvre de l'esprit ou l'artiste-interprète peut avoir différents types de revenus. … précédente (N-1) inférieur ou égal à 50 000 € (seuil de la franchise en base de TVA) … Le chiffre d'affaires de l'année civile précédente (N-1) est inférieur ou égal à 35 000 € (seuil de la franchise en base de TVA)"
+  },
+  {
+   "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F32113",
+   "title": "Service Public Entreprendre : Artiste-auteur, fiscalité (vérifié le 20 février 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Cession de droits d'auteur (droit de représentation, de reproduction, d'adaptation, d'exploitation et d'interprétation) : 10 % Pour toutes les autres opérations : 20 % … Cette retenue est égale au montant de TVA calculée au taux légalement applicable sur les droits d'auteurs ( 10 % ) diminué d'un droit à déduction fixé forfaitairement à 0,80 % , soit une retenue nette de 9,20 % ."
+  },
+  {
+   "url": "https://www.service-public.fr/particuliers/vosdroits/F358",
+   "title": "Service Public : Impôt sur le revenu – Déclaration de revenus annuelle (vérifié le 5 juin 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La déclaration 2027 des revenus de 2026 débutera en avril 2027."
+  },
+  {
+   "url": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b3210_projet-loi.pdf",
+   "title": "Assemblée nationale, Projet de loi de finances pour 2027, n° 3210 (17e législature), article 2",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(27) a) Aux deux premiers alinéas, le montant : « 11 600 € » est remplacé par le montant : « 11 844 € » ; … (28) b) A la fin du deuxième alinéa et au troisième alinéa, le montant : « 29 579 € » est remplacé par le montant : « 30 200 € » ; (29) c) A la fin du troisième alinéa et à l’avant-dernier alinéa, le montant : « 84 577 € » est remplacé par le montant : « 86 353 € » ; (30) d) A la fin des deux derniers alinéas, le montant : « 181 917 € » est remplacé par le montant : « 185 737 € » ; … d’évolution de l’indice des prix à la consommation hors tabac de 2026 par rapport à 2025, soit 2,1 %"
+  },
+  {
+   "url": "https://s3.eusc-de-east-1.amazonaws.eu/unedic-eks-prod-cms/2026/07/15/unedic_parametres_utiles_juillet2026-vf_uid_6a5757953d941.pdf",
+   "title": "Unédic, Paramètres utiles, juillet 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Assurance chômage 16 020 € … Assurance chômage 4,00 %* 4,00 %* 2,80 % 2,80 % 11,40 % 9,00 %** 2,40 % … ** 9,50 % depuis le 01/05/2025 pour les CDD d’usage d’une durée inférieure ou égale à 3 mois conclus avec les salariés intermittents du spectacle relevant des annexes VIII et X."
+  },
+  {
+   "url": "https://www.unedic.org/ged/documents/circulars/pdf/PRE-CIRC-Circulaire_n_2025-05_du_1er_mai_2025.pdf",
+   "title": "Unédic, Circulaire n° 2025-05 du 1er mai 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "VIII et X est constitué de deux taux de contribution qui se cumulent à hauteur de 11,4 % : … VIII et X est fixé à 7,4 %, réparti à raison de 5% à la charge des employeurs et 2,4 % à la charge des salariés (C. trav., art. L. 5422-9 2°)."
+  },
+  {
+   "url": "https://www.audiens.org/files/live/sites/siteAudiens/files/06_medias/entreprise/Webconferences/Web-conf-Audiens-Nouveautes-reglementaires-2026.pdf",
+   "title": "Audiens, 2026 : quelles évolutions règlementaires en paie (web conference, 27 January 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Congés Spectacles : Taux identique à 2025 (15,50%)"
+  },
+  {
+   "url": "https://www.audiens.org/solutions/declarer-et-payer-les-cotisations-conges-spectacles.html",
+   "title": "Audiens, Déclarer et payer les cotisations Congés Spectacles",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Le montant de la cotisation est calculé sur la base des salaires bruts perçus sur la période de référence, avant toute déduction (frais professionnels, etc.). Au titre de l’exercice congés 2025, du 1er avril 2025 au 31 mars 2026, le taux d’appel des cotisations reste inchangé à 15.5 %."
+  },
+  {
+   "url": "https://www.audiens.org/files/live/sites/siteAudiens/files/03_documents/entreprise/Fiches-techniques/FP-Conges-Spectacles.pdf",
+   "title": "Audiens, Les Congés Spectacles, fiche pratique",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "• La cotisation, uniquement à la charge de l’employeur, est recouvrée par Audiens."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/1013-PGP.html/identifiant=BOI-TVA-LIQ-30-20-100-20230823",
+   "title": "BOFiP, BOI-TVA-LIQ-30-20-100 (23 August 2023), autres prestations de services imposables aux taux réduits",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "200 Le g de l' article 279 du CGI soumet au taux réduit de 10 % de la TVA les cessions des droits patrimoniaux reconnus par la loi aux auteurs des œuvres de l'esprit et aux artistes-interprètes … 320 Les livraisons de biens et les prestations de services effectuées par les auteurs et interprètes des œuvres de l'esprit et les artistes du spectacle doivent être soumises au taux qui leur est propre."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/1376-PGP.html/identifiant=BOI-TVA-LIQ-20-20140919",
+   "title": "BOFiP, BOI-TVA-LIQ-20, le taux normal (version en vigueur du 19/09/2014 à aujourd'hui)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1 Le taux normal est applicable à toutes les opérations pour lesquelles aucun autre taux n'est prévu. Il est fixé à 20 % pour la France métropolitaine et la Corse ( CGI, art. 278 )."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The enacted progressive scale for 2026 income: the loi de finances pour 2027 is before Parliament on 2026-11-01 (the tabled bill's scale is recorded as a proposed figure)",
+   "tried": {
+    "institution": "service-public.fr F1419 (verified 15 April 2026) gives only the scale for 2025 income set by the loi de finances pour 2026; impots.gouv.fr scale page 404; retry 2026-11-01: the bill itself read on assemblee-nationale.fr (projet de loi n° 3210, l17b3210_projet-loi.pdf, article 2); budget.gouv.fr and economie.gouv.fr refuse this environment (HTTP 403)",
+    "official-register": "legifrance.gouv.fr (CGI art. 197) refuses this environment (HTTP 403, 2026-11-01); the loi de finances pour 2027 is not enacted on 2026-11-01; retry 2026-11-01: the Assemblée's dossier PLF_2027 lists the bill as before Parliament; no loi de finances pour 2027 in force",
+    "web-search": "2026-11-01: 'projet de loi de finances pour 2027 barème impôt sur le revenu indexation article 2 revenus 2026 tranches' and 'assemblee-nationale.fr projet de loi de finances pour 2027 texte dépôt octobre 2026': press reports of the tabled 2.1% indexation; no vote",
+    "trade-press": "2026-11-01: search results from legifiscal.fr ('PLF 2027 : texte publié, barème IR revalorisé de 2,1 %') and moneyvox.fr give the tabled thresholds as a bill; not relied on, the bill itself read instead",
+    "archive": "web.archive.org refused this environment (connection reset, 2026-11-01); retry 2026-11-01: not useful: the enacted text does not yet exist"
+   }
+  }
+ ]
+}

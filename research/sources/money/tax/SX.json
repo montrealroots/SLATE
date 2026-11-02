@@ -1,0 +1,302 @@
+{
+ "topic": "tax.SX",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Sint Maarten: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Sint Maarten's own income and wage tax for 2026 runs 0% to Cg 21,200, then 12.5%, 20%, 26.25%, 33.75%, 40% and 47.5% from Cg 179,500, less a basic credit of Cg 2,381 (with further credits for sole earners, children and the elderly).",
+   "value": {
+    "currency": "XCG",
+    "year": 2026,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 21200,
+      "rate": 0
+     },
+     {
+      "from": 21200,
+      "to": 40700,
+      "rate": 0.125
+     },
+     {
+      "from": 40700,
+      "to": 61000,
+      "rate": 0.2
+     },
+     {
+      "from": 61000,
+      "to": 84700,
+      "rate": 0.2625
+     },
+     {
+      "from": 84700,
+      "to": 127000,
+      "rate": 0.3375
+     },
+     {
+      "from": 127000,
+      "to": 179500,
+      "rate": 0.4
+     },
+     {
+      "from": 179500,
+      "to": null,
+      "rate": 0.475
+     }
+    ],
+    "credits": {
+     "basic": 2381,
+     "soleEarner": 1590,
+     "children": [
+      847,
+      420,
+      107,
+      86
+     ],
+     "elderly": [
+      1199,
+      603
+     ]
+    },
+    "regional": null
+   },
+   "applies": "Income and wage tax, 2026 Deloitte's Sint Maarten Highlights 2026 prints other bands (12.5% to XCG 36,576 … 47.5% above 161,540); the Tax Administration's own 2026 table (quoted) is used.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Schijventarief Sint Maarten 2026 Toeslagen Sint Maarten 2026 Basisaftrek 2381 Alleenverdienerstoeslag 1590 Kindertoeslag I 847 II 420 III 107 IV 86 Ouderentoeslag 1199 Idem 603 Inkomen groter of gelijk aan Maar kleiner dan Tarief in % 0,- 21.200,- 0 21.200,- 40.700,- 12,5 40.700,- 61.000,- 20 61.000,- 84.700,- 26,25 84.700,- 127.000,- 33,75 127.000,- 179.500,- 40 179.500,- - 47,5"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold wage tax from the 2026 period tables (basic credit built in); nothing is withheld where the monthly base is Cg 2,273.44 or less (Cg 27,281.28 a year), and pay above the end of a table bears 47.5%.",
+   "value": {
+    "currency": "XCG",
+    "kind": "period tables with basic credit",
+    "nilBelow": {
+     "month": 2273.44,
+     "year": 27281.28
+    },
+    "aboveTable": 0.475
+   },
+   "applies": "Wages from 1 January 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "De loonbelastingtabellen voor 2026 kunnen worden gehanteerd voor de loonbetalingen die betrekking hebben op tijdvakken die per 1 januari 2026 liggen. … De basiskorting is reeds in de tabellen verwerkt. … Indien het loon hoger is dan het laatste in de tabel vermelde bedrag. dan dient over het meerdere 47,5% loonbelasting te worden ingehouden. … Maandtabel 2.273,44 Nihil … Het zuiver voljaarsloon per jaar voor toepassing van deze vrijstelling is Cg 27.281,28."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee's AOV/AWW old-age and survivors' premium is 6.5% of pay in 2026 (stated as provisional), deducted before wage tax.",
+   "value": {
+    "employee": {
+     "aovAww": 0.065
+    },
+    "provisional": true
+   },
+   "applies": "Employees, 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Werknemersdeel aov/aww1 Cg 158,05 (a 6,5%) Cg 158,05 … Onder voorbehoud dat in 2026 het werknemersdeel AOV/AWW 6,5% bedraagt"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year (tables apply to pay periods from 1 January 2026).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "De loonbelastingtabellen voor 2026 kunnen worden gehanteerd voor de loonbetalingen die betrekking hebben op tijdvakken die per 1 januari 2026 liggen."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "SZV's latest published premium sheet puts AOV at 13% (employer 7%, employee 6%), AWW at 1% (0.5% each), ZV health at 12.5% (employer 8.3%, employee 4.2%) and OV accident at 0.5% to 5% by risk class (employer), plus a cessantia levy of NAf 40 per employee a year; ZV and OV stop at NAf 120,000 a year, and the 2026 AOV/AWW wage maximum is Cg 132,824.35.",
+   "value": {
+    "currency": "XCG",
+    "aov": {
+     "employer": 0.07,
+     "employee": 0.06
+    },
+    "aww": {
+     "employer": 0.005,
+     "employee": 0.005
+    },
+    "zv": {
+     "employer": 0.083,
+     "employee": 0.042
+    },
+    "ov": {
+     "employer": [
+      0.005,
+      0.05
+     ]
+    },
+    "cessantiaPerEmployeeYear": 40,
+    "zvOvCeilingYear": 120000,
+    "aovAwwWageMax2026": 132824.35,
+    "percentagesAsOf": "2024-04"
+   },
+   "applies": "Employees; the percentages and the ZV/OV ceiling are SZV's April 2024 sheet (no later percentage sheet is published; its 2026 sheet gives amounts and wage limits only), the AOV/AWW wage maximum is SZV's 2026 sheet. The employee AOV+AWW share (6% + 0.5%) matches the 6.5% in the 2026 wage-tax table.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Employer’s contribution 7.00 % … Employee’s contribution 6.00 % … The premium depends on the risk class your company … is categorized in, and must be paid by the Employers … Employer’s contribution 8.3 % … Employee’s contribution 4.2 % … Cessantia contribution (Paid by Employer) NAf 40.00 per employee, per year. … Per year 120,000.00"
+    },
+    {
+     "src": 2,
+     "said": "These amounts go into eﬀect as of January 1, 2026. … Wage maximum limit (article 29, paragraph 3) 131,966.57 0.65 132,824.35"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears turnover tax (BBO/TOT) at 5%; there is no turnover threshold: every entrepreneur registers and files monthly, even with nil turnover.",
+   "value": {
+    "rate": 0.05,
+    "threshold": null,
+    "filing": "monthly"
+   },
+   "applies": "Resident and non-resident entrepreneurs supplying services in Sint Maarten. The Tax Administration's own TOT pages list documents client-side, so two tax firms are quoted; tax.sx's calendar confirms monthly returns due mid-month.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Standard rate of 5% for realized revenues (on a cash basis) with the sale of goods or for providing services. … Any person that qualifies as an entrepreneur must register for TOT purposes and file monthly tax returns, even if the taxable turnover is nil."
+    },
+    {
+     "src": 4,
+     "said": "Rates: The standard rate is 5%. Registration: Residents and nonresidents that make taxable supplies of goods or services in Sint Maarten must register with the tax authorities. … Filing and payment: A self-assessment regime applies and payment must be made monthly."
+    },
+    {
+     "src": 5,
+     "said": "Business This section includes the Verzamelloonstaat, Opgave Derden, requests for reduced or postponed filings, the Turnover Tax Ordinance list, and more. … DEC 15 Monthly Tax Return - November 2026 Ensure your November 2026 Tax Return is filed & paid on time."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "An income tax return is filed on the Inspectorate's invitation within two months of it (the 2025 returns were due 1 June 2026); a person not invited must request a return.",
+   "value": {
+    "returnWithin": "2 months of invitation",
+    "return2025Due": "2026-06-01"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Every natural person who receives worldwide income must file an income tax return with the Inspectorate of Taxes … You have two (2) months from the date of the invitation to file your tax return by completing and submitting the (paper) tax return form."
+    },
+    {
+     "src": 6,
+     "said": "The Inspectorate of Taxes announces that the deadline to submit the 2025 Income Tax Return Forms A & B is June 1, 2026. Invitations to file the 2025 Income Tax Return are being sent by regular mail. Taxpayers who do not receive an invitation to file are obliged to request such."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxed only on Sint Maarten-source income, at the resident scale on assessment; no withholding tax is levied on royalties or service fees, and no artiste-specific withholding is published.",
+   "value": {
+    "basis": "source",
+    "withholding": null
+   },
+   "applies": "Non-residents; the artiste rule is not modeled beyond this (see blocker).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Basis: Sint Maarten residents are taxed on their worldwide income. Nonresidents are taxed only on Sint Maarten-source … There is no withholding tax on dividends, interest, royalties, or technical service fees in Sint Maarten"
+    }
+   ]
+  }
+ ],
+ "country": "SX",
+ "sources": [
+  {
+   "url": "https://www.sintmaartengov.org/Documents/Official%20Publications/AB%202026,%20no.%2011%20Bijlage%20II%20TABEL%20LOONBELASTING%202026.pdf",
+   "title": "Loonbelastingtabellen Sint Maarten 2026 (AB 2026, no. 11, Bijlage II), Belastingdienst Sint Maarten",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Schijventarief Sint Maarten 2026 Toeslagen Sint Maarten 2026 Basisaftrek 2381 Alleenverdienerstoeslag 1590 Kindertoeslag I 847 II 420 III 107 IV 86 Ouderentoeslag 1199 Idem 603 Inkomen groter of gelijk aan Maar kleiner dan Tarief in % 0,- 21.200,- 0 21.200,- 40.700,- 12,5 40.700,- 61.000,- 20 61.000,- 84.700,- 26,25 84.700,- 127.000,- 33,75 127.000,- 179.500,- 40 179.500,- - 47,5 … De loonbelastingtabellen voor 2026 kunnen worden gehanteerd voor de loonbetalingen die betrekking hebben op tijdvakken die per 1 januari 2026 liggen. … De basiskorting is reeds in de tabellen verwerkt. … Indien het loon hoger is dan het laatste in de tabel vermelde bedrag. dan dient over het meerdere 47,5% loonbelasting te worden ingehouden. … Maandtabel 2.273,44 Nihil … Het zuiver voljaarsloon per jaar voor toepassing van deze vrijstelling is Cg 27.281,28. … Werknemersdeel aov/aww1 Cg 158,05 (a 6,5%) Cg 158,05 … Onder voorbehoud dat in 2026 het werknemersdeel AOV/AWW 6,5% bedraagt"
+  },
+  {
+   "url": "https://www.szv.sx/publicfiles/868/documents/Check-Lists/SZV%20-%20Wage%20Limits%20&%20Premium_2024_April.pdf",
+   "title": "Wage Limits & Premiums, April 2024, Social & Health Insurances SZV",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employer’s contribution 7.00 % … Employee’s contribution 6.00 % … The premium depends on the risk class your company … is categorized in, and must be paid by the Employers … Employer’s contribution 8.3 % … Employee’s contribution 4.2 % … Cessantia contribution (Paid by Employer) NAf 40.00 per employee, per year. … Per year 120,000.00"
+  },
+  {
+   "url": "https://www.szv.sx/publicfiles/868/documents/2026%20SZV%20AOV%20AWW%20Amounts.pdf",
+   "title": "2026 AOV/AWW Amounts, Social & Health Insurances SZV",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "These amounts go into eﬀect as of January 1, 2026. … Wage maximum limit (article 29, paragraph 3) 131,966.57 0.65 132,824.35"
+  },
+  {
+   "url": "https://www.grantthornton.global/en/insights/indirect-tax-guide/indirect-tax---Dutch-Caribbean-Sint-Maarten/",
+   "title": "Indirect tax guide, Dutch Caribbean - Sint Maarten (Grant Thornton), on the Landsverordening belasting op bedrijfsomzetten",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.sx/",
+   "said": "Standard rate of 5% for realized revenues (on a cash basis) with the sale of goods or for providing services. … Any person that qualifies as an entrepreneur must register for TOT purposes and file monthly tax returns, even if the taxable turnover is nil."
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-sintmaartenhighlights-2026.pdf",
+   "title": "Sint Maarten Highlights 2026 (Deloitte), on the Landsverordening belasting op bedrijfsomzetten",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.tax.sx/",
+   "said": "Rates: The standard rate is 5%. Registration: Residents and nonresidents that make taxable supplies of goods or services in Sint Maarten must register with the tax authorities. … Filing and payment: A self-assessment regime applies and payment must be made monthly. … Basis: Sint Maarten residents are taxed on their worldwide income. Nonresidents are taxed only on Sint Maarten-source … There is no withholding tax on dividends, interest, royalties, or technical service fees in Sint Maarten"
+  },
+  {
+   "url": "https://www.tax.sx/",
+   "title": "Sint Maarten Tax Administration (tax.sx), home page and tax calendar",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Business This section includes the Verzamelloonstaat, Opgave Derden, requests for reduced or postponed filings, the Turnover Tax Ordinance list, and more. … DEC 15 Monthly Tax Return - November 2026 Ensure your November 2026 Tax Return is filed & paid on time. … Every natural person who receives worldwide income must file an income tax return with the Inspectorate of Taxes … You have two (2) months from the date of the invitation to file your tax return by completing and submitting the (paper) tax return form."
+  },
+  {
+   "url": "https://www.sintmaartengov.org/news/Pages/2025-Income-Tax-Returns-Due-June-1-2026.aspx",
+   "title": "2025 Income Tax Returns Due June 1, 2026 (Government of Sint Maarten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Inspectorate of Taxes announces that the deadline to submit the 2025 Income Tax Return Forms A & B is June 1, 2026. Invitations to file the 2025 Income Tax Return are being sent by regular mail. Taxpayers who do not receive an invitation to file are obliged to request such."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "SZV's 2026 premium percentages (the latest sheet is April 2024), the 2026 ZV/OV ceiling, AVBZ, and the self-employed terms.",
+   "tried": {
+    "institution": "sintmaartengov.org wage table read (employee AOV only); SZV site not tried || 2026-11-01 retry: szv.sx read: Wage Limits & Premiums page (SX-szv-wage-limits.html) lists the 2026 AOV/AWW amounts PDF (amounts and wage maxima only, saved SX-szv-2026-aov.pdf) and the April 2024 premiums sheet (saved SX-szv-2024-limits.pdf, now quoted); no 2026 percentage sheet and no AVBZ page.",
+    "official-register": "AB 2026 premium decrees not found || 2026-11-01 retry: sintmaartengov.org Official Publications: only the AB 2026 no. 11 wage-tax tables found; tax.sx and the Income-Tax-Forms/Forms-for-Businesses pages list documents client-side (no text served).",
+    "web-search": "searched 2026 premiums: payroll vendors only || 2026-11-01 retry: 'Sint Maarten turnover tax 5% rate Landsverordening belasting op bedrijfsomzetten sintmaartengov.org', 'site:sintmaartengov.org turnover tax': SZV's own PDFs found by browsing, payroll vendors otherwise.",
+    "trade-press": "Celery Payroll and Rivermate pages (unverified) not used || 2026-11-01 retry: Deloitte Sint Maarten Highlights 2026 (saved SX-deloitte-2026.pdf): states only that employed and self-employed make social insurance payments, no rates.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset the connection on https and return 403 on http from this environment (2026-11-01), so no snapshot could be read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax on a non-resident performer's Sint Maarten fee.",
+   "tried": {
+    "institution": "not found on sintmaartengov.org || 2026-11-01 retry: tax.sx home and FAQ read (SX-taxsx-home.html): nothing on non-resident performers; sintmaartengov.org Tax Administration page read (SX-gov-taxadmin.html).",
+    "official-register": "Landsverordening inkomstenbelasting not read || 2026-11-01 retry: Landsverordening op de inkomstenbelasting: no consolidated text on sintmaartengov.org (its Laws search is client-rendered); not found on a reachable host.",
+    "web-search": "not run || 2026-11-01 retry: 'Sint Maarten non-resident artist performer income tax withholding \"Sint Maarten\" entertainer wage tax foreign artiste': other countries' artiste rules and EOR guides only.",
+    "trade-press": "no PwC page (404) || 2026-11-01 retry: Deloitte Sint Maarten Highlights 2026 read (quoted in the figure): source basis and no WHT on royalties or service fees; nothing on artistes.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available answers; web.archive.org snapshots reset the connection on https and return 403 on http from this environment (2026-11-01), so no snapshot could be read."
+   }
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "engine": "person.genres",
+ "axis": "genre-operation",
+ "universe": {
+  "keys": [
+   "genres.choose",
+   "script.write (genre)",
+   "producing.option (genre)",
+   "producing.release (genre earnings)",
+   "compile (register SHA-256 check)"
+  ]
+ },
+ "rows": [
+  {
+   "key": "genres.choose",
+   "status": "game",
+   "register": [
+    "R-4619",
+    "R-4622",
+    "R-4626"
+   ],
+   "tests": [
+    "tests/person/genres/genres.test.ts::the genres a person loves > are chosen, at least one and any number, each once, and chosen again replace the last",
+    "tests/person/genres/genres.test.ts::the genres a person loves > genres.choose: a writer writes only in a genre loved",
+    "tests/person/genres/genres.test.ts::the genres a person loves > genres.choose: the producer's film earns as its loved genre's market does",
+    "tests/person/genres/genres.test.ts::the genres a person loves > is run through the frame, declaring what it reads and writes"
+   ]
+  },
+  {
+   "key": "script.write (genre)",
+   "status": "game",
+   "register": [
+    "R-4619",
+    "R-4622",
+    "R-4626"
+   ],
+   "tests": [
+    "tests/person/genres/genres.test.ts::the genres a person loves > are the genres the work is in: anything else is refused, as is any work before they're chosen",
+    "tests/person/work/work.test.ts::a revision > is run through the frame, each command declaring what it reads and writes",
+    "tests/person/work/work.test.ts::a script > comes out at the top from a writer at 100 throughout, around 50 from one at 50, hardly readable from one at 10"
+   ]
+  },
+  {
+   "key": "producing.option (genre)",
+   "status": "game",
+   "register": [
+    "R-4619",
+    "R-4622",
+    "R-4626"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::optioning material > numbers each project and is refused for days that are not whole",
+    "tests/person/producing/producing.test.ts::optioning material > reads a script a day and options the one the eye judges best, on the WGA's terms"
+   ]
+  },
+  {
+   "key": "producing.release (genre earnings)",
+   "status": "game",
+   "register": [
+    "R-4619",
+    "R-4622",
+    "R-4626"
+   ],
+   "tests": [
+    "tests/person/producing/producing.test.ts::the release > releases as the film and its campaign sell it, and teaches Marketing",
+    "tests/person/genres/genres.test.ts::the genres a person loves > genres.choose: the producer's film earns as its loved genre's market does"
+   ]
+  },
+  {
+   "key": "compile (register SHA-256 check)",
+   "status": "game",
+   "register": [
+    "R-4619",
+    "R-4622",
+    "R-4626"
+   ],
+   "tests": [
+    "tests/person/genres/genres.test.ts::the genres compile > reads a file only once the register's SHA-256 for it holds",
+    "tests/person/genres/genres.test.ts::the genres compile > is the file the engine reads, from the files the register cites",
+    "tests/person/genres/genres.test.ts::the genres compile > refuses a genre with no group, no definition or a group the market has not, a placed name the research neither defines nor blocks, and a missing figure"
+   ]
+  }
+ ]
+}

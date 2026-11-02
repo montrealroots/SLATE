@@ -1,0 +1,2 @@
+import base from '../../stryker.config.mjs';
+export default { ...base, mutate: ['src/money/tax/**/*.ts', 'src/money/accounts/**/*.ts', 'tools/money/tax/compile.ts', 'tools/money/tax/coverage.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/tax.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-tax', vitest: { configFile: 'workbench/configs/vitest.tax.config.mjs' } };

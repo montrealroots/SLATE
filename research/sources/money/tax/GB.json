@@ -1,0 +1,402 @@
+{
+ "topic": "tax.GB",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in United Kingdom: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "In England, Wales and Northern Ireland the first £12,570 is tax-free and income above it is taxed at 20%, 40% and 45%; the allowance falls by £1 for every £2 of income over £100,000 and is gone at £125,140. Scotland sets its own six bands from 19% to 48%.",
+   "value": {
+    "currency": "GBP",
+    "personalAllowance": 12570,
+    "allowanceTaper": {
+     "over": 100000,
+     "lossPer2": 1,
+     "zeroAt": 125140
+    },
+    "brackets": [
+     {
+      "from": 0,
+      "to": 12570,
+      "rate": 0
+     },
+     {
+      "from": 12570,
+      "to": 50270,
+      "rate": 0.2
+     },
+     {
+      "from": 50270,
+      "to": 125140,
+      "rate": 0.4
+     },
+     {
+      "from": 125140,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "scotland": [
+     {
+      "from": 0,
+      "to": 12570,
+      "rate": 0
+     },
+     {
+      "from": 12570,
+      "to": 16537,
+      "rate": 0.19
+     },
+     {
+      "from": 16537,
+      "to": 29526,
+      "rate": 0.2
+     },
+     {
+      "from": 29526,
+      "to": 43662,
+      "rate": 0.21
+     },
+     {
+      "from": 43662,
+      "to": 75000,
+      "rate": 0.42
+     },
+     {
+      "from": 75000,
+      "to": 125140,
+      "rate": 0.45
+     },
+     {
+      "from": 125140,
+      "to": null,
+      "rate": 0.48
+     }
+    ],
+    "regionalLayer": "Scottish Income Tax, set by the Scottish Government, replaces the UK bands for Scottish taxpayers' non-savings income",
+    "tradingAllowance": 1000
+   },
+   "applies": "Tax year 6 April 2026 to 5 April 2027; the 2025-26 bands (to 5 April 2026) are the same figures for the rest of the UK (not re-read for Scotland).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The current tax year is from 6 April 2026 to 5 April 2027."
+    },
+    {
+     "src": 0,
+     "said": "Personal Allowance Up to £12,570 0% Basic rate £12,571 to £50,270 20% Higher rate £50,271 to £125,140 40% Additional rate over £125,140 45%"
+    },
+    {
+     "src": 0,
+     "said": "Your personal allowance goes down by £1 for every £2 that your adjusted net income is above £100,000."
+    },
+    {
+     "src": 0,
+     "said": "your first £1,000 of income from self-employment - this is your ‘trading allowance’"
+    },
+    {
+     "src": 1,
+     "said": "Starter rate £12,571 to £16,537 19% Basic rate £16,538 to £29,526 20% Intermediate rate £29,527 to £43,662 21% Higher rate £43,663 to £75,000 42% Advanced rate £75,001 to £125,140 45% Top rate over £125,140 48%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays Class 1 National Insurance of 8% on earnings between £12,570 and £50,270 a year and 2% above; the employer pays 15% above £5,000 with no ceiling. A self-employed worker pays Class 4 of 6% on profits between £12,570 and £50,270 and 2% above; Class 2 is treated as paid from profits of £7,105, and voluntary below (£3.65 a week).",
+   "value": {
+    "currency": "GBP",
+    "employee": {
+     "primaryThreshold": 12570,
+     "upperEarningsLimit": 50270,
+     "rateMain": 0.08,
+     "rateAbove": 0.02
+    },
+    "employer": {
+     "secondaryThreshold": 5000,
+     "rate": 0.15,
+     "ceiling": null
+    },
+    "lowerEarningsLimit": 6708,
+    "selfEmployed": {
+     "class4": [
+      {
+       "from": 12570,
+       "to": 50270,
+       "rate": 0.06
+      },
+      {
+       "from": 50270,
+       "to": null,
+       "rate": 0.02
+      }
+     ],
+     "class2": {
+      "treatedAsPaidFrom": 7105,
+      "voluntaryWeekly": 3.65
+     }
+    }
+   },
+   "applies": "Tax year 2026-27, category A employees and sole traders.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Primary threshold £242 per week £1,048 per month £12,570 per year Secondary threshold £96 per week £417 per month £5,000 per year"
+    },
+    {
+     "src": 2,
+     "said": "Upper earnings limit £967 per week £4,189 per month £50,270 per year"
+    },
+    {
+     "src": 2,
+     "said": "A 0% 8% 2%"
+    },
+    {
+     "src": 2,
+     "said": "A 15% 15% 15% 15%"
+    },
+    {
+     "src": 3,
+     "said": "For tax year 2026 to 2027 you’ll pay: 6% on profits over £12,570 up to £50,270 2% on profits over £50,270"
+    },
+    {
+     "src": 3,
+     "said": "The Class 2 rate for tax year 2026 to 2027 is £3.65 a week."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer deducts income tax and National Insurance from pay through PAYE by the employee's tax code (the standard 1257L gives the £12,570 allowance); a self-employed freelancer has nothing withheld and pays through Self Assessment once self-employed income passes £1,000.",
+   "value": {
+    "currency": "GBP",
+    "wages": "PAYE by tax code; emergency code 1257L",
+    "payeBandsAboveAllowance": [
+     {
+      "from": 0,
+      "to": 37700,
+      "rate": 0.2
+     },
+     {
+      "from": 37700,
+      "to": 125140,
+      "rate": 0.4
+     },
+     {
+      "from": 125140,
+      "to": null,
+      "rate": 0.45
+     }
+    ],
+    "freelanceFee": {
+     "withholding": 0,
+     "selfAssessmentAbove": 1000
+    }
+   },
+   "applies": "2026-27.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The emergency tax codes from 6 April 2026 are: 1257L W1 1257L M1 1257L X"
+    },
+    {
+     "src": 2,
+     "said": "Basic tax rate 20% Up to £37,700 Higher tax rate 40% From £37,701 to £125,140 Additional tax rate 45% Above £125,140"
+    },
+    {
+     "src": 4,
+     "said": "you were self-employed as a ‘sole trader’ and earned more than £1,000"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A payer withholds basic-rate tax (20%) from payments to a non-resident entertainer for a UK appearance, film productions included, once the year's payments pass the personal allowance; it is a payment on account against the final UK bill, not a final tax. Payments made directly to film directors, and for copyright and royalties, are not withheld.",
+   "value": {
+    "currency": "GBP",
+    "rate": 0.2,
+    "threshold": "year's payments above the personal allowance (£12,570)",
+    "base": "payments for the UK appearance, grossed up where the payer meets costs",
+    "final": false,
+    "excluded": [
+     "payments made directly to film directors, cameramen or technicians",
+     "copyright, royalties or advances on royalties",
+     "employees paying tax through UK PAYE"
+    ],
+    "reducedBy": "reduced tax payment application"
+   },
+   "applies": "Non-resident entertainers (actors included) appearing in the UK in 2026-27.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "For most payments over the personal allowance, you should deduct tax at the UK basic rate of Income Tax"
+    },
+    {
+     "src": 5,
+     "said": "It’s a payment on account against the entertainer or sportsperson’s final UK tax bill."
+    },
+    {
+     "src": 5,
+     "said": "made directly to film directors, cameramen or technicians"
+    },
+    {
+     "src": 5,
+     "said": "for copyright, royalties, or advances on royalties"
+    },
+    {
+     "src": 5,
+     "said": "film productions advertising catwalk modelling"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "A creator of literary or artistic works whose profits come from selling works or from royalties may claim to be taxed on the average of two years' profits, on HMRC's 75% condition; profits from services (a performer's fee, say) do not qualify.",
+   "value": {
+    "relief": "averaging of two consecutive years' profits",
+    "condition": "as HMRC words it: the difference in profits of one of the tax years must be less than 75% of the profits of the other tax year, or the profits of one tax year are nil",
+    "excluded": "profits from services; cash-basis accounts"
+   },
+   "applies": "Self-employed authors and artists filing Self Assessment.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "A special relief is available for creators of literary or artistic works under which they can claim to add together their profits for 2 years and be taxable on the average of those profits if certain conditions are met."
+    },
+    {
+     "src": 6,
+     "said": "The difference in profits of one of the tax years must be less than 75% of the profits of the other tax year, or the profits of one tax year are nil."
+    },
+    {
+     "src": 6,
+     "said": "You cannot claim averaging if your profits come from the services you provide."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register for VAT when taxable turnover over the last 12 months passes £90,000 (or is expected to within 30 days), and then charges the standard 20%; a business based outside the UK supplying the UK must register whatever its turnover.",
+   "value": {
+    "currency": "GBP",
+    "registrationThreshold": 90000,
+    "standardRate": 0.2,
+    "nonEstablished": "registration regardless of turnover"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "your total taxable turnover for the last 12 months goes over £90,000 (the VAT threshold)"
+    },
+    {
+     "src": 8,
+     "said": "Standard rate 20% Most goods and services"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The UK tax year runs 6 April to 5 April; the 2026-27 online Self Assessment return and the balance of tax are due by 31 January 2028 (for 2025-26, 31 January 2027), with a second payment on account on 31 July.",
+   "value": {
+    "currency": "GBP",
+    "start": "2026-04-06",
+    "end": "2027-04-05",
+    "returnDueOnline": "2028-01-31",
+    "returnDuePaper": "2027-10-31",
+    "paymentsOnAccount": [
+     "31 January",
+     "31 July"
+    ],
+    "previousYear": {
+     "start": "2025-04-06",
+     "end": "2026-04-05",
+     "returnDueOnline": "2027-01-31"
+    }
+   },
+   "applies": "Individuals in Self Assessment.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "You must submit your online tax return by 11:59pm on 31 January 2027 or you’ll get a late filing penalty"
+    },
+    {
+     "src": 9,
+     "said": "There is a second payment deadline of 31 July if you make payments towards your bill"
+    }
+   ]
+  }
+ ],
+ "country": "GB",
+ "sources": [
+  {
+   "url": "https://www.gov.uk/income-tax-rates",
+   "title": "Income Tax rates and Personal Allowances",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The current tax year is from 6 April 2026 to 5 April 2027. … Personal Allowance Up to £12,570 0% Basic rate £12,571 to £50,270 20% Higher rate £50,271 to £125,140 40% Additional rate over £125,140 45% … Your personal allowance goes down by £1 for every £2 that your adjusted net income is above £100,000. … your first £1,000 of income from self-employment - this is your ‘trading allowance’"
+  },
+  {
+   "url": "https://www.gov.uk/scottish-income-tax",
+   "title": "Scottish Income Tax",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Starter rate £12,571 to £16,537 19% Basic rate £16,538 to £29,526 20% Intermediate rate £29,527 to £43,662 21% Higher rate £43,663 to £75,000 42% Advanced rate £75,001 to £125,140 45% Top rate over £125,140 48%"
+  },
+  {
+   "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+   "title": "Rates and thresholds for employers 2026 to 2027",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Primary threshold £242 per week £1,048 per month £12,570 per year Secondary threshold £96 per week £417 per month £5,000 per year … Upper earnings limit £967 per week £4,189 per month £50,270 per year … A 0% 8% 2% … A 15% 15% 15% 15% … The emergency tax codes from 6 April 2026 are: 1257L W1 1257L M1 1257L X … Basic tax rate 20% Up to £37,700 Higher tax rate 40% From £37,701 to £125,140 Additional tax rate 45% Above £125,140"
+  },
+  {
+   "url": "https://www.gov.uk/self-employed-national-insurance-rates",
+   "title": "Self-employed National Insurance rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For tax year 2026 to 2027 you’ll pay: 6% on profits over £12,570 up to £50,270 2% on profits over £50,270 … The Class 2 rate for tax year 2026 to 2027 is £3.65 a week."
+  },
+  {
+   "url": "https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return",
+   "title": "Who must send a tax return",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "you were self-employed as a ‘sole trader’ and earned more than £1,000"
+  },
+  {
+   "url": "https://www.gov.uk/guidance/pay-tax-on-payments-to-foreign-performers",
+   "title": "Pay tax on payments to foreign entertainers and sportspersons",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "For most payments over the personal allowance, you should deduct tax at the UK basic rate of Income Tax … It’s a payment on account against the entertainer or sportsperson’s final UK tax bill. … made directly to film directors, cameramen or technicians … for copyright, royalties, or advances on royalties … film productions advertising catwalk modelling"
+  },
+  {
+   "url": "https://www.gov.uk/government/publications/averaging-for-creators-of-literary-or-artistic-works-hs234-self-assessment-helpsheet/hs234-averaging-for-creators-of-literary-or-artistic-works-2026",
+   "title": "HS234 Averaging for creators of literary or artistic works (2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A special relief is available for creators of literary or artistic works under which they can claim to add together their profits for 2 years and be taxable on the average of those profits if certain conditions are met. … The difference in profits of one of the tax years must be less than 75% of the profits of the other tax year, or the profits of one tax year are nil. … You cannot claim averaging if your profits come from the services you provide."
+  },
+  {
+   "url": "https://www.gov.uk/vat-registration/when-to-register",
+   "title": "Register for VAT: When to register",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "your total taxable turnover for the last 12 months goes over £90,000 (the VAT threshold)"
+  },
+  {
+   "url": "https://www.gov.uk/vat-rates",
+   "title": "VAT rates",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Standard rate 20% Most goods and services"
+  },
+  {
+   "url": "https://www.gov.uk/self-assessment-tax-returns/deadlines",
+   "title": "Self Assessment tax returns: Deadlines",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "You must submit your online tax return by 11:59pm on 31 January 2027 or you’ll get a late filing penalty … There is a second payment deadline of 31 July if you make payments towards your bill"
+  }
+ ],
+ "blockers": []
+}

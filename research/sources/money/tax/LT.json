@@ -1,0 +1,219 @@
+{
+ "topic": "tax.LT",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Lithuania: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 2026 most income, including pay, individual activity, copyright pay from an employer and royalties, is aggregated and taxed at 20% to 36 average wages (EUR 83,237), 25% to 60 average wages (EUR 138,729) and 32% above; a monthly tax-exempt amount of EUR 747 applies to employment income, tapering by 0.49 of pay above the EUR 1,153 minimum wage; there is no local income tax.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 83237,
+      "rate": 0.2
+     },
+     {
+      "from": 83237,
+      "to": 138729,
+      "rate": 0.25
+     },
+     {
+      "from": 138729,
+      "to": null,
+      "rate": 0.32
+     }
+    ],
+    "bracketsInAverageWages": [
+     36,
+     60
+    ],
+    "allowance": {
+     "monthly": 747,
+     "taper": 0.49,
+     "taperAbove": 1153,
+     "appliesTo": "employment income of residents"
+    },
+    "regional": null
+   },
+   "applies": "Residents, 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Starting from 1 January 2026, most categories of taxable income received by individuals are subject to progressive PIT rates and are aggregated for annual PIT purposes. The aggregated annual PIT base generally includes employment income, income from individual activities, remuneration received under copyright agreements from an employer, royalties, and certain other categories of income. Depending on the total amount of income, the following PIT rates will apply: 20% for annual income up to 36 average wages (AW) (up to EUR 83,237 in 2026); 25% for income from 36 to 60 AW (from EUR 83,237 to EUR 138,729 in 2026); 32% for the portion of income exceeding 60 AW (from EUR 138,729 in 2026). … There are no local, state, or provincial PIT rates applicable in Lithuania."
+    },
+    {
+     "src": 1,
+     "said": "A monthly tax-exempt amount (TEA) is applied only to employment-related income of Lithuanian tax residents, as follows: A TEA of EUR 747 per month is applied to individuals whose employment-related income does not exceed an amount of one minimum monthly salary that was in force as of 1 January of the current tax year (EUR 1,153 in 2026). If employment-related income exceeds an amount of one minimum monthly salary that was in force as of 1 January of the current tax year, a monthly TEA is calculated according to the following formula: monthly TEA = EUR 747 − 0.49 ×"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 19.5% (6.98% of it health insurance) and the employer 1.77% to 3.03% (2.49% to 3.75% on fixed-term contracts), both up to 60 average wages (EUR 138,729), above which only 6.98% health applies; a performer or author paid under a copyright or performance contract by someone not their employer pays 19.5% on 90% of the fee, capped at 43 average wages (EUR 99,422), as does individual activity income.",
+   "value": {
+    "currency": "EUR",
+    "year": 2026,
+    "employee": 0.195,
+    "employeeHealthPart": 0.0698,
+    "employer": {
+     "min": 0.0177,
+     "max": 0.0303,
+     "fixedTermMin": 0.0249,
+     "fixedTermMax": 0.0375
+    },
+    "ceiling": 138729,
+    "aboveCeiling": {
+     "health": 0.0698
+    },
+    "performersAndAuthorsNotEmployer": {
+     "rate": 0.195,
+     "base": 0.9,
+     "ceiling": 99422
+    },
+    "individualActivity": {
+     "rate": 0.195,
+     "base": "90% of taxable income",
+     "ceiling": 99422
+    },
+    "secondPillarVoluntary": 0.03
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Social security contributions at rates ranging from 1.77% to 3.03% (or from 2.49% to 3.75% for fixed-term employment agreements), depending on the employer's risk category, are payable by employers. … Employee social security contributions are withheld at a rate of 19.5% (including health insurance contributions at 6.98%). Both employer and employee social security contributions are payable only up to 60 average wages (AW) (EUR 138,729 in 2026). Income exceeding this threshold is subject only to compulsory health insurance contributions at a rate of 6.98%. … Income derived from sports activities, performers’ activities, and under copyright agreements (when it is received from the company that is not the employer of such individual): Social security contributions at 19.5% (including health insurance contributions at 6.98%) are applied to individuals. The contribution base is 90% of the remuneration received and is capped at 43 AW (EUR 99,422 in 2026)."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Tax on Class A income (employment, sports and performing income paid by a Lithuanian entity) is calculated and withheld by the payer and returned monthly by the 15th; Class B income (most individual activity) is paid by the individual on the annual return.",
+   "value": {
+    "kind": "payer withholding on Class A income; self-assessment on Class B",
+    "classA": [
+     "employment",
+     "sports and performing activities"
+    ],
+    "remitBy": "15th of following month"
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 3,
+     "said": "an individual’s income (including income that is non-taxable) is divided into two classes, Class A (where the tax is calculated and withheld by the person making the payment, e.g. the employer) and Class B (where tax is paid personally by an individual filing a personal tax return) . Class A income includes the following income received from a Lithuanian entity, a foreign entity through its permanent establishment (PE), or a non-resident of Lithuania through one’s permanent base: Employment-related income. Income from sports and performing activities."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 21% standard, with reduced rates of 12% and 5%.",
+   "value": {
+    "standard": 0.21,
+    "reduced": [
+     0.12,
+     0.05
+    ]
+   },
+   "applies": "2026",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The standard VAT rate is 21%. Reduced rates are 12% and 5%"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; a resident with both Class A and Class B income files an annual return by 1 May of the next year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "05-01"
+   },
+   "applies": "Residents",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The tax year in Lithuania is a calendar year."
+    },
+    {
+     "src": 3,
+     "said": "a resident of Lithuania who, during the tax period, derived income that, subject to the tax payment procedure, is attributable to both Class A and Class B income is obligated to submit an annual income tax return to the tax administrator on or before 1 May of the following year"
+    }
+   ]
+  }
+ ],
+ "country": "LT",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/lithuania/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Lithuania, Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.171369/asr",
+   "said": "Starting from 1 January 2026, most categories of taxable income received by individuals are subject to progressive PIT rates and are aggregated for annual PIT purposes. The aggregated annual PIT base generally includes employment income, income from individual activities, remuneration received under copyright agreements from an employer, royalties, and certain other categories of income. Depending on the total amount of income, the following PIT rates will apply: 20% for annual income up to 36 average wages (AW) (up to EUR 83,237 in 2026); 25% for income from 36 to 60 AW (from EUR 83,237 to EUR 138,729 in 2026); 32% for the portion of income exceeding 60 AW (from EUR 138,729 in 2026). … There are no local, state, or provincial PIT rates applicable in Lithuania."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lithuania/individual/deductions",
+   "title": "PwC Worldwide Tax Summaries: Lithuania, Deductions",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.171369/asr",
+   "said": "A monthly tax-exempt amount (TEA) is applied only to employment-related income of Lithuanian tax residents, as follows: A TEA of EUR 747 per month is applied to individuals whose employment-related income does not exceed an amount of one minimum monthly salary that was in force as of 1 January of the current tax year (EUR 1,153 in 2026). If employment-related income exceeds an amount of one minimum monthly salary that was in force as of 1 January of the current tax year, a monthly TEA is calculated according to the following formula: monthly TEA = EUR 747 − 0.49 ×"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lithuania/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Lithuania, Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.sodra.lt/lt/situacijos/informacija-darbdaviams/imoku-tarifai",
+   "said": "Social security contributions at rates ranging from 1.77% to 3.03% (or from 2.49% to 3.75% for fixed-term employment agreements), depending on the employer's risk category, are payable by employers. … Employee social security contributions are withheld at a rate of 19.5% (including health insurance contributions at 6.98%). Both employer and employee social security contributions are payable only up to 60 average wages (AW) (EUR 138,729 in 2026). Income exceeding this threshold is subject only to compulsory health insurance contributions at a rate of 6.98%. … Income derived from sports activities, performers’ activities, and under copyright agreements (when it is received from the company that is not the employer of such individual): Social security contributions at 19.5% (including health insurance contributions at 6.98%) are applied to individuals. The contribution base is 90% of the remuneration received and is capped at 43 AW (EUR 99,422 in 2026). … The standard VAT rate is 21%. Reduced rates are 12% and 5%"
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/lithuania/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Lithuania, Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.171369/asr",
+   "said": "an individual’s income (including income that is non-taxable) is divided into two classes, Class A (where the tax is calculated and withheld by the person making the payment, e.g. the employer) and Class B (where tax is paid personally by an individual filing a personal tax return) . Class A income includes the following income received from a Lithuanian entity, a foreign entity through its permanent establishment (PE), or a non-resident of Lithuania through one’s permanent base: Employment-related income. Income from sports and performing activities. … The tax year in Lithuania is a calendar year. … a resident of Lithuania who, during the tax period, derived income that, subject to the tax payment procedure, is attributable to both Class A and Class B income is obligated to submit an annual income tax return to the tax administrator on or before 1 May of the following year"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "nonResident",
+   "sought": "The rate on a non-resident performer's Lithuanian income (PwC confirms performing income is taxable for non-residents but gives no rate) and whether it is final.",
+   "tried": {
+    "institution": "vmi.lt and its PDFs refused this environment (Cloudflare 403); not read another way || 2026-11-01 retry: vmi.lt still refuses this environment with a Cloudflare challenge (HTTP 403, 2026-11-01); not read another way",
+    "official-register": "e-seimas.lrs.lt refused (403); e-tar.lt refused (403) || 2026-11-01 retry: e-seimas.lrs.lt and e-tar.lt: HTTP 403 (Cloudflare) again",
+    "web-search": "searched e-seimas GPMĮ art. 6 for 2026; returned rates for residents only || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC LT pages read; KPMG LT newsletter January 2026 fetched but not mined for the non-resident rate || 2026-11-01 retry: KPMG Lithuania newsletter (saved LT-kpmg-2026.html) mined: 15% on non-employment income up to 12 average wages, no non-resident performer rate or VAT threshold; PwC corporate WHT page gives 17% from 1 January 2026 on sports and performers' income of a foreign entity (not of an individual)",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "The VAT registration threshold for a freelancer (individual activity) in 2026.",
+   "tried": {
+    "institution": "vmi.lt refused (403) || 2026-11-01 retry: vmi.lt still refuses this environment with a Cloudflare challenge (HTTP 403, 2026-11-01); not read another way",
+    "official-register": "e-seimas refused (403) || 2026-11-01 retry: e-seimas.lrs.lt and e-tar.lt: HTTP 403 (Cloudflare) again",
+    "web-search": "not searched separately || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC LT corporate other-taxes page did not render the VAT section || 2026-11-01 retry: KPMG Lithuania newsletter (saved LT-kpmg-2026.html) mined: 15% on non-employment income up to 12 average wages, no non-resident performer rate or VAT threshold; PwC corporate WHT page gives 17% from 1 January 2026 on sports and performers' income of a foreign entity (not of an individual)",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Treatment of authors' royalties paid by a non-employer (aggregated at progressive rates per PwC; the deemed-expense rules and withholding not read).",
+   "tried": {
+    "institution": "vmi.lt refused (403) || 2026-11-01 retry: vmi.lt still refuses this environment with a Cloudflare challenge (HTTP 403, 2026-11-01); not read another way",
+    "official-register": "e-seimas refused (403) || 2026-11-01 retry: e-seimas.lrs.lt and e-tar.lt: HTTP 403 (Cloudflare) again",
+    "web-search": "not searched separately || 2026-11-01 retry: WebSearch refused by the tool: this turn's shared limit of 200 searches was used up by the agents (2026-11-01)",
+    "trade-press": "PwC LT says royalties join the aggregated progressive base || 2026-11-01 retry: KPMG Lithuania newsletter (saved LT-kpmg-2026.html) mined: 15% on non-employment income up to 12 average wages, no non-resident performer rate or VAT threshold; PwC corporate WHT page gives 17% from 1 January 2026 on sports and performers' income of a foreign entity (not of an individual)",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: web.archive.org resets the connection from this environment (2026-11-01)"
+   }
+  }
+ ]
+}

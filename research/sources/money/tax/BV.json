@@ -1,0 +1,145 @@
+{
+ "topic": "tax.BV",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Bouvet Island: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Bouvet Island is an uninhabited Norwegian dependency (biland), outside the Kingdom; it has no tax of its own, and pay for work there is taxed by Norway under the Svalbard tax rules when a single stay passes 30 days.",
+   "value": {
+    "sovereign": "NO",
+    "takesSovereignTax": true,
+    "regime": "Svalbardskatteloven (via the Jan Mayen tax act) for a continuous stay over 30 days",
+    "inhabited": false
+   },
+   "applies": "Anyone working on Bouvet Island, 2026; a stay of 30 days or less is not covered by this rule (the ordinary Norwegian rules in NO then apply as the person's own residence dictates).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Lønn og andre ytelser for arbeid på Jan Mayen eller i de norske bilandene i Antarktis skattlegges etter reglene i Svalbardskatteloven, hvis det enkelte opphold i forbindelse med arbeidet overstiger 30 døgn."
+    },
+    {
+     "src": 0,
+     "said": "De norske bilandene i Antarktis er Dronning Maud Land, Bouvetøya og Peter I Øy."
+    },
+    {
+     "src": 1,
+     "said": "Statsform Norsk biland Landareal 49 km² Innbyggertall ubebodd"
+    },
+    {
+     "src": 2,
+     "said": "Status som biland innebærer at bilandene er norsk territorium, men ikke er del av «Kongeriket Norge»."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Pay for work on Bouvet Island taxed under the Svalbard rules bears 8% up to 12 times the National Insurance basic amount (G) and 22% on the excess, plus the national insurance contribution of 7.6% on pay (5.1% on pensions), for 2026.",
+   "value": {
+    "year": 2026,
+    "currency": "NOK",
+    "brackets": [
+     {
+      "from": 0,
+      "to": "12 G",
+      "rate": 0.08
+     },
+     {
+      "from": "12 G",
+      "to": null,
+      "rate": 0.22
+     }
+    ],
+    "nationalInsurance": {
+     "pay": 0.076,
+     "pensions": 0.051
+    },
+    "base": "gross pay (Svalbard wage-deduction scheme)"
+   },
+   "applies": "Pay for a stay over 30 days in Norway's dependencies in the Antarctic (Bouvet Island among them), income year 2026; the rate page (year 2026 selected) says the Jan Mayen and dependencies rates are the same as Svalbard's.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Employment income taxable under the Jan Mayen Taxation Act is taxed at the same rates as for Svalbard. The rate for national insurance contributions is also the same as for Svalbard. … Use the following rates for deductions from salary payments on Jan Mayen and the Norwegian dependencies in the Antarctic: Low rate: 8 percent. High rate: 22 percent. Calculate tax with the low rate for income up to 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7,6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+    },
+    {
+     "src": 4,
+     "said": "Use the following rates for deductions from salary payments on Svalbard: Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7.6 percent."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Under the Svalbard wage-deduction scheme the employer withholds tax from gross pay with no deductions, and the withholding is in principle the final settlement; the employer's contribution rate on pay taxed under the Svalbard act is 0%.",
+   "value": {
+    "base": "gross pay, no deductions",
+    "final": true,
+    "employerContribution": 0.0,
+    "youthAllowance2026": 100000
+   },
+   "applies": "Pay for a continuous stay over 30 days on Bouvet Island (taxed under the Svalbard rules), 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen."
+    },
+    {
+     "src": 5,
+     "said": "Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
+    },
+    {
+     "src": 0,
+     "said": "For arbeidsgiveravgiften gjelder samme regler som for Svalbard."
+    }
+   ]
+  }
+ ],
+ "country": "BV",
+ "sources": [
+  {
+   "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/veiledning/spesielle-grupper/jan-mayen-og-de-norske-bilandene-i-antarktis/",
+   "title": "Jan Mayen og de norske bilandene i Antarktis (Skatteetaten, veiledning til a-meldingen, oppdatert 23.01.2025)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Lønn og andre ytelser for arbeid på Jan Mayen eller i de norske bilandene i Antarktis skattlegges etter reglene i Svalbardskatteloven, hvis det enkelte opphold i forbindelse med arbeidet overstiger 30 døgn. … De norske bilandene i Antarktis er Dronning Maud Land, Bouvetøya og Peter I Øy. … For arbeidsgiveravgiften gjelder samme regler som for Svalbard."
+  },
+  {
+   "url": "https://snl.no/Bouvet%C3%B8ya",
+   "title": "Bouvetøya (Store norske leksikon)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://lovdata.no/dokument/NL/lov/1930-02-27-3",
+   "said": "Statsform Norsk biland Landareal 49 km² Innbyggertall ubebodd"
+  },
+  {
+   "url": "https://snl.no/bilandsloven",
+   "title": "bilandsloven (Store norske leksikon)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://lovdata.no/dokument/NL/lov/1930-02-27-3",
+   "said": "Status som biland innebærer at bilandene er norsk territorium, men ikke er del av «Kongeriket Norge»."
+  },
+  {
+   "url": "https://www.skatteetaten.no/en/rates/tax-rates-for-jan-mayen-and-the-norwegian-dependencies-in-the-antarctic",
+   "title": "Tax rates for Jan Mayen and the Norwegian dependencies in the Antarctic, 2026 (The Norwegian Tax Administration)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Employment income taxable under the Jan Mayen Taxation Act is taxed at the same rates as for Svalbard. The rate for national insurance contributions is also the same as for Svalbard. … Use the following rates for deductions from salary payments on Jan Mayen and the Norwegian dependencies in the Antarctic: Low rate: 8 percent. High rate: 22 percent. Calculate tax with the low rate for income up to 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7,6 percent. The national insurance contributions related to pensions, etc. is 5.1 percent."
+  },
+  {
+   "url": "https://www.skatteetaten.no/en/rates/tax-rates-on-svalbard",
+   "title": "Tax rates on Svalbard, 2026 (The Norwegian Tax Administration)",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Use the following rates for deductions from salary payments on Svalbard: Low rate: 8 percent High rate: 22 percent Calculate tax with the low rate for income up until 12 times the National Insurance Scheme’s basic amount , and with the high rate for surplus income. The national insurance contributions related to salary, etc. is 7.6 percent."
+  },
+  {
+   "url": "https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/svalbard/skatt-lonn/",
+   "title": "Skatt på lønn – Svalbard (Skatteetaten)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Skatt etter lønnstrekkordningen er en ren bruttoskatt. Det gis derfor ingen fradrag i beregningsgrunnlaget for skatt. Arbeidsgiveren skal trekke skatt av lønn/pensjon ved utbetaling til arbeidstakeren/ trygdemottakeren. Skattetrekket er i utgangspunktet endelig oppgjør for skatteforpliktelsen på lønnen/pensjonen. … Selv om arbeidsgiver ikke hører hjemme på Svalbard, er satsen for arbeidsgiveravgift 0 prosent på lønn og annen godtgjørelse som blir skattlagt etter svalbardskatteloven."
+  }
+ ],
+ "blockers": []
+}

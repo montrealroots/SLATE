@@ -1,0 +1,258 @@
+{
+ "topic": "ages.NL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in The Netherlands: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "minorsContracts",
+   "finding": "A minor acts with his legal representative's consent, given for a particular act or purpose; from sixteen he may enter a contract of employment himself and stands as an adult in everything about it; from sixteen a cantonal judge may grant him handlichting, adult powers such as receiving and spending his income and running a business; no share of earnings is set aside; the consent rule reaches any contract, a commission to write or direct included (reading).",
+   "value": {
+    "binding": "the legal representative's consent (BW 1:234); from 16 the minor alone for an employment contract (BW 7:612)",
+    "employmentAloneFrom": 16,
+    "handlichtingFrom": 16,
+    "setAside": null,
+    "reachesWritingDirecting": true
+   },
+   "applies": "Burgerlijk Wetboek Boek 1 (text from 5 July 2025) and Boek 7 (text from 1 July 2026), BWB repository.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Artikel 234 1 Een minderjarige is, mits hij met toestemming van zijn wettelijke vertegenwoordiger handelt, bekwaam rechtshandelingen te verrichten, voor zover de wet niet anders bepaalt. 2 De toestemming kan slechts worden verleend voor een bepaalde rechtshandeling of voor een bepaald doel. ... 1 Handlichting waarbij aan een minderjarige bepaalde bevoegdheden van een meerderjarige worden toegekend, kan wanneer de minderjarige de leeftijd van zestien jaren heeft bereikt, op zijn verzoek door de kantonrechter worden verleend. ... Deze bevoegdheden mogen zich niet verder uitstrekken dan tot de gedeeltelijke of de gehele ontvangst van zijn inkomsten en de beschikking daarover, het sluiten van verhuringen en verpachtingen, het in een vennootschap deelnemen en het uitoefenen van een beroep of bedrijf."
+    },
+    {
+     "src": 1,
+     "said": "Artikel 612 1 Een minderjarige die de leeftijd van zestien jaren heeft bereikt, is bekwaam tot het aangaan van een arbeidsovereenkomst. Hij staat in alles wat betrekking heeft op die arbeidsovereenkomst met een meerderjarige gelijk,"
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "A child of twelve or younger may do only cultural or artistic work (performances, fashion shows, audio-visual recordings), under an exemption (ontheffing kinderarbeid) from the Netherlands Labour Authority, which the person directing the child at work (employer, parent or producer) asks for at least five working days ahead; a child under seven works at most two hours a school day and four on other days, on six days per year of age and three a week, resting fourteen hours and in any case 19:00 to 08:00; from seven to twelve at most four hours a school day, seven on other days and twelve a school week, on twenty-four days per year of age and three a week, resting 23:00 to 08:00; from thirteen no exemption is needed but an expert supervisor is, with seven hours a day (eight at fifteen), twelve a school week, thirty-five (forty at fifteen) in a holiday week and twenty-four performance days per year of age.",
+   "value": {
+    "permit": "ontheffing kinderarbeid",
+    "issuer": "Nederlandse Arbeidsinspectie",
+    "permitUpTo": 12,
+    "lowestAge": null,
+    "leadTimeWorkingDays": 5,
+    "bands": [
+     {
+      "ages": "0-6",
+      "schoolDay": 2,
+      "otherDay": 4,
+      "daysPerYearOfAge": 6,
+      "daysPerWeek": 3,
+      "dailyRest": 14,
+      "restWindow": "19:00-08:00"
+     },
+     {
+      "ages": "7-12",
+      "schoolDay": 4,
+      "otherDay": 7,
+      "schoolWeek": 12,
+      "daysPerYearOfAge": 24,
+      "daysPerWeek": 3,
+      "dailyRest": 14,
+      "restWindow": "23:00-08:00",
+      "breakAfter4.5h": 30,
+      "summerWeeksOff": 2
+     },
+     {
+      "ages": "13-14",
+      "permit": false,
+      "schoolDay": 7,
+      "otherDay": 7,
+      "schoolWeek": 12,
+      "holidayWeek": 35,
+      "daysPerYearOfAge": 24,
+      "dailyRest": 14,
+      "restWindow": "23:00-08:00"
+     },
+     {
+      "ages": "15",
+      "permit": false,
+      "schoolDay": 8,
+      "otherDay": 8,
+      "schoolWeek": 12,
+      "holidayWeek": 40,
+      "daysPerYearOfAge": 24,
+      "dailyRest": 12,
+      "restWindow": "23:00-07:00"
+     }
+    ],
+    "chaperone": "expert supervision (deskundige begeleiding)",
+    "reachesWritingDirecting": "no: the exemption is for taking part in performances and recordings; other paid work under thirteen stays barred (reading)"
+   },
+   "applies": "Arbeidstijdenwet and its rules, as the Labour Authority and the government describe them on 2026-11-01.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Alleen als sprake is van cultureel werk (artistieke arbeid) kunt u voor een kind tot en met 12 jaar een ontheffing krijgen. ... Dit kan de werkgever of ouder zijn, maar ook bijvoorbeeld een producent; zolang die persoon het kind aanstuurt of begeleidt tijdens het werk. ... De aanvraag moet ten minste 5 werkdagen vóór de geplande activiteit zijn ingediend."
+    },
+    {
+     "src": 3,
+     "said": "Regels voor kinderen tot 7 jaar bij uitvoeringen Maximale werktijd 2 uur per schooldag; 4 uur op een niet-schooldag, ... Maximum aantal dagen 6 dagen in een leeftijdsjaar. ... Een rusttijd van minstens 14 uur per dag. In ieder geval tussen 19.00 en 08.00 uur. Regels voor kinderen tussen 7 en 13 jaar bij uitvoeringen Maximale werktijd 4 uur per schooldag. 7 uur op een niet-schooldag, ... 12 uur per week in een schoolweek. ... Maximum aantal dagen 24 dagen per levensjaar. 3 dagen per week. ... rusttijd van 14 uur, in elk geval tussen 23.00 en 8.00 uur;"
+    },
+    {
+     "src": 4,
+     "said": "Je hebt geen ontheffing van de Nederlandse Arbeidsinspectie nodig. Je moet wel begeleiding krijgen van een deskundige. ... Schooldag 7 uur 8 uur Niet-schooldag 7 uur 8 uur Schoolweek 12 uur 12 uur Vakantiedag 7 uur 8 uur Vakantieweek 35 uur 40 uur"
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "The Netherlands Film Fund's production grants go to a production company that is a legal person established at least two years; script-development grants may also go to an independent screenwriter after a positive Pitch Filmidee result; no applicant age is stated.",
+   "value": {
+    "fund": "Nederlands Filmfonds",
+    "realisering": "productiemaatschappij: a rechtspersoon established and active for at least two years",
+    "scriptDevelopment": "the producer or an independent screenwriter",
+    "applicantAge": null
+   },
+   "applies": "Deelreglement Realisering of 1 January 2024 and the script-development page (status closed), read 2026-11-01.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "productiemaatschappij: een rechtspersoon die op continue basis bedrijfsactiviteiten ontplooit met als hoofddoel de productie en exploitatie van filmproducties en andere audiovisuele mediaproducties. De rechtspersoon is ten tijde van de subsidieaanvraag gedurende minimaal twee jaar daarvoor gevestigd en actief geweest in Nederland,"
+    },
+    {
+     "src": 6,
+     "said": "Na een positieve uitslag bij Pitch Filmidee kan de producent of een zelfstandig scenarist bij het Filmfonds een aanvraag indienen voor de scenario-ontwikkeling van een majoritaire Nederlandse speelfilm of lange animatiefilm,"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "There is no minimum age to start a business; under eighteen every legal act needs the parents' consent unless a cantonal judge grants handlichting, which only a minor of sixteen or seventeen may ask for and which ends at eighteen.",
+   "value": {
+    "startBusinessMinimumAge": null,
+    "handlichtingFrom": 16,
+    "under16": "always the parents' or carers' consent"
+   },
+   "applies": "As KVK (the Chamber of Commerce) describes it, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Dan moet u een handlichting aanvragen bij de kantonrechter. Hiervoor moet u 16 of 17 jaar zijn. De handlichting vervalt automatisch als u 18 wordt. ... Jongeren onder de 16 hebben altijd toestemming nodig van ouders of verzorgers en kunnen geen handlichting aanvragen. Bedrijf inschrijven bij KVK Er geldt geen minimumleeftijd voor het starten van een bedrijf."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "The actors' association ACT sets no age: it admits graduates of the listed drama schools (students free from their third year) or actors with set professional experience, such as three leading or middle roles in television series, TV films, features or shorts.",
+   "value": {
+    "ACT": {
+     "minimumAge": null,
+     "admission": "diploma of a listed drama school, or experience (e.g. three leading or middle screen roles; two years in leading or middle stage roles)",
+     "students": "from the third year, free"
+    }
+   },
+   "applies": "ACT (Acteursbelangen) membership conditions, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Ben je nog student aan één van bovenstaande opleidingen dan kan je je vanaf je derde jaar gratis aanmelden voor ACT. … Minstens drie dragende of middenrollen in een televisieserie, telefilm/bioscoopfilm of short."
+    }
+   ]
+  }
+ ],
+ "country": "NL",
+ "sources": [
+  {
+   "url": "https://repository.officiele-overheidspublicaties.nl/bwb/BWBR0002656/2025-07-05_0/xml/BWBR0002656_2025-07-05_0.xml",
+   "title": "Burgerlijk Wetboek Boek 1, consolidated text from 2025-07-05 (BWB repository)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artikel 234 1 Een minderjarige is, mits hij met toestemming van zijn wettelijke vertegenwoordiger handelt, bekwaam rechtshandelingen te verrichten, voor zover de wet niet anders bepaalt. 2 De toestemming kan slechts worden verleend voor een bepaalde rechtshandeling of voor een bepaald doel. ... 1 Handlichting waarbij aan een minderjarige bepaalde bevoegdheden van een meerderjarige worden toegekend, kan wanneer de minderjarige de leeftijd van zestien jaren heeft bereikt, op zijn verzoek door de kantonrechter worden verleend. ... Deze bevoegdheden mogen zich niet verder uitstrekken dan tot de gedeeltelijke of de gehele ontvangst van zijn inkomsten en de beschikking daarover, het sluiten van verhuringen en verpachtingen, het in een vennootschap deelnemen en het uitoefenen van een beroep of bedrijf."
+  },
+  {
+   "url": "https://repository.officiele-overheidspublicaties.nl/bwb/BWBR0005290/2026-07-01_0/xml/BWBR0005290_2026-07-01_0.xml",
+   "title": "Burgerlijk Wetboek Boek 7, consolidated text from 2026-07-01 (BWB repository), article 7:612",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artikel 612 1 Een minderjarige die de leeftijd van zestien jaren heeft bereikt, is bekwaam tot het aangaan van een arbeidsovereenkomst. Hij staat in alles wat betrekking heeft op die arbeidsovereenkomst met een meerderjarige gelijk,"
+  },
+  {
+   "url": "https://www.nlarbeidsinspectie.nl/onderwerpen/arbeidstijdenwet/cultureel-artistiek-werk-door-kinderen",
+   "title": "Nederlandse Arbeidsinspectie: Cultureel/artistiek werk door kinderen",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Alleen als sprake is van cultureel werk (artistieke arbeid) kunt u voor een kind tot en met 12 jaar een ontheffing krijgen. ... Dit kan de werkgever of ouder zijn, maar ook bijvoorbeeld een producent; zolang die persoon het kind aanstuurt of begeleidt tijdens het werk. ... De aanvraag moet ten minste 5 werkdagen vóór de geplande activiteit zijn ingediend."
+  },
+  {
+   "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/bijbaan-vakantiewerk-en-stage-door-jongeren/mogen-kinderen-tot-13-jaar-meewerken-aan-uitvoeringen",
+   "title": "Rijksoverheid: Mogen kinderen tot 13 jaar meewerken aan uitvoeringen?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Regels voor kinderen tot 7 jaar bij uitvoeringen Maximale werktijd 2 uur per schooldag; 4 uur op een niet-schooldag, ... Maximum aantal dagen 6 dagen in een leeftijdsjaar. ... Een rusttijd van minstens 14 uur per dag. In ieder geval tussen 19.00 en 08.00 uur. Regels voor kinderen tussen 7 en 13 jaar bij uitvoeringen Maximale werktijd 4 uur per schooldag. 7 uur op een niet-schooldag, ... 12 uur per week in een schoolweek. ... Maximum aantal dagen 24 dagen per levensjaar. 3 dagen per week. ... rusttijd van 14 uur, in elk geval tussen 23.00 en 8.00 uur;"
+  },
+  {
+   "url": "https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/bijbaan-vakantiewerk-en-stage-door-jongeren/meewerken-uitvoering-13-14-of-15-jaar",
+   "title": "Rijksoverheid: Mag ik meewerken aan een uitvoering als ik 13, 14 of 15 jaar ben?",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Je hebt geen ontheffing van de Nederlandse Arbeidsinspectie nodig. Je moet wel begeleiding krijgen van een deskundige. ... Schooldag 7 uur 8 uur Niet-schooldag 7 uur 8 uur Schoolweek 12 uur 12 uur Vakantiedag 7 uur 8 uur Vakantieweek 35 uur 40 uur"
+  },
+  {
+   "url": "https://assets.filmfonds.nl/DEELREGLEMENT-REALISERING-1-januari-2024.pdf",
+   "title": "Nederlands Filmfonds: Deelreglement Realisering, 1 januari 2024",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "productiemaatschappij: een rechtspersoon die op continue basis bedrijfsactiviteiten ontplooit met als hoofddoel de productie en exploitatie van filmproducties en andere audiovisuele mediaproducties. De rechtspersoon is ten tijde van de subsidieaanvraag gedurende minimaal twee jaar daarvoor gevestigd en actief geweest in Nederland,"
+  },
+  {
+   "url": "https://www.filmfonds.nl/subsidies/subsidie/ontwikkeling-speelfilm-en-lange-animatiefilm",
+   "title": "Nederlands Filmfonds: Scenario-Ontwikkeling Speelfilm en Lange Animatiefilm",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Na een positieve uitslag bij Pitch Filmidee kan de producent of een zelfstandig scenarist bij het Filmfonds een aanvraag indienen voor de scenario-ontwikkeling van een majoritaire Nederlandse speelfilm of lange animatiefilm,"
+  },
+  {
+   "url": "https://ondernemersplein.kvk.nl/regels-voor-minderjarige-ondernemers/",
+   "title": "KVK Ondernemersplein: Regels voor minderjarige ondernemers",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Dan moet u een handlichting aanvragen bij de kantonrechter. Hiervoor moet u 16 of 17 jaar zijn. De handlichting vervalt automatisch als u 18 wordt. ... Jongeren onder de 16 hebben altijd toestemming nodig van ouders of verzorgers en kunnen geen handlichting aanvragen. Bedrijf inschrijven bij KVK Er geldt geen minimumleeftijd voor het starten van een bedrijf."
+  },
+  {
+   "url": "https://www.acteursbelangen.nl/lid-worden/",
+   "title": "ACT Acteursbelangen: Lid worden",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ben je nog student aan één van bovenstaande opleidingen dan kan je je vanaf je derde jaar gratis aanmelden voor ACT. … Minstens drie dragende of middenrollen in een televisieserie, telefilm/bioscoopfilm of short."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "companies",
+   "sought": "Whether a minor (with or without handlichting) may found or direct a BV (Boek 2 BW, notarial practice).",
+   "tried": {
+    "institution": "KVK pages read: none addresses a BV. | Retry 2026-11-01: kvk.nl reached; no page on a minor founding or directing a BV found",
+    "official-register": "Boek 2 BW not read (wetten.overheid.nl refused connections; the BWB repository listing failed). | Retry 2026-11-01: wetten.overheid.nl timed out again (Boek 1 art. 1:235 and Boek 2 not read there); officielebekendmakingen.nl reachable, no Staatscourant notice searched",
+    "web-search": "'kvk.nl minderjarig eigen bedrijf beginnen handlichting kantonrechter bestuurder bv onder 18': nothing on a BV. | Retry 2026-11-01: 'minderjarige bestuurder BV oprichten notaris handlichting artikel 1:235 OR 1:235 BW aandelen minderjarige oprichter': handlichting from 16 by the kantonrechter (viajuridica, lawyrup), courts granting it 'tot het zelfstandig uitoefenen van een bedrijf' (2026); nothing on a BV",
+    "trade-press": "None found. | Retry 2026-11-01: viajuridica (notarial knowledge base) and lawyrup.nl, no primary URL held",
+    "archive": "web.archive.org reset this client's connections on 2026-11-01. | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "unions",
+   "sought": "Under-18 rules of the writers' and directors' guilds (Netwerk Scenarioschrijvers, DDG).",
+   "tried": {
+    "institution": "Not reached. | Retry 2026-11-01: acteursbelangen.nl read (held); netwerkscenarioschrijvers.nl and ddg.nl (Directors Guild) timed out",
+    "official-register": "None. | Retry 2026-11-01: none",
+    "web-search": "'ACT Acteursbelangen lid worden voorwaarden jonger dan 18 jeugdlid kindacteurs': only a British charity found. | Retry 2026-11-01: 'Netwerk Scenarioschrijvers lidmaatschap voorwaarden lid worden; Directors Guild Nederland lidmaatschap voorwaarden regisseur': nothing on either guild",
+    "trade-press": "None found. | Retry 2026-11-01: none",
+    "archive": "Not reachable. | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "minorsContracts",
+   "sought": "Whether any rule sets aside a child performer's earnings.",
+   "tried": {
+    "institution": "Labour Authority and government pages read: none. | Retry 2026-11-01: no new institutional text found",
+    "official-register": "BW Boek 1 read: parents administer (bewind), no set-aside found. | Retry 2026-11-01: wetten.overheid.nl timed out",
+    "web-search": "Not found. | Retry 2026-11-01: 'kindacteur gage ouders beheren geld minderjarige spaarrekening verplicht Nederland wet kinderarbeid filmopnamen loon kind': banks and the WODC report on minors' asset management (KNB) only; no set-aside",
+    "trade-press": "None. | Retry 2026-11-01: KNB (notaries' organisation) note on the WODC report on minderjarigenbewind; no performer rule; not held",
+    "archive": "Not reachable. | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

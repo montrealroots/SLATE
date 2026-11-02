@@ -1,0 +1,204 @@
+{
+ "topic": "tax.PW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Palau: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "withholding",
+   "finding": "The employer withholds the wages and salary tax when it pays and remits it to the Bureau within 30 days; a Palauan citizen earning $15,000 or less gets the whole tax refunded, and one earning $15,000 to $30,000 gets back the 6% on the first $8,000 ($480).",
+   "value": {
+    "currency": "USD",
+    "withheld": true,
+    "remitDays": 30,
+    "citizenRefund": [
+     {
+      "incomeUpTo": 15000,
+      "share": 1.0
+     },
+     {
+      "incomeFrom": 15000,
+      "incomeUpTo": 30000,
+      "amount": 480
+     }
+    ],
+    "otherRefund": {
+     "tuitionOrDonations": "up to 10% of wages and salary tax paid"
+    }
+   },
+   "applies": "From tax year 2023 (PGST reform); citizens only for the special refunds.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Deduct and withhold the tax when wages or salaries are paid. Pay the withheld tax to the Bureau of Revenue & Taxation within 30 days of disbursement."
+    },
+    {
+     "src": 0,
+     "said": "Employees earning $15,000 or less in wages and salary during a tax year will receive a refund of the entire wages and salary tax withheld and paid. Employees earning between $15,000 and $30,000 will receive a refund of wages and salary tax (6%) withheld from the first $8,000 in wages and salary, totaling $480."
+    },
+    {
+     "src": 0,
+     "said": "Employees working for employers outside Palau, or without a local agent, must file returns and pay taxes directly as if their employer were based in Palau."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Palau taxes an employee's wages and salary at 6% on the first $8,000, 10% from $8,000 to $40,000 and 12% above $40,000, with no personal allowance; a business not registered for PGST pays 4% Gross Revenue Tax on quarterly gross revenue, and a PGST-registered business pays 12% Business Profits Tax on net income.",
+   "value": {
+    "currency": "USD",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 8000,
+      "rate": 0.06
+     },
+     {
+      "from": 8000,
+      "to": 40000,
+      "rate": 0.1
+     },
+     {
+      "from": 40000,
+      "to": null,
+      "rate": 0.12
+     }
+    ],
+    "allowance": 0,
+    "grossRevenueTax": {
+     "rate": 0.04,
+     "period": "quarter"
+    },
+    "businessProfitsTax": 0.12
+   },
+   "applies": "Wages and salary for work in Palau; settled 2026-11-01 from the BRT page: the bands are 6% to $8,000, 10% to $40,000 and 12% above (the 2021 proposals of $50,000 reported by the press were not what is in force).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Employees are taxed on their wages and salaries at the following rates: 6% on the first $8,000 of wages and salary earned 10% on wages and salary earned over $8,000 up to $40,000 12% on wages and salary earned over $40,000"
+    },
+    {
+     "src": 0,
+     "said": "Tax Rate: Subject to a 4% Gross Revenue Tax on quarterly gross revenue."
+    },
+    {
+     "src": 0,
+     "said": "It is calculated at 12% tax on net income (gross revenue less allowable deductions), the same rate as the highest rate of tax on wages and salary."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident earning royalties or technical fees (fees for managerial, administrative, technical, professional or consultancy services) from Palau bears a final-in-form 10% withholding on the gross, with no deductions; a non-resident employed in Palau pays the wages and salary tax.",
+   "value": {
+    "currency": "USD",
+    "royalties": 0.1,
+    "technicalFees": 0.1,
+    "insurancePremiums": 0.05,
+    "base": "gross",
+    "remit": "last day of the month after payment"
+   },
+   "applies": "Whether a performer's or director's fee is a \"technical fee\" (professional services) is not stated by BRT; the game reads such a fee as professional services.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Technical fee – Fees for managerial, administrative, technical, professional, or consultancy services, including supply of personnel. Does not include employee wages."
+    },
+    {
+     "src": 0,
+     "said": "Tax Rates Insurance premiums – 5% Other income (e.g., interest, royalties, technical fees) – 10%"
+    },
+    {
+     "src": 0,
+     "said": "Tax is imposed on the gross income earned by the non‑resident, with no deductions for expenses or losses. The tax is collected via withholding at the time of payment."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a non-resident for the use of copyrights bear the 10% non-resident withholding; no special treatment of a resident author's royalties is given.",
+   "value": {
+    "nonResidentRoyalties": 0.1
+   },
+   "applies": "Royalties to non-residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Royalty – Payments, whether lump sum or periodic, for: Use of intellectual property (copyrights, patents, trademarks, designs, formulas, processes)."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "PGST is 10%; a supplier must register when average taxable supplies over four years exceed $300,000.",
+   "value": {
+    "currency": "USD",
+    "rate": 0.1,
+    "threshold": 300000,
+    "thresholdBasis": "average of the last 4 years' taxable supplies"
+   },
+   "applies": "From 1 January 2023.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "It is a broad-based tax of 10%, applied to most goods and services and other items sold or consumed in Palau."
+    },
+    {
+     "src": 1,
+     "said": "If you have average taxable supplies of more than $300,000, you must register for PGST, unless you meet one of the exemption categories."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the employer gives each employee the W-2 statement by 2 February 2026 for 2025.",
+   "value": {
+    "start": "01-01",
+    "w2Due": "2026-02-02"
+   },
+   "applies": "Calendar year 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Employee Wages and Salary Written Statement (w2) for … Monday 02- Feb"
+    }
+   ]
+  }
+ ],
+ "country": "PW",
+ "sources": [
+  {
+   "url": "https://www.palaugov.pw/executive-branch/ministries/finance/brt/",
+   "title": "Ministry of Finance, Bureau of Revenue and Taxation (BRT), Key Tax Topics",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Deduct and withhold the tax when wages or salaries are paid. Pay the withheld tax to the Bureau of Revenue & Taxation within 30 days of disbursement. … Employees earning $15,000 or less in wages and salary during a tax year will receive a refund of the entire wages and salary tax withheld and paid. Employees earning between $15,000 and $30,000 will receive a refund of wages and salary tax (6%) withheld from the first $8,000 in wages and salary, totaling $480. … Employees working for employers outside Palau, or without a local agent, must file returns and pay taxes directly as if their employer were based in Palau. … Employees are taxed on their wages and salaries at the following rates: 6% on the first $8,000 of wages and salary earned 10% on wages and salary earned over $8,000 up to $40,000 12% on wages and salary earned over $40,000 … Tax Rate: Subject to a 4% Gross Revenue Tax on quarterly gross revenue. … It is calculated at 12% tax on net income (gross revenue less allowable deductions), the same rate as the highest rate of tax on wages and salary. … Technical fee – Fees for managerial, administrative, technical, professional, or consultancy services, including supply of personnel. Does not include employee wages. … Tax Rates Insurance premiums – 5% Other income (e.g., interest, royalties, technical fees) – 10% … Tax is imposed on the gross income earned by the non‑resident, with no deductions for expenses or losses. The tax is collected via withholding at the time of payment. … Royalty – Payments, whether lump sum or periodic, for: Use of intellectual property (copyrights, patents, trademarks, designs, formulas, processes). … It is a broad-based tax of 10%, applied to most goods and services and other items sold or consumed in Palau."
+  },
+  {
+   "url": "https://www.palaugov.pw/executive-branch/ministries/finance/brt/pgst-calculating-your-supplies/",
+   "title": "BRT, PGST registration threshold – calculating your taxable supplies",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If you have average taxable supplies of more than $300,000, you must register for PGST, unless you meet one of the exemption categories."
+  },
+  {
+   "url": "https://www.palaugov.pw/wp-content/uploads/Taxpayer-Calendar-Year-2026.pdf",
+   "title": "BRT Taxpayer Calendar Year 2026",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Employee Wages and Salary Written Statement (w2) for … Monday 02- Feb"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "Palau Social Security Administration (and Civil Service Pension Plan) contribution rates and wage ceiling for 2026, from PSSA or the law",
+   "tried": {
+    "institution": "palaugov.pw / Bureau of Revenue and Taxation pages not found or not reached in this pass (2026-11-01) || retry 2026-11-01 (world round): BRT page read (wage tax settled from it); palaussa.org, www.palaussa.org and pssa.pw: proxy 502",
+    "official-register": "Palau National Code Title 40 and the PGST Act (RPPL) text not reached || retry 2026-11-01 (world round): palaugov.pw hosts Palau National Code Title 40 (taxation) only; paclii.org/pw/legis answers 403; palaulegal.org reached (home page only)",
+    "web-search": "2026-11-01 'Palau Tax Reform Act personal income tax rates 2026 Bureau of Revenue and Taxation PGST 10% wage earners threshold' and 'palaugov.pw Ministry of Finance ... \"personal income tax\" wages ...': aggregator sites in conflict (6%/12%, 7%, 8-19.5%, none) || retry 2026-11-01 (world round): 'Palau Social Security Administration contribution rate employer employee wages 2026 Civil Service Pension Plan': payroll vendors only, in conflict (6% each, 7% each, 7.65%); none quoting PSSA",
+    "trade-press": "Island Times 2 March 2021 (proposals, not law) and 5 January 2024 (refund rule) read; PwC has no Palau summary (HTTP 404); Orbitax paywalled || retry 2026-11-01 (world round): US SSA Social Security Programs Throughout the World, Palau (ssa.gov/policy/docs/progdesc/ssptw/2018-2019/asia/palau.html): HTTP 403 to curl",
+    "archive": "not tried || retry 2026-11-01 (world round): web.archive.org, archive.ph reset the connection; arquivo.pt 403"
+   }
+  }
+ ]
+}

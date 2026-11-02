@@ -1,0 +1,930 @@
+{
+ "AD": {
+  "market": 1, "zone": "Europe/Andorra", "language": {"code": "ca", "fig": 0},
+  "agreements": {
+   "ad-artists": {"media": ["film", "television", "stage"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "film", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]},
+    {"medium": "television", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "television", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]},
+    {"medium": "stage", "per": "day", "from": "2026-07-01", "fig": 2, "path": ["floor", "day"]},
+    {"medium": "stage", "per": "month", "from": "2026-07-01", "fig": 2, "path": ["floor", "month"]}
+   ]}
+  }
+ },
+ "AE": {"unread": "the only floor its research gives is the general minimum wage of Emiratis in the private sector, by the month, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AF": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "AI": {
+  "market": null, "zone": "America/Anguilla", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "ai-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "AL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "AN": {"unread": "the Netherlands Antilles were dissolved on 10 October 2010; their work follows Curaçao's, Sint Maarten's and the Caribbean Netherlands'"},
+ "AO": {"unread": "the only floor its research gives is the general minimum wage, by the month, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AQ": {"unread": "no state's law reaches Antarctica, and the production's own country's terms aren't modeled"},
+ "AR": {
+  "market": 6, "zone": "America/Argentina/Buenos_Aires", "language": {"code": "es", "fig": 5},
+  "agreements": {
+   "ar-film": {"media": ["film"], "currency": "ARS", "minimums": [
+    {"medium": "film", "per": "day", "role": "day-player", "from": "2026-07-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_mayor", "2026-07"]},
+    {"medium": "film", "per": "day", "role": "day-player", "from": "2026-10-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_mayor", "2026-10"]},
+    {"medium": "film", "per": "day", "role": "minor-day-player", "from": "2026-07-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_menor", "2026-07"]},
+    {"medium": "film", "per": "day", "role": "minor-day-player", "from": "2026-10-01", "fig": 1, "path": ["dayPlayerPerDay", "bolo_menor", "2026-10"]}
+   ]},
+   "ar-tv": {"media": ["television"], "currency": "ARS", "minimums": [
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-09-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-09"]},
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-10-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-10"]},
+    {"medium": "television", "per": "month", "role": "serial", "from": "2026-11-01", "fig": 2, "path": ["monthlyContract", "tira", "2026-11"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-09-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-09"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-10-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-10"]},
+    {"medium": "television", "per": "month", "role": "series", "from": "2026-11-01", "fig": 2, "path": ["monthlyContract", "unitarios", "2026-11"]},
+    {"medium": "television", "per": "episode", "role": "day-player", "when": {"minutes": [60, 60]}, "from": "2026-10-01", "fig": 2, "path": ["boloUnitario60min", "2026-10", "fee"]}
+   ]},
+   "ar-stage": {"media": ["stage"], "currency": "ARS", "minimums": [
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-09-01", "fig": 3, "path": ["large", "A", "2026-09"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "A", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [200, null]}, "from": "2026-11-01", "fig": 3, "path": ["large", "A", "2026-11"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "B", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "C", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "rehearsal": true, "when": {"seats": [200, null]}, "from": "2026-10-01", "fig": 3, "path": ["large", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "A", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-a", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "B", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-b", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "C", "2026-10"]},
+    {"medium": "stage", "per": "month", "role": "category-c", "rehearsal": true, "when": {"seats": [0, 199]}, "from": "2026-10-01", "fig": 3, "path": ["under200Seats", "rehearsal", "2026-10"]}
+   ]}
+  }
+ },
+ "AS": {"unread": "the only floor its research gives is the general minimum wage of the industry the FLSA names, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "AT": {
+  "market": 2, "zone": "Europe/Vienna", "language": {"code": "de", "fig": 3},
+  "agreements": {
+   "at-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "AU": {
+  "market": 5, "zone": "Australia/Sydney", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "au-screen": {"media": ["film", "television"], "currency": "AUD", "minimums": [
+    {"medium": "film", "per": "day", "when": {"years": [0, 4]}, "from": "2026-07-01", "fig": 2, "path": ["daily", "performerClass1Feature"]},
+    {"medium": "film", "per": "day", "when": {"years": [5, null]}, "from": "2026-07-01", "fig": 2, "path": ["daily", "performerClass2Feature"]},
+    {"medium": "film", "per": "week", "when": {"years": [0, 4]}, "from": "2026-07-01", "fig": 2, "path": ["weekly", "performerClass1"]},
+    {"medium": "film", "per": "week", "when": {"years": [5, null]}, "from": "2026-07-01", "fig": 2, "path": ["weekly", "performerClass2"]},
+    {"medium": "television", "per": "day", "when": {"years": [0, 4]}, "from": "2026-07-01", "fig": 2, "path": ["daily", "performerClass1Other"]},
+    {"medium": "television", "per": "day", "when": {"years": [5, null]}, "from": "2026-07-01", "fig": 2, "path": ["daily", "performerClass2Other"]},
+    {"medium": "television", "per": "week", "when": {"years": [0, 4]}, "from": "2026-07-01", "fig": 2, "path": ["weekly", "performerClass1"]},
+    {"medium": "television", "per": "week", "when": {"years": [5, null]}, "from": "2026-07-01", "fig": 2, "path": ["weekly", "performerClass2"]}
+   ]},
+   "au-stage": {"media": ["stage"], "currency": "AUD", "minimums": [
+    {"medium": "stage", "per": "week", "when": {"years": [0, 2]}, "from": "2026-07-01", "fig": 4, "path": ["weekly", "performerCat1Grade1"]},
+    {"medium": "stage", "per": "week", "when": {"years": [3, null]}, "from": "2026-07-01", "fig": 4, "path": ["weekly", "performerCat1Grade2"]}
+   ]}
+  }
+ },
+ "AX": {
+  "market": 2, "zone": "Europe/Mariehamn", "language": {"code": "sv", "fig": 1}, "follows": {"fig": 0, "market": "FI"}
+ },
+ "AZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "BA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "BD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BE": {
+  "market": 4, "zone": "Europe/Brussels", "language": {"code": "nl", "fig": 3},
+  "agreements": {
+   "be-screen": {"media": ["film", "television"], "none": {"fig": 1}}
+  }
+ },
+ "BG": {
+  "market": null, "zone": "Europe/Sofia", "language": {"code": "bg", "fig": 3},
+  "agreements": {
+   "bg-foreign-film": {"media": ["film"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "role": "lead", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "lead"]},
+    {"medium": "film", "per": "day", "role": "supporting", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "supporting"]},
+    {"medium": "film", "per": "day", "role": "episodic", "from": "2018-12-01", "fig": 0, "path": ["foreignFilm", "episodic"]}
+   ]}
+  }
+ },
+ "BH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BJ": {"unread": "the only floor its research gives is the general minimum wage, for no stated period, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "BL": {
+  "market": null, "zone": "America/St_Barthelemy", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "BM": {"unread": "its research gives no minimum, nor that none sets the pay: only the union"},
+ "BN": {
+  "market": null, "zone": "Asia/Brunei", "language": {"code": "ms", "fig": 0},
+  "agreements": {
+   "bn-screen": {"media": ["film", "television"], "none": {"fig": 1}}
+  }
+ },
+ "BO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BQ": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "BR": {
+  "market": 9, "zone": "America/Sao_Paulo", "language": {"code": "pt", "fig": 8},
+  "agreements": {
+   "br-rj-tv": {"media": ["television"], "currency": "BRL", "minimums": [
+    {"medium": "television", "per": "day", "from": "2025-11-01", "fig": 1, "path": ["actor", "recordingDay"]},
+    {"medium": "television", "per": "month", "from": "2025-11-01", "fig": 1, "path": ["actor", "month"]}
+   ]},
+   "br-sp-screen": {"media": ["film", "television"], "currency": "BRL", "minimums": [
+    {"medium": "television", "per": "day", "role": "lead", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "lead", "day"]},
+    {"medium": "television", "per": "week", "role": "lead", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "lead", "weekDiscounted"]},
+    {"medium": "television", "per": "day", "role": "supporting", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "supporting", "day"]},
+    {"medium": "television", "per": "week", "role": "supporting", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "supporting", "weekDiscounted"]},
+    {"medium": "television", "per": "day", "role": "small", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "smallRole", "day"]},
+    {"medium": "television", "per": "week", "role": "small", "from": "2026-01-01", "fig": 3, "path": ["televisionStreaming", "smallRole", "weekDiscounted"]},
+    {"medium": "film", "per": "day", "role": "lead", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "lead", "day"]},
+    {"medium": "film", "per": "week", "role": "lead", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "lead", "weekDiscounted"]},
+    {"medium": "film", "per": "day", "role": "supporting", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "supporting", "day"]},
+    {"medium": "film", "per": "week", "role": "supporting", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "supporting", "weekDiscounted"]},
+    {"medium": "film", "per": "day", "role": "small", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "smallRole", "day"]},
+    {"medium": "film", "per": "week", "role": "small", "from": "2026-01-01", "fig": 3, "path": ["featureFilm", "smallRole", "weekDiscounted"]}
+   ]},
+   "br-rj-stage": {"media": ["stage"], "currency": "BRL", "minimums": [
+    {"medium": "stage", "per": "day", "from": "2026-05-01", "fig": 5, "path": ["actor", "day"]},
+    {"medium": "stage", "per": "week", "from": "2026-05-01", "fig": 5, "path": ["actor", "week"]},
+    {"medium": "stage", "per": "month", "from": "2026-05-01", "fig": 5, "path": ["actor", "month"]}
+   ]}
+  }
+ },
+ "BS": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "BT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "BV": {"unread": "the island is uninhabited, and Norway's labour law reaches it only where it says so"},
+ "BW": {
+  "market": null, "zone": "Africa/Gaborone", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "bw-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "BY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "BZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CC": {
+  "market": null, "zone": "Indian/Cocos", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
+ "CD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CF": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CH": {"unread": "the screen fees are the actors' associations' recommendations, which bind no one, and the stage agreements' monthly minimums are by the house, which no part names"},
+ "CI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CK": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "CL": {
+  "market": 3, "zone": "America/Santiago", "language": {"code": "es", "fig": null},
+  "agreements": {
+   "cl-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "CM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CO": {
+  "market": 2, "zone": "America/Bogota", "language": {"code": "es", "fig": 3},
+  "agreements": {
+   "co-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "CR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CS": {"unread": "Serbia and Montenegro was dissolved in 2006; its work follows Serbia's or Montenegro's"},
+ "CU": {
+  "market": null, "zone": "America/Havana", "language": {"code": "es", "fig": 0},
+  "agreements": {
+   "cu-stage": {"media": ["stage"], "currency": "CUP", "minimums": [
+    {"medium": "stage", "per": "month", "role": "level-1", "from": "2026-07-01", "fig": 1, "path": ["levels", "1", "pay44h"]},
+    {"medium": "stage", "per": "month", "role": "level-2", "from": "2026-07-01", "fig": 1, "path": ["levels", "2", "pay44h"]},
+    {"medium": "stage", "per": "month", "role": "level-3", "from": "2026-07-01", "fig": 1, "path": ["levels", "3", "pay44h"]}
+   ]}
+  }
+ },
+ "CV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "CW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CX": {
+  "market": null, "zone": "Indian/Christmas", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
+ "CY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "CZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "DE": {
+  "market": 7, "zone": "Europe/Berlin", "language": {"code": "de", "fig": 6},
+  "agreements": {
+   "de-screen": {"media": ["film", "television"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "when": {"nth": [1, 5]}, "from": "2025-01-01", "fig": 1, "path": ["entryFloor", "days1to5"]},
+    {"medium": "film", "per": "day", "when": {"nth": [6, null]}, "from": "2025-01-01", "fig": 1, "path": ["entryFloor", "day6on"]},
+    {"medium": "television", "per": "day", "when": {"nth": [1, 5]}, "from": "2025-01-01", "fig": 1, "path": ["entryFloor", "days1to5"]},
+    {"medium": "television", "per": "day", "when": {"nth": [6, null]}, "from": "2025-01-01", "fig": 1, "path": ["entryFloor", "day6on"]}
+   ]},
+   "de-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "month", "when": {"years": [0, 2]}, "from": "2026-04-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2026-04-01", "entry"]},
+    {"medium": "stage", "per": "month", "when": {"years": [3, null]}, "from": "2026-04-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2026-04-01", "minimum"]},
+    {"medium": "stage", "per": "month", "when": {"years": [0, 2]}, "from": "2027-03-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2027-03-01", "entry"]},
+    {"medium": "stage", "per": "month", "when": {"years": [3, null]}, "from": "2027-03-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2027-03-01", "minimum"]},
+    {"medium": "stage", "per": "month", "when": {"years": [0, 2]}, "from": "2028-01-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2028-01-01", "entry"]},
+    {"medium": "stage", "per": "month", "when": {"years": [3, null]}, "from": "2028-01-01", "fig": 4, "path": ["nvBuehneMonthly", "TV-L", "2028-01-01", "minimum"]}
+   ]},
+   "de-guest": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "performance", "role": "principal", "from": "2026-04-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2026-04-01", "performance"]},
+    {"medium": "stage", "per": "day", "role": "principal", "rehearsal": true, "with": ["performance"], "from": "2026-04-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2026-04-01", "rehearsalDay"]},
+    {"medium": "stage", "per": "performance", "role": "principal", "from": "2027-03-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2027-03-01", "performance"]},
+    {"medium": "stage", "per": "day", "role": "principal", "rehearsal": true, "with": ["performance"], "from": "2027-03-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2027-03-01", "rehearsalDay"]},
+    {"medium": "stage", "per": "performance", "role": "principal", "from": "2028-01-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2028-01-01", "performance"]},
+    {"medium": "stage", "per": "day", "role": "principal", "rehearsal": true, "with": ["performance"], "from": "2028-01-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2028-01-01", "rehearsalDay"]},
+    {"medium": "stage", "per": "performance", "role": "smaller", "from": "2026-04-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2026-04-01", "performanceSmallerRole"]},
+    {"medium": "stage", "per": "day", "role": "smaller", "rehearsal": true, "with": ["performance"], "from": "2026-04-01", "fig": 4, "path": ["guestPerPerformance", "TV-L", "2026-04-01", "rehearsalDaySmallerRole"]}
+   ]}
+  }
+ },
+ "DJ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "DK": {
+  "market": 12, "zone": "Europe/Copenhagen", "language": {"code": "da", "fig": 11},
+  "agreements": {
+   "dk-film": {"media": ["film"], "currency": "DKK", "minimums": [
+    {"medium": "film", "per": "day", "from": "2010-01-01", "fig": 5, "path": ["dayMinimum"]}
+   ]},
+   "dk-tv": {"media": ["television"], "currency": "DKK", "minimums": [
+    {"medium": "television", "per": "day", "from": "2006-01-01", "fig": 6, "path": ["dayMinimum"]},
+    {"medium": "television", "per": "month", "when": {"years": [5, null]}, "from": "2006-01-01", "fig": 6, "path": ["monthMinimum"]},
+    {"medium": "television", "per": "month", "when": {"years": [0, 4]}, "from": "2006-01-01", "fig": 6, "path": ["monthMinimumLessExperienced", "amount"]}
+   ]},
+   "dk-soejle-a": {"media": ["stage"], "currency": "DKK", "minimums": [
+    {"medium": "stage", "per": "month", "from": "2026-08-01", "fig": 8, "path": ["step24Monthly", "satsVI"]}
+   ]},
+   "dk-copenhagen-stage": {"media": ["stage"], "currency": "DKK", "minimums": [
+    {"medium": "stage", "per": "month", "from": "2026-08-01", "fig": 9, "path": ["step27Monthly", "satsVI"]}
+   ]}
+  }
+ },
+ "DO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "DZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "EC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "EE": {"unread": "the state's minimum salary is a culture worker's with higher education, which the person's papers don't say"},
+ "EG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "ER": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "ES": {
+  "market": 15, "zone": "Europe/Madrid", "language": {"code": "es", "fig": 14},
+  "agreements": {
+   "es-screen": {"media": ["film", "television"], "currency": "EUR", "minimums": [
+    {"medium": "television", "per": "session", "role": "lead", "from": "2026-01-01", "fig": 1, "path": ["sesion", "protagonista"]},
+    {"medium": "television", "per": "week", "role": "lead", "from": "2026-01-01", "fig": 1, "path": ["semana", "protagonista"]},
+    {"medium": "television", "per": "month", "role": "lead", "from": "2026-01-01", "fig": 1, "path": ["mes", "protagonista"]},
+    {"medium": "television", "per": "session", "role": "supporting", "from": "2026-01-01", "fig": 1, "path": ["sesion", "secundario"]},
+    {"medium": "television", "per": "week", "role": "supporting", "from": "2026-01-01", "fig": 1, "path": ["semana", "secundario"]},
+    {"medium": "television", "per": "month", "role": "supporting", "from": "2026-01-01", "fig": 1, "path": ["mes", "secundario"]},
+    {"medium": "television", "per": "session", "role": "featured", "when": {"lines": [0, 20]}, "from": "2026-01-01", "fig": 1, "path": ["sesion", "reparto"]},
+    {"medium": "television", "per": "week", "role": "featured", "when": {"lines": [0, 20]}, "from": "2026-01-01", "fig": 1, "path": ["semana", "reparto"]},
+    {"medium": "television", "per": "month", "role": "featured", "when": {"lines": [0, 20]}, "from": "2026-01-01", "fig": 1, "path": ["mes", "reparto"]},
+    {"medium": "television", "per": "session", "role": "small", "when": {"lines": [0, 2]}, "from": "2026-01-01", "fig": 1, "path": ["sesion", "pequenas_partes"]},
+    {"medium": "television", "per": "week", "role": "small", "when": {"lines": [0, 2]}, "from": "2026-01-01", "fig": 1, "path": ["semana", "pequenas_partes"]},
+    {"medium": "television", "per": "month", "role": "small", "when": {"lines": [0, 2]}, "from": "2026-01-01", "fig": 1, "path": ["mes", "pequenas_partes"]},
+    {"medium": "film", "per": "session", "role": "lead", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["sesion", "protagonista"]},
+    {"medium": "film", "per": "week", "role": "lead", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["semana", "protagonista"]},
+    {"medium": "film", "per": "month", "role": "lead", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["mes", "protagonista"]},
+    {"medium": "film", "per": "session", "role": "supporting", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["sesion", "secundario"]},
+    {"medium": "film", "per": "week", "role": "supporting", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["semana", "secundario"]},
+    {"medium": "film", "per": "month", "role": "supporting", "when": {"budget": [750001, null]}, "from": "2026-01-01", "fig": 2, "path": ["mes", "secundario"]},
+    {"medium": "film", "per": "session", "role": "featured", "when": {"budget": [750001, null], "lines": [0, 20]}, "from": "2026-01-01", "fig": 2, "path": ["sesion", "reparto"]},
+    {"medium": "film", "per": "week", "role": "featured", "when": {"budget": [750001, null], "lines": [0, 20]}, "from": "2026-01-01", "fig": 2, "path": ["semana", "reparto"]},
+    {"medium": "film", "per": "month", "role": "featured", "when": {"budget": [750001, null], "lines": [0, 20]}, "from": "2026-01-01", "fig": 2, "path": ["mes", "reparto"]},
+    {"medium": "film", "per": "session", "role": "small", "when": {"budget": [750001, null], "lines": [0, 2]}, "from": "2026-01-01", "fig": 2, "path": ["sesion", "pequenas_partes"]},
+    {"medium": "film", "per": "week", "role": "small", "when": {"budget": [750001, null], "lines": [0, 2]}, "from": "2026-01-01", "fig": 2, "path": ["semana", "pequenas_partes"]},
+    {"medium": "film", "per": "month", "role": "small", "when": {"budget": [750001, null], "lines": [0, 2]}, "from": "2026-01-01", "fig": 2, "path": ["mes", "pequenas_partes"]},
+    {"medium": "film", "per": "session", "role": "lead", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["sesion", "protagonista"]},
+    {"medium": "film", "per": "week", "role": "lead", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["semana", "protagonista"]},
+    {"medium": "film", "per": "month", "role": "lead", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["mes", "protagonista"]},
+    {"medium": "film", "per": "session", "role": "supporting", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["sesion", "secundario"]},
+    {"medium": "film", "per": "week", "role": "supporting", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["semana", "secundario"]},
+    {"medium": "film", "per": "month", "role": "supporting", "when": {"budget": [0, 750000]}, "from": "2026-01-01", "fig": 3, "path": ["mes", "secundario"]},
+    {"medium": "film", "per": "session", "role": "featured", "when": {"budget": [0, 750000], "lines": [0, 20]}, "from": "2026-01-01", "fig": 3, "path": ["sesion", "reparto"]},
+    {"medium": "film", "per": "week", "role": "featured", "when": {"budget": [0, 750000], "lines": [0, 20]}, "from": "2026-01-01", "fig": 3, "path": ["semana", "reparto"]},
+    {"medium": "film", "per": "month", "role": "featured", "when": {"budget": [0, 750000], "lines": [0, 20]}, "from": "2026-01-01", "fig": 3, "path": ["mes", "reparto"]},
+    {"medium": "film", "per": "session", "role": "small", "when": {"budget": [0, 750000], "lines": [0, 2]}, "from": "2026-01-01", "fig": 3, "path": ["sesion", "pequenas_partes"]},
+    {"medium": "film", "per": "week", "role": "small", "when": {"budget": [0, 750000], "lines": [0, 2]}, "from": "2026-01-01", "fig": 3, "path": ["semana", "pequenas_partes"]},
+    {"medium": "film", "per": "month", "role": "small", "when": {"budget": [0, 750000], "lines": [0, 2]}, "from": "2026-01-01", "fig": 3, "path": ["mes", "pequenas_partes"]},
+    {"medium": "television", "per": "day", "role": "lead", "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "protagonista"]},
+    {"medium": "television", "per": "day", "role": "supporting", "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "secundario"]},
+    {"medium": "television", "per": "day", "role": "featured", "when": {"lines": [0, 20]}, "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "reparto"]},
+    {"medium": "television", "per": "day", "role": "small", "when": {"lines": [0, 2]}, "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "pequenas_partes"]},
+    {"medium": "film", "per": "day", "role": "lead", "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "protagonista"]},
+    {"medium": "film", "per": "day", "role": "supporting", "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "secundario"]},
+    {"medium": "film", "per": "day", "role": "featured", "when": {"lines": [0, 20]}, "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "reparto"]},
+    {"medium": "film", "per": "day", "role": "small", "when": {"lines": [0, 2]}, "rehearsal": true, "from": "2026-01-01", "fig": 4, "path": ["ensayo", "pequenas_partes"]}
+   ]},
+   "es-madrid-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "day", "role": "lead", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "protagonista"]},
+    {"medium": "stage", "per": "month", "role": "lead", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "mensual", "protagonista"]},
+    {"medium": "stage", "per": "day", "role": "lead", "rehearsal": true, "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "supporting", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "secundario"]},
+    {"medium": "stage", "per": "month", "role": "supporting", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "mensual", "secundario"]},
+    {"medium": "stage", "per": "day", "role": "supporting", "rehearsal": true, "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "featured", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "reparto"]},
+    {"medium": "stage", "per": "month", "role": "featured", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "mensual", "reparto"]},
+    {"medium": "stage", "per": "day", "role": "featured", "rehearsal": true, "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "small", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "pequenas_partes"]},
+    {"medium": "stage", "per": "month", "role": "small", "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "mensual", "pequenas_partes"]},
+    {"medium": "stage", "per": "day", "role": "small", "rehearsal": true, "from": "2025-01-01", "fig": 9, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "lead", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "protagonista"]},
+    {"medium": "stage", "per": "month", "role": "lead", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "mensual", "protagonista"]},
+    {"medium": "stage", "per": "day", "role": "lead", "rehearsal": true, "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "supporting", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "secundario"]},
+    {"medium": "stage", "per": "month", "role": "supporting", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "mensual", "secundario"]},
+    {"medium": "stage", "per": "day", "role": "supporting", "rehearsal": true, "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "featured", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "reparto"]},
+    {"medium": "stage", "per": "month", "role": "featured", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "mensual", "reparto"]},
+    {"medium": "stage", "per": "day", "role": "featured", "rehearsal": true, "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]},
+    {"medium": "stage", "per": "day", "role": "small", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "pequenas_partes"]},
+    {"medium": "stage", "per": "month", "role": "small", "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "mensual", "pequenas_partes"]},
+    {"medium": "stage", "per": "day", "role": "small", "rehearsal": true, "from": "2026-01-01", "fig": 10, "path": ["grupo_I_teatro_texto", "diario", "ensayo"]}
+   ]}
+  }
+ },
+ "ET": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "FI": {
+  "market": 5, "zone": "Europe/Helsinki", "language": {"code": "fi", "fig": 6},
+  "agreements": {
+   "fi-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "month", "from": "2025-04-02", "fig": 1, "path": ["rates", 0, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2025-08-01", "fig": 1, "path": ["rates", 1, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2026-06-01", "fig": 1, "path": ["rates", 2, "amount"]},
+    {"medium": "stage", "per": "month", "from": "2027-06-01", "fig": 1, "path": ["rates", 3, "amount"]}
+   ]},
+   "fi-guest": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2025-04-02", "fig": 2, "path": ["roles", "A", 0, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2025-08-01", "fig": 2, "path": ["roles", "A", 1, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2026-06-01", "fig": 2, "path": ["roles", "A", 2, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "a-role", "from": "2027-06-01", "fig": 2, "path": ["roles", "A", 3, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2025-04-02", "fig": 2, "path": ["roles", "B", 0, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2025-08-01", "fig": 2, "path": ["roles", "B", 1, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2026-06-01", "fig": 2, "path": ["roles", "B", 2, "amount"]},
+    {"medium": "stage", "per": "performance", "role": "b-role", "from": "2027-06-01", "fig": 2, "path": ["roles", "B", 3, "amount"]}
+   ]},
+   "fi-screen": {"media": ["film", "television"], "none": {"fig": 3}}
+  }
+ },
+ "FJ": {"unread": "the research gives the tax deduction for hiring local artists, not a minimum"},
+ "FK": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "FM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "FO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "FR": {
+  "market": 10, "zone": "Europe/Paris", "language": {"code": "fr", "fig": 9},
+  "agreements": {
+   "fr-film": {"media": ["film"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "from": "2023-09-01", "fig": 1, "path": ["feature", "day"]},
+    {"medium": "film", "per": "week", "from": "2023-09-01", "fig": 1, "path": ["feature", "week5"]}
+   ]},
+   "fr-tv": {"media": ["television"], "currency": "EUR", "minimums": [
+    {"medium": "television", "per": "day", "when": {"length": [1, 1]}, "from": "2024-02-01", "fig": 3, "path": ["drama", "2024-02-01", "singleDay"]},
+    {"medium": "television", "per": "day", "when": {"length": [2, null]}, "from": "2024-02-01", "fig": 3, "path": ["drama", "2024-02-01", "rehearsalOrRecordingDay"]},
+    {"medium": "television", "per": "day", "when": {"length": [1, 1]}, "from": "2025-01-01", "fig": 3, "path": ["drama", "2025-01-01", "singleDay"]},
+    {"medium": "television", "per": "day", "when": {"length": [2, null]}, "from": "2025-01-01", "fig": 3, "path": ["drama", "2025-01-01", "rehearsalOrRecordingDay"]}
+   ]},
+   "fr-subsidised-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "month", "when": {"length": [1, 3]}, "from": "2026-08-01", "fig": 5, "path": ["monthly", "under4Months"]},
+    {"medium": "stage", "per": "month", "when": {"length": [4, null]}, "from": "2026-08-01", "fig": 5, "path": ["monthly", "permanentOrOver4Months"]},
+    {"medium": "stage", "per": "performance", "when": {"length": [1, 2]}, "from": "2026-08-01", "fig": 5, "path": ["under1Month", "performanceDay1or2InMonth"]},
+    {"medium": "stage", "per": "performance", "when": {"length": [3, null]}, "from": "2026-08-01", "fig": 5, "path": ["under1Month", "performanceDayMoreThan2"]},
+    {"medium": "stage", "per": "session", "rehearsal": true, "with": ["performance"], "from": "2026-08-01", "fig": 5, "path": ["under1Month", "rehearsalService"]}
+   ]},
+   "fr-private-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "performance", "when": {"seats": [0, 200], "nth": [1, 24]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo200Seats", "upTo24"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [0, 200], "nth": [25, 48]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo200Seats", "25to48"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [0, 200], "nth": [49, null]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo200Seats", "over48"]},
+    {"medium": "stage", "per": "month", "when": {"seats": [0, 200], "length": [2, null]}, "from": "2025-09-01", "fig": 7, "path": ["monthlyFor24Performances", "upTo200Seats"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [201, 300], "nth": [1, 24]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo300Seats", "upTo24"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [201, 300], "nth": [25, 48]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo300Seats", "25to48"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [201, 300], "nth": [49, null]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "upTo300Seats", "over48"]},
+    {"medium": "stage", "per": "month", "when": {"seats": [201, 300], "length": [2, null]}, "from": "2025-09-01", "fig": 7, "path": ["monthlyFor24Performances", "upTo300Seats"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [301, 600], "nth": [1, 24]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "301to600Seats", "upTo24"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [301, 600], "nth": [25, 48]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "301to600Seats", "25to48"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [301, 600], "nth": [49, null]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "301to600Seats", "over48"]},
+    {"medium": "stage", "per": "month", "when": {"seats": [301, 600], "length": [2, null]}, "from": "2025-09-01", "fig": 7, "path": ["monthlyFor24Performances", "301to600Seats"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [601, null], "nth": [1, 24]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "over600Seats", "upTo24"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [601, null], "nth": [25, 48]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "over600Seats", "25to48"]},
+    {"medium": "stage", "per": "performance", "when": {"seats": [601, null], "nth": [49, null]}, "from": "2025-09-01", "fig": 7, "path": ["perPerformance", "over600Seats", "over48"]},
+    {"medium": "stage", "per": "month", "when": {"seats": [601, null], "length": [2, null]}, "from": "2025-09-01", "fig": 7, "path": ["monthlyFor24Performances", "over600Seats"]},
+    {"medium": "stage", "per": "day", "rehearsal": true, "from": "2025-09-01", "fig": 7, "path": ["rehearsalDay"]}
+   ]}
+  }
+ },
+ "GA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GF": {
+  "market": null, "zone": "America/Cayenne", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "GG": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "GH": {"unread": "its research gives no minimum, nor that none sets the pay: only the union"},
+ "GI": {
+  "market": 2, "zone": "Europe/Gibraltar", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "gi-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "GL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GP": {
+  "market": null, "zone": "America/Guadeloupe", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "GQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "GR": {
+  "market": null, "zone": "Europe/Athens", "language": {"code": "el", "fig": null},
+  "agreements": {
+   "gr-private-stage": {"media": ["stage"], "none": {"fig": 1}}
+  }
+ },
+ "GS": {"unread": "the territory has no residents, actors or agreement; who engages a performer on a media visit there isn't modeled"},
+ "GT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "GU": {"unread": "its research gives no minimum, nor that none sets the pay: only whose law it follows and the market's city"},
+ "GW": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "GY": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "HK": {
+  "market": 3, "zone": "Asia/Hong_Kong", "language": {"code": "zh", "fig": 4},
+  "agreements": {
+   "hk-film": {"media": ["film"], "none": {"fig": 0}}
+  }
+ },
+ "HM": {"unread": "the islands are uninhabited; work there would be engaged from Australia, which isn't modeled"},
+ "HN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "HU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the union"},
+ "ID": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "IE": {
+  "market": 8, "zone": "Europe/Dublin", "language": {"code": "en", "fig": 7},
+  "agreements": {
+   "ie-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "week", "from": "2008-10-01", "fig": 4, "path": ["weekly_min"]}
+   ]}
+  }
+ },
+ "IL": {
+  "market": 4, "zone": "Asia/Jerusalem", "language": {"code": "he", "fig": 3},
+  "agreements": {
+   "il-screen": {"media": ["film", "television"], "currency": "ILS", "minimums": [
+    {"medium": "television", "per": "day", "role": "lead", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "tvLead"], "dated": 0},
+    {"medium": "television", "per": "day", "role": "supporting", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "tvNonLead"], "dated": 0},
+    {"medium": "film", "per": "day", "role": "actor", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "film"], "dated": 0},
+    {"medium": "film", "per": "day", "role": "beginner", "from": "2019-02-01", "fig": 1, "path": ["perFilmingDay", "filmBeginner"], "dated": 0}
+   ]}
+  }
+ },
+ "IN": {
+  "market": 4, "zone": "Asia/Kolkata", "language": {"code": "hi", "fig": 5},
+  "agreements": {
+   "in-screen": {"media": ["film", "television"], "none": {"fig": 1}}
+  }
+ },
+ "IO": {"unread": "the territory has no film work; work there would be engaged from the United Kingdom, which isn't modeled"},
+ "IQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "IR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "IS": {"unread": "RÚV's drama agreement pays by the hour of a half or a full day, a term no part is paid by"},
+ "IT": {
+  "market": 7, "zone": "Europe/Rome", "language": {"code": "it", "fig": 6},
+  "agreements": {
+   "it-screen": {"media": ["film", "television"], "currency": "EUR", "minimums": [
+    {"medium": "film", "per": "day", "role": "lead", "when": {"budget": [2000000, null]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "1"]},
+    {"medium": "film", "per": "day", "role": "supporting", "when": {"budget": [2000000, null], "nth": [1, 7]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "2"]},
+    {"medium": "film", "per": "day", "role": "supporting", "when": {"budget": [2000000, null], "nth": [8, null]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "fromEighthDay", "2"]},
+    {"medium": "film", "per": "day", "role": "other", "when": {"budget": [2000000, null], "nth": [1, 7]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "3"]},
+    {"medium": "film", "per": "day", "role": "other", "when": {"budget": [2000000, null], "nth": [8, null]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "fromEighthDay", "3"]},
+    {"medium": "television", "per": "day", "role": "lead", "from": "2024-03-01", "fig": 1, "path": ["standard", "1"]},
+    {"medium": "television", "per": "day", "role": "supporting", "when": {"nth": [1, 7]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "2"]},
+    {"medium": "television", "per": "day", "role": "supporting", "when": {"nth": [8, null]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "fromEighthDay", "2"]},
+    {"medium": "television", "per": "day", "role": "other", "when": {"nth": [1, 7]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "3"]},
+    {"medium": "television", "per": "day", "role": "other", "when": {"nth": [8, null]}, "from": "2024-03-01", "fig": 1, "path": ["standard", "fromEighthDay", "3"]},
+    {"medium": "film", "per": "day", "role": "lead", "when": {"budget": [0, 1999999]}, "from": "2024-03-01", "fig": 1, "path": ["lowBudget", "1"]},
+    {"medium": "film", "per": "day", "role": "supporting", "when": {"budget": [0, 1999999]}, "from": "2024-03-01", "fig": 1, "path": ["lowBudget", "2"]},
+    {"medium": "film", "per": "day", "role": "other", "when": {"budget": [0, 1999999]}, "from": "2024-03-01", "fig": 1, "path": ["lowBudget", "3"]}
+   ]},
+   "it-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "day", "from": "2018-04-01", "fig": 4, "path": ["2018-04-01", "b", "total"]},
+    {"medium": "stage", "per": "day", "from": "2019-01-01", "fig": 4, "path": ["2019-01-01", "b", "total"]},
+    {"medium": "stage", "per": "day", "from": "2020-01-01", "fig": 4, "path": ["2020-01-01", "b", "total"]}
+   ]}
+  }
+ },
+ "JE": {"unread": "the research gives Jersey's lack of a film fund, not who sets an actor's pay"},
+ "JM": {
+  "market": null, "zone": "America/Jamaica", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "jm-all": {"media": ["film", "television", "stage"], "none": {"fig": 1}}
+  }
+ },
+ "JO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "JP": {
+  "market": 4, "zone": "Asia/Tokyo", "language": {"code": "ja", "fig": null},
+  "agreements": {
+   "jp-nhk": {"media": ["television"], "currency": "JPY", "minimums": [
+    {"medium": "television", "per": "episode", "from": "2014-04-01", "fig": 5, "path": ["minimumStandardFee", "tv"]}
+   ]},
+   "jp-live": {"media": ["film", "stage"], "none": {"fig": 2}}
+  }
+ },
+ "KE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "KH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "KI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "KP": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "KR": {
+  "market": 7, "zone": "Asia/Seoul", "language": {"code": "ko", "fig": 6},
+  "agreements": {
+   "kr-kbs": {"media": ["television"], "currency": "KRW", "minimums": [
+    {"medium": "television", "per": "episode", "role": "grade-6", "when": {"minutes": [60, 60]}, "from": "2011-01-01", "fig": 1, "path": ["KBS", "miniseriesOrSpecial60min", "grade6"]},
+    {"medium": "television", "per": "episode", "role": "grade-8", "when": {"minutes": [60, 60]}, "from": "2011-01-01", "fig": 1, "path": ["KBS", "miniseriesOrSpecial60min", "grade8"]},
+    {"medium": "television", "per": "episode", "role": "grade-12", "when": {"minutes": [60, 60]}, "from": "2011-01-01", "fig": 1, "path": ["KBS", "miniseriesOrSpecial60min", "grade12"]}
+   ]},
+   "kr-mbc-sbs": {"media": ["television"], "currency": "KRW", "minimums": [
+    {"medium": "television", "per": "episode", "role": "grade-6", "when": {"minutes": [60, 60]}, "from": "2012-01-01", "fig": 1, "path": ["MBC_SBS", "episode60min", "grade6"]},
+    {"medium": "television", "per": "episode", "role": "grade-8", "when": {"minutes": [60, 60]}, "from": "2012-01-01", "fig": 1, "path": ["MBC_SBS", "episode60min", "grade8"]},
+    {"medium": "television", "per": "episode", "role": "grade-12", "when": {"minutes": [60, 60]}, "from": "2012-01-01", "fig": 1, "path": ["MBC_SBS", "episode60min", "grade12"]},
+    {"medium": "television", "per": "episode", "role": "grade-18", "when": {"minutes": [60, 60]}, "from": "2012-01-01", "fig": 1, "path": ["MBC_SBS", "episode60min", "grade18"]}
+   ]}
+  }
+ },
+ "KW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "KY": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "KZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "LA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "LB": {"unread": "the research gives the artists' syndicates and the 10% levied on a foreign artist's contract, not a minimum"},
+ "LC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LI": {
+  "market": 2, "zone": "Europe/Vaduz", "language": {"code": "de", "fig": 1},
+  "agreements": {
+   "li-film": {"media": ["film"], "none": {"fig": 0}}
+  }
+ },
+ "LK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "LS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "LU": {"unread": "the research gives the state's benefit for an intermittent performer between engagements, not a minimum"},
+ "LV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "LY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MC": {
+  "market": null, "zone": "Europe/Monaco", "language": {"code": "fr", "fig": 0}, "follows": {"fig": 1, "market": "FR", "place": ["reference"], "uplift": ["uplift"]}
+ },
+ "ME": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MF": {
+  "market": null, "zone": "America/Marigot", "language": {"code": "fr", "fig": null}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "MG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MH": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "ML": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MO": {"unread": "the only floor its research gives is the general minimum wage of private-sector employees, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "MP": {"unread": "the only floor its research gives is the general minimum wage of the FLSA, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "MQ": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "MR": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MS": {
+  "market": null, "zone": "America/Montserrat", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "ms-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "MT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "MW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MX": {
+  "market": 7, "zone": "America/Mexico_City", "language": {"code": "es", "fig": 6},
+  "agreements": {
+   "mx-televisa": {"media": ["television"], "currency": "MXN", "minimums": [
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [15, 15]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 0]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [30, 30]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 1]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [60, 60]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 2]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [90, 90]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 3]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [120, 120]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 4]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [150, 150]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 5]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [180, 180]}, "from": "2024-03-01", "fig": 9, "path": ["estelares", 6]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [30, 30]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 1]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [60, 60]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 2]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [90, 90]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 3]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [120, 120]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 4]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [150, 150]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 5]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [180, 180]}, "from": "2024-03-01", "fig": 9, "path": ["coestelares_telenovelas", 6]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [15, 15]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [30, 30]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [60, 60]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [90, 90]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [120, 120]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [150, 150]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [180, 180]}, "from": "2024-03-01", "fig": 9, "path": ["primerasPartes", 6]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [15, 15]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [30, 30]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [60, 60]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [90, 90]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [120, 120]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [150, 150]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [180, 180]}, "from": "2024-03-01", "fig": 9, "path": ["segundasPartes", 6]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [15, 15]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [30, 30]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [60, 60]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [90, 90]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [120, 120]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [150, 150]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [180, 180]}, "from": "2024-03-01", "fig": 9, "path": ["tercerasPartes", 6]}
+   ]},
+   "mx-azteca": {"media": ["television"], "currency": "MXN", "minimums": [
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [15, 15]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 0]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [30, 30]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 1]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [60, 60]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 2]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [90, 90]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 3]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [120, 120]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 4]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [180, 180]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "estelares", 5]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [15, 15]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [30, 30]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [60, 60]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [90, 90]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [120, 120]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [180, 180]}, "from": "2023-06-07", "fig": 10, "path": ["from2023-06-07to2023-12-07", "tercerasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [15, 15]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 0]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [30, 30]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 1]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [60, 60]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 2]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [90, 90]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 3]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [120, 120]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 4]},
+    {"medium": "television", "per": "episode", "role": "lead", "when": {"minutes": [180, 180]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "estelares", 5]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [15, 15]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 0]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [30, 30]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 1]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [60, 60]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 2]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [90, 90]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 3]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [120, 120]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 4]},
+    {"medium": "television", "per": "episode", "role": "co-lead", "when": {"minutes": [180, 180]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "coestelares", 5]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [15, 15]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [30, 30]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [60, 60]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [90, 90]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [120, 120]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "first", "when": {"minutes": [180, 180]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "primerasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [15, 15]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [30, 30]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [60, 60]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [90, 90]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [120, 120]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "second", "when": {"minutes": [180, 180]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "segundasPartes", 5]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [15, 15]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 0]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [30, 30]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 1]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [60, 60]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 2]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [90, 90]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 3]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [120, 120]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 4]},
+    {"medium": "television", "per": "episode", "role": "third", "when": {"minutes": [180, 180]}, "from": "2023-12-08", "fig": 10, "path": ["from2023-12-08to2024-06-06", "tercerasPartes", 5]}
+   ]},
+   "mx-other": {"media": ["film", "stage"], "none": {"fig": 1}}
+  }
+ },
+ "MY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "MZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NC": {
+  "market": null, "zone": "Pacific/Noumea", "language": {"code": "fr", "fig": null},
+  "agreements": {
+   "nc-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "NE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "NF": {
+  "market": null, "zone": "Pacific/Norfolk", "language": {"code": "en", "fig": null}, "follows": {"fig": 0, "market": "AU"}
+ },
+ "NG": {
+  "market": 4, "zone": "Africa/Lagos", "language": {"code": "en", "fig": 3},
+  "agreements": {
+   "ng-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "NI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "NL": {
+  "market": 6, "zone": "Europe/Amsterdam", "language": {"code": "nl", "fig": 5},
+  "agreements": {
+   "nl-stage": {"media": ["stage"], "currency": "EUR", "minimums": [
+    {"medium": "stage", "per": "month", "role": "lead", "from": "2025-01-01", "fig": 1, "path": ["acteurII", "2025-01-01", "step0"]},
+    {"medium": "stage", "per": "month", "role": "other", "from": "2025-01-01", "fig": 1, "path": ["acteurI", "2025-01-01", "step0"]},
+    {"medium": "stage", "per": "month", "role": "lead", "from": "2026-01-01", "fig": 1, "path": ["acteurII", "2026-01-01", "step0"]},
+    {"medium": "stage", "per": "month", "role": "other", "from": "2026-01-01", "fig": 1, "path": ["acteurI", "2026-01-01", "step0"]}
+   ]},
+   "nl-screen": {"media": ["film", "television"], "none": {"fig": 2}}
+  }
+ },
+ "NO": {
+  "market": 10, "zone": "Europe/Oslo", "language": {"code": "no", "fig": 9},
+  "agreements": {
+   "no-film": {"media": ["film"], "currency": "NOK", "minimums": [
+    {"medium": "film", "per": "day", "from": "2025-09-01", "fig": 4, "path": ["dayMinimum"]},
+    {"medium": "film", "per": "day", "from": "2026-09-01", "fig": 4, "path": ["from2026-09-01", "dayMinimum"]}
+   ]},
+   "no-tv": {"media": ["television"], "currency": "NOK", "minimums": [
+    {"medium": "television", "per": "day", "when": {"length": [1, 3]}, "from": "2025-09-01", "fig": 5, "path": ["actor", "perDay1to3Days"]},
+    {"medium": "television", "per": "day", "when": {"length": [4, null]}, "from": "2025-09-01", "fig": 5, "path": ["actor", "perDay4DaysOrMore"]},
+    {"medium": "television", "per": "year", "from": "2025-09-01", "fig": 5, "path": ["actor", "perYear"]},
+    {"medium": "television", "per": "day", "when": {"length": [1, 3]}, "from": "2026-09-01", "fig": 5, "path": ["from2026-09-01", "actor", "perDay1to3Days"]},
+    {"medium": "television", "per": "day", "when": {"length": [4, null]}, "from": "2026-09-01", "fig": 5, "path": ["from2026-09-01", "actor", "perDay4DaysOrMore"]},
+    {"medium": "television", "per": "year", "from": "2026-09-01", "fig": 5, "path": ["from2026-09-01", "actor", "perYear"]}
+   ]},
+   "no-nrk": {"media": ["television"], "currency": "NOK", "minimums": [
+    {"medium": "television", "per": "day", "when": {"years": [0, 4], "length": [1, 3]}, "from": "2019-05-01", "fig": 6, "path": ["junior", "perDayUpTo3Days"]},
+    {"medium": "television", "per": "day", "when": {"years": [0, 4], "length": [4, null]}, "from": "2019-05-01", "fig": 6, "path": ["junior", "perDay4DaysOrMore"]},
+    {"medium": "television", "per": "month", "when": {"years": [0, 4]}, "from": "2019-05-01", "fig": 6, "path": ["junior", "perMonth"]},
+    {"medium": "television", "per": "year", "when": {"years": [0, 4]}, "from": "2019-05-01", "fig": 6, "path": ["junior", "perYear"]},
+    {"medium": "television", "per": "day", "when": {"years": [5, null], "length": [1, 3]}, "from": "2019-05-01", "fig": 6, "path": ["other", "perDayUpTo3Days"]},
+    {"medium": "television", "per": "day", "when": {"years": [5, null], "length": [4, null]}, "from": "2019-05-01", "fig": 6, "path": ["other", "perDay4DaysOrMore"]},
+    {"medium": "television", "per": "month", "when": {"years": [5, null]}, "from": "2019-05-01", "fig": 6, "path": ["other", "perMonth"]},
+    {"medium": "television", "per": "year", "when": {"years": [5, null]}, "from": "2019-05-01", "fig": 6, "path": ["other", "perYear"]}
+   ]},
+   "no-stage": {"media": ["stage"], "currency": "NOK", "minimums": [
+    {"medium": "stage", "per": "year", "from": "2022-04-01", "fig": 7, "path": ["step12PerYear", "2022-04-01"]},
+    {"medium": "stage", "per": "year", "from": "2023-04-01", "fig": 7, "path": ["step12PerYear", "2023-04-01"]},
+    {"medium": "stage", "per": "year", "from": "2024-04-01", "fig": 7, "path": ["step12PerYear", "2024-04-01"]},
+    {"medium": "stage", "per": "year", "from": "2025-04-01", "fig": 7, "path": ["step12PerYear", "2025-04-01"]},
+    {"medium": "stage", "per": "year", "from": "2026-04-01", "fig": 7, "path": ["step12PerYear", "2026-04-01"]}
+   ]}
+  }
+ },
+ "NP": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "NU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the territory's status"},
+ "NZ": {
+  "market": 6, "zone": "Pacific/Auckland", "language": {"code": "en", "fig": 5},
+  "agreements": {
+   "nz-screen": {"media": ["film", "television"], "none": {"fig": 0}},
+   "nz-court": {"media": ["stage"], "currency": "NZD", "minimums": [
+    {"medium": "stage", "per": "week", "role": "lead", "when": {"years": [0, 5]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "lead", 0]},
+    {"medium": "stage", "per": "week", "role": "lead", "when": {"years": [6, null]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "lead", 1]},
+    {"medium": "stage", "per": "week", "role": "ensemble", "when": {"years": [0, 5]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "ensemble_cast", 0]},
+    {"medium": "stage", "per": "week", "role": "ensemble", "when": {"years": [6, null]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "ensemble_cast", 1]},
+    {"medium": "stage", "per": "week", "role": "supporting", "when": {"years": [0, 5]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "supporting", 0]},
+    {"medium": "stage", "per": "week", "role": "supporting", "when": {"years": [6, null]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "supporting", 1]},
+    {"medium": "stage", "per": "week", "role": "featured", "when": {"years": [0, 5]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "featured_understudy_alternate", 0]},
+    {"medium": "stage", "per": "week", "role": "featured", "when": {"years": [6, null]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "featured_understudy_alternate", 1]},
+    {"medium": "stage", "per": "week", "role": "chorus", "when": {"years": [0, 5]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "chorus_ensemble_swing_standby_asm", 0]},
+    {"medium": "stage", "per": "week", "role": "chorus", "when": {"years": [6, null]}, "from": "2024-04-26", "fig": 2, "path": ["weekly_salaried", "2024-04-26", "chorus_ensemble_swing_standby_asm", 1]},
+    {"medium": "stage", "per": "week", "role": "lead", "when": {"years": [0, 5]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "lead", 0]},
+    {"medium": "stage", "per": "week", "role": "lead", "when": {"years": [6, null]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "lead", 1]},
+    {"medium": "stage", "per": "week", "role": "ensemble", "when": {"years": [0, 5]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "ensemble_cast", 0]},
+    {"medium": "stage", "per": "week", "role": "ensemble", "when": {"years": [6, null]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "ensemble_cast", 1]},
+    {"medium": "stage", "per": "week", "role": "supporting", "when": {"years": [0, 5]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "supporting", 0]},
+    {"medium": "stage", "per": "week", "role": "supporting", "when": {"years": [6, null]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "supporting", 1]},
+    {"medium": "stage", "per": "week", "role": "featured", "when": {"years": [0, 5]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "featured_understudy_alternate", 0]},
+    {"medium": "stage", "per": "week", "role": "featured", "when": {"years": [6, null]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "featured_understudy_alternate", 1]},
+    {"medium": "stage", "per": "week", "role": "chorus", "when": {"years": [0, 5]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "chorus_ensemble_swing_standby_asm", 0]},
+    {"medium": "stage", "per": "week", "role": "chorus", "when": {"years": [6, null]}, "from": "2025-04-26", "fig": 2, "path": ["weekly_salaried", "2025-04-26", "chorus_ensemble_swing_standby_asm", 1]}
+   ]},
+   "nz-atc": {"media": ["stage"], "currency": "NZD", "minimums": [
+    {"medium": "stage", "per": "week", "when": {"years": [0, 5]}, "from": "2024-01-01", "fig": 3, "path": ["tiers", "tier1_up_to_6_years"]},
+    {"medium": "stage", "per": "week", "when": {"years": [6, 14]}, "from": "2024-01-01", "fig": 3, "path": ["tiers", "tier2_6_to_15_years"]},
+    {"medium": "stage", "per": "week", "when": {"years": [15, 24]}, "from": "2024-01-01", "fig": 3, "path": ["tiers", "tier3_15_to_25_years"]},
+    {"medium": "stage", "per": "week", "when": {"years": [25, null]}, "from": "2024-01-01", "fig": 3, "path": ["tiers", "tier4_25_plus_years"]}
+   ]}
+  }
+ },
+ "OM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "PA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PE": {"unread": "the Performers Law sets no amount, and its research doesn't say none sets the pay"},
+ "PH": {
+  "market": 3, "zone": "Asia/Manila", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "ph-screen": {"media": ["film", "television"], "currency": "PHP", "minimums": [
+    {"medium": "film", "per": "day", "from": "2026-09-26", "fig": 1, "path": ["dailyPHP"]},
+    {"medium": "television", "per": "day", "from": "2026-09-26", "fig": 1, "path": ["dailyPHP"]}
+   ]}
+  }
+ },
+ "PK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PL": {"unread": "the research reports a public theatre's base as the national minimum wage, giving no amount"},
+ "PM": {
+  "market": null, "zone": "America/Miquelon", "language": {"code": "fr", "fig": 0}, "follows": {"fig": 1, "market": "FR"}
+ },
+ "PN": {
+  "market": null, "zone": "Pacific/Pitcairn", "language": {"code": "en", "fig": 1},
+  "agreements": {
+   "pn-all": {"media": ["film", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "PR": {"unread": "its work follows the US agreements, whose terms the engine keeps as SAG-AFTRA's own, not as a market's"},
+ "PS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "PT": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the union"},
+ "PW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "PY": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "QA": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "RE": {
+  "market": null, "zone": "Indian/Reunion", "language": {"code": "fr", "fig": 1}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "RO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "RS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "RU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "RW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SA": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "SC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SE": {
+  "market": 8, "zone": "Europe/Stockholm", "language": {"code": "sv", "fig": 7},
+  "agreements": {
+   "se-screen": {"media": ["film", "television"], "currency": "SEK", "minimums": [
+    {"medium": "film", "per": "day", "when": {"nth": [1, 1]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_1"]},
+    {"medium": "film", "per": "day", "when": {"nth": [2, 2]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_2"]},
+    {"medium": "film", "per": "day", "when": {"nth": [3, null]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_3_on"]},
+    {"medium": "film", "per": "month", "when": {"length": [4, null]}, "from": "2026-06-01", "fig": 1, "path": ["per_month_if_over_75_days"]},
+    {"medium": "television", "per": "day", "when": {"nth": [1, 1]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_1"]},
+    {"medium": "television", "per": "day", "when": {"nth": [2, 2]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_2"]},
+    {"medium": "television", "per": "day", "when": {"nth": [3, null]}, "from": "2026-06-01", "fig": 1, "path": ["per_day", "day_3_on"]},
+    {"medium": "television", "per": "month", "when": {"length": [4, null]}, "from": "2026-06-01", "fig": 1, "path": ["per_month_if_over_75_days"]}
+   ]},
+   "se-stage": {"media": ["stage"], "currency": "SEK", "minimums": [
+    {"medium": "stage", "per": "month", "when": {"years": [0, 4]}, "from": "2026-04-01", "fig": 3, "path": ["per_month_from_2026-04-01", "actor"]},
+    {"medium": "stage", "per": "month", "when": {"years": [5, null]}, "from": "2026-04-01", "fig": 3, "path": ["per_month_from_2026-04-01", "actor_with_degree_or_5_years"]}
+   ]},
+   "se-private-stage": {"media": ["stage"], "currency": "SEK", "minimums": [
+    {"medium": "stage", "per": "performance", "from": "2026-04-01", "fig": 4, "path": ["per_rehearsal_day_or_performance_from_2026-04-01"]},
+    {"medium": "stage", "per": "day", "rehearsal": true, "from": "2026-04-01", "fig": 4, "path": ["per_rehearsal_day_or_performance_from_2026-04-01"]}
+   ]},
+   "se-free-stage": {"media": ["stage"], "currency": "SEK", "minimums": [
+    {"medium": "stage", "per": "month", "when": {"years": [0, 4]}, "from": "2025-04-01", "fig": 5, "path": ["per_month", "2025-04-01", "no_training"]},
+    {"medium": "stage", "per": "day", "when": {"years": [0, 4]}, "from": "2025-04-01", "fig": 5, "path": ["per_day_or_performance", "2025-04-01", "no_training"]},
+    {"medium": "stage", "per": "performance", "when": {"years": [0, 4]}, "from": "2025-04-01", "fig": 5, "path": ["per_day_or_performance", "2025-04-01", "no_training"]},
+    {"medium": "stage", "per": "month", "when": {"years": [5, null]}, "from": "2025-04-01", "fig": 5, "path": ["per_month", "2025-04-01", "degree_or_5_years"]},
+    {"medium": "stage", "per": "day", "when": {"years": [5, null]}, "from": "2025-04-01", "fig": 5, "path": ["per_day_or_performance", "2025-04-01", "degree_or_5_years"]},
+    {"medium": "stage", "per": "performance", "when": {"years": [5, null]}, "from": "2025-04-01", "fig": 5, "path": ["per_day_or_performance", "2025-04-01", "degree_or_5_years"]},
+    {"medium": "stage", "per": "month", "when": {"years": [0, 4]}, "from": "2026-04-01", "fig": 5, "path": ["per_month", "2026-04-01", "no_training"]},
+    {"medium": "stage", "per": "day", "when": {"years": [0, 4]}, "from": "2026-04-01", "fig": 5, "path": ["per_day_or_performance", "2026-04-01", "no_training"]},
+    {"medium": "stage", "per": "performance", "when": {"years": [0, 4]}, "from": "2026-04-01", "fig": 5, "path": ["per_day_or_performance", "2026-04-01", "no_training"]},
+    {"medium": "stage", "per": "month", "when": {"years": [5, null]}, "from": "2026-04-01", "fig": 5, "path": ["per_month", "2026-04-01", "degree_or_5_years"]},
+    {"medium": "stage", "per": "day", "when": {"years": [5, null]}, "from": "2026-04-01", "fig": 5, "path": ["per_day_or_performance", "2026-04-01", "degree_or_5_years"]},
+    {"medium": "stage", "per": "performance", "when": {"years": [5, null]}, "from": "2026-04-01", "fig": 5, "path": ["per_day_or_performance", "2026-04-01", "degree_or_5_years"]}
+   ]}
+  }
+ },
+ "SG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SH": {
+  "market": 1, "zone": "Atlantic/St_Helena", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "sh-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "SI": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "SK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "SL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "SO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SS": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "ST": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city"},
+ "SV": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "SX": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "SZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TD": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TF": {"unread": "its research gives no minimum, nor that none sets the pay: only the market's city and the territory's status"},
+ "TH": {
+  "market": 1, "zone": "Asia/Bangkok", "language": {"code": "th", "fig": null},
+  "agreements": {
+   "th-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "TJ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "TK": {"unread": "its research gives no minimum, nor that none sets the pay: only the territory's status"},
+ "TL": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TO": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "TR": {
+  "market": null, "zone": "Europe/Istanbul", "language": {"code": "tr", "fig": null},
+  "agreements": {
+   "tr-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "TW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "TZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "UA": {"unread": "its research gives no minimum, nor that none sets the pay: only an agreement without its rates and the language"},
+ "UG": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "UM": {"unread": "the islands have no inhabitants and no local market; filming there is a federal permit's"},
+ "UY": {"unread": "SUA's minimums are a fee for the part beside a day rate, which no term pays"},
+ "UZ": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VA": {
+  "market": null, "zone": "Europe/Vatican", "language": {"code": "it", "fig": null},
+  "agreements": {
+   "va-screen": {"media": ["film", "television"], "none": {"fig": 0}}
+  }
+ },
+ "VC": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "VE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VG": {
+  "market": null, "zone": "America/Tortola", "language": {"code": "en", "fig": null},
+  "agreements": {
+   "vg-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "VI": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "VN": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "VU": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "WF": {"unread": "the only floor its research gives is the general minimum wage, by the hour or month from a quarter, not a day, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "WS": {"unread": "the only floor its research gives is the general minimum wage, by the hour, a term no part is paid by, whose source doesn't say it is a performer's; no agreement sets an actor's pay"},
+ "XK": {"unread": "its research gives no minimum, nor that none sets the pay: only the language, the market's city and the union"},
+ "YE": {"unread": "its research gives no minimum, nor that none sets the pay: only the language and the market's city"},
+ "YT": {
+  "market": 2, "zone": "Indian/Mayotte", "language": {"code": "fr", "fig": 1}, "follows": {"fig": 0, "market": "FR"}
+ },
+ "ZA": {
+  "market": 6, "zone": "Africa/Johannesburg", "language": {"code": "en", "fig": 5},
+  "agreements": {
+   "za-all": {"media": ["film", "television", "stage"], "none": {"fig": 0}}
+  }
+ },
+ "ZM": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"},
+ "ZW": {"unread": "its research gives no minimum, nor that none sets the pay: only the language"}
+}

@@ -1,0 +1,269 @@
+{
+ "topic": "tax.DM",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Dominica: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Every resident gets a resident allowance of EC$30,000; chargeable income is then taxed at 15% on the next EC$20,000, 25% on the next EC$30,000 and 35% above EC$80,000 of income. The 2026/27 budget proposes a single 10% rate from 1 January 2027.",
+   "value": {
+    "currency": "XCD",
+    "allowance": 30000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0
+     },
+     {
+      "from": 30000,
+      "to": 50000,
+      "rate": 0.15
+     },
+     {
+      "from": 50000,
+      "to": 80000,
+      "rate": 0.25
+     },
+     {
+      "from": 80000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "proposed2027": {
+     "rate": 0.1,
+     "status": "budget proposal, 4 August 2026"
+    },
+    "regional": null
+   },
+   "applies": "2026 (allowance effective 1 January 2018); brackets here are on income before the allowance.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Effective 1st January 2018, every resident individual, is entitled to the Resident Allowance of $30,000.00. On the chargeable income of every individual, unincorporated body of persons or trustees: Income Range 0 to 30,000 for every dollar on the first $30,000 no tax 30,001 to 50,000 for every dollar on the next $20,000 tax @ 15% 50,001 to 80,000 for every dollar on the next $30,000 tax @ 25% 80,001 and above on ever dollar in excess of 80,001 tax @ 35%"
+    },
+    {
+     "src": 1,
+     "said": "A single 10% individual (personal) income tax rate Taxation of residents and nonresidents only on income earned in Dominica beginning January 1, 2027"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Residents file a return by 31 March each year (one with only employment income under EC$30,000 need not file); residence is more than 183 days' continuous presence.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-31"
+   },
+   "applies": "Individuals.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "All individuals who are considered resident are required to furnish returns to the Inland Revenue Division by March 31st each calendar year. This includes individuals who are physically present in Dominica for more than 183 days continuously."
+    },
+    {
+     "src": 2,
+     "said": "However, persons whose income are entirely as a result of employment and it is less than $30,000 are not obligated to file an income tax return."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers deduct PAYE after the tax-free allowance at 15%, 25% and 35%, monthly (EC$2,500 a month free), and pay it within 15 days after the month.",
+   "value": {
+    "currency": "XCD",
+    "period": "month",
+    "monthlyAllowance": 2500,
+    "remitWithinDays": 15
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "After the tax free allowances are deducted from the tax payer's taxable earnings, tax is charged at 15% on the first $20,000.00 25% on the next %30,000.00 and 35% thereafter"
+    },
+    {
+     "src": 3,
+     "said": "PAYE shall be payable by the person responsible for making the deductions and shall be paid to the Comptroller of Inland Revenue within 15 days after the end of the month during which that tax was deducted or deductible"
+    },
+    {
+     "src": 0,
+     "said": "Resident Allowance -2,500.00 (30,000/12)"
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "The payer withholds 15% from a non-resident individual's royalties, commissions or fees (not employment) and any other payment of an income nature, paid within 15 days after the month.",
+   "value": {
+    "rate": 0.15,
+    "base": "actual amount paid",
+    "covers": [
+     "royalty",
+     "commission or fee",
+     "any other payment of an income nature"
+    ]
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The person making the payment to the non resident individual is responsible for deducting the tax and remitting it to the Comptroller of Inland Revenue"
+    },
+    {
+     "src": 4,
+     "said": "Subject to Section 50, tax shall be deducted from the actual amount and at the rate of 15%"
+    },
+    {
+     "src": 4,
+     "said": "Commission or fee, not being in respect of an employment to which Section 57 applies"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 15% (10% for accommodation and diving), due by the 20th of the next month.",
+   "value": {
+    "standard": 0.15,
+    "accommodation": 0.1
+   },
+   "applies": "2026; the registration threshold was not stated on the page read.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The tax is imposed at a rate of 15% of the value of every taxable supply by a taxable person in Dominica except if the supply is classified as accommodations & diving activity which carries a rate of 10%"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security takes 6.75% of insurable earnings from the employee and 8.00% from the employer (7.75% where the employee is without redundancy cover) from January 2026, on earnings up to EC$7,000 a month; a self-employed person pays 13.75% of annual insurable earnings in 2026. Employee contributions are paid by the 14th of the next month, self-employed ones within 14 days of the quarter's end.",
+   "value": {
+    "currency": "XCD",
+    "from": "2026-01-01",
+    "employee": 0.0675,
+    "employer": 0.08,
+    "employerWithoutRedundancy": 0.0775,
+    "monthlyCeiling": 7000,
+    "selfEmployed": 0.1375,
+    "schedule2027": {
+     "employee": 0.07,
+     "employer": 0.08,
+     "selfEmployed": 0.14
+    },
+    "employeeDue": "14th of the following month",
+    "selfEmployedDue": "within 14 days of the end of the quarter"
+   },
+   "applies": "Insurable employment and self-employment in Dominica, 2026",
+   "sources": [
+    {
+     "src": 6,
+     "said": "From January 2026 6.75% 8.00% 14.75% 6.75% 7.75% 14.50%"
+    },
+    {
+     "src": 7,
+     "said": "In keeping with the Second Schedule of SRO 8 of 2012 … 1 January 2026 31 December 2026 13.75"
+    },
+    {
+     "src": 8,
+     "said": "Is there a maximum (ceiling) upon which social security contributions should be made? Yes, Earnings exceeding $7,000 monthly are not subject to social security deductions. … Self-employed contributions must be paid within 14 days of the end of the Quarter for which it is due."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A person in a taxable activity must apply for VAT registration once annual standard-rated, guest-accommodation and zero-rated supplies reach EC$250,000 (or exceed EC$62,500 in three months with 250,000 expected over twelve); a promoter of public entertainment expecting receipts above EC$250,000 must register 48 hours before the first event.",
+   "value": {
+    "currency": "XCD",
+    "threshold": 250000,
+    "quarterTest": 62500,
+    "entertainmentPromoter": "register 48 hours before the first event if receipts expected over 250,000",
+    "asOf": "IRD registration guide 2018"
+   },
+   "applies": "VAT registration in Dominica",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Any person who conducts a Taxable Activity and whose annual gross standard-rated, guest accommodation and zero-rated supplies are $250,000 or more is required to apply for registration for Value Added Tax (VAT). It should be noted that every promoter of public entertainment and every licensee of places of public entertainment MUST apply for registration at least 48 hours before the commencement of the first public entertainment promoted by them if the total receipts is reasonably expected to exceed $250,000. … (a) that person made taxable supplies which exceedEC$62,500; and"
+    }
+   ]
+  }
+ ],
+ "country": "DM",
+ "sources": [
+  {
+   "url": "https://ird.gov.dm/customer-service/current-income-tax-rates",
+   "title": "Current Income Tax Rates (Inland Revenue Division, Dominica)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Effective 1st January 2018, every resident individual, is entitled to the Resident Allowance of $30,000.00. On the chargeable income of every individual, unincorporated body of persons or trustees: Income Range 0 to 30,000 for every dollar on the first $30,000 no tax 30,001 to 50,000 for every dollar on the next $20,000 tax @ 15% 50,001 to 80,000 for every dollar on the next $30,000 tax @ 25% 80,001 and above on ever dollar in excess of 80,001 tax @ 35% … Resident Allowance -2,500.00 (30,000/12)"
+  },
+  {
+   "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/08/dominica-budget-proposes-flat-individual-income-tax-rate-extended-vat-relief.html",
+   "title": "Dominica: Budget proposes flat individual income tax rate, extended VAT relief (KPMG TaxNewsFlash, 26 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ird.gov.dm/customer-service/current-income-tax-rates",
+   "said": "A single 10% individual (personal) income tax rate Taxation of residents and nonresidents only on income earned in Dominica beginning January 1, 2027"
+  },
+  {
+   "url": "https://ird.gov.dm/tax-laws/personal-income-tax",
+   "title": "Personal Income Tax (Inland Revenue Division, Dominica)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "All individuals who are considered resident are required to furnish returns to the Inland Revenue Division by March 31st each calendar year. This includes individuals who are physically present in Dominica for more than 183 days continuously. … However, persons whose income are entirely as a result of employment and it is less than $30,000 are not obligated to file an income tax return."
+  },
+  {
+   "url": "https://ird.gov.dm/tax-laws/pay-as-you-earn-p-a-y-e",
+   "title": "Pay As You Earn (P.A.Y.E.) (Inland Revenue Division, Dominica)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "After the tax free allowances are deducted from the tax payer's taxable earnings, tax is charged at 15% on the first $20,000.00 25% on the next %30,000.00 and 35% thereafter … PAYE shall be payable by the person responsible for making the deductions and shall be paid to the Comptroller of Inland Revenue within 15 days after the end of the month during which that tax was deducted or deductible"
+  },
+  {
+   "url": "https://ird.gov.dm/tax-laws/withholding-tax",
+   "title": "Withholding Tax (Inland Revenue Division, Dominica)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The person making the payment to the non resident individual is responsible for deducting the tax and remitting it to the Comptroller of Inland Revenue … Subject to Section 50, tax shall be deducted from the actual amount and at the rate of 15% … Commission or fee, not being in respect of an employment to which Section 57 applies"
+  },
+  {
+   "url": "https://ird.gov.dm/tax-laws/value-added-tax",
+   "title": "Value Added Tax (VAT) (Inland Revenue Division, Dominica)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The tax is imposed at a rate of 15% of the value of every taxable supply by a taxable person in Dominica except if the supply is classified as accommodations & diving activity which carries a rate of 10%"
+  },
+  {
+   "url": "https://dss.dm/wp-content/uploads/2024/12/Table-of-EE-ER-Contribution-Rates-2012-2031.pdf",
+   "title": "Table of Contribution Rates Payable by Employers & Employees as a Percentage of Insurable Earnings, 2012–2031, Dominica Social Security",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "From January 2026 6.75% 8.00% 14.75% 6.75% 7.75% 14.50%"
+  },
+  {
+   "url": "https://dss.dm/wp-content/uploads/2024/12/Table-of-SE-Contribution-Rates-2012-2031-1.pdf",
+   "title": "Table of Contribution Rates Payable as a Percentage of Annual Insurable Earnings of Self-employed Persons, Dominica Social Security",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In keeping with the Second Schedule of SRO 8 of 2012 … 1 January 2026 31 December 2026 13.75"
+  },
+  {
+   "url": "https://dss.dm/faq/",
+   "title": "FAQ, Dominica Social Security",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Is there a maximum (ceiling) upon which social security contributions should be made? Yes, Earnings exceeding $7,000 monthly are not subject to social security deductions. … Self-employed contributions must be paid within 14 days of the end of the Quarter for which it is due."
+  },
+  {
+   "url": "https://ird.gov.dm/phocadownload/guides/VAT%20-%20Registration%20Guide%202018.pdf",
+   "title": "VAT Registration Guide 2018, Inland Revenue Division, Dominica",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any person who conducts a Taxable Activity and whose annual gross standard-rated, guest accommodation and zero-rated supplies are $250,000 or more is required to apply for registration for Value Added Tax (VAT). It should be noted that every promoter of public entertainment and every licensee of places of public entertainment MUST apply for registration at least 48 hours before the commencement of the first public entertainment promoted by them if the total receipts is reasonably expected to exceed $250,000. … (a) that person made taxable supplies which exceedEC$62,500; and"
+  }
+ ],
+ "blockers": []
+}

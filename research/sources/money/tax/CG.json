@@ -1,0 +1,416 @@
+{
+ "topic": "tax.CG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Republic of the Congo: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "From 2026 the personal income tax (IRPP) is replaced by separate taxes; pay is taxed under the tax on wages and salaries (ITS): 20% is deducted from pay net of the employee's pension contribution, the result is divided into family parts (1 for a single person, up to 6.5), and each part is taxed XAF 1,200 flat on the first XAF 615,000, then 10% to 1.5 million, 15% to 3.5 million, 20% to 5 million and 30% above; there are no local income taxes.",
+   "value": {
+    "currency": "XAF",
+    "tax": "ITS",
+    "professionalDeduction": 0.2,
+    "parts": {
+     "single": 1,
+     "married": 2,
+     "perChild": 0.5,
+     "max": 6.5
+    },
+    "brackets": [
+     {
+      "from": 0,
+      "to": 615000,
+      "flat": 1200
+     },
+     {
+      "from": 615000,
+      "to": 1500000,
+      "rate": 0.1
+     },
+     {
+      "from": 1500000,
+      "to": 3500000,
+      "rate": 0.15
+     },
+     {
+      "from": 3500000,
+      "to": 5000000,
+      "rate": 0.2
+     },
+     {
+      "from": 5000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "minimumBelowSMIG": 1200,
+    "regional": null
+   },
+   "applies": "Salaries, wages and pensions from 1 January 2026 (Finance Law 2026, CGI arts 114 to 116 I); the brackets apply per part",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 116 : Pour déterminer l’assiette de l’impôt, une déduction de 20% est appliquée au montant net calculé après déduction de la part salariale des cotisations sociales de retraite."
+    },
+    {
+     "src": 0,
+     "said": "Le quotient familial déterminé par ce rapport est taxé par application du barème prévu à l’article 116 G. L’impôt brut est égal au produit de la cotisation ainsi obtenue par le nombre de parts."
+    },
+    {
+     "src": 0,
+     "said": "Article 116 G : 1) Le quotient familial ou le salaire net imposable cor- respondant à une part est imposé en appliquant les taux de : - 1 200 F CFA pour la fraction comprise entre 0 et 615 000 ; - 10% pour la fraction comprise entre 615 001 et 1500 000 ;"
+    },
+    {
+     "src": 0,
+     "said": "-15% pour la fraction comprise entre 1 500 001 et 3500 000 ; -20% pour la fraction comprise entre 3 500 001 et 5000 000 ; - 30% pour la fraction comprise entre 5 000 001 et suivant."
+    },
+    {
+     "src": 0,
+     "said": "jusqu’à un maximum de 6,5 parts."
+    },
+    {
+     "src": 1,
+     "said": "There are no local taxes in the Republic of Congo. Local authorities are financed by the imposition of a departmental tax at an annual flat rate of XAF 2,000 per individual."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A self-employed person's profits, including the liberal professions and income from intellectual property, bear the tax on business profits (IBA) at 30%; a business whose turnover is below the VAT threshold is taxed on the flat-rate (forfait) regime instead, regulated professions excepted.",
+   "value": {
+    "currency": "XAF",
+    "tax": "IBA",
+    "rate": 0.3,
+    "covers": [
+     "liberal professions",
+     "intellectual property income",
+     "any lucrative activity not under ITS, IRCM or IRF"
+    ],
+    "forfait": "turnover below the VAT threshold (regulated professions excluded)"
+   },
+   "applies": "Individuals carrying on an activity for their own account, from 2026",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 93 A : Sont imposables au titre de l’impôt sur les bénéfices d’affaires : - les bénéfices industriels, commerciaux, artisanaux et agricoles, y compris les plus-values de cession de fonds de commerce ou de clientèle ; - les bénéfices des professions libérales et des charges et offices dont les titulaires n’ont pas la qualité de commerçant ; - les produits des droits de propriété intellectuelle ou industrielle ;"
+    },
+    {
+     "src": 0,
+     "said": "Le taux de l’impôt sur les bénéfices d’affaires est fixé à 30%."
+    },
+    {
+     "src": 0,
+     "said": "Article 96 : 1. Les contribuables dont le chiffre d’affaires n’excèdent pas le seuil d’assujettissement à la taxe sur la valeur ajoutée, sont imposés selon le régime du forfait."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; an individual liable to income tax files a return by 1 March of the next year (per PwC, written under the former IRPP).",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": "03-01"
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Every individual liable for income tax is required to complete a tax return based on the year's income and file it by 1 March following the end of that year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays a pension contribution of 4% of gross salary up to an annual ceiling given by PwC as EUR 21,952.65; the employer's contributions and payroll taxes are not stated in the source read; a 7.5% unique tax on salaries applies to gross salary.",
+   "value": {
+    "currency": "XAF",
+    "employeePension": {
+     "rate": 0.04,
+     "ceilingAnnual": "EUR 21,952.65 (as given)"
+    },
+    "employer": null,
+    "uniqueTaxOnSalaries": 0.075
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employee share for pensions is 4% of gross salary with an annual ceiling of EUR 21,952.65."
+    },
+    {
+     "src": 1,
+     "said": "A unique tax on salaries at the rate of 7.5% on the gross salary replaces the lump sum tax on salaries, apprenticeship tax, National Housing Fund contribution, and National Employment Office contribution."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds ITS monthly, and the withholding is final where the employee has a single source of pay; invoices of liberal professionals paid through the treasury bear 5% at source.",
+   "value": {
+    "employee": "monthly ITS withholding, final if one employer",
+    "liberalProfessions": 0.05
+   },
+   "applies": "Payments of salaries; liberal professionals' invoices",
+   "sources": [
+    {
+     "src": 0,
+     "said": "3) L’impôt sur les traitements et salaires est payé par acompte mensuel retenu à la source par l’employeur."
+    },
+    {
+     "src": 0,
+     "said": "2. Les retenues sont libératoires au titre de l’impôt sur les traitements et salaires si le bénéficiaire dispose d’une seule source de traitements et salaires."
+    },
+    {
+     "src": 0,
+     "said": "Les factures des professionnels libéraux (notam- ment les avocats, les notaires, etc.) sont soumises à une retenue à la source de 5% du montant hors taxe conformément à l’article 183 du CGI, tome 1."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident is taxable on income earned in or from Congo; PwC gives a 20% rate on a non-domiciled individual's non-commercial income (a performer's or writer's fee) and on seconded foreign employees' salaries, and 20% is the general withholding on services by foreign suppliers; pay for work in Congo from a Congolese employer falls under ITS.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross Congolese-source non-commercial income",
+    "final": null,
+    "salaries": "ITS when the employer is established in Congo"
+   },
+   "applies": "Non-residents",
+   "sources": [
+    {
+     "src": 0,
+     "said": "1b) Les personnes physiques de nationalité congolaise ou étrangère n’ayant ni domicile, ni résidence au Congo, pour autant qu’elles ont des revenus réalisés dans l’État du Congo ou en provenant, et à raison desdits revenus."
+    },
+    {
+     "src": 0,
+     "said": "b) lorsque le bénéficiaire n’est pas domicilié au Congo, mais que l’activité rétribuée s’y exerce et que l’employeur est domicilié ou établi."
+    },
+    {
+     "src": 3,
+     "said": "However, a tax rate of 20% is imposed on non-commercial income of a non-domiciled individual."
+    },
+    {
+     "src": 4,
+     "said": "Services rendered by foreign suppliers are subject to a WHT. There are four WHT rates, which include the following: General rate of 20%."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Income from intellectual property rights (authors' royalties) is taxed with business profits under IBA at 30%; no separate authors' regime was found.",
+   "value": {
+    "rate": 0.3,
+    "tax": "IBA"
+   },
+   "applies": "Authors resident in Congo",
+   "sources": [
+    {
+     "src": 0,
+     "said": "les produits des droits de propriété intellectuelle ou industrielle ;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%, plus a 5% surtax on the VAT (18.9% in all); legal persons are liable whatever their turnover, an individual once turnover excluding tax passes XAF 100 million (Deloitte, on the 2024 finance law); the 2026 law puts those below the VAT threshold on the flat-rate regime and those above XAF 100 million on actual profits.",
+   "value": {
+    "standard": 0.18,
+    "surtaxOnVat": 0.05,
+    "effective": 0.189,
+    "threshold": 100000000,
+    "thresholdApplies": "individuals (legal persons always liable)"
+   },
+   "applies": "Supplies in Congo",
+   "sources": [
+    {
+     "src": 5,
+     "said": "The Congolese VAT rate is 18%. In addition to VAT, a surtax calculated at the rate of 5% applies to the amount of VAT, which must be invoiced and paid at the same time as the VAT. Therefore, the VAT rate is globally 18.9%."
+    },
+    {
+     "src": 5,
+     "said": "any person, natural or legal, engaged in an industrial, commercial, or professional activity is subject to VAT unless specifically exempt by law."
+    },
+    {
+     "src": 6,
+     "said": "Il est précisé que les personnes morales sont assujetties de plein droit à la TVA tandis que les personnes physiques sont assujetties lorsque leur chiffre d'affaires, hors taxe, est supérieur à 100 millions de francs CFA."
+    },
+    {
+     "src": 7,
+     "said": "1. Les contribuables dont le chiffre d'affaires n'excèdent pas le seuil d'assujettissement à la taxe sur la valeur ajoutée, sont imposés selon le régime du forfait. … Les contribuables dont le chiffre d'affaires est supérieur à 100 000 000 de francs CFA sont assujettis au régime de l'imposition assis sur le bénéfice réel."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "CNSS contributions as of 1 January 2023 (CLEISS): pension 8% employer and 4% employee on pay up to XAF 1,200,000 a month; family benefits 10.03% and work injury 2.25% employer on up to 600,000; health (RAMU) 4.55% employer and 2.27% employee on up to 600,000; construction fund 2% and employment agency 0.5% employer on up to 1,200,000 (27.33% employer, 6.27% employee in all). A self-employed worker pays RAMU 6.82% compulsorily, and may join pensions at 12% and work injury at 2.25%.",
+   "value": {
+    "currency": "XAF",
+    "period": "month",
+    "asOf": "2023-01-01",
+    "employee": [
+     {
+      "branch": "pension",
+      "rate": 0.04,
+      "ceiling": 1200000
+     },
+     {
+      "branch": "health (RAMU)",
+      "rate": 0.0227,
+      "ceiling": 600000
+     }
+    ],
+    "employer": [
+     {
+      "branch": "pension",
+      "rate": 0.08,
+      "ceiling": 1200000
+     },
+     {
+      "branch": "family",
+      "rate": 0.1003,
+      "ceiling": 600000
+     },
+     {
+      "branch": "work injury",
+      "rate": 0.0225,
+      "ceiling": 600000
+     },
+     {
+      "branch": "health (RAMU)",
+      "rate": 0.0455,
+      "ceiling": 600000
+     },
+     {
+      "branch": "construction fund",
+      "rate": 0.02,
+      "ceiling": 1200000
+     },
+     {
+      "branch": "ACPE/FONEA",
+      "rate": 0.005,
+      "ceiling": 1200000
+     }
+    ],
+    "selfEmployed": {
+     "healthCompulsory": {
+      "rate": 0.0682,
+      "ceiling": 600000
+     },
+     "pensionVoluntary": {
+      "rate": 0.12,
+      "ceiling": 1200000
+     },
+     "workInjuryVoluntary": {
+      "rate": 0.0225,
+      "ceiling": 600000
+     }
+    }
+   },
+   "applies": "Private-sector employees and the self-employed; rates as at 1 January 2023 (whether they hold in 2026 not confirmed by the CNSS)",
+   "sources": [
+    {
+     "src": 8,
+     "said": "Taux de cotisations au 1 er janvier 2023 … Soins de santé ( RAMU ) 1 4,55 % 2,27 % 600 000 FCFA … Prestations familiales (y compris maternité et prestations en espèces) 10,03 % - 600 000 FCFA Accidents du travail 2,25 % - 600 000 FCFA Assurance pensions 8 % 4 % 1 200 000 FCFA Fonds National de construction 2 % - 1 200 000 FCFA … 0,5 % - 1 200 000 FCFA Total 27,33 % 6,27 % … Adhésion obligatoire : Maladie ( RAMU ) 6,82 % 600 000 FCFA Adhésion volontaire : Pensions 12 % 1 200 000 FCFA Accidents du travail 2,25 % 600 000 FCFA"
+    }
+   ]
+  }
+ ],
+ "country": "CG",
+ "sources": [
+  {
+   "url": "https://sgg.cg/JO/2026/congo-jo-2026-3-4.pdf",
+   "title": "Journal officiel de la République du Congo, édition spéciale n° 3-2026 (5 January 2026): loi n° 42-2025 du 31 décembre 2025 portant loi de finances pour l'année 2026 (Code général des impôts as amended)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 116 : Pour déterminer l’assiette de l’impôt, une déduction de 20% est appliquée au montant net calculé après déduction de la part salariale des cotisations sociales de retraite. … Le quotient familial déterminé par ce rapport est taxé par application du barème prévu à l’article 116 G. L’impôt brut est égal au produit de la cotisation ainsi obtenue par le nombre de parts. … Article 116 G : 1) Le quotient familial ou le salaire net imposable cor- respondant à une part est imposé en appliquant les taux de : - 1 200 F CFA pour la fraction comprise entre 0 et 615 000 ; - 10% pour la fraction comprise entre 615 001 et 1500 000 ; … -15% pour la fraction comprise entre 1 500 001 et 3500 000 ; -20% pour la fraction comprise entre 3 500 001 et 5000 000 ; - 30% pour la fraction comprise entre 5 000 001 et suivant. … jusqu’à un maximum de 6,5 parts. … Article 93 A : Sont imposables au titre de l’impôt sur les bénéfices d’affaires : - les bénéfices industriels, commerciaux, artisanaux et agricoles, y compris les plus-values de cession de fonds de commerce ou de clientèle ; - les bénéfices des professions libérales et des charges et offices dont les titulaires n’ont pas la qualité de commerçant ; - les produits des droits de propriété intellectuelle ou industrielle ; … Le taux de l’impôt sur les bénéfices d’affaires est fixé à 30%. … Article 96 : 1. Les contribuables dont le chiffre d’affaires n’excèdent pas le seuil d’assujettissement à la taxe sur la valeur ajoutée, sont imposés selon le régime du forfait. … 3) L’impôt sur les traitements et salaires est payé par acompte mensuel retenu à la source par l’employeur. … 2. Les retenues sont libératoires au titre de l’impôt sur les traitements et salaires si le bénéficiaire dispose d’une seule source de traitements et salaires. … Les factures des professionnels libéraux (notam- ment les avocats, les notaires, etc.) sont soumises à une retenue à la source de 5% du montant hors taxe conformément à l’article 183 du CGI, tome 1. … 1b) Les personnes physiques de nationalité congolaise ou étrangère n’ayant ni domicile, ni résidence au Congo, pour autant qu’elles ont des revenus réalisés dans l’État du Congo ou en provenant, et à raison desdits revenus. … b) lorsque le bénéficiaire n’est pas domicilié au Congo, mais que l’activité rétribuée s’y exerce et que l’employeur est domicilié ou établi."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-congo/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Congo, Individual - Other taxes (last reviewed 07 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.gouv.cg/",
+   "said": "There are no local taxes in the Republic of Congo. Local authorities are financed by the imposition of a departmental tax at an annual flat rate of XAF 2,000 per individual. … The employee share for pensions is 4% of gross salary with an annual ceiling of EUR 21,952.65. … A unique tax on salaries at the rate of 7.5% on the gross salary replaces the lump sum tax on salaries, apprenticeship tax, National Housing Fund contribution, and National Employment Office contribution."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-congo/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Congo, Individual - Tax administration (last reviewed 07 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.gouv.cg/",
+   "said": "Every individual liable for income tax is required to complete a tax return based on the year's income and file it by 1 March following the end of that year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-congo/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Congo, Individual - Taxes on personal income (last reviewed 07 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.gouv.cg/",
+   "said": "However, a tax rate of 20% is imposed on non-commercial income of a non-domiciled individual."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-congo/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Congo, Corporate - Withholding taxes (last reviewed 07 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.gouv.cg/",
+   "said": "Services rendered by foreign suppliers are subject to a WHT. There are four WHT rates, which include the following: General rate of 20%."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/republic-of-congo/corporate/other-taxes",
+   "title": "PwC Worldwide Tax Summaries, Republic Of Congo, Corporate - Other taxes (last reviewed 07 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.impots.gouv.cg/",
+   "said": "The Congolese VAT rate is 18%. In addition to VAT, a surtax calculated at the rate of 5% applies to the amount of VAT, which must be invoiced and paid at the same time as the VAT. Therefore, the VAT rate is globally 18.9%. … any person, natural or legal, engaged in an industrial, commercial, or professional activity is subject to VAT unless specifically exempt by law."
+  },
+  {
+   "url": "https://blog.avocats.deloitte.fr/republique-du-congo-analyse-des-principales-mesures-de-la-loi-de-finances-pour-2024/",
+   "title": "République du Congo : analyse des principales mesures de la loi de finances pour 2024, Deloitte Société d'Avocats",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://sgg.cg/",
+   "said": "Il est précisé que les personnes morales sont assujetties de plein droit à la TVA tandis que les personnes physiques sont assujetties lorsque leur chiffre d'affaires, hors taxe, est supérieur à 100 millions de francs CFA."
+  },
+  {
+   "url": "https://sgg.cg/JO/2026/congo-jo-2026-3-4.pdf",
+   "title": "Journal officiel de la République du Congo, édition spéciale n° 3-2026 (loi de finances pour 2026), arts 96 and 129 of the CGI",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. Les contribuables dont le chiffre d'affaires n'excèdent pas le seuil d'assujettissement à la taxe sur la valeur ajoutée, sont imposés selon le régime du forfait. … Les contribuables dont le chiffre d'affaires est supérieur à 100 000 000 de francs CFA sont assujettis au régime de l'imposition assis sur le bénéfice réel."
+  },
+  {
+   "url": "https://www.cleiss.fr/docs/cotisations/congo.html",
+   "title": "Les cotisations au Congo, CLEISS (Centre des liaisons européennes et internationales de sécurité sociale)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnss.cg/",
+   "said": "Taux de cotisations au 1 er janvier 2023 … Soins de santé ( RAMU ) 1 4,55 % 2,27 % 600 000 FCFA … Prestations familiales (y compris maternité et prestations en espèces) 10,03 % - 600 000 FCFA Accidents du travail 2,25 % - 600 000 FCFA Assurance pensions 8 % 4 % 1 200 000 FCFA Fonds National de construction 2 % - 1 200 000 FCFA … 0,5 % - 1 200 000 FCFA Total 27,33 % 6,27 % … Adhésion obligatoire : Maladie ( RAMU ) 6,82 % 600 000 FCFA Adhésion volontaire : Pensions 12 % 1 200 000 FCFA Accidents du travail 2,25 % 600 000 FCFA"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "social",
+   "sought": "The CNSS's or the law's own statement of the 2026 contribution rates and ceilings (CLEISS's table as at 1 January 2023 is recorded)",
+   "tried": {
+    "institution": "impots.gouv.cg redirects to a client portal (no public texts); dgid.gouv.cg: CONNECT tunnel failed (502), 2026-11-01 || retry-8 2026-11-01: cnss.cg answers (200) but is a script-rendered page whose views.js and app.js carry no rate or ceiling (grep 'taux', 'cotisation', 'plafond'); edeclaration.cnss.cg is a login portal",
+    "official-register": "Journal officiel n° 3-2026 (Finance Law 2026) read on sgg.cg: no figure for this item found in it || retry-8 2026-11-01: Journal officiel n° 3-2026 re-read for 'cotisation', 'CNSS': none; the 2023 rate decree not found on sgg.cg",
+    "web-search": "searched 'Congo Brazzaville loi de finances 2026 impôt sur le revenu des personnes physiques barème IRPP ... retenue non-domiciliés 20%' || retry-8 2026-11-01: 'Congo Brazzaville CNSS taux de cotisation employeur pension 8% allocations familiales 10,03% accidents du travail 2,25% plafond 1 200 000 FCFA': CLEISS table as at 1 January 2023 (used, secondary); Africarrières pages conflict",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 07 August 2026) read; it still describes the pre-2026 IRPP || retry-8 2026-11-01: CLEISS, a French public body, as secondary naming cnss.cg; PwC still gives the employee 4% only",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The 2026 text fixing the withholding rate on a non-resident individual's fee for a performance or writing in Congo, and whether it is final",
+   "tried": {
+    "institution": "impots.gouv.cg redirects to a client portal (no public texts); dgid.gouv.cg: CONNECT tunnel failed (502), 2026-11-01 || retry-8 2026-11-01: impots.gouv.cg answers 223 bytes (portal); dgid.gouv.cg and finances.gouv.cg do not answer",
+    "official-register": "Journal officiel n° 3-2026 (Finance Law 2026) read on sgg.cg: no figure for this item found in it || retry-8 2026-11-01: Journal officiel n° 3-2026 re-read: art. 93 B(1b) and (3) make a non-domiciled person taxable on Congolese-source income, authors' rights and non-commercial professions, and art. 37 covers payments abroad, but no withholding rate on such a fee is printed in the 2026 law",
+    "web-search": "searched 'Congo Brazzaville loi de finances 2026 impôt sur le revenu des personnes physiques barème IRPP ... retenue non-domiciliés 20%' || retry-8 2026-11-01: 'Congo Brazzaville seuil d assujettissement TVA … loi de finances 2026' and the earlier '… retenue non-domiciliés 20%': no 2026 text with the rate",
+    "trade-press": "PwC Worldwide Tax Summaries (reviewed 07 August 2026) read; it still describes the pre-2026 IRPP || retry-8 2026-11-01: Deloitte Société d'Avocats on the 2024 finance law read: nothing on the non-resident rate; PwC (20%) remains the only statement",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || retry-8 2026-11-01: web.archive.org: connection reset and availability API 429 on 2026-11-01"
+   }
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "country": "FJ",
+ "read": "2026-11-01",
+ "route": "Authority to Work while on a Visitors Permit (Immigration Act 2003, s. 9(3)(a) and 9(7)); a work permit for longer",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The entertainer applies (online through the Immi Hub portal) with the engager's letter of request and undertaking",
+  "first": "Proof of tax registration from FIRCA and approval from the relevant authorities for the conduct of the show",
+  "fees": [
+   {
+    "what": "Temporary Permit 9{2}[b] & 9{7} (the fee list's line for s. 9(7), which the authority page cites for an extension beyond 14 days)",
+    "amount": "185.00",
+    "currency": "FJD"
+   },
+   {
+    "what": "Work Permit Application Received (for work beyond twelve weeks)",
+    "amount": "650.05",
+    "currency": "FJD"
+   },
+   {
+    "what": "Permit issue fees",
+    "amount": "185.00",
+    "currency": "FJD"
+   }
+  ],
+  "processing": {
+   "standard": null,
+   "premium": null
+  },
+  "validity": {
+   "n": 12,
+   "unit": "weeks",
+   "renewable": false
+  },
+  "union": null,
+  "eligibility": null,
+  "pay": null,
+  "exempt": null
+ },
+ "sources": [
+  {
+   "url": "https://www.immigration.gov.fj/authority-to-work-or-study-while-on-a-visitors-permit/",
+   "title": "Ministry of Immigration (Fiji), Authority to Work or Study while on a Visitors Permit",
+   "read": "2026-11-01",
+   "said": "This authority allows non-citizens to be engaged in business or investment, study, research, religious activities or do consultancy works, whilst on a visitors permit for a maximum period of twelve (12) weeks from the date of arrival. Section 9(3)(a) of the Immigration Act, 2003 is the enabling provision for the first fourteen (14) days and Section 9(7) authorizes an extension beyond the fourteen (14) days. … For workers – a letter of request and undertaking from the employer/organization concerned. … For entertainers – proof of tax registration from FIRCA and approval from the relevant authorities for the conduct of the show. … The requisite fee.",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "applies",
+    "first",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.immigration.gov.fj/application-forms-publications-fees",
+   "title": "Ministry of Immigration (Fiji), Application Forms, Publications & Fees",
+   "read": "2026-11-01",
+   "said": "All applications are to be lodged online through the Immi Hub portal … Work Permit Application Received FJ$650.05 … Permit issue fees FJ$185.00 … Temporary Permit 9{2} [b] & 9{7} FJ$185.00",
+   "kind": "primary",
+   "fields": [
+    "fees",
+    "applies"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "fees",
+   "sought": "the fee line that is the authority to work's own",
+   "tried": {
+    "institution": "the fee list names no 'authority to work'; the closest line (s. 9(7)) is recorded with its label",
+    "official-register": "Immigration Act 2003 not read (PacLII refuses this client, per layer 3 notes)",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "processing",
+   "sought": "stated decision time",
+   "tried": {
+    "institution": "authority page and fees page read: none",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "union",
+   "sought": "union consultation",
+   "tried": {
+    "institution": "none named",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "eligibility",
+   "sought": "criteria for an entertainer beyond documents",
+   "tried": {
+    "institution": "page lists documents only",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "pay",
+   "sought": "minimum pay",
+   "tried": {
+    "institution": "none named",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  },
+  {
+   "field": "exempt",
+   "sought": "work without the authority",
+   "tried": {
+    "institution": "page: the authority is needed from the first day (s. 9(3)(a) covers the first fourteen days)",
+    "official-register": "none",
+    "web-search": "not run",
+    "trade-press": "none",
+    "archive": "none"
+   }
+  }
+ ]
+}

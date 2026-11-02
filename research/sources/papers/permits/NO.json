@@ -1,0 +1,101 @@
+{
+ "country": "NO",
+ "read": "2026-11-01",
+ "route": "Residence permit as an artist, musician or performer (UDI)",
+ "routeChanged": false,
+ "permit": {
+  "applies": "The worker applies to UDI, on a concrete offer of employment from one or more employers or clients in Norway.",
+  "first": "A concrete offer of employment as a performer, musician or artist, for a specific continuous period, normally full-time (37.5 hours a week; 21 for musicians or dance bands).",
+  "fees": [
+   {
+    "what": "Application fee, residence permit for work, applicant over 18 (also renewals)",
+    "amount": "6300",
+    "currency": "NOK"
+   },
+   {
+    "what": "Application fee, residence permit for work, applicant under 18 (also renewals)",
+    "amount": "3150",
+    "currency": "NOK"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 6,
+    "unit": "months"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 1,
+   "unit": "years",
+   "renewable": false
+  },
+  "union": null,
+  "eligibility": "You must have received a concrete offer of employment as a performer, musician or artist, or as a member of their necessary accompanying support staff.",
+  "pay": "Pay in accordance with the collective agreement for the industry, or if none applies no poorer than is normal for the occupation in that place; musicians, circus performers and support staff at least NOK 341 373 a year pre-tax.",
+  "exempt": {
+   "days": 14,
+   "within": 365
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.udi.no/en/want-to-apply/work-immigration/exchange-programmes-culture-and-organisational-work/artist-musician-or-performer/",
+   "title": "UDI, Artist, musician or performer",
+   "read": "2026-11-01",
+   "said": "You must have received a concrete offer of employment as a performer, musician or artist, or as a member of their necessary accompanying support staff. … The main rule is that you must have received an offer of full-time employment. Normally, this constitutes 37.5 hours per week. For musicians or dance bands, 21 hours per week is sufficient. … The pay and working conditions must not be poorer than is normal in Norway. This means that you must receive pay in accordance with the collective agreement for the industry in question. If no collective agreement applies to the industry, your pay cannot be poorer than is normal for someone in your occupation in the place you are to work. For example, musicians, circus performers and their necessary accompanying support staff must have a salary of at least … NOK 341 373 per year pre-tax … You can be granted a permit for a maximum of one year at a time. You must have stayed outside of Norway for three months before you can be granted a new permit. … If you are to change jobs, assignments or employers, you must apply for a new permit.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "eligibility",
+    "pay",
+    "validity"
+   ]
+  },
+  {
+   "url": "https://www.udi.no/en/want-to-apply/work-immigration/exchange-programmes-culture-and-organisational-work/",
+   "title": "UDI, Exchange programmes, culture and organisational work",
+   "read": "2026-11-01",
+   "said": "Performers, artists, musicians and their support staff do not need a residence permit if they are to have concerts or performances in Norway for a total of maximum 14 days during a calendar year. You or your client must notify the police in writing before you enter Norway. … British musicians, artists and their support staff who do not have an employer in Norway do not need a residence permit if they are going to perform, participate in competitions or hold rehearsals in Norway for up to 90 days in a 180-day period.",
+   "kind": "primary",
+   "fields": [
+    "exempt"
+   ]
+  },
+  {
+   "url": "https://www.udi.no/en/word-definitions/fees/",
+   "title": "UDI, Fees",
+   "read": "2026-11-01",
+   "said": "Residence permits for work for applicants over the age of 18 (also renewals) NOK 6 300 … Residence permits for work for applicants under the age of 18 (also renewals) NOK 3 150",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.udi.no/en/word-definitions/guide-to-case-processing-times-for-application-for-work-immigration/?ss=1&hsf=3&gt=7",
+   "title": "UDI, Guide to waiting time for application for work immigration (first-time application, handed in abroad, exchange programmes, culture and organisational work)",
+   "read": "2026-11-01",
+   "said": "After handing in your documents to the police or the VFS Application Centre, it may take up to 6 months before we go through your application. … exchange programmes, culture and organisational work … This information was last updated on 29 October 2026",
+   "kind": "primary",
+   "fields": [
+    "processing"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "Any union or guild consultation the rule asks for the artist permit",
+   "tried": {
+    "institution": "UDI's artist, musician or performer page names none; the pay test refers to the industry's collective agreement only. | Retry 2026-11-01: UDI's artist page and its waiting-time guide name no union step; udiregelverk.no guideline UDI 2012-016 (found by search) is the conditions only.",
+    "official-register": "Not found in the guideline text surfaced by search (UDI 2012-016). | Retry 2026-11-01: lovdata.no/dokument/SF/forskrift/2009-10-15-1286 (utlendingsforskriften, for section 6-22) answers 405 to this client.",
+    "web-search": "Same searches as for processing; nothing on a union consultation. | Retry 2026-11-01: 'UDI ventetid \"artist\" OR \"kunstner\" OR \"musiker\" oppholdstillatelse måneder 2026': no union or Creo/MFO consultation named.",
+    "trade-press": "None found. | Retry 2026-11-01: None in the same search.",
+    "archive": "web.archive.org resets the connection from this environment. | Retry 2026-11-01: web.archive.org: no connection (HTTP 000, 2026-11-01)."
+   }
+  }
+ ],
+ "note": "The 14 days are a total in a calendar year of concerts or performances, the police notified in writing before entry; British musicians and artists with no employer in Norway need no permit for up to 90 days in 180. The permit is at most one year at a time, and a new one needs three months spent outside Norway first, so it isn't renewed back to back (renewable false). Changing job or employer needs a new permit. Retry 2026-11-01: UDI's waiting-time guide, stepped through as plain links (first-time application, handed in abroad, exchange programmes, culture and organisational work), gives up to 6 months from handing in the documents before UDI goes through the application (updated 29 October 2026); a case needing further investigation takes longer. No premium route."
+}

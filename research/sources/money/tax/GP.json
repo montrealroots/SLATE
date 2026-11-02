@@ -1,0 +1,246 @@
+{
+ "topic": "tax.GP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Guadeloupe: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "follows",
+   "finding": "Guadeloupe is a French overseas department: a resident pays French income tax on the national scale, then the tax is cut by 30% up to €2,450; French social contributions, withholding and the rules for non-residents apply as in FR.",
+   "value": {
+    "sovereign": "FR",
+    "takesSovereignTax": true,
+    "adjustments": [
+     "income tax reduced 30%, max EUR 2,450",
+     "default withholding grid for Guadeloupe, La Réunion and Martinique",
+     "VAT 8.5% / 2.1% instead of 20% / 10% / 5.5%"
+    ]
+   },
+   "applies": "Residents of Guadeloupe, 2026 (income tax on 2026 income).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Dans un premier temps, l'impôt brut obtenu en appliquant le même barème qu'en métropole supporte, le cas échéant, le plafonnement des effets du quotient familial."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Income tax is computed on the French scale and then reduced by 30%, capped at €2,450, for a person domiciled in Guadeloupe.",
+   "value": {
+    "currency": "EUR",
+    "scale": "FR",
+    "reduction": 0.3,
+    "reductionCap": 2450
+   },
+   "applies": "Taxpayers domiciled in Guadeloupe; caps applicable from 2018 income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Dans un second temps, le montant de l'impôt ainsi déterminé est réduit : - de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion ;"
+    },
+    {
+     "src": 0,
+     "said": "Les plafonds de 2 450 € et 4 050 € s'appliquent à compter de l'imposition des revenus de l'année 2018."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Where no personalised rate is known, the payer withholds on the monthly base by the Guadeloupe, La Réunion and Martinique default grid (0% below €1,875 a month up to 43% from €60,893).",
+   "value": {
+    "currency": "EUR",
+    "period": "month",
+    "from": "2026-05-01",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 1875,
+      "rate": 0
+     },
+     {
+      "from": 1875,
+      "to": 1989,
+      "rate": 0.005
+     },
+     {
+      "from": 1989,
+      "to": 2191,
+      "rate": 0.013
+     },
+     {
+      "from": 2191,
+      "to": 2392,
+      "rate": 0.021
+     },
+     {
+      "from": 2392,
+      "to": 2642,
+      "rate": 0.029
+     },
+     {
+      "from": 2642,
+      "to": 2786,
+      "rate": 0.035
+     },
+     {
+      "from": 2786,
+      "to": 2881,
+      "rate": 0.041
+     },
+     {
+      "from": 2881,
+      "to": 3170,
+      "rate": 0.053
+     },
+     {
+      "from": 3170,
+      "to": 3920,
+      "rate": 0.075
+     },
+     {
+      "from": 3920,
+      "to": 5016,
+      "rate": 0.099
+     },
+     {
+      "from": 5016,
+      "to": 5697,
+      "rate": 0.119
+     },
+     {
+      "from": 5697,
+      "to": 6599,
+      "rate": 0.138
+     },
+     {
+      "from": 6599,
+      "to": 7907,
+      "rate": 0.158
+     },
+     {
+      "from": 7907,
+      "to": 8789,
+      "rate": 0.179
+     },
+     {
+      "from": 8789,
+      "to": 9989,
+      "rate": 0.2
+     },
+     {
+      "from": 9989,
+      "to": 13738,
+      "rate": 0.24
+     },
+     {
+      "from": 13738,
+      "to": 18253,
+      "rate": 0.28
+     },
+     {
+      "from": 18253,
+      "to": 27858,
+      "rate": 0.33
+     },
+     {
+      "from": 27858,
+      "to": 60893,
+      "rate": 0.38
+     },
+     {
+      "from": 60893,
+      "to": null,
+      "rate": 0.43
+     }
+    ],
+    "note": "each band's rate applies to the whole monthly base (a rate grid, not marginal brackets)"
+   },
+   "applies": "Pay to persons domiciled in Guadeloupe, from 1 May 2026, when the default (non-personalised) rate applies.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Grille des taux par défaut applicables aux contribuables domiciliés en Guadeloupe, à La Réunion et en Martinique à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 875 euros 0 %"
+    },
+    {
+     "src": 1,
+     "said": "Supérieure ou égale à 27 858 euros et inférieure à 60 893 euros 38 % Supérieure ou égale à 60 893 euros 43 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT in Guadeloupe is 8.5% at the normal rate and 2.1% at the reduced rate (for what bears 5.5% or 10% in mainland France); the scope follows the mainland rules.",
+   "value": {
+    "standard": 0.085,
+    "reduced": 0.021,
+    "followsScope": "FR"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "les taux de TVA applicables dans les collectivités de Guadeloupe, de Martinique et de La Réunion sont les suivants : - taux réduit : 2,1 % ; - taux normal : 8,5 %."
+    },
+    {
+     "src": 3,
+     "said": "le taux réduit : 2,1 % pour tous les produits et services relevant en métropole du taux réduit de 5,5 % ou du taux intermédiaire de 10 %"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "An author's royalties under a publishing contract bear VAT withheld at source by the publisher: in Guadeloupe 10% less a 0.40% flat deduction, a net 9.60%.",
+   "value": {
+    "vatWithheld": 0.096,
+    "gross": 0.1,
+    "flatDeduction": 0.004
+   },
+   "applies": "Droits d'auteur paid under a contrat d'édition, Guadeloupe, Martinique, Réunion.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Guadeloupe, Martinique, Réunion Cette retenue est égale au montant de TVA calculée au taux légalement applicable sur les droits d'auteurs ( 10 % ) diminué d'un droit à déduction fixé forfaitairement à 0,40 % , soit une retenue nette de 9,60 % ."
+    }
+   ]
+  }
+ ],
+ "country": "GP",
+ "sources": [
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/4618-PGP.html/identifiant=BOI-IR-LIQ-20-30-10-20190226",
+   "title": "BOI-IR-LIQ-20-30-10 (BOFiP-Impôts): réfaction d'impôt pour les contribuables domiciliés dans les DOM",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Dans un premier temps, l'impôt brut obtenu en appliquant le même barème qu'en métropole supporte, le cas échéant, le plafonnement des effets du quotient familial. … Dans un second temps, le montant de l'impôt ainsi déterminé est réduit : - de 30 % dans la limite de 2 450 €, pour les contribuables domiciliés dans les départements de la Guadeloupe, de la Martinique et de la Réunion ; … Les plafonds de 2 450 € et 4 050 € s'appliquent à compter de l'imposition des revenus de l'année 2018."
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/11255-PGP.html",
+   "title": "BOFiP-Impôts: grille des taux par défaut du prélèvement à la source (à compter du 1er mai 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Grille des taux par défaut applicables aux contribuables domiciliés en Guadeloupe, à La Réunion et en Martinique à compter du 1 er mai 2026 Base mensuelle de prélèvement Taux applicable Inférieure à 1 875 euros 0 % … Supérieure ou égale à 27 858 euros et inférieure à 60 893 euros 38 % Supérieure ou égale à 60 893 euros 43 %"
+  },
+  {
+   "url": "https://bofip.impots.gouv.fr/bofip/343-PGP.html/identifiant=BOI-TVA-GEO-20-10-20190605",
+   "title": "BOI-TVA-GEO-20-10 (BOFiP-Impôts): taux de TVA en Guadeloupe, Martinique et à La Réunion",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "les taux de TVA applicables dans les collectivités de Guadeloupe, de Martinique et de La Réunion sont les suivants : - taux réduit : 2,1 % ; - taux normal : 8,5 %."
+  },
+  {
+   "url": "https://www.impots.gouv.fr/professionnel/questions/quels-sont-les-differents-taux-de-tva-applicables-dans-les-dom",
+   "title": "Quels sont les différents taux de TVA applicables dans les DOM ? (impots.gouv.fr, modifié le 13/10/2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "le taux réduit : 2,1 % pour tous les produits et services relevant en métropole du taux réduit de 5,5 % ou du taux intermédiaire de 10 %"
+  },
+  {
+   "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F32113",
+   "title": "Artiste-auteur : fiscalité (Service Public Entreprendre)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Guadeloupe, Martinique, Réunion Cette retenue est égale au montant de TVA calculée au taux légalement applicable sur les droits d'auteurs ( 10 % ) diminué d'un droit à déduction fixé forfaitairement à 0,40 % , soit une retenue nette de 9,60 % ."
+  }
+ ],
+ "blockers": []
+}

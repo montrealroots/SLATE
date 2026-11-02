@@ -1,0 +1,193 @@
+{
+ "topic": "markets.writer.SE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Now add markets for writers, directors and producers\"): the terms a screenwriter works on in Sweden. Research and retry subagents (workbench/briefs/BRIEF-roles-markets*.md); every quote checked by the lead against its saved page; a scan read by OCR is marked so and its figures checked against the image.",
+ "figures": [
+  {
+   "item": "union",
+   "finding": "Swedish screenwriters' union is Dramatikerförbundet, whose members are covered automatically by its framework agreements with TV4, SVT, Sveriges Radio, UR, the producers' association Film & TV-Producenterna, the amateur-theatre federation and Svensk Scenkonst; a writer joins after two works written alone have premiered professionally (student work does not count), for SEK 2,000 a year.",
+   "value": {
+    "name": "Sveriges Dramatikerförbund",
+    "frameworkAgreements": [
+     "TV4",
+     "Sveriges Television (SVT)",
+     "Sveriges Radio (SR)",
+     "Utbildningsradion (UR)",
+     "Film & TV-Producenterna",
+     "Amatörteaterns riksförbund (ATR)",
+     "Svensk Scenkonst"
+    ],
+    "requirement": "two works written alone (more if co-written or short) professionally performed or broadcast and premiered; student productions excluded",
+    "duesPerYear": {
+     "currency": "SEK",
+     "amount": 2000
+    }
+   },
+   "applies": "Sweden; as of 2026-11-01.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Medlemmar omfattas automatiskt av de ramavtal som vi har tecknat med centrala branschaktörer. Ramavtalen reglerar bland annat ersättning, var och hur verk får visas och hur namn ska stå (kreditering). … TV4 Sveriges Television (SVT) Sveriges Radio (SR) Utbildningsradion (UR) Film & TV-Producenterna Amatörteaterns riksförbund (ATR) Svensk Scenkonst"
+    },
+    {
+     "src": 1,
+     "said": "Har du självständigt* skrivit eller översatt två verk** för film, tv, scen, radio, spel eller annat? Har du fått dessa verk uppförda eller sända i professionella sammanhang***? Har dessa verk haft premiär? Då kan du bli medlem i Dramatikerförbundet. Ett medlemskap kostar 2 000 kronor per år. … ***Studentproduktioner räknas inte som medlemsgrundande."
+    }
+   ]
+  },
+  {
+   "item": "fees",
+   "finding": "From 1 January 2025 SVT pays a complete drama script at least SEK 4,551 a minute for a 30-60 minute order (5,436 for an experienced writer with three works of 20 minutes or more totalling three hours), less for shorter or longer orders; from the fourth of more than three episodes over 90 minutes SVT may cut the fee by up to 50%, and the fee is paid in stages from rough draft to approved script.",
+   "value": {
+    "currency": "SEK",
+    "per": "minute of broadcast time, complete script",
+    "from": "2025-01-01",
+    "agreementTerm": [
+     "2025-01-01",
+     "2026-12-31"
+    ],
+    "group1": {
+     "1-19": 2898,
+     "20-29": 4456,
+     "30-60": 4551,
+     "over60": 3945
+    },
+    "group2": {
+     "1-19": 3459,
+     "20-29": 5324,
+     "30-60": 5436,
+     "over60": 4726
+    },
+    "group2Requirement": "at least three works of at least 20 minutes each, together three hours, performed",
+    "episodeReductions": {
+     "second": 0.15,
+     "third": 0.25,
+     "fourthOn": 0.5,
+     "when": "more than three episodes together over 90 minutes; 11 or more episodes fall outside the tariff"
+    },
+    "stagedPayment": "rough draft ordered: 2/8 (group 2: 3/8); rough draft delivered 1/8; complete script ordered 2/8; approved complete script the remaining 3/8"
+   },
+   "applies": "Sweden; SVT drama commissions from Dramatikerförbundet members, 2025-01-01 to 2026-12-31.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Giltighetstid: 1 januari 2025 — 31 december 2026 … Dramatiker som fått minst tre verk — vart och ett omfattande minst 20 minuter — om tillsammans tre timmar uppförda. … Vid förvärv av rättigheter avseende fullständigt manuskript utges grundersättning per minut lägst med nedan angivna belopp: Sändningstid Grupp 2 | Grupp I 25-01-01 | 25-01-01 1 min — 19 min 3 459 2 898 20 min — 29 min | 5 324 4456 30 min — 60 min | 5436 4 551 > 60 min 4 726 3 945 … Inspelning av 11 avsnitt eller fler omfattas inte av tarifferna i denna paragraf … Vid beställning utges 2/8, för dramatiker i grupp 2 dock med 3/8, av ersättningen enligt $ 5 mom 2."
+    }
+   ]
+  },
+  {
+   "item": "agreement",
+   "finding": "Independent producers' TV drama is written under the December 2014 framework agreement between Film & TV-Producenterna and Dramatikerförbundet, which does not cover feature films; a supplement signed 30 August 2023 raised its minimums to SEK 4,200 a minute for 30-60 minutes (5,250 for experienced writers), added a 17.5% buy-out of ten years' Nordic use sold in the financing, and runs in twelve-month periods.",
+   "value": {
+    "name": "Ramavtal mellan Film & TV-Producenterna och Sveriges Dramatikerförbund",
+    "signed": "2014-12-18",
+    "supplementSigned": "2023-08-30",
+    "supplementTerm": "12 months, renewing 12 months at a time unless terminated 2 months before",
+    "scope": "TV drama and drama series; not feature films",
+    "currency": "SEK",
+    "perMinute": {
+     "group1": {
+      "1-19": 2674,
+      "20-29": 4113,
+      "30-60": 4200,
+      "over60": 3642
+     },
+     "group2": {
+      "1-19": 3341,
+      "20-29": 5141,
+      "30-60": 5250,
+      "over60": 4563
+     }
+    },
+    "nordicTenYearBuyout": "17.5% of the basic fee",
+    "royaltyGrossOutsideFinancing": {
+     "default": 0.0375,
+     "nordicTenYearModel": {
+      "insideNordics": 0.06,
+      "outsideNordics": 0.0375
+     }
+    }
+   },
+   "applies": "Sweden; TV drama by Film & TV-Producenterna members with Dramatikerförbundet members; SVT broadcasts sold in the financing are excluded; from 2023-08-30.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "TILLÄGGSAVTAL till Ramavtal mellan Film & TV-Producenterna och Sveriges Dramatikerförbund av den 18 december 2014 … Sändningstid Grupp 1 Grupp 2 1-19 minuter 2674 kr/min 3341 kr/min 20-29 minuter 4113 kr/min 5141 kr/min 30-60 minuter 4200 kr/min 5250 kr/min mer än 60 minuter 3642 kr/min 4563 kr/min … Detta tilläggsavtal gäller under en inledande avtalsperiod om tolv månader från och med undertecknandet. … Stockholm den 30 augusti 2023"
+    },
+    {
+     "src": 4,
+     "said": "Ett ramavtal har äntligen undertecknats mellan Film&TV-Producenterna och Sveriges Dramatikerförbund gällande tv-drama och dramaserier. … Avtalet gäller inte långfilm. … Grundersättningen är en minutersättning på samma nivå som den som gäller i avtalet mellan SVT och Dramatikerförbundet."
+    }
+   ]
+  },
+  {
+   "item": "none",
+   "finding": "No agreement found sets a Swedish feature-film writer's pay: the producers' framework agreement with Dramatikerförbundet expressly excludes feature films, so a feature screenplay fee is individually negotiated.",
+   "value": {
+    "agreement": null,
+    "minimum": null,
+    "medium": "feature film",
+    "as_of": "2026-11-01"
+   },
+   "applies": "Sweden; feature films; as of 2026-11-01.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Avtalet gäller inte långfilm. Enskilda avtal mellan medlemsbolag och dramatiker som från och med nu kommer att tecknas ska ta sin utgångspunkt i det nya ramavtalet."
+    }
+   ]
+  }
+ ],
+ "role": "writer",
+ "country": "SE",
+ "sources": [
+  {
+   "url": "https://www.dramatiker.se/arvoden-juridik/",
+   "title": "Dramatikerförbundet: Arvoden & Juridik (framework agreements)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Medlemmar omfattas automatiskt av de ramavtal som vi har tecknat med centrala branschaktörer. Ramavtalen reglerar bland annat ersättning, var och hur verk får visas och hur namn ska stå (kreditering). … TV4 Sveriges Television (SVT) Sveriges Radio (SR) Utbildningsradion (UR) Film & TV-Producenterna Amatörteaterns riksförbund (ATR) Svensk Scenkonst"
+  },
+  {
+   "url": "https://www.dramatiker.se/bli-medlem/",
+   "title": "Dramatikerförbundet: Bli medlem",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Har du självständigt* skrivit eller översatt två verk** för film, tv, scen, radio, spel eller annat? Har du fått dessa verk uppförda eller sända i professionella sammanhang***? Har dessa verk haft premiär? Då kan du bli medlem i Dramatikerförbundet. Ett medlemskap kostar 2 000 kronor per år. … ***Studentproduktioner räknas inte som medlemsgrundande."
+  },
+  {
+   "url": "https://www.dramatiker.se/uploads/2025/04/Avtal-DF-SVT_2025.pdf",
+   "title": "Avtal mellan Sveriges Television AB och Sveriges Dramatikerförbund, 1 January 2025 to 31 December 2026 (scanned)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Giltighetstid: 1 januari 2025 — 31 december 2026 … Dramatiker som fått minst tre verk — vart och ett omfattande minst 20 minuter — om tillsammans tre timmar uppförda. … Vid förvärv av rättigheter avseende fullständigt manuskript utges grundersättning per minut lägst med nedan angivna belopp: Sändningstid Grupp 2 | Grupp I 25-01-01 | 25-01-01 1 min — 19 min 3 459 2 898 20 min — 29 min | 5 324 4456 30 min — 60 min | 5436 4 551 > 60 min 4 726 3 945 … Inspelning av 11 avsnitt eller fler omfattas inte av tarifferna i denna paragraf … Vid beställning utges 2/8, för dramatiker i grupp 2 dock med 3/8, av ersättningen enligt $ 5 mom 2."
+  },
+  {
+   "url": "https://www.dramatiker.se/uploads/2023/09/Avtal-Film-och-Tv-prod-DF-23.pdf",
+   "title": "Tilläggsavtal till Ramavtal mellan Film & TV-Producenterna och Sveriges Dramatikerförbund, 30 August 2023 (scanned)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "TILLÄGGSAVTAL till Ramavtal mellan Film & TV-Producenterna och Sveriges Dramatikerförbund av den 18 december 2014 … Sändningstid Grupp 1 Grupp 2 1-19 minuter 2674 kr/min 3341 kr/min 20-29 minuter 4113 kr/min 5141 kr/min 30-60 minuter 4200 kr/min 5250 kr/min mer än 60 minuter 3642 kr/min 4563 kr/min … Detta tilläggsavtal gäller under en inledande avtalsperiod om tolv månader från och med undertecknandet. … Stockholm den 30 augusti 2023"
+  },
+  {
+   "url": "https://filmtvp.se/manusavtal-for-tv-drama-antligen-klart/",
+   "title": "Film & TV-Producenterna: Manusavtal för TV-drama äntligen klart!",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ett ramavtal har äntligen undertecknats mellan Film&TV-Producenterna och Sveriges Dramatikerförbund gällande tv-drama och dramaserier. … Avtalet gäller inte långfilm. … Grundersättningen är en minutersättning på samma nivå som den som gäller i avtalet mellan SVT och Dramatikerförbundet. … Avtalet gäller inte långfilm. Enskilda avtal mellan medlemsbolag och dramatiker som från och med nu kommer att tecknas ska ta sin utgångspunkt i det nya ramavtalet."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "A minimum or customary fee for a Swedish feature screenplay (or a published recommendation by Dramatikerförbundet or the Swedish Film Institute).",
+   "tried": {
+    "institution": "dramatiker.se Arvoden & Juridik and members' agreement list read: no feature-film agreement; the producers' page says the agreement excludes features; the guild's fee recommendations are members-only. | Retry 2026-11-01: No new guild page; the members-only recommendations remain unread.",
+    "official-register": "Swedish Film Institute support rules not found to set a writer's fee (not read in full for this item). | Retry 2026-11-01: Dramatikerförbundet's consultation responses to the Government (regeringen.se), on Ds 2015:31 and on SOU 2025:24 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/roles-markets/writer-SE-remiss-1.pdf, /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/roles-markets/writer-SE-remiss-3.pdf), and others listed by search: no feature-film fee.",
+    "web-search": "Searched 'Dramatikerförbundet ramavtal Film & TV-Producenterna manusförfattare ersättning långfilm minimiersättning': only the exclusion found. | Retry 2026-11-01: \"manusförfattare arvode långfilm kronor Dramatikerförbundet rekommenderat arvode OR minimiarvode spelfilm manus\": no figure.",
+    "trade-press": "None found quoting a feature minimum. | Retry 2026-11-01: None.",
+    "archive": "Not tried: no candidate page to recover. | Retry 2026-11-01: web.archive.org reset the connection again (2026-11-01); archive.ph reset; arquivo.pt answered 403; not read another way."
+   }
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+{
+ "topic": "tax.UG",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Uganda: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first UGX 4,020,000 of annual chargeable income, then 20% to 4,920,000, 25% to 5,820,000, 30% to 120 million and 40% above; there is no regional income tax.",
+   "value": {
+    "currency": "UGX",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 4020000,
+      "rate": 0
+     },
+     {
+      "from": 4020000,
+      "to": 4920000,
+      "rate": 0.2
+     },
+     {
+      "from": 4920000,
+      "to": 5820000,
+      "rate": 0.25
+     },
+     {
+      "from": 5820000,
+      "to": 120000000,
+      "rate": 0.3
+     },
+     {
+      "from": 120000000,
+      "to": null,
+      "rate": 0.4
+     }
+    ]
+   },
+   "applies": "Year of income from 1 July 2026 (page reviewed 22 October 2026).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Resident individuals Annual chargeable income (UGX*) Tax on column 1 (UGX) Tax on excess (%) Over Not over 0 4,020,000 - 0 4,020,000 4,920,000 - 20 4,920,000 5,820,000 180,000 25 5,820,000 120,000,000 405,000 30 120,000,000 40"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of income runs 1 July to 30 June; the return is due within six months of its end, and provisional tax is paid in four 25% instalments in the 3rd, 6th, 9th and 12th months.",
+   "value": {
+    "start": "07-01",
+    "end": "06-30",
+    "returnDue": "within 6 months (31 December)",
+    "provisional": "4 x 25%"
+   },
+   "applies": "Year of income 2026/27.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The tax year runs from 1 July through 30 June."
+    },
+    {
+     "src": 2,
+     "said": "All taxpayers are obligated to file a return within six months of the end of the year of income."
+    },
+    {
+     "src": 2,
+     "said": "Each instalment is 25% of the individual's estimate of tax due for that year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employee pays 5% and the employer 10% of gross pay to the National Social Security Fund.",
+   "value": {
+    "employee": 0.05,
+    "employer": 0.1,
+    "ceiling": null
+   },
+   "applies": "2026; the self-employed were not covered in the sources read.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "An individual in employment is obligated to make a contribution of 5% of one’s gross earnings to the national social security fund."
+    },
+    {
+     "src": 3,
+     "said": "o make contributions to the national social security fund for each employee, amounting to 10% of their gross pay."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "From 1 July 2026 anyone who pays a resident public entertainer withholds 6% of the gross payment, whatever the amount; the employer withholds PAYE from pay.",
+   "value": {
+    "residentEntertainer": {
+     "rate": 0.06,
+     "base": "gross",
+     "from": "2026-07-01"
+    }
+   },
+   "applies": "2026/27.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Effective 1 July 2026, a 6% WHT applies on on a gross payment made to a resident public entertainer. This means that any person (whether designated as a withholding agent or not) who pays a public entertainer will be required to withhold tax at a rate of 6% on the gross payment irrespective of the amount paid."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays on Ugandan-source income from the first shilling: 10% to UGX 4,020,000, 20% to 4,920,000, 30% to 120 million and 40% above; royalties and management fees to a non-resident bear 15% withholding.",
+   "value": {
+    "currency": "UGX",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 4020000,
+      "rate": 0.1
+     },
+     {
+      "from": 4020000,
+      "to": 4920000,
+      "rate": 0.2
+     },
+     {
+      "from": 4920000,
+      "to": 120000000,
+      "rate": 0.3
+     },
+     {
+      "from": 120000000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "royaltyWithholding": 0.15
+   },
+   "applies": "2026/27; no separate non-resident entertainer rate was read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-resident individuals Annual chargeable income (UGX) Tax on column 1 (UGX) Tax on excess (%) Over Not over 0 4,020,000 - 10 4,020,001 4,920,000 402,000 20 4,920,001 120,000,000 582,000 30 120,000,001 35,106,000 40"
+    },
+    {
+     "src": 4,
+     "said": "WHT at a rate 15% therefore applies on gross dividend payments, interest, management fees, and royalty payments in respect of non-treaty countries."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 18%; a person must register once taxable supplies exceed UGX 37,500,000 in any three calendar months.",
+   "value": {
+    "currency": "UGX",
+    "standard": 0.18,
+    "registrationThreshold": {
+     "amount": 37500000,
+     "period": "3 months"
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "The standard VAT rate is 18%; some items are zero rated and others are exempt."
+    },
+    {
+     "src": 3,
+     "said": "a person is required to register for VAT if, within any period of three calendar months, one made taxable supplies exceeding UGX 37,500,000."
+    }
+   ]
+  }
+ ],
+ "country": "UG",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/uganda/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: uganda Individual - Taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ura.go.ug/",
+   "said": "Resident individuals Annual chargeable income (UGX*) Tax on column 1 (UGX) Tax on excess (%) Over Not over 0 4,020,000 - 0 4,020,000 4,920,000 - 20 4,920,000 5,820,000 180,000 25 5,820,000 120,000,000 405,000 30 120,000,000 40 … Non-resident individuals Annual chargeable income (UGX) Tax on column 1 (UGX) Tax on excess (%) Over Not over 0 4,020,000 - 10 4,020,001 4,920,000 402,000 20 4,920,001 120,000,000 582,000 30 120,000,001 35,106,000 40"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-ugandahighlights-2026.pdf",
+   "title": "Deloitte International Tax: Uganda Highlights 2026",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ura.go.ug/",
+   "said": "Tax year: The tax year runs from 1 July through 30 June."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uganda/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: uganda Individual - Tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ura.go.ug/",
+   "said": "All taxpayers are obligated to file a return within six months of the end of the year of income. … Each instalment is 25% of the individual's estimate of tax due for that year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uganda/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: uganda Individual - Other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.nssfug.org/",
+   "said": "An individual in employment is obligated to make a contribution of 5% of one’s gross earnings to the national social security fund. … o make contributions to the national social security fund for each employee, amounting to 10% of their gross pay. … The standard VAT rate is 18%; some items are zero rated and others are exempt. … a person is required to register for VAT if, within any period of three calendar months, one made taxable supplies exceeding UGX 37,500,000."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/uganda/corporate/withholding-taxes",
+   "title": "PwC Worldwide Tax Summaries: uganda Corporate - Withholding taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://ura.go.ug/",
+   "said": "Effective 1 July 2026, a 6% WHT applies on on a gross payment made to a resident public entertainer. This means that any person (whether designated as a withholding agent or not) who pays a public entertainer will be required to withhold tax at a rate of 6% on the gross payment irrespective of the amount paid. … WHT at a rate 15% therefore applies on gross dividend payments, interest, management fees, and royalty payments in respect of non-treaty countries."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "authors",
+   "sought": "Any special treatment of a resident author's royalties in Uganda.",
+   "tried": {
+    "institution": "ura.go.ug returns an empty reply to this environment (2026-11-01). || retry 2026-11-01 (world round): www.ura.go.ug answers with an empty reply again; ura.go.ug/en does not answer",
+    "official-register": "ulii.org (Income Tax Act) not read 2026-11-01. || retry 2026-11-01 (world round): ulii.org answers its search page, but the Income Tax Act page (ulii.org/en/akn/ug/act/1997/11) is a Cloudflare challenge (HTTP 403): a bot check, not read another way; parliament.go.ug and ulrc.go.ug do not answer; finance.go.ug laws page lists no Income Tax Act",
+    "web-search": "Not run for Uganda (2026-11-01). || retry 2026-11-01 (world round): WebSearch refused 2026-11-01 (the turn's shared 200-search budget exhausted)",
+    "trade-press": "PwC Worldwide Tax Summaries and Deloitte Uganda Highlights 2026: royalty withholding to residents only via government payers. || retry 2026-11-01 (world round): PwC and Deloitte Uganda 2026 (read before): royalty withholding to residents only via government payers",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || retry 2026-11-01 (world round): web.archive.org and archive.ph reset the connection; arquivo.pt answers 403"
+   }
+  }
+ ]
+}

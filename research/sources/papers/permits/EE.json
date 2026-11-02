@@ -1,0 +1,93 @@
+{
+ "country": "EE",
+ "read": "2026-11-01",
+ "route": "Registration of short-term employment",
+ "routeChanged": true,
+ "permit": {
+  "applies": "The employer, to the Police and Border Guard Board through the self-service portal, before the work begins.",
+  "first": "An employment contract or binding job offer, and a legal basis for the alien's temporary stay (a visa or visa-free stay); the employer entered in the Estonian commercial register.",
+  "fees": [
+   {
+    "what": "State fee, registration of short-term employment, at the self-service portal",
+    "amount": "130.00",
+    "currency": "EUR"
+   },
+   {
+    "what": "State fee, registration of short-term employment, at a service office (including by post or e-mail)",
+    "amount": "140.00",
+    "currency": "EUR"
+   }
+  ],
+  "processing": {
+   "standard": {
+    "n": 15,
+    "unit": "business-days"
+   },
+   "premium": null
+  },
+  "validity": {
+   "n": 365,
+   "unit": "days",
+   "renewable": null
+  },
+  "union": null,
+  "eligibility": "the alien has would comply with the requisite qualifications, training, state of health, work experience and the necessary professional skills and knowledge to assume such position",
+  "pay": "The employer must pay at least the annual average gross monthly salary last published by Statistics Estonia (Aliens Act § 107(1)); this doesn't apply to employment in a performing arts institution as a person engaged in creative activities (§ 107(1²) 1).",
+  "exempt": {
+   "days": 5,
+   "within": 30
+  }
+ },
+ "sources": [
+  {
+   "url": "https://www.politsei.ee/en/instructions/working-in-estonia/registration-of-short-term-employment",
+   "title": "Police and Border Guard Board, Registration of short-term employment",
+   "read": "2026-11-01",
+   "said": "Submit the application to the Police and Border Guard Board through the self-service portal . What documents are required for the application of short term employment registration? copy of foreigners Passport compliant photo of a foreigner copy of employment contract or binding job offer proof of payment of the state fee, such as a payment order. … As a rule, short-term employment is registered, or registration is refused, within 15 working days from the day following the acceptance of the application for processing, or from the day the deficiencies in the application are remedied.",
+   "kind": "primary",
+   "fields": [
+    "applies",
+    "first",
+    "processing"
+   ]
+  },
+  {
+   "url": "https://www.politsei.ee/en/instructions/state-fee-amounts/registration-of-short-term-employment",
+   "title": "Police and Border Guard Board, State fee amounts: Registration of short-term employment (from 1 January 2025)",
+   "read": "2026-11-01",
+   "said": "State fees from the 1st of January 2025 At a service office (including by post or e-mail) At the self-service portal At a foreign representation Registration of short-term employment 140 € 130 € -",
+   "kind": "primary",
+   "fields": [
+    "fees"
+   ]
+  },
+  {
+   "url": "https://www.riigiteataja.ee/public-api/api/v1/en/akt/506012026003/blob-html",
+   "title": "Riigi Teataja, Aliens Act (English translation, in force from 1 January 2026), §§ 105–107",
+   "read": "2026-11-01",
+   "said": "An alien who has a legal basis for temporary stay in Estonia and whose employment has been registered with the Police and Border Guard Board before the employment commences, may take employment in Estonia for a short term. … the alien has would comply with the requisite qualifications, training, state of health, work experience and the necessary professional skills and knowledge to assume such position; … Short-term employment in Estonia is permitted for up to 365 days within 455 consecutive days unless otherwise provided for in this Act. … An employer is obliged to pay an alien whose short-term employment in Estonia has been registered a remuneration in the amount equal to at least the annual average gross monthly salary last published by Statistics Estonia. … employment in a performing arts institution as person engaged in creative activities for the purposes of the Performing Arts Institutions Act; … who has a legal basis for the stay in Estonia, whose employment is of temporary nature and whose term of employment does not exceed five days within the period of 30 days;",
+   "kind": "primary",
+   "fields": [
+    "route",
+    "eligibility",
+    "validity",
+    "pay",
+    "exempt"
+   ]
+  }
+ ],
+ "blockers": [
+  {
+   "field": "union",
+   "sought": "Any union consultation",
+   "tried": {
+    "institution": "The Board's registration page names none.",
+    "official-register": "Aliens Act §§ 104–107 name none.",
+    "web-search": "'politsei.ee short-term employment registration state fee creative activity artist performer Estonia': none.",
+    "trade-press": "None found.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01)."
+   }
+  }
+ ],
+ "note": "Layer 3 names the temporary residence permit for employment; a foreign performer engaged for up to 365 days within 455 works on the employer's registration of short-term employment with the Police and Border Guard Board, which is the route for an engagement, the residence permit being for longer employment."
+}

@@ -25,6 +25,9 @@ export default {
     '!**/*.test.ts',
   ],
   coverageAnalysis: 'perTest',
+  // The initial run of the whole suite, instrumented for 30,801 mutants (2026-11-02), takes longer than Stryker's
+  // default five minutes on a 4-core machine; a layer's proof failed on that alone before a mutant was tried.
+  dryRunTimeoutMinutes: 60,
   // Stryker would write a type-check-disabling header into every file it copies, the owner's kept source included,
   // which the owner-documents lock rightly calls a change. Vitest doesn't type-check, so nothing needs it.
   disableTypeChecks: false,

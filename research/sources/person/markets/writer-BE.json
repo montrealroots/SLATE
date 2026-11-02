@@ -1,0 +1,77 @@
+{
+ "topic": "markets.writer.BE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a screenwriter works on in Belgium. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "union",
+   "finding": "Flemish screenwriters' professional body is the Scenaristengilde: anyone who sold a script or received author's rights for one in the last five years may join as a full member, others as aspirant members.",
+   "value": {
+    "name": "Scenaristengilde",
+    "full": "sold a screenplay or received author's rights in the last 5 years",
+    "aspirant": "otherwise",
+    "fees": null
+   },
+   "applies": "Belgium (Flanders), screenwriters, 2026.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Heb je de afgelopen 5 jaar een scenario verkocht of er auteursrechten voor ontvangen, dan kun je volwaardig lid worden. Voldoe je niet aan die voorwaarden, dan kun je aspirant-lid worden."
+    }
+   ]
+  },
+  {
+   "item": "none",
+   "finding": "No collective minimum sets a Belgian screenwriter's fee: the Scenaristengilde's own worked example has a beginner offered €1,000 gross an episode (6 x 14 min) for writing, polish and all rights, negotiating to at least €1,400, after €2,500 for one script and six treatments before funding, which the guild calls below standard.",
+   "value": {
+    "role": "writer",
+    "minimum": null,
+    "example": {
+     "form": "web series, 6 x 14 min",
+     "preFundingFlatEUR": 2500,
+     "offeredPerEpisodeEUR": 1000,
+     "negotiatedPerEpisodeEUR": 1400,
+     "gross": true
+    },
+    "presumptionOfTransfer": "rights pass to the producer once a fee is paid, even without a contract"
+   },
+   "applies": "Belgium (Flanders), screenwriters; guild example published by 2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "De producent is uiteindelijk bereid een vast bedrag van 2.500 euro bruto te betalen voor het uitwerken van één scenario en de treatments van 6 afleveringen (14 minuten per aflevering). … Voor bovengenoemde taken en de afstand van rechten stelt het productiehuis haar 1.000 euro bruto per aflevering voor. … Fatma slaagt in haar opzet en sleept uiteindelijk een vergoeding van minimum 1.400 euro bruto per aflevering uit de brand … Het is duidelijk dat de vergoeding in huidig voorbeeld ondermaats is en dus niet voldoet."
+    }
+   ]
+  }
+ ],
+ "country": "BE",
+ "sources": [
+  {
+   "url": "https://www.scenaristengilde.be/",
+   "title": "Scenaristengilde (home)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Heb je de afgelopen 5 jaar een scenario verkocht of er auteursrechten voor ontvangen, dan kun je volwaardig lid worden. Voldoe je niet aan die voorwaarden, dan kun je aspirant-lid worden."
+  },
+  {
+   "url": "https://www.scenaristengilde.be/kenniscentrum/hoeveel-verdient-de-scenarist-vijf-inkomstenscenarios",
+   "title": "Scenaristengilde: Hoeveel verdient de scenarist? Vijf inkomstenscenario's",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De producent is uiteindelijk bereid een vast bedrag van 2.500 euro bruto te betalen voor het uitwerken van één scenario en de treatments van 6 afleveringen (14 minuten per aflevering). … Voor bovengenoemde taken en de afstand van rechten stelt het productiehuis haar 1.000 euro bruto per aflevering voor. … Fatma slaagt in haar opzet en sleept uiteindelijk een vergoeding van minimum 1.400 euro bruto per aflevering uit de brand … Het is duidelijk dat de vergoeding in huidig voorbeeld ondermaats is en dus niet voldoet."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "fees",
+   "sought": "Minimum screenwriter fees by form (Scenaristengilde income scenario for a feature is members only)",
+   "tried": {
+    "institution": "scenaristengilde.be: the feature-film scenario page is members-only (\"Deze informatie is enkel beschikbaar voor leden\") || retry 2026-11-01: https://www.vaf.be/ read (home page; no producer-fee cap or writer fee scale linked); scenaristengilde.be feature-film scenario remains members-only",
+    "official-register": "no CCT covers screenwriters in the SCP 303.01 function list || retry 2026-11-01: WIPO Lex country profile https://www.wipo.int/wipolex/en/members/profile/BE read 2026-11-01 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/markets-world/BE-wipolex.html): lists copyright and media laws, none setting this; FPS Finance tax-shelter page still bot-checks (not read another way)",
+    "web-search": "search \"Scenaristengilde richtprijzen scenario langspeelfilm\" found nothing || retry 2026-11-01: \"VAF reglement productie langspeelfilm producentenloon algemene kosten maximum percentage\": no reglement text in the results",
+    "trade-press": "none || retry 2026-11-01: none quoting a VAF or CCA cap",
+    "archive": "not tried || retry 2026-11-01: archive.org availability API answered 429 Too Many Requests and web.archive.org/web/2025/https://scenaristengilde.be/ reset the connection (curl 35), 2026-11-01; no snapshot read"
+   }
+  }
+ ]
+}

@@ -1,0 +1,235 @@
+{
+ "topic": "tax.AD",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Andorra: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Income tax is a single 10% rate (art. 43) on the general base after a personal exempt minimum of €24,000 (€40,000 with a dependent spouse or partner without income); work, business and property income then gets a bonus of 50% of the tax on the base above €24,000, capped at €800, which makes the effective rate 5% between €24,000 and €40,000.",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.1,
+    "allowance": 24000,
+    "allowanceWithDependentSpouse": 40000,
+    "bonus": {
+     "share": 0.5,
+     "onBaseAbove": 24000,
+     "cap": 800
+    },
+    "effectiveBrackets": [
+     {
+      "from": 0,
+      "to": 24000,
+      "rate": 0
+     },
+     {
+      "from": 24000,
+      "to": 40000,
+      "rate": 0.05
+     },
+     {
+      "from": 40000,
+      "to": null,
+      "rate": 0.1
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Tax residents of Andorra; law in force since 2015.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 43 Tipus de gravamen El tipus de gravamen de l’impost és el 10 per cent."
+    },
+    {
+     "src": 0,
+     "said": "Els obligats tributaris poden reduir la base de tributació general, en concepte de reducció per mínim personal exempt, en un import de 24.000 euros."
+    },
+    {
+     "src": 0,
+     "said": "es dedueix de la quota de tributació una bonifica- ció del 50 per cent de la quantitat que resulti d’aplicar el tipus de gravamen de l’impost sobre l’import de la base de tributació general de l’obligat tributari, minorada en la quantitat de 24.000 eu- ros corresponents a la reducció prevista en el primer paràgraf de l’apartat 1 de l’article 35 a què tingui dret. Aquesta bonificació no pot excedir la quantitat de 800 euros."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax period is the calendar year and the tax falls due on its last day.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31"
+   },
+   "applies": "Residents.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "període impositiu coincideix amb l’any natural."
+    },
+    {
+     "src": 0,
+     "said": "Article 41 Meritació de l’impost L’impost es merita l’últim dia del pe- ríode impositiu."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The payer withholds on work income, using the Finance Ministry's tools to compute it and paying it in through the CASS, so most employees need not self-assess.",
+   "value": {
+    "employment": "withheld by the payer, computed with the ministry's tools"
+   },
+   "applies": "Residents' work income.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "es trasllada aquesta obligació al retenidor i es posa al servei d’aquest últim, en relació amb les rendes del treball, les eines de les que el ministeri encarregat de les finances disposa per calcular les retencions i les que la Caixa Andorrana de Seguretat Social ofereix per ingres- sar-les davant del ministeri encarregat de les finances."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident pays non-residents' income tax (IRNR): work income in Andorra bears 10%; a frontier or seasonal worker may opt into IRPF rules (the €24,000 minimum and the bonus) within 10 days of starting, otherwise the payer withholds 10%.",
+   "value": {
+    "rate": 0.1,
+    "frontierSeasonalOption": {
+     "allowance": 24000,
+     "bonus": true,
+     "optWithinDays": 10
+    }
+   },
+   "applies": "Non-residents' work income, from 1 January 2015.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Als qui no s’acullin al règim especial, se’ls aplicarà a les rendes del treball que obtinguin el tipus de gravamen de l’IRNR (10%)."
+    },
+    {
+     "src": 1,
+     "said": "el pagador de les rendes practicarà una retenció del 10%, essent aplicable aquest règim especial si l’obligat tributari presenta la declaració de l’impost sobre la renda dels no-residents fiscals."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "An employee pays 6.5% of pay to the CASS (3% general branch, 3.5% retirement) and the employer 15.5% (7% and 8.5%), 22% in all, with no ceiling stated on the CASS page; a self-employed person pays 22% (10% general, 12% retirement) on a base set as a share of the previous year's average monthly wage, 100% of it (EUR 2,672.52, a EUR 587.95 monthly contribution) unless income and turnover allow a reduced 25% to 75% base, or a chosen 125% or 137.5%.",
+   "value": {
+    "currency": "EUR",
+    "employee": {
+     "general": 0.03,
+     "retirement": 0.035,
+     "total": 0.065
+    },
+    "employer": {
+     "general": 0.07,
+     "retirement": 0.085,
+     "total": 0.155
+    },
+    "total": 0.22,
+    "ceiling": null,
+    "workingPensioner": {
+     "employee": 0.03,
+     "employer": 0.07
+    },
+    "selfEmployed": {
+     "general": 0.1,
+     "retirement": 0.12,
+     "monthlyBase100": 2672.52,
+     "monthlyContribution100": 587.95,
+     "baseShares": [
+      0.25,
+      0.5,
+      0.625,
+      0.75,
+      1.0,
+      1.25,
+      1.375
+     ],
+     "default": 1.0
+    }
+   },
+   "applies": "Employees and self-employed workers insured with the CASS; figures as on the CASS pages read 2026-11-01 (the page does not name the year of the average wage; the Llei del pressupost may change the euro amounts each year).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Els percentatges de la cotització de la persona assalariada o assimilada PART ASSALARIADA PART EMPRESARIAL TOTAL General Jubilació Total part assalariada General Jubilació Total part empresarial 3 % 3,5 % 6,5 % 7% 8,5 % 15,5 % 22 % L’empresari té l’obligació de descomptar al treballador del seu salari el 6,5 % (percentatge de la part assalariada)"
+    },
+    {
+     "src": 3,
+     "said": "100 % del Salari Global Mensual Mitjà - Cotització de 587,95 € Base de cotització global Branca general 10 % Branca Jubilació 12 % Quota 2672,52 € 267,25 € 320,70 € 587,95 € … Han de cotitzar d'acord amb les bases de cotització previstes per la Llei 11/2023 de la Seguretat Social, del 25 %, 50 %, 62,5 %, 75 %, 100 %, 125 % i 137,5 % del salari global mensual mitjà de l'any anterior … A manca de declaració es liquida sobre la base del 100 %"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's services bear the IGI at the general 4.5% rate; a person whose supplies of goods and services do not exceed EUR 40,000 a year is not treated as a business or professional for the IGI unless they opt in (2014 consolidated text; later amendments not read).",
+   "value": {
+    "currency": "EUR",
+    "rate": 0.045,
+    "reducedRate": 0.01,
+    "superReducedRate": 0,
+    "threshold": 40000,
+    "optIn": true
+   },
+   "applies": "IGI, Llei 11/2012 as consolidated by Decret legislatiu of 23 July 2014 (BOPA núm. 45, 30.7.2014).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "No tenen la consideració d’empresaris o professionals als efectes d’aquest impost quan l’import dels lliuraments de béns i les prestacions de serveis efectuats no superi la xifra anual de 40.000 euros, excepte que de forma expressa optin per ser considerats com a tals. … El tipus de gravamen general és d’un 4,5% i s’exigeix sempre que no es prevegi expressament l’aplicació d’un altre tipus de gravamen."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "The IRPF gives authors no special rate: it classes licences of copyright on literary, artistic or scientific works, audiovisual productions included, as movable-capital income only when the rights are granted by someone other than the author, so an author's own fees and royalties are taxed with work or business income at the single 10% rate.",
+   "value": {
+    "specialRate": null,
+    "authorsOwnRoyalties": "work-or-activity income",
+    "thirdPartyRoyalties": "movable-capital income"
+   },
+   "applies": "Llei 5/2014 de l'IRPF, art. 22.4.c.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "c) Qualsevol concessió o autorització d’ús o cessió o llicència de drets d’autor sobre obres literàries, artístiques o científiques, incloses les produccions audiovisuals i els programes, les aplicacions i els sistemes informàtics, així com els drets veïns als drets d’autor realitzades per persones diferents de l’autor."
+    }
+   ]
+  }
+ ],
+ "country": "AD",
+ "sources": [
+  {
+   "url": "https://www.consellgeneral.ad/ca/arxiu/arxiu-de-lleis-i-textos-aprovats-en-legislatures-anteriors/vi-legislatura-2011-2015/copy_of_lleis-aprovades/llei-5-2014-del-24-d2019abril-de-l2019impost-sobre-la-renda-de-les-persones-fisiques/at_download/PDF",
+   "title": "Llei 5/2014, del 24 d'abril, de l'impost sobre la renda de les persones físiques (BOPA núm. 30, 21.5.2014)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Article 43 Tipus de gravamen El tipus de gravamen de l’impost és el 10 per cent. … Els obligats tributaris poden reduir la base de tributació general, en concepte de reducció per mínim personal exempt, en un import de 24.000 euros. … es dedueix de la quota de tributació una bonifica- ció del 50 per cent de la quantitat que resulti d’aplicar el tipus de gravamen de l’impost sobre l’import de la base de tributació general de l’obligat tributari, minorada en la quantitat de 24.000 eu- ros corresponents a la reducció prevista en el primer paràgraf de l’apartat 1 de l’article 35 a què tingui dret. Aquesta bonificació no pot excedir la quantitat de 800 euros. … període impositiu coincideix amb l’any natural. … Article 41 Meritació de l’impost L’impost es merita l’últim dia del pe- ríode impositiu. … es trasllada aquesta obligació al retenidor i es posa al servei d’aquest últim, en relació amb les rendes del treball, les eines de les que el ministeri encarregat de les finances disposa per calcular les retencions i les que la Caixa Andorrana de Seguretat Social ofereix per ingres- sar-les davant del ministeri encarregat de les finances. … c) Qualsevol concessió o autorització d’ús o cessió o llicència de drets d’autor sobre obres literàries, artístiques o científiques, incloses les produccions audiovisuals i els programes, les aplicacions i els sistemes informàtics, així com els drets veïns als drets d’autor realitzades per persones diferents de l’autor."
+  },
+  {
+   "url": "https://govern.ad/documents/d/guest/irnr2015",
+   "title": "Règim especial de fronterers i temporers IRNR (Govern d'Andorra, Departament de Tributs i de Fronteres)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Als qui no s’acullin al règim especial, se’ls aplicarà a les rendes del treball que obtinguin el tipus de gravamen de l’IRNR (10%). … el pagador de les rendes practicarà una retenció del 10%, essent aplicable aquest règim especial si l’obligat tributari presenta la declaració de l’impost sobre la renda dels no-residents fiscals."
+  },
+  {
+   "url": "https://www.cass.ad/cotitzacions-recarrecs-sancions",
+   "title": "CASS: Cotitzacions, recàrrecs i sancions (assalariats)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Els percentatges de la cotització de la persona assalariada o assimilada PART ASSALARIADA PART EMPRESARIAL TOTAL General Jubilació Total part assalariada General Jubilació Total part empresarial 3 % 3,5 % 6,5 % 7% 8,5 % 15,5 % 22 % L’empresari té l’obligació de descomptar al treballador del seu salari el 6,5 % (percentatge de la part assalariada)"
+  },
+  {
+   "url": "https://www.cass.ad/cotitzacions-del-treballadors-per-compte-propi",
+   "title": "CASS: Cotitzacions dels treballadors per compte propi",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "100 % del Salari Global Mensual Mitjà - Cotització de 587,95 € Base de cotització global Branca general 10 % Branca Jubilació 12 % Quota 2672,52 € 267,25 € 320,70 € 587,95 € … Han de cotitzar d'acord amb les bases de cotització previstes per la Llei 11/2023 de la Seguretat Social, del 25 %, 50 %, 62,5 %, 75 %, 100 %, 125 % i 137,5 % del salari global mensual mitjà de l'any anterior … A manca de declaració es liquida sobre la base del 100 %"
+  },
+  {
+   "url": "https://www.consellgeneral.ad/ca/arxiu/arxiu-de-lleis-i-textos-aprovats-en-legislatures-anteriors/vi-legislatura-2011-2015/copy_of_lleis-aprovades/decret-legislatiu-del-23-07-2014-de-publicacio-del-text-refos-de-la-llei-11-2012-del-21-de-juny-de-l2019impost-general-indirecte/at_download/PDF",
+   "title": "Decret legislatiu del 23-07-2014 de publicació del text refós de la Llei 11/2012, del 21 de juny, de l'impost general indirecte",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "No tenen la consideració d’empresaris o professionals als efectes d’aquest impost quan l’import dels lliuraments de béns i les prestacions de serveis efectuats no superi la xifra anual de 40.000 euros, excepte que de forma expressa optin per ser considerats com a tals. … El tipus de gravamen general és d’un 4,5% i s’exigeix sempre que no es prevegi expressament l’aplicació d’un altre tipus de gravamen."
+  }
+ ],
+ "blockers": []
+}

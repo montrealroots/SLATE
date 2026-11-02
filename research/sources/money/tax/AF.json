@@ -1,0 +1,179 @@
+{
+ "topic": "tax.AF",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Afghanistan: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Under the Income Tax Law 2009 a person's monthly income is taxed at 0% to AFN 5,000, 2% to 12,500, 10% plus AFN 150 to 100,000 and 20% plus AFN 8,900 above.",
+   "value": {
+    "currency": "AFN",
+    "period": "monthly",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 5000,
+      "rate": 0
+     },
+     {
+      "from": 5000,
+      "to": 12500,
+      "rate": 0.02
+     },
+     {
+      "from": 12500,
+      "to": 100000,
+      "rate": 0.1
+     },
+     {
+      "from": 100000,
+      "to": null,
+      "rate": 0.2
+     }
+    ],
+    "regional": null
+   },
+   "applies": "Law as published in 2009; whether it is applied unchanged in 2026 (including the Revenue Department's July 2026 reduction guidelines reported in the press) was not confirmed from a primary source.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "(3) The income tax of natural persons shall be the amount calculated in accordance with the following schedule: From Afs.0 to Afs.5,000 monthly 0% From Afs.5,001 to Afs.12,500 2% From Afs. 12,501 to Afs. 100,000 10% + Afs. 150 fixed amount From Afs. 100,000 and above 20% + Afs.8,900 fixed amount."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the solar year, from 1 Hamal (21 March) to the last day of Hoot (20 March).",
+   "value": {
+    "start": "03-21",
+    "end": "03-20"
+   },
+   "applies": "Income Tax Law 2009 art. 3.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "The tax year is the solar (Hejiri Shamsi) year which starts on the first day of Hamal (21 March) and ends on the last day of Hoot (20 March) of that year."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident engaged in services or business in Afghanistan is taxed on Afghan-source income; one not in business is taxed on interest, dividends, rents, royalties and other Afghan-source income.",
+   "value": {
+    "rate": null
+   },
+   "applies": "Income Tax Law 2009 arts 7-8; the rate on a performer's fee was not found.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Non-resident natural and legal persons engaged in economic, service or business activities in Afghanistan shall be subject to tax on their income from sources within Afghanistan."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Every employer withholds income tax from salaries and wages at the monthly schedule of Article 4 and remits it within 10 days after the month's end; a person paying a contractor withholds 7% of the gross (a fixed tax in lieu of income tax) where the contractor has no business licence, or 2% (creditable) where it has one, and legal persons withhold 20% from royalties, prizes, bonuses and service charges.",
+   "value": {
+    "currency": "AFN",
+    "salary": "monthly schedule (residents)",
+    "remitWithinDaysAfterMonth": 10,
+    "contractorUnlicensed": {
+     "rate": 0.07,
+     "final": true
+    },
+    "contractorLicensed": {
+     "rate": 0.02,
+     "final": false
+    },
+    "royaltiesAndServiceCharges": 0.2
+   },
+   "applies": "Income Tax Law 2009 (Official Gazette No. 976), as translated in August 2009; amendments since, including the Revenue Department's guidelines of 14 July 2026, not read (see the residents blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 58 Withholding and payment of tax All natural or legal profit and non profit … Article 60 Remittance of tax payments Any employer required to withhold tax under Article 58 of this Law shall remit to the State the amount withheld not later than 10 days after the end of the month in which the amounts were withheld. … shall be subject to 7 percent fixed tax in lieu of income tax. This tax is withheld from the gross amount payable to the contractor. (2) Persons who have a business license and provide the services and other activities mentioned in paragraph (1) of this Article to the specified entities shall be subject to 2 percent contractor tax. … 2. twenty percent tax from interest, dividends, royalties, prizes, rewards, lotteries, bakhshishis (gratuities), bonuses, and service charges according to the provisions of this Law."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident who provides entertainment in Afghanistan (theatre, films, radio, television, music) pays a fixed tax of 10% of ticket and admission receipts in lieu of income tax and business receipts tax; a non-resident hired for a fee (no tickets) falls under the general rules: tax on Afghan-source income, with the 7% (unlicensed) or 2% contractor withholding on services under contract.",
+   "value": {
+    "entertainmentFixedTax": {
+     "rate": 0.1,
+     "base": "receipts from admission or tickets",
+     "final": true
+    },
+    "otherServices": "contractor withholding 7% unlicensed (final) or 2% licensed"
+   },
+   "applies": "Income Tax Law 2009, arts. 8, 72, 73, as translated in August 2009; later amendments not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 73 Fixed tax of exhibition income (1) Fixed tax shall be applied to natural persons who are residents of Afghanistan and to natural and legal persons who are non-residents of Afghanistan. (2) Persons mentioned in paragraph (1) of this Article who provide entertainment such as theatre, exhibition of films, radio, television, music, or sports competition in Afghanistan shall be subject to a fixed tax of ten … percent of receipts from sale of admission or tickets. The fixed tax shall be imposed in lieu of income tax and business receipts tax."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors get no special rate: royalties paid by a legal person bear the 20% withholding of Article 46, and royalties from Afghan sources are income of a non-resident too.",
+   "value": {
+    "royaltyWithholding": 0.2,
+    "specialRate": null
+   },
+   "applies": "Income Tax Law 2009, arts. 7 and 46, as translated in August 2009; later amendments not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Article 46 Withholding tax (1) Profit or non-profit legal persons formed under the laws of Afghanistan shall be required to withhold income tax as follows: … 2. twenty percent tax from interest, dividends, royalties, prizes, rewards, lotteries, bakhshishis (gratuities), bonuses, and service charges according to the provisions of this Law."
+    }
+   ]
+  }
+ ],
+ "country": "AF",
+ "sources": [
+  {
+   "url": "https://www.acbar.org/upload/1493209950200.pdf",
+   "title": "Income Tax Law 2009 (Official Gazette No. 976, 18 March 2009), unofficial English translation version 8, August 2009, hosted by ACBAR",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mof.gov.af/",
+   "said": "(3) The income tax of natural persons shall be the amount calculated in accordance with the following schedule: From Afs.0 to Afs.5,000 monthly 0% From Afs.5,001 to Afs.12,500 2% From Afs. 12,501 to Afs. 100,000 10% + Afs. 150 fixed amount From Afs. 100,000 and above 20% + Afs.8,900 fixed amount. … The tax year is the solar (Hejiri Shamsi) year which starts on the first day of Hamal (21 March) and ends on the last day of Hoot (20 March) of that year. … Non-resident natural and legal persons engaged in economic, service or business activities in Afghanistan shall be subject to tax on their income from sources within Afghanistan. … Article 58 Withholding and payment of tax All natural or legal profit and non profit … Article 60 Remittance of tax payments Any employer required to withhold tax under Article 58 of this Law shall remit to the State the amount withheld not later than 10 days after the end of the month in which the amounts were withheld. … shall be subject to 7 percent fixed tax in lieu of income tax. This tax is withheld from the gross amount payable to the contractor. (2) Persons who have a business license and provide the services and other activities mentioned in paragraph (1) of this Article to the specified entities shall be subject to 2 percent contractor tax. … 2. twenty percent tax from interest, dividends, royalties, prizes, rewards, lotteries, bakhshishis (gratuities), bonuses, and service charges according to the provisions of this Law. … Article 73 Fixed tax of exhibition income (1) Fixed tax shall be applied to natural persons who are residents of Afghanistan and to natural and legal persons who are non-residents of Afghanistan. (2) Persons mentioned in paragraph (1) of this Article who provide entertainment such as theatre, exhibition of films, radio, television, music, or sports competition in Afghanistan shall be subject to a fixed tax of ten … percent of receipts from sale of admission or tickets. The fixed tax shall be imposed in lieu of income tax and business receipts tax. … Article 46 Withholding tax (1) Profit or non-profit legal persons formed under the laws of Afghanistan shall be required to withhold income tax as follows: … 2. twenty percent tax from interest, dividends, royalties, prizes, rewards, lotteries, bakhshishis (gratuities), bonuses, and service charges according to the provisions of this Law."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "Confirmation of the schedule in force in 2026 and the July 2026 Revenue Department guidelines",
+   "tried": {
+    "institution": "mof.gov.af home page reachable; its tax guides (Guide 04, Guide 15) return HTTP 404 (2026-11-01); no current rate page found || 2026-11-01 retry: mof.gov.af/en/tax-laws, /en/revenue, /en/laws-and-regulations return a script-only shell with no content; ard.gov.af returns a PHP fatal error; mof.gov.af/en/node/648 has no rate text",
+    "official-register": "Official Gazette No. 976 not found online || 2026-11-01 retry: MoF documents page (mof.gov.af/en/documents) script-only; the 2019 guide PDFs under mof.gov.af/sites/default/files/2019-03/ return 404",
+    "web-search": "'Afghanistan Revenue Department income tax law salary withholding rates ...' and '\"Income Tax Law\" 2009 pdf \"5,000\" \"12,500\" ...' (2026-11-01): found the 2009 law translation (used) and commercial guides || 2026-11-01 retry: 'mof.gov.af income tax law 1405 salary tax rates Afghanistan Revenue Department 2026' and, in Dari, 'رهنمود تطبیق تخفیف و تعدیل مالیات ریاست عمومی عواید ۱۴۰۵ مالیات بر معاش': no official schedule; a mof.gov.af 2026-07 newsletter PDF link returned 404",
+    "trade-press": "Rivermate, Kakar Advocates, Orbitax seen in results only; not relied on || 2026-11-01 retry: Orbitax news, 11 August 2026 (saved /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/AF-orbitax-62778.html): 'The Afghanistan Revenue Department published Guidelines for Implementing Tax Reductions and Adjustments on 14 July 2026 ... The annual individual tax brackets are adjusted with a higher tax-exempt threshold, the elimination of the 2% bracket' (the rest behind a paywall, not read): the 2009 schedule is likely superseded for 2026, the new figures not found",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org availability API lists a snapshot of mof.gov.af/en/documents of 2026-07-31; web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "Any social contribution on pay",
+   "tried": {
+    "institution": "mof.gov.af home page reachable; its tax guides (Guide 04, Guide 15) return HTTP 404 (2026-11-01); no current rate page found || 2026-11-01 retry: mof.gov.af pages script-only; Ministry of Labour and Social Affairs (molsa.gov.af) not reached by search",
+    "official-register": "Official Gazette No. 976 not found online || 2026-11-01 retry: the 1987 labour code is named by the US SSA's 2002 summary; no current text found",
+    "web-search": "'Afghanistan Revenue Department income tax law salary withholding rates ...' and '\"Income Tax Law\" 2009 pdf \"5,000\" \"12,500\" ...' (2026-11-01): found the 2009 law translation (used) and commercial guides || 2026-11-01 retry: 'Afghanistan social security contribution private sector employees pension law employer contribution percent salary': US SSA 2002 summary gives 3% for insured persons; other results conflict (no employer share, or 50%/20%) and say the public pension programme is suspended",
+    "trade-press": "Rivermate, Kakar Advocates, Orbitax seen in results only; not relied on || 2026-11-01 retry: Rivermate and Lloyds Bank Trade pages in results, conflicting and naming no primary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Business receipts tax on a freelancer's fee in 2026: the 2009 law (arts. 64, 66) sets 2% on gross receipts for a natural person with sales of AFN 750,000 or more a quarter, but secondary sources give 4% for 'all other industries'; which is in force is not settled",
+   "tried": {
+    "institution": "mof.gov.af home page reachable; its tax guides (Guide 04, Guide 15) return HTTP 404 (2026-11-01); no current rate page found || 2026-11-01 retry: mof.gov.af BRT guide not reachable (2019 guide paths 404, site script-only)",
+    "official-register": "Official Gazette No. 976 not found online || 2026-11-01 retry: Income Tax Law 2009 (ACBAR translation, /tmp/claude-0/-home-user-SLATE/cfe06f79-0641-529e-b709-1fcd46045c09/scratchpad/dl/tax/AF-itl-2009-acbar.pdf) arts. 64, 66 read: 2%, threshold Afs. 750,000 a quarter; no later amendment text found",
+    "web-search": "'Afghanistan Revenue Department income tax law salary withholding rates ...' and '\"Income Tax Law\" 2009 pdf \"5,000\" \"12,500\" ...' (2026-11-01): found the 2009 law translation (used) and commercial guides || 2026-11-01 retry: 'Afghanistan business receipts tax increased 2% to 4% amendment income tax law 1394 contractor withholding': summaries list 4% flat for all other industries, no primary named",
+    "trade-press": "Rivermate, Kakar Advocates, Orbitax seen in results only; not relied on || 2026-11-01 retry: Kakar Advocates tax calculator and HKTDC belt-and-road page in results, naming no primary",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: web.archive.org resets the connection from this environment"
+   }
+  }
+ ]
+}

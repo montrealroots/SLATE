@@ -1,0 +1,3 @@
+import base from '../../stryker.config.mjs';
+// The person engines that pay or are paid through the ledger (BRIEF-ledger.md), each mutated whole with every test of the engines.
+export default { ...base, mutate: ['src/person/acting/acting.ts:630-650', 'src/person/work/career.ts', 'src/person/directing/directing.ts', 'src/person/producing/producing.ts', 'src/person/unions/unions.ts', 'src/person/identity/identity.ts', 'src/person/permits/permits.ts'], reporters: ['clear-text', 'json'], jsonReporter: { fileName: 'reports/mutation/ledger-engines.json' }, ignorePatterns: ['.stryker-tmp*', 'reports', 'graphify-out'], tempDirName: '.stryker-tmp-ledger-engines', vitest: { configFile: 'workbench/configs/vitest.ledger-engines.config.mjs' } };

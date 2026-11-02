@@ -1,0 +1,137 @@
+{
+ "topic": "markets.producer.TH",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Want it done now\", of the markets of every country beyond the 21; then \"Retry the blocked market facts once all countries land\"): the terms a producer works on in Thailand. Research, retry and web-search subagents (workbench/briefs/BRIEF-markets-world.md, -retry.md, -search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "incentive",
+   "finding": "The Thailand Film Office's cash rebate for foreign productions (from 1 January 2025) is tiered by spend in Thailand: 15% from THB 50 million, 20% for THB 100-150 million, 25% above THB 150 million, up to 30% with bonuses (5% for promoting Thai tourism and soft power, 5% for Thai nationals in key roles, further points for designated locations and Thai post-production).",
+   "value": {
+    "name": "Thailand Film Office cash rebate (Department of Tourism)",
+    "from": "2025-01-01",
+    "currency": "THB",
+    "tiers": [
+     {
+      "minSpend": 50000000,
+      "rate": 0.15
+     },
+     {
+      "spend": [
+       100000000,
+       150000000
+      ],
+      "rate": 0.2
+     },
+     {
+      "minSpendAbove": 150000000,
+      "rate": 0.25
+     }
+    ],
+    "maxRate": 0.3,
+    "bonuses": {
+     "thaiTourismSoftPower": 0.05,
+     "thaiNationalsKeyRoles": 0.05
+    },
+    "appliesTo": "foreign productions"
+   },
+   "applies": "Thailand, foreign film productions, from 2025.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Productions spending at least 50 million Baht are eligible for a 15% rebate. For spending between 100–150 million Baht, rebat"
+    },
+    {
+     "src": 0,
+     "said": "rease to 20%, while expenditures exceeding 150 million Baht qualify for a 25% rebate. The maximum rebate cap is 30%, inclusive of additional incentives."
+    },
+    {
+     "src": 0,
+     "said": "A 5% bonus can be earned by promoting Thai tourism, Soft Power, and positive depictions of the country, provided these align with the criteria outlined in Form ICM 1. Productions employing Thai nationals in key roles are eligible for an additional 5%."
+    }
+   ]
+  },
+  {
+   "item": "outcomes",
+   "finding": "Thailand hosted 546 foreign productions worth more than THB 6 billion in 2025, and 218 worth THB 2.46 billion from January to April 2026, as the Tourism Authority of Thailand reports.",
+   "value": {
+    "foreignProductions": {
+     "2025": {
+      "count": 546,
+      "valueTHB": ">6,000,000,000"
+     },
+     "2026-01..04": {
+      "count": 218,
+      "valueTHB": 2460000000
+     }
+    }
+   },
+   "applies": "Thailand, foreign productions.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "the country welcomed 546 foreign productions with a combined value of more than 6 billion Baht in 2025, while 218 productions generated 2.46 billion Baht from January to April 2026."
+    }
+   ]
+  },
+  {
+   "item": "incentive",
+   "finding": "The Department of Tourism's December 2024 announcement on the foreign film incentive removed the earlier THB 150 million per-project cap on the rebate, so it is paid on total qualified spend, and raised the maximum rate from 20% to 30%, the 15% base unchanged.",
+   "value": {
+    "capPerProject": null,
+    "previousCap": {
+     "amount": 150000000,
+     "currency": "THB"
+    },
+    "rateMax": 0.3,
+    "previousRateMax": 0.2,
+    "baseRate": 0.15,
+    "announcement": "Announcement on Guidelines, Procedures, and Conditions for Applying for Benefits Under the Incentive Measures for Foreign Film Production in Thailand (Department of Tourism, December 2024)"
+   },
+   "applies": "Foreign productions in Thailand under the December 2024 announcement (in force from 1 January 2025 per the Tourism Authority).",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The 2024 announcement introduced major changes, including (1) removal of the rebate cap, previously set at THB 150 million (approx. USD 4.5 million) per project, enabling rebates based on total qualified spending, and (2) an increase in cash rebate rates. The maximum allowable cash rebate rate was increased to 30 percent from the previous cap of 20 percent. The base rate of 15 percent remains unchanged."
+    }
+   ]
+  }
+ ],
+ "country": "TH",
+ "sources": [
+  {
+   "url": "https://www.tatnews.org/2025/01/thailand-ups-the-reel-deal-new-cash-rebates-for-filmmakers-now-up-to-30/",
+   "title": "Thailand Ups the Reel Deal: New Cash Rebates for Filmmakers Now up to 30% (TAT Newsroom)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Productions spending at least 50 million Baht are eligible for a 15% rebate. For spending between 100–150 million Baht, rebat … rease to 20%, while expenditures exceeding 150 million Baht qualify for a 25% rebate. The maximum rebate cap is 30%, inclusive of additional incentives. … A 5% bonus can be earned by promoting Thai tourism, Soft Power, and positive depictions of the country, provided these align with the criteria outlined in Form ICM 1. Productions employing Thai nationals in key roles are eligible for an additional 5%."
+  },
+  {
+   "url": "https://www.tatnews.org/2026/05/amazing-thai-night-in-cannes-2026-showcases-thailand-as-global-film-destination/",
+   "title": "TAT Newsroom: Amazing Thai Night in Cannes 2026 showcases Thailand as global film destination",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "the country welcomed 546 foreign productions with a combined value of more than 6 billion Baht in 2025, while 218 productions generated 2.46 billion Baht from January to April 2026."
+  },
+  {
+   "url": "https://www.tilleke.com/insights/updates-on-thailands-film-incentive-measures/",
+   "title": "Updates on Thailand's Film Incentive Measures (Tilleke & Gibbins) — quoting the Department of Tourism's Announcement on the incentive measures for foreign film production (December 2024); the Thailand Film Office's incentive page",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://tfo.dot.go.th/incentive-measures/",
+   "said": "The 2024 announcement introduced major changes, including (1) removal of the rebate cap, previously set at THB 150 million (approx. USD 4.5 million) per project, enabling rebates based on total qualified spending, and (2) an increase in cash rebate rates. The maximum allowable cash rebate rate was increased to 30 percent from the previous cap of 20 percent. The base rate of 15 percent remains unchanged."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "incentive",
+   "sought": "The Department of Tourism's December 2024 announcement in its own text (the cap's removal is now a finding from Tilleke & Gibbins, which names it).",
+   "tried": {
+    "institution": "thailandfilmoffice.go.th: proxy CONNECT refused (502). || Retry 2026-11-01: Retried: thailandfilmoffice.go.th and film.go.th: no answer from this environment (connection failed); tatnews.org (Tourism Authority of Thailand) 2025 rebate, TIFF 2026 and Cannes 2026 releases read: rebate up to 30% and production counts, no cap statement, no writers' association, no city of production",
+    "official-register": "thailand.go.th page on the 2025 incentives returned an empty page (script-rendered). || Retry 2026-11-01: Thai constitution (2017) read: no official-language clause; ILO NATLEX (natlex.ilo.org) and NORMLEX refused this environment (403) again on 2026-11-01; ",
+    "web-search": "2026-11-01: 'Thailand Film Office cash rebate 2025 30% cap 150 million baht minimum spend conditions' (results report the cap removed, Bangkok Post). || Retry 2026-11-01: Web search not run this turn: the session's shared web-search budget is spent (brief of 2026-11-01); replaced by direct fetches of the institutions named under \"institution\". || Web search 2026-11-01: \"Thailand Film Office cash rebate 30% announcement December 2024 cap 150 million removed\" returned tilleke.com \"Updates on Thailand's Film Incentive Measures\" (read: cap of THB 150 million removed, max 30%; now a finding naming the DOT announcement) and its mirrors, austchamthailand.com (same article): the announcement's own text (thailandfilmoffice.org or the Royal Gazette) was not among the results. || Web search 2026-11-01: \"ประกาศกรมการท่องเที่ยว มาตรการส่งเสริมการถ่ายทำภาพยนตร์ต่างประเทศในประเทศไทย 2567 คืนเงิน 30%\" returned thansettakij.com 614707, dailynews.co.th, thestandard.co, thairath.co.th 2623431 (Cabinet approval: 15-30% from 1 January 2568 BE), prd.go.th (Government Public Relations Department) news: none is the announcement's text, and the Royal Gazette copy was not among the results.",
+    "trade-press": "Bangkok Post not fetched (budget); TAT newsroom read above. || Retry 2026-11-01: none reached quoting a primary",
+    "archive": "Not tried. || Retry 2026-11-01: web.archive.org: connection reset by the proxy on 2026-11-01 (tunnel closed after 10 s, retried); the availability API (archive.org/wayback/available) answers but snapshots cannot be fetched."
+   }
+  }
+ ]
+}

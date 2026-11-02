@@ -1,0 +1,297 @@
+{
+ "topic": "tax.PL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Poland: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident is taxed on the scale of 12% up to PLN 120,000 and 32% above, less a tax-reducing amount of PLN 3,600 (so the first PLN 30,000 is untaxed); no regional layer.",
+   "value": {
+    "currency": "PLN",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 30000,
+      "rate": 0
+     },
+     {
+      "from": 30000,
+      "to": 120000,
+      "rate": 0.12
+     },
+     {
+      "from": 120000,
+      "to": null,
+      "rate": 0.32
+     }
+    ],
+    "taxReducingAmount": 3600,
+    "taxFreeEquivalent": 30000,
+    "regional": null
+   },
+   "applies": "Residents on the tax scale (skala podatkowa), art. 27 ust. 1; a sole trader may opt for 19% flat tax or lump sums instead.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art. 27. 1. Podatek dochodowy, z zastrzeżeniem art. 29–30f, pobiera się od podstawy jego obliczenia według następującej skali podatkowej: Podstawa obliczenia podatku w złotych Podatek wynosi ponad do 120 000 12 % minus kwota zmniejszająca podatek 3600 zł 120 000 10 800 zł + 32 % nadwyżki ponad 120 000 zł"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the annual return is filed between 15 February and 30 April of the following year.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnWindow": [
+     "02-15",
+     "04-30"
+    ]
+   },
+   "applies": "Individuals (art. 45 ust. 1).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Art. 45. 1. Podatnicy są obowiązani składać urzędom skarbowym zeznanie, według ustalonego wzoru, o wysokości osiągniętego dochodu (poniesionej straty) w roku podatkowym, w terminie od dnia 15 lutego do dnia 30 kwietnia roku na- stępującego po roku podatkowym."
+    },
+    {
+     "src": 1,
+     "said": "The Polish tax year is the calendar year."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social insurance is 19.52% for pension, 8% for disability, 2.45% for sickness and 0.40% to 8.12% for accident; for an employee the pension share is split evenly (9.76% each), the employee pays 1.5% disability and all of sickness (13.71% in all), the employer 16.26% for pension and disability plus accident, 2.45% Labour Fund and 0.10% guaranteed benefits fund; pension and disability stop above PLN 282,600 in 2026; health insurance is 9% on top, uncapped.",
+   "value": {
+    "currency": "PLN",
+    "rates": {
+     "pension": 0.1952,
+     "disability": 0.08,
+     "sickness": 0.0245,
+     "accident": [
+      0.004,
+      0.0812
+     ]
+    },
+    "employee": {
+     "pensionDisability": 0.1126,
+     "sickness": 0.0245,
+     "total": 0.1371
+    },
+    "employer": {
+     "pensionDisability": 0.1626,
+     "accident": "0.67%-3.33% (1.67% up to nine staff)",
+     "labourFund": 0.0245,
+     "guaranteedBenefitsFund": 0.001
+    },
+    "ceiling2026": 282600,
+    "health": {
+     "rate": 0.09,
+     "cap": null
+    },
+    "selfEmployed": "flat monthly contributions on a deemed base (60% of the forecast average wage); 2026 base PLN 5,652, total PLN 1,926.76 a month with sickness"
+   },
+   "applies": "2026; rates in art. 22 of the social insurance act; the employee/employer split and 2026 cap as reported by PwC.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Art. 22. 1. Stopy procentowe składek wynoszą: 1) 19,52 % podstawy wymiaru – na ubezpieczenie emerytalne, z zastrzeżeniem ust. 3 i 4; 2) 8,00 % podstawy wymiaru – na ubezpieczenia rentowe; 3) 2,45 % podstawy wymiaru – na ubezpieczenie chorobowe; 4) od 0,40 % do 8,12 % podstawy wymiaru – na ubezpieczenie wypadkowe."
+    },
+    {
+     "src": 3,
+     "said": "The contribution rate for the employee is 13.71% of gross salary."
+    },
+    {
+     "src": 3,
+     "said": "Part of the above rates apply to salaries below the cap of PLN 282,600 in 2026."
+    },
+    {
+     "src": 3,
+     "said": "Pensions and disability insurance 16.26% of total gross salary (up to the cap of 282,600 in 2026) Employer 11.26% of total gross salary (up to the cap of PLN 282,600 in 2026) Employee Sickness insurance 2.45% of total gross salary Employee"
+    },
+    {
+     "src": 3,
+     "said": "Labour Fund 2.45% of total gross salary Employer Employee Guaranteed Benefits Fund 0.10% of total gross salary Employer"
+    },
+    {
+     "src": 3,
+     "said": "The monthly contribution rate for health insurance is 9% of the assessment base."
+    },
+    {
+     "src": 4,
+     "said": "Składki za styczeń – grudzień 2026 roku Rodzaj ubezpieczenia/funduszu: Emerytalne Rentowe Wypadkowe Chorobowe FP i FS Podstawa wymiaru 5 652 zł [ 1 ] Wysokość składki w % 19,52% 8% 1,67% [ 2 ] 2,45% 2,45% [ 3 ] Kwota składki 1103,27 zł 452,16 zł 94,39 zł 138,47 zł 138,47 zł Suma składek do zapłaty 1926,76 zł"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds a monthly advance of 12% of income until the year's income from that payer passes PLN 120,000, then 32%, reduced by 1/12 of the PLN 3,600 tax-reducing amount where the worker so declares.",
+   "value": {
+    "currency": "PLN",
+    "rates": [
+     {
+      "from": 0,
+      "to": 120000,
+      "rate": 0.12
+     },
+     {
+      "from": 120000,
+      "to": null,
+      "rate": 0.32
+     }
+    ],
+    "monthlyReduction": 300,
+    "remitBy": "20th of the following month"
+   },
+   "applies": "Employees (art. 32).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "2. Zaliczki za miesiące od stycznia do grudnia wynoszą: 1) za miesiące, w których dochód podatnika uzyskany od początku roku od danego płatnika nie przekroczył kwoty 120 000 zł – 12 % dochodu uzyskanego w danym miesiącu;"
+    },
+    {
+     "src": 1,
+     "said": "The advance payment for a particular month should be remitted by the 20th day of the following month."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's Polish income from copyright and related rights, and fees for entertainment services performed by persons living abroad, are taxed at a flat 20% of revenue, withheld, unless a treaty says otherwise.",
+   "value": {
+    "rate": 0.2,
+    "base": "gross revenue",
+    "final": true
+   },
+   "applies": "Non-residents (art. 3 ust. 2a), art. 29 ust. 1; treaty rates override.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "z praw autorskich lub z praw pokrewnych, z praw do projektów wynalazczych, znaków towarowych i wzorów zdobniczych, w tym również ze sprzedaży tych praw,"
+    },
+    {
+     "src": 0,
+     "said": "2) z opłat za usługi w zakresie działalności widowiskowej, rozrywkowej lub sportowej, wykonywanej przez osoby fizyczne mające miejsce zamieszkania za granicą, a organizowanej za pośrednictwem osób fizycznych lub osób prawnych pro- wadzących działalność w zakresie imprez artystycznych, rozrywkowych lub sportowych na terytorium Rzeczypospolitej Polskiej – pobiera się w formie ryczałtu w wysokości 20 % przychodu;"
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Authors using or disposing of their copyright and performers their related rights deduct deemed costs of 50% of the revenue, capped in total at PLN 120,000 a year.",
+   "value": {
+    "currency": "PLN",
+    "deemedCosts": 0.5,
+    "annualCap": 120000
+   },
+   "applies": "Residents' copyright and related-rights income (art. 22 ust. 9 pkt 3 and 9a).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "3) z tytułu korzystania przez twórców z praw autorskich i artystów wykonawców z praw pokrewnych, w rozumieniu od- rębnych przepisów, lub rozporządzania przez nich tymi prawami – w wysokości 50 % uzyskanego przychodu,"
+    },
+    {
+     "src": 0,
+     "said": "9a. W roku podatkowym łączne koszty uzyskania przychodów, o których mowa w ust. 9 pkt 1–3, nie mogą przekro- czyć kwoty stanowiącej górną granicę pierwszego przedziału skali podatkowej, o której mowa w art. 27 ust. 1."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT's standard rate is 23%; a resident business is exempt while its sales stay at or below PLN 240,000 in the previous and current year (PLN 200,000 before 2026).",
+   "value": {
+    "currency": "PLN",
+    "standard": 0.23,
+    "threshold": 240000,
+    "thresholdFrom": "2026-01-01",
+    "previousThreshold": 200000
+   },
+   "applies": "Art. 113 ust. 1 as amended by the act of 24 June 2025 (Dz.U. 2025 poz. 896), in force 1 January 2026.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Zwalnia się od podatku sprzedaż dokonywaną przez podatnika posiadającego siedzibę działalności gospo- darczejna terytorium kraju, u którego wartość sprzedaży, z wyłączeniem podatku, nie przekroczyła w poprzednim ani bieżącym roku podatkowym kwoty 200 000 zł."
+    },
+    {
+     "src": 6,
+     "said": "w art. 113 w ust. 1 wyrazy „kwoty 200 000 zł” zastępuje się wyrazami „kwoty 240 000 zł”."
+    },
+    {
+     "src": 6,
+     "said": "Art. 3. Ustawa wchodzi w życie z dniem 1 stycznia 2026 r."
+    },
+    {
+     "src": 5,
+     "said": "18,70 % – dla towarów i usług objętych stawką podatku 23 %;"
+    }
+   ]
+  }
+ ],
+ "country": "PL",
+ "sources": [
+  {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf",
+   "title": "Ustawa o podatku dochodowym od osób fizycznych, tekst jednolity Dz.U. 2025 poz. 163",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 27. 1. Podatek dochodowy, z zastrzeżeniem art. 29–30f, pobiera się od podstawy jego obliczenia według następującej skali podatkowej: Podstawa obliczenia podatku w złotych Podatek wynosi ponad do 120 000 12 % minus kwota zmniejszająca podatek 3600 zł 120 000 10 800 zł + 32 % nadwyżki ponad 120 000 zł … Art. 45. 1. Podatnicy są obowiązani składać urzędom skarbowym zeznanie, według ustalonego wzoru, o wysokości osiągniętego dochodu (poniesionej straty) w roku podatkowym, w terminie od dnia 15 lutego do dnia 30 kwietnia roku na- stępującego po roku podatkowym. … 2. Zaliczki za miesiące od stycznia do grudnia wynoszą: 1) za miesiące, w których dochód podatnika uzyskany od początku roku od danego płatnika nie przekroczył kwoty 120 000 zł – 12 % dochodu uzyskanego w danym miesiącu; … z praw autorskich lub z praw pokrewnych, z praw do projektów wynalazczych, znaków towarowych i wzorów zdobniczych, w tym również ze sprzedaży tych praw, … 2) z opłat za usługi w zakresie działalności widowiskowej, rozrywkowej lub sportowej, wykonywanej przez osoby fizyczne mające miejsce zamieszkania za granicą, a organizowanej za pośrednictwem osób fizycznych lub osób prawnych pro- wadzących działalność w zakresie imprez artystycznych, rozrywkowych lub sportowych na terytorium Rzeczypospolitej Polskiej – pobiera się w formie ryczałtu w wysokości 20 % przychodu; … 3) z tytułu korzystania przez twórców z praw autorskich i artystów wykonawców z praw pokrewnych, w rozumieniu od- rębnych przepisów, lub rozporządzania przez nich tymi prawami – w wysokości 50 % uzyskanego przychodu, … 9a. W roku podatkowym łączne koszty uzyskania przychodów, o których mowa w ust. 9 pkt 1–3, nie mogą przekro- czyć kwoty stanowiącej górną granicę pierwszego przedziału skali podatkowej, o której mowa w art. 27 ust. 1."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/poland/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Poland, Individual - Tax administration (reviewed 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://api.sejm.gov.pl/eli/acts/DU/2025/163/text.pdf",
+   "said": "The Polish tax year is the calendar year. … The advance payment for a particular month should be remitted by the 20th day of the following month."
+  },
+  {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/350/text.pdf",
+   "title": "Ustawa o systemie ubezpieczeń społecznych, tekst jednolity Dz.U. 2025 poz. 350",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Art. 22. 1. Stopy procentowe składek wynoszą: 1) 19,52 % podstawy wymiaru – na ubezpieczenie emerytalne, z zastrzeżeniem ust. 3 i 4; 2) 8,00 % podstawy wymiaru – na ubezpieczenia rentowe; 3) 2,45 % podstawy wymiaru – na ubezpieczenie chorobowe; 4) od 0,40 % do 8,12 % podstawy wymiaru – na ubezpieczenie wypadkowe."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/poland/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Poland, Individual - Other taxes (reviewed 11 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://api.sejm.gov.pl/eli/acts/DU/2025/350/text.pdf",
+   "said": "The contribution rate for the employee is 13.71% of gross salary. … Part of the above rates apply to salaries below the cap of PLN 282,600 in 2026. … Pensions and disability insurance 16.26% of total gross salary (up to the cap of 282,600 in 2026) Employer 11.26% of total gross salary (up to the cap of PLN 282,600 in 2026) Employee Sickness insurance 2.45% of total gross salary Employee … Labour Fund 2.45% of total gross salary Employer Employee Guaranteed Benefits Fund 0.10% of total gross salary Employer … The monthly contribution rate for health insurance is 9% of the assessment base."
+  },
+  {
+   "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+   "title": "ZUS: Wysokość składek na ubezpieczenia społeczne",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Składki za styczeń – grudzień 2026 roku Rodzaj ubezpieczenia/funduszu: Emerytalne Rentowe Wypadkowe Chorobowe FP i FS Podstawa wymiaru 5 652 zł [ 1 ] Wysokość składki w % 19,52% 8% 1,67% [ 2 ] 2,45% 2,45% [ 3 ] Kwota składki 1103,27 zł 452,16 zł 94,39 zł 138,47 zł 138,47 zł Suma składek do zapłaty 1926,76 zł"
+  },
+  {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/775/text.pdf",
+   "title": "Ustawa o podatku od towarów i usług, tekst jednolity Dz.U. 2025 poz. 775",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Zwalnia się od podatku sprzedaż dokonywaną przez podatnika posiadającego siedzibę działalności gospo- darczejna terytorium kraju, u którego wartość sprzedaży, z wyłączeniem podatku, nie przekroczyła w poprzednim ani bieżącym roku podatkowym kwoty 200 000 zł. … 18,70 % – dla towarów i usług objętych stawką podatku 23 %;"
+  },
+  {
+   "url": "https://api.sejm.gov.pl/eli/acts/DU/2025/896/text.pdf",
+   "title": "Ustawa z dnia 24 czerwca 2025 r. o zmianie ustawy o podatku od towarów i usług (Dz.U. 2025 poz. 896)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "w art. 113 w ust. 1 wyrazy „kwoty 200 000 zł” zastępuje się wyrazami „kwoty 240 000 zł”. … Art. 3. Ustawa wchodzi w życie z dniem 1 stycznia 2026 r."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "podatki.gov.pl's own page on the tax scale",
+   "tried": {
+    "institution": "https://www.podatki.gov.pl/pit/twoje-dochody/skala-podatkowa/ returned HTTP 404 (2026-11-01) || 2026-11-01 retry: podatki.gov.pl answers an Incapsula 'Request unsuccessful' bot check to curl (2026-11-01) on /pit/ and its search; not read another way. gov.pl/web/kas resets the connection",
+    "official-register": "the act's consolidated text was read from the Sejm ELI API instead (used); isap.sejm.gov.pl returned HTTP 403 || 2026-11-01 retry: the act's consolidated text from the Sejm ELI API already held (the scale is in it); isap.sejm.gov.pl 403",
+    "web-search": "not needed: the act states the scale || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "PwC summary consistent || 2026-11-01 retry: PwC summary consistent, already held",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01) || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

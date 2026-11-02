@@ -1,0 +1,252 @@
+{
+ "topic": "tax.MR",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Mauritania: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Mauritania taxes employment income progressively: 15% on taxable remuneration from MRU 6,000 to 9,000, 25% from 9,000 to 21,000, and 40% above 21,000.",
+   "value": {
+    "currency": "MRU",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 6000,
+      "rate": 0
+     },
+     {
+      "from": 6000,
+      "to": 9000,
+      "rate": 0.15
+     },
+     {
+      "from": 9000,
+      "to": 21000,
+      "rate": 0.25
+     },
+     {
+      "from": 21000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "period": "not stated"
+   },
+   "applies": "PwC does not state whether the bands are monthly or annual; the band below MRU 6,000 is read as untaxed because the scale starts there.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "From 6,000 to 9,000 15 Between 9,000 and 21,000 25 Exceeding 21,000 40"
+    },
+    {
+     "src": 0,
+     "said": "Non-residents are only taxed on their Mauritanian-source income."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "Social security is withheld monthly on gross salary up to MRU 15,000: 1% from the employee and 15% from the employer.",
+   "value": {
+    "currency": "MRU",
+    "employee": 0.01,
+    "employer": 0.15,
+    "ceilingMonthly": 15000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Social security contributions are withheld monthly by employers and are computed on the basis of gross salary paid up to MRU 15,000. Rates of social security contributions are 1% for employees and 15% for employers."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "Employers withhold tax and pay it by the 15th of the following month; a payer withholds 2.5% from a resident individual's service fee where the provider is under the personal business income tax.",
+   "value": {
+    "residentServiceFee": 0.025,
+    "remitBy": "15th of next month"
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "WHTs are due by the 15th day of the month following the withholding month."
+    },
+    {
+     "src": 0,
+     "said": "Mauritanian services debtors must withhold 2.5% on remuneration paid to individuals who are resident."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "Sums paid to non-residents for services provided or used in Mauritania (for up to six months, or twelve for subcontractors and oil operators) bear 15% withholding.",
+   "value": {
+    "services": 0.15,
+    "final": null
+   },
+   "applies": "Royalties to non-resident companies also bear 15%.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "15% WHT on sums paid to non-residents for services they provide or use in Mauritania for a period not exceeding 12 months for subcontractors and oil operators and six months in other cases"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is 16% on most commercial operations.",
+   "value": {
+    "rate": 0.16,
+    "threshold": null
+   },
+   "applies": "Registration threshold not found.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Subject to certain exclusions, most commercial operations are subject to a 16% VAT."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; a self-employed person taxed on actual revenues files by 31 March of the next year and pays 40% by 31 March, 30% by 30 June and the balance by 30 September.",
+   "value": {
+    "start": "01-01",
+    "due": {
+     "on": "03-31",
+     "after": 1
+    },
+    "instalments": {
+     "03-31": 0.4,
+     "06-30": 0.3,
+     "09-30": "balance"
+    }
+   },
+   "applies": "Self-employed.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The fiscal year is the calendar year."
+    },
+    {
+     "src": 2,
+     "said": "Individuals subject to personal business income tax based on actual revenues should file the tax form by 31 March of the year following the end of the fiscal year."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The tax on wages and salaries (ITS) is computed monthly: the first MRU 6,000 a month of remuneration is exempt (and up to MRU 1,000 a month of allowances other than housing, transport, responsibility and function), and monthly taxable remuneration bears 15% up to MRU 9,000, 25% up to 21,000 and 40% above, withheld by the payer at each payment.",
+   "value": {
+    "currency": "MRU",
+    "period": "monthly",
+    "exemptMonthly": 6000,
+    "allowancesExemptMonthly": 1000,
+    "brackets": [
+     {
+      "from": 0,
+      "to": 9000,
+      "rate": 0.15
+     },
+     {
+      "from": 9000,
+      "to": 21000,
+      "rate": 0.25
+     },
+     {
+      "from": 21000,
+      "to": null,
+      "rate": 0.4
+     }
+    ],
+    "formula": {
+     "to9000": "RI x 0.15",
+     "to21000": "RI x 0.25 - 900",
+     "above": "RI x 0.40 - 4,050"
+    },
+    "benefitsInKindIncluded": 0.4
+   },
+   "applies": "Employees (CGI arts. 110, 113, 114, 115, official edition updated to the 2020 finance law; PwC's 2026 summary gives the same bands).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "c) un montant de six mille (6.000) Ouguiya par mois de la rémunération. … rémunération mensuelle imposable inférieure ou égale à 9.000 Ouguiya : 15 % … rémunération mensuelle imposable supérieure à 9.000 Ouguiya et inférieure ou égale à … 21.000 Ouguiya : 25 % … rémunération mensuelle imposable supérieure à 21.000 Ouguiya : 40 % … Art.115.‐ 1) Toute personne physique ou morale qui verse des revenus visés à l’article 109 … est tenue d’effectuer pour le compte du Trésor Public la retenue de l’impôt au moment de … chaque paiement."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A taxpayer charges VAT only once annual turnover before tax exceeds MRU 3,000,000, whatever the activity; tax is due from the day the threshold is passed.",
+   "value": {
+    "currency": "MRU",
+    "registrationThreshold": 3000000,
+    "importers": "always liable"
+   },
+   "applies": "CGI art. 211 as in the official edition updated to the 2020 finance law; changes by the 2021 to 2026 finance laws were not read.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "2) Les contribuables ne sont autorisés à facturer la taxe sur la valeur ajoutée que lorsque leur chiffred’affairesannuelhorstaxesestsupérieuràtroismillions(3.000.000)d’Ouguiya,quelle que soit la nature de l’activité exercée."
+    }
+   ]
+  }
+ ],
+ "country": "MR",
+ "sources": [
+  {
+   "url": "https://taxsummaries.pwc.com/mauritania/individual/taxes-on-personal-income",
+   "title": "Mauritania: individual/taxes-on-personal-income (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gov.mr/",
+   "said": "From 6,000 to 9,000 15 Between 9,000 and 21,000 25 Exceeding 21,000 40 … Non-residents are only taxed on their Mauritanian-source income. … Mauritanian services debtors must withhold 2.5% on remuneration paid to individuals who are resident."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mauritania/individual/other-taxes",
+   "title": "Mauritania: individual/other-taxes (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.cnss.mr/",
+   "said": "Social security contributions are withheld monthly by employers and are computed on the basis of gross salary paid up to MRU 15,000. Rates of social security contributions are 1% for employees and 15% for employers. … Subject to certain exclusions, most commercial operations are subject to a 16% VAT."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mauritania/individual/tax-administration",
+   "title": "Mauritania: individual/tax-administration (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gov.mr/",
+   "said": "WHTs are due by the 15th day of the month following the withholding month. … The fiscal year is the calendar year. … Individuals subject to personal business income tax based on actual revenues should file the tax form by 31 March of the year following the end of the fiscal year."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/mauritania/corporate/withholding-taxes",
+   "title": "Mauritania: corporate/withholding-taxes (PwC Worldwide Tax Summaries, reviewed 7 August 2026)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.dgi.gov.mr/",
+   "said": "15% WHT on sums paid to non-residents for services they provide or use in Mauritania for a period not exceeding 12 months for subcontractors and oil operators and six months in other cases"
+  },
+  {
+   "url": "https://impots.gov.mr/DGI/files/Mauritanie-CGI-2020-francais.pdf",
+   "title": "Code général des impôts (Loi n°2019-018 du 29 avril 2019), édition officielle mise à jour de la loi de finances pour 2020 (Direction Générale des Impôts, Mauritanie), arts. 110 and 114",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "c) un montant de six mille (6.000) Ouguiya par mois de la rémunération. … rémunération mensuelle imposable inférieure ou égale à 9.000 Ouguiya : 15 % … rémunération mensuelle imposable supérieure à 9.000 Ouguiya et inférieure ou égale à … 21.000 Ouguiya : 25 % … rémunération mensuelle imposable supérieure à 21.000 Ouguiya : 40 % … Art.115.‐ 1) Toute personne physique ou morale qui verse des revenus visés à l’article 109 … est tenue d’effectuer pour le compte du Trésor Public la retenue de l’impôt au moment de … chaque paiement. … 2) Les contribuables ne sont autorisés à facturer la taxe sur la valeur ajoutée que lorsque leur chiffred’affairesannuelhorstaxesestsupérieuràtroismillions(3.000.000)d’Ouguiya,quelle que soit la nature de l’activité exercée."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "vat",
+   "sought": "Whether the 2021 to 2026 finance laws changed the VAT threshold of MRU 3,000,000 in CGI art. 211 (2020 edition now read).",
+   "tried": {
+    "institution": "dgi.gov.mr not reached. || 2026-11-01 retry: dgi.gov.mr still unreachable (curl 000); the DGI's site at impots.gov.mr/DGI reached: CGI 2020 official edition (French) read, art. 211; downloads page (forms dated 2020) has no later code.",
+    "official-register": "None. || 2026-11-01 retry: finances.gov.mr home page read: links only to the DGI; no Journal officiel or finance laws 2021-2026 reached.",
+    "web-search": "Not searched. || 2026-11-01 retry: refused by the tool on 2026-11-01: the turn's shared web-search budget (200 calls) was used up.",
+    "trade-press": "PwC gives the rate only. || 2026-11-01 retry: PwC 2026 (already read) gives the VAT rate only.",
+    "archive": "Archive unreachable. || 2026-11-01 retry: archive.org availability API answers; web.archive.org snapshots return HTTP 403 (http) or reset (https)."
+   }
+  }
+ ]
+}

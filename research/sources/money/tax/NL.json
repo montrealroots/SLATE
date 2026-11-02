@@ -1,0 +1,357 @@
+{
+ "topic": "tax.NL",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in The Netherlands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, any authors' treatment, VAT's threshold, the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax*.md); every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident under state pension age pays a combined income tax and national insurance rate in box 1 of 35.75% up to EUR 38,883, 37.56% to EUR 78,426 and 49.50% above; there is no regional or municipal income tax.",
+   "value": {
+    "currency": "EUR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 38883,
+      "rate": 0.3575
+     },
+     {
+      "from": 38883,
+      "to": 78426,
+      "rate": 0.3756
+     },
+     {
+      "from": 78426,
+      "to": null,
+      "rate": 0.495
+     }
+    ],
+    "bracket1Split": {
+     "AOW": 0.179,
+     "Anw": 0.001,
+     "Wlz": 0.0965,
+     "loonbelasting": 0.081
+    }
+   },
+   "applies": "Income year 2026, under AOW age; box 1 (work and home).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Schijf Belastbaar inkomen Percentage 1 tot en met € 38.883 35,75% 2 meer dan € 38.883 tot en met € 78.426 37,56% 3 meer dan € 78.426 49,50%"
+    },
+    {
+     "src": 1,
+     "said": "premie AOW 17,90% – premie Anw 0,10% 0,10% premie Wlz 9,65% 9,65% loonbelasting 8,10% 8,10% totaal schijf 1 35,75% 17,85%"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "Instead of an allowance, everyone gets a general tax credit of EUR 3,115 (phased out at 6.398% of income above EUR 29,736 to nil at EUR 78,426), and workers a labour credit of up to EUR 5,685 (phased out at 6.51% above EUR 45,592 to nil at EUR 132,920).",
+   "value": {
+    "currency": "EUR",
+    "algemeneHeffingskorting": {
+     "max": 3115,
+     "phaseOutFrom": 29736,
+     "phaseOutRate": 0.06398,
+     "zeroAt": 78426
+    },
+    "arbeidskorting": [
+     {
+      "from": 0,
+      "to": 11965,
+      "credit": "8.324% x income"
+     },
+     {
+      "from": 11965,
+      "to": 25845,
+      "credit": "996 + 31.009% x (income - 11965)"
+     },
+     {
+      "from": 25845,
+      "to": 45592,
+      "credit": "5300 + 1.950% x (income - 25845)"
+     },
+     {
+      "from": 45592,
+      "to": 132920,
+      "credit": "5685 - 6.510% x (income - 45592)"
+     },
+     {
+      "from": 132920,
+      "to": null,
+      "credit": 0
+     }
+    ]
+   },
+   "applies": "Income year 2026, under AOW age.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "tot € 29.736 € 3.115 vanaf € 29.736 tot € 78.426 € 3.115 - 6,398% x (verzamelinkomen - € 29.736) vanaf € 78.426 € 0"
+    },
+    {
+     "src": 0,
+     "said": "vanaf € 45.592 tot € 132.920 € 5.685 - 6,510% x (arbeidsinkomen - € 45.592) vanaf € 132.920 € 0"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The tax year is the calendar year; the income tax return is due by 1 May of the following year.",
+   "value": {
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "returnDue": "2027-05-01"
+   },
+   "applies": "Ordinary return; a different date may be set in the return letter.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "U kon tot 1 mei 2026 uitstel aanvragen. Dit is de dag dat uw aangifte bij ons binnen moest zijn."
+    },
+    {
+     "src": 1,
+     "said": "Bijlage 1: Tarieven, bedragen en percentages loonheffingen vanaf 1 januari 2026"
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "National insurance (AOW, Anw, Wlz: 27.65%) is inside bracket 1; on top, the employer pays unemployment premium AWf (2.74% low, 7.74% high), disability premium Aof (6.27%/7.63%), Wko 0.50%, Ufo 0.68% and the Zvw health levy of 6.10%, all up to EUR 79,409 a year; where the employer does not pay the levy, a 4.85% Zvw contribution is withheld. A self-employed person pays the lower income-related Zvw contribution of 4.85% on contribution income (which includes profit) up to EUR 79,409 by assessment, and, meeting the hours test, deducts EUR 1,200 self-employed allowance (plus EUR 2,123 for a starter) from profit.",
+   "value": {
+    "currency": "EUR",
+    "nationalInsuranceInBracket1": 0.2765,
+    "employer": {
+     "AWfLow": 0.0274,
+     "AWfHigh": 0.0774,
+     "AofLow": 0.0627,
+     "AofHigh": 0.0763,
+     "Wko": 0.005,
+     "Ufo": 0.0068,
+     "ZvwLevy": 0.061
+    },
+    "ZvwWithheldContribution": 0.0485,
+    "maxPremiumWage": 79409,
+    "selfEmployed": {
+     "ZvwContributionOnIncome": 0.0485,
+     "maxContributionIncome": 79409,
+     "zelfstandigenaftrek": 1200,
+     "starterIncrease": 2123
+    }
+   },
+   "applies": "2026 (Handboek Loonheffingen 2026); a self-employed person pays national insurance in bracket 1 and the Zvw contribution by assessment; Whk is employer-specific.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Premie AWf laag 2,74% Premie AWf hoog 7,74%"
+    },
+    {
+     "src": 1,
+     "said": "Gedifferentieerde premie Aof laag 6,27% Gedifferentieerde premie Aof hoog 7,63% Opslag Wko 0,50% Ufo premie 0,68%"
+    },
+    {
+     "src": 1,
+     "said": "werkgeversheffing Zvw 6,10% • inhouding van bijdrage Zvw 4,85%"
+    },
+    {
+     "src": 1,
+     "said": "€ 305,41 € 1.527,09 € 6.108,38 € 6.617,41 € 19.852,25 € 79.409,00"
+    },
+    {
+     "src": 3,
+     "said": "In artikel 5.2 wordt ‘2025’ vervangen door ‘2026’ en wordt ‘€ 75.864’ vervangen door ‘€ 79.409’. … In het tweede en vijfde lid wordt ‘5,26’ telkens vervangen door ‘4,85’. … Ook het percentage aan IAB dat verzekeringsplichtigen ingevolge artikel 45, tweede lid, van de Zvw over hun bijdrage-inkomen verschuldigd zijn (lage percentage) daalt, namelijk van 5,26 in 2025 naar 4,85 in 2026."
+    },
+    {
+     "src": 4,
+     "said": "Artikel 3.76 Zelfstandigenaftrek 1 De zelfstandigenaftrek geldt voor de ondernemer die aan het urencriterium voldoet. 2 Indien de ondernemer bij het begin van het kalenderjaar de pensioengerechtigde leeftijd, bedoeld in artikel 7a, eerste lid, van de Algemene Ouderdomswet , nog niet heeft bereikt, bedraagt de zelfstandigenaftrek € 1.200. … wordt de zelfstandigenaftrek verhoogd met € 2123."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer withholds wage tax and national insurance by the bracket tables; a resident artist hired for at most three months under the artists' scheme has a flat 35.75% withheld on the fee, with no national insurance or Zvw contribution.",
+   "value": {
+    "employee": "wage tax/national insurance by table (schijventarief)",
+    "residentArtistScheme": {
+     "rate": 0.3575,
+     "maxEngagement": "3 months",
+     "noNationalInsuranceOrZvw": true
+    }
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tabel 3 Tabel voor artiesten en buitenlandse beroepssporters Voor een Percentage Artiest die in Nederland woont 35,75% Artiest die in het buitenland woont 20,00%"
+    },
+    {
+     "src": 5,
+     "said": "Bijzonder aan de artiesten- en beroepssportersregeling is dat u geen premie volksverzekeringen en inkomensafhankelijke bijdrage Zorgverzekeringswet (Zvw) berekent en inhoudt of betaalt over de gage."
+    },
+    {
+     "src": 6,
+     "said": "De regeling zelf is in 2023, 2024, 2025 en 2026 niet gewijzigd."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident performer (actor, musician, comedian) from a country with no tax treaty with the Netherlands has 20% wage tax withheld on the fee; a resident of a treaty country is outside the artists' scheme; directors and technicians are not 'artists'.",
+   "value": {
+    "rate": 0.2,
+    "appliesTo": "artists resident in a non-treaty country (other than Aruba, Curaçao, Sint Maarten), engagements up to 3 months",
+    "notArtists": [
+     "directors",
+     "sound, recording and lighting technicians",
+     "roadies",
+     "managers",
+     "dressers",
+     "make-up artists"
+    ]
+   },
+   "applies": "2026; finality under the scheme not stated in the sources read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Artiest die in het buitenland woont 20,00% Buitenlandse groep en buitenlandse beroepssporters uit een niet-verdragsland 20,00%"
+    },
+    {
+     "src": 5,
+     "said": "een ander land dan Aruba, Curaçao of Sint Maarten waarmee Nederland geen belastingverdrag heeft gesloten"
+    },
+    {
+     "src": 5,
+     "said": "Regisseurs, geluids-, opname- en belichtingstechnici, roadies en managers, maar ook bijvoorbeeld kleedsters en visagisten zijn geen artiesten."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Writers' services (writing publications with their own ideas, translating books, readings from their own work) are usually exempt from VAT; advertising and business copy is taxed.",
+   "value": {
+    "vat": "exempt for writers' own work; taxable for advertising/business texts"
+   },
+   "applies": "VAT; no special income-tax rate for authors was found.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "De diensten van componisten, schrijvers, cartoonisten en journalisten zijn meestal vrijgesteld van btw."
+    },
+    {
+     "src": 7,
+     "said": "schrijven van publicaties voor gedrukte of digitale media met daarin uw eigen gedachtegoed"
+    },
+    {
+     "src": 8,
+     "said": "q. de diensten door componisten, schrijvers en journalisten;"
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer's fee bears VAT at 21% unless exempt or at 9%; a business established in the Netherlands with turnover of at most EUR 20,000 a year may use the small-business exemption (KOR); an artist under the artists' scheme charges no VAT on the performance.",
+   "value": {
+    "currency": "EUR",
+    "standard": 0.21,
+    "reduced": 0.09,
+    "smallBusinessThreshold": 20000
+   },
+   "applies": "2026.",
+   "sources": [
+    {
+     "src": 9,
+     "said": "Het 21%-tarief geldt voor alle goederen en diensten die niet vrijgesteld zijn, en die niet onder het 9%-tarief of het 0%-tarief vallen."
+    },
+    {
+     "src": 10,
+     "said": "En is uw omzet niet meer dan € 20.000 per kalenderjaar? Dan kunt u gebruikmaken van de kleineondernemersregeling (KOR)."
+    },
+    {
+     "src": 5,
+     "said": "Als de artiest onder de artiestenregeling valt, dan mag hij geen btw in rekening brengen voor het optreden."
+    }
+   ]
+  }
+ ],
+ "country": "NL",
+ "sources": [
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen",
+   "title": "Voorlopige aanslag 2026: gebruikte tarieven en heffingskortingen (Belastingdienst)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Schijf Belastbaar inkomen Percentage 1 tot en met € 38.883 35,75% 2 meer dan € 38.883 tot en met € 78.426 37,56% 3 meer dan € 78.426 49,50% … tot € 29.736 € 3.115 vanaf € 29.736 tot € 78.426 € 3.115 - 6,398% x (verzamelinkomen - € 29.736) vanaf € 78.426 € 0 … vanaf € 45.592 tot € 132.920 € 5.685 - 6,510% x (arbeidsinkomen - € 45.592) vanaf € 132.920 € 0"
+  },
+  {
+   "url": "https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf",
+   "title": "Handboek Loonheffingen 2026, versie maart 2026 (Belastingdienst), Bijlage 1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "premie AOW 17,90% – premie Anw 0,10% 0,10% premie Wlz 9,65% 9,65% loonbelasting 8,10% 8,10% totaal schijf 1 35,75% 17,85% … Bijlage 1: Tarieven, bedragen en percentages loonheffingen vanaf 1 januari 2026 … Premie AWf laag 2,74% Premie AWf hoog 7,74% … Gedifferentieerde premie Aof laag 6,27% Gedifferentieerde premie Aof hoog 7,63% Opslag Wko 0,50% Ufo premie 0,68% … werkgeversheffing Zvw 6,10% • inhouding van bijdrage Zvw 4,85% … € 305,41 € 1.527,09 € 6.108,38 € 6.617,41 € 19.852,25 € 79.409,00 … Tabel 3 Tabel voor artiesten en buitenlandse beroepssporters Voor een Percentage Artiest die in Nederland woont 35,75% Artiest die in het buitenland woont 20,00% … Artiest die in het buitenland woont 20,00% Buitenlandse groep en buitenlandse beroepssporters uit een niet-verdragsland 20,00%"
+  },
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/belastingaangifte/content/kan-ik-nog-uitstel-aanvragen-belastingaangifte",
+   "title": "Kan ik nog uitstel aanvragen voor de belastingaangifte 2025? (Belastingdienst)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "U kon tot 1 mei 2026 uitstel aanvragen. Dit is de dag dat uw aangifte bij ons binnen moest zijn."
+  },
+  {
+   "url": "https://zoek.officielebekendmakingen.nl/stcrt-2025-38055.html",
+   "title": "Staatscourant 2025, 38055: Regeling van de Minister van VWS van 3 november 2025 ter vaststelling van bedragen en percentages voor het jaar 2026 (Zorgverzekeringswet)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "In artikel 5.2 wordt ‘2025’ vervangen door ‘2026’ en wordt ‘€ 75.864’ vervangen door ‘€ 79.409’. … In het tweede en vijfde lid wordt ‘5,26’ telkens vervangen door ‘4,85’. … Ook het percentage aan IAB dat verzekeringsplichtigen ingevolge artikel 45, tweede lid, van de Zvw over hun bijdrage-inkomen verschuldigd zijn (lage percentage) daalt, namelijk van 5,26 in 2025 naar 4,85 in 2026."
+  },
+  {
+   "url": "https://repository.officiele-overheidspublicaties.nl/bwb/BWBR0011353/2026-01-01_1/xml/BWBR0011353_2026-01-01_1.xml",
+   "title": "Wet inkomstenbelasting 2001, art. 3.76 (BWB repository, text in force 2026-01-01; wetten.overheid.nl unreachable)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Artikel 3.76 Zelfstandigenaftrek 1 De zelfstandigenaftrek geldt voor de ondernemer die aan het urencriterium voldoet. 2 Indien de ondernemer bij het begin van het kalenderjaar de pensioengerechtigde leeftijd, bedoeld in artikel 7a, eerste lid, van de Algemene Ouderdomswet , nog niet heeft bereikt, bedraagt de zelfstandigenaftrek € 1.200. … wordt de zelfstandigenaftrek verhoogd met € 2123."
+  },
+  {
+   "url": "https://download.belastingdienst.nl/belastingdienst/docs/handl_lh_artiest_ber_sporters_2022_lh0231t21fd.pdf",
+   "title": "Handleiding Loonheffingen 2022 – Artiesten- en beroepssportersregeling (Belastingdienst; stated valid for 2023-2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Bijzonder aan de artiesten- en beroepssportersregeling is dat u geen premie volksverzekeringen en inkomensafhankelijke bijdrage Zorgverzekeringswet (Zvw) berekent en inhoudt of betaalt over de gage. … een ander land dan Aruba, Curaçao of Sint Maarten waarmee Nederland geen belastingverdrag heeft gesloten … Regisseurs, geluids-, opname- en belichtingstechnici, roadies en managers, maar ook bijvoorbeeld kleedsters en visagisten zijn geen artiesten. … Als de artiest onder de artiestenregeling valt, dan mag hij geen btw in rekening brengen voor het optreden."
+  },
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/brochures_en_publicaties/handleiding-loonheffingen-artiesten-en-beroepssportersregeling",
+   "title": "Handleiding Loonheffingen Artiesten- en beroepssportersregeling (Belastingdienst page)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De regeling zelf is in 2023, 2024, 2025 en 2026 niet gewijzigd."
+  },
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/vrijstellingen/vrijstelling_voor_componisten_schrijvers_cartoonisten_en_journalisten",
+   "title": "Vrijstellingen componisten, schrijvers, cartoonisten en journalisten (Belastingdienst)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "De diensten van componisten, schrijvers, cartoonisten en journalisten zijn meestal vrijgesteld van btw. … schrijven van publicaties voor gedrukte of digitale media met daarin uw eigen gedachtegoed"
+  },
+  {
+   "url": "https://repository.officiele-overheidspublicaties.nl/bwb/BWBR0002629/2026-01-01_0/xml/BWBR0002629_2026-01-01_0.xml",
+   "title": "Wet op de omzetbelasting 1968, art. 11 lid 1 (BWB repository, text in force 2026-01-01; wetten.overheid.nl unreachable)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "q. de diensten door componisten, schrijvers en journalisten;"
+  },
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/goederen_diensten_21_btw/",
+   "title": "Goederen en diensten met 21% btw (Belastingdienst)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Het 21%-tarief geldt voor alle goederen en diensten die niet vrijgesteld zijn, en die niet onder het 9%-tarief of het 0%-tarief vallen."
+  },
+  {
+   "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/",
+   "title": "Kleineondernemersregeling (KOR) (Belastingdienst)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "En is uw omzet niet meer dan € 20.000 per kalenderjaar? Dan kunt u gebruikmaken van de kleineondernemersregeling (KOR)."
+  }
+ ],
+ "blockers": []
+}

@@ -1,0 +1,272 @@
+{
+ "topic": "tax.ID",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Indonesia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays 5% to IDR 60 million of taxable income, 15% to 250 million, 25% to 500 million, 30% to 5 billion and 35% above, after personal reliefs for self, spouse and up to three children; an individual in business with turnover up to IDR 4.8 billion may instead pay a final 0.5% of turnover.",
+   "value": {
+    "currency": "IDR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 60000000,
+      "rate": 0.05
+     },
+     {
+      "from": 60000000,
+      "to": 250000000,
+      "rate": 0.15
+     },
+     {
+      "from": 250000000,
+      "to": 500000000,
+      "rate": 0.25
+     },
+     {
+      "from": 500000000,
+      "to": 5000000000,
+      "rate": 0.3
+     },
+     {
+      "from": 5000000000,
+      "to": null,
+      "rate": 0.35
+     }
+    ],
+    "smallBusinessFinal": {
+     "rate": 0.005,
+     "turnoverUpTo": 4800000000
+    },
+    "personalRelief": "self, spouse, up to three children (amounts not stated in the source)",
+    "regionalLayer": null
+   },
+   "applies": "Indonesian residents, fiscal year 2026 (calendar).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Penghasilan Tidak Kena Pajak per tahun diberikan paling sedikit: a. Rp5a.000.000,00 (lima puluh empat juta rupiah) untuk diri Wajib Pajak orang pribadi; b. Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk Wajib Pajak yang kawin; … d. Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk setiap anggota keluarga sedarah dan keluarga semenda dalam garis keturunan lurus serta anak angkat, yang menjadi tanggungan sepenuhnya, paling banyak 3 (tiga) orang untuk setiap keluarga. … Rp60.000.000,00 (enam … (lima persen) … di atas Rp60.000.000,0O l5o/o … di atas Rp250.000.000,00 25o/o … di atas Rp500.000.00O,00 3Oo/o … di atas 35o/o"
+    },
+    {
+     "src": 1,
+     "said": "Taxable income (IDR) Rate Up to 60 million 5% Over 60 million and up to 250 million 15% Over 250 million and up to 500 million 25% Over 500 million and up to 5 billion 30% Over 5 billion 35%"
+    },
+    {
+     "src": 1,
+     "said": "All income earned or received by an individual carrying on business activities (except certain independent personal services) that does not exceed IDR 4.8 billion in a fiscal year is subject to 0.5% final income tax"
+    },
+    {
+     "src": 1,
+     "said": "Personal tax reliefs are provided for the resident individual, the individual’s spouse, and up to three dependent children."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The fiscal year is the calendar year; the annual return is due by 31 March 2027 (extendable by up to two months).",
+   "value": {
+    "taxYear": {
+     "from": "2026-01-01",
+     "to": "2026-12-31"
+    },
+    "returnDue": "2027-03-31",
+    "currency": "IDR"
+   },
+   "applies": "Indonesian individuals.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Tax year: The fiscal year is the calendar year."
+    },
+    {
+     "src": 1,
+     "said": "The annual individual income tax return is due by 31 March following the end of the relevant calendar year, but the deadline may be extended for up to two months."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "An employer withholds PPh 21 monthly at an effective rate (TER) on gross monthly pay by PTKP category (A: single or married without dependants and the like; B; C), from 0% up to IDR 5.4 million a month in category A to 34% above IDR 1.4 billion, with a daily TER (0% to IDR 450,000 a day, 0.5% to 2.5 million) for daily workers. A resident performer, film star, director or film crew paid as a non-employee has PPh 21 withheld at the Article 17 scale on 50% of the gross fee.",
+   "value": {
+    "scheme": "PPh 21 by employer",
+    "ter": {
+     "categories": [
+      "A",
+      "B",
+      "C"
+     ],
+     "A": {
+      "zeroUpToMonthly": 5400000,
+      "topRate": 0.34,
+      "topAboveMonthly": 1400000000
+     },
+     "daily": [
+      {
+       "upTo": 450000,
+       "rate": 0
+      },
+      {
+       "upTo": 2500000,
+       "rate": 0.005
+      }
+     ],
+     "fullTable": "PP 58/2023 Lampiran (saved ID-jdih-pp58-2023.pdf)"
+    },
+    "nonEmployeeBase": 0.5,
+    "nonEmployeeRates": "UU PPh art. 17(1)(a)"
+   },
+   "applies": "Employees and individual service providers in Indonesia.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "kategori A diterapkan atas penghasilan bruto bulanan yang diterima atau diperoleh penerima penghasilan dengan status Penghasilan Tidak Kena Pajak: 1. tidak kawin tanpa tanggungan; … A. TARIFEFEKTIFBULANAN KATEGORIA … sampai dengan Rp5.4O0.OOO,O0 (lima juta empat Oo/o … di atas RpI.4OO.OOO.OOO,OO (satu miliar empat 34o/o … D. TARIF EFEKTIF HARIAN … sampai dengan Rp4SO.OOO,OO (empat ratus lima puluh Oo/o … di atas Rp450.OOO,0O (empat ratus lima puluh ribu rupiah) o,50/o"
+    },
+    {
+     "src": 3,
+     "said": "Bukan Pegawai sebagaimana dimaksud pada ayat (1) huruf e, meliputi: … b. pemain musik, pembawa acara, penyanyi, pelawak, bintang film, bintang sinetron, bintang iklan, sutradara, kru film, foto model, … Dasar pengenaan dan pemotongan Pajak Penghasilan Pasal 21 untuk Bukan Pegawai yaitu sebesar 50% (lima puluh persen) darijumlah penghasilan bruto"
+    },
+    {
+     "src": 4,
+     "said": "Yang dimaksud dengan “bukan pegawai” adalah orang pribadi yang menerima atau memperoleh penghasilan dari pemberi kerja sehubungan dengan ikatan kerja tidak tetap, misalnya artis yang menerima atau memperoleh honorarium dari pemberi kerja."
+    },
+    {
+     "src": 1,
+     "said": "The employer is responsible for calculating, deducting, and remitting tax payable on employees’ salaries and other remuneration."
+    },
+    {
+     "src": 1,
+     "said": "Payments for technical services provided by resident individuals are subject to employee income tax."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "The employer pays 0.24%-1.74% work accident, 0.3% death, 3.7% old-age savings, 2% pension (capped) and 4% health (capped); the employee pays 2% old-age, 1% pension and 1% health (capped). Pension is not compulsory for expatriates; the schemes cover foreigners working six months or more.",
+   "value": {
+    "employer": {
+     "accident": [
+      0.0024,
+      0.0174
+     ],
+     "death": 0.003,
+     "oldAge": 0.037,
+     "pension": 0.02,
+     "health": 0.04
+    },
+    "employee": {
+     "oldAge": 0.02,
+     "pension": 0.01,
+     "health": 0.01
+    },
+    "caps": "pension and health capped (amounts not stated)"
+   },
+   "applies": "Employees in Indonesia.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "The employer contributions are 0.24% to 1.74% for work accident protection, 0.3% for death insurance, 3.7% for old age savings, and 2% (subject to a salary cap) for the pension plan. The employer contribution for the health care scheme is 4% (subject to a salary cap). The contribution to the pension plan is not mandatory for expatriates. Employed resident individuals must make social security contributions (old age savings) of 2% of monthly compensation and a pension plan contribution of 1%. Additionally, employed individuals are required to make a health care contribution of 1% of monthly compensation (subject to a monthly cap)."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident's service fee and royalties from Indonesia bear a 20% withholding. For work, services or activities the 20% (PPh 26) is final, or the treaty rate applies.",
+   "value": {
+    "services": 0.2,
+    "royalties": 0.2,
+    "final": true
+   },
+   "applies": "Payments to non-residents.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Tarifpemotongan Pajak Penghasilan Pasal 26 Sehubungan dengan Pekerjaan, Jasa, atau Kegiatan sebesar 20% (dua puluh persen) dan bersifat final atau sesuai dengan ketentuan persetujuan penghindaran pajak berganda"
+    },
+    {
+     "src": 1,
+     "said": "Technical service fees paid to a nonresident are subject to a 20% withholding tax, unless the rate is reduced in accordance with an applicable tax treaty."
+    },
+    {
+     "src": 1,
+     "said": "Royalties paid to a nonresident are subject to a 20% withholding tax, unless the rate is reduced in accordance with an applicable tax treaty."
+    }
+   ]
+  },
+  {
+   "item": "authors",
+   "finding": "Royalties paid to a resident bear a 15% withholding as an advance on the year's tax.",
+   "value": {
+    "resident": 0.15,
+    "final": false
+   },
+   "applies": "Royalty payments to residents.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Royalties paid by an Indonesian taxpayer to an Indonesian resident are subject to a 15% withholding tax, which represents an advance payment of the tax liability for the income recipient."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A freelancer must register as a VAT entrepreneur (PKP) once taxable deliveries exceed IDR 4.8 billion in a year; the standard rate is 12% (in practice for luxury goods only).",
+   "value": {
+    "currency": "IDR",
+    "threshold": 4800000000,
+    "standardRate": 0.12
+   },
+   "applies": "Taxable services in Indonesia.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Entrepreneurs delivering taxable goods and/or taxable services with a value exceeding IDR 4.8 billion in a fiscal year are required to register for VAT purposes"
+    },
+    {
+     "src": 1,
+     "said": "The standard VAT rate is 12%."
+    }
+   ]
+  }
+ ],
+ "country": "ID",
+ "sources": [
+  {
+   "url": "https://jdih.kemenkeu.go.id/api/download/a9faab97-aca7-4f87-9fdc-faa8123d1454/7TAHUN2021UU.pdf",
+   "title": "Undang-Undang Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan, amending UU PPh arts. 7 and 17 (JDIH Kementerian Keuangan); the PDF text layer is the publisher's OCR (e.g. \"5o/o\" for 5%), quoted as it reads",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Penghasilan Tidak Kena Pajak per tahun diberikan paling sedikit: a. Rp5a.000.000,00 (lima puluh empat juta rupiah) untuk diri Wajib Pajak orang pribadi; b. Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk Wajib Pajak yang kawin; … d. Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk setiap anggota keluarga sedarah dan keluarga semenda dalam garis keturunan lurus serta anak angkat, yang menjadi tanggungan sepenuhnya, paling banyak 3 (tiga) orang untuk setiap keluarga. … Rp60.000.000,00 (enam … (lima persen) … di atas Rp60.000.000,0O l5o/o … di atas Rp250.000.000,00 25o/o … di atas Rp500.000.00O,00 3Oo/o … di atas 35o/o"
+  },
+  {
+   "url": "https://www.deloitte.com/content/dam/assets-shared/docs/services/tax/2026/dttl-tax-indonesiahighlights-2026.pdf",
+   "title": "Indonesia Highlights 2026 (Deloitte International Tax)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.pajak.go.id",
+   "said": "Taxable income (IDR) Rate Up to 60 million 5% Over 60 million and up to 250 million 15% Over 250 million and up to 500 million 25% Over 500 million and up to 5 billion 30% Over 5 billion 35% … All income earned or received by an individual carrying on business activities (except certain independent personal services) that does not exceed IDR 4.8 billion in a fiscal year is subject to 0.5% final income tax … Personal tax reliefs are provided for the resident individual, the individual’s spouse, and up to three dependent children. … Tax year: The fiscal year is the calendar year. … The annual individual income tax return is due by 31 March following the end of the relevant calendar year, but the deadline may be extended for up to two months. … The employer is responsible for calculating, deducting, and remitting tax payable on employees’ salaries and other remuneration. … Payments for technical services provided by resident individuals are subject to employee income tax. … The employer contributions are 0.24% to 1.74% for work accident protection, 0.3% for death insurance, 3.7% for old age savings, and 2% (subject to a salary cap) for the pension plan. The employer contribution for the health care scheme is 4% (subject to a salary cap). The contribution to the pension plan is not mandatory for expatriates. Employed resident individuals must make social security contributions (old age savings) of 2% of monthly compensation and a pension plan contribution of 1%. Additionally, employed individuals are required to make a health care contribution of 1% of monthly compensation (subject to a monthly cap). … Technical service fees paid to a nonresident are subject to a 20% withholding tax, unless the rate is reduced in accordance with an applicable tax treaty. … Royalties paid to a nonresident are subject to a 20% withholding tax, unless the rate is reduced in accordance with an applicable tax treaty. … Royalties paid by an Indonesian taxpayer to an Indonesian resident are subject to a 15% withholding tax, which represents an advance payment of the tax liability for the income recipient. … Entrepreneurs delivering taxable goods and/or taxable services with a value exceeding IDR 4.8 billion in a fiscal year are required to register for VAT purposes … The standard VAT rate is 12%."
+  },
+  {
+   "url": "https://jdih.kemenkeu.go.id/api/download/e47c3fc4-a912-4bf1-bcad-335fee3f71f8/2023pp058.pdf",
+   "title": "Peraturan Pemerintah Nomor 58 Tahun 2023 tentang Tarif Pemotongan PPh Pasal 21, Lampiran (JDIH Kementerian Keuangan); the PDF text layer is the publisher's OCR (e.g. \"5o/o\" for 5%), quoted as it reads",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "kategori A diterapkan atas penghasilan bruto bulanan yang diterima atau diperoleh penerima penghasilan dengan status Penghasilan Tidak Kena Pajak: 1. tidak kawin tanpa tanggungan; … A. TARIFEFEKTIFBULANAN KATEGORIA … sampai dengan Rp5.4O0.OOO,O0 (lima juta empat Oo/o … di atas RpI.4OO.OOO.OOO,OO (satu miliar empat 34o/o … D. TARIF EFEKTIF HARIAN … sampai dengan Rp4SO.OOO,OO (empat ratus lima puluh Oo/o … di atas Rp450.OOO,0O (empat ratus lima puluh ribu rupiah) o,50/o"
+  },
+  {
+   "url": "https://jdih.kemenkeu.go.id/api/download/e60a82e0-b218-40f5-9d18-b924aa1e11ce/2023pmkeuangan168.pdf",
+   "title": "Peraturan Menteri Keuangan Nomor 168 Tahun 2023 (JDIH Kementerian Keuangan)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Bukan Pegawai sebagaimana dimaksud pada ayat (1) huruf e, meliputi: … b. pemain musik, pembawa acara, penyanyi, pelawak, bintang film, bintang sinetron, bintang iklan, sutradara, kru film, foto model, … Dasar pengenaan dan pemotongan Pajak Penghasilan Pasal 21 untuk Bukan Pegawai yaitu sebesar 50% (lima puluh persen) darijumlah penghasilan bruto … Tarifpemotongan Pajak Penghasilan Pasal 26 Sehubungan dengan Pekerjaan, Jasa, atau Kegiatan sebesar 20% (dua puluh persen) dan bersifat final atau sesuai dengan ketentuan persetujuan penghindaran pajak berganda"
+  },
+  {
+   "url": "https://www.pajak.go.id/id/pph-pasal-2126",
+   "title": "PPh Pasal 21/26 (Direktorat Jenderal Pajak)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Yang dimaksud dengan “bukan pegawai” adalah orang pribadi yang menerima atau memperoleh penghasilan dari pemberi kerja sehubungan dengan ikatan kerja tidak tetap, misalnya artis yang menerima atau memperoleh honorarium dari pemberi kerja."
+  }
+ ],
+ "blockers": []
+}

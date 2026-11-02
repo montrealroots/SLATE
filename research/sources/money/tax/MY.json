@@ -1,0 +1,361 @@
+{
+ "topic": "tax.MY",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Malaysia: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "A resident pays nothing on the first RM5,000 of chargeable income, then 1%, 3%, 6%, 11%, 19%, 25%, 26%, 28% and 30% above RM2,000,000, after a personal relief of RM9,000 (in force since YA 2010); there is no local income tax. Budget 2027 proposes, from YA 2027, 18% on RM70,001–100,000, a new 24% band to RM150,000, 28% only to RM1,000,000 and 30% above, and a RM12,000 relief.",
+   "value": {
+    "currency": "MYR",
+    "brackets": [
+     {
+      "from": 0,
+      "to": 5000,
+      "rate": 0
+     },
+     {
+      "from": 5000,
+      "to": 20000,
+      "rate": 0.01
+     },
+     {
+      "from": 20000,
+      "to": 35000,
+      "rate": 0.03
+     },
+     {
+      "from": 35000,
+      "to": 50000,
+      "rate": 0.06
+     },
+     {
+      "from": 50000,
+      "to": 70000,
+      "rate": 0.11
+     },
+     {
+      "from": 70000,
+      "to": 100000,
+      "rate": 0.19
+     },
+     {
+      "from": 100000,
+      "to": 400000,
+      "rate": 0.25
+     },
+     {
+      "from": 400000,
+      "to": 600000,
+      "rate": 0.26
+     },
+     {
+      "from": 600000,
+      "to": 2000000,
+      "rate": 0.28
+     },
+     {
+      "from": 2000000,
+      "to": null,
+      "rate": 0.3
+     }
+    ],
+    "allowance": 5000,
+    "regional": null,
+    "personalRelief": 9000,
+    "proposedFromYA2027": {
+     "status": "Budget 2027 proposal (Finance Bill), not yet law",
+     "brackets": [
+      {
+       "from": 0,
+       "to": 5000,
+       "rate": 0
+      },
+      {
+       "from": 5000,
+       "to": 20000,
+       "rate": 0.01
+      },
+      {
+       "from": 20000,
+       "to": 35000,
+       "rate": 0.03
+      },
+      {
+       "from": 35000,
+       "to": 50000,
+       "rate": 0.06
+      },
+      {
+       "from": 50000,
+       "to": 70000,
+       "rate": 0.11
+      },
+      {
+       "from": 70000,
+       "to": 100000,
+       "rate": 0.18
+      },
+      {
+       "from": 100000,
+       "to": 150000,
+       "rate": 0.24
+      },
+      {
+       "from": 150000,
+       "to": 400000,
+       "rate": 0.25
+      },
+      {
+       "from": 400000,
+       "to": 600000,
+       "rate": 0.26
+      },
+      {
+       "from": 600000,
+       "to": 1000000,
+       "rate": 0.28
+      },
+      {
+       "from": 1000000,
+       "to": null,
+       "rate": 0.3
+      }
+     ],
+     "personalRelief": 12000
+    }
+   },
+   "applies": "Resident individuals, YA 2026 (the scale the Ministry of Finance gives as current in its Budget 2027 tax measures); the YA 2027 changes are proposals.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Kadar cukai pendapatan bagi individu pemastautin adalah progresif di antara 0% dan 30% seperti berikut: … 0 – 5,000 0 5,001 – 20,000 1 20,001 – 35,000 3 35,001 – 50,000 6 50,001 – 70,000 11 70,001 – 100,000 19 100,001 – 400,000 25 400,001 – 600,000 26 600,001 – 2,000,000 28 Melebihi 2,000,000 30 … Mulai tahun taksiran 2010, pelepasan cukai pendapatan individu ke atas individu dan saudara tanggungan dinaikkan daripada RM8,000 kepada RM9,000. … dicadangkan pelepasan cukai pendapatan ke atas individu dan saudara tanggungan dinaikkan daripada RM9,000 kepada RM12,000. … Mulai tahun taksiran 2027."
+    },
+    {
+     "src": 1,
+     "said": "The following are the prevailing tax rates applicable to resident individual taxpayers: Taxable income (MYR) Tax on column 1 (MYR) Tax on excess (%) Over Not over 5,000 20,000 0 1 20,000 35,000 150 3 35,000 50,000 600 6 50,000 70,000 1,500 11 70,000 100,000 3,700 19 100,000 400,000 9,400 25 400,000 600,000 84,400 26 600,000 2,000,000 136,400 28 2,000,000 528,400 30 A non-resident individual is taxed at a flat rate of 30% on total taxable income. … Local income taxes There are no local taxes on personal income in Malaysia."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "EPF takes 11% from a Malaysian employee under 60, with the employer paying 13% on wages to RM5,000 and 12% above; non-citizens pay 2% each; SOCSO employment-injury and invalidity contributions are capped at RM29.75 a month for the employee and RM104.15 for the employer.",
+   "value": {
+    "currency": "MYR",
+    "epf": {
+     "malaysianUnder60": {
+      "employee": 0.11,
+      "employerToRM5000": 0.13,
+      "employerAbove": 0.12
+     },
+     "malaysian60plus": {
+      "employee": 0,
+      "employer": 0.04
+     },
+     "nonMalaysian": {
+      "employee": 0.02,
+      "employer": 0.02
+     }
+    },
+    "socsoMonthlyMax": {
+     "employee": 29.75,
+     "employer": 104.15
+    }
+   },
+   "applies": "Employees",
+   "sources": [
+    {
+     "src": 2,
+     "said": "Category Wages % of contribution of employee’s wages (minimum) Below 60 years old Age 60 and above Malaysian ≤ M YR 5,000 Employer: 13% Employee: 11% Employer: 4% Employee: 0% > MYR 5,000 Employer: 12% Employee: 11% … Non-Malaysians No limit Employer: 2% Employee: 2% … The sum is based on the employee’s monthly wages and is restricted to a maximum of MYR 104.15 for the employer and MYR 29.75 for the employee."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident public entertainer's gross income for services in Malaysia, including fees, prize money and paid benefits, bears 15% withholding under section 109A; a non-resident individual is otherwise taxed at a flat 30%.",
+   "value": {
+    "rate": 0.15,
+    "base": "gross income including fees, allowances and reimbursed benefits",
+    "threshold": null,
+    "final": null,
+    "otherNonResidentRate": 0.3
+   },
+   "applies": "Non-resident public entertainers (stage, radio or television artistes, musicians and the like)",
+   "sources": [
+    {
+     "src": 3,
+     "said": "gross income which is subject to WHT under S109A. Such payments include fees, prize money, allowances as well as reimbursements for benefits like accommodation, meals and airfare. … 8 Tax Rate on Income of NRPE The rate of tax is 15% on gross income under Schedule 1, Part II of the ITA."
+    },
+    {
+     "src": 1,
+     "said": "A non-resident individual is taxed at a flat rate of 30% on total taxable income."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Malaysia has no VAT; service tax is 8% on listed taxable services (6% on food and beverage, telecoms, parking and logistics), and a provider must register once its taxable services exceed RM500,000 in 12 months (RM1,500,000 for food and beverage).",
+   "value": {
+    "serviceTax": 0.08,
+    "reduced": 0.06,
+    "salesTax": [
+     0.05,
+     0.1
+    ],
+    "registrationThreshold": 500000
+   },
+   "applies": "2026. The RM500,000 threshold is PwC's table (its row labels are not in the page text); whether a performer's or writer's fee is a listed taxable service is not settled (see blocker).",
+   "sources": [
+    {
+     "src": 4,
+     "said": "What is the rate of tax for service tax? i. The tax rate is 8% for all taxable services except; … ii. F&B, Logistics, Telecommunications, and Parking are at a rate of 6%. … The backward method is based on the value of taxable services for any month, combined with the value of taxable services for the 11 months preceding that month."
+    },
+    {
+     "src": 2,
+     "said": "Sales tax is generally an ad valorem tax. The ad valorem rates are 5% or 10% depending on the class of goods. The rate of service tax is 8% for all taxable services except for the following, which are at 6%: Provision of food and beverage services. Telecommunication services. Parking services. Logistics services."
+    },
+    {
+     "src": 5,
+     "said": "A person is liable to be registered if the total value of his taxable services for a 12-month period exceeds or is expected to exceed the prescribed registration threshold."
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "The year of assessment is the calendar year; the return is due by 30 April without business income and by 30 June with it.",
+   "value": {
+    "start": "01-01",
+    "end": "12-31",
+    "returnDue": {
+     "noBusiness": "04-30",
+     "business": "06-30"
+    }
+   },
+   "applies": "Individuals",
+   "sources": [
+    {
+     "src": 6,
+     "said": "The Malaysian tax year is the calendar year (i.e. 1 January to 31 December)."
+    },
+    {
+     "src": 6,
+     "said": "The tax return is submitted not later than 30 April (without business income) and 30 June (with business income) in the following calendar year."
+    }
+   ]
+  }
+ ],
+ "country": "MY",
+ "sources": [
+  {
+   "url": "https://belanjawan.mof.gov.my/pdf/belanjawan2027/ucapan/langkah-cukai.pdf",
+   "title": "Langkah-Langkah Cukai, Belanjawan 2027, Lampiran 1 and 2 (Kementerian Kewangan Malaysia)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Kadar cukai pendapatan bagi individu pemastautin adalah progresif di antara 0% dan 30% seperti berikut: … 0 – 5,000 0 5,001 – 20,000 1 20,001 – 35,000 3 35,001 – 50,000 6 50,001 – 70,000 11 70,001 – 100,000 19 100,001 – 400,000 25 400,001 – 600,000 26 600,001 – 2,000,000 28 Melebihi 2,000,000 30 … Mulai tahun taksiran 2010, pelepasan cukai pendapatan individu ke atas individu dan saudara tanggungan dinaikkan daripada RM8,000 kepada RM9,000. … dicadangkan pelepasan cukai pendapatan ke atas individu dan saudara tanggungan dinaikkan daripada RM9,000 kepada RM12,000. … Mulai tahun taksiran 2027."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malaysia/individual/taxes-on-personal-income",
+   "title": "PwC Worldwide Tax Summaries: Malaysia, taxes on personal income",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/",
+   "said": "The following are the prevailing tax rates applicable to resident individual taxpayers: Taxable income (MYR) Tax on column 1 (MYR) Tax on excess (%) Over Not over 5,000 20,000 0 1 20,000 35,000 150 3 35,000 50,000 600 6 50,000 70,000 1,500 11 70,000 100,000 3,700 19 100,000 400,000 9,400 25 400,000 600,000 84,400 26 600,000 2,000,000 136,400 28 2,000,000 528,400 30 A non-resident individual is taxed at a flat rate of 30% on total taxable income. … Local income taxes There are no local taxes on personal income in Malaysia."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malaysia/individual/other-taxes",
+   "title": "PwC Worldwide Tax Summaries: Malaysia, other taxes",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.kwsp.gov.my/",
+   "said": "Category Wages % of contribution of employee’s wages (minimum) Below 60 years old Age 60 and above Malaysian ≤ M YR 5,000 Employer: 13% Employee: 11% Employer: 4% Employee: 0% > MYR 5,000 Employer: 12% Employee: 11% … Non-Malaysians No limit Employer: 2% Employee: 2% … The sum is based on the employee’s monthly wages and is restricted to a maximum of MYR 104.15 for the employer and MYR 29.75 for the employee. … Sales tax is generally an ad valorem tax. The ad valorem rates are 5% or 10% depending on the class of goods. The rate of service tax is 8% for all taxable services except for the following, which are at 6%: Provision of food and beverage services. Telecommunication services. Parking services. Logistics services."
+  },
+  {
+   "url": "https://www.ctim.org.my/file/2017/TECH-DT/e-CTIM%20TECH-DT%2080-2017%20-%20PR%206_2017%20Income%20of%20a%20NR%20Public%20Entertainer%20(081117)(F).pdf",
+   "title": "CTIM e-Circular TECH-DT 80/2017: Public Ruling 6/2017, Withholding Tax on Income of a Non-Resident Public Entertainer, quoting LHDNM Public Ruling No. 6/2017 of 12 October 2017 (hasil.gov.my, which blocks this environment)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hasil.gov.my/",
+   "said": "gross income which is subject to WHT under S109A. Such payments include fees, prize money, allowances as well as reimbursements for benefits like accommodation, meals and airfare. … 8 Tax Rate on Income of NRPE The rate of tax is 15% on gross income under Schedule 1, Part II of the ITA."
+  },
+  {
+   "url": "https://mysst.customs.gov.my/faq-services-tax/",
+   "title": "FAQ Service Tax, MySST (Royal Malaysian Customs Department)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "What is the rate of tax for service tax? i. The tax rate is 8% for all taxable services except; … ii. F&B, Logistics, Telecommunications, and Parking are at a rate of 6%. … The backward method is based on the value of taxable services for any month, combined with the value of taxable services for the 11 months preceding that month."
+  },
+  {
+   "url": "https://www.pwc.com/my/en/publications/mtb/service-tax.html",
+   "title": "2025/2026 Malaysian Tax Booklet: Service tax (PwC Malaysia), on the Service Tax Regulations 2018",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://mysst.customs.gov.my/",
+   "said": "A person is liable to be registered if the total value of his taxable services for a 12-month period exceeds or is expected to exceed the prescribed registration threshold."
+  },
+  {
+   "url": "https://taxsummaries.pwc.com/malaysia/individual/tax-administration",
+   "title": "PwC Worldwide Tax Summaries: Malaysia, tax administration",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/",
+   "said": "The Malaysian tax year is the calendar year (i.e. 1 January to 31 December). … The tax return is submitted not later than 30 April (without business income) and 30 June (with business income) in the following calendar year."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "LHDN's own page for the RM400 personal rebate (chargeable income to RM35,000) for YA 2026; the scale and the RM9,000 relief are now quoted from the Ministry of Finance.",
+   "tried": {
+    "institution": "hasil.gov.my blocks this environment's IP ('This Page Cannot Be Displayed') || 2026-11-01 retry: hasil.gov.my (www, mytax) still does not answer (curl 000); phl.hasil.gov.my and lampiran1.hasil.gov.my answer but serve 404 for the paths tried; Ministry of Finance belanjawan.mof.gov.my read: Budget 2027 Langkah-Langkah Cukai (saved MY-mof-b2027-langkah-cukai.pdf) quotes the current scale and relief; no rebate figure in it.",
+    "official-register": "Income Tax Act 1967 Schedule 1 not fetched (lom.agc.gov.my not tried) || 2026-11-01 retry: lom.agc.gov.my answers but its reprint list (principal.php?type=reprint) loads by script and act-detail.php?language=BI&act=53 returns 15 bytes; Act 53 links are per-session tokens, not reachable by URL.",
+    "web-search": "searched hasil.gov.my tax rate YA 2025: snippets only || 2026-11-01 retry: 'pelepasan cukai individu RM9,000 rebat RM400 tahun taksiran 2025 LHDN kadar cukai pendapatan bermastautin' (Malay): blogs and news only (RinggitPlus, Utusan), plus the MOF Budget 2025 langkah-cukai PDF; led to the Budget 2027 document now quoted.",
+    "trade-press": "PwC MY gives rates, not reliefs, in the text read || 2026-11-01 retry: RinggitPlus and SAYS (consumer press) give the RM400 rebate to RM35,000 without a primary link; not used.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available lists a 2026-05-22 snapshot of hasil.gov.my/en/individual/individual-life-cycle/income-declaration/tax-rate/; the snapshot itself: web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "withholding",
+   "sought": "The monthly tax deduction (PCB/MTD) schedule an employer applies.",
+   "tried": {
+    "institution": "hasil.gov.my blocked || 2026-11-01 retry: hasil.gov.my (employers pages) does not answer (curl 000); MOF Budget 2027 tax measures read: no PCB schedule.",
+    "official-register": "not tried || 2026-11-01 retry: Income Tax (Deduction from Remuneration) Rules 1994 not reachable: lom.agc.gov.my serves subsidiary legislation only through per-session tokens.",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "not read || 2026-11-01 retry: PwC Malaysia tax administration page (saved MY-pwc-tax-administration.html) read: no MTD table.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available lists a 2026-06-18 snapshot of hasil.gov.my/en/employers/; the snapshot itself: web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "vat",
+   "sought": "Whether a performer's, writer's or director's fee is a taxable service in the First Schedule of the Service Tax Regulations 2018 (as widened from 1 July 2025).",
+   "tried": {
+    "institution": "mysst.customs.gov.my not tried || 2026-11-01 retry: mysst.customs.gov.my read: FAQ Service Tax (saved MY-mysst-faq-services.html, now quoted for the rate and threshold method) and Service Tax Policy list (saved MY-mysst-policy.html: titles only); General/Specific/Industry guide pages embed only the sales-tax guide.",
+    "official-register": "not tried || 2026-11-01 retry: Service Tax Regulations 2018 (P.U.(A) 214/2018) First Schedule: lom.agc.gov.my serves it only by session token; not read.",
+    "web-search": "not run || 2026-11-01 retry: 'mysst.customs.gov.my Service Tax Regulations 2018 First Schedule Group G professional services threshold RM500,000 consultancy': MIDA and KPMG summaries; Group G lists legal, accounting, engineering, architecture and the like, no performing services named.",
+    "trade-press": "PwC gives rates only || 2026-11-01 retry: PwC Malaysian Tax Booklet service-tax chapter read (quoted for the threshold); it names professional, consultancy, IT and management services, not performance or writing.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available lists the MySST pages (live, so not needed); the snapshot itself: web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Whether the 15% public-entertainer withholding is a final tax (a CTIM 2022 presentation says so, not read).",
+   "tried": {
+    "institution": "hasil.gov.my blocked || 2026-11-01 retry: hasil.gov.my withholding page still does not answer; lampiran1.hasil.gov.my/pdf/pdfam/PR_6_2017.pdf returns 404 (2026-11-01).",
+    "official-register": "Public Ruling 6/2017 at circulars.mia.org.my refused (403) || 2026-11-01 retry: Public Ruling 6/2017: circulars.mia.org.my refused earlier (403), not read another way; lom.agc.gov.my s.109A only by session token.",
+    "web-search": "search found the HASIL withholding page (blocked) and a CTIM presentation || 2026-11-01 retry: 'phl.hasil.gov.my public entertainer withholding tax section 109A final tax pdf': HASIL withholding page (rate 15%, s.109A, CP154), CTIM copies of PR 6/2017; none says final.",
+    "trade-press": "CTIM circular read; it gives rate and base || 2026-11-01 retry: CTIM 2022 course deck (ctim.org.my/wp-content/uploads/2022/12/120123-…pdf) read: an outline, no statement that the tax is final; not kept.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available lists a 2026-06-11 snapshot of hasil.gov.my/en/legislation/withholding-tax/; the snapshot itself: web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties under the Income Tax Act 1967.",
+   "tried": {
+    "institution": "hasil.gov.my blocked || 2026-11-01 retry: hasil.gov.my does not answer; MOF Budget 2027 tax measures read: no royalty relief (only entertainment-duty exemptions for performances and films).",
+    "official-register": "not tried || 2026-11-01 retry: Income Tax Act 1967 Schedule 6 (royalty exemptions) only by lom.agc.gov.my session token; not read.",
+    "web-search": "not run || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used.",
+    "trade-press": "not read || 2026-11-01 retry: PwC Malaysia income determination page (saved MY-pwc-income-determination.html) read: no author relief stated.",
+    "archive": "web.archive.org unreachable from this environment || 2026-11-01 retry: archive.org/wayback/available lists hasil.gov.my pages; the snapshot itself: web.archive.org resets https and returns 403 on http from this environment (2026-11-01), so it was not read."
+   }
+  }
+ ]
+}

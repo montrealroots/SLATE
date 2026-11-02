@@ -1,0 +1,260 @@
+{
+ "topic": "tax.ZW",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Zimbabwe: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "Employment income earned in US dollars is taxed on the latest published ZIMRA table (January-December 2025): nothing to USD 1,200 a year, then 20%, 25% (from 3,601), 30% (from 12,001), 35% (from 24,001) and 40% above 36,000, by multiply-and-deduct, plus an Aids Levy of 3% of the tax; income from trade and investments is taxed at 25%. No 2026 table is posted on ZIMRA's tax-tables page.",
+   "value": {
+    "currency": "USD",
+    "annual2025": [
+     {
+      "from": 0,
+      "to": 1200,
+      "rate": 0,
+      "deduct": 0
+     },
+     {
+      "from": 1200,
+      "to": 3600,
+      "rate": 0.2,
+      "deduct": 240
+     },
+     {
+      "from": 3600,
+      "to": 12000,
+      "rate": 0.25,
+      "deduct": 420
+     },
+     {
+      "from": 12000,
+      "to": 24000,
+      "rate": 0.3,
+      "deduct": 1020
+     },
+     {
+      "from": 24000,
+      "to": 36000,
+      "rate": 0.35,
+      "deduct": 2220
+     },
+     {
+      "from": 36000,
+      "to": null,
+      "rate": 0.4,
+      "deduct": 4020
+     }
+    ],
+    "monthly2025": [
+     {
+      "from": 0,
+      "to": 100,
+      "rate": 0,
+      "deduct": 0
+     },
+     {
+      "from": 100,
+      "to": 300,
+      "rate": 0.2,
+      "deduct": 20
+     },
+     {
+      "from": 300,
+      "to": 1000,
+      "rate": 0.25,
+      "deduct": 35
+     },
+     {
+      "from": 1000,
+      "to": 2000,
+      "rate": 0.3,
+      "deduct": 85
+     },
+     {
+      "from": 2000,
+      "to": 3000,
+      "rate": 0.35,
+      "deduct": 185
+     },
+     {
+      "from": 3000,
+      "to": null,
+      "rate": 0.4,
+      "deduct": 335
+     }
+    ],
+    "aidsLevy": 0.03,
+    "tradeAndInvestment": 0.25,
+    "zigTable": "separate ZiG tables (not read)",
+    "table2026": "not published on the tax-tables page at 2026-11-01"
+   },
+   "applies": "USD earnings of Zimbabwean employees; tax = income x rate - deduct; the 2025 table is the latest ZIMRA has posted.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "PAY AS YOU EARN ( PAYE) FOREIGN CURRENCY TAX TABLES FOR JANUARY TO DECEMBER 2025"
+    },
+    {
+     "src": 0,
+     "said": "from 0 to 1,200.00 multiply by 0% Deduct - $32 000 per year from 1,201 to 3,600.00 multiply by 20% Deduct 240"
+    },
+    {
+     "src": 0,
+     "said": "from 3,601 to 12,000.00 multiply by 25% Deduct 420"
+    },
+    {
+     "src": 0,
+     "said": "from 12,001 to 24,000.00 multiply by 30% Deduct 1,020"
+    },
+    {
+     "src": 0,
+     "said": "from 24,001 to 36,000.00 multiply by 35% Deduct 2,220"
+    },
+    {
+     "src": 0,
+     "said": "from 36,001 and above multiply by 40% Deduct 4,020"
+    },
+    {
+     "src": 0,
+     "said": "Aids Levy is 3% of the Individuals' Tax payable"
+    },
+    {
+     "src": 1,
+     "said": "Income of individual from trade and investments 14(2b) 25%"
+    },
+    {
+     "src": 2,
+     "said": "Tax Tables USD Jan-Dec 2025 Tax Tables USD Jan-Dec 2025 Tax Tables.pdf Download Details ZWG 2025 tax tables"
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "The employer deducts PAYE from pay before paying it and remits it to ZIMRA by the 10th of the following month, in the currency the income was earned in.",
+   "value": {
+    "scheme": "PAYE",
+    "remitBy": "10th of the following month"
+   },
+   "applies": "Employees in Zimbabwe.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Any employer who deducts PAYE from the employee’s remuneration is expected to remit the amount to ZIMRA on or before the 10 th of the following month."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "A trader must register for VAT once taxable supplies exceed or are expected to exceed USD 25,000 (or ZiG equivalent) in 12 months.",
+   "value": {
+    "currency": "USD",
+    "threshold12Months": 25000,
+    "since": "2024-01-01",
+    "standardRate": "not read"
+   },
+   "applies": "Zimbabwe.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "With effect from 1 January 2024 a trader is liable to register for VAT if the value of taxable supplies exceeds or is expected to exceed US$25,000.00 or ZiG equivalent within a period of 12 months."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "VAT is charged at the standard rate of 15.5% on goods and services unless they are exempt, zero-rated or at a special rate.",
+   "value": {
+    "standardRate": 0.155,
+    "zeroRate": 0
+   },
+   "applies": "ZIMRA's VAT page as read on 2026-11-01 (VAT Act Chapter 23:12).",
+   "sources": [
+    {
+     "src": 5,
+     "said": "Rates of VAT i Standard rate of 15.5% Generally, all goods and services are standard rated unless specifically exempted, zero-rated or subject to VAT at a special rate"
+    }
+   ]
+  }
+ ],
+ "country": "ZW",
+ "sources": [
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/tax-tables?download=4211:usd-jan-dec-2025-tax-tables",
+   "title": "PAYE Foreign Currency Tax Tables for January to December 2025 (ZIMRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "PAY AS YOU EARN ( PAYE) FOREIGN CURRENCY TAX TABLES FOR JANUARY TO DECEMBER 2025 … from 0 to 1,200.00 multiply by 0% Deduct - $32 000 per year from 1,201 to 3,600.00 multiply by 20% Deduct 240 … from 3,601 to 12,000.00 multiply by 25% Deduct 420 … from 12,001 to 24,000.00 multiply by 30% Deduct 1,020 … from 24,001 to 36,000.00 multiply by 35% Deduct 2,220 … from 36,001 and above multiply by 40% Deduct 4,020 … Aids Levy is 3% of the Individuals' Tax payable"
+  },
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/corporate/tax-rates",
+   "title": "Corporate – Tax Rates (ZIMRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Income of individual from trade and investments 14(2b) 25%"
+  },
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/tax-tables",
+   "title": "Tax Tables (ZIMRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tax Tables USD Jan-Dec 2025 Tax Tables USD Jan-Dec 2025 Tax Tables.pdf Download Details ZWG 2025 tax tables"
+  },
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/individual/paye-explained",
+   "title": "PAYE Explained (ZIMRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Any employer who deducts PAYE from the employee’s remuneration is expected to remit the amount to ZIMRA on or before the 10 th of the following month."
+  },
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/vat/vat-registration",
+   "title": "VAT Registration (ZIMRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "With effect from 1 January 2024 a trader is liable to register for VAT if the value of taxable supplies exceeds or is expected to exceed US$25,000.00 or ZiG equivalent within a period of 12 months."
+  },
+  {
+   "url": "https://www.zimra.co.zw/domestic-taxes/vat/mechanics-of-vat",
+   "title": "Mechanics of VAT (Zimbabwe Revenue Authority)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Rates of VAT i Standard rate of 15.5% Generally, all goods and services are standard rated unless specifically exempted, zero-rated or subject to VAT at a special rate"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The PAYE tables for 2026 (USD and ZiG) as set by the 2026 Finance Act",
+   "tried": {
+    "institution": "zimra.co.zw read (tax tables, PAYE, corporate rates, VAT registration); no 2026 table, no page on non-resident or NSSA rates found || 2026-11-01 retry: zimra.co.zw read again: tax-tables (links only the 2026 exchange-rate page, no 2026 PAYE table), corporate/tax-rates (Finance Act rate table: no non-residents' tax on fees), public-notices/tax-corner and legislation (no 2026 Finance Act text)",
+    "official-register": "veritaszim.net reachable (HTTP 200) but the Finance Act 2026 not located; nssa.org.zw not reachable (curl 000) || 2026-11-01 retry: veritaszim.net answers but the Finance Act 2026 was not located; parlzim.gov.zw answers a 'Just a moment...' bot check (403); nssa.org.zw fails (connection)",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "no Deloitte (404) or PwC (404) summary for Zimbabwe || 2026-11-01 retry: No Deloitte or PwC summary for Zimbabwe (404)",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "social",
+   "sought": "NSSA contribution rates and ceiling for 2026",
+   "tried": {
+    "institution": "zimra.co.zw read (tax tables, PAYE, corporate rates, VAT registration); no 2026 table, no page on non-resident or NSSA rates found || 2026-11-01 retry: zimra.co.zw read again: tax-tables (links only the 2026 exchange-rate page, no 2026 PAYE table), corporate/tax-rates (Finance Act rate table: no non-residents' tax on fees), public-notices/tax-corner and legislation (no 2026 Finance Act text)",
+    "official-register": "veritaszim.net reachable (HTTP 200) but the Finance Act 2026 not located; nssa.org.zw not reachable (curl 000) || 2026-11-01 retry: veritaszim.net answers but the Finance Act 2026 was not located; parlzim.gov.zw answers a 'Just a moment...' bot check (403); nssa.org.zw fails (connection)",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "no Deloitte (404) or PwC (404) summary for Zimbabwe || 2026-11-01 retry: No Deloitte or PwC summary for Zimbabwe (404)",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "The non-residents' tax on fees for a performer, writer or director",
+   "tried": {
+    "institution": "zimra.co.zw read (tax tables, PAYE, corporate rates, VAT registration); no 2026 table, no page on non-resident or NSSA rates found || 2026-11-01 retry: zimra.co.zw read again: tax-tables (links only the 2026 exchange-rate page, no 2026 PAYE table), corporate/tax-rates (Finance Act rate table: no non-residents' tax on fees), public-notices/tax-corner and legislation (no 2026 Finance Act text)",
+    "official-register": "veritaszim.net reachable (HTTP 200) but the Finance Act 2026 not located; nssa.org.zw not reachable (curl 000) || 2026-11-01 retry: veritaszim.net answers but the Finance Act 2026 was not located; parlzim.gov.zw answers a 'Just a moment...' bot check (403); nssa.org.zw fails (connection)",
+    "web-search": "not run separately || 2026-11-01 retry: not run: the tool refused searches this turn, the shared limit of 200 having been reached (2026-11-01)",
+    "trade-press": "no Deloitte (404) or PwC (404) summary for Zimbabwe || 2026-11-01 retry: No Deloitte or PwC summary for Zimbabwe (404)",
+    "archive": "web.archive.org not reachable (curl 000) 2026-11-01 || 2026-11-01 retry: archive.org availability API answers, but web.archive.org is refused from this environment (http 'Blocked by egress policy', https connection fails), not read (2026-11-01)"
+   }
+  }
+ ]
+}

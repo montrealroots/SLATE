@@ -264,5 +264,111 @@
   "matrices": [
    "coverage/units-units.json"
   ]
+ },
+ "person.attributes": {
+  "layer": 4,
+  "dir": "src/person/attributes",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/attributes-screenwriter.json",
+   "coverage/attributes-director.json",
+   "coverage/attributes-actor.json",
+   "coverage/attributes-producer.json"
+  ]
+ },
+ "person.work": {
+  "layer": 4,
+  "dir": "src/person/work",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/work-operations.json",
+   "coverage/markets-writer-countries.json",
+   "coverage/markets-writer-operations.json"
+  ]
+ },
+ "person.directing": {
+  "layer": 4,
+  "dir": "src/person/directing",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/directing-operations.json",
+   "coverage/markets-director-countries.json",
+   "coverage/markets-director-operations.json"
+  ]
+ },
+ "person.acting": {
+  "layer": 4,
+  "dir": "src/person/acting",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/acting-operations.json",
+   "coverage/casting-operations.json",
+   "coverage/markets-countries.json",
+   "coverage/markets-operations.json"
+  ]
+ },
+ "person.producing": {
+  "layer": 4,
+  "dir": "src/person/producing",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/producing-operations.json",
+   "coverage/markets-producer-countries.json",
+   "coverage/markets-producer-operations.json"
+  ]
+ },
+ "person.identity": {
+  "layer": 4,
+  "dir": "src/person/identity",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/identity-fields.json",
+   "coverage/identity-operations.json"
+  ]
+ },
+ "person.unions": {
+  "layer": 4,
+  "dir": "src/person/unions",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/unions-operations.json"
+  ]
+ },
+ "person.genres": {
+  "layer": 4,
+  "dir": "src/person/genres",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/genres-genres.json",
+   "coverage/genres-operations.json"
+  ]
+ },
+ "papers.permits": {
+  "layer": 4,
+  "dir": "src/person/permits",
+  "readsPlace": true,
+  "matrices": [
+   "coverage/permits-countries.json",
+   "coverage/permits-operations.json"
+  ],
+  "allPlacesTest": "tests/person/permits/permits.places.test.ts::the permits > for every place on the map"
+ },
+ "money.tax": {
+  "layer": 3,
+  "dir": "src/money/tax",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/tax-countries.json",
+   "coverage/tax-operations.json"
+  ]
+ },
+ "person.youth": {
+  "layer": 4,
+  "dir": "src/person/youth",
+  "readsPlace": false,
+  "matrices": [
+   "coverage/youth-countries.json",
+   "coverage/youth-operations.json"
+  ]
  }
 }

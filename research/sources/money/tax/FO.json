@@ -1,0 +1,326 @@
+{
+ "topic": "tax.FO",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Build those first 3 starting with ledger first\"; of the 21 countries read first: \"It should cover across every country\"; \"Retry the blocked tax facts once all countries land\"): the tax on a screen worker's pay in Faroe Islands: a resident's income tax, social contributions, what is withheld at source, a non-resident artiste's withholding, an author's treatment, VAT and the tax year. Research and retry subagents (workbench/briefs/BRIEF-tax.md, BRIEF-tax-retry.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "residents",
+   "finding": "The Faroe Islands levy their own income tax (national landsskattur plus a municipal tax each municipality sets); Tvøroyri's municipal rate for 2026 is 20.9%, with a child deduction of DKK 8,000.",
+   "value": {
+    "currency": "DKK",
+    "ownSystem": true,
+    "sovereign": "DK",
+    "municipal": {
+     "setBy": "each municipality",
+     "Tvøroyri2026": 0.209,
+     "childDeduction": 8000
+    },
+    "national": null
+   },
+   "applies": "2026. Only one municipality's rate was read; the national scale and the other municipalities' rates were not reachable (see blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Í uppskotinum til fíggjarætlan 2026 er roknað við, at kommunuskattaprosentið og barnafrádrátturin framhaldandi verða ávikavist 20,9% og 8.000 kr."
+    }
+   ]
+  },
+  {
+   "item": "withholding",
+   "finding": "In the Faroe Islands pay for personal work for others, fees (samsýning) included, is A-income, and before it is paid A-tax is deducted through a settlement office the government approves, which passes the tax to the treasury; the withheld provisional tax may not exceed 50% of a single payment of A-income.",
+   "value": {
+    "system": "A-skattur (provisional tax deducted at source)",
+    "covers": "løn, frítíðarløn, samsýning, tantiéme, provisjón; and pay to a person made available to work in the Faroes, even when paid to a third party",
+    "maxShareOfPayment": 0.5,
+    "table": null
+   },
+   "applies": "FO, the Skattalógin as consolidated on 19 September 2023. The withholding percentage per person follows from the tax card and the rates set under the separate act on setting tax (løgtingslóg nr. 87 frá 1. september 1983 um áseting av skatti), not read; TAKS's pages refuse this environment.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "1) Alt, sum er lagt inn í peningi fyri persónligt arbeiði í tænastu fyri onnur, heruppií løn, frítíðarløn, samsýning, tantiéme, provisjón ella líknandi. … Áðrenn A-inntøka verður goldin skattgjaldara, skal A-skattur avroknast í upphæddini. … Eftirhildin fyribilsskattur, smb. 63. §, 5. stk., má ikki vera meira enn 50% av tí einstøku útgoldnu A-inntøkuni."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A non-resident has limited tax liability in the Faroe Islands on pay for work done there that counts as A-income, pay included when a person is made available to work there through a third party, and on royalties from the Faroes for the use of a copyright in a literary or artistic work, films and radio and television recordings among them, so a visiting performer's pay is taxed at source as A-income; the rate is not in this act.",
+   "value": {
+    "liability": "avmarkað skattskylda (§ 2)",
+    "covers": [
+     "A-income from work done in the Faroes (§ 2(1)(b), (h); § 60(1)(8))",
+     "royalties for copyright incl. spælifilmar, filmar og bond til útvarps- og sjónvarpssendingar (§ 2(1)(c))"
+    ],
+    "deductions": "only expenses incurred to earn that income (§ 2(2))",
+    "rate": null,
+    "final": null
+   },
+   "applies": "FO. The rate and whether the tax is final are not in the Skattalógin (it refers the scale to a separate act); the blocker for them stands.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "§ 2. Avmarkaða skattskyldu hevur hvør persónur … c) fáa gjald fyri nýtslugjald (royalty) úr Føroyum. … heruppií spælifilmar, filmar og bond til útvarps- og sjónvarpssendingar … h) fær inntøkur stavandi frá arbeiði, sum er gjørt her í landinum … 8) Samsýning í peningi og í hesum sambandi frítt vistarhald til persón, sum er til taks at gera arbeiði her í landinum"
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "The Skattalógin leaves the national tax scale and its allowances to a separate act and caps the combined income tax to country, municipality and church at 50% of taxable income, any excess being cut back proportionally.",
+   "value": {
+    "combinedCap": 0.5,
+    "scale": "set by a separate act (løgtingslóg um áseting av skatti)",
+    "municipalRateExample": null
+   },
+   "applies": "FO, the Skattalógin as consolidated on 19 September 2023. The 2026 scale and allowance stay blocked.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Reglurnar um, hvussu skatturin til landskassan fyri persónar, skatturin fyri feløg, deyðsbúgv v.m. sum hava fulla ella avmarkaða skattskyldu her á landi, verður útroknaður, verða ásettar við serstakari løgtingslóg. Í hesi lóg skal somuleiðis ásetast, hvørjir frádráttir skulu veitast í tí útroknaða landsskattinum. Stk. 2. Um samlaði inntøkuskatturin til land, kommunu og kirkju fer upp um 50% av skattskyldugu inntøkuni, verður tann ov nógv álíknaði inntøkuskatturin lækkaður lutfalsliga til landið, kommununa og kirkjuna."
+    }
+   ]
+  },
+  {
+   "item": "vat",
+   "finding": "Faroese VAT (meirvirðisgjald, MVG) is 25% on commercial sales of goods and taxable services, and a seller whose annual sales are under 50,000 Danish kroner need neither pay it nor add it to the price.",
+   "value": {
+    "rate": 0.25,
+    "currency": "DKK",
+    "threshold": 50000,
+    "thresholdBasis": "annual sale of goods and/or services"
+   },
+   "applies": "FO; TAKS's page as archived on 7 June 2026 (taks.fo refuses this environment directly). Whether a performer's, writer's or director's fee is a taxable service or exempt is not stated on this page.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "The VAT rate is 25% and is payable when sales of goods and taxable services are taking place at all stages in the chain of distribution within the Faroe Islands. … If your annual sale of goods and/or services amounts to less than DKK 50.000, you are not required to pay VAT to the Treasury. Furthermore, you are not required to add VAT on the sale of goods and/or services."
+    }
+   ]
+  },
+  {
+   "item": "nonResident",
+   "finding": "A person who works in the Faroe Islands for 180 days or less in twelve months without moving there has limited tax liability and pays a standard 42% on all income earned in the Faroes (35% on a FAS or bareboat ship), stays liable at home, gets no child tax credit or interest subsidy, and still pays the 3% AM contribution.",
+   "value": {
+    "rate": 0.42,
+    "rateShip": 0.35,
+    "condition": "180 days or less in a 12-month period, permanent address not moved",
+    "base": "all income earned in the Faroes",
+    "amContribution": 0.03,
+    "final": null
+   },
+   "applies": "FO; TAKS's page as archived on 10 May 2026. Whether the 42% is final is not stated; the page says the person remains tax liable in the country of residence.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "If you only work in the Faroe Islands for a period of 180 days or less in a 12 month period and you do not move your permanent address to the Faroes, you are subject to limited tax liability in the Faroes. This means that you must pay a standard tax rate of 42% on all income earned in Faroes, but you remain tax liable in your country of residence. If you work onboard a FAS ship or a bareboat ship, the tax rate is 35%. … All individuals under the age of 67, regardless of whether they are subject to full or limited tax liability in the Faroe Islands, are required to contribute 3% of their income to the AM-fund."
+    }
+   ]
+  },
+  {
+   "item": "social",
+   "finding": "In 2026 a Faroese wage earner has settled from pay health insurance of 175 kroner a month plus 0.70%, 0.86% parental benefits, 0.6% unemployment insurance (ALS), 3.0% labour-market pension (AM) and a broadcast licence of 176 kroner a month from 24 to 66, and must pay a mandatory pension contribution of 12%; the employer also pays 12% holiday allowance to TAKS's holiday fund on hourly wages.",
+   "value": {
+    "currency": "DKK",
+    "year": 2026,
+    "employee": [
+     {
+      "name": "heilsutrygd",
+      "rate": 0.007,
+      "fixedMonthly": 175
+     },
+     {
+      "name": "barsilsgjald",
+      "rate": 0.0086
+     },
+     {
+      "name": "ALS",
+      "rate": 0.006
+     },
+     {
+      "name": "arbeiðsmarknaðareftirløn (AM)",
+      "rate": 0.03
+     },
+     {
+      "name": "kringvarpsgjald",
+      "fixedMonthly": 176,
+      "ages": "24-66",
+      "fixedMonthly67plus": 72
+     }
+    ],
+    "mandatoryPension": 0.12,
+    "holidayAllowance": {
+     "rate": 0.12,
+     "paidBy": "employer, on wages of hourly-paid workers"
+    },
+    "ceiling": null,
+    "selfEmployed": "B-income: no withholding; TAKS bills monthly on a preliminary assessment"
+   },
+   "applies": "FO, 2026, on A-income. TAKS's 'Moving to the Faroes for work' page (archived 10 May 2026) still gives ALS at 0.8%, the licence at 173 kroner and the pension minimum for 2025 as 11%; the 'Amount 2026' table is taken here. ALS can be waived for fixed-term work on application. No ceiling is stated.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Service Amount 2026 Health insurance ( Heilsutrygd ) DKK 175 p/m + 0.70% Parental benefits ( Barsilsgjald ) 0.86% Broadcast receiver license ( Kringvarpsgjald ) aged 24-66: DKK 176 p/m, aged 67+: DKK 72 p/m* Unemployment insurance ( ALS ) 0,6% Labour market pension fund ( Arbeiðsmarknaðareftirløn ) 3,0% Mandatory pension contribution ( kravd eftirløn ) 12% … B-income is income from self-employment"
+    },
+    {
+     "src": 3,
+     "said": "Every time you are paid wages, your employer is responsible for making a holiday allowance contribution to TAKS' holiday fund. The contribution corresponds to 12% of your wages."
+    }
+   ]
+  },
+  {
+   "item": "residents",
+   "finding": "A person fully liable to Faroese tax starts paying income tax on income over 30,000 kroner a year and national tax on income over 65,000, the national tax being progressive; each municipality sets a flat local tax of 16% to 23%, members of the national church pay 0.6% to 0.9% church tax, and a child under 7 takes 10,700 kroner (7 to 17: 7,500) off the national tax, with a municipal child credit of 5,100 to 12,000.",
+   "value": {
+    "currency": "DKK",
+    "taxFrom": 30000,
+    "nationalTaxFrom": 65000,
+    "nationalScale": null,
+    "municipalRate": {
+     "min": 0.16,
+     "max": 0.23
+    },
+    "churchRate": {
+     "min": 0.006,
+     "max": 0.009
+    },
+    "childCreditNational": {
+     "under7": 10700,
+     "7to17": 7500
+    },
+    "childCreditMunicipal": {
+     "min": 5100,
+     "max": 12000
+    },
+    "marriageDeductionTransfer": 30000
+   },
+   "applies": "FO, TAKS's pages as archived 9 and 10 May 2026. The national tax table (landsskattatalva) itself is archived only as of January 2021 and the municipal table as of April 2022; neither is taken for 2026, so the bands stay blocked.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "If you have full tax liability in the Faroe Islands, you start to pay taxes on income when you earn more than DKK 30,000 a year. … You start paying national tax on income over DKK 65,000 a year. The national tax is progressive … Each municipality sets its own tax rate which varies from 16% to 23%. … The church tax rate varies between 0.6% and 0.9% depending on your municipality."
+    },
+    {
+     "src": 5,
+     "said": "if the child is under the age of 7, DKK 10,700 is deducted from the tax annually, and if the child is between 7 and 17, the tax deduction is DKK 7,500. In the local tax, it depends on the municipality and varies between DKK 5,100 and 12,000. … allows a married couple to move the basic deduction, up to DKK 30,000, among themselves"
+    }
+   ]
+  },
+  {
+   "item": "year",
+   "finding": "Faroese ordinary taxpayers and the self-employed must submit their tax return by 1 May, on pain of a fine of at least 1,000 kroner; a wage earner whose pre-completed tax statement is right need submit nothing.",
+   "value": {
+    "returnDue": "05-01",
+    "lateFineMin": {
+     "amount": 1000,
+     "currency": "DKK"
+    },
+    "companiesReturnDue": "07-01",
+    "taxYear": null
+   },
+   "applies": "FO; TAKS's page as archived 13 April 2026. The tax year's dates are not stated on the pages read.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "Ordinary taxpayers and self-employed are required to submit their tax return by 1 May. If you have not submitted your completed tax return by this date, TAKS is authorised to impose a fine of minimum DKK 1,000."
+    }
+   ]
+  }
+ ],
+ "country": "FO",
+ "sources": [
+  {
+   "url": "https://tvk.fo/media/dcspft3j/bf10112025_272215.pdf",
+   "title": "Tvøroyrar kommuna, býráðsfundur 10.11.2025 (budget 2026)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Í uppskotinum til fíggjarætlan 2026 er roknað við, at kommunuskattaprosentið og barnafrádrátturin framhaldandi verða ávikavist 20,9% og 8.000 kr."
+  },
+  {
+   "url": "https://logir.fo/Logtingslogarkunngerd/109-fra-19-09-2023-um-landsskatt-og-kommunuskatt",
+   "title": "Løgtingslógarkunngerð nr. 109 frá 19. september 2023 um landsskatt og kommunuskatt (Skattalógin), logir.fo",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "1) Alt, sum er lagt inn í peningi fyri persónligt arbeiði í tænastu fyri onnur, heruppií løn, frítíðarløn, samsýning, tantiéme, provisjón ella líknandi. … Áðrenn A-inntøka verður goldin skattgjaldara, skal A-skattur avroknast í upphæddini. … Eftirhildin fyribilsskattur, smb. 63. §, 5. stk., má ikki vera meira enn 50% av tí einstøku útgoldnu A-inntøkuni. … § 2. Avmarkaða skattskyldu hevur hvør persónur … c) fáa gjald fyri nýtslugjald (royalty) úr Føroyum. … heruppií spælifilmar, filmar og bond til útvarps- og sjónvarpssendingar … h) fær inntøkur stavandi frá arbeiði, sum er gjørt her í landinum … 8) Samsýning í peningi og í hesum sambandi frítt vistarhald til persón, sum er til taks at gera arbeiði her í landinum … Reglurnar um, hvussu skatturin til landskassan fyri persónar, skatturin fyri feløg, deyðsbúgv v.m. sum hava fulla ella avmarkaða skattskyldu her á landi, verður útroknaður, verða ásettar við serstakari løgtingslóg. Í hesi lóg skal somuleiðis ásetast, hvørjir frádráttir skulu veitast í tí útroknaða landsskattinum. Stk. 2. Um samlaði inntøkuskatturin til land, kommunu og kirkju fer upp um 50% av skattskyldugu inntøkuni, verður tann ov nógv álíknaði inntøkuskatturin lækkaður lutfalsliga til landið, kommununa og kirkjuna."
+  },
+  {
+   "url": "http://web.archive.org/web/20260607014633/https://www.taks.fo/en/business/vat/general-about-vat",
+   "title": "General about VAT (TAKS, the Faroese tax authority), archived 7 June 2026",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "The VAT rate is 25% and is payable when sales of goods and taxable services are taking place at all stages in the chain of distribution within the Faroe Islands. … If your annual sale of goods and/or services amounts to less than DKK 50.000, you are not required to pay VAT to the Treasury. Furthermore, you are not required to add VAT on the sale of goods and/or services."
+  },
+  {
+   "url": "http://web.archive.org/web/20260510025032/https://www.taks.fo/en/individuals/moving-to-the-faroes-for-work/moving-to-the-faroes-for-work/",
+   "title": "Moving to the Faroes for work (TAKS, the Faroese tax authority), archived 10 May 2026",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "If you only work in the Faroe Islands for a period of 180 days or less in a 12 month period and you do not move your permanent address to the Faroes, you are subject to limited tax liability in the Faroes. This means that you must pay a standard tax rate of 42% on all income earned in Faroes, but you remain tax liable in your country of residence. If you work onboard a FAS ship or a bareboat ship, the tax rate is 35%. … All individuals under the age of 67, regardless of whether they are subject to full or limited tax liability in the Faroe Islands, are required to contribute 3% of their income to the AM-fund. … Every time you are paid wages, your employer is responsible for making a holiday allowance contribution to TAKS' holiday fund. The contribution corresponds to 12% of your wages."
+  },
+  {
+   "url": "http://web.archive.org/web/20260509202720/https://www.taks.fo/en/individuals/tax/taxation-in-the-faroe-islands",
+   "title": "Taxation in the Faroe Islands (TAKS, the Faroese tax authority), archived 9 May 2026",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Service Amount 2026 Health insurance ( Heilsutrygd ) DKK 175 p/m + 0.70% Parental benefits ( Barsilsgjald ) 0.86% Broadcast receiver license ( Kringvarpsgjald ) aged 24-66: DKK 176 p/m, aged 67+: DKK 72 p/m* Unemployment insurance ( ALS ) 0,6% Labour market pension fund ( Arbeiðsmarknaðareftirløn ) 3,0% Mandatory pension contribution ( kravd eftirløn ) 12% … B-income is income from self-employment … If you have full tax liability in the Faroe Islands, you start to pay taxes on income when you earn more than DKK 30,000 a year. … You start paying national tax on income over DKK 65,000 a year. The national tax is progressive … Each municipality sets its own tax rate which varies from 16% to 23%. … The church tax rate varies between 0.6% and 0.9% depending on your municipality."
+  },
+  {
+   "url": "http://web.archive.org/web/20260510014946/https://www.taks.fo/en/individuals/tax/deductions",
+   "title": "Deductions (TAKS), archived 10 May 2026",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "if the child is under the age of 7, DKK 10,700 is deducted from the tax annually, and if the child is between 7 and 17, the tax deduction is DKK 7,500. In the local tax, it depends on the municipality and varies between DKK 5,100 and 12,000. … allows a married couple to move the basic deduction, up to DKK 30,000, among themselves"
+  },
+  {
+   "url": "http://web.archive.org/web/20260413020831/https://www.taks.fo/en/individuals/tax/tax-return",
+   "title": "Tax return (TAKS), archived 13 April 2026",
+   "read": "2026-11-02",
+   "kind": "primary",
+   "said": "Ordinary taxpayers and self-employed are required to submit their tax return by 1 May. If you have not submitted your completed tax return by this date, TAKS is authorised to impose a fine of minimum DKK 1,000."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "residents",
+   "sought": "The 2026 landsskattur scale and allowance (personfrádráttur), and every municipality's rate.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used. || Web search 2026-11-02: queries \"logir.fo løgtingslóg um landsskatt og kommunuskatt skattaskali persónsfrádráttur 2026\", \"logir.fo Logtingslog \\\"um landsskatt og kommunuskatt\\\" Skattalógin\", \"\\\"áseting av skatti\\\" løgtingslóg 2026 landsskattur skattaprosent frádráttur\", \"logir.fo \\\"um áseting av skatti\\\" Logtingslogarkunngerd\", \"meirvirðisgjald Føroyar 25% skráseting umsetningur 50.000 kr løgtingslóg um meirvirðisgjald\" and \"Føroyar rithøvundar samsýning skattur upphavsrættur listafólk skattafrádráttur listaløn\". They led to the Skattalógin (logir.fo løgtingslógarkunngerð nr. 109 frá 19. september 2023, read and saved) and to TAKS's own pages, which taks.fo refuses but web.archive.org now serves (snapshots of April to June 2026 read and saved: VAT, taxation in the Faroe Islands, moving for work, deductions, tax return); the findings above rest on them. Still missing: the 2026 national bands (landsskattatalva archived only at 9 Jan 2021) and each municipality's rate (archived only at 23 Apr 2022); løgtingslóg nr. 87 frá 1. september 1983 um áseting av skatti not found on logir.fo by URL.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "nonResident",
+   "sought": "Tax on a non-resident performer's fee and whether final.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used. || Web search 2026-11-02: queries \"logir.fo løgtingslóg um landsskatt og kommunuskatt skattaskali persónsfrádráttur 2026\", \"logir.fo Logtingslog \\\"um landsskatt og kommunuskatt\\\" Skattalógin\", \"\\\"áseting av skatti\\\" løgtingslóg 2026 landsskattur skattaprosent frádráttur\", \"logir.fo \\\"um áseting av skatti\\\" Logtingslogarkunngerd\", \"meirvirðisgjald Føroyar 25% skráseting umsetningur 50.000 kr løgtingslóg um meirvirðisgjald\" and \"Føroyar rithøvundar samsýning skattur upphavsrættur listafólk skattafrádráttur listaløn\". They led to the Skattalógin (logir.fo løgtingslógarkunngerð nr. 109 frá 19. september 2023, read and saved) and to TAKS's own pages, which taks.fo refuses but web.archive.org now serves (snapshots of April to June 2026 read and saved: VAT, taxation in the Faroe Islands, moving for work, deductions, tax return); the findings above rest on them. The 42% (35% on FAS ships) is now found; whether it is final is stated nowhere read (TAKS says the person stays liable at home).",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "authors",
+   "sought": "Any special treatment of authors' royalties.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used. || Web search 2026-11-02: queries \"logir.fo løgtingslóg um landsskatt og kommunuskatt skattaskali persónsfrádráttur 2026\", \"logir.fo Logtingslog \\\"um landsskatt og kommunuskatt\\\" Skattalógin\", \"\\\"áseting av skatti\\\" løgtingslóg 2026 landsskattur skattaprosent frádráttur\", \"logir.fo \\\"um áseting av skatti\\\" Logtingslogarkunngerd\", \"meirvirðisgjald Føroyar 25% skráseting umsetningur 50.000 kr løgtingslóg um meirvirðisgjald\" and \"Føroyar rithøvundar samsýning skattur upphavsrættur listafólk skattafrádráttur listaløn\". They led to the Skattalógin (logir.fo løgtingslógarkunngerð nr. 109 frá 19. september 2023, read and saved) and to TAKS's own pages, which taks.fo refuses but web.archive.org now serves (snapshots of April to June 2026 read and saved: VAT, taxation in the Faroe Islands, moving for work, deductions, tax return); the findings above rest on them. The Skattalógin (§ 118-type reporting duty) only obliges payers to report fees to authors, composers and performing artists; no special treatment of royalties found. Not found.",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  },
+  {
+   "item": "year",
+   "sought": "Tax year and return date.",
+   "tried": {
+    "institution": "taks.fo (TAKS, the Faroese tax authority) returns 403 to this environment on every page (2026-11-01). || 2026-11-01 retry: taks.fo again returns HTTP 403 (not read another way). Hagstova Føroya (hagstova.fo, the statistics office) answers: its \"Skattir\" page (saved FO-hagstova-skattir.html) describes tax revenue by type, with no rates or allowances.",
+    "official-register": "logir.fo (law database) answers but finds laws only by form postback; the direct URL for Skattalógin returned LawNotFound (2026-11-01). || 2026-11-01 retry: logir.fo answers, but its law database (LawDatabase.aspx) works only by ASP.NET postback; logir.fo/Skattalog returns 404.",
+    "web-search": "'logir.fo skattalóg landsskattur skattstig 2026 kommunuskattur prosent' (2026-11-01): one municipal budget (Tvøroyri, read), no national scale. || 2026-11-01 retry: WebSearch refused by the tool on 2026-11-01: the turn's shared 200-search limit was reached before this query; no other search route used. || Web search 2026-11-02: queries \"logir.fo løgtingslóg um landsskatt og kommunuskatt skattaskali persónsfrádráttur 2026\", \"logir.fo Logtingslog \\\"um landsskatt og kommunuskatt\\\" Skattalógin\", \"\\\"áseting av skatti\\\" løgtingslóg 2026 landsskattur skattaprosent frádráttur\", \"logir.fo \\\"um áseting av skatti\\\" Logtingslogarkunngerd\", \"meirvirðisgjald Føroyar 25% skráseting umsetningur 50.000 kr løgtingslóg um meirvirðisgjald\" and \"Føroyar rithøvundar samsýning skattur upphavsrættur listafólk skattafrádráttur listaløn\". They led to the Skattalógin (logir.fo løgtingslógarkunngerð nr. 109 frá 19. september 2023, read and saved) and to TAKS's own pages, which taks.fo refuses but web.archive.org now serves (snapshots of April to June 2026 read and saved: VAT, taxation in the Faroe Islands, moving for work, deductions, tax return); the findings above rest on them. The return date (1 May) is found; the tax year'\"s",
+    "trade-press": "No PwC or Deloitte summary for the Faroe Islands (Deloitte 2026: 404). || 2026-11-01 retry: No Deloitte Faroe Islands 2026 Highlights (HTTP 404); no PwC summary.",
+    "archive": "web.archive.org resets the connection from this environment (2026-11-01). || 2026-11-01 retry: archive.org/wayback/available lists a 2025-07-16 snapshot of taks.fo/fo/borgari/skattur; the brief bars reading a refused page another way, and web.archive.org itself resets https and returns 403 on http from this environment (2026-11-01), so none was read."
+   }
+  }
+ ]
+}

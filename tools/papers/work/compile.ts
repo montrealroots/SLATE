@@ -24,11 +24,19 @@ export const OUTPUT = 'src/papers/work/work.json';
 export const RIGHTS = ['free', 'permit'] as const;
 export type Right = (typeof RIGHTS)[number];
 
+/** Whom a short engagement's days are for, where the law limits them: artists of renown, or work engaged from abroad. */
+export const ONLY = ['renowned', 'engaged-abroad'] as const;
+export type Only = (typeof ONLY)[number];
+
 export interface Rule {
   right: Right;
   route?: string;
   days?: number;
   within?: number;
+  /** The first day the days apply (YYYY-MM-DD), where the law that gives them comes later. */
+  from?: string;
+  /** Whom they are for, where the law limits them. */
+  only?: Only;
 }
 
 const whole = (n: unknown) => Number.isInteger(n) && (n as number) > 0;
@@ -36,16 +44,17 @@ const whole = (n: unknown) => Number.isInteger(n) && (n as number) > 0;
 /** One rule: free, or the permit's route with the days a short engagement may be worked without it. */
 export function rule(r: unknown, what: string): Rule {
   if (typeof r !== 'object' || r === null) throw new Error(`${what} is not an object`);
-  const { right, route, days, within } = r as Record<string, unknown>;
+  const { right, route, days, within, from, only } = r as Record<string, unknown>;
   if (!RIGHTS.includes(right as Right)) throw new Error(`${what} is free or a permit, not ${String(right)}`);
   if (right === 'free') {
-    if (route !== undefined || days !== undefined || within !== undefined) throw new Error(`${what} is free, so it names no route and no days`);
+    if ([route, days, within, from, only].some((v) => v !== undefined)) throw new Error(`${what} is free, so it names no route and no days`);
     return { right };
   }
   if (typeof route !== 'string' || route.trim() !== route || route === '') throw new Error(`${what} names the route a performer takes`);
   const out: Rule = { right: 'permit', route };
   if (days === undefined) {
     if (within !== undefined) throw new Error(`${what}'s days are counted within a whole number of days above them`);
+    if (from !== undefined || only !== undefined) throw new Error(`${what} names no days, so none start on a day or are for anyone`);
     return out;
   }
   if (!whole(days)) throw new Error(`${what}'s days are a whole number above 0`);
@@ -53,6 +62,14 @@ export function rule(r: unknown, what: string): Rule {
   if (within !== undefined) {
     if (!Number.isInteger(within) || (within as number) <= out.days) throw new Error(`${what}'s days are counted within a whole number of days above them`);
     out.within = within as number;
+  }
+  if (from !== undefined) {
+    if (!/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(String(from))) throw new Error(`${what}'s days start on a day written YYYY-MM-DD, not ${String(from)}`);
+    out.from = from as string;
+  }
+  if (only !== undefined) {
+    if (!ONLY.includes(only as Only)) throw new Error(`${what}'s days are for renowned artists or work engaged from abroad, not ${String(only)}`);
+    out.only = only as Only;
   }
   return out;
 }
