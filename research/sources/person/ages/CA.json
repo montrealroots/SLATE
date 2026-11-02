@@ -1,0 +1,593 @@
+{
+ "topic": "ages.CA",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Canada: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "majority",
+   "finding": "Ontario sets the age of majority at eighteen.",
+   "value": {
+    "CA.08": 18
+   },
+   "applies": "Ontario, Age of Majority and Accountability Act, R.S.O. 1990, c. A.7, s. 1. Quebec isn't read (see blockers).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Every person attains the age of majority and ceases to be a minor on attaining the age of eighteen years."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "Ontario requires a written agreement for every child performer and 25% of earnings over $2,000 on a production held in trust until eighteen; British Columbia makes an infant's contract unenforceable unless a court or the Public Guardian and Trustee grants capacity or ratifies it, and has 25% of a child actor's earnings over $2,000 on a production remitted in trust; under ACTRA's agreements 25% of a minor's lifetime earnings over $5,000 is held by ACTRA PRS.",
+   "value": {
+    "CA.08": {
+     "writtenAgreement": true,
+     "setAside": {
+      "share": 0.25,
+      "threshold": "earnings over $2,000 on a production or project",
+      "until": 18,
+      "unionAlternative": "25% of lifetime earnings over $5,000 held by the union under its collective agreement"
+     },
+     "reachesRoles": [
+      "performer",
+      "background performer"
+     ]
+    },
+    "CA.02": {
+     "binding": "unenforceable unless enforceable under another enactment, affirmed or performed after majority, or not repudiated within a year (Infants Act s. 19); a court may grant capacity (s. 21); the Public Guardian and Trustee may grant capacity or ratify a contract (s. 22)",
+     "setAside": {
+      "recorded": {
+       "share": 0.25,
+       "of": "earnings over $2,000 on a production",
+       "to": "Public Guardian and Trustee, or ACTRA where the collective agreement allows"
+      },
+      "live": {
+       "share": 0.25,
+       "of": "earnings over $1,000 in a week",
+       "to": "Public Guardian and Trustee"
+      }
+     },
+     "reachesRoles": [
+      "actor",
+      "background performer",
+      "extra"
+     ]
+    },
+    "ACTRA": {
+     "share": 0.25,
+     "of": "lifetime earnings over $5,000",
+     "minor": "performers under 18"
+    }
+   },
+   "applies": "Ontario's Protecting Child Performers Act, 2015 reaches a child working 'as a performer'; British Columbia's recorded-entertainment Division covers children under fifteen 'as actors'. Neither reaches a young writer or director. Quebec isn't read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "“child performer” means a child under 18 years of age who performs work or supplies services for monetary compensation in the entertainment industry as a performer, including as a background performer;"
+    },
+    {
+     "src": 1,
+     "said": "An employer shall not employ or contract for the services of a child performer except under a written agreement."
+    },
+    {
+     "src": 1,
+     "said": "if a child performer earns more than $2,000 on a production or project, the employer shall remit 25 per cent of those earnings to a person prescribed in the regulations and the money shall be held in trust for the child performer in accordance with the rules specified in the regulations until the child reaches the age of 18."
+    },
+    {
+     "src": 2,
+     "said": "a contract made by a person who was an infant at the time the contract was made is unenforceable against the person unless it is"
+    },
+    {
+     "src": 2,
+     "said": "make an order granting contractual capacity or ratifying a specific contract that the infant proposes to enter into or has entered into"
+    },
+    {
+     "src": 3,
+     "said": "If a child employed in the recorded entertainment industry earns more than $2 000 on a production, the employer must remit 25% of any earnings over $2 000 to the Public Guardian and Trustee to hold in trust for the child, unless section 45.141 applies."
+    },
+    {
+     "src": 3,
+     "said": "If a child employed in the live entertainment industry earns more than $1 000 in a week, the employer must remit 25% of any earnings over $1 000 to the Public Guardian and Trustee to hold in trust for the child."
+    },
+    {
+     "src": 4,
+     "said": "designed to ensure that 25% of all Minor’s lifetime earnings over $5,000 will be available to the child when they reach the age of majority."
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "Ontario caps a child performer in recorded entertainment at eight hours a day (overtime only under a union agreement), with 12 hours off each day and 48 consecutive hours each week, timed breaks before the camera by age, and a parent or chaperone present under sixteen; British Columbia's child actors under fifteen need written parental consent and work shifts of no more than 8 hours (under 12) or 10 hours (12 to 14), from 5 a.m. to 10 p.m. before a school day, five days a week, with a chaperone; Quebec lets a child under fourteen work as an artistic creator or performer with the written consent of the parent on the Commission's form.",
+   "value": {
+    "CA.08": {
+     "maxHoursPerDay": 8,
+     "overtime": {
+      "12to15": 2,
+      "16to17": 4,
+      "condition": "union member, collective agreement with overtime rates"
+     },
+     "freeHours": {
+      "daily": 12,
+      "weeklyConsecutive": 48
+     },
+     "cameraLimits": [
+      {
+       "under": 3,
+       "onCamera": 15,
+       "break": 20
+      },
+      {
+       "from": 3,
+       "under": 6,
+       "onCamera": 30,
+       "break": 15
+      },
+      {
+       "from": 6,
+       "under": 12,
+       "onCamera": 45,
+       "break": 10
+      },
+      {
+       "from": 12,
+       "under": 16,
+       "onCamera": 60,
+       "break": 10
+      },
+      {
+       "from": 16,
+       "under": 18,
+       "onCamera": 60,
+       "break": 5
+      }
+     ],
+     "chaperone": "parent, guardian or authorized chaperone present under 16",
+     "minimumAge": "15 days"
+    },
+    "CA.02": {
+     "consent": "written consent of a parent or guardian under 15",
+     "shiftLimit": [
+      {
+       "under": 12,
+       "hours": 8
+      },
+      {
+       "from": 12,
+       "under": 15,
+       "hours": 10
+      }
+     ],
+     "timesOfDay": "not before 5:00 a.m.; end by 10:00 p.m. before a school day, 12:30 a.m. otherwise in term, 2:00 a.m. out of term",
+     "freeHours": {
+      "betweenShifts": 12,
+      "weekly": 48
+     },
+     "maxDaysPerWeek": 5,
+     "chaperoneRatio": [
+      {
+       "from": "15 days",
+       "under": 6,
+       "children": 1
+      },
+      {
+       "from": 6,
+       "under": 12,
+       "children": 3
+      },
+      {
+       "from": 12,
+       "under": 15,
+       "children": 5
+      }
+     ],
+     "minimumAge": "15 days"
+    },
+    "CA.10": {
+     "under14": "permitted as creator or performer in an artistic production field, with written parental consent on the CNESST form",
+     "schoolAgeWeeklyCap": {
+      "perWeek": 17,
+      "mondayToFriday": 10
+     },
+     "reachesRoles": [
+      "creator",
+      "performer"
+     ]
+    }
+   },
+   "applies": "Ontario: Protecting Child Performers Act, 2015, Part III (recorded entertainment). British Columbia: Employment Standards Regulation Part 7.1, Division 2 (children under 15 as actors in film, radio, video, television and commercials). Quebec: Act respecting labour standards s. 84.3 and 84.4 and Regulation s. 35.0.3 as enacted by the Act respecting the regulation of child labour (2023, c. 11).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "No employer shall require or permit a child performer to work more than eight hours in a day."
+    },
+    {
+     "src": 1,
+     "said": "(a) 12 consecutive hours free from work in each day; and (b) 48 consecutive hours free from work in each week."
+    },
+    {
+     "src": 1,
+     "said": "An employer shall ensure that a parent, guardian, or authorized chaperone of a child performer who is under 16 years of age shall be present at the workplace and shall be accessible to the child performer at all times."
+    },
+    {
+     "src": 3,
+     "said": "This Division applies in respect of the employment in the recorded entertainment industry of children under 15 years of age as actors, including background performers and extras"
+    },
+    {
+     "src": 3,
+     "said": "A person must not employ a child who is under 15 years of age unless the person has obtained the written consent of the child's parent or guardian."
+    },
+    {
+     "src": 3,
+     "said": "8 hours after the child reports for work at that location, if the child is under 12 years of age, or (b) 10 hours after the child reports for work at that location, if the child is 12 to less than 15 years of age"
+    },
+    {
+     "src": 3,
+     "said": "must not require or allow the child to work more than (a) 5 days in a week"
+    },
+    {
+     "src": 5,
+     "said": "l’enfant qui travaille à titre de créateur ou d’interprète dans un domaine de production artistique"
+    },
+    {
+     "src": 5,
+     "said": "Il lui est également interdit de faire effectuer un travail par un tel enfant plus de 17 heures par semaine et plus de 10 heures du lundi au vendredi."
+    }
+   ]
+  },
+  {
+   "item": "minimumWorkAge",
+   "finding": "Ontario sets fourteen as the minimum age of a worker in a workplace other than a factory (fifteen in a factory, sixteen in logging); British Columbia needs the director's permission under fourteen and the parent's written consent for light work at fourteen or fifteen; Quebec forbids an employer to have a child under fourteen work except in the cases the regulation names.",
+   "value": {
+    "CA.08": {
+     "general": 14,
+     "factory": 15,
+     "logging": 16
+    },
+    "CA.02": {
+     "withPermissionBelow": 14,
+     "lightWorkWithParentConsent": [
+      14,
+      15
+     ],
+     "free": 16
+    },
+    "CA.10": {
+     "general": 14,
+     "exceptions": "Regulation respecting labour standards s. 35.0.3, written parental consent"
+    }
+   },
+   "applies": "Ontario: R.R.O. 1990, Reg. 851 (Industrial Establishments), s. 4. British Columbia: Employment Standards Act s. 9. Quebec: Act respecting labour standards s. 84.3 as replaced in 2023. Federally regulated work (Canada Labour Code, seventeen) isn't re-read.",
+   "sources": [
+    {
+     "src": 6,
+     "said": "(c) sixteen years of age in a logging operation; (d) fifteen years of age in a factory other than a logging operation; and (e) fourteen years of age in a workplace other than a factory."
+    },
+    {
+     "src": 7,
+     "said": "A person must not employ a child (a) who is under 14 years of age without the director's permission, or (b) who is 14 or 15 years of age (i) to perform light work without the written consent of the child's parent or guardian"
+    },
+    {
+     "src": 5,
+     "said": "Il est interdit à un employeur de faire effectuer un travail par un enfant de moins de 14 ans, sauf dans les cas et aux conditions déterminés par règlement du gouvernement."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "ACTRA's collective agreements (the IPA and NCA) define minors as performers under 18.",
+   "value": {
+    "ACTRA": {
+     "minorUnder": 18
+    }
+   },
+   "applies": "ACTRA; the WGC's and DGC's rules weren't read.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "The rights and interests of Minors now defined in the IPA and NCA as performers under the age of 18"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "A director must be at least eighteen under the federal Act, Ontario's Act and British Columbia's Act.",
+   "value": {
+    "CA": 18,
+    "CA.08": 18,
+    "CA.02": 18
+   },
+   "applies": "Canada Business Corporations Act s. 105(1); Ontario Business Corporations Act s. 118(1); British Columbia Business Corporations Act s. 124(2). Quebec isn't read.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "The following persons are disqualified from being a director of a corporation: (a) anyone who is less than eighteen years of age;"
+    },
+    {
+     "src": 9,
+     "said": "The following persons are disqualified from being a director of a corporation: 1. A person who is less than eighteen years of age."
+    },
+    {
+     "src": 10,
+     "said": "An individual is not qualified to become or act as a director of a company if that individual is (a) under the age of 18 years"
+    }
+   ]
+  },
+  {
+   "item": "majority",
+   "finding": "In Quebec a minor comes into his property at eighteen, when the tutorship ends and an adult's tutorship can begin.",
+   "value": {
+    "CA.10": 18
+   },
+   "applies": "Quebec (Civil Code of Québec), as the Government of Québec states it; the Code's own article 153 not reached.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Il sera ainsi préparé à recevoir ce patrimoine et à le gérer lorsqu’il aura 18   ans ou lorsqu’il sera émancipé. … afin qu’il puisse bénéficier d’une tutelle au majeur dès l’âge de 18   ans."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "In Quebec a minor of fourteen is treated as of full age for every act of his employment or the practice of his art or profession, he manages what his work earns, and where his earnings are considerable the tutor may ask the court to fix the sums he keeps in hand; no fixed share is set aside.",
+   "value": {
+    "CA.10": {
+     "fullAgeForWorkAndArtFrom": 14,
+     "earnings": "the minor manages them; the court may fix the sums he keeps where they are considerable",
+     "setAside": null,
+     "reachesWritingDirecting": "yes: 'l’exercice de son art ou de sa profession'"
+    }
+   },
+   "applies": "Quebec.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "Le mineur peut gérer le produit de son travail et les allocations qui lui sont versées pour combler ses besoins ordinaires et usuels. Cependant, lorsque ses revenus sont considérables ou lorsque les circonstances le justifient, le tuteur peut demander au tribunal de fixer les sommes dont le mineur conserve la gestion. À 14   ans, le mineur est considéré comme majeur pour les actes relatifs à son emploi, ou à l’exercice de son art ou de sa profession."
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "In Quebec a child under fourteen may work in artistic productions (theatre, film, television, dance, music, singing) only with a parent's written consent on the form the employer provides, and the night-work limits for those under sixteen don't apply to artistic productions.",
+   "value": {
+    "CA.10": {
+     "under14": "artistic productions allowed with a parent's written consent",
+     "consentForm": "the employer provides it",
+     "nightLimits": "not applied to artistic productions",
+     "schoolWeekCap": "17 hours a school week (10 Monday to Friday) for those who must attend school"
+    }
+   },
+   "applies": "Quebec, as the Protecteur du citoyen states the law (21 June 2023); the Regulation's own ss. 35.1-35.2 not reached.",
+   "sources": [
+    {
+     "src": 12,
+     "said": "Night schedule restrictions do not apply to newspaper deliverers, babysitters or young people who participate in an artistic production. … Participate in artistic productions (theatre, film, television, dance, music, singing, etc.); … A young person under age 14 must be authorized to work by one of their parents . The employer must provide the parent with the consent form allowing their child to work ."
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "Under the Civil Code of Québec a minor can't be a director of a legal person.",
+   "value": {
+    "CA.10": {
+     "directorFrom": 18
+    }
+   },
+   "applies": "Quebec, every legal person (Civil Code art. 327, as Justice Canada reproduces it).",
+   "sources": [
+    {
+     "src": 13,
+     "said": "Art. 327. Sont inhabiles à être administrateurs les mineurs, les majeurs en tutelle ou en curatelle, les faillis et les personnes à qui le tribunal interdit"
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "The Directors Guild of Canada's British Columbia council admits no one under seventeen to its permittee programme, the path to associate membership; the Writers Guild of Canada's application asks for a date of birth but states no age.",
+   "value": {
+    "DGC BC": {
+     "permitteeFrom": 17
+    },
+    "WGC": {
+     "minimumAge": null
+    }
+   },
+   "applies": "DGC BC (revised December 2024); WGC application (May 2024).",
+   "sources": [
+    {
+     "src": 14,
+     "said": "The Permittee Logbook Holder Program is required for non-Members to be eligible for Associate Membership in the DGC BC. … • Be 17 years of age or older;"
+    },
+    {
+     "src": 15,
+     "said": "Professional Name: ___________________________ Date of Birth: ________________"
+    }
+   ]
+  }
+ ],
+ "country": "CA",
+ "sources": [
+  {
+   "url": "https://www.ontario.ca/laws/statute/90a07",
+   "title": "Age of Majority and Accountability Act, R.S.O. 1990, c. A.7 (Ontario e-Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Every person attains the age of majority and ceases to be a minor on attaining the age of eighteen years."
+  },
+  {
+   "url": "https://www.ontario.ca/laws/statute/15p02",
+   "title": "Protecting Child Performers Act, 2015, S.O. 2015, c. 2 (Ontario e-Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "“child performer” means a child under 18 years of age who performs work or supplies services for monetary compensation in the entertainment industry as a performer, including as a background performer; … An employer shall not employ or contract for the services of a child performer except under a written agreement. … if a child performer earns more than $2,000 on a production or project, the employer shall remit 25 per cent of those earnings to a person prescribed in the regulations and the money shall be held in trust for the child performer in accordance with the rules specified in the regulations until the child reaches the age of 18. … No employer shall require or permit a child performer to work more than eight hours in a day. … (a) 12 consecutive hours free from work in each day; and (b) 48 consecutive hours free from work in each week. … An employer shall ensure that a parent, guardian, or authorized chaperone of a child performer who is under 16 years of age shall be present at the workplace and shall be accessible to the child performer at all times."
+  },
+  {
+   "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96223_01",
+   "title": "Infants Act, RSBC 1996, c. 223 (BC Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a contract made by a person who was an infant at the time the contract was made is unenforceable against the person unless it is … make an order granting contractual capacity or ratifying a specific contract that the infant proposes to enter into or has entered into"
+  },
+  {
+   "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/396_95",
+   "title": "Employment Standards Regulation, B.C. Reg. 396/95, s. 45.14 (BC Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "If a child employed in the recorded entertainment industry earns more than $2 000 on a production, the employer must remit 25% of any earnings over $2 000 to the Public Guardian and Trustee to hold in trust for the child, unless section 45.141 applies. … If a child employed in the live entertainment industry earns more than $1 000 in a week, the employer must remit 25% of any earnings over $1 000 to the Public Guardian and Trustee to hold in trust for the child. … This Division applies in respect of the employment in the recorded entertainment industry of children under 15 years of age as actors, including background performers and extras … A person must not employ a child who is under 15 years of age unless the person has obtained the written consent of the child's parent or guardian. … 8 hours after the child reports for work at that location, if the child is under 12 years of age, or (b) 10 hours after the child reports for work at that location, if the child is 12 to less than 15 years of age … must not require or allow the child to work more than (a) 5 days in a week"
+  },
+  {
+   "url": "https://www.actra.ca/prs/minors-trust/",
+   "title": "ACTRA PRS Minors' Trust (ACTRA)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "designed to ensure that 25% of all Minor’s lifetime earnings over $5,000 will be available to the child when they reach the age of majority. … The rights and interests of Minors now defined in the IPA and NCA as performers under the age of 18"
+  },
+  {
+   "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2023F/79993.pdf",
+   "title": "Loi sur l’encadrement du travail des enfants (2023, chapitre 11), Gazette officielle du Québec, 21 juin 2023",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "l’enfant qui travaille à titre de créateur ou d’interprète dans un domaine de production artistique … Il lui est également interdit de faire effectuer un travail par un tel enfant plus de 17 heures par semaine et plus de 10 heures du lundi au vendredi. … Il est interdit à un employeur de faire effectuer un travail par un enfant de moins de 14 ans, sauf dans les cas et aux conditions déterminés par règlement du gouvernement."
+  },
+  {
+   "url": "https://www.ontario.ca/laws/regulation/900851",
+   "title": "R.R.O. 1990, Reg. 851 Industrial Establishments, s. 4 (Ontario e-Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "(c) sixteen years of age in a logging operation; (d) fifteen years of age in a factory other than a logging operation; and (e) fourteen years of age in a workplace other than a factory."
+  },
+  {
+   "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/00_96113_01",
+   "title": "Employment Standards Act, RSBC 1996, c. 113, s. 9 (BC Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "A person must not employ a child (a) who is under 14 years of age without the director's permission, or (b) who is 14 or 15 years of age (i) to perform light work without the written consent of the child's parent or guardian"
+  },
+  {
+   "url": "https://laws-lois.justice.gc.ca/eng/acts/C-44/section-105.html",
+   "title": "Canada Business Corporations Act, s. 105 (Justice Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The following persons are disqualified from being a director of a corporation: (a) anyone who is less than eighteen years of age;"
+  },
+  {
+   "url": "https://www.ontario.ca/laws/statute/90b16",
+   "title": "Business Corporations Act, R.S.O. 1990, c. B.16, s. 118 (Ontario e-Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The following persons are disqualified from being a director of a corporation: 1. A person who is less than eighteen years of age."
+  },
+  {
+   "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/02057_06",
+   "title": "Business Corporations Act, SBC 2002, c. 57, s. 124 (BC Laws)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "An individual is not qualified to become or act as a director of a company if that individual is (a) under the age of 18 years"
+  },
+  {
+   "url": "https://www.quebec.ca/justice-et-etat-civil/protection-legale/tutelle-biens-mineur/personnes-impliquees/mineur",
+   "title": "Gouvernement du Québec: Tutelle aux biens du mineur, personnes impliquées, le mineur",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Il sera ainsi préparé à recevoir ce patrimoine et à le gérer lorsqu’il aura 18   ans ou lorsqu’il sera émancipé. … afin qu’il puisse bénéficier d’une tutelle au majeur dès l’âge de 18   ans. … Le mineur peut gérer le produit de son travail et les allocations qui lui sont versées pour combler ses besoins ordinaires et usuels. Cependant, lorsque ses revenus sont considérables ou lorsque les circonstances le justifient, le tuteur peut demander au tribunal de fixer les sommes dont le mineur conserve la gestion. À 14   ans, le mineur est considéré comme majeur pour les actes relatifs à son emploi, ou à l’exercice de son art ou de sa profession."
+  },
+  {
+   "url": "https://protecteurducitoyen.qc.ca/en/node/1472",
+   "title": "Protecteur du citoyen (Quebec ombudsman): Working at age 14: what does the law say? (21 June 2023)",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/N-1.1",
+   "said": "Night schedule restrictions do not apply to newspaper deliverers, babysitters or young people who participate in an artistic production. … Participate in artistic productions (theatre, film, television, dance, music, singing, etc.); … A young person under age 14 must be authorized to work by one of their parents . The employer must provide the parent with the consent form allowing their child to work ."
+  },
+  {
+   "url": "https://justice.canada.ca/fra/pr-rp/sjc-csj/harmonization/bohemier/table3.html",
+   "title": "Justice Canada, Faillite et insolvabilité (Bohémier), table 3: articles of the Civil Code of Québec",
+   "read": "2026-11-01",
+   "kind": "secondary",
+   "quotes": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/CCQ-1991",
+   "said": "Art. 327. Sont inhabiles à être administrateurs les mineurs, les majeurs en tutelle ou en curatelle, les faillis et les personnes à qui le tribunal interdit"
+  },
+  {
+   "url": "https://files.dgc.ca/assets/british-columbia/LogbookProgram/Permittee-Program.pdf",
+   "title": "DGC BC: Permittee Logbook Holder Program (revised December 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "The Permittee Logbook Holder Program is required for non-Members to be eligible for Associate Membership in the DGC BC. … • Be 17 years of age or older;"
+  },
+  {
+   "url": "https://www.wgc.ca/sites/default/files/2024-06/NEWMemberApplicationFillableMay312024.pdf",
+   "title": "Writers Guild of Canada: new member application (May 2024)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Professional Name: ___________________________ Date of Birth: ________________"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "majority",
+   "sought": "The wording of the Civil Code of Québec, art. 153 itself",
+   "tried": {
+    "institution": "legisquebec.gouv.qc.ca answered 403 (CloudFront 'Request blocked') on 2026-11-01 | Retry 2026-11-01: quebec.ca's minor's tutorship page read (held, an age of 18 stated through tutorship); legisquebec.gouv.qc.ca still 403; justice.gouv.qc.ca 403",
+    "official-register": "Gazette officielle not searched for art. 153 (the Code predates the online Gazette) | Retry 2026-11-01: Gazette officielle not holding the 1991 Code text; CAIJ (elois.caij.qc.ca) moved to app.caij.qc.ca, which renders by script",
+    "web-search": "searched the article's wording; only secondary sites (recordinglaw.com) quoted it, naming no primary URL | Retry 2026-11-01: 'justice.gouv.qc.ca majorité 18 ans pleine capacité Code civil article 153 mineur'; 'curateur.gouv.qc.ca mineur majorité 18 ans tutelle au mineur': found quebec.ca (held)",
+    "trade-press": "none naming a primary | Retry 2026-11-01: none naming the primary",
+    "archive": "archive.org availability API returned no snapshot; web.archive.org reset the connection | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "minorsContracts",
+   "sought": "The regulations Ontario names for the child performer's trustee (O. Reg. 191/15)",
+   "tried": {
+    "institution": "legisquebec.gouv.qc.ca 403; CNESST pages answered a Cloudflare challenge; Ontario's regulation O. Reg. 191/15 page returned no text | Retry 2026-11-01: quebec.ca read (Quebec's rule held); Ontario's O. Reg. 191/15 not re-tried",
+    "official-register": "Gazette officielle 2023 c. 11 read (no earnings rule there) | Retry 2026-11-01: legisquebec 403",
+    "web-search": "searched Quebec child labour and artistic work | Retry 2026-11-01: 'quebec.ca travail des enfants moins de 14 ans consentement parental production artistique heures règlement normes du travail'",
+    "trade-press": "law-firm notes (Norton Rose, DLA Piper, Langlois) seen in results, not read | Retry 2026-11-01: Mondaq, DLA Piper, Langlois, Norton Rose on Bill 19 seen in results; not held (no earnings rule)",
+    "archive": "web.archive.org unreachable | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "childPerformers",
+   "sought": "Quebec's hours, rest and supervision for children in artistic production (Regulation respecting labour standards ss. 35.1, 35.2)",
+   "tried": {
+    "institution": "legisquebec 403; CNESST Cloudflare | Retry 2026-11-01: Protecteur du citoyen read (held, secondary); CNESST still a Cloudflare challenge",
+    "official-register": "the 2023 Gazette amends ss. 35.1 and 35.2 but doesn't reprint them | Retry 2026-11-01: legisquebec 403 for the Regulation (N-1.1, r. 3)",
+    "web-search": "run; no official text of ss. 35.1-35.2 found | Retry 2026-11-01: 'Règlement sur les normes du travail 35.1 35.2 enfant production artistique heures moins de 14 ans texte': Ontario and France only",
+    "trade-press": "none read | Retry 2026-11-01: Educaloi and jurigo.ca summaries seen, no hours for artistic work",
+    "archive": "unreachable | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "unions",
+   "sought": "The WGC's and the DGC's national rules for members under 18 (beyond DGC BC's permittee age)",
+   "tried": {
+    "institution": "wgc.ca/membership and dgc.ca membership pages fetched; no age rule found in them | Retry 2026-11-01: wgc.ca join page and application PDF read (held); dgc.ca renders by script; voting.dgc.ca timed out; DGC BC's permittee PDF read (held)",
+    "official-register": "none | Retry 2026-11-01: none",
+    "web-search": "not run | Retry 2026-11-01: 'Directors Guild of Canada membership requirements age 18 apprentice member eligibility dgc.ca'",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "not tried | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "funds",
+   "sought": "Telefilm Canada's applicant age or capacity rule",
+   "tried": {
+    "institution": "telefilm.ca development program page returned 150 bytes (no text) | Retry 2026-11-01: Telefilm's 2026-2027 Production Program guidelines PDF (telefilm.ca/wp-content/uploads/2026/06/Guidelines_Production_2026-2027.pdf) answered 403; not read another way",
+    "official-register": "none | Retry 2026-11-01: none",
+    "web-search": "not run | Retry 2026-11-01: 'Telefilm Canada production program guidelines 2026-2027 eligible applicants Canadian-controlled corporation pdf': applicants are Canadian-controlled corporations (search snippet only), no age",
+    "trade-press": "none | Retry 2026-11-01: hellodarwin.com program summaries, no primary URL; not held",
+    "archive": "not tried | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "companies",
+   "sought": "The Quebec Business Corporations Act's own rule on a director's age, and the current wording of Civil Code art. 327",
+   "tried": {
+    "institution": "legisquebec 403 | Retry 2026-11-01: registreentreprises.gouv.qc.ca 403; legisquebec 403; Civil Code art. 327 reached through Justice Canada (held)",
+    "official-register": "not tried | Retry 2026-11-01: Gazette officielle not searched for the Business Corporations Act",
+    "web-search": "not run | Retry 2026-11-01: 'Ne peuvent être administrateurs les mineurs Code civil du Québec 327 Loi sur les sociétés par actions administrateur'",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "unreachable | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

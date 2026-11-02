@@ -17,6 +17,7 @@ import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = '0123456789abcdef';
@@ -198,11 +199,11 @@ describe('the genres a person loves', () => {
   });
 
   it("genres.choose: the producer's film earns as its loved genre's market does", () => {
-    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+    type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
     const doubled = (genre: string) => {
       let l: Life<Producing> = dispatch(
         // A British producer paid in pounds, in 2026 (the option's dollars carried at the day's rate).
-        dispatch(begin(SEED, Date.UTC(2026, 6, 1) / 1000, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START), identity: identity({ citizenship: ['GB'] }), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse('GBP') }), chooseGenres, { loved: [genre] }),
+        dispatch(begin(SEED, Date.UTC(2026, 6, 1) / 1000, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(GENRES_START), identity: identity({ citizenship: ['GB'] }), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse('GBP') }), chooseGenres, { loved: [genre] }),
         chooseAttributes,
         { role: 'producer', all: 70, each: {} },
       );

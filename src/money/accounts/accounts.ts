@@ -155,6 +155,7 @@ export function month(s: Holding, item: Item, c: Context): void {
   // @slate:consumer account.pay
   // @slate:consumer means.first-morning
   // @slate:consumer tax.settle
+  // @slate:consumer youth.release
   const { average, lowest } = standing(ledger, start, c.now);
   if (rate !== undefined) {
     const over = rate.over ?? zero;

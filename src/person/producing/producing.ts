@@ -14,6 +14,7 @@ import type { ActingSlice } from '../acting/acting.ts';
 import type { DirectingSlice } from '../directing/directing.ts';
 import { personOf, residenceOf, type IdentitySlice } from '../identity/identity.ts';
 import { permitted, type PermitsSlice } from '../permits/permits.ts';
+import { engagement, fundRefuses, holdBack, hoursShare, type YouthSlice } from '../youth/youth.ts';
 import compiled from './markets.json' with { type: 'json' };
 
 /**
@@ -241,7 +242,9 @@ type Values = Readonly<Record<string, number>>;
 type Producing = { attributes: AttributesSlice; producing: ProducingSlice };
 type Optioning = Producing & Holding & { genres: GenresSlice };
 /** A project shot: where the producer works, so whether they may work there reads the person, every role's days and the permits. */
-type Shooting = Producing & Earning & { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice };
+type Shooting = Producing & Earning & { identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice; youth: YouthSlice };
+/** A fund applied to: whether it takes a producer of the person's age reads the person (person.youth). */
+type Applying = Producing & { identity: IdentitySlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'producer', id);
@@ -469,10 +472,13 @@ export function fundFor(p: Project): { rate: number; award: number } {
 }
 
 /** Applies to the market's fund (the BFI in the UK), once a project: a yes at its rate as the package sells it, and its award. */
-function apply(s: Producing, a: ProjectArgs, c: Context): void {
+function apply(s: Applying, a: ProjectArgs, c: Context): void {
   const v = componentValues(s.attributes, 'producer');
   const p = projectOf(s.producing, a.project);
   if (p.applied) throw new Error(`project ${p.id} has applied`);
+  // @slate:consumer identity.make
+  const refused = fundRefuses(personOf(s.identity), p.market, c.now);
+  if (refused !== null) throw new Error(refused);
   const home = p.market === HOME;
   seeking(p, c.now, home ? MONTHS_LEFT : 0);
   const { rate, award } = home ? { rate: BFI.rate, award: Math.min(planOf(p).budget.minor * BFI.share, BFI.most * 100) } : fundFor(p);
@@ -518,6 +524,9 @@ function shoot(s: Shooting, a: PayingArgs, c: Context): void {
   // @slate:consumer permits.decision
   // Stryker disable next-line StringLiteral: no rule the research names covers a producer apart (papers.permits' COVERS), so another name is refused alike; the permits engine's tests hold the reading.
   if (!permitted(s, e.country, c.now, e.days, 'producer')) throw new Error(`the person may not work in ${e.country} without a permit`);
+  // A minor producer is engaged as the shoot's country's law lets them be, their days at the hours it allows (person.youth).
+  const grant = engagement(s, e.country, 'producer', c.now);
+  if (grant !== null) grant.used = true;
   // @slate:consumer producing.plan
   const { budget, needed, scheduled, fee } = planOf(p);
   const t = team(v);
@@ -528,8 +537,8 @@ function shoot(s: Shooting, a: PayingArgs, c: Context): void {
   p.shot = { at: c.now, days, overrun: amount(budget.currency, overrun), fee: fee === null ? null : amount(budget.currency, Math.max(0, fee.minor - overrun)), quality };
   // The fee left after the overrun is paid into the account named, less what the market's country withholds (money.tax).
   // @slate:consumer identity.make
-  if (p.shot.fee !== null && p.shot.fee.minor > 0) earn(s, { account: a.account, payer: 'production', country: e.country, home: residenceOf(personOf(s.identity)), work: 'producer', gross: p.shot.fee, what: "producer's fee" }, c);
-  practise(s.attributes, 'producer', [C.hire, C.lead], days);
+  if (p.shot.fee !== null && p.shot.fee.minor > 0) holdBack(s, earn(s, { account: a.account, payer: 'production', country: e.country, home: residenceOf(personOf(s.identity)), work: 'producer', gross: p.shot.fee, what: "producer's fee" }, c), `producing:${p.id}`, c);
+  practise(s.attributes, 'producer', [C.hire, C.lead], days * hoursShare(personOf(s.identity), e.country, 'producer', c.now));
 }
 
 /** How the film and its campaign sell it, 0 to 100: the film, and Marketing's plans and media. */
@@ -597,7 +606,7 @@ export const engagementOf = (p: Project): { country: CountryCode; days: number }
 export const optionMaterial = defineCommand<Optioning, OptionArgs>({ id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing', 'accounts', 'ledger'], run: option });
 export const renewOption = defineCommand<{ producing: ProducingSlice } & Holding, PayingArgs>({ id: 'producing.renew', reads: [], writes: ['producing', 'accounts', 'ledger'], run: renew });
 export const planProject = defineCommand<Producing, PlanArgs>({ id: 'producing.plan', reads: [], writes: ['attributes', 'producing'], run: plan });
-export const applyToFunder = defineCommand<Producing, ProjectArgs>({ id: 'producing.apply', reads: [], writes: ['attributes', 'producing'], run: apply });
+export const applyToFunder = defineCommand<Applying, ProjectArgs>({ id: 'producing.apply', reads: ['identity'], writes: ['attributes', 'producing'], run: apply });
 export const raiseMoney = defineCommand<Producing, DaysArgs & ProjectArgs>({ id: 'producing.raise', reads: [], writes: ['attributes', 'producing'], run: raise });
-export const shootProject = defineCommand<Shooting, PayingArgs>({ id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule'], run: shoot });
+export const shootProject = defineCommand<Shooting, PayingArgs>({ id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule', 'youth'], run: shoot });
 export const releaseFilm = defineCommand<Producing, ProjectArgs>({ id: 'producing.release', reads: [], writes: ['attributes', 'producing'], run: release });

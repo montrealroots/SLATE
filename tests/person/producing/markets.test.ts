@@ -54,14 +54,15 @@ import type { GenresSlice } from '../../../src/person/genres/genres.ts';
 import compiled from '../../../src/person/producing/markets.json' with { type: 'json' };
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const ROOT = resolve(import.meta.dirname, '../../..');
 const SEED = '0123456789abcdef';
 const T0 = daysFromCivil(2026, 11, 1) * SECONDS_PER_DAY;
 const GENRE = 'action';
 const made = (all = 50): Life<Producing> =>
-  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] }, identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'producer', all, each: {} });
+  dispatch(begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: { loved: [GENRE] }, identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'producer', all, each: {} });
 const project = (l: Life<Producing>, id = l.slices.producing.projects.length) => projectOf(l.slices.producing, id);
 const optioned = (market: string, l = made()) => dispatch(l, optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE, market });
 const planned = (market: string, budget: string, l = made()) => {

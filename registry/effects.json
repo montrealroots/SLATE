@@ -152,5 +152,11 @@
   "tax.owed": {
     "what": "Leaves the player a notice of a year's tax owed that the account couldn't pay.",
     "awaits": "layer 5: the money screen tells the player the tax owed"
+  },
+  "youth.authorise": {
+    "what": "Grants what the law of a country requires before a minor's engagement there in a kind of work, once: the child performer's permit or licence (layer 3's, or the seat region's own) below the age it is needed under, and the guardian's signature, a court's or an authority's approval of the contract below majority and the age the minor contracts alone; refused where the law bars the work at the person's age or nothing is required. Read by engagement(), which acting.perform, script.pitch, directing.prep and producing.shoot ask before the work."
+  },
+  "youth.release": {
+    "what": "Pays a minor's pay set aside (the Coogan trust's, the Caisse des dépôts' pécule) back from the world's youth:<CC> account into the person's account on the day they come of age in the work's country. Consumer: the account's balance, read by money.accounts' monthly standing (src/money/accounts/accounts.ts:157, where tax.settle is anchored) — the anchor belongs there, in a file this part doesn't own."
   }
 }

@@ -11,6 +11,7 @@ import type { DirectingSlice } from '../directing/directing.ts';
 import type { ProducingSlice } from '../producing/producing.ts';
 import { mayTakeUnionWork, type UnionsSlice } from '../unions/unions.ts';
 import { spread } from '../work/work.ts';
+import { engagement, holdBack, hoursShare, type YouthSlice } from '../youth/youth.ts';
 import compiled from './markets.json' with { type: 'json' };
 
 /**
@@ -637,8 +638,12 @@ export function aboutMarket(where: Agreement | CountryCode): string | undefined 
   return t(UNKEPT_LINE, { country: countryName(country), missing: list });
 }
 
-/** The slices a part played reads besides its own: whether the person may work there reads every role's days and permits; its pay goes into an account, taxed. */
-type Playing = Acting & Earning & { unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice };
+/**
+ * The slices a part played reads besides its own: whether the person may work there reads every role's days and
+ * permits, and, for a minor, what the law of the work's country needs first (person.youth); its pay goes into an
+ * account, taxed, less what that law sets aside.
+ */
+type Playing = Acting & Earning & { unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice; youth: YouthSlice };
 
 function play(s: Playing, a: PlayArgs, c: Context): void {
   const job = auditionOf(s.acting, a.audition);
@@ -650,14 +655,18 @@ function play(s: Playing, a: PlayArgs, c: Context): void {
   if (!permitted(s, where, c.now, daysWorked(job.part))) throw new Error(`the person may not work in ${where} without a permit`);
   // @slate:consumer unions.join
   if (!mayTakeUnionWork(s, job.part.agreement, c.now)) throw new Error(`a part under ${job.part.agreement} past the thirtieth day of union work is a member's`);
+  // A minor's part is engaged as the work's country's law lets them take it (person.youth), its days at the hours it allows.
+  const grant = engagement(s, where, 'performer', c.now);
+  if (grant !== null) grant.used = true;
+  const share = hoursShare(personOf(s.identity), where, 'performer', c.now);
   // @slate:consumer attributes.choose
   const k = partSkill(componentValues(s.attributes, 'actor'), job.part);
   const quality = clamp(k + spread(k) * (2 * c.draws('acting.work', 'perform', job.id).float() - 1), 0, 100);
   const paid = pay(job.part, dateOf(c.now), experience(s.acting, c.now));
   job.work = { at: c.now, quality, pay: paid };
   // The production pays the part into the account named, less what the country withholds (money.tax).
-  if (paid !== null) earn(s, { account: a.account, payer: 'production', country: where, home: residenceOf(personOf(s.identity)), work: 'performer', gross: paid, what: 'pay' }, c);
-  practise(s.attributes, 'actor', demands(job.part), daysWorked(job.part));
+  if (paid !== null) holdBack(s, earn(s, { account: a.account, payer: 'production', country: where, home: residenceOf(personOf(s.identity)), work: 'performer', gross: paid, what: 'pay' }, c), `acting:${job.id}`, c);
+  practise(s.attributes, 'actor', demands(job.part), daysWorked(job.part) * share);
 }
 
 // Stryker disable all: a mutant of a declaration made as the module loads changes its shape, so the module loaded
@@ -665,4 +674,4 @@ function play(s: Playing, a: PlayArgs, c: Context): void {
 // test that lists each command with what it reads and writes; what each does is mutated above.
 export const postBreakdown = defineCommand<{ acting: ActingSlice }, Part>({ id: 'acting.breakdown', reads: [], writes: ['acting'], run: post });
 export const auditionForPart = defineCommand<Acting, AuditionArgs>({ id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'], run: audition });
-export const playPart = defineCommand<Playing, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule'], run: play });
+export const playPart = defineCommand<Playing, PlayArgs>({ id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule', 'youth'], run: play });

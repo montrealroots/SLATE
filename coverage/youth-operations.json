@@ -1,0 +1,54 @@
+{
+ "engine": "person.youth",
+ "axis": "youth-operation",
+ "universe": {
+  "keys": [
+   "youth.authorise",
+   "youth.release",
+   "engagement",
+   "holdBack",
+   "roles"
+  ]
+ },
+ "rows": [
+  {
+   "key": "youth.authorise",
+   "status": "proven",
+   "tests": [
+    "tests/person/youth/youth.test.ts::a minor's work > youth.authorise bites: a grant for the work's country lets the part be played",
+    "tests/person/youth/youth.test.ts::a minor's work > is engaged, limited and paid as the work's country's law says"
+   ]
+  },
+  {
+   "key": "youth.release",
+   "status": "proven",
+   "tests": [
+    "tests/person/youth/youth.test.ts::a minor's work > youth.release bites: the pay set aside comes back on the person's eighteenth birthday"
+   ]
+  },
+  {
+   "key": "engagement",
+   "status": "proven",
+   "tests": [
+    "tests/person/youth/youth.test.ts::a minor's work > uses a grant for its own country and work only, once"
+   ]
+  },
+  {
+   "key": "holdBack",
+   "status": "proven",
+   "tests": [
+    "tests/person/youth/youth.test.ts::the youth rules, on rules of their own > count a threshold over the engagement or the calendar year, in the country it is set in",
+    "tests/person/youth/youth.test.ts::the youth rules, on rules of their own > hold no more than the payment left after what was withheld, and nothing where nothing is due"
+   ]
+  },
+  {
+   "key": "roles",
+   "status": "proven",
+   "tests": [
+    "tests/person/youth/youth.test.ts::a minor's work in each role > has a French director's prep and cut taught and carried at the young worker's hours",
+    "tests/person/youth/youth.test.ts::a minor's work in each role > has a French producer authorised, the fee's pécule set aside, the days at the young worker's hours",
+    "tests/person/youth/youth.test.ts::a minor's work in each role > has a young French writer's sale authorised and its pécule set aside"
+   ]
+  }
+ ]
+}

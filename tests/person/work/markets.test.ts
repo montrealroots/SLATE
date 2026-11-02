@@ -45,8 +45,9 @@ import compiled from '../../../src/person/work/markets.json' with { type: 'json'
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
-type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice } & ReturnType<typeof purse>;
+type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 11, 1);
@@ -235,7 +236,7 @@ const line = (f: Fee) =>
 type Lives = Career;
 const writer = (over: Partial<Person> = {}, at = NOW): Life<Lives> =>
   dispatch(
-    dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(over), genres: { loved: ['drama'] }, ...purse() }), chooseAttributes, { role: 'screenwriter', all: 100, each: {} }),
+    dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(over), genres: { loved: ['drama'] }, youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'screenwriter', all: 100, each: {} }),
     writeScript,
     { form: 'episode', genre: 'drama', days: 200 },
   );

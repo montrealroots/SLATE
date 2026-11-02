@@ -34,8 +34,9 @@ import { FAMILY, type Family, type IdentitySlice } from '../../../src/person/ide
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
-type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice } & ReturnType<typeof purse>;
+type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice; identity: IdentitySlice; genres: GenresSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const u = (...keys: (string | number)[]) => draws(seedFromText(SEED), 'work.career', ...keys);
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
@@ -44,15 +45,17 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'screenwriter',
 
 /** Levels set by component, held by the broad attribute that covers each (a later one wins where two share it). */
 const toBroad = (each: Record<string, number>): Record<string, number> => Object.fromEntries(Object.entries(each).map(([id, n]) => [broadOf('screenwriter', id).id, n]));
+/** The made person, born before the epoch these lives start at, so of age throughout (person.youth reads the age). */
+const adult = (over: Parameters<typeof identity>[0] = {}) => identity({ born: { date: '1950-06-14', country: 'US', region: 'US.CA' }, ...over });
 const made = (all: number, each: Record<string, number> = {}, at = 0): Life<Career> =>
-  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: identity(), genres: { loved: ['drama'] }, ...purse() }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
+  dispatch(begin(SEED, at, { attributes: structuredClone(ATTRIBUTES_START), scripts: structuredClone(SCRIPTS_START), career: structuredClone(CAREER_START), identity: adult(), genres: { loved: ['drama'] }, youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'screenwriter', all, each: toBroad(each) });
 const withScript = (all: number, form: Form = 'feature', each: Record<string, number> = {}) => dispatch(made(all, each), writeScript, { form, genre: 'drama', days: 200 });
 const v = (l: Life<Career>) => componentValues(l.slices.attributes, 'screenwriter');
 const out = (l: Life<Career>, id = 1) => l.slices.career.out[String(id)];
 const script = (l: Life<Career>, id = 1) => l.slices.scripts.written[id - 1] as Script;
 const withCareer = (l: Life<Career>, career: Partial<CareerSlice>): Life<Career> => ({ ...l, slices: { ...l.slices, career: { ...l.slices.career, ...career } } });
 const contacts = (l: Life<Career>, n: number) => withCareer(l, { contacts: n });
-const withFamily = (l: Life<Career>, family: Family): Life<Career> => ({ ...l, slices: { ...l.slices, identity: identity({ family }) } });
+const withFamily = (l: Life<Career>, family: Family): Life<Career> => ({ ...l, slices: { ...l.slices, identity: adult({ family }) } });
 const requested = (l: Life<Career>, n: number, documents: Record<string, number> = {}) => withCareer(l, { out: { '1': { documents, requests: n, sold: null } } });
 const emptyOut: Out = { documents: {}, requests: 0, sold: null };
 
@@ -263,7 +266,7 @@ describe('the solo writer', () => {
       { id: 'network.meet', reads: [], writes: ['attributes', 'career'] },
       { id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'] },
       { id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'] },
-      { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule'] },
+      { id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
     ]);
   });
 });

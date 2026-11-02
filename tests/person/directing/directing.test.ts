@@ -50,8 +50,9 @@ import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const seedOf = (i: number) => i.toString(16).padStart(16, '0');
 const u = (seed: string, ...keys: (string | number)[]) => draws(seedFromText(seed), 'directing.work', ...keys).float();
@@ -64,7 +65,7 @@ const of = (v: Record<string, number>, id: string) => skillOf(v, 'director', id)
 
 const STUDIO: PrepArgs = { form: 'feature', budget: 20_000_000, shoot: 40 };
 const made = (all: number, each: Record<string, number> = {}, seed = SEED): Life<D> =>
-  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'director', all, each });
+  dispatch(begin(seed, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: adult(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'director', all, each });
 const prepped = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(made(all, each, seed), prepFilm, { account: ACCOUNT, ...args });
 const shot = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(prepped(all, args, each, seed), shootFilm, { film: 1, account: ACCOUNT });
 const cutOf = (all: number, args: PrepArgs = STUDIO, each: Record<string, number> = {}, seed = SEED) => dispatch(shot(all, args, each, seed), cutFilm, { film: 1, account: ACCOUNT });
@@ -73,7 +74,9 @@ const v = (l: Life<D>) => componentValues(l.slices.attributes, 'director');
 const held = (l: Life<D>) => l.slices.attributes['director'] as Record<string, number>;
 const values = (all: number, each: Record<string, number> = {}) => v(made(all, each));
 const withDirecting = (l: Life<D>, d: Partial<DirectingSlice>): Life<D> => ({ ...l, slices: { ...l.slices, directing: { ...l.slices.directing, ...d } } });
-const withFamily = (l: Life<D>, family: Family): Life<D> => ({ ...l, slices: { ...l.slices, identity: identity({ family }) } });
+/** The made person, born before the epoch these lives start at, so of age throughout (person.youth reads the age). */
+const adult = (over: Parameters<typeof identity>[0] = {}) => identity({ born: { date: '1950-06-14', country: 'US', region: 'US.CA' }, ...over });
+const withFamily = (l: Life<D>, family: Family): Life<D> => ({ ...l, slices: { ...l.slices, identity: adult({ family }) } });
 
 describe("a film's parts", () => {
   it('come from the broad attributes the owner names: the story from Vision and Script Sense, performances, images, the cut', () => {
@@ -208,7 +211,7 @@ describe('prep', () => {
     expect(() => prepped(50, { form: 'feature', budget: 1 })).toThrow(RangeError);
     expect(() => prepped(50, { form: 'hour', budget: 5 })).toThrow("an episode's budget and schedule are the show's");
     expect(() => prepped(50, { form: 'hour', shoot: 5 })).toThrow("an episode's budget and schedule are the show's");
-    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), ...purse() });
+    const bare = begin(SEED, 0, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(DIRECTING_START), identity: adult(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() });
     expect(() => dispatch(bare, prepFilm, { account: ACCOUNT, form: 'hour' })).toThrow("the director's attributes haven't been chosen");
     expect(() => filmOf(DIRECTING_START, 1)).toThrow("there's no film 1");
   });
@@ -518,9 +521,9 @@ describe('the director', () => {
 
   it('is run through the frame, each command declaring what it reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('directing.'))).toEqual([
-      { id: 'directing.prep', reads: ['identity'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'] },
-      { id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'] },
-      { id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule'] },
+      { id: 'directing.prep', reads: ['identity'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
+      { id: 'directing.shoot', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
+      { id: 'directing.cut', reads: ['identity', 'acting', 'producing', 'permits'], writes: ['attributes', 'directing', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
       { id: 'directing.submit', reads: [], writes: ['directing'] },
       { id: 'directing.pursue', reads: ['identity'], writes: ['attributes', 'directing'] },
     ]);

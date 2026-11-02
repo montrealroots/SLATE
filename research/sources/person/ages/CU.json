@@ -1,0 +1,168 @@
+{
+ "topic": "ages.CU",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Cuba: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "majority",
+   "finding": "Full capacity comes with majority, which begins at eighteen full years (or earlier by a minor's marriage); minors from ten have restricted capacity and may dispose of their pay once of working age, and under ten have none.",
+   "value": {
+    "age": 18
+   },
+   "applies": "Código Civil (Ley 59 de 1987), arts 29-31, FAOLEX copy; the Código de las Familias (2022) amended these articles' neighbours and marriage of minors, not read.",
+   "sources": [
+    {
+     "src": 0,
+     "said": "La plena capacidad para ejercer los derechos y realizar actos jurídicos se adquiere: 1. a) por arribar a la mayoría de edad, que comienza los 18 años cumplidos"
+    }
+   ]
+  },
+  {
+   "item": "minimumWorkAge",
+   "finding": "Capacity to make a work contract comes at seventeen; by exception employers may hire young people of fifteen and sixteen with their parents' or guardians' consent, on the authority's authorisation, for at most seven hours a day and forty a week, never on rest days.",
+   "value": {
+    "general": 17,
+    "light": 15,
+    "exception": "15-16 with parents' consent, authorised",
+    "hours": {
+     "15to16": {
+      "day": 7,
+      "week": 40
+     }
+    }
+   },
+   "applies": "Ley 116, Código de Trabajo (2014), arts 22, 64, 65. A new Código de Trabajo (Ley 189, Gaceta Oficial No. 78 of 2026) is reported to replace it from late 2026 (directoriocubano.info, periodicocubano.com; news reports say full contracting capacity at 18 with exceptions from 15); its text was not read.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "ARTÍCULO 22.- La capacidad para concertar contratos de trabajo se adquiere a los diecisiete años de edad. Excepcionalmente los empleadores pueden concertar contratos de trabajo con los jóvenes de quince y dieciséis años, con el consentimiento de los padres o tutores, en las circunstancias y condiciones establecidas en este Código y su Reglamento. ... ARTÍCULO 65.- La jornada de trabajo de los jóvenes de quince y dieciséis años no puede exceder de siete horas diarias, ni de cuarenta semanales y no se les permite laborar en días de descanso."
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "Cuba has no child performer's permit apart from the general rule: no one under fifteen may work; fifteen and sixteen only by exception with parents' consent and the authority's leave, seven hours a day and forty a week at most, no rest-day work; under eighteen, a medical certificate first and no night work. The artistic branch's contracts, evaluation and pay are set by the heads of its bodies with the Ministry of Labour and the union. No rule names writing or directing.",
+   "value": {
+    "permit": "exceptional authorisation (15-16)",
+    "lowestAge": 15,
+    "hours": {
+     "15to16": {
+      "day": 7,
+      "week": 40,
+      "restDays": "no work"
+     }
+    },
+    "under18": {
+     "medical": true,
+     "night": "prohibited"
+    },
+    "artisticBranch": "contract forms set by the sector's heads with the Ministry and union (art. 76)",
+    "reachesWritingDirecting": "not named"
+   },
+   "applies": "Ley 116, Código de Trabajo, arts 22, 64-68, 76 (replaced from late 2026 by Ley 189, not read).",
+   "sources": [
+    {
+     "src": 1,
+     "said": "ARTÍCULO 66.- El empleador está obligado, antes de incorporar al trabajo a los jóvenes de quince y hasta dieciocho años, a disponer la práctica de un examen médico ... ARTÍCULO 68.- Los jóvenes de quince y hasta dieciocho años no pueden ser ocupados en trabajos en que están expuestos a riesgos físicos y psicológicos, labores con nocturnidad ... los trabajadores pertenecientes a la rama artística y los atletas, establecen, en consulta con el Ministerio de Trabajo y Seguridad Social y de acuerdo con la organización sindical correspondiente, las relaciones laborales con sus trabajadores ... Para la rama artística establecen las modalidades del contrato de trabajo, evaluación y formas de remuneración."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "A minor of fifteen or sixteen contracts for work only with the parents' or guardians' consent (seventeen contracts alone); a minor from ten has restricted capacity but disposes of the pay for his work once of working age; the rest of a minor's incapacity is supplied as the family law provides. No share of earnings is set aside, and nothing distinguishes writing, directing or producing work.",
+   "value": {
+    "binding": "parents' or guardians' consent (15-16); alone from 17",
+    "setAside": null,
+    "earnings": "the minor disposes of his work's pay once of working age",
+    "reachesWritingDirecting": "not distinguished"
+   },
+   "applies": "Código de Trabajo (Ley 116) art. 22; Código Civil arts 30, 32.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "Excepcionalmente los empleadores pueden concertar contratos de trabajo con los jóvenes de quince y dieciséis años, con el consentimiento de los padres o tutores"
+    },
+    {
+     "src": 0,
+     "said": "Tienen restringida su capacidad para realizar actos jurídicos, salvo para satisfacer sus necesidades normales de la vida diaria: 1. a) los menores de edad que han cumplido 10 años de nacidos, los que pueden disponer del estipendio que les ha sido asignado y, cuando alcancen la edad laboral, de la retribución por su trabajo"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "Only persons over eighteen may be partners of a private micro, small or medium company (or of a private company of over a hundred workers), save a minor who inherits the share, whose rights are exercised as the law provides; being a minor bars a person from serving as administrator; a non-agricultural cooperative's partners must also be over eighteen.",
+   "value": {
+    "formAge": 18,
+    "directAge": 18,
+    "minorShareholder": "only by inheritance (mortis causa)",
+    "administrator": "minor incompatible"
+   },
+   "applies": "Decreto-Ley 88/2024 as amended by Decreto-Ley 133/2026, arts 54(a) and 88(a), and Decreto-Ley 89 art. 32, Gaceta Oficial Ordinaria No. 71, 2 Sept 2026.",
+   "sources": [
+    {
+     "src": 2,
+     "said": "a) De las de propiedad privada: las personas naturales cubanas residentes en el territorio nacional o en el exterior y extranjeros residentes permanentes en Cuba, en todos los casos mayores de dieciocho años; excepcionalmente, pueden ser socios perso- ... nas naturales menores de edad, siempre que hayan adquirido tal condición mediante transmisión mortis causa ... Artículo 88. Es incompatible con la condición de administrador: a) Ser menor de edad;"
+    },
+    {
+     "src": 3,
+     "said": "casos mayores de dieciocho años. Excepcionalmente, pueden ser socios personas naturales menores de edad, siempre que hayan adquirido tal condición mediante transmisión mortis causa."
+    }
+   ]
+  }
+ ],
+ "country": "CU",
+ "sources": [
+  {
+   "url": "https://faolex.fao.org/docs/pdf/cub205124.pdf",
+   "title": "Ley No. 59, Código Civil (1987), FAOLEX copy",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La plena capacidad para ejercer los derechos y realizar actos jurídicos se adquiere: 1. a) por arribar a la mayoría de edad, que comienza los 18 años cumplidos … Tienen restringida su capacidad para realizar actos jurídicos, salvo para satisfacer sus necesidades normales de la vida diaria: 1. a) los menores de edad que han cumplido 10 años de nacidos, los que pueden disponer del estipendio que les ha sido asignado y, cuando alcancen la edad laboral, de la retribución por su trabajo"
+  },
+  {
+   "url": "https://faolex.fao.org/docs/pdf/cub134815.pdf",
+   "title": "Ley No. 116, Código de Trabajo, Gaceta Oficial Extraordinaria No. 29, 17 June 2014 (FAOLEX copy of the gazette)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ARTÍCULO 22.- La capacidad para concertar contratos de trabajo se adquiere a los diecisiete años de edad. Excepcionalmente los empleadores pueden concertar contratos de trabajo con los jóvenes de quince y dieciséis años, con el consentimiento de los padres o tutores, en las circunstancias y condiciones establecidas en este Código y su Reglamento. ... ARTÍCULO 65.- La jornada de trabajo de los jóvenes de quince y dieciséis años no puede exceder de siete horas diarias, ni de cuarenta semanales y no se les permite laborar en días de descanso. … ARTÍCULO 66.- El empleador está obligado, antes de incorporar al trabajo a los jóvenes de quince y hasta dieciocho años, a disponer la práctica de un examen médico ... ARTÍCULO 68.- Los jóvenes de quince y hasta dieciocho años no pueden ser ocupados en trabajos en que están expuestos a riesgos físicos y psicológicos, labores con nocturnidad ... los trabajadores pertenecientes a la rama artística y los atletas, establecen, en consulta con el Ministerio de Trabajo y Seguridad Social y de acuerdo con la organización sindical correspondiente, las relaciones laborales con sus trabajadores ... Para la rama artística establecen las modalidades del contrato de trabajo, evaluación y formas de remuneración."
+  },
+  {
+   "url": "https://www.cibercuba.com/s/gacetaoficial/pdf/goc-2026-o71.pdf",
+   "title": "Gaceta Oficial de la República de Cuba, Edición Ordinaria No. 71, 2 Sept 2026 (Decreto-Ley 133/2026), copy of the gazette hosted by CiberCuba",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "a) De las de propiedad privada: las personas naturales cubanas residentes en el territorio nacional o en el exterior y extranjeros residentes permanentes en Cuba, en todos los casos mayores de dieciocho años; excepcionalmente, pueden ser socios perso- ... nas naturales menores de edad, siempre que hayan adquirido tal condición mediante transmisión mortis causa ... Artículo 88. Es incompatible con la condición de administrador: a) Ser menor de edad;"
+  },
+  {
+   "url": "https://oncubanews.com/wp-content/uploads/2024/08/goc-2024-o78_0.pdf",
+   "title": "Gaceta Oficial de la República de Cuba, Ordinaria No. 78 of 2024 (Decreto-Ley 88/2024), copy hosted by OnCuba News",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "casos mayores de dieciocho años. Excepcionalmente, pueden ser socios personas naturales menores de edad, siempre que hayan adquirido tal condición mediante transmisión mortis causa."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "unions",
+   "sought": "Cuba: the rule for 'unions' (from Código Civil (Ley 59), Código de Trabajo (Ley 116), Código de las Familias (2022)); where none exists, a source showing the general law reaches or exempts performing work.",
+   "tried": {
+    "institution": "Retry 2026-11-01: mtss.gob.cu and minjus.gob.cu did not connect; parlamentocubano.gob.cu reset (2026-10-31).",
+    "official-register": "Retry 2026-11-01: gacetaoficial.gob.cu reset the connection; NATLEX 403.",
+    "web-search": "Run 2026-11-01: 'Cuba Sindicato Nacional de Trabajadores de la Cultura estatutos afiliación edad OR UNEAC requisitos ingreso miembros actores' returned an El Ciudadano item (the SNTC has 90,000+ members), a 2004 CubaNet item on an independent cultural workers' union, and other countries' unions; neither the SNTC's statutes nor UNEAC's admission rules, nor any age rule, were found.",
+    "trade-press": "None reached.",
+    "archive": "Wayback availability API: a snapshot of gacetaoficial.gob.cu (2026-10-17) exists; web.archive.org answered 403 to the fetch on 2026-11-01."
+   }
+  },
+  {
+   "item": "funds",
+   "sought": "Cuba: the rule for 'funds' (from Código Civil (Ley 59), Código de Trabajo (Ley 116), Código de las Familias (2022)); where none exists, a source showing the general law reaches or exempts performing work.",
+   "tried": {
+    "institution": "Retry 2026-11-01: mtss.gob.cu and minjus.gob.cu did not connect; parlamentocubano.gob.cu reset (2026-10-31).",
+    "official-register": "Retry 2026-11-01: gacetaoficial.gob.cu reset the connection; NATLEX 403.",
+    "web-search": "Run 2026-11-01: 'Fondo de Fomento del Cine Cubano convocatoria bases requisitos solicitantes mayores de edad ICAIC' returned OnCuba News and Prensa Latina reports of the ICAIC's calls (only creators inscribed in the Registro del Creador Audiovisual y Cinematográfico, and recognised creative collectives, may apply; the bases are on cubacine.icaic.cu, not reached) and the Norwegian Embassy's separate fund for Cuban filmmakers; 'Decreto-Ley 373 creador audiovisual cinematográfico independiente registro requisitos inscripción edad Cuba' returned news on the Registro (an Admission Committee approves entry; Diario de Cuba, OnCuba) with no age requirement. No age rule for the fund or the Registro was found; the Registro's own text (Gaceta) was not read.",
+    "trade-press": "None reached.",
+    "archive": "Wayback availability API: a snapshot of gacetaoficial.gob.cu (2026-10-17) exists; web.archive.org answered 403 to the fetch on 2026-11-01."
+   }
+  }
+ ]
+}

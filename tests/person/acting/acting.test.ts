@@ -64,8 +64,9 @@ import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 
-type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice } & ReturnType<typeof purse>;
+type Acting = { attributes: AttributesSlice; acting: ActingSlice; identity: IdentitySlice; unions: UnionsSlice; permits: PermitsSlice; directing: DirectingSlice; producing: ProducingSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const SEED = '0123456789abcdef';
 const OTHER = 'fedcba9876543210';
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
@@ -79,7 +80,7 @@ const cad = (n: string) => fromMajor('CAD', n);
 
 /** Levels by broad attribute over one level for all. */
 const made = (all: number, each: Record<string, number> = {}, seed = SEED, now = AUGUST, who: IdentitySlice = identity()): Life<Acting> =>
-  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), ...purse() }), chooseAttributes, { role: 'actor', all, each });
+  dispatch(begin(seed, now, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: who, unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'actor', all, each });
 const part = (p: Partial<Part> = {}): Part => ({ agreement: 'sag-aftra', budget: 5_000_000, seats: 0, lines: 20, term: 'day', length: 3, rehearsal: 0, asks: [], ...p });
 const v = (l: Life<Acting>) => componentValues(l.slices.attributes, 'actor');
 const held = (l: Life<Acting>) => l.slices.attributes['actor'] as Record<string, number>;
@@ -321,7 +322,7 @@ describe('an audition', () => {
 
   it('is refused for a part that cannot be, or before the attributes are chosen', () => {
     expect(() => dispatch(made(50), postBreakdown, part({ length: 0 }))).toThrow(RangeError);
-    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), ...purse() }), open(part()));
+    const bare = withBreakdown(begin(SEED, AUGUST, { attributes: structuredClone(ATTRIBUTES_START), acting: structuredClone(ACTING_START), identity: identity(), unions: structuredClone(UNIONS_START), permits: structuredClone(PERMITS_START), directing: structuredClone(DIRECTING_START), producing: structuredClone(PRODUCING_START), youth: structuredClone(YOUTH_START), ...purse() }), open(part()));
     expect(() => dispatch(bare, auditionForPart, { breakdown: 1 })).toThrow("the actor's attributes haven't been chosen");
     expect(() => auditionOf(ACTING_START, 1)).toThrow("there's no audition 1");
   });
@@ -529,7 +530,7 @@ describe('playing a part', () => {
   it('works a weekly or stage engagement five days a week, rehearsals too, and pays nothing where no minimum is set', () => {
     const p = part({ agreement: 'uk-theatre', term: 'week', seats: 600, rehearsal: 2, length: 4 });
     const made40 = made(40, {}, SEED, day(2025, 9, 1), identity({ citizenship: ['GB', 'US'] }));
-    const base = withAuditions({ ...made40, slices: { ...made40.slices, ...purse('GBP') } }, [booked(p), booked(part({ budget: 15_000 }), 2)]);
+    const base = withAuditions({ ...made40, slices: { ...made40.slices, youth: structuredClone(YOUTH_START), ...purse('GBP') } }, [booked(p), booked(part({ budget: 15_000 }), 2)]);
     const l = dispatch(dispatch(base, playPart, { audition: 1, account: ACCOUNT }), playPart, { audition: 2, account: ACCOUNT });
     expect(auditions(l)[0]?.work?.pay).toEqual(gbp(String((2 * 54558 + 4 * 56914) / 100)));
     expect(auditions(l)[1]?.work?.pay).toBeNull();
@@ -615,7 +616,7 @@ describe('playing a part', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('acting.'))).toEqual([
       { id: 'acting.breakdown', reads: [], writes: ['acting'] },
       { id: 'acting.audition', reads: ['identity'], writes: ['attributes', 'acting'] },
-      { id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule'] },
+      { id: 'acting.perform', reads: ['identity', 'unions', 'permits', 'directing', 'producing'], writes: ['attributes', 'acting', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
     ]);
     expect(ACTING_START).toEqual({ breakdowns: [], auditions: [] });
     expect(broadOf('actor', 'acting-for-the-camera').id).toBe('camera');

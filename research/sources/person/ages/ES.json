@@ -1,0 +1,288 @@
+{
+ "topic": "ages.ES",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Spain: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "minorsContracts",
+   "finding": "For a child under sixteen the labour authority's written authorisation is asked by the legal representatives with the child's consent if mature enough, and the parent or guardian then signs the contract; a contract binding a child to personal services needs the child's prior consent if mature enough; what the child earns by work is always the child's; an author of sixteen or seventeen living independently may assign exploitation rights alone.",
+   "value": {
+    "under16": {
+     "binding": "autorización de la autoridad laboral, then the contract signed by the parent or guardian",
+     "childConsent": "if of sufficient judgement (RD 1435/1985 art 2.1); from 25 May 2027 if twelve or more (RD 607/2026 art 11.3 f, i)"
+    },
+    "earnings": "belong to the child (Código Civil art 165); parents may apply them to family charges if the child lives with them",
+    "setAside": null,
+    "authors16to17": "full capacity to assign exploitation rights if living independently with consent (LPI art 44)",
+    "change": {
+     "from": "2027-05-25",
+     "law": "Real Decreto 607/2026 (BOE 25 July 2026, in force ten months after publication) replaces RD 1435/1985"
+    }
+   },
+   "applies": "RD 1435/1985 art 1 and RD 607/2026 art 3 cover screenwriters (guionistas), film direction (de cine, de realización, de dirección artística) as well as performers, when employed; the Código Civil covers every contract; producing work done as an employee falls under the general Estatuto (layer 3). No set-aside share was found (blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "La autoridad laboral podrá autorizar excepcionalmente la participación de menores de dieciséis años en espectáculos públicos, siempre que dicha participación no suponga peligro para su salud física ni para su formación profesional y humana. La autorización habrá de solicitarse por los representantes legales del menor, acompañando el consentimiento de éste, si tuviera suficiente juicio, y la concesión de la misma deberá constar por escrito, especificando el espectáculo o la actuación para la que se concede. Concedida la autorización, corresponde al padre o tutor la celebración del correspondiente contrato, requiriéndose también el previo consentimiento del menor, si tuviere suficiente juicio;"
+    },
+    {
+     "src": 0,
+     "said": "de cine, de orquesta, de adaptación musical, de escena, de realización, de coreografía, de obra audiovisual; artista de circo, artista de marionetas, magia, guionistas,"
+    },
+    {
+     "src": 1,
+     "said": "Concedida la autorización, corresponde al representante legal de la persona menor la celebración del correspondiente contrato de trabajo, que incorporará como anexo la autorización de la autoridad laboral, requiriéndose también el previo consentimiento de la persona menor que tenga doce o más años."
+    },
+    {
+     "src": 1,
+     "said": "El presente real decreto entrará en vigor a los diez meses de su publicación en el «Boletín Oficial del Estado»."
+    },
+    {
+     "src": 2,
+     "said": "Para celebrar contratos que obliguen al hijo a realizar prestaciones personales se requiere el previo consentimiento de éste si tuviere suficiente juicio, sin perjuicio de lo establecido en el artículo 158."
+    },
+    {
+     "src": 2,
+     "said": "Pertenecen siempre al hijo no emancipado los frutos de sus bienes, así como todo lo que adquiera con su trabajo o industria."
+    },
+    {
+     "src": 3,
+     "said": "Los autores menores de dieciocho años y mayores de dieciséis, que vivan de forma independiente con consentimiento de sus padres o tutores o con autorización de la persona o institución que los tengan a su cargo, tienen plena capacidad para ceder derechos de explotación."
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "Through 24 May 2027 the authorisation of RD 1435/1985 is the only rule (written, for a named show, no hours set); from 25 May 2027 RD 607/2026 sets daily and weekly limits by age, a family member present, no overtime, night work only exceptionally, and one nationwide authorisation per engagement.",
+   "value": {
+    "permit": "autorización de la autoridad laboral (of the territory where most of the work is done; valid nationwide from 2027)",
+    "until2027": {
+     "hours": null
+    },
+    "from2027-05-25": {
+     "hours": [
+      {
+       "to": "2 months",
+       "daily": 0,
+       "weekly": 0
+      },
+      {
+       "from": "2 months",
+       "to": "1 year",
+       "daily": 2,
+       "weekly": 4
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "daily": 3,
+       "weekly": 6
+      },
+      {
+       "from": 3,
+       "to": 6,
+       "daily": 4,
+       "weekly": 10
+      },
+      {
+       "from": 6,
+       "to": 12,
+       "daily": 5,
+       "weekly": 15,
+       "weeklyNonSchool": 25
+      },
+      {
+       "from": 12,
+       "to": 16,
+       "daily": 6,
+       "weekly": 24,
+       "weeklyNonSchool": 30
+      }
+     ],
+     "restMinutes": 30,
+     "night": {
+      "12to14": "until 23:00 (00:00 in non-school periods)",
+      "15to16": "until 00:00",
+      "16to17": "until 00:00",
+      "maxNightsPerWeek": 3,
+      "restAfterHours": 16
+     },
+     "companion": "a relative to the second degree, or a person the company names with the legal representatives' agreement",
+     "schooling": "compatible with daily schooling; prioritised in non-school periods"
+    }
+   },
+   "applies": "Performers and every artist RD 607/2026 art 3 lists (screenwriters and directors included) when employed under sixteen; the night rule also binds sixteen- and seventeen-year-olds.",
+   "sources": [
+    {
+     "src": 1,
+     "said": "La persona menor debe contar durante la actividad laboral con la presencia de un familiar de hasta segundo grado inclusive, por consanguinidad o afinidad o, en su defecto, de una persona nombrada por la empresa con el acuerdo de los representantes legales de la persona menor, que velará por el bienestar y las necesidades de aquella."
+    },
+    {
+     "src": 1,
+     "said": "1.ª Hasta dos meses, no se puede autorizar trabajo alguno. 2.ª Desde dos meses y un día hasta un año, se podrá trabajar hasta dos horas diarias y un máximo de cuatro horas semanales. 3.ª Desde un año y un día hasta tres años, se podrá trabajar hasta tres horas diarias y un máximo de seis horas semanales. 4.ª Desde tres años y un día hasta seis años, se podrá trabajar hasta cuatro horas diarias y un máximo de diez horas semanales."
+    },
+    {
+     "src": 1,
+     "said": "6.ª De doce años y un día a dieciséis años, se podrá trabajar hasta seis horas diarias y un máximo de veinticuatro horas semanales, ampliables a treinta horas semanales si la actividad laboral se desarrolla durante el periodo no lectivo."
+    },
+    {
+     "src": 1,
+     "said": "En todos los supuestos la realización de trabajo nocturno se podrá llevar a cabo durante, como máximo, tres días a la semana y garantizando, en todo caso, un descanso posterior a cada jornada de, como mínimo, dieciséis horas."
+    },
+    {
+     "src": 1,
+     "said": "de dirección artística, de cine, de orquesta, de adaptación musical, de escena, de realización, de coreografía, de obra audiovisual; artista de circo, artista de marionetas, magia, guionistas,"
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "The ICAA's register, through which every measure of the Film Law is asked, takes natural or legal persons holding companies established in Spain; no applicant age is stated; habitual trade needs majority under the Commercial Code.",
+   "value": {
+    "ICAA": {
+     "register": "Registro Administrativo de Empresas Cinematográficas y Audiovisuales",
+     "who": "personas físicas o jurídicas titulares de empresas establecidas en España",
+     "age": null
+    }
+   },
+   "applies": "Ley 55/2007 del Cine; each year's aid orders (not read) may add conditions.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "Las personas físicas o jurídicas titulares de las empresas establecidas en España que realicen actividades relacionadas con la actividad cinematográfica y audiovisual y que soliciten alguna de las medidas contempladas en esta Ley."
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "An unemancipated minor cannot be a company director; habitual trade needs majority and free disposal of one's goods; a minor may only continue, through guardians, a business inherited from parents.",
+   "value": {
+    "directorMinAge": 18,
+    "exception": "an emancipated minor (not held)"
+   },
+   "applies": "Sociedades de capital (SA, SL) and any sole trader.",
+   "sources": [
+    {
+     "src": 5,
+     "said": "No pueden ser administradores los menores de edad no emancipados,"
+    },
+    {
+     "src": 6,
+     "said": "Tendrán capacidad para el ejercicio habitual del comercio las personas mayores de edad y que tengan la libre disposición de sus bienes."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "DAMA, the collecting society of Spanish directors and screenwriters, sets no age: anyone who is an author (direction, script or translation) of an audiovisual work communicated to the public may join, and its board may not refuse an applicant who meets the objective requirements.",
+   "value": {
+    "DAMA": {
+     "minimumAge": null,
+     "admission": "author (direction, script or translation) of an audiovisual work that has been communicated to the public",
+     "boardMayRefuse": "only an applicant failing the objective requirements"
+    }
+   },
+   "applies": "DAMA statutes and members' page, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Para formar parte de DAMA debes ser autor o autora —dirección, guion o traducción— de una obra audiovisual que haya sido comunicada públicamente."
+    },
+    {
+     "src": 8,
+     "said": "1. Ser titular de alguno de los derechos de autor sobre obras audiovisuales objeto de la gestión de la Entidad, de acuerdo con lo previsto en el artículo 6.2 de estos Estatutos."
+    }
+   ]
+  }
+ ],
+ "country": "ES",
+ "sources": [
+  {
+   "url": "https://www.boe.es/buscar/pdf/1985/BOE-A-1985-17303-consolidado.pdf",
+   "title": "Real Decreto 1435/1985 (consolidado), art. 2.1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "La autoridad laboral podrá autorizar excepcionalmente la participación de menores de dieciséis años en espectáculos públicos, siempre que dicha participación no suponga peligro para su salud física ni para su formación profesional y humana. La autorización habrá de solicitarse por los representantes legales del menor, acompañando el consentimiento de éste, si tuviera suficiente juicio, y la concesión de la misma deberá constar por escrito, especificando el espectáculo o la actuación para la que se concede. Concedida la autorización, corresponde al padre o tutor la celebración del correspondiente contrato, requiriéndose también el previo consentimiento del menor, si tuviere suficiente juicio; … de cine, de orquesta, de adaptación musical, de escena, de realización, de coreografía, de obra audiovisual; artista de circo, artista de marionetas, magia, guionistas,"
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/2026/BOE-A-2026-16173-consolidado.pdf",
+   "title": "Real Decreto 607/2026, art. 11.3 i) and disposición final segunda",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Concedida la autorización, corresponde al representante legal de la persona menor la celebración del correspondiente contrato de trabajo, que incorporará como anexo la autorización de la autoridad laboral, requiriéndose también el previo consentimiento de la persona menor que tenga doce o más años. … El presente real decreto entrará en vigor a los diez meses de su publicación en el «Boletín Oficial del Estado». … La persona menor debe contar durante la actividad laboral con la presencia de un familiar de hasta segundo grado inclusive, por consanguinidad o afinidad o, en su defecto, de una persona nombrada por la empresa con el acuerdo de los representantes legales de la persona menor, que velará por el bienestar y las necesidades de aquella. … 1.ª Hasta dos meses, no se puede autorizar trabajo alguno. 2.ª Desde dos meses y un día hasta un año, se podrá trabajar hasta dos horas diarias y un máximo de cuatro horas semanales. 3.ª Desde un año y un día hasta tres años, se podrá trabajar hasta tres horas diarias y un máximo de seis horas semanales. 4.ª Desde tres años y un día hasta seis años, se podrá trabajar hasta cuatro horas diarias y un máximo de diez horas semanales. … 6.ª De doce años y un día a dieciséis años, se podrá trabajar hasta seis horas diarias y un máximo de veinticuatro horas semanales, ampliables a treinta horas semanales si la actividad laboral se desarrolla durante el periodo no lectivo. … En todos los supuestos la realización de trabajo nocturno se podrá llevar a cabo durante, como máximo, tres días a la semana y garantizando, en todo caso, un descanso posterior a cada jornada de, como mínimo, dieciséis horas. … de dirección artística, de cine, de orquesta, de adaptación musical, de escena, de realización, de coreografía, de obra audiovisual; artista de circo, artista de marionetas, magia, guionistas,"
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/1889/BOE-A-1889-4763-consolidado.pdf",
+   "title": "Código Civil (consolidado), art. 162",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Para celebrar contratos que obliguen al hijo a realizar prestaciones personales se requiere el previo consentimiento de éste si tuviere suficiente juicio, sin perjuicio de lo establecido en el artículo 158. … Pertenecen siempre al hijo no emancipado los frutos de sus bienes, así como todo lo que adquiera con su trabajo o industria."
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/1996/BOE-A-1996-8930-consolidado.pdf",
+   "title": "Texto refundido de la Ley de Propiedad Intelectual (consolidado), art. 44",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Los autores menores de dieciocho años y mayores de dieciséis, que vivan de forma independiente con consentimiento de sus padres o tutores o con autorización de la persona o institución que los tengan a su cargo, tienen plena capacidad para ceder derechos de explotación."
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/2007/BOE-A-2007-22439-consolidado.pdf",
+   "title": "Ley 55/2007, del Cine (consolidada), art. 7.1 b)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Las personas físicas o jurídicas titulares de las empresas establecidas en España que realicen actividades relacionadas con la actividad cinematográfica y audiovisual y que soliciten alguna de las medidas contempladas en esta Ley."
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/2010/BOE-A-2010-10544-consolidado.pdf",
+   "title": "Ley de Sociedades de Capital (consolidada), art. 213.1",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "No pueden ser administradores los menores de edad no emancipados,"
+  },
+  {
+   "url": "https://www.boe.es/buscar/pdf/1885/BOE-A-1885-6627-consolidado.pdf",
+   "title": "Código de Comercio (consolidado), arts. 4-5",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Tendrán capacidad para el ejercicio habitual del comercio las personas mayores de edad y que tengan la libre disposición de sus bienes."
+  },
+  {
+   "url": "https://damautor.es/socios/",
+   "title": "DAMA: Departamento de Socios",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Para formar parte de DAMA debes ser autor o autora —dirección, guion o traducción— de una obra audiovisual que haya sido comunicada públicamente."
+  },
+  {
+   "url": "https://damautor.es/descargas/EstatutosDAMA.pdf",
+   "title": "Estatutos de DAMA (Derechos de Autor de Medios Audiovisuales, Entidad de Gestión de Derechos de Propiedad Intelectual)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "1. Ser titular de alguno de los derechos de autor sobre obras audiovisuales objeto de la gestión de la Entidad, de acuerdo con lo previsto en el artículo 6.2 de estos Estatutos."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "minorsContracts",
+   "sought": "a statutory share of a minor's earnings to be set aside, and where (Spain)",
+   "tried": {
+    "institution": "RD 1435/1985, RD 607/2026, Código Civil arts 162-166 read: no share set aside (art 165 makes earnings the child's) | Retry 2026-11-01: RD 607/2026 (saved BOE-A-2026-16173) re-read for 'retribución', 'patrimonio', 'ingresos', 'cuenta', 'depósito': nothing setting a share aside",
+    "official-register": "BOE consolidated texts read | Retry 2026-11-01: BOE consolidated texts (already read)",
+    "web-search": "searched 'convenio colectivo actores producciones audiovisuales menores': no set-aside rule | Retry 2026-11-01: 'menores artistas España ingresos depósito cuenta parte retribución reservar hasta mayoría de edad Real Decreto 607/2026 artistas menores': no set-aside named",
+    "trade-press": "Écija's 2026 note on RD 607/2026 mentions none | Retry 2026-11-01: Fieldfisher, cuestioneslaborales.es and iberley summaries of RD 607/2026 name none; not held",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "unions",
+   "sought": "the Unión de Actores y Actrices' and ALMA's (screenwriters) rules for members under 18, and minors' clauses of the audiovisual actors' agreement",
+   "tried": {
+    "institution": "unionactores.org: CONNECT 502 | Retry 2026-11-01: unionactores.org and almaguionistas.es timed out (no connection); damautor.es socios page and statutes PDF read (held)",
+    "official-register": "BOE: the agreements found (BOE-A-2025-5586, BOE-A-2017-5449) are salary-table revisions only | Retry 2026-11-01: BOE not holding union statutes; the Registro de depósito de estatutos (Ministerio de Trabajo) not reachable as text",
+    "web-search": "searched 'Unión de Actores y Actrices estatutos afiliación menores de edad': nothing on Spain | Retry 2026-11-01: 'Unión de Actores y Actrices estatutos afiliación requisitos menores de edad OR mayor de edad OR 16 años': nothing on Spain; 'DAMA ... estatutos socio requisitos admisión menor de edad' (found the statutes)",
+    "trade-press": "none found | Retry 2026-11-01: none",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

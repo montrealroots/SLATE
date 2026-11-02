@@ -11,6 +11,7 @@ import { inTheBusiness, personOf, residenceOf, speaks, type IdentitySlice, type 
 import compiled from './markets.json' with { type: 'json' };
 import { mayVisit, whyNoVisit } from '../permits/permits.ts';
 import { partScore, PARTS, scriptOf, spread, type Form, type Script, type ScriptsSlice } from './work.ts';
+import { engagement, holdBack, type YouthSlice } from '../youth/youth.ts';
 
 /**
  * Getting the work out: the screenwriter's attributes that work with people (workbench/plans/screenwriter-attributes.md,
@@ -313,7 +314,8 @@ type Values = Readonly<Record<string, number>>;
 type Career = { attributes: AttributesSlice; scripts: ScriptsSlice; career: CareerSlice };
 type Promoting = Career & { identity: IdentitySlice };
 /** A pitch's sale or option is paid into an account, taxed. */
-type Pitching = Promoting & Earning;
+/** A pitch sells: its fee is paid into an account, taxed, less what the law of the market's country sets aside of a minor's pay, whose contract it makes binding as that law says (person.youth). */
+type Pitching = Promoting & Earning & { youth: YouthSlice };
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
 const of = (v: Values, id: string) => skillOf(v, 'screenwriter', id);
@@ -505,6 +507,8 @@ function pitch(s: Pitching, a: ScriptArgs, c: Context): void {
   if (!mayVisit(personOf(s.identity), where)) throw new Error(whyNoVisit(where));
   // @slate:consumer script.promote
   if (out.requests < 1) throw new Error(`no one has asked to read script ${a.script}`);
+  // A minor's sale is signed as the market's country's law binds it, so it is refused before the meeting where that isn't granted.
+  const grant = engagement(s, where, 'author', c.now);
   // @slate:consumer script.offer
   const terms: Terms = s.career.offered[String(a.script)] ?? { agreement: KEPT, budget: null, minutes: null };
   const date = dateOf(c.now);
@@ -521,7 +525,8 @@ function pitch(s: Pitching, a: ScriptArgs, c: Context): void {
     // An option is priced only under a market's agreement, so the script is offered.
     else (s.career.offered[String(a.script)] as Offer).options.push({ at: c.now, until: yearsOn(date, OPTION_YEARS), fee });
     // The buyer pays the sale or the option into the account named, less what the market's country withholds (money.tax).
-    if (fee !== null) earn(s, { account: a.account as string, payer: 'buyer', country: where, home: residenceOf(personOf(s.identity)), work: 'author', gross: fee, what: deal }, c);
+    if (fee !== null) holdBack(s, earn(s, { account: a.account as string, payer: 'buyer', country: where, home: residenceOf(personOf(s.identity)), work: 'author', gross: fee, what: deal }, c), `script:${script.id}`, c);
+    if (grant !== null) grant.used = true;
     s.career.contacts += 1;
   }
   practise(s.attributes, 'screenwriter', ['pitching', 'speaking', 'persuasion'], MEETING_DAYS);
@@ -534,4 +539,4 @@ export const summariseScript = defineCommand<Career, DocumentArgs>({ id: 'script
 export const meetPeople = defineCommand<Career, DaysArgs>({ id: 'network.meet', reads: [], writes: ['attributes', 'career'], run: network });
 export const offerScript = defineCommand<Career & { identity: IdentitySlice }, OfferArgs>({ id: 'script.offer', reads: ['scripts', 'identity'], writes: ['career'], run: offer });
 export const promoteScript = defineCommand<Promoting, ScriptDaysArgs>({ id: 'script.promote', reads: ['scripts', 'identity'], writes: ['attributes', 'career'], run: promote });
-export const pitchScript = defineCommand<Pitching, ScriptArgs>({ id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule'], run: pitch });
+export const pitchScript = defineCommand<Pitching, ScriptArgs>({ id: 'script.pitch', reads: ['scripts', 'identity'], writes: ['attributes', 'career', 'accounts', 'ledger', 'tax', 'schedule', 'youth'], run: pitch });

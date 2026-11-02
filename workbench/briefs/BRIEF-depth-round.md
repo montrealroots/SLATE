@@ -28,3 +28,10 @@ Each turn's results land and commit, so an interruption resumes.
 The ages first (four agents, `BRIEF-ages-search.md`); then, the owner: "Run the tax and markets web searches next
 turn too." The tax's and the four markets' blockers whose web search never ran are searched in the turn after the
 ages', once the sources fix lands (their files are being edited until then).
+
+
+## Military service: out of the game (the owner, 2026-11-01)
+Told that layer 3's ages stayed blocked mostly on military service, which the age research never sought, the owner:
+"Dont need military service at all." Military service is removed from the game: layer 3's ages hold the age of
+majority and the working age with the performer's rule, nothing of service; no row is blocked on it, nothing reads it,
+and it is not researched.

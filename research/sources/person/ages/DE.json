@@ -1,0 +1,252 @@
+{
+ "topic": "ages.DE",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Germany: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "childPerformers",
+   "finding": "A child (under fifteen, or older while in full-time schooling) may take part in film, television or recording only with the supervisory authority's approval, after hearing the youth office: over three to six, up to 2 hours a day between 8 and 17; over six, up to 3 hours between 8 and 22 (theatre: 4 hours between 10 and 23); with the parents' written consent, a medical certificate no older than three months, supervision, and 14 hours' unbroken free time after.",
+   "value": {
+    "permit": "Bewilligung der Aufsichtsbehörde (nach Anhörung des Jugendamts)",
+    "child": "under 15, and 15-17 still in full-time compulsory schooling",
+    "film": [
+     {
+      "over": 3,
+      "to": 6,
+      "hours": 2,
+      "window": "08:00-17:00"
+     },
+     {
+      "over": 6,
+      "hours": 3,
+      "window": "08:00-22:00"
+     }
+    ],
+    "theatre": [
+     {
+      "over": 6,
+      "hours": 4,
+      "window": "10:00-23:00"
+     }
+    ],
+    "freeTimeAfter": 14,
+    "medicalCertificateMaxAgeMonths": 3,
+    "lightWorkFrom": 13,
+    "lightWorkHours": 2
+   },
+   "applies": "Jugendarbeitsschutzgesetz §§ 2, 5, 6. The approval covers a child who 'gestaltend mitwirkt' in the performance or recording and its rehearsals; a child working as a writer or director falls under the general ban of § 5 (light work from thirteen excepted).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "Kind im Sinne dieses Gesetzes ist, wer noch nicht 15 Jahre alt ist."
+    },
+    {
+     "src": 1,
+     "said": "b) Kinder über sechs Jahre bis zu drei Stunden täglich in der Zeit von 8 bis 22 Uhr gestaltend mitwirken und an den erforderlichen Proben teilnehmen."
+    },
+    {
+     "src": 1,
+     "said": "a) Kinder über drei bis sechs Jahre bis zu zwei Stunden täglich in der Zeit von 8 bis 17 Uhr,"
+    },
+    {
+     "src": 1,
+     "said": "nach Beendigung der Beschäftigung eine ununterbrochene Freizeit von mindestens 14 Stunden eingehalten wird,"
+    },
+    {
+     "src": 1,
+     "said": "Die Aufsichtsbehörde darf nach Anhörung des zuständigen Jugendamts die Beschäftigung nur bewilligen, wenn 1. die Personensorgeberechtigten in die Beschäftigung schriftlich eingewilligt haben,"
+    },
+    {
+     "src": 2,
+     "said": "Das Verbot des Absatzes 1 gilt ferner nicht für die Beschäftigung von Kindern über 13 Jahre mit Einwilligung des Personensorgeberechtigten, soweit die Beschäftigung leicht und für Kinder geeignet ist."
+    }
+   ]
+  },
+  {
+   "item": "minorsContracts",
+   "finding": "A minor's contract of service or employment binds once the legal representative authorises the minor to take such work; a long contract binding the child beyond a year after majority needs the family court, except a service or employment contract; running an independent business needs the family court's approval; no share of the child's earnings is set aside by law, and earnings may go to the child's maintenance where the assets' income falls short.",
+   "value": {
+    "binding": "Ermächtigung des gesetzlichen Vertreters (BGB § 113), for any Dienst- or Arbeitsverhältnis, whatever the role",
+    "familyCourt": [
+     "selbständiger Betrieb eines Erwerbsgeschäfts (§ 112)",
+     "recurring obligations lasting more than a year past majority, not service or employment contracts (§ 1643(4))"
+    ],
+    "setAside": null
+   },
+   "applies": "Bürgerliches Gesetzbuch §§ 112, 113, 1643, 1649; it reaches performing, writing, directing and producing work alike.",
+   "sources": [
+    {
+     "src": 3,
+     "said": "Ermächtigt der gesetzliche Vertreter den Minderjährigen, in Dienst oder in Arbeit zu treten, so ist der Minderjährige für solche Rechtsgeschäfte unbeschränkt geschäftsfähig"
+    },
+    {
+     "src": 4,
+     "said": "Ermächtigt der gesetzliche Vertreter mit Genehmigung des Familiengerichts den Minderjährigen zum selbständigen Betrieb eines Erwerbsgeschäfts"
+    },
+    {
+     "src": 5,
+     "said": "wenn das Vertragsverhältnis länger als ein Jahr nach dem Eintritt der Volljährigkeit des Kindes fortdauern soll. Eine Genehmigung ist nicht erforderlich, wenn 1. es sich um einen Ausbildungs-, Dienst- oder Arbeitsvertrag handelt,"
+    },
+    {
+     "src": 6,
+     "said": "Soweit die Vermögenseinkünfte nicht ausreichen, können die Einkünfte verwendet werden, die das Kind durch seine Arbeit oder durch den ihm nach § 112 gestatteten selbständigen Betrieb eines Erwerbsgeschäfts erwirbt."
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "A GmbH's managing director must be a natural person of unlimited legal capacity, which a minor (under eighteen) doesn't have.",
+   "value": {
+    "GmbHGeschäftsführer": {
+     "rule": "unbeschränkt geschäftsfähig",
+     "age": 18
+    }
+   },
+   "applies": "GmbHG § 6(2); the age is the majority of eighteen layer 3 already holds (BGB § 2).",
+   "sources": [
+    {
+     "src": 7,
+     "said": "Geschäftsführer kann nur eine natürliche, unbeschränkt geschäftsfähige Person sein."
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "Neither the actors' association BFFS nor the directors' association BVR sets a minimum age: BFFS admits actors working in Germany and, as junior members, those in acting training, and BVR admits directors working in film and television, including newcomers; the board decides each admission.",
+   "value": {
+    "BFFS": {
+     "minimumAge": null,
+     "members": "actors working in Germany; junior members: those in acting training",
+     "admission": "the board decides"
+    },
+    "BVR": {
+     "minimumAge": null,
+     "members": "film and television directors working in Germany, assistant directors, script editors, newcomer directors",
+     "admission": "the board decides"
+    }
+   },
+   "applies": "BFFS statute (as published on bffs.de, 2026-11-01); BVR statute of 13 February 2025.",
+   "sources": [
+    {
+     "src": 8,
+     "said": "§ 3 Mitgliedschaft (1) Mitglieder können sein: a) als ordentliche Mitglieder in der Bundesrepublik Deutschland tätige Schauspielerinnen und Schauspieler … b) als Juniormitglieder Personen, die sich in einer Schauspielausbildung (Schule oder Studium) befinden (Juniormitgliedschaft). … (3) Über die Aufnahme als Mitglied entscheidet der Vorstand."
+    },
+    {
+     "src": 9,
+     "said": "§ 5 Mitgliedschaft, Aufnahme 1. Mitglied des Vereins kann werden a) Jeder/jede in der Bundesrepublik Deutschland tätige/r Fernsehund Filmregisseur bzw. –regisseurin aller Bereiche und Formate. … d) Regisseure und Regisseurinnen aus dem Bereich Nachwuchs … 3. Über die Aufnahme entscheidet der Vorstand nach pflichtgemäßem Ermessen."
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "The federal Film Act sets no age: the applicant is the producer, meaning whoever carries responsibility for making the film, resident or seated in Germany; a corporation applying must have paid-in capital of at least €25,000, so a minor could apply only through the capacity his guardians give him (see minorsContracts and companies).",
+   "value": {
+    "FFA": {
+     "applicant": "the producer ('wer die Verantwortung für die Durchführung des Filmvorhabens trägt'), resident or seated in Germany",
+     "minimumAge": null,
+     "corporationMinimumPaidCapitalEUR": 25000
+    }
+   },
+   "applies": "Filmförderungsgesetz 2025 (FFG), as consolidated on gesetze-im-internet.de, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 10,
+     "said": "Hersteller im Sinne dieses Gesetzes ist, wer die Verantwortung für die Durchführung des Filmvorhabens trägt. … 1. der Hersteller seinen Wohnsitz oder Sitz im Inland hat … (1) Antragsberechtigt ist der Hersteller gemäß § 41 Absatz 1 Nummer 1. … (2) Nicht antragsberechtigt ist ein Hersteller gemäß Absatz 1, wenn es sich bei ihm um eine Kapitalgesellschaft oder eine Personenhandelsgesellschaft handelt, deren einzige persönlich haftende Gesellschafterin eine Kapitalgesellschaft ist, und wenn das eingezahlte Stammkapital weniger als 25 000 Euro beträgt."
+    }
+   ]
+  }
+ ],
+ "country": "DE",
+ "sources": [
+  {
+   "url": "https://www.gesetze-im-internet.de/jarbschg/__2.html",
+   "title": "Jugendarbeitsschutzgesetz § 2 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Kind im Sinne dieses Gesetzes ist, wer noch nicht 15 Jahre alt ist."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/jarbschg/__6.html",
+   "title": "Jugendarbeitsschutzgesetz § 6 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "b) Kinder über sechs Jahre bis zu drei Stunden täglich in der Zeit von 8 bis 22 Uhr gestaltend mitwirken und an den erforderlichen Proben teilnehmen. … a) Kinder über drei bis sechs Jahre bis zu zwei Stunden täglich in der Zeit von 8 bis 17 Uhr, … nach Beendigung der Beschäftigung eine ununterbrochene Freizeit von mindestens 14 Stunden eingehalten wird, … Die Aufsichtsbehörde darf nach Anhörung des zuständigen Jugendamts die Beschäftigung nur bewilligen, wenn 1. die Personensorgeberechtigten in die Beschäftigung schriftlich eingewilligt haben,"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/jarbschg/__5.html",
+   "title": "Jugendarbeitsschutzgesetz § 5 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Das Verbot des Absatzes 1 gilt ferner nicht für die Beschäftigung von Kindern über 13 Jahre mit Einwilligung des Personensorgeberechtigten, soweit die Beschäftigung leicht und für Kinder geeignet ist."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/bgb/__113.html",
+   "title": "Bürgerliches Gesetzbuch § 113 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ermächtigt der gesetzliche Vertreter den Minderjährigen, in Dienst oder in Arbeit zu treten, so ist der Minderjährige für solche Rechtsgeschäfte unbeschränkt geschäftsfähig"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/bgb/__112.html",
+   "title": "Bürgerliches Gesetzbuch § 112 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Ermächtigt der gesetzliche Vertreter mit Genehmigung des Familiengerichts den Minderjährigen zum selbständigen Betrieb eines Erwerbsgeschäfts"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/bgb/__1643.html",
+   "title": "Bürgerliches Gesetzbuch § 1643 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "wenn das Vertragsverhältnis länger als ein Jahr nach dem Eintritt der Volljährigkeit des Kindes fortdauern soll. Eine Genehmigung ist nicht erforderlich, wenn 1. es sich um einen Ausbildungs-, Dienst- oder Arbeitsvertrag handelt,"
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/bgb/__1649.html",
+   "title": "Bürgerliches Gesetzbuch § 1649 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Soweit die Vermögenseinkünfte nicht ausreichen, können die Einkünfte verwendet werden, die das Kind durch seine Arbeit oder durch den ihm nach § 112 gestatteten selbständigen Betrieb eines Erwerbsgeschäfts erwirbt."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/gmbhg/__6.html",
+   "title": "GmbH-Gesetz § 6 (gesetze-im-internet.de)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Geschäftsführer kann nur eine natürliche, unbeschränkt geschäftsfähige Person sein."
+  },
+  {
+   "url": "https://www.bffs.de/satzung/",
+   "title": "Bundesverband Schauspiel e.V. (BFFS): Satzung",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "§ 3 Mitgliedschaft (1) Mitglieder können sein: a) als ordentliche Mitglieder in der Bundesrepublik Deutschland tätige Schauspielerinnen und Schauspieler … b) als Juniormitglieder Personen, die sich in einer Schauspielausbildung (Schule oder Studium) befinden (Juniormitgliedschaft). … (3) Über die Aufnahme als Mitglied entscheidet der Vorstand."
+  },
+  {
+   "url": "https://www.regieverband.de/satzung",
+   "title": "Bundesverband Regie e.V. (BVR): Satzung vom 13. Februar 2025",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "§ 5 Mitgliedschaft, Aufnahme 1. Mitglied des Vereins kann werden a) Jeder/jede in der Bundesrepublik Deutschland tätige/r Fernsehund Filmregisseur bzw. –regisseurin aller Bereiche und Formate. … d) Regisseure und Regisseurinnen aus dem Bereich Nachwuchs … 3. Über die Aufnahme entscheidet der Vorstand nach pflichtgemäßem Ermessen."
+  },
+  {
+   "url": "https://www.gesetze-im-internet.de/ffg_2025/BJNR1C30A0024.html",
+   "title": "Gesetz über Maßnahmen zur Förderung des deutschen Films (Filmförderungsgesetz – FFG), gesetze-im-internet.de",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "Hersteller im Sinne dieses Gesetzes ist, wer die Verantwortung für die Durchführung des Filmvorhabens trägt. … 1. der Hersteller seinen Wohnsitz oder Sitz im Inland hat … (1) Antragsberechtigt ist der Hersteller gemäß § 41 Absatz 1 Nummer 1. … (2) Nicht antragsberechtigt ist ein Hersteller gemäß Absatz 1, wenn es sich bei ihm um eine Kapitalgesellschaft oder eine Personenhandelsgesellschaft handelt, deren einzige persönlich haftende Gesellschafterin eine Kapitalgesellschaft ist, und wenn das eingezahlte Stammkapital weniger als 25 000 Euro beträgt."
+  }
+ ],
+ "blockers": [
+  {
+   "item": "unions",
+   "sought": "The Verband Deutscher Drehbuchautoren's and ver.di FilmUnion's rules for members under 18",
+   "tried": {
+    "institution": "not fetched | Retry 2026-11-01: bffs.de/satzung and regieverband.de/satzung read (held); drehbuchautoren.de timed out (Verband Deutscher Drehbuchautoren); filmunion.verdi.de redirect not followed further",
+    "official-register": "none | Retry 2026-11-01: Vereinsregister entries are not published online in text",
+    "web-search": "not run | Retry 2026-11-01: 'Verband Deutscher Drehbuchautoren Satzung Mitgliedschaft Voraussetzungen ordentliches Mitglied': only Austrian and unrelated statutes",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "not tried | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

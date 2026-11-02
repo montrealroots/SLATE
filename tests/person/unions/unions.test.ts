@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join as joinPath, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { begin, commandIndex, dispatch, type Life } from '../../../src/core/frame/frame.ts';
 import { fromMajor, type Money } from '../../../src/core/money/money.ts';
@@ -115,6 +117,21 @@ describe("the unions' figures", () => {
   it('declare what joining reads and writes', () => {
     expect(commandIndex().filter((x) => x.id.startsWith('unions.'))).toEqual([{ id: 'unions.join', reads: ['identity', 'acting', 'career', 'scripts', 'directing'], writes: ['unions', 'accounts', 'ledger'] }]);
     expect(UNIONS_START).toEqual({ joined: [] });
+  });
+});
+
+describe("the unions' age rules", () => {
+  // The age research (person.ages.<CC>, read 2026-11-01) is held against the engine: of the unions it keeps, only Equity
+  // (UK) has an age rule the research gives, its young members' rate, the same 10 to 17 R-4621 gives; the WGA West's
+  // page names no age; SAG-AFTRA's and the DGA's rules are blocked (SAG-AFTRA's are told by youth.unkept), ACTRA's
+  // minor is its minors' trust's (under 18), a rule on pay, not on joining.
+  const unionsIn = (cc: string) => (JSON.parse(readFileSync(joinPath(resolve(import.meta.dirname, '../../..'), `research/sources/person/ages/${cc}.json`), 'utf8')) as { figures: { item: string; value: Record<string, unknown> }[] }).figures.filter((f) => f.item === 'unions').map((f) => f.value);
+  it('are the research\'s where it gives one, and none it doesn\'t', () => {
+    const equity = unionsIn('GB').find((v) => 'Equity' in v)?.['Equity'] as { youngMembership: { from: number; to: number } };
+    expect([equity.youngMembership.from, equity.youngMembership.to]).toEqual([...EQUITY_UK.young]);
+    expect((unionsIn('US')[0]?.['WGA'] as { minimumAge: unknown }).minimumAge).toBeNull();
+    expect(unionsIn('CA').map((v) => Object.keys(v))).toEqual([['ACTRA'], ['DGC BC', 'WGC']]);
+    expect((unionsIn('CA')[0]?.['ACTRA'] as { minorUnder: number }).minorUnder).toBe(18);
   });
 });
 

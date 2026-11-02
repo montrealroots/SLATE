@@ -37,18 +37,19 @@ import type { PermitsSlice } from '../../../src/person/permits/permits.ts';
 import { permitsEverywhere } from '../../support/permits.ts';
 import { identity } from '../../support/person.ts';
 import { ACCOUNT, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 import { COUNTRY_CODES, countryName, currencyOf, isCountry, type CountryCode } from '../../../src/world/gazetteer/gazetteer.ts';
 
-type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+type D = { attributes: AttributesSlice; directing: DirectingSlice; identity: IdentitySlice; acting: ActingSlice; producing: ProducingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 const day = (y: number, m: number, d: number) => daysFromCivil(y, m, d) * SECONDS_PER_DAY;
 const NOW = day(2026, 7, 1);
 const made = (now = NOW, directing: DirectingSlice = DIRECTING_START): Life<D> =>
-  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'director', all: 50, each: {} });
+  dispatch(begin('0123456789abcdef', now, { attributes: structuredClone(ATTRIBUTES_START), directing: structuredClone(directing), identity: identity(), acting: structuredClone(ACTING_START), producing: structuredClone(PRODUCING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'director', all: 50, each: {} });
 /** A film prepped by a director living in its country, paid into an account in its currency (no rate asked of the day). */
 const job = (args: PrepArgs, now = NOW, directing: DirectingSlice = DIRECTING_START): Film => {
   const where = (args.country ?? 'US') as CountryCode;
   const base = made(now, directing);
-  const local = { ...base, slices: { ...base.slices, identity: identity({ citizenship: [where] }), ...purse(isCountry(where) ? currencyOf(where) : 'USD') } };
+  const local = { ...base, slices: { ...base.slices, identity: identity({ citizenship: [where] }), youth: structuredClone(YOUTH_START), ...purse(isCountry(where) ? currencyOf(where) : 'USD') } };
   const l = dispatch(local, prepFilm, { account: ACCOUNT, ...args });
   return filmOf(l.slices.directing, l.slices.directing.films.length);
 };

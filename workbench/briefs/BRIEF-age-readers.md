@@ -46,3 +46,9 @@ every file you touch (own configs and temp dirs; never `pkill -f "stryker run"`)
 BRIEF-identity-readers.md's form. Use Node 22.22.0 first on PATH. Run your own configs, not the whole gate (the lead
 runs it). Do not edit research, the register, the registry, the catalog, HANDOFF or git.
 Report back in under 200 words.
+
+## Military service removed (the owner, 2026-11-01)
+"Dont need military service at all." Part A removes it from layer 3: the `service` field, `serviceIn`, `termFor`, the
+compile's reading and the coverage's test of it, their tests; a row is researched on its majority and working age
+alone. The lead settles the register (blockers that sought service alone go; a blocker that sought service with
+another fact keeps its other attempts) and the `ages.unkept` line.

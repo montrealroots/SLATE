@@ -1,0 +1,71 @@
+{
+ "AT": {
+  "contract": {"by": "guardian", "at": "0:binding/under14", "alone": {"at": "0:binding", "is": "14"}}
+ },
+ "AU": {
+  "seat": "AU.02",
+  "contract": {"by": "self", "at": "4:AU.02/binding"},
+  "permit": {"issuer": "0:AU.02/authority", "under": {"at": "0:AU.02/child", "is": "16"}},
+  "hours": [
+   {"from": 0, "to": "0:AU.02/filmTV/0/under", "day": "0:AU.02/filmTV/0/hours"},
+   {"from": "0:AU.02/filmTV/1/from", "to": "0:AU.02/filmTV/1/under", "day": "0:AU.02/filmTV/1/hours"},
+   {"from": "0:AU.02/filmTV/2/from", "to": "0:AU.02/filmTV/2/under", "day": "0:AU.02/filmTV/2/hours"},
+   {"from": "0:AU.02/filmTV/3/from", "to": "0:AU.02/filmTV/3/under", "day": "0:AU.02/filmTV/3/hours"}
+  ]
+ },
+ "CA": {
+  "seat": "CA.08",
+  "setAside": {"share": "1:CA.08/setAside/share", "into": null, "over": {"amount": {"at": "1:CA.08/setAside/threshold", "is": "$2,000"}, "currency": "CAD", "per": "engagement", "above": true}},
+  "permit": {"issuer": null, "under": "majority", "from": "2:CA.08/minimumAge"},
+  "hours": [{"from": 0, "to": null, "day": "2:CA.08/maxHoursPerDay"}]
+ },
+ "DE": {
+  "hours": [
+   {"from": "0:film/0/over", "to": "0:film/0/to", "day": "0:film/0/hours"},
+   {"from": "0:film/1/over", "to": {"at": "0:child", "is": "15"}, "day": "0:film/1/hours"}
+  ]
+ },
+ "FR": {
+  "reach": {"roles": "every", "at": "0:reachesRoles"},
+  "hours": [{"from": 0, "to": null, "day": "1:youngWorkers/maxPerDay", "week": "1:youngWorkers/maxPerWeek"}]
+ },
+ "GB": {
+  "hours": [
+   {"from": "0:hours/0/from", "to": "0:hours/0/to", "day": "0:hours/0/performing"},
+   {"from": "0:hours/1/from", "to": "0:hours/1/to", "day": "0:hours/1/performing"},
+   {"from": "0:hours/2/from", "to": "work", "day": "0:hours/2/performing"}
+  ]
+ },
+ "IE": {
+  "setAside": {"own": "1:setAside/into"},
+  "hours": [
+   {"from": 0, "to": "0:conditions/0/under", "day": "0:conditions/0/totalPerforming"},
+   {"from": "0:conditions/1/from", "to": "0:conditions/1/under", "day": "0:conditions/1/totalPerforming"},
+   {"from": "0:conditions/2/over", "to": "work", "day": "0:conditions/2/totalPerforming"}
+  ]
+ },
+ "IN": {
+  "setAside": {"share": "0:setAside/law/share", "into": "0:setAside/law/where"},
+  "hours": [{"from": 0, "to": "work", "day": "1:hoursPerDay"}]
+ },
+ "PH": {
+  "setAside": {"share": "1:setAside/share", "into": "1:setAside/into", "over": {"amount": "1:setAside/threshold/amount", "currency": "1:setAside/threshold/currency", "per": "year", "above": false}},
+  "hours": [
+   {"from": 0, "to": "0:hours/0/under", "day": "0:hours/0/day", "week": "0:hours/0/week"},
+   {"from": "0:hours/1/from", "to": "0:hours/1/under", "day": "0:hours/1/day", "week": "0:hours/1/week"}
+  ]
+ },
+ "US": {
+  "seat": "US.CA",
+  "unions": [{"union": "SAG-AFTRA", "is": "the guardian signs a child actor's application"}],
+  "permit": {"issuer": "2:US.CA/permit", "under": "majority", "from": {"at": "2:US.CA/ages", "is": "15 days"}},
+  "hours": [
+   {"from": "2:US.CA/hoursOnSet/0/from", "to": "2:US.CA/hoursOnSet/0/to", "day": "2:US.CA/hoursOnSet/0/work"},
+   {"from": "2:US.CA/hoursOnSet/1/from", "to": "2:US.CA/hoursOnSet/1/to", "day": "2:US.CA/hoursOnSet/1/work"},
+   {"from": "2:US.CA/hoursOnSet/2/from", "to": "2:US.CA/hoursOnSet/2/to", "day": "2:US.CA/hoursOnSet/2/work"},
+   {"from": "2:US.CA/hoursOnSet/3/from", "to": "2:US.CA/hoursOnSet/3/to", "day": "2:US.CA/hoursOnSet/3/work"},
+   {"from": "2:US.CA/hoursOnSet/4/from", "to": "2:US.CA/hoursOnSet/4/to", "day": "2:US.CA/hoursOnSet/4/work"},
+   {"from": "2:US.CA/hoursOnSet/5/from", "to": "2:US.CA/hoursOnSet/5/to", "day": "2:US.CA/hoursOnSet/5/work"}
+  ]
+ }
+}

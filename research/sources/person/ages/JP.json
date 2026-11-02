@@ -1,0 +1,309 @@
+{
+ "topic": "ages.JP",
+ "read": "2026-11-01",
+ "note": "Read 2026-11-01 at the owner's word (\"Start the age readers once the ledger lands\", the age rules reaching young writers, producers and directors as well as performers; \"It should cover across every country\"; \"Again I want depth covering every basis for every feature leaving NO STONE UNTURNED\"): what age changes for screen work in Japan: the age of majority, the working age, how a minor's contract binds and what of the pay is set aside, a child performer's permit and hours, the unions', the funds' and the company law's ages. Research, retry and web-search subagents (workbench/briefs/BRIEF-ages-roles.md, BRIEF-ages-world.md, BRIEF-ages-search.md), every quote checked by the lead against its saved page.",
+ "figures": [
+  {
+   "item": "minorsContracts",
+   "finding": "A minor's legal act needs the legal representative's consent and is otherwise voidable; parents may not sign a labour contract on the minor's behalf and may end one that is unfavourable; the minor claims wages alone and the parent may not take them; where parents bind the child to the child's own act, the child must consent.",
+   "value": {
+    "under": 18,
+    "binding": "the minor signs with the legal representative's consent (民法 5)",
+    "labour": "parents may not contract for the minor (労基法 58); wages paid to the minor (労基法 59)",
+    "setAside": null
+   },
+   "applies": "民法 covers every contract, so writing, directing and producing deals too; 労基法 58-59 reach every employed minor. No set-aside share was found (blocker).",
+   "sources": [
+    {
+     "src": 0,
+     "said": "未成年者が法律行為をするには、その法定代理人の同意を得なければならない。"
+    },
+    {
+     "src": 1,
+     "said": "ただし、その子の行為を目的とする債務を生ずべき場合には、本人の同意を得なければならない。"
+    },
+    {
+     "src": 2,
+     "said": "親権者又は後見人は、未成年者に代つて労働契約を締結してはならない。"
+    },
+    {
+     "src": 3,
+     "said": "未成年者は、独立して賃金を請求することができる。 親権者又は後見人は、未成年者の賃金を代つて受け取つてはならない。"
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "A child before the April after turning fifteen works in film or theatre only with the labour inspection office's permit; hours count school time, at most 7 a day and 40 a week; no work from 8pm to 5am (9pm to 6am where the Minister so decides); 15-17s may not work 10pm to 5am.",
+   "value": {
+    "permit": "所轄労働基準監督署長の許可 (layer 3)",
+    "hoursWithSchool": {
+     "daily": 7,
+     "weekly": 40
+    },
+    "night": {
+     "child": {
+      "from": "20:00",
+      "to": "05:00",
+      "ministerial": "21:00-06:00"
+     },
+     "15to17": {
+      "from": "22:00",
+      "to": "05:00"
+     }
+    },
+    "lowestAge": null
+   },
+   "applies": "Every child employed in film or theatre; a young writer or director is reached only if employed. The 2004 ministerial notice that set 9pm for child actors was found only as a scanned draft outline (no Japanese OCR here), so the 9pm limit is the law's power, not a held rule.",
+   "sources": [
+    {
+     "src": 4,
+     "said": "同条第一項中「一週間について四十時間」とあるのは「、修学時間を通算して一週間について四十時間」と、同条第二項中「一日について八時間」とあるのは「、修学時間を通算して一日について七時間」とする。"
+    },
+    {
+     "src": 5,
+     "said": "第五十六条第二項の規定によつて使用する児童については、第一項の時刻は、午後八時及び午前五時とし、第二項の時刻は、午後九時及び午前六時とする。"
+    },
+    {
+     "src": 5,
+     "said": "使用者は、満十八才に満たない者を午後十時から午前五時までの間において使用してはならない。"
+    },
+    {
+     "src": 6,
+     "said": "映画の製作又は演劇の事業に限って、児童の健康及び福祉に有害でなく、かつ、その労働が軽易なものについては、所轄の労働基準監督署長の許可を条件に使用することができることとなっておりますので、これらの許可が必要となります。"
+    }
+   ]
+  },
+  {
+   "item": "companies",
+   "finding": "The Companies Act's bars on directors name no age; a minor allowed a business by the legal representative has full capacity for it and must register it.",
+   "value": {
+    "directorMinAge": null,
+    "minorBusiness": "permitted by the legal representative (民法 6), registered (商法 5)"
+   },
+   "applies": "株式会社 directors (会社法 331). Whether a minor's appointment needs the representative's consent is not read.",
+   "sources": [
+    {
+     "src": 7,
+     "said": "次に掲げる者は、取締役となることができない。 一 法人"
+    },
+    {
+     "src": 8,
+     "said": "一種又は数種の営業を許された未成年者は、その営業に関しては、成年者と同一の行為能力を有する。"
+    },
+    {
+     "src": 9,
+     "said": "未成年者が前条の営業を行うときは、その登記をしなければならない。"
+    }
+   ]
+  },
+  {
+   "item": "childPerformers",
+   "finding": "The Ministry's 2004 notice moved the end of a stage child actor's working day from 8pm to 9pm (night 9pm to 6am) for children appearing in theatre, for the time being, from 1 January 2005; it reaches stage plays only, not film or television, where 8pm stands.",
+   "value": {
+    "stageChildActors": {
+     "nightFrom": "21:00",
+     "nightTo": "06:00",
+     "scope": "演劇の事業に使用される児童が演技を行う業務 (theatre only)",
+     "from": "2005-01-01 (planned)",
+     "duration": "当分の間"
+    },
+    "otherChildren": {
+     "nightFrom": "20:00",
+     "nightTo": "05:00"
+    }
+   },
+   "applies": "As the Labour Standards Bureau set out the draft notice to the Labour Policy Council's working-conditions subcommittee on 16 November 2004 (the notice's own gazette text not reached).",
+   "sources": [
+    {
+     "src": 10,
+     "said": "本件の告示案要綱についてですが、演劇子役の就労可能時間を午後８時までから午後 ９時までに延長することとするものです。 … 本件告示については、先ほど申しました閣議決定等を踏まえ、厚生労働大臣が必要で あると認める場合を、演劇の事業に使用される児童が演技を行う業務に従事する場合、 すなわち、いわゆる演劇子役が演劇に従事する場合とし、その期間については当分の間 とするものであります。 … また、施行日は平成17年１月１日よりとすることを予定しており ます。"
+    }
+   ]
+  },
+  {
+   "item": "unions",
+   "finding": "Neither the Writers Guild of Japan nor the Directors Guild of Japan sets an age: the writers' guild admits authors of at least two published scripts paid at or above the agreed minimum fee, and the directors' guild admits anyone who directs for a living in any medium, on a member's recommendation and the board's approval.",
+   "value": {
+    "日本脚本家連盟": {
+     "minimumAge": null,
+     "admission": "two published scripts that can be entrusted for copyright, paid at or above the agreed minimum fee"
+    },
+    "日本映画監督協会": {
+     "minimumAge": null,
+     "admission": "'監督を業とする者', on a member's recommendation, approved by the board",
+     "fees": {
+      "entryJPY": 10000,
+      "capitalJPY": 10000,
+      "monthlyJPY": 3500
+     }
+    }
+   },
+   "applies": "Each guild's admission page, read 2026-11-01.",
+   "sources": [
+    {
+     "src": 11,
+     "said": "当連盟に加入するためには、次の資格全てを満たしていることが必要とされます。 日本脚本家連盟入会資格 連盟に著作権信託可能な、公表された脚本が2本以上ある方"
+    },
+    {
+     "src": 12,
+     "said": "劇場用映画の監督に限らず、テレビドラマ、ドキュメンタリー、アニメーション、VP、PR、CM、Web等すべての映像媒体における “監督を業とする者”は誰でも入会出来ます。協会員の推薦があればお申込みいただけます。理事会の審査を経て承認されます。"
+    }
+   ]
+  },
+  {
+   "item": "funds",
+   "finding": "The Agency for Cultural Affairs' international co-production grant goes only to Japanese bodies whose main purpose is film production, incorporated or meeting set conditions, so a person applies through a company.",
+   "value": {
+    "文化庁 国際共同製作映画支援事業": {
+     "applicant": "映画の製作活動を行うことを主たる目的とする我が国の団体",
+     "individualsMayApply": false,
+     "minimumAge": null
+    }
+   },
+   "applies": "文化庁, 令和6年度 募集案内 (the latest call reached; later calls not found).",
+   "sources": [
+    {
+     "src": 13,
+     "said": "映画の製作活動を行うことを主たる目的とする我が国の団体で、次の（資格要件） （１） 又は（２）のいずれかに該当し、かつ、以下の（実績要件）を満たすものとします。 （資格要件） （１）法人格を有する団体"
+    }
+   ]
+  }
+ ],
+ "country": "JP",
+ "sources": [
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=5",
+   "title": "民法 第五条 (e-Gov法令検索 API)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "未成年者が法律行為をするには、その法定代理人の同意を得なければならない。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=824",
+   "title": "民法 第八百二十四条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "ただし、その子の行為を目的とする債務を生ずべき場合には、本人の同意を得なければならない。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=322AC0000000049;article=58",
+   "title": "労働基準法 第五十八条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "親権者又は後見人は、未成年者に代つて労働契約を締結してはならない。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=322AC0000000049;article=59",
+   "title": "労働基準法 第五十九条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "未成年者は、独立して賃金を請求することができる。 親権者又は後見人は、未成年者の賃金を代つて受け取つてはならない。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=322AC0000000049;article=60",
+   "title": "労働基準法 第六十条第二項",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "同条第一項中「一週間について四十時間」とあるのは「、修学時間を通算して一週間について四十時間」と、同条第二項中「一日について八時間」とあるのは「、修学時間を通算して一日について七時間」とする。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=322AC0000000049;article=61",
+   "title": "労働基準法 第六十一条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "第五十六条第二項の規定によつて使用する児童については、第一項の時刻は、午後八時及び午前五時とし、第二項の時刻は、午後九時及び午前六時とする。 … 使用者は、満十八才に満たない者を午後十時から午前五時までの間において使用してはならない。"
+  },
+  {
+   "url": "https://www.mhlw.go.jp/bunya/roudoukijun/faq_kijyunhou_7.html",
+   "title": "厚生労働省 FAQ: 10歳の児童を舞台の子役として使う手順",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "映画の製作又は演劇の事業に限って、児童の健康及び福祉に有害でなく、かつ、その労働が軽易なものについては、所轄の労働基準監督署長の許可を条件に使用することができることとなっておりますので、これらの許可が必要となります。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=417AC0000000086;article=331",
+   "title": "会社法 第三百三十一条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "次に掲げる者は、取締役となることができない。 一 法人"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=6",
+   "title": "民法 第六条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "一種又は数種の営業を許された未成年者は、その営業に関しては、成年者と同一の行為能力を有する。"
+  },
+  {
+   "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=132AC0000000048;article=5",
+   "title": "商法 第五条",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "未成年者が前条の営業を行うときは、その登記をしなければならない。"
+  },
+  {
+   "url": "https://www.mhlw.go.jp/shingi/2004/11/txt/s1116-4.txt",
+   "title": "厚生労働省 労働政策審議会労働条件分科会 議事録 (2004年11月16日), テキスト版 (saved converted from Shift_JIS to UTF-8)",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "本件の告示案要綱についてですが、演劇子役の就労可能時間を午後８時までから午後 ９時までに延長することとするものです。 … 本件告示については、先ほど申しました閣議決定等を踏まえ、厚生労働大臣が必要で あると認める場合を、演劇の事業に使用される児童が演技を行う業務に従事する場合、 すなわち、いわゆる演劇子役が演劇に従事する場合とし、その期間については当分の間 とするものであります。 … また、施行日は平成17年１月１日よりとすることを予定しており ます。"
+  },
+  {
+   "url": "https://www.writersguild.or.jp/registration/flow",
+   "title": "日本脚本家連盟: 入会資格・審査の流れ",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "当連盟に加入するためには、次の資格全てを満たしていることが必要とされます。 日本脚本家連盟入会資格 連盟に著作権信託可能な、公表された脚本が2本以上ある方"
+  },
+  {
+   "url": "https://www.dgj.or.jp/admission/",
+   "title": "日本映画監督協会: 入会案内",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "劇場用映画の監督に限らず、テレビドラマ、ドキュメンタリー、アニメーション、VP、PR、CM、Web等すべての映像媒体における “監督を業とする者”は誰でも入会出来ます。協会員の推薦があればお申込みいただけます。理事会の審査を経て承認されます。"
+  },
+  {
+   "url": "https://www.bunka.go.jp/shinsei_boshu/kobo/pdf/94006301_01.pdf",
+   "title": "文化庁: 令和6年度 文化芸術振興費補助金 募集案内 国際共同製作映画支援事業",
+   "read": "2026-11-01",
+   "kind": "primary",
+   "said": "映画の製作活動を行うことを主たる目的とする我が国の団体で、次の（資格要件） （１） 又は（２）のいずれかに該当し、かつ、以下の（実績要件）を満たすものとします。 （資格要件） （１）法人格を有する団体"
+  }
+ ],
+ "blockers": [
+  {
+   "item": "minorsContracts",
+   "sought": "a statutory share of a minor's earnings to be set aside, and where (Japan)",
+   "tried": {
+    "institution": "民法 5, 824, 労基法 58-59 read: none | Retry 2026-11-01: no new text: MHLW FAQ and council minutes name no set-aside",
+    "official-register": "e-Gov read | Retry 2026-11-01: e-Gov (民法, 労基法) already read",
+    "web-search": "not found in searches on child actors' rules | Retry 2026-11-01: '子役 出演料 親が管理 法律 未成年 報酬 積立 義務 日本 クーガン法 日本にはない': no Japanese set-aside found (Money Forward, Newsweek Japan, zeiri4 compare the US and France)",
+    "trade-press": "none | Retry 2026-11-01: Money Forward and Newsweek Japan articles describe no Japanese rule; not held",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "unions",
+   "sought": "日本俳優連合's (Japan Actors Union) membership age or rules for minors",
+   "tried": {
+    "institution": "not reached | Retry 2026-11-01: writersguild.or.jp and dgj.or.jp read (held); nippairen.com reached but its home page carries no admission link in the HTML",
+    "official-register": "none | Retry 2026-11-01: none",
+    "web-search": "searched '日本俳優連合 入会資格 年齢 未成年 加入': nothing | Retry 2026-11-01: '日本俳優連合 入会 資格 年齢 未成年 保護者 同意 入会案内': nothing on 日俳連",
+    "trade-press": "none | Retry 2026-11-01: none",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  },
+  {
+   "item": "childPerformers",
+   "sought": "the notice's own text as published in the Official Gazette (its number and date in force)",
+   "tried": {
+    "institution": "MHLW council page of 16 Nov 2004 read; its outline PDF is a scan (no Japanese OCR available) | Retry 2026-11-01: MHLW council minutes of 16 November 2004 in text form (shingi/2004/11/txt/s1116-4.txt) read (held); the Gifu Labour Bureau leaflet (002670275.pdf) found in search has no extractable Japanese text and was not used",
+    "official-register": "官報 not reached | Retry 2026-11-01: 官報 (kanpou.npb.go.jp) and e-Gov's notice database not reached",
+    "web-search": "searched '厚生労働省告示 演劇の事業 児童 午後九時' | Retry 2026-11-01: '労働基準法第六十一条第五項 演劇の事業 児童 午後九時 午前六時 厚生労働省告示 平成十六年'",
+    "trade-press": "JIL report 2006 not read | Retry 2026-11-01: rodo.co.jp and Wikibooks on Art. 56-61 seen, not held",
+    "archive": "web.archive.org: every snapshot request reset the connection from this environment on 2026-11-01 (the availability API answered, the snapshots did not) | Retry 2026-11-01: web.archive.org closed every connection through the egress proxy (snapshot and CDX requests); archive.ph answered 429; not read another way"
+   }
+  }
+ ]
+}

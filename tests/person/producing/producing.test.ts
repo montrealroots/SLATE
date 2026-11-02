@@ -59,9 +59,10 @@ import { spread } from '../../../src/person/work/work.ts';
 import { t } from '../../../src/core/text/text.ts';
 import { falsifyAny } from '../../support/falsify-core.ts';
 import { ACCOUNT, minorIn, purse } from '../../support/purse.ts';
+import { YOUTH_START, type YouthSlice } from '../../../src/person/youth/youth.ts';
 import { exchangeOn } from '../../../src/money/rates/rates.ts';
 
-type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice } & ReturnType<typeof purse>;
+type Producing = { attributes: AttributesSlice; producing: ProducingSlice; genres: GenresSlice; identity: IdentitySlice; acting: ActingSlice; directing: DirectingSlice; permits: PermitsSlice; youth: YouthSlice } & ReturnType<typeof purse>;
 /** The genres the producer loves in these tests, and the one their material is in. */
 const LOVED = { loved: ['action', 'documentary', 'family'] };
 const GENRE = 'action';
@@ -79,7 +80,7 @@ const grown = (from: number, days: number) => 100 - (100 - from) * (1 - DAILY) *
 const gbp = (pounds: number) => money('GBP', Math.round(pounds * 100));
 
 const made = (all: number, each: Partial<Record<Broad, number>> = {}, seed = SEED, at = T0): Life<Producing> =>
-  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() }), chooseAttributes, { role: 'producer', all, each });
+  dispatch(begin(seed, at, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() }), chooseAttributes, { role: 'producer', all, each });
 const v = (l: Life<Producing>) => componentValues(l.slices.attributes, 'producer');
 const held = (l: Life<Producing>) => l.slices.attributes['producer'] as Record<string, number>;
 const of = (w: Record<string, number>, id: string) => skillOf(w, 'producer', id);
@@ -156,7 +157,7 @@ describe('optioning material', () => {
     expect(() => project(two, 3)).toThrow("there's no project 3");
     expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 0, genre: GENRE })).toThrow('the days given are a whole number of at least 1 (0)');
     const broke = made(50);
-    expect(() => dispatch({ ...broke, slices: { ...broke.slices, ...purse('USD', 922_679) } }, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE })).toThrow("everyday:1 can't cover an option");
+    expect(() => dispatch({ ...broke, slices: { ...broke.slices, youth: structuredClone(YOUTH_START), ...purse('USD', 922_679) } }, optionMaterial, { account: ACCOUNT, days: 1, genre: GENRE })).toThrow("everyday:1 can't cover an option");
     expect(minorIn(optioned(50).slices.ledger, ACCOUNT)).toBe(100_000_000 - 922_680);
     expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 1.5, genre: GENRE })).toThrow(RangeError);
     expect(() => dispatch(made(50), optionMaterial, { account: ACCOUNT, days: 3, genre: 'western' })).toThrow("Western isn't a genre the person loves");
@@ -181,7 +182,7 @@ describe('renewing an option', () => {
     expect(project(renewed).options).toEqual([OPTION_FEE, OPTION_FEE]);
     // Each payment from the account named, to the material's owner.
     expect([minorIn(renewed.slices.ledger, ACCOUNT), minorIn(renewed.slices.ledger, 'world:rights holder:USD')]).toEqual([100_000_000 - 2 * 922_680, 2 * 922_680]);
-    const short = { ...l, slices: { ...l.slices, ...purse('USD', 0) } };
+    const short = { ...l, slices: { ...l.slices, youth: structuredClone(YOUTH_START), ...purse('USD', 0) } };
     expect(() => dispatch(at(short, expires), renewOption, { project: 1, account: ACCOUNT })).toThrow('everyday:1 can\'t cover an option renewed');
     expect(renewed.slices.attributes).toEqual(l.slices.attributes);
     expect(() => dispatch(at(l, expires + 1), renewOption, { project: 1, account: ACCOUNT })).toThrow("project 1's option has lapsed");
@@ -538,12 +539,12 @@ describe('the producer', () => {
       { id: 'producing.option', reads: ['genres'], writes: ['attributes', 'producing', 'accounts', 'ledger'] },
       { id: 'producing.renew', reads: [], writes: ['producing', 'accounts', 'ledger'] },
       { id: 'producing.plan', reads: [], writes: ['attributes', 'producing'] },
-      { id: 'producing.apply', reads: [], writes: ['attributes', 'producing'] },
+      { id: 'producing.apply', reads: ['identity'], writes: ['attributes', 'producing'] },
       { id: 'producing.raise', reads: [], writes: ['attributes', 'producing'] },
-      { id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule'] },
+      { id: 'producing.shoot', reads: ['identity', 'acting', 'directing', 'permits'], writes: ['attributes', 'producing', 'accounts', 'ledger', 'tax', 'schedule', 'youth'] },
       { id: 'producing.release', reads: [], writes: ['attributes', 'producing'] },
     ]);
-    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), ...purse() });
+    const bare = begin(SEED, T0, { attributes: structuredClone(ATTRIBUTES_START), producing: structuredClone(PRODUCING_START), genres: structuredClone(LOVED), identity: identity(), acting: structuredClone(ACTING_START), directing: structuredClone(DIRECTING_START), permits: permitsEverywhere(), youth: structuredClone(YOUTH_START), ...purse() });
     expect(() => dispatch(bare, optionMaterial, { account: ACCOUNT, days: 3, genre: GENRE })).toThrow("the producer's attributes haven't been chosen");
   });
 });

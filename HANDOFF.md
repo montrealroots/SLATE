@@ -722,6 +722,23 @@ What layer 0 holds:
 
 ## Next step
 
+**The age readers (2026-11-02, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word ("Start the age readers once
+this lands"), the age research of all 252 countries landed (`research/sources/person/ages/<CC>.json`, register
+`person.ages.<CC>` and `person.ages.blocked.<CC>`, notModeled `youth.unkept`), every quote checked against its saved
+page, every secondary naming its primary's URL. Layer 3's ages read the age of majority and the working age from it
+(one copy of the fact, `tools/papers/ages/person.ts`): 133 researched, 113 blocked, 6 proven; Uganda's working age is
+16 by the Children (Amendment) Act 2016. Military service is out of the game by the owner's ruling ("Dont need
+military service at all"): no field, no reader, no row blocked on it; the blockers that sought only it, or whose
+other facts are now found, are removed. The youth engine (`src/person/youth`, `person.youth`) is read by the actor's,
+writer's, director's and producer's engines: a minor's work the law bars is refused, each engagement needs what the
+law asks (`youth.authorise`: the child performer's permit, the guardian's, a court's or an authority's approval), the
+days are cut to the hours the law allows, and the share the law sets aside (the Coogan trust's 15%, the Caisse des
+dépôts' 90%, Ontario's 25% over $2,000, the Philippines' 30%) is held and paid at majority (`youth.release`); a fund's
+or the company law's age is read by `producing.apply`; Equity UK's young rate is the only union age rule the research
+gives. Coverage: 15 researched, 231 blocked, 6 proven (the dissolved and the unpeopled, their research still cited);
+hours are read for 9 countries; SAG-AFTRA's minor rule is known to exist, unread. The game's readings: R-8482
+(`person.ages.model`, line `youth.model`). Next: the depth round (below), the youth engine's blocked rows among it.
+
 **Every country in tax and the four roles' markets (2026-11-01, session 01XFR5Ut6sxu4Q37Ha2jKNLQ).** At the owner's word
 ("It should cover across every country"; "Want it done now"; "Retry the blocked tax facts / market facts once all
 countries land"), the tax and the actor's, writer's, director's and producer's markets now read all 252 countries.
